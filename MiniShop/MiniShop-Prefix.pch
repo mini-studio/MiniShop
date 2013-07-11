@@ -1,0 +1,33 @@
+//
+// Prefix header for all source files of the 'MiniShop' target in the 'MiniShop' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "AppDelegate.h"
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "MSDefine.h"
+    #import "MiniLog.h"
+    #import "UIView+Mini.h"
+    #import "MiniUIButton+Mini.h"
+    #import "MiniUIButton.h"
+    #import "MiniUIImage.h"
+    #import "MSViewController.h"
+    #import "UIDevice+Id.h"
+    #import "ClientAgent+Mini.h"
+    #import "MiniUIAlertView.h"
+    #import "MSObject.h"
+    #import "MobClick.h"
+    #import "UITableViewCell+GroupBackGround.h"
+
+   #define WINDOW ((AppDelegate*)[UIApplication sharedApplication].delegate).window
+
+#define __PSELF__ __weak typeof (self) pSelf = self
+
+#endif

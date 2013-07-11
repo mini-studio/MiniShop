@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  bake
+
+  Created by Wuquancheng on 12-11-1.
+  Copyright (c) 2012年 youlu. All rights reserved.
+*/
+"Pull to refresh..."="下拉刷新";
+"Release to refresh..."="松手刷新";
+"Last Updated: %@"="上次更新 %@";
+"Loading..."="正在加载数据...";
+"Cancel" = "取消";
+"Save"="保存";
+"Email"="发送邮件";
+"Copy"="复制";
+"Saving"="正在保存";
+"Saved"="已保存";
+"Copying"="正在复制";
+"Copied"="已复制";
+"Preparing"="准备中";
+"A connection failure occurred"="网络错误";
