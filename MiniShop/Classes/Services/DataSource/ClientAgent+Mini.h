@@ -16,7 +16,6 @@
 
 + (NSString *)host;
 
-
 + (NSString *)imageUrl:(NSString *)path;
 
 + (NSString *)jumpToTaoBaoUrl:(NSString *)type;
