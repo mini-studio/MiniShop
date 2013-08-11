@@ -12,6 +12,9 @@
 @implementation MiniNSURLProtocol
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
+    NSString* userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19";
+	NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:userAgent, @"UserAgent", nil];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
     if ( request != nil )
     {
         NSString *url = [[request URL] absoluteString];
