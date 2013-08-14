@@ -187,13 +187,10 @@
             if ( error == nil )
             {
                 pSelf.page = page;
-                if ( data.next_page == 1 )
+                [pSelf.dataSource appendGoodItems:data.body_info];
+                if ( data.next_page == 0 )
                 {
-                    [pSelf.dataSource appendGoodItems:data.body_info];
-                }
-                else
-                {
-                    [pSelf.tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
+                   [pSelf.tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
                 }
                 [pSelf.tableView reloadData];
                 [pSelf updateUIAfterLoadData];
