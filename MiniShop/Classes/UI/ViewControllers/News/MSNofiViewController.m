@@ -79,6 +79,10 @@
     [super loadView];
     [self addSegmentControl];
     [self createTableView];
+    MiniUIButton *button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
+    button.width = 40;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(switchPushMessage:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLoad
@@ -514,6 +518,26 @@
             [pSelf showErrorMessage:error];
         }
     }];
+}
+
+- (void)switchPushMessage:(MiniUIButton*)button
+{
+    if ( [[MSSystem sharedInstance].version.push_sound isEqualToString:@"1"]) {
+        [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            if ( error == nil ) {
+                [MSSystem sharedInstance].version.push_sound = @"0";
+                 [button setImage:[UIImage imageNamed:@"button_push_message_off"] forState:UIControlStateNormal];
+            }
+        }];
+    }
+    else {
+        [[ClientAgent sharedInstance] setpushsound:1 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            if ( error == nil ) {
+                [MSSystem sharedInstance].version.push_sound = @"1";
+                [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal]; 
+            }
+        }];
+    }
 }
 
 

@@ -636,4 +636,17 @@
     }
 }
 
+- (void)setpushsound:(int)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri:@"setpushsound"];
+    NSDictionary *params = [self perfectParameters:@{@"action":[NSString stringWithFormat:@"%d",action]}];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+
+}
+
 @end

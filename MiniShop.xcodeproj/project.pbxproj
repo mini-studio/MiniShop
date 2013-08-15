@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C101D19C177CCB3E009BFA10 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C101D19A177CCB3E009BFA10 /* libMobClickLibrary.a */; };
+		C103029717BBFAFC00B756C6 /* button_push_message_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103029517BBFAFC00B756C6 /* button_push_message_off@2x.png */; };
+		C103029C17BC025500B756C6 /* button_push_message_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103029B17BC025500B756C6 /* button_push_message_open@2x.png */; };
 		C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE70717765C3C009E6482 /* UMEGORefreshTableHeaderView.m */; };
 		C10BE72B17765C3C009E6482 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C10BE70917765C3C009E6482 /* background@2x.png */; };
 		C10BE72C17765C3C009E6482 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C10BE70A17765C3C009E6482 /* blueArrow.png */; };
@@ -222,6 +224,8 @@
 /* Begin PBXFileReference section */
 		C101D19A177CCB3E009BFA10 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		C101D19B177CCB3E009BFA10 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		C103029517BBFAFC00B756C6 /* button_push_message_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_off@2x.png"; sourceTree = "<group>"; };
+		C103029B17BC025500B756C6 /* button_push_message_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_open@2x.png"; sourceTree = "<group>"; };
 		C10BE70617765C3C009E6482 /* UMEGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMEGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		C10BE70717765C3C009E6482 /* UMEGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMEGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		C10BE70917765C3C009E6482 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
@@ -775,7 +779,6 @@
 				C1EC4FD6178074A100BE5ABB /* Classes */,
 				C169C48016FF48F200ED87D8 /* Supporting Files */,
 			);
-			name = MiniShop;
 			path = MiniShop;
 			sourceTree = "<group>";
 		};
@@ -1592,6 +1595,8 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C103029B17BC025500B756C6 /* button_push_message_open@2x.png */,
+				C103029517BBFAFC00B756C6 /* button_push_message_off@2x.png */,
 				C1EC50EF178074D600BE5ABB /* button_h_normal@2x.png */,
 				C1EC50F0178074D600BE5ABB /* button_h_selected@2x.png */,
 				C1EC50F1178074D600BE5ABB /* button_normal@2x.png */,
@@ -1848,6 +1853,8 @@
 				C1EC517C1780754A00BE5ABB /* Default-568h@2x.png in Resources */,
 				C1EC517D1780754A00BE5ABB /* Default.png in Resources */,
 				C1EC517E1780754A00BE5ABB /* Default@2x.png in Resources */,
+				C103029717BBFAFC00B756C6 /* button_push_message_off@2x.png in Resources */,
+				C103029C17BC025500B756C6 /* button_push_message_open@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

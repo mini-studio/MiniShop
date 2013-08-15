@@ -17,4 +17,5 @@
 @property (nonatomic) NSInteger auth;
 @property (nonatomic,strong) NSString  *fav_url;
 @property (nonatomic) NSInteger list;
+@property (nonatomic,strong) NSString *push_sound;
 @end
