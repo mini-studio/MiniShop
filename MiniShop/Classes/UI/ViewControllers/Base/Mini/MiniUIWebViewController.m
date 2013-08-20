@@ -153,4 +153,20 @@
     _webView.miniReq = NO;
 }
 
+
+- (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"close"] highlightedImage:[UIImage imageNamed:@"close_h"]];
+    button.width += 14;
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
+    button.showsTouchWhenHighlighted = YES;
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* tmpBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    tmpBarButtonItem.style = UIBarButtonItemStyleBordered;
+    
+    return  tmpBarButtonItem;
+}
+
+
 @end

@@ -15,7 +15,7 @@
 - (void)setViewBackgroundColor;
 - (void)addRightRefreshButtonToTarget:(id)target action:(SEL)action;
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action;
-+ (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
+- (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
 - (UITableView *)createPlainTableView;
 - (UITableView*)createGroupedTableView;

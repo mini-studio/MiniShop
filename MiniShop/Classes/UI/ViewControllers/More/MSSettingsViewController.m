@@ -52,6 +52,7 @@
                             @"1":@[
                                     @{@"action":@"actionForFeedback",@"text":@"来聊聊您的想法"},
                                     @{@"action":@"actionForJoin",@"text":@"加入QQ群"},
+                                    @{@"action":@"actionForSeller",@"text":@"卖家管理"},
                                     @{@"action":@"actionForClearCache",@"text":@"清除缓存"}
                                     ],
                             @"2":@[
@@ -247,6 +248,11 @@
 {
     [MSSystem clearCache];
     [self showMessageInfo:@"缓存已清除" delay:2];
+}
+- (void)actionForSeller
+{
+     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com/api/sellerreg" title:@"" toolbar:NO];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

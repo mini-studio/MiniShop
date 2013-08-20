@@ -194,13 +194,31 @@ static UITapGestureRecognizer *tapRecognizer;
 
 - (void)setBackButton {
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [MSViewController navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = [self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
 }
 
 - (void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+- (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    UIImage* bgImage = [UIImage imageNamed:@"navi_bar_back"];
+    
+    MiniUIButton *button = [MiniUIButton buttonWithImage:bgImage highlightedImage:bgImage];
+    button.width += 4;
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
+    button.showsTouchWhenHighlighted = YES;
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* tmpBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    tmpBarButtonItem.style = UIBarButtonItemStyleBordered;
+    
+    return  tmpBarButtonItem;
+}
+
 
 - (void)didTapAnywhere:(UITapGestureRecognizer *)recognizer {
     [self.mTextField resignFirstResponder];

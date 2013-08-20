@@ -23,6 +23,7 @@
 #import "MSSystem.h"
 #import "MSDefine.h"
 #import "MSShopGroupListViewController.h"
+#import "MSPotentialViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define KIMPORT_VIEW_TAG 0xAB0000
@@ -83,6 +84,9 @@
     button.width = 40;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [button addTarget:self action:@selector(switchPushMessage:) forControlEvents:UIControlEventTouchUpInside];
+    if ( self.navigationController.topViewController == self ) {
+        [self setNaviRightButtonTitle:@"纠结清单" target:self action:@selector(actionRightButtonTap:)];
+    }
 }
 
 - (void)viewDidLoad
@@ -527,6 +531,10 @@
             if ( error == nil ) {
                 [MSSystem sharedInstance].version.push_sound = @"0";
                  [button setImage:[UIImage imageNamed:@"button_push_message_off"] forState:UIControlStateNormal];
+                [self showMessageInfo:@"消息声音已关闭" delay:1];
+            }
+            else {
+                [self showErrorMessage:error];
             }
         }];
     }
@@ -534,10 +542,20 @@
         [[ClientAgent sharedInstance] setpushsound:1 block:^(NSError *error, id data, id userInfo, BOOL cache) {
             if ( error == nil ) {
                 [MSSystem sharedInstance].version.push_sound = @"1";
-                [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal]; 
+                [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal];
+                [self showMessageInfo:@"消息声音已开启" delay:1];
+            }
+            else {
+                 [self showErrorMessage:error];
             }
         }];
     }
+}
+
+- (void)actionRightButtonTap:(UIButton *)button
+{
+    MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

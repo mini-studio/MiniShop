@@ -95,7 +95,7 @@
 - (void)setNaviBackButton
 {
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [MSViewController navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = [self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
 }
 
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -104,7 +104,7 @@
     self.navigationItem.leftBarButtonItem = item;
 }
 
-+ (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
+- (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
     UIImage* bgImage = [UIImage imageNamed:@"navi_bar_back"];
     
@@ -120,8 +120,9 @@
     return  tmpBarButtonItem;
 }
 
+
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title image:(NSString *)imageName target:(id)target action:(SEL)action{
-    UIBarButtonItem* tmpBarButtonItem = [MSViewController navLeftButtonWithTitle:title target:target action:action];
+    UIBarButtonItem* tmpBarButtonItem = [self navLeftButtonWithTitle:title target:target action:action];
     UIButton* btn = (UIButton*)tmpBarButtonItem.customView;
     [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     
@@ -139,6 +140,8 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = item;
 }
+
+
 
 - (void)setNaviRightButtonTitle:(NSString *)title target:(id)target action:(SEL)action
 {
