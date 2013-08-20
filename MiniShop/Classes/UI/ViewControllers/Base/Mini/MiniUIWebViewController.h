@@ -18,6 +18,7 @@
 @property (nonatomic)BOOL miniReq;
 @property (nonatomic,strong)NSString *ctitle;
 @property (nonatomic)BOOL autoLayout;
+@property (nonatomic)BOOL defaultBackButton;
 
 - (void)loadFile:(NSString *)fileName ofType:(NSString *)type title:(NSString *)title;
 

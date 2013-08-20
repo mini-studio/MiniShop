@@ -252,6 +252,7 @@
 - (void)actionForSeller
 {
      MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com/api/sellerreg" title:@"" toolbar:NO];
+    controller.defaultBackButton = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
