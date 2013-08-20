@@ -345,19 +345,20 @@
 
 - (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation
 {
-    CGFloat height = 54;
+    CGFloat height = 100;
 	return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
 }
 
 
 - (UIToolbar *)createToolBar
 {
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-54, self.view.width, 54)];
-    UIImage *image = [MiniUIImage imageNamed:@"tab_background"];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-100, self.view.width, 100)];
+    [toolbar removeAllSubviews];
+    UIImage *image = [MiniUIImage imageNamed:@"tool_bar"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = toolbar.bounds;
     [toolbar addSubview:imageView];
-    toolbar.barStyle = UIBarStyleBlackTranslucent;
+    //toolbar.barStyle = UIBarStyleBlackTranslucent;
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     NSString *title = [MSStoreNewsTypeGoodsPromotion isEqualToString:self.itemInfo.type]?@"抢购":@"查看";

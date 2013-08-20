@@ -42,6 +42,7 @@
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
 		C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA017C2E8580048DC2A /* close_h@2x.png */; };
 		C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA117C2E8580048DC2A /* close@2x.png */; };
+		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
 		C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
 		C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47B16FF48F200ED87D8 /* Foundation.framework */; };
@@ -265,6 +266,7 @@
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
 		C12DCAA017C2E8580048DC2A /* close_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_h@2x.png"; sourceTree = "<group>"; };
 		C12DCAA117C2E8580048DC2A /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
 		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
 		C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		C15918C817021DF800331097 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
@@ -1599,6 +1601,7 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */,
 				C12DCAA017C2E8580048DC2A /* close_h@2x.png */,
 				C12DCAA117C2E8580048DC2A /* close@2x.png */,
 				C103029B17BC025500B756C6 /* button_push_message_open@2x.png */,
@@ -1863,6 +1866,7 @@
 				C103029C17BC025500B756C6 /* button_push_message_open@2x.png in Resources */,
 				C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */,
 				C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */,
+				C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
