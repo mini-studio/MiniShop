@@ -239,7 +239,8 @@
     {
         shopName = self.itemInfo.shop_title;
     }
-    [self setToolbarShopName:shopName goodname:item.name activity:item.activity];
+    item.shop_name = shopName;
+    [self setToolbarContent:item];
     [self setNaviTitle];
 }
 
@@ -374,30 +375,31 @@
     self.button = button;
     
     CGFloat width = toolbar.width - button.width - 20;
-    for ( NSInteger index = 0; index < 3; index++)
+    for ( NSInteger index = 0; index < 4; index++)
     {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, index==0?5:5+index*16, width, 14)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, index==0?10:10+index*20, width, 20)];
         label.tag = 10000 + index;
         label.textColor = [UIColor colorWithRGBA:0xEEEEEEEE];
         label.backgroundColor = [UIColor clearColor];
-        label.font = index == 0 ? [UIFont boldSystemFontOfSize:14]:[UIFont systemFontOfSize:12];
+        label.font = index == 0 ? [UIFont boldSystemFontOfSize:16]:[UIFont systemFontOfSize:14];
         [toolbar addSubview:label];
     }
     self.toolbar = toolbar;
     return toolbar;
 }
 
-- (void)setToolbarShopName:(NSString *)shopname goodname:(NSString *)goodname activity:(NSString*)activity
+- (void)setToolbarContent:( MSGoodItem *)item
 {
-    ((UILabel *)[self.toolbar viewWithTag:10000]).text = shopname;
-    ((UILabel *)[self.toolbar viewWithTag:10001]).text = goodname;
-    if ( activity.length > 0 )
+    ((UILabel *)[self.toolbar viewWithTag:10000]).text = [NSString stringWithFormat:@"价格:%@",item.price];
+    ((UILabel *)[self.toolbar viewWithTag:10001]).text = item.shop_name;
+    ((UILabel *)[self.toolbar viewWithTag:10002]).text = item.name;
+    if ( item.activity.length > 0 )
     {
-        ((UILabel *)[self.toolbar viewWithTag:10002]).text = [NSString stringWithFormat:@"参加活动：%@",activity];
+        ((UILabel *)[self.toolbar viewWithTag:10003]).text = [NSString stringWithFormat:@"参加活动：%@",item.activity];
     }
     else
     {
-        ((UILabel *)[self.toolbar viewWithTag:10002]).text = @"";
+        ((UILabel *)[self.toolbar viewWithTag:10003]).text = @"";
     }
 }
 

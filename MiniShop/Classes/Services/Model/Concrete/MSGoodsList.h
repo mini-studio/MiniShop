@@ -23,6 +23,7 @@
 @property (nonatomic,strong) NSString *activity;
 @property (nonatomic) NSInteger like;
 @property (nonatomic,strong)NSString *shop_title;
+@property (nonatomic,strong)NSString *price;
 
 @property (nonatomic) int64_t taobao_goods_id;
 @property (nonatomic,strong) NSString *goods_url;
