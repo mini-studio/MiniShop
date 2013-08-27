@@ -61,8 +61,9 @@
                                    alignment:NSTextAlignmentCenter
                                  shadowColor:nil
                                   shadowSize:CGSizeZero];
-    lable.size = CGSizeMake(60, 24);
-    lable.layer.cornerRadius = 12;
+    [lable sizeToFit];
+    lable.size = CGSizeMake(lable.size.width + 12, lable.size.height + 6);
+    lable.layer.cornerRadius =  lable.size.height/2;
     lable.layer.masksToBounds = YES;
     lable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     lable.center = CGPointMake(self.view.width/2, self.view.height - 60 );
