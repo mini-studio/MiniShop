@@ -12,7 +12,7 @@
 
 @synthesize auth = _auth;
 @synthesize fav_url = _fav_url;
-
+@synthesize push_sound = _push_sound;
 - (void)setAuth:(NSInteger)auth
 {
     _auth = auth;
@@ -76,6 +76,22 @@
     NSNumber *l = [[NSUserDefaults standardUserDefaults] valueForKey:@"MS_COUNT_LIST"];
     if ( l != nil ) return [l integerValue];
     return 0;
+}
+
+- (void)setPush_sound:(NSString *)push_sound
+{
+    _push_sound = push_sound;
+    [[NSUserDefaults standardUserDefaults] setValue:_push_sound forKey:@"MS_PUSH_SOUND"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString*)push_sound
+{
+    NSString *p = [[NSUserDefaults standardUserDefaults] valueForKey:@"MS_PUSH_SOUND"];
+    if ( p == nil ) {
+        return @"0";
+    }
+    return p;
 }
 
 @end

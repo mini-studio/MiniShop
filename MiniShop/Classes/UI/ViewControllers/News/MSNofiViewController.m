@@ -82,6 +82,7 @@
     [self createTableView];
     MiniUIButton *button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
     button.width = 40;
+    [self reviseRingButton:button];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [button addTarget:self action:@selector(switchPushMessage:) forControlEvents:UIControlEventTouchUpInside];
     if ( self.navigationController.topViewController == self ) {
@@ -524,13 +525,24 @@
     }];
 }
 
+- (void)reviseRingButton:(MiniUIButton*)button
+{
+    if ( [@"0" isEqualToString:[MSSystem sharedInstance].version.push_sound] ) {
+        [button setImage:[UIImage imageNamed:@"button_push_message_off"] forState:UIControlStateNormal];
+    }
+    else {
+        [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal];
+ 
+    }
+}
+
 - (void)switchPushMessage:(MiniUIButton*)button
 {
     if ( [[MSSystem sharedInstance].version.push_sound isEqualToString:@"1"]) {
         [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
             if ( error == nil ) {
                 [MSSystem sharedInstance].version.push_sound = @"0";
-                 [button setImage:[UIImage imageNamed:@"button_push_message_off"] forState:UIControlStateNormal];
+                [self reviseRingButton:button];
                 [self showMessageInfo:@"消息声音已关闭" delay:1];
             }
             else {
@@ -542,7 +554,7 @@
         [[ClientAgent sharedInstance] setpushsound:1 block:^(NSError *error, id data, id userInfo, BOOL cache) {
             if ( error == nil ) {
                 [MSSystem sharedInstance].version.push_sound = @"1";
-                [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal];
+                [self reviseRingButton:button];
                 [self showMessageInfo:@"消息声音已开启" delay:1];
             }
             else {
