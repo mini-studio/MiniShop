@@ -230,14 +230,12 @@
         title = @"查看";
     }
     [self.button setTitle:title forState:UIControlStateNormal];
-    NSString *shopName = @"";
-    if ( self.itemInfo == nil )
+    NSString *shopName = item.shop_title;
+    if ( shopName==nil || shopName.length == 0)
     {
-        shopName = item.shop_title.length==0?item.shop_name:item.shop_title;
-    }
-    else
-    {
-        shopName = self.itemInfo.shop_title;
+        if ( self.itemInfo != nil ) {
+            shopName = self.itemInfo.shop_title;
+        }
     }
     item.shop_name = shopName;
     [self setToolbarContent:item];

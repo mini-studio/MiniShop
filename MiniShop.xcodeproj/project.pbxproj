@@ -44,6 +44,7 @@
 		C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA117C2E8580048DC2A /* close@2x.png */; };
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
 		C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */; };
+		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
 		C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47B16FF48F200ED87D8 /* Foundation.framework */; };
 		C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47D16FF48F200ED87D8 /* CoreGraphics.framework */; };
@@ -269,6 +270,7 @@
 		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
 		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
 		C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		C15918C817021DF800331097 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C169C47516FF48F200ED87D8 /* MiniShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1487,6 +1489,7 @@
 		C1EC50B4178074D600BE5ABB /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				C14341ED17D0F38E004E1AFC /* Icon-120.png */,
 				C1EC50B5178074D600BE5ABB /* Icon-72.png */,
 				C1EC50B6178074D600BE5ABB /* Icon.png */,
 				C1EC50B7178074D600BE5ABB /* Icon@2x.png */,
@@ -1867,6 +1870,7 @@
 				C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */,
 				C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */,
 				C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */,
+				C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
