@@ -16,4 +16,6 @@
 
 - (void)resetDelegate:(id<UIWebViewDelegate>)delegate;
 
+- (void)setViewBackgroundColor:(UIColor *)backgroundColor;
+
 @end

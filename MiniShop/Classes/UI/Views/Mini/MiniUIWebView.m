@@ -72,6 +72,7 @@
 
 - (void)setViewBackgroundColor:(UIColor *)backgroundColor
 {
+    self.backgroundColor = backgroundColor;
     for (UIView *aView in [self subviews])
     {
         if ([aView isKindOfClass:[UIScrollView class]])

@@ -2,44 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EBEF95BD-B27F-459A-8992-E2A745E2D05E</string>
+	<string>81863C16-9EE3-49B2-91C8-5F4FE19204C7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MiniShop</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>22DA81E3-5787-461A-B928-37AE586FAD4E</key>
-		<string>http://src.mini.org/svn/wolf/org/wolf/mystore/ios/trunk</string>
+		<key>09E29211-93CD-4F52-BB58-C4B812E59E2A</key>
+		<string>https://github.com/mini-studio/MiniShop.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MiniShop.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>22DA81E3-5787-461A-B928-37AE586FAD4E</key>
+		<key>09E29211-93CD-4F52-BB58-C4B812E59E2A</key>
 		<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>22DA81E3-5787-461A-B928-37AE586FAD4E</key>
-		<string>http://src.mini.org/svn/wolf</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://src.mini.org/svn/wolf/org/wolf/mystore/ios/trunk/MiniShop.xcodeproj</string>
+	<string>https://github.com/mini-studio/MiniShop.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>22DA81E3-5787-461A-B928-37AE586FAD4E</string>
+	<string>09E29211-93CD-4F52-BB58-C4B812E59E2A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
-			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
-			<string>org/wolf/mystore/ios/branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>org/wolf/mystore/ios/trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>22DA81E3-5787-461A-B928-37AE586FAD4E</string>
+			<string>09E29211-93CD-4F52-BB58-C4B812E59E2A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MiniShop</string>
 		</dict>

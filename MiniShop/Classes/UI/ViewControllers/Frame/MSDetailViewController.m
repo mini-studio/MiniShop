@@ -1,7 +1,7 @@
 //
 //  MSDetailViewController.m
 //  MiniShop
-//
+// http://www.youjiaxiaodian.com/api/showgoodsdescimage?screenY=960&screenW=640&imei=e512a8b652a4ceda3c70226b21b9745e&id=455325
 //  Created by Wuquancheng on 13-4-1.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
@@ -17,6 +17,9 @@
 #import "MSShopGalleryViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSString+Mini.h"
+#import "MSUIDTView.h"
+#import "MSWebChatUtil.h"
+#import "MiniSysUtil.h"
 
 #define CURR_GROUP 0
 #define NEXT_GROUP 1
@@ -30,12 +33,17 @@
 @property (nonatomic)bool loading;
 @property (nonatomic,strong) UIView *coverView;
 @property (nonatomic,strong) MiniUIButton *button;
-@property (nonatomic,strong) UIToolbar    *toolbar;
+@property (nonatomic,strong) UIView    *toolbar;
 @property (nonatomic,strong) NSMutableDictionary *dataCache;
 
 @property (nonatomic,strong) MiniUIActivityIndicatorView *indicator;
 
 @property (nonatomic,strong) NSDate *viewStartTime;
+
+@property (nonatomic,strong) MSUIDTView *toolView;
+
+@property (nonatomic,strong) UIView *naviView;
+
 @end
 
 @implementation MSDetailViewController
@@ -71,6 +79,53 @@
         [self setInitialPageIndex:self.defaultIndex];
     }
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"image_view_bg"]];
+    [self createNaviView];
+}
+
+- (void)createNaviView
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
+    button.width = 30;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_link"] highlightedImage:[UIImage imageNamed:@"navi_link_h"]];
+    button.width = 30;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(copylink:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-80, self.navigationController.navigationBar.height)];
+    titleView.backgroundColor = [UIColor clearColor];
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_share"] highlightedImage:[UIImage imageNamed:@"navi_share_h"]];
+    button.frame = CGRectMake(0, 0, 30, 30);
+    button.center = CGPointMake(titleView.width/3-10, titleView.height/2);
+    [titleView addSubview:button];
+    [button addTarget:self action:@selector(shareGood:) forControlEvents:UIControlEventTouchUpInside];
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_shop"] highlightedImage:[UIImage imageNamed:@"navi_shop_h"]];
+    button.frame = CGRectMake(0, 0, 30, 30);
+    button.center = CGPointMake(2*titleView.width/3+10, titleView.height/2);
+    [titleView addSubview:button];
+    [button addTarget:self action:@selector(gotoShop:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleView;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar addSubview:self.naviView];
+    self.naviView.left = 0;
+    self.naviView.alpha = 1;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
+    [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsLandscapePhone];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -98,7 +153,6 @@
 - (void)setNaviBackButton
 {
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
 }
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
@@ -111,36 +165,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
-}
 
 - (void)setNaviTitle
 {
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
-    if ( [@"kink" isEqualToString:self.from] || [@"push" isEqualToString:self.from] )
-    {
-        self.title = item.shop_title;
-    }
-    else
-    {
-        NSString *disImg = self.mtitle;
-        if ( disImg.length == 0 )
-            disImg = item.shop_title;
-        if ( disImg == nil )
-            disImg = @"";
-        if ([self numberOfPhotos] > 0)            
-            self.title = [NSString stringWithFormat:@"%@(%i/%i)", disImg,self.currentPageIndex+1,self.goods.body_info.count];
-        else
-        self.title = disImg;
-    }
 }
 
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -158,7 +185,6 @@
     
     return  tmpBarButtonItem;
 }
-
 
 
 - (BOOL)isLastGroupIndex:( NSInteger )index
@@ -212,8 +238,8 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     if ([[UINavigationBar class] respondsToSelector:@selector(appearance)])
     {
-        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsLandscapePhone];
+        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"tool_bar"] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"tool_bar"] forBarMetrics:UIBarMetricsLandscapePhone];
     }
 }
 
@@ -227,7 +253,7 @@
     }
     else
     {
-        title = @"查看";
+        title = @"去淘宝看看";
     }
     [self.button setTitle:title forState:UIControlStateNormal];
     NSString *shopName = item.shop_title;
@@ -344,27 +370,25 @@
 
 - (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation
 {
-    CGFloat height = 100;
-	return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
+//    CGFloat height = self.toolbar.height;
+//	return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
+    return self.toolView.frame;
 }
 
 
-- (UIToolbar *)createToolBar
+- (UIView *)createToolBar
 {
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-100, self.view.width, 100)];
+    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
     [toolbar removeAllSubviews];
     UIImage *image = [MiniUIImage imageNamed:@"tool_bar"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = toolbar.bounds;
-    [toolbar addSubview:imageView];
-    //toolbar.barStyle = UIBarStyleBlackTranslucent;
-    toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-    
-    NSString *title = [MSStoreNewsTypeGoodsPromotion isEqualToString:self.itemInfo.type]?@"抢购":@"查看";
+    [toolbar addSubview:imageView];    
+    NSString *title = [MSStoreNewsTypeGoodsPromotion isEqualToString:self.itemInfo.type]?@"抢购":@"去淘宝看看";
     
     MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:title];
     [button prefect];
-    button.frame = CGRectMake(toolbar.width - 80, (toolbar.height-30)/2, 70, 30);
+    button.frame = CGRectMake(toolbar.width - 100, (toolbar.height-30)/2, 90, 30);
     [toolbar addSubview:button];
     __PSELF__;
     [button setTouchupHandler:^(MiniUIButton *button) {
@@ -382,8 +406,16 @@
         label.font = index == 0 ? [UIFont boldSystemFontOfSize:16]:[UIFont systemFontOfSize:14];
         [toolbar addSubview:label];
     }
+    
+    CGFloat top = self.navigationController.navigationBar.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-top)];
+    view.bestTop = top;
+    view.top = self.view.height - toolbar.height;
     self.toolbar = toolbar;
-    return toolbar;
+    self.toolView = view;
+    view.webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, toolbar.height, self.view.width, view.height-toolbar.height)];
+    view.toolbar = toolbar;
+    return view;
 }
 
 - (void)setToolbarContent:( MSGoodItem *)item
@@ -399,6 +431,7 @@
     {
         ((UILabel *)[self.toolbar viewWithTag:10003]).text = @"";
     }
+    self.toolView.mid = item.mid;
 }
 
 //查看详情
@@ -454,6 +487,42 @@
 - (void)dismissWating:(BOOL)animated
 {
     [self.indicator hide];
+}
+
+
+- (void)shareGood:(MiniUIButton *)button
+{
+    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的店铺到" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareGoodItem:item scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareGoodItem:item scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+}
+- (NSString*)itemUri
+{
+    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
+    return uri;
+}
+
+- (void)copylink:(MiniUIButton *)button
+{
+    [[MiniSysUtil sharedInstance] copyToBoard:[self itemUri]];
+    [self showMessageInfo:@"商品链接地址已经复制啦" delay:2];
+}
+
+- (void)gotoShop:(MiniUIButton *)button
+{
+    MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
+    controller.shopInfo = self.itemInfo;
+    controller.autoLayout = NO;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
