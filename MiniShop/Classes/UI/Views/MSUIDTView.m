@@ -38,7 +38,9 @@
     CGPoint translation = [recognizer translationInView:self];
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
-            [self loadDetail];
+            if ( translation.y < 0 ) {
+                [self loadDetail];
+            }
         }
         case UIGestureRecognizerStateChanged: {
             CGFloat top = self.top;
