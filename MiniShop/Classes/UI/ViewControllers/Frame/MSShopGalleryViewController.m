@@ -13,10 +13,12 @@
 #import "UIColor+Mini.h"
 #import "MSGalleryGoodsCell.h"
 #import "MSDetailViewController.h"
+#import "MSWebChatUtil.h"
 
 @interface MSShopGalleryViewController ()<UITableViewDataSource,UITabBarDelegate>
 @property (nonatomic,strong) EGOUITableView *tableView;
 @property (nonatomic,strong) MSShopGalleryList *dataSource;
+@property (nonatomic,strong) MiniUIButton      *followButton;
 @property (nonatomic) int page;
 @end
 
@@ -57,19 +59,78 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNaviBackButton];
-    self.navigationItem.title = @"上新";
+    [self createNaviView];
     [self loadData:0];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)createNaviView
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
+    button.width = 30;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_message"] highlightedImage:[UIImage imageNamed:@"navi_message_h"]];
+    button.width = 30;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(actionGoToSocial) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-80, self.navigationController.navigationBar.height)];
+    titleView.backgroundColor = [UIColor clearColor];
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav"] highlightedImage:[UIImage imageNamed:@"navi_fav_h"]];
+    button.frame = CGRectMake(0, 0, 30, 30);
+    button.center = CGPointMake(titleView.width/3-10, titleView.height/2);
+    [titleView addSubview:button];
+    self.followButton = button;
+    
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_share"] highlightedImage:[UIImage imageNamed:@"navi_share_h"]];
+    button.frame = CGRectMake(0, 0, 30, 30);
+    button.center = CGPointMake(2*titleView.width/3+10, titleView.height/2);
+    [titleView addSubview:button];
+    [button addTarget:self action:@selector(actionShare) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleView;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.dataSource.body_info.count;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 24;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 24)];
+    view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"time_bg"]];
+    CGRect fr = view.bounds;
+    fr.origin.x = 24;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:fr];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor =  [UIColor colorWithRGBA:0x6c6c6cff];
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    [view addSubview:titleLabel];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"time_icon"]];
+    imageView.frame = CGRectMake(6, 4, 14, 14);
+    [view addSubview:imageView];
+    MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:section];
+    titleLabel.text = [NSString stringWithFormat:@"%@ 上新",info.item_info.publish_time];
+    return view;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:indexPath.row];
+    MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:indexPath.section];
     return [MSGalleryGoodsCell heightWithImageCount:info.goods_info.count];
 }
 
@@ -81,7 +142,7 @@
     {
         cell = [[MSGalleryGoodsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:indexPath.row];
+    MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:indexPath.section];
     info.item_info.shop_name = self.shopInfo.name;
     [cell setGalleyInfo:info];
     __PSELF__;
@@ -100,13 +161,15 @@
 
 - (void)updateUIAfterLoadData
 {
+    [self.followButton removeTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
+    [self.followButton removeTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
     if ( self.dataSource.user_is_like_shop )
     {
-        [self setNaviRightButtonTitle:@"取消关注" target:self action:@selector(unFollowShop)];
+        [self.followButton addTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
     }
     else
     {
-        [self setNaviRightButtonTitle:@"关注店铺" target:self action:@selector(followShop)];
+        [self.followButton addTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -241,6 +304,33 @@
     c.more = NO;
     c.goods = data;
     [self.navigationController pushViewController:c animated:YES];
+}
+
+- (void)actionGoToSocial
+{
+    
+}
+
+- (void)actionFav
+{
+    
+}
+
+- (void)actionShare
+{
+    MSShopInfo *info = [[MSShopInfo alloc] init];
+    info.shop_id = self.shopInfo.shop_id;
+    info.shop_title = self.shopInfo.name;
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的店铺到" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareShop:info scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareShop:info scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
 
 @end

@@ -47,7 +47,7 @@
 - (void)setGalleyInfo:(MSShopGalleryInfo *)galleyInfo
 {
     _galleyInfo = galleyInfo;
-    self.galleryView.title = [NSString stringWithFormat:@"%@ 上新",galleyInfo.item_info.publish_time];
+    //self.galleryView.title = [NSString stringWithFormat:@"%@ 上新",galleyInfo.item_info.publish_time];
     [self.galleryView setData:galleyInfo.goods_info addr:^NSString *(int index) {
         MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
         return good.small_image_url;
@@ -67,6 +67,6 @@
 
 + (CGFloat)heightWithImageCount:(NSInteger)count
 {
-    return [MSGalleryView heightWithImageCount:count hasTitle:YES];
+    return [MSGalleryView heightWithImageCount:count hasTitle:NO];
 }
 @end

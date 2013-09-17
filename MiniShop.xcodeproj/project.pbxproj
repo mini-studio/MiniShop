@@ -45,6 +45,10 @@
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
 		C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */; };
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
+		C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */; };
+		C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */; };
+		C14E67B017E7D1E0000BA377 /* navi_message_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */; };
+		C14E67B117E7D1E0000BA377 /* navi_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
 		C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47B16FF48F200ED87D8 /* Foundation.framework */; };
 		C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47D16FF48F200ED87D8 /* CoreGraphics.framework */; };
@@ -280,6 +284,10 @@
 		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
 		C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav_h@2x.png"; sourceTree = "<group>"; };
+		C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav@2x.png"; sourceTree = "<group>"; };
+		C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_message_h@2x.png"; sourceTree = "<group>"; };
+		C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_message@2x.png"; sourceTree = "<group>"; };
 		C15918C817021DF800331097 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C169C47516FF48F200ED87D8 /* MiniShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1625,6 +1633,10 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */,
+				C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */,
+				C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */,
+				C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */,
 				C1FEB1CA17E4A8690076BEEA /* navi_back_h@2x.png */,
 				C1FEB1CB17E4A8690076BEEA /* navi_back@2x.png */,
 				C1FEB1BE17E49F890076BEEA /* navi_link_h@2x.png */,
@@ -1805,6 +1817,7 @@
 				C1EC5116178074D600BE5ABB /* guide_b3_txt@2x.png in Resources */,
 				C1EC5117178074D600BE5ABB /* guide_b4@2x.png in Resources */,
 				C1EC5118178074D600BE5ABB /* guide_b4_txt@2x.png in Resources */,
+				C14E67B017E7D1E0000BA377 /* navi_message_h@2x.png in Resources */,
 				C1EC5119178074D600BE5ABB /* guide_b5@2x.png in Resources */,
 				C1EC511A178074D600BE5ABB /* guide_b5_txt@2x.png in Resources */,
 				C1EC511B178074D600BE5ABB /* guide_bg-568h@2x.png in Resources */,
@@ -1856,12 +1869,14 @@
 				C1EC5146178074D600BE5ABB /* join_us@2x.png in Resources */,
 				C1EC5147178074D600BE5ABB /* navi_background@2x.png in Resources */,
 				C1EC5148178074D600BE5ABB /* navi_bar_back@2x.png in Resources */,
+				C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */,
 				C1EC5149178074D600BE5ABB /* navi_bar_share@2x.png in Resources */,
 				C1EC514A178074D600BE5ABB /* import_taobao@2x.png in Resources */,
 				C1EC514B178074D600BE5ABB /* news_cell_bg@2x.png in Resources */,
 				C1EC514C178074D600BE5ABB /* news_message_icon@2x.png in Resources */,
 				C1EC514D178074D600BE5ABB /* news_online_cell_bg@2x.png in Resources */,
 				C1EC514E178074D600BE5ABB /* news_online_icon@2x.png in Resources */,
+				C14E67B117E7D1E0000BA377 /* navi_message@2x.png in Resources */,
 				C1EC514F178074D600BE5ABB /* news_online_tag@2x.png in Resources */,
 				C1EC5150178074D600BE5ABB /* news_separator@2x.png in Resources */,
 				C1EC5151178074D600BE5ABB /* button_h_normal@2x.png in Resources */,
@@ -1873,6 +1888,7 @@
 				C1EC5157178074D600BE5ABB /* Icon.jpg in Resources */,
 				C1EC5158178074D600BE5ABB /* icon_accessory@2x.png in Resources */,
 				C1EC5159178074D600BE5ABB /* image_bg@2x.png in Resources */,
+				C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */,
 				C1EC515A178074D600BE5ABB /* image_view_bg@2x.png in Resources */,
 				C1EC515B178074D600BE5ABB /* segment_bg@2x.png in Resources */,
 				C1EC515C178074D600BE5ABB /* segment_btn_normal@2x.png in Resources */,
@@ -2010,6 +2026,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2038,6 +2055,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
+				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -2052,7 +2070,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2075,7 +2093,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

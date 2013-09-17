@@ -54,6 +54,9 @@
     {
         [self addSubview:self.headerView];
     }
+    else {
+        [self.headerView removeFromSuperview];
+    }
 }
 
 - (void)setTitle:(NSString *)title
