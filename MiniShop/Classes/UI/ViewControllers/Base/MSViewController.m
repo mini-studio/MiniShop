@@ -106,12 +106,10 @@
 
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
-    UIImage* bgImage = [UIImage imageNamed:@"navi_bar_back"];
-    
-    MiniUIButton *button = [MiniUIButton buttonWithImage:bgImage highlightedImage:bgImage];
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
     button.width += 4;
     button.imageEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
-    button.showsTouchWhenHighlighted = YES;
+    //button.showsTouchWhenHighlighted = YES;
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem* tmpBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];

@@ -388,7 +388,7 @@
     
     MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:title];
     [button prefect];
-    button.frame = CGRectMake(toolbar.width - 100, (toolbar.height-30)/2, 90, 30);
+    button.frame = CGRectMake(toolbar.width - 100, 12, 90, 30);
     [toolbar addSubview:button];
     __PSELF__;
     [button setTouchupHandler:^(MiniUIButton *button) {
