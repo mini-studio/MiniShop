@@ -15,6 +15,8 @@
 #import "MSShopNewsViewController.h"
 #import "MSSystem.h"
 #import "MSGoodsList.h"
+#import "MRLoginViewController.h"
+#import "MSMiniUINavigationController.h"
 
 //NSString* const appIDForWeiXin = @"wx5267b1263ded2fbd";
 //NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
@@ -28,7 +30,8 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
-    if ( [MSSystem isFirstRun] )
+    self.isFirstRun = [MSSystem isFirstRun];
+    if (  self.isFirstRun )
     {
         [UIApplication sharedApplication].statusBarHidden = YES;
         self.viewController = [[MSGuideViewController alloc] init];
@@ -38,13 +41,12 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     {
         [self loadMainController];
     }
-    [self umengTrack];
+
     [[UIApplication sharedApplication]  registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     [self.window makeKeyAndVisible];
-    
+        [self umengTrack];
     [self handleRemoteNotification:[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] application:application];
     
-    [[MSSystem sharedInstance] initSystem];
     
     [self clearBadge:application];
     
@@ -54,9 +56,23 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 
 - (void)loadMainController
 {
+    [self loadMainController:NO];
+}
+
+- (void)loadMainController:(BOOL)mustLogin
+{
     [UIApplication sharedApplication].statusBarHidden = NO;
-    self.viewController = [[MSMainTabViewController alloc] init];
-    self.window.rootViewController = self.viewController;
+    if ( (WHO == nil && (mustLogin || MAIN_VERSION >= 7)) || self.isFirstRun ) {
+        MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+        MSMiniUINavigationController *navi = [[MSMiniUINavigationController alloc] initWithRootViewController:controller];
+        self.viewController = navi;
+        self.window.rootViewController = navi;
+    }
+    else {
+        self.viewController = [[MSMainTabViewController alloc] init];
+        self.window.rootViewController = self.viewController;
+    }
+
 }
 
 

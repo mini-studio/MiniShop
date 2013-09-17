@@ -31,6 +31,15 @@ typedef void(^MINIButtonTouchupHanlder)(MiniUIButton *button);
         handler(button);
     }
 }
+
+- (void)setBottomLine:(UIColor*)color
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 1)];
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    view.backgroundColor = color;
+    view.top = self.height-1;
+    [self addSubview:view];
+}
 @end
 
 @implementation UIButton (prefect)

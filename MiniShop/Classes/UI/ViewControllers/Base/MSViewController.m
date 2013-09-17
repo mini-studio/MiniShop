@@ -47,7 +47,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if ( MAIN_VERSION >= 7 ) {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     //[self setViewBackgroundColor];
 	// Do any additional setup after loading the view.
 }
@@ -292,6 +295,16 @@
 - (BOOL)isLoading
 {
     return [self.indicator showing];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
 }
 
 @end

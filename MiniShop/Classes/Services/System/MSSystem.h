@@ -18,6 +18,7 @@
 @property (nonatomic) int   authForImportFav;
 @property (nonatomic,strong) MSVersion *version;
 @property (nonatomic,strong) NSString *deviceToken;
+@property (nonatomic,readonly)int mainVersion;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 
@@ -39,6 +40,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 + (void)clearFirstRun;
 
 + (void)clearCache;
+
++ (void)logout;
 
 
 @end

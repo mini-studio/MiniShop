@@ -40,6 +40,12 @@
 		C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72617765C3C009E6482 /* UMFeedbackTableViewCellRight.m */; };
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
+		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
+		C12C2CA617E8F07B0097CFBD /* navi_background_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */; };
+		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
+		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
+		C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */; };
+		C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */; };
 		C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA017C2E8580048DC2A /* close_h@2x.png */; };
 		C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA117C2E8580048DC2A /* close@2x.png */; };
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
@@ -278,6 +284,17 @@
 		C10BE72717765C3C009E6482 /* UMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedbackViewController.h; sourceTree = "<group>"; };
 		C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
+		C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
+		C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Mini.m"; sourceTree = "<group>"; };
+		C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_background_7@2x.png"; sourceTree = "<group>"; };
+		C12C2CA717E8F5930097CFBD /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRLoginViewController.h; sourceTree = "<group>"; };
+		C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRLoginViewController.m; sourceTree = "<group>"; };
+		C12C2CAD17E8F8DC0097CFBD /* MiniUIASTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIASTextField.h; sourceTree = "<group>"; };
+		C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIASTextField.m; sourceTree = "<group>"; };
+		C12C2CB017E8FABE0097CFBD /* UITextField+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Mini.h"; sourceTree = "<group>"; };
+		C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Mini.m"; sourceTree = "<group>"; };
+		C12C2CB317E913C60097CFBD /* MRResetPasswdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRResetPasswdViewController.h; sourceTree = "<group>"; };
+		C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRResetPasswdViewController.m; sourceTree = "<group>"; };
 		C12DCAA017C2E8580048DC2A /* close_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_h@2x.png"; sourceTree = "<group>"; };
 		C12DCAA117C2E8580048DC2A /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
@@ -1321,6 +1338,10 @@
 		C1EC5006178074A100BE5ABB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C12C2CB017E8FABE0097CFBD /* UITextField+Mini.h */,
+				C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */,
+				C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */,
+				C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */,
 				C1EC5007178074A100BE5ABB /* MiniUIButton+Mini.h */,
 				C1EC5008178074A100BE5ABB /* MiniUIButton+Mini.m */,
 				C1EC5009178074A100BE5ABB /* NSDate+Format.h */,
@@ -1429,6 +1450,10 @@
 				C1EC5042178074A100BE5ABB /* MSJoinViewController.m */,
 				C1EC5043178074A100BE5ABB /* MSSettingsViewController.h */,
 				C1EC5044178074A100BE5ABB /* MSSettingsViewController.m */,
+				C12C2CA717E8F5930097CFBD /* MRLoginViewController.h */,
+				C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */,
+				C12C2CB317E913C60097CFBD /* MRResetPasswdViewController.h */,
+				C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1475,6 +1500,8 @@
 		C1EC504D178074A100BE5ABB /* Mini */ = {
 			isa = PBXGroup;
 			children = (
+				C12C2CAD17E8F8DC0097CFBD /* MiniUIASTextField.h */,
+				C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */,
 				C1EC504E178074A100BE5ABB /* MiniUIIndicator.h */,
 				C1EC504F178074A100BE5ABB /* MiniUIIndicator.m */,
 				C1EC5050178074A100BE5ABB /* MiniUIWebView.h */,
@@ -1609,6 +1636,7 @@
 		C1EC50E2178074D600BE5ABB /* navi */ = {
 			isa = PBXGroup;
 			children = (
+				C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */,
 				C1EC50E3178074D600BE5ABB /* navi_background@2x.png */,
 				C1EC50E4178074D600BE5ABB /* navi_bar_back@2x.png */,
 				C1EC50E5178074D600BE5ABB /* navi_bar_share@2x.png */,
@@ -1893,6 +1921,7 @@
 				C1EC515B178074D600BE5ABB /* segment_bg@2x.png in Resources */,
 				C1EC515C178074D600BE5ABB /* segment_btn_normal@2x.png in Resources */,
 				C1EC515D178074D600BE5ABB /* time_bg@2x.png in Resources */,
+				C12C2CA617E8F07B0097CFBD /* navi_background_7@2x.png in Resources */,
 				C1EC515E178074D600BE5ABB /* time_icon.png in Resources */,
 				C1EC515F178074D600BE5ABB /* transparent@2x.png in Resources */,
 				C1EC5160178074D600BE5ABB /* view_bg@2x.png in Resources */,
@@ -1943,6 +1972,7 @@
 				C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */,
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C1EC5065178074A100BE5ABB /* MiniObject.m in Sources */,
+				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
 				C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */,
@@ -1950,6 +1980,7 @@
 				C1EC506A178074A100BE5ABB /* MSNotify.m in Sources */,
 				C1EC506B178074A100BE5ABB /* MSNotiItemInfo.m in Sources */,
 				C1EC506C178074A100BE5ABB /* MSPotentialInfo.m in Sources */,
+				C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */,
 				C1EC506D178074A100BE5ABB /* MSRecmdList.m in Sources */,
 				C1EC506E178074A100BE5ABB /* MSSearchKeyInfo.m in Sources */,
 				C1EC506F178074A100BE5ABB /* MSShopInfo.m in Sources */,
@@ -1983,7 +2014,9 @@
 				C1EC508A178074A100BE5ABB /* MSPotentialViewController.m in Sources */,
 				C1EC508B178074A100BE5ABB /* MSProlfileViewController.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
+				C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */,
 				C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */,
+				C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */,
 				C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */,
 				C1EC5090178074A100BE5ABB /* MSSettingsViewController.m in Sources */,
 				C1EC5091178074A100BE5ABB /* MSNofiViewController.m in Sources */,
@@ -1999,6 +2032,7 @@
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSUISearchBar.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,
+				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,
 				C1EC51751780751A00BE5ABB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

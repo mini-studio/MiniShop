@@ -7,6 +7,7 @@
 //
 
 #import "UITableViewCell+GroupBackGround.h"
+#import "MSSystem.h"
 
 @interface MiniUITableGroupCellBackgroudView()
 @property (nonatomic,strong)UIColor *innerBackgroundColor;
@@ -140,6 +141,9 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
 @implementation UITableViewCell (GroupBackGround)
 - (void)setCellTheme:(UITableView*)tableView indexPath:(NSIndexPath *)indexPath backgroundCorlor:(UIColor *)backgroundCorlor highlightedBackgroundCorlor:(UIColor *)highlightedBackgroundCorlor  sectionRowNumbers:(NSInteger)numberOfRow
 {
+    if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
+        return;
+    }
     TableViewCellLocation loc = (numberOfRow==1)?ESingleCell:
     (indexPath.row==0)?EFirstCell:(indexPath.row == (numberOfRow-1))?ELastCell:EMiddleCell;
     

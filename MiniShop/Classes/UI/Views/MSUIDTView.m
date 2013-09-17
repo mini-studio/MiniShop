@@ -19,8 +19,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handelPan:)];
-        [self addGestureRecognizer:self.recognizer];
+        //self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handelPan:)];
+        //[self addGestureRecognizer:self.recognizer];
         self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
     }

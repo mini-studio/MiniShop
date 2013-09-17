@@ -18,9 +18,13 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic)BOOL isFirstRun;
+
 @property (strong, nonatomic) UIViewController *viewController;
 
 - (void)loadMainController;
+
+- (void)loadMainController:(BOOL)mustLogin;
 
 - (UINavigationController *)currentNaviController;
 

@@ -11,5 +11,6 @@
 @interface MSObject : MiniObject
 @property (nonatomic) NSInteger _errno;
 @property (nonatomic,strong) NSString *error;
+@property (nonatomic,strong) NSString *show_msg;
 @property (nonatomic) NSInteger next_page;
 @end

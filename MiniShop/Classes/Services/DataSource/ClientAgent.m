@@ -244,11 +244,15 @@
             if ( clazz != nil && [clazz isSubclassOfClass:[MiniObject class]] )
             {
                 id v = [self parseJsonValue:data clazz:clazz];
-                if ( v != nil && [[v valueForKey:@"errno"] intValue] != 0 )
+                if ( v != nil )
                 {
-                    NSString *errmg = [v valueForKey:@"error"];
-                    if ( errmg == nil ) errmg = @"服务器吃饭去了";
-                    error = [NSError errorWithDomain:@"MSError" code:-200 userInfo:@{NSLocalizedDescriptionKey:errmg}];
+                    id erno = [data valueForKey:@"errno"];
+                    NSString *errmg = [data valueForKey:@"error"];
+                    if ( (erno != nil && [erno intValue] !=0) || errmg.length>0) {
+                        if ( errmg == nil ) errmg = @"服务器吃饭去了";
+                        error = [NSError errorWithDomain:@"MSError" code:-200 userInfo:@{NSLocalizedDescriptionKey:errmg}];
+                    }
+                   
                 }
                 block(error,v,NO);
             }
@@ -328,6 +332,7 @@
         AFHTTPClient *client = [AFHTTPClient clientWithURL:url];
         client.timeoutInterval = 30;
         [client setDefaultHeader:@"platform" value:@"iphone"];
+        [client setDefaultHeader:[NSString stringWithFormat:@"%d",MAIN_VERSION] value:@"mainversion"];
         [client setDefaultHeader:@"version" value:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
         if ( [@"POST" isEqualToString:method] )
         {

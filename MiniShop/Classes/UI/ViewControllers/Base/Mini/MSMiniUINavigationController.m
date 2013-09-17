@@ -8,6 +8,7 @@
 
 #import "MSMiniUINavigationController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MSSystem.h"
 
 @interface MSMiniUINavigationController ()
 {
@@ -32,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
+    [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 	// Do any additional setup after loading the view.
 }
 

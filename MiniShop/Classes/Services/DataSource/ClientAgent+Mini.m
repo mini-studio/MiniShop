@@ -22,6 +22,7 @@
 #import "MSRecmdList.h"
 #import "MSCooperateInfo.h"
 #import "MSPotentialInfo.h"
+#import "UIDevice+Ext.h"
 
 #define TB_HTTP_REQ_PATH_NEWNOTIFY                      @"api/notify"
 #define TB_HTTP_REQ_PATH_LOOK                           @"api/look"
@@ -57,7 +58,13 @@
 -(NSMutableDictionary*)perfectParameters:(NSDictionary*)param
 {
     NSMutableDictionary * p = param==nil?[NSMutableDictionary dictionary]:[NSMutableDictionary dictionaryWithDictionary:param];
-    [p setObject:UDID forKey:@"imei"];
+    if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
+      [p setObject:@"" forKey:@"imei"];
+    }
+    else {
+       [p setObject:UDID forKey:@"imei"];
+    }
+    
     [p setObject:@"" forKey:@"usernick"];
     [p setObject:@"json" forKey:@"tn"];
     NSString *w = [NSString stringWithFormat:@"%d",(int)(SCREEN_SIZE.width*SCREEN_SCALE)];
@@ -65,12 +72,70 @@
     [p setValue:w forKey:@"screenW"];
     [p setValue:h forKey:@"screenY"];
     [p setValue:h forKey:@"screenH"];
+    if ( WHO !=nil && WHO.uniqid.length>0) {
+         [p setValue:WHO.uniqid forKey:@"uniqid"];
+    }
     return p;
 }
 
-- (NSString *)requestUri:(NSString *)path
+- (NSString*)requestUri:(NSString *)path
 {
     return [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
+}
+
+- (NSString *)requestUri:(NSString *)path param:(NSDictionary*)param
+{
+    NSString* uri = [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
+    if ( param != nil ) {
+        NSMutableDictionary *params = [self perfectParameters:param];
+        NSMutableString *pm = [NSMutableString string];
+        for ( NSString *rkey in params.allKeys )
+        {
+            [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
+        }
+        if ( pm.length > 0 )
+        {
+            [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
+        }
+        uri = [NSString stringWithFormat:@"%@?%@",uri,pm];
+    }
+    return uri;
+}
+
+- (void)registe:(NSString*)uname passwd:(NSString*)passwd mobile:(NSString*)mobile block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    if (mobile==nil) {
+        mobile = @"";
+    }
+    NSString *addr = [self requestUri:@"reg" param:@{}];
+    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd,@"mobile":mobile}];
+    [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
+        if ( error == nil ) {
+            WHO = user;
+        }
+        block(error,user,nil,NO);
+    }];
+}
+
+- (void)login:(NSString*)uname passwd:(NSString*)passwd  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri:@"login" param:@{}];
+    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd}];
+    [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
+        if ( error == nil ) {
+           WHO = user;
+        }
+        block(error,user,nil,NO);
+    }];
+}
+
+- (void)resetpasswd:(NSString*)uname mobile:(NSString*)mobile  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri:@"resetpasswd"];
+    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"mobile":mobile}];
+    [self getDataFromServer:addr params:dic cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+        block(error,data,nil,cache);
+    }];
 }
 
 - (void)feedback:(NSString *)content block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
@@ -181,12 +246,14 @@
 
 - (void)uploadToken:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
+    if ( [MSSystem sharedInstance].deviceToken != nil ) {
     NSDictionary *params = @{@"token":[MSSystem sharedInstance].deviceToken};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"iostoken"];
     [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
+    }
 }
 
 - (void)image:(NSString *)type  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block

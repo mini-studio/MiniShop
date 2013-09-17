@@ -20,6 +20,8 @@
 #import "MSPotentialViewController.h"
 #import "MSShopGroupListViewController.h"
 #import "MSShopListViewController.h"
+#import "MRLoginViewController.h"
+#import "MSTopicViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/message.h>
 
@@ -44,16 +46,25 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.dictionary = @{@"0":@[
-                                    @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
-                                    ],
-                            @"1":@[
-                                    @{@"action":@"actionForMyFollow",@"text":@"正在关注的店铺",@"icon":@"icon_following"},
-                                    @{@"action":@"actionForImportFav",@"text":@"导入淘宝收藏夹",@"icon":@"icon_import_taobao"},
-                                    ]
-                            };
+        [self resetDataSource];
     }
     return self;
+}
+
+- (void)resetDataSource
+{
+    self.dictionary = @{@"0":@[
+                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"登录":@"注销",@"icon":@"icon_kink"}
+                                ],
+                        @"1":@[
+                                @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
+                                ],
+                        @"2":@[
+                                @{@"action":@"actionForMyFollow",@"text":@"正在关注的店铺",@"icon":@"icon_following"},
+                                @{@"action":@"actionForImportFav",@"text":@"导入淘宝收藏夹",@"icon":@"icon_import_taobao"},
+                                ]
+                        };
+
 }
 
 - (void)viewDidLoad
@@ -272,6 +283,30 @@
 {
     [MobClick event:MOB_ENTER_TAOBAO_LOGISTICS];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"logistics"]];
+}
+
+- (void)actionForLogin
+{
+    MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)actionForLogout
+{
+    [MSSystem logout];
+    [self resetDataSource];
+    [self.tableView reloadData];
+    [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下, 您可以" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 0 ) {
+            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        else if ( buttonIndex == 1 ) {
+            MSTopicViewController *controller = [[MSTopicViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+
+        }
+    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
 }
 
 

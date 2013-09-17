@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MSUser : NSObject
-@property (nonatomic) int auth;
+@interface MSUser : MSObject
+@property (nonatomic,strong)NSString *uniqid;
 @end

@@ -14,6 +14,9 @@
 #import "MiniURLCache.h"
 #import "MiniFileUtil.h"
 #import "SDImageCache.h"
+#import "NSUserDefaults+Mini.h"
+#import "UIDevice+Ext.h"
+
 
 @interface MSSystem()
 @property (nonatomic, strong) NSDate *lastCheckUpdate;
@@ -28,11 +31,33 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 {
     if ( self = [super init] )
     {
-        self.user = [[MSUser alloc] init];
         self.version = [[MSVersion alloc] init];
         self.lastCheckUpdate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastCheckUpdate"];
+        _mainVersion = [UIDevice iosMainVersion];
+        [self initSystem];
     }
     return self;
+}
+
+- (void)setUser:(MSUser *)user
+{
+    _user = user;
+    if ( _user != nil ) {
+       NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+       [def setMiniObject:user forkey:@"MS_SYS_USER"];
+        [[ClientAgent sharedInstance] uploadToken:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            LOG_DEBUG(@"%@",data);
+        }];
+    }
+    else {
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def removeObjectForKey:@"MS_SYS_USER"];
+    }
+}
+- (MSUser*)loadUser
+{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    return  (MSUser*)[def miniObjectValueForKey:@"MS_SYS_USER"];
 }
 
 - (void)setAuthForImportFav:(int)authForImportFav
@@ -128,6 +153,19 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     [NSURLProtocol registerClass:[MiniNSURLProtocol class]];
     MiniURLCache *cache = [MiniURLCache sharedCache];
     [NSURLCache setSharedURLCache:cache];
+    
+    MSUser *user = [self loadUser];
+    if ( user != nil ) {
+        _user = user;
+        double delayInSeconds = 20.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [[ClientAgent sharedInstance] uploadToken:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
+                LOG_DEBUG(@"%@",data);
+            }];
+        });
+        
+    }
 }
 
 + (NSString *)bundleversion
@@ -248,6 +286,12 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 {
     [ClientAgent clearCache];
     [[SDImageCache sharedImageCache] clearDisk];
+}
+
++ (void)logout
+{
+    WHO = nil;
+    [ClientAgent clearCache];
 }
 
 @end

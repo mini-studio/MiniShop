@@ -16,7 +16,7 @@
     if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] )
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.8f] ;
+        self.backgroundColor = [UIColor clearColor] ;
         self.backgroundView = nil;
         UIImage *image = [UIImage imageNamed:@"news_online_cell_bg"];
         [self setCellTheme:nil indexPath:nil background:image highlightedBackground:image sectionRowNumbers:0];

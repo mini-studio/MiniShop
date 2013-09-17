@@ -568,6 +568,23 @@
 {
     MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
+//    [[ClientAgent sharedInstance] registe:@"wolfxy_a" passwd:@"wolfxy789456123" mobile:@"18611576628" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+//        if ( error != nil ) {
+//            [self showErrorMessage:error];
+//        }
+//        else {
+//            LOG_DEBUG( @"%@",[data description] );
+//        }
+//    }];
+    
+//    [[ClientAgent sharedInstance] login:@"wolfxy_a" passwd:@"wolfxy789456123" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+//        if ( error != nil ) {
+//            [self showErrorMessage:error];
+//        }
+//        else {
+//            LOG_DEBUG( @"%@",[data description] );
+//        }
+//    }];
 }
 
 

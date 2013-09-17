@@ -25,9 +25,14 @@
     #import "MSObject.h"
     #import "MobClick.h"
     #import "UITableViewCell+GroupBackGround.h"
+#import "MSSystem.h"
 
    #define WINDOW ((AppDelegate*)[UIApplication sharedApplication].delegate).window
 
 #define __PSELF__ __weak typeof (self) pSelf = self
+
+#define WHO [MSSystem sharedInstance].user
+
+#define MAIN_VERSION [MSSystem sharedInstance].mainVersion
 
 #endif

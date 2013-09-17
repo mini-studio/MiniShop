@@ -22,6 +22,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        self.backgroundColor = [UIColor clearColor];
+        self.backgroundView = nil;
         self.textLabel.font = [UIFont systemFontOfSize:18];
         self.textLabel.numberOfLines = 1;
         self.textLabel.backgroundColor = [UIColor clearColor];

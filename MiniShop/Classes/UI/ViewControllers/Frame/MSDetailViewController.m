@@ -124,8 +124,6 @@
 {
     [super viewWillDisappear:animated];
     [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
-    [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"navi_background"] forBarMetrics:UIBarMetricsLandscapePhone];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -493,7 +491,7 @@
 - (void)shareGood:(MiniUIButton *)button
 {
     MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的店铺到" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex == 1 )
         {
             [MSWebChatUtil shareGoodItem:item scene:WXSceneTimeline];

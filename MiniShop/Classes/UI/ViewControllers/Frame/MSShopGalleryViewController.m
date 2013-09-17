@@ -59,7 +59,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createNaviView];
+   // [self createNaviView];
+    [self setNaviBackButton];
+    self.navigationItem.title = @"上新";
     [self loadData:0];
 }
 
@@ -161,17 +163,29 @@
 
 - (void)updateUIAfterLoadData
 {
-    [self.followButton removeTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
-    [self.followButton removeTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
     if ( self.dataSource.user_is_like_shop )
     {
-        [self.followButton addTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
+        [self setNaviRightButtonTitle:@"取消关注" target:self action:@selector(unFollowShop)];
     }
     else
     {
-        [self.followButton addTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
+        [self setNaviRightButtonTitle:@"关注店铺" target:self action:@selector(followShop)];
     }
 }
+
+//- (void)updateUIAfterLoadData
+//{
+//    [self.followButton removeTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
+//    [self.followButton removeTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
+//    if ( self.dataSource.user_is_like_shop )
+//    {
+//        [self.followButton addTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    else
+//    {
+//        [self.followButton addTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//}
 
 - (void)followShop
 {

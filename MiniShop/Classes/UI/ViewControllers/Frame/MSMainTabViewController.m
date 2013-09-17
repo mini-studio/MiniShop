@@ -14,6 +14,7 @@
 #import "MSMiniUINavigationController.h"
 #import "UIColor+Mini.h"
 #import "MSDefine.h"
+#import "MSSystem.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -112,7 +113,9 @@
 
 - (UIImage *)navigationBarBackGroundForIndex:(NSInteger)index
 {
-    return [MiniUIImage imageNamed:@"navi_background"];
+    UIImage *image = [MiniUIImage imageNamed:([MSSystem sharedInstance].mainVersion >= 7?@"navi_background_7":@"navi_background")];
+    //image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.height/2, 0, image.size.height/2, 0)];
+    return image;
 }
 
 - (Class)naviControllerClass
