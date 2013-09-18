@@ -53,8 +53,13 @@
     }
     else
     {
+        if ( MAIN_VERSION >= 7 ) {
+            _webView = [[MiniUIWebView alloc] initWithFrame:self.view.bounds];
+        }
+        else {
         CGFloat offsetY = self.navigationController.navigationBar.height;
        _webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, offsetY, self.view.width, self.view.height-offsetY)];
+        }
     }
     _webView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
                                 UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
