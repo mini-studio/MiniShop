@@ -50,7 +50,7 @@
         label.shadowColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
         label.shadowOffset = CGSizeMake(0.0f, 1.0f);
         label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
+        label.textAlignment = UITextAlignmentCenter;
         [self addSubview:label];
         _lastUpdatedLabel = label;
 
@@ -61,7 +61,7 @@
         label.shadowColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
         label.shadowOffset = CGSizeMake(0.0f, 1.0f);
         label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
+        label.textAlignment = UITextAlignmentCenter;
         [self addSubview:label];
         _statusLabel = label;
 

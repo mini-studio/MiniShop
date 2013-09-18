@@ -53,7 +53,7 @@
 - (void)resetDataSource
 {
     self.dictionary = @{@"0":@[
-                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"登录":@"注销",@"icon":@"icon_kink"}
+                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"登录":@"注销",@"icon":@"navi_link"}
                                 ],
                         @"1":@[
                                 @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
