@@ -319,7 +319,7 @@
 {
     if ( WHO == nil ) {
         __PSELF__;
-        [MiniUIAlertView showAlertWithTitle:@"亲，友好滴提示一下，为了更好的为您服务，您先登录一下吧" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下" message:@"亲，为了更好的为您服务，您先登录一下吧" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if ( buttonIndex != alertView.cancelButtonIndex ) {
                 MRLoginViewController *controller = [[MRLoginViewController alloc] init];
                 controller.loginblock = ^(BOOL login) {

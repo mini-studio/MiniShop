@@ -493,6 +493,9 @@
 - (void)shareGood:(MiniUIButton *)button
 {
     MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    if ( item == nil || item.mid == 0 ) {
+        return;
+    }
     [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex == 1 )
         {
@@ -504,16 +507,19 @@
         }
     } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
-- (NSString*)itemUri
+- (NSString*)itemUri:(MSGoodItem *)item
 {
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
     return uri;
 }
 
 - (void)copylink:(MiniUIButton *)button
 {
-    [[MiniSysUtil sharedInstance] copyToBoard:[self itemUri]];
+    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    if ( item == nil || item.mid == 0 ) {
+        return;
+    }
+    [[MiniSysUtil sharedInstance] copyToBoard:[self itemUri:item]];
     [self showMessageInfo:@"商品链接地址已经复制啦" delay:2];
 }
 

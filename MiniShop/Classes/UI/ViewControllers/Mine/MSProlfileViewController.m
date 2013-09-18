@@ -53,7 +53,7 @@
 - (void)resetDataSource
 {
     self.dictionary = @{@"0":@[
-                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"登录":@"注销",@"icon":@"navi_link"}
+                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录":@"注销"}
                                 ],
                         @"1":@[
                                 @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
@@ -66,17 +66,11 @@
 
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
-	self.navigationItem.title = @"我的";    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.separatorColor = [UIColor lightGrayColor];
-    self.tableView.backgroundColor = self.view.backgroundColor;
-    self.tableView.backgroundView = nil;
-    [self.view addSubview:self.tableView];
+    [super loadView];
+    
+    self.tableView  = [self createGroupedTableView];
     
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
     header.backgroundColor = self.view.backgroundColor;
@@ -95,9 +89,9 @@
     label.frame = CGRectMake(0, 10, footer.width, 30);
     [footer addSubview:label];
     NSArray *buttonsInfo = @[
-                            @{@"image":@"my_goods",@"action":@"actionForGoToPurchase"},
-                            @{@"image":@"my_cart",@"action":@"actionForGoToBag"},
-                            @{@"image":@"logistics",@"action":@"actionForGoToLogistics"}
+                             @{@"image":@"my_goods",@"action":@"actionForGoToPurchase"},
+                             @{@"image":@"my_cart",@"action":@"actionForGoToBag"},
+                             @{@"image":@"logistics",@"action":@"actionForGoToLogistics"}
                              ];
     CGFloat buttonW = (footer.width - 60)/3;
     CGFloat buttonH = buttonW*0.69;
@@ -112,6 +106,14 @@
         [footer addSubview:button];
     }
     self.tableView.tableFooterView = footer;
+     [self.view addSubview:self.tableView];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	self.navigationItem.title = @"我的";    
+   
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -159,15 +161,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if ( cell == nil )
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
         cell.textLabel.highlightedTextColor = cell.textLabel.textColor = [UIColor colorWithRGBA:0x555555ff];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
         cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_accessory"]];
+        cell.detailTextLabel.font = cell.textLabel.font;
+        cell.detailTextLabel.textColor = cell.textLabel.textColor;
     }
     NSArray *dataSource = [self.dictionary valueForKey:[NSString stringWithFormat:@"%d",indexPath.section]];
     [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor whiteColor] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xebebebff] sectionRowNumbers:dataSource.count];
     id data = [dataSource objectAtIndex:indexPath.row];
     cell.textLabel.text = [data valueForKey:@"text"];
+    cell.detailTextLabel.text =[data valueForKey:@"right_text"];
     cell.imageView.image = [UIImage imageNamed:[data valueForKey:@"icon"]];
     return cell;
 }
@@ -190,15 +195,18 @@
 
 - (void)actionForPotentialList
 {
-    MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    [self userAuth:^{
+        MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }];
+   
 }
 
 
 - (void)actionFunction:(NSString *)url
 {
     [self showWating:nil];
-    __weak typeof (self) pSelf = self;
+    __PSELF__;
     [[MSSystem sharedInstance] checkVersion:^{
         if ( [MSSystem sharedInstance].version.auth == 1 )
         {
@@ -230,60 +238,77 @@
 {
     [MobClick event:MOB_IMPORT_FAV];
     if ( self.importing ) return;
-    self.importing  = YES;
-    [self showWating:nil];
-    __weak typeof (self) pSelf = self;
-    [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        pSelf.importing = NO;
-        if ( error == nil )
-        {
-            LOG_DEBUG(@"%@",data);
-            MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
-            controller.type = EImportFav;
-            controller.favData = data;
-            [pSelf.navigationController pushViewController:controller animated:YES];
-        }
-        else
-        {
-            [pSelf showErrorMessage:error];
-        }
+    __PSELF__;
+    [self userAuth:^{
+        pSelf.importing  = YES;
+        [pSelf showWating:nil];
+        [[ClientAgent sharedInstance] importFav:pSelf userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
+            pSelf.importing = NO;
+            if ( error == nil )
+            {
+                LOG_DEBUG(@"%@",data);
+                MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
+                controller.type = EImportFav;
+                controller.favData = data;
+                [pSelf.navigationController pushViewController:controller animated:YES];
+            }
+            else
+            {
+                [pSelf showErrorMessage:error];
+            }
+        }];
     }];
 }
 
 - (void)actionForMyFollow
 {
-    MSShopListViewController *controller = [[MSShopListViewController alloc] init];
-    controller.type = EFollowed;
-    [self.navigationController pushViewController:controller animated:YES];
+    __PSELF__;
+    [pSelf userAuth:^{
+        MSShopListViewController *controller = [[MSShopListViewController alloc] init];
+        controller.type = EFollowed;
+        [pSelf.navigationController pushViewController:controller animated:YES];
+    }];
 }
 
 //去淘宝收藏夹
 - (void)actionForGoToFav
 {
-    [MobClick event:MOB_ENTER_TAOBAO_FAV];
-    [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"fav"]];
+    __PSELF__;
+    [self userAuth:^{
+        [MobClick event:MOB_ENTER_TAOBAO_FAV];
+        [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"fav"]];
+    }];
 
 }
 //已经购买的
 - (void)actionForGoToPurchase
 {
+    __PSELF__;
+    [self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_ORDER];
-    [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"order"]];
+    [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"order"]];
+    }];
 
 }
 //我的购物车
 - (void)actionForGoToBag
 {
+    __PSELF__;
+    [self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_BAG];
-    [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"bag"]];
+    [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"bag"]];
+    }];
 
 }
 //物流
 - (void)actionForGoToLogistics
 {
+    __PSELF__;
+    [self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_LOGISTICS];
-    [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"logistics"]];
+    [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"logistics"]];
+    }];
 }
 
 - (void)actionForLogin
@@ -294,10 +319,14 @@
 
 - (void)actionForLogout
 {
-    [MSSystem logout];
-    [self resetDataSource];
-    [self.tableView reloadData];
-    [self remindLogin];
+    __PSELF__;
+    [MiniUIAlertView showAlertWithTitle:@"亲，您真的要退出登录？" message:nil block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex != alertView.cancelButtonIndex ) {
+            [MSSystem logout];
+            [pSelf resetDataSource];
+            [pSelf.tableView reloadData];
+        }
+    } cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
 }
 
 

@@ -115,6 +115,9 @@
                 error = [NSError errorWithDomain:@"registe" code:200 userInfo:@{NSLocalizedDescriptionKey:@"注册异常"}];
             }
             else {
+                if ( user.usernick.length == 0 ) {
+                    user.usernick = uname;
+                }
                 WHO = user;
             }
         }
@@ -132,6 +135,9 @@
                 error = [NSError errorWithDomain:@"login" code:200 userInfo:@{NSLocalizedDescriptionKey:@"登录异常"}];
             }
             else {
+                if ( user.usernick.length == 0 ) {
+                    user.usernick = uname;
+                }
                 WHO = user;
             }
         }

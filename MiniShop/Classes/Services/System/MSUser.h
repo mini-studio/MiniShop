@@ -10,4 +10,5 @@
 
 @interface MSUser : MSObject
 @property (nonatomic,strong)NSString *uniqid;
+@property (nonatomic,strong)NSString *usernick;
 @end
