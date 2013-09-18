@@ -42,6 +42,7 @@
 - (void)loadView
 {
     [super loadView];
+    [self setNaviBackButton];
     UIImage *image = [MiniUIImage imagePreciseNamed:@"about" ext:@"jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = self.view.bounds;

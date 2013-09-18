@@ -124,6 +124,8 @@
 {
     [super viewWillDisappear:animated];
     [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
+    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidAppear:(BOOL)animated

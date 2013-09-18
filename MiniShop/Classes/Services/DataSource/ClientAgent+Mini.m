@@ -80,12 +80,12 @@
 
 - (NSString*)requestUri:(NSString *)path
 {
-    return [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
+    return [NSString stringWithFormat:@"%@/new_api/%@",[ClientAgent host],path];
 }
 
 - (NSString *)requestUri:(NSString *)path param:(NSDictionary*)param
 {
-    NSString* uri = [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
+    NSString* uri = [self requestUri:path];
     if ( param != nil ) {
         NSMutableDictionary *params = [self perfectParameters:param];
         NSMutableString *pm = [NSMutableString string];
@@ -108,10 +108,15 @@
         mobile = @"";
     }
     NSString *addr = [self requestUri:@"reg" param:@{}];
-    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd,@"mobile":mobile}];
+    NSDictionary *dic = @{@"name":uname,@"passwd":passwd,@"mobile":mobile};
     [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
-            WHO = user;
+            if ( user.uniqid.length==0 ) {
+                error = [NSError errorWithDomain:@"registe" code:200 userInfo:@{NSLocalizedDescriptionKey:@"注册异常"}];
+            }
+            else {
+                WHO = user;
+            }
         }
         block(error,user,nil,NO);
     }];
@@ -120,10 +125,15 @@
 - (void)login:(NSString*)uname passwd:(NSString*)passwd  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri:@"login" param:@{}];
-    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd}];
+    NSDictionary *dic = @{@"name":uname,@"passwd":passwd};
     [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
-           WHO = user;
+            if ( user.uniqid.length==0 ) {
+                error = [NSError errorWithDomain:@"login" code:200 userInfo:@{NSLocalizedDescriptionKey:@"登录异常"}];
+            }
+            else {
+                WHO = user;
+            }
         }
         block(error,user,nil,NO);
     }];
@@ -225,7 +235,7 @@
     NSString *version = [MSSystem bundleversion];
     bool firstrun = [MSSystem isFirstRun];
     [MSSystem clearFirstRun];
-    NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstrun":firstrun?@"1":@"0"};
+    NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstrun":firstrun?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"version"];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {

@@ -13,6 +13,8 @@
 #import "MSShopInfo.h"
 #import "EGOUITableView.h"
 #import "MiniUIIndicator.h"
+#import "MRLoginViewController.h"
+#import "MSTopicViewController.h"
 
 #define KBACKGROUDIMAGEVIEWTAG 0x20000
 
@@ -270,7 +272,7 @@
 {
     if ( error.code != NSURLErrorTimedOut )
     {
-        [self showMessageInfo:[error localizedDescription] delay:2];
+        [self showMessageInfo:[error localizedDescription] delay:3];
     }
 }
 
@@ -305,6 +307,49 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+
+- (void)setDefaultNaviBackground
+{
+    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)userAuth:(void (^)())block
+{
+    if ( WHO == nil ) {
+        __PSELF__;
+        [MiniUIAlertView showAlertWithTitle:@"亲，友好滴提示一下，为了更好的为您服务，您先登录一下吧" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+            if ( buttonIndex != alertView.cancelButtonIndex ) {
+                MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+                controller.loginblock = ^(BOOL login) {
+                    if ( login ) {
+                        [pSelf.navigationController popViewControllerAnimated:NO];
+                        block();
+                    }
+                };
+                [pSelf.navigationController pushViewController:controller animated:YES];
+            }
+        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"好", nil];
+    }
+    else {
+        block();
+    }
+}
+
+- (void)remindLogin
+{
+    [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下, 您可以" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 0 ) {
+            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        else if ( buttonIndex == 1 ) {
+            MSTopicViewController *controller = [[MSTopicViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            
+        }
+    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
 }
 
 @end

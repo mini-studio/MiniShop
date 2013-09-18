@@ -248,7 +248,7 @@
                 {
                     id erno = [data valueForKey:@"errno"];
                     NSString *errmg = [data valueForKey:@"error"];
-                    if ( (erno != nil && [erno intValue] !=0) || errmg.length>0) {
+                    if ( (erno != nil && [erno intValue] !=0) ) {
                         if ( errmg == nil ) errmg = @"服务器吃饭去了";
                         error = [NSError errorWithDomain:@"MSError" code:-200 userInfo:@{NSLocalizedDescriptionKey:errmg}];
                     }

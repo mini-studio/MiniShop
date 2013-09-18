@@ -7,7 +7,8 @@
 //
 
 #import "MSUIWebViewController.h"
+#import "MSViewController.h"
 
-@interface MSAboutViewController : MSUIWebViewController
+@interface MSAboutViewController : MSViewController
 
 @end

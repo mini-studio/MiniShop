@@ -62,16 +62,16 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 - (void)loadMainController:(BOOL)mustLogin
 {
     [UIApplication sharedApplication].statusBarHidden = NO;
-    if ( (WHO == nil && (mustLogin || MAIN_VERSION >= 7)) || self.isFirstRun ) {
-        MRLoginViewController *controller = [[MRLoginViewController alloc] init];
-        MSMiniUINavigationController *navi = [[MSMiniUINavigationController alloc] initWithRootViewController:controller];
-        self.viewController = navi;
-        self.window.rootViewController = navi;
-    }
-    else {
+//    if ( (WHO == nil && (mustLogin || MAIN_VERSION >= 7)) || self.isFirstRun ) {
+//        MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+//        MSMiniUINavigationController *navi = [[MSMiniUINavigationController alloc] initWithRootViewController:controller];
+//        self.viewController = navi;
+//        self.window.rootViewController = navi;
+//    }
+//    else {
         self.viewController = [[MSMainTabViewController alloc] init];
         self.window.rootViewController = self.viewController;
-    }
+//    }
 
 }
 

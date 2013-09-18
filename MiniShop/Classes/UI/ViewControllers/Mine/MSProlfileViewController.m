@@ -46,7 +46,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self resetDataSource];
     }
     return self;
 }
@@ -117,6 +116,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self resetDataSource];
+    [self.tableView reloadData];
     [super viewWillAppear:animated];
     if ( self.importing )
     {
@@ -296,17 +297,7 @@
     [MSSystem logout];
     [self resetDataSource];
     [self.tableView reloadData];
-    [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下, 您可以" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 0 ) {
-            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-        else if ( buttonIndex == 1 ) {
-            MSTopicViewController *controller = [[MSTopicViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
-
-        }
-    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
+    [self remindLogin];
 }
 
 

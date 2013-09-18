@@ -33,9 +33,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setDefaultNaviBackground];
+}
+
+- (void)setDefaultNaviBackground
+{
     UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
     [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

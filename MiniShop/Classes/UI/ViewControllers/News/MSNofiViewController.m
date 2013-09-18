@@ -95,6 +95,13 @@
     [super viewDidLoad];
     [self initData];
     self.navigationItem.title = @"上新";
+    if ( WHO == nil &&  ( self.mark )) {
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self remindLogin];
+        });
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -566,25 +573,10 @@
 
 - (void)actionRightButtonTap:(UIButton *)button
 {
-    MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
-//    [[ClientAgent sharedInstance] registe:@"wolfxy_a" passwd:@"wolfxy789456123" mobile:@"18611576628" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-//        if ( error != nil ) {
-//            [self showErrorMessage:error];
-//        }
-//        else {
-//            LOG_DEBUG( @"%@",[data description] );
-//        }
-//    }];
-    
-//    [[ClientAgent sharedInstance] login:@"wolfxy_a" passwd:@"wolfxy789456123" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-//        if ( error != nil ) {
-//            [self showErrorMessage:error];
-//        }
-//        else {
-//            LOG_DEBUG( @"%@",[data description] );
-//        }
-//    }];
+    [self userAuth:^{
+        MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }];
 }
 
 

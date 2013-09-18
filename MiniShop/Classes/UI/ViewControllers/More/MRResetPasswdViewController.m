@@ -42,7 +42,7 @@
     self.nameField .returnKeyType = UIReturnKeyNext;
     [scrollveiw addSubview:self.nameField ];
     self.nameField.delegate = self;
-    self.nameField.text = @"wolfxy_a";
+    //self.nameField.text = @"wolfxy_a";
     
     self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.view.width-40, 28)];
     [self.mobileField setLeftTitle:@"手机号码" color:[UIColor grayColor] placeholder:@"请输入联系方式"];

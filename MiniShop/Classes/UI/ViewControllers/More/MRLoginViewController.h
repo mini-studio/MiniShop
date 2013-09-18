@@ -10,4 +10,6 @@
 
 @interface MRLoginViewController : MSViewController
 
+@property (nonatomic,strong) void (^loginblock)(BOOL login);
+
 @end

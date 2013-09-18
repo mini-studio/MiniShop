@@ -40,8 +40,10 @@
     self.tableView = (EGOUITableView*)[self createPlainTableView];
     if ( !self.autoLayout )
     {
+        if ( MAIN_VERSION < 7 ) {
         self.tableView.top = self.navigationController.navigationBar.height;
         self.tableView.height = self.view.height-self.tableView.top;
+        }
     }
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
     self.tableView.tableHeaderView = view;
@@ -189,41 +191,47 @@
 
 - (void)followShop
 {
-    [self showWating:nil];
-    NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
     __PSELF__;
-    [[ClientAgent sharedInstance] like:@"shop" action:@"on" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        if ( error == nil )
-        {
-            [pSelf showMessageInfo:@"已经关注" delay:2];
-            pSelf.dataSource.user_is_like_shop = 1;
-            [pSelf updateUIAfterLoadData];
-        }
-        else
-        {
-            [pSelf showErrorMessage:error];
-        }
+    [self userAuth:^{
+        [pSelf showWating:nil];
+        NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
+        
+        [[ClientAgent sharedInstance] like:@"shop" action:@"on" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
+            if ( error == nil )
+            {
+                [pSelf showMessageInfo:@"已经关注" delay:2];
+                pSelf.dataSource.user_is_like_shop = 1;
+                [pSelf updateUIAfterLoadData];
+            }
+            else
+            {
+                [pSelf showErrorMessage:error];
+            }
+        }];
+
     }];
 }
 
 - (void)unFollowShop
 {
-    [self showWating:nil];
     __PSELF__;
-    NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
-    [[ClientAgent sharedInstance] like:@"shop" action:@"off" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        if ( error == nil )
-        {
-            [pSelf showMessageInfo:@"已经取消关注" delay:2];
-            pSelf.dataSource.user_is_like_shop = 0;
-            [pSelf updateUIAfterLoadData];
-        }
-        else
-        {
-            [pSelf showErrorMessage:error];
-        }
+    [self userAuth:^{
+        [pSelf showWating:nil];
+        NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
+        [[ClientAgent sharedInstance] like:@"shop" action:@"off" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
+            if ( error == nil )
+            {
+                [pSelf showMessageInfo:@"已经取消关注" delay:2];
+                pSelf.dataSource.user_is_like_shop = 0;
+                [pSelf updateUIAfterLoadData];
+            }
+            else
+            {
+                [pSelf showErrorMessage:error];
+            }
+        }];
     }];
 }
 

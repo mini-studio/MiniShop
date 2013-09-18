@@ -28,4 +28,10 @@
 
 - (void)showErrorMessage:(NSError *)error;
 
+- (void)remindLogin;
+
+- (void)userAuth:(void (^)())block;
+
+- (void)setDefaultNaviBackground;
+
 @end

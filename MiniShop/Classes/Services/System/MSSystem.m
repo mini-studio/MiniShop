@@ -52,6 +52,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     else {
         NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
         [def removeObjectForKey:@"MS_SYS_USER"];
+        [def synchronize];
     }
 }
 - (MSUser*)loadUser

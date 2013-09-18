@@ -46,7 +46,7 @@
     self.nameField .returnKeyType = UIReturnKeyNext;
     [scrollveiw addSubview:self.nameField ];
     self.nameField.delegate = self;
-    self.nameField.text = @"wolfxy_a";
+    //self.nameField.text = @"wolfxy_a";
     
     self.passwdField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.view.width-40, 28)];
     [self.passwdField setLeftTitle:@"密       码" color:[UIColor grayColor] placeholder:@"请输入密码"];
@@ -54,23 +54,23 @@
     self.passwdField.returnKeyType = self.type==0?UIReturnKeyDone:UIReturnKeyNext;
     self.passwdField.delegate = self;
     self.passwdField.secureTextEntry = YES;
-     self.passwdField.text = @"wolfxy789456123";
+    //self.passwdField.text = @"wolfxy789456123";
     [scrollveiw addSubview:self.passwdField];
     
     if ( self.type == 0 ) {
-        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithRGBA:0x55555555] forState:UIControlStateHighlighted];
-        [button setTitle:@"忘记密码" forState:UIControlStateNormal];
-        [button sizeToFit];
-        button.width +=10;
-        [button setBottomLine:[UIColor grayColor]];
-        button.center = CGPointMake(scrollveiw.width/2, scrollveiw.height-240);
-        [scrollveiw addSubview:button];
-        [button addTarget:self action:@selector(actionForgotPasswd:) forControlEvents:UIControlEventTouchUpInside];
+//        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+//        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor colorWithRGBA:0x55555555] forState:UIControlStateHighlighted];
+//        [button setTitle:@"忘记密码" forState:UIControlStateNormal];
+//        [button sizeToFit];
+//        button.width +=10;
+//        [button setBottomLine:[UIColor grayColor]];
+//        button.center = CGPointMake(scrollveiw.width/2, scrollveiw.height-240);
+//        [scrollveiw addSubview:button];
+//        [button addTarget:self action:@selector(actionForgotPasswd:) forControlEvents:UIControlEventTouchUpInside];
 
         
-        button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorWithRGBA:0x55555555] forState:UIControlStateHighlighted];
         [button setTitle:@"新用户注册" forState:UIControlStateNormal];
@@ -108,7 +108,10 @@
         }
         else {
             [textField resignFirstResponder];
-            [self actionLogin];
+            if ( self.type == 0 )
+                [self actionLogin];
+            else
+                [self actionReg];
         }
         return NO;
     }
@@ -142,7 +145,12 @@
         [[ClientAgent sharedInstance] login:name passwd:passwd block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if ( error == nil ) {
-                [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                if ( self.loginblock ) {
+                    self.loginblock(YES);
+                }
+                else {
+                    [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                }
             }
             else {
                 [pSelf showErrorMessage:error];
@@ -167,7 +175,12 @@
         [[ClientAgent sharedInstance] registe:name passwd:passwd mobile:self.mobileField.text block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if ( error == nil ) {
-                [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                if ( self.loginblock ) {
+                    self.loginblock(YES);
+                }
+                else {
+                    [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                }
             }
             else {
                 [pSelf showErrorMessage:error];
