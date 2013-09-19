@@ -53,7 +53,7 @@
 - (void)resetDataSource
 {
     self.dictionary = @{@"0":@[
-                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录":@"注销"}
+                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登陆或注册":@"注销"}
                                 ],
                         @"1":@[
                                 @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
@@ -239,7 +239,7 @@
     [MobClick event:MOB_IMPORT_FAV];
     if ( self.importing ) return;
     __PSELF__;
-    [self userAuth:^{
+    [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
         pSelf.importing  = YES;
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] importFav:pSelf userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
@@ -320,7 +320,7 @@
 - (void)actionForLogout
 {
     __PSELF__;
-    [MiniUIAlertView showAlertWithTitle:@"亲，您真的要退出登录？" message:nil block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+    [MiniUIAlertView showAlertWithTitle:@"亲，您真的要退出登陆？" message:nil block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex != alertView.cancelButtonIndex ) {
             [MSSystem logout];
             [pSelf resetDataSource];

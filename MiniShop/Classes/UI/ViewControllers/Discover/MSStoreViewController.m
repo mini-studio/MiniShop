@@ -142,22 +142,25 @@
     [MobClick event:MOB_IMPORT_FAV];
     if ( self.importing ) return;
     self.importing  = YES;
-    [self showWating:nil];
-    [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [self dismissWating];
-        self.importing = NO;
-        if ( error == nil )
-        {
-            LOG_DEBUG(@"%@",data);
-            MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
-            controller.type = EImportFav;
-            controller.favData = data;
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-        else
-        {
-            [self showErrorMessage:error];
-        }
+    __PSELF__;
+    [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
+        [pSelf showWating:nil];
+        [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
+            pSelf.importing = NO;
+            if ( error == nil )
+            {
+                LOG_DEBUG(@"%@",data);
+                MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
+                controller.type = EImportFav;
+                controller.favData = data;
+                [pSelf.navigationController pushViewController:controller animated:YES];
+            }
+            else
+            {
+                [pSelf showErrorMessage:error];
+            }
+        }];
     }];
 }
 

@@ -32,6 +32,8 @@
 
 - (void)userAuth:(void (^)())block;
 
+- (void)userAuthWithString:(NSString*)string block:(void (^)())block;
+
 - (void)setDefaultNaviBackground;
 
 @end

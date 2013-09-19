@@ -321,9 +321,14 @@
 
 - (void)userAuth:(void (^)())block
 {
+    [self userAuthWithString:LOGIN_PROMPT block:block];
+}
+
+- (void)userAuthWithString:(NSString*)string block:(void (^)())block
+{
     if ( WHO == nil ) {
         __PSELF__;
-        [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下" message:@"亲，为了更好滴为您服务，我们认识一下吧" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下" message:string block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if ( buttonIndex != alertView.cancelButtonIndex ) {
                 MRLoginViewController *controller = [[MRLoginViewController alloc] init];
                 controller.loginblock = ^(BOOL login) {
@@ -334,11 +339,12 @@
                 };
                 [pSelf.navigationController pushViewController:controller animated:YES];
             }
-        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"好", nil];
+        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"去登陆", nil];
     }
     else {
         block();
     }
+
 }
 
 - (void)remindLogin
@@ -353,7 +359,7 @@
             [self.navigationController pushViewController:controller animated:YES];
             
         }
-    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
+    } cancelButtonTitle:nil otherButtonTitles:@"登陆/注册",@"随便逛逛",nil];
 }
 
 @end

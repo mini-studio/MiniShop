@@ -25,6 +25,7 @@
 #define MOB_FEEDBACK                    @"FEEDBACK"         //留言
 #define MOB_LOAD_IMAGE                  @"LOAD_IMAGE"       //载入图片
 
-
+#define LOGIN_PROMPT   @"为了您的数据安全，此功能需要登陆后才能使用，亲，请亮出您的高贵的身份"
+#define LOGIN_IMPORT_FAV_PROMPT   @"您需要登陆后，再做导入淘宝收藏夹的操作，不然只能导给火星人了..."
 
 #endif
