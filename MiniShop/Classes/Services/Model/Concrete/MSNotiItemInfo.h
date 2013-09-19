@@ -17,6 +17,9 @@
 #define MSStoreNewsTypeOffical          @"show"             // 官方推荐
 #define MSStoreNewsTypeTopic            @"eyJ0eXBlIjoiYWxsX3RpbWUifQ=="
 #define MSStoreNewsTypeURL              @"url"
+#define MSStoreNewsSubTypeReg           @"reg"
+#define MSStoreNewsSubTypeSubLogin      @"login"
+
 
 @interface MSNotiItemInfo : MSObject
 @property (nonatomic) int64_t  mid;
@@ -25,6 +28,7 @@
 @property (nonatomic, strong) NSString * name;
 // look: eyJ0eXBlIjoiYWxsX3RpbWUifQ== 随便看看  activity_shop:店铺活动 activity_goods:商品活动 online:上新 future:剧透
 @property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *subtype;
 @property (nonatomic, strong) NSString *look_type;
 @property (nonatomic, strong) NSString *shop_title;
 @property (nonatomic, strong) NSString *shop_url;

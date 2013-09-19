@@ -24,6 +24,7 @@
 #import "MSDefine.h"
 #import "MSShopGroupListViewController.h"
 #import "MSPotentialViewController.h"
+#import "MRLoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define KIMPORT_VIEW_TAG 0xAB0000
@@ -259,7 +260,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
     MSNotiItemInfo * data = [ds objectAtIndex:indexPath.section];
-    if ( [MSStoreNewsTypeTopic isEqualToString:data.type] )
+    if ( [MSStoreNewsSubTypeReg isEqualToString:data.subtype] ) {
+        if ( WHO == nil ) {
+            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }
+    else if ( [MSStoreNewsTypeTopic isEqualToString:data.type] )
     {
         [MobClick event:MOB_MSG_LOOK_CLICK];
         MSItemListViewController *controller = [[MSItemListViewController alloc] init];
@@ -287,9 +294,20 @@
     }
     else if ( [MSStoreNewsTypeURL isEqualToString:data.type] )
     {
-        [MobClick event:MOB_MSG_URL_CLICK];
-        MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:data.url title:[data name] toolbar:YES];
-        [self.navigationController pushViewController:controller animated:YES];
+        if ( [MSStoreNewsSubTypeSubLogin isEqualToString:data.subtype] ) {
+            __PSELF__;
+            [self userAuth:^{
+                [MobClick event:MOB_MSG_URL_CLICK];
+                MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:data.url title:[data name] toolbar:YES];
+                [pSelf.navigationController pushViewController:controller animated:YES];
+            }];
+        }
+        else {
+            [MobClick event:MOB_MSG_URL_CLICK];
+            MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:data.url title:[data name] toolbar:YES];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+       
     }
 }
 
@@ -538,30 +556,34 @@
 
 - (void)switchPushMessage:(MiniUIButton*)button
 {
-    if ( [[MSSystem sharedInstance].version.push_sound isEqualToString:@"1"]) {
-        [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
-            if ( error == nil ) {
-                [MSSystem sharedInstance].version.push_sound = @"0";
-                [self reviseRingButton:button];
-                [self showMessageInfo:@"消息声音已关闭" delay:1];
-            }
-            else {
-                [self showErrorMessage:error];
-            }
-        }];
-    }
-    else {
-        [[ClientAgent sharedInstance] setpushsound:1 block:^(NSError *error, id data, id userInfo, BOOL cache) {
-            if ( error == nil ) {
-                [MSSystem sharedInstance].version.push_sound = @"1";
-                [self reviseRingButton:button];
-                [self showMessageInfo:@"消息声音已开启" delay:1];
-            }
-            else {
-                 [self showErrorMessage:error];
-            }
-        }];
-    }
+    __PSELF__;
+    [self userAuth:^{
+        if ( [[MSSystem sharedInstance].version.push_sound isEqualToString:@"1"]) {
+            [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+                if ( error == nil ) {
+                    [MSSystem sharedInstance].version.push_sound = @"0";
+                    [pSelf reviseRingButton:button];
+                    [pSelf showMessageInfo:@"消息声音已关闭" delay:1];
+                }
+                else {
+                    [pSelf showErrorMessage:error];
+                }
+            }];
+        }
+        else {
+            [[ClientAgent sharedInstance] setpushsound:1 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+                if ( error == nil ) {
+                    [MSSystem sharedInstance].version.push_sound = @"1";
+                    [pSelf reviseRingButton:button];
+                    [pSelf showMessageInfo:@"消息声音已开启" delay:1];
+                }
+                else {
+                    [pSelf showErrorMessage:error];
+                }
+            }];
+        }
+
+    }];
 }
 
 - (void)actionRightButtonTap:(UIButton *)button

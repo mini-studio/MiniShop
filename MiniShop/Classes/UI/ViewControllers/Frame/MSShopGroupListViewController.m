@@ -220,45 +220,46 @@
 
 - (void)buttonTap:(__weak MiniUIButton *)button
 {
-    MSShopInfo *info = button.userInfo;
-    if ( info.shop_id == 0 ) // 收录
-    {
-        [self showWating:nil];
-        __weak typeof (self) pSelf = self;
-        [[ClientAgent sharedInstance] usercooperate:info userInfo:nil block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
-            [pSelf dismissWating];
-            if ( error == nil )
-            {
-                info.shop_id = -100;
-                [UIView animateWithDuration:0.25 animations:^{
-                    button.alpha = 0.2;
-                }completion:^(BOOL finished) {
-                    button.hidden = YES;
-                }];
-            }
-            else
-            {
-                [pSelf showErrorMessage:error];
-            }
-        }];
-    }
-    else // 关注
-    {
-        [self showWating:nil];
-        __weak typeof (self) pSelf = self;
-        [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
-             [pSelf dismissWating];
-            if ( error == nil )
-            {
-                info.like = !info.like;
-                [MSShopInfoCell resetButtonState:button shopInfo:info];
-            }
-            else
-            {
-                [pSelf showErrorMessage:error];
-            }
-        }];
-    }
+    __PSELF__;
+    [self userAuth:^{
+        MSShopInfo *info = button.userInfo;
+        if ( info.shop_id == 0 ) // 收录
+        {
+            [pSelf showWating:nil];
+            [[ClientAgent sharedInstance] usercooperate:info userInfo:nil block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
+                [pSelf dismissWating];
+                if ( error == nil )
+                {
+                    info.shop_id = -100;
+                    [UIView animateWithDuration:0.25 animations:^{
+                        button.alpha = 0.2;
+                    }completion:^(BOOL finished) {
+                        button.hidden = YES;
+                    }];
+                }
+                else
+                {
+                    [pSelf showErrorMessage:error];
+                }
+            }];
+        }
+        else // 关注
+        {
+            [pSelf showWating:nil];
+            [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
+                [pSelf dismissWating];
+                if ( error == nil )
+                {
+                    info.like = !info.like;
+                    [MSShopInfoCell resetButtonState:button shopInfo:info];
+                }
+                else
+                {
+                    [pSelf showErrorMessage:error];
+                }
+            }];
+        }
+    }];
 }
 @end
 

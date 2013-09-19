@@ -122,21 +122,24 @@
 
 - (void)actionButtonTap:(MiniUIButton*)button
 {
-    MSShopInfo *info = button.userInfo;
-    [self showWating:nil];
     __PSELF__;
-    [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        if ( error == nil )
-        {
-            info.like = !info.like;
-            [MSShopInfoCell resetButtonState:button shopInfo:info];
-        }
-        else
-        {
-            [pSelf showErrorMessage:error];
-        }
+    [self userAuth:^{
+        MSShopInfo *info = button.userInfo;
+        [pSelf showWating:nil];
+        [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
+            if ( error == nil )
+            {
+                info.like = !info.like;
+                [MSShopInfoCell resetButtonState:button shopInfo:info];
+            }
+            else
+            {
+                [pSelf showErrorMessage:error];
+            }
+        }];
     }];
+    
 }
 
 - (void)loadData
