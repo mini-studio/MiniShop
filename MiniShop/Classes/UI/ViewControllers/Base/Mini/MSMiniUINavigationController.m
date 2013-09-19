@@ -38,7 +38,7 @@
 
 - (void)setDefaultNaviBackground
 {
-    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
+    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
     [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 

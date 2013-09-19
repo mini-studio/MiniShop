@@ -34,6 +34,17 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         self.version = [[MSVersion alloc] init];
         self.lastCheckUpdate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastCheckUpdate"];
         _mainVersion = [UIDevice iosMainVersion];
+        NSDictionary *navbarTitleTextAttributes = [UINavigationBar appearance].titleTextAttributes;
+        if ( navbarTitleTextAttributes == nil ) {
+             navbarTitleTextAttributes = @{UITextAttributeTextColor:[UIColor whiteColor]};
+        }
+        else {
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:navbarTitleTextAttributes];
+            [dic setValue:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+            navbarTitleTextAttributes = dic;
+        }
+        [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+
         [self initSystem];
     }
     return self;
@@ -48,10 +59,14 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [[ClientAgent sharedInstance] uploadToken:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
             LOG_DEBUG(@"%@",data);
         }];
+        [self checkVersion:^{
+            
+        } force:YES];
     }
     else {
         NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
         [def removeObjectForKey:@"MS_SYS_USER"];
+        [def removeObjectForKey:@"showImportTaobaoView"];
         [def synchronize];
     }
 }
@@ -136,6 +151,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
                 [[NSUserDefaults standardUserDefaults] setValue:self.version.v forKey:@"cversion"];
                 [[NSUserDefaults standardUserDefaults] setValue:self.lastCheckUpdate forKey:@"lastCheckUpdate"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+                [[NSNotificationCenter defaultCenter] postNotificationName:MN_NOTI_RECEIVE_VERSION object:nil];
             }
             if ( block )
             {

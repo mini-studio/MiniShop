@@ -80,7 +80,7 @@
 
 - (NSString*)requestUri:(NSString *)path
 {
-    return [NSString stringWithFormat:@"%@/new_api/%@",[ClientAgent host],path];
+    return [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
 }
 
 - (NSString *)requestUri:(NSString *)path param:(NSDictionary*)param

@@ -113,7 +113,7 @@
 
 - (UIImage *)navigationBarBackGroundForIndex:(NSInteger)index
 {
-    UIImage *image = [MiniUIImage imageNamed:([MSSystem sharedInstance].mainVersion >= 7?@"navi_background_7":@"navi_background")];
+    UIImage *image = [MiniUIImage imageNamed:([MSSystem sharedInstance].mainVersion >= 7?@"navi_background":@"navi_background")];
     //image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.height/2, 0, image.size.height/2, 0)];
     return image;
 }

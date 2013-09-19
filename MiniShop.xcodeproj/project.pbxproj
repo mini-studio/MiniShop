@@ -41,7 +41,6 @@
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
-		C12C2CA617E8F07B0097CFBD /* navi_background_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */; };
 		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
 		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
 		C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */; };
@@ -286,7 +285,6 @@
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
 		C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
 		C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Mini.m"; sourceTree = "<group>"; };
-		C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_background_7@2x.png"; sourceTree = "<group>"; };
 		C12C2CA717E8F5930097CFBD /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRLoginViewController.h; sourceTree = "<group>"; };
 		C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRLoginViewController.m; sourceTree = "<group>"; };
 		C12C2CAD17E8F8DC0097CFBD /* MiniUIASTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIASTextField.h; sourceTree = "<group>"; };
@@ -1636,7 +1634,6 @@
 		C1EC50E2178074D600BE5ABB /* navi */ = {
 			isa = PBXGroup;
 			children = (
-				C12C2CA517E8F07B0097CFBD /* navi_background_7@2x.png */,
 				C1EC50E3178074D600BE5ABB /* navi_background@2x.png */,
 				C1EC50E4178074D600BE5ABB /* navi_bar_back@2x.png */,
 				C1EC50E5178074D600BE5ABB /* navi_bar_share@2x.png */,
@@ -1921,7 +1918,6 @@
 				C1EC515B178074D600BE5ABB /* segment_bg@2x.png in Resources */,
 				C1EC515C178074D600BE5ABB /* segment_btn_normal@2x.png in Resources */,
 				C1EC515D178074D600BE5ABB /* time_bg@2x.png in Resources */,
-				C12C2CA617E8F07B0097CFBD /* navi_background_7@2x.png in Resources */,
 				C1EC515E178074D600BE5ABB /* time_icon.png in Resources */,
 				C1EC515F178074D600BE5ABB /* transparent@2x.png in Resources */,
 				C1EC5160178074D600BE5ABB /* view_bg@2x.png in Resources */,
@@ -2060,7 +2056,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (KMM736B6J7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2090,7 +2086,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
+				PROVISIONING_PROFILE = "F12FDF0E-C492-4EC1-B207-E65B6AD6EBFE";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};

@@ -29,7 +29,7 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     self.isFirstRun = [MSSystem isFirstRun];
     if (  self.isFirstRun )
     {
@@ -186,7 +186,7 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-#ifdef __DEBUG__
+#ifdef DEBUG
 	NSString *status = [NSString stringWithFormat:@"%@\nRegistration failed.\n\nError: %@", [[UIApplication sharedApplication] enabledRemoteNotificationTypes] ?
                         @"Notifications were active for this application" :
                         @"Remote notifications were not active for this application", [error localizedDescription]];

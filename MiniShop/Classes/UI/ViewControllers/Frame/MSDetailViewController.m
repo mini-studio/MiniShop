@@ -124,7 +124,7 @@
 {
     [super viewWillDisappear:animated];
     [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
-    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
+    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
@@ -526,7 +526,14 @@
 - (void)gotoShop:(MiniUIButton *)button
 {
     MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
-    controller.shopInfo = self.itemInfo;
+    MSNotiItemInfo *info = self.itemInfo;
+    if ( info == nil ) {
+        info = [[MSNotiItemInfo alloc] init];
+        info.shop_id = self.goods.shop_id;
+        info.shop_title = self.goods.shop_name;
+        info.name = self.goods.shop_name;
+    }
+    controller.shopInfo = info;
     controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }

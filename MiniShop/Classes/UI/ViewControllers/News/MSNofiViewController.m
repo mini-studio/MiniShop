@@ -38,6 +38,7 @@
 @property (nonatomic, strong)NSMutableDictionary *dictionary;
 @property (nonatomic) BOOL importing;
 @property (nonatomic) NSMutableDictionary *itemDic;
+@property (nonatomic,strong)MiniUIButton *ringButton;
 @end
 
 @implementation MSNofiViewController
@@ -55,8 +56,14 @@
         self.itemDic = [NSMutableDictionary dictionary];
         self.mark = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveRemoteNotification:) name:MSNotificationReceiveRemote object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveVersion:) name:MN_NOTI_RECEIVE_VERSION object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSMutableArray *)dataSourceForType:(int)type
@@ -83,7 +90,7 @@
     [self createTableView];
     MiniUIButton *button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
     button.width = 40;
-    [self reviseRingButton:button];
+    self.ringButton = button;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [button addTarget:self action:@selector(switchPushMessage:) forControlEvents:UIControlEventTouchUpInside];
     if ( self.navigationController.topViewController == self ) {
@@ -103,6 +110,7 @@
     [super viewWillAppear:animated];
     [self dismissWating];
     [self checkImportTaobaoView];
+    [self reviseRingButton:self.ringButton];
 }
 
 - (void)checkImportTaobaoView
@@ -517,6 +525,11 @@
     [self refreshData];
 }
 
+- (void)didReceiveVersion:(NSNotification *)noti
+{
+    [self reviseRingButton:self.ringButton];
+}
+
 
 - (void)actionForImportFav
 {
@@ -560,7 +573,7 @@
 {
     __PSELF__;
     [self userAuth:^{
-        if ( [[MSSystem sharedInstance].version.push_sound isEqualToString:@"1"]) {
+        if ( [MSSystem sharedInstance].version.push_sound.intValue == 1 ) {
             [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
                 if ( error == nil ) {
                     [MSSystem sharedInstance].version.push_sound = @"0";
