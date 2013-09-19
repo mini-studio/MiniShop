@@ -50,8 +50,12 @@
 {
     [super viewDidLoad];
     if ( MAIN_VERSION >= 7 ) {
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets = NO;
+        if ( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] ) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+        if ( [self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)] ) {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     //[self setViewBackgroundColor];
 	// Do any additional setup after loading the view.

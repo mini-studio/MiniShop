@@ -266,6 +266,20 @@
     NSDictionary *params = @{@"token":[MSSystem sharedInstance].deviceToken};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"iostoken"];
+#ifdef DEBUG
+    {
+        NSMutableString *pm = [NSMutableString string];
+        for ( NSString *rkey in params.allKeys )
+        {
+            [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
+        }
+        if ( pm.length > 0 )
+        {
+            [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
+        }
+        [MiniUIAlertView showAlertWithMessage:pm];
+    }
+#endif
     [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
