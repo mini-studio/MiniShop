@@ -259,6 +259,7 @@
     {
         [cell setItem:[ds objectAtIndex:indexPath.section]];
         [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];
+        
     }
     return cell;
 }
@@ -450,8 +451,7 @@
         {
             if ( self.tableView.moreDataCell == nil || ![self.tableView.moreDataCell isKindOfClass:[MSUIMoreDataCell class]])
             {
-                self.tableView.moreDataCell = [[MSUIMoreDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"__More_Data_Cell"];
-               
+                self.tableView.moreDataCell = [[MSUIMoreDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"__More_Data_Cell"];               
             }
             __PSELF__;
             [self.tableView setMoreDataAction:^{

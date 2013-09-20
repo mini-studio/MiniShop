@@ -23,6 +23,8 @@
     if (self) {
         self.galleryView = [[MSGalleryView alloc] initWithFrame:self.bounds];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [UIColor clearColor];
+        self.backgroundView = nil;
         [self addSubview:self.galleryView];
         __PSELF__;
         [self.galleryView setHandleTap:^(id info) {

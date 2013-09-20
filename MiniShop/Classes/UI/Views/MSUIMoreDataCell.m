@@ -9,6 +9,9 @@
 #import "MSUIMoreDataCell.h"
 #import "UITableViewCell+GroupBackGround.h"
 
+@interface MSUIMoreDataCell()
+@end
+
 @implementation MSUIMoreDataCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -18,12 +21,10 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor] ;
         self.backgroundView = nil;
-        UIImage *image = [UIImage imageNamed:@"news_online_cell_bg"];
-        [self setCellTheme:nil indexPath:nil background:image highlightedBackground:image sectionRowNumbers:0];
-       
     }
     return self;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
