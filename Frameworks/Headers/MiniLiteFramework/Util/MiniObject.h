@@ -2,14 +2,13 @@
 //  LSObject.h
 //  xcmg
 //
-//  Created by Wuquancheng on 12-11-22.
+//  Created by Mini-Studio on 12-11-22.
 //  Copyright (c) 2012年 mini. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MiniObject : NSObject
+@interface MiniObject : NSObject<NSCoding>
 - (void)convertWithJson:(id)json;
-
 - (Class)classForAttri:(NSString *)attriName;
 @end

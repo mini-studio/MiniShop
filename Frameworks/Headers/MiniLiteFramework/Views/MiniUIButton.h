@@ -29,5 +29,7 @@ enum {
 
 + (MiniUIButton *)buttonWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage;
 
+- (void)setTouchupHandler:(void (^)(MiniUIButton *button))handler;
+
 
 @end

@@ -10,27 +10,10 @@
 #import "UIColor+Mini.h"
 #import <objc/runtime.h>
 
-NSString *MINI_ButtonHanldeKey = @"MINI_ButtonHanldeKey";
-typedef void(^MINIButtonTouchupHanlder)(MiniUIButton *button);
+
 
 
 @implementation MiniUIButton (LS)
-
-- (void)setTouchupHandler:(void (^)(MiniUIButton *button))handler
-{
-    [self removeTarget:self action:@selector(handleButtonTouchup:) forControlEvents:UIControlEventTouchUpInside];
-    [self addTarget:self action:@selector(handleButtonTouchup:) forControlEvents:UIControlEventTouchUpInside];
-    objc_setAssociatedObject(self, (__bridge const void *)(MINI_ButtonHanldeKey), handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (void)handleButtonTouchup:(MiniUIButton *)button
-{
-    MINIButtonTouchupHanlder handler  = (MINIButtonTouchupHanlder)objc_getAssociatedObject(self,(__bridge const void *)(MINI_ButtonHanldeKey));    
-    if(handler)
-    {
-        handler(button);
-    }
-}
 
 - (void)setBottomLine:(UIColor*)color
 {

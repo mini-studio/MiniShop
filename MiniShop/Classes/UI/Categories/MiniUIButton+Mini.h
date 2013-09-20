@@ -9,7 +9,6 @@
 #import "MiniUIButton.h"
 
 @interface MiniUIButton (LS)
-- (void)setTouchupHandler:(void (^)(MiniUIButton *button))handler;
 - (void)setBottomLine:(UIColor*)color;
 
 @end

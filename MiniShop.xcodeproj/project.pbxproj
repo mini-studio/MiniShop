@@ -70,7 +70,6 @@
 		C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FD5178074A100BE5ABB /* AppDelegate.m */; };
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
 		C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDC178074A100BE5ABB /* ClientAgent.m */; };
-		C1EC5065178074A100BE5ABB /* MiniObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE0178074A100BE5ABB /* MiniObject.m */; };
 		C1EC5066178074A100BE5ABB /* MSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE2178074A100BE5ABB /* MSObject.m */; };
 		C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE5178074A100BE5ABB /* MSCooperateInfo.m */; };
 		C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE7178074A100BE5ABB /* MSGoodsList.m */; };
@@ -232,6 +231,7 @@
 		C1EC517D1780754A00BE5ABB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C1EC517A1780754A00BE5ABB /* Default.png */; };
 		C1EC517E1780754A00BE5ABB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1EC517B1780754A00BE5ABB /* Default@2x.png */; };
 		C1F27481177FFDDE004917C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C1F2747F177FFDDE004917C6 /* LICENSE */; };
+		C1FADC2017EC37A5005F5537 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */; };
 		C1FEB1BD17E3E7EB0076BEEA /* MSUIDTView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FEB1BC17E3E7EB0076BEEA /* MSUIDTView.m */; };
 		C1FEB1C417E49F890076BEEA /* navi_link_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1FEB1BE17E49F890076BEEA /* navi_link_h@2x.png */; };
 		C1FEB1C517E49F890076BEEA /* navi_link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1FEB1BF17E49F890076BEEA /* navi_link@2x.png */; };
@@ -432,8 +432,6 @@
 		C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ClientAgent+Mini.m"; sourceTree = "<group>"; };
 		C1EC4FDB178074A100BE5ABB /* ClientAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientAgent.h; sourceTree = "<group>"; };
 		C1EC4FDC178074A100BE5ABB /* ClientAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientAgent.m; sourceTree = "<group>"; };
-		C1EC4FDF178074A100BE5ABB /* MiniObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniObject.h; sourceTree = "<group>"; };
-		C1EC4FE0178074A100BE5ABB /* MiniObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniObject.m; sourceTree = "<group>"; };
 		C1EC4FE1178074A100BE5ABB /* MSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSObject.h; sourceTree = "<group>"; };
 		C1EC4FE2178074A100BE5ABB /* MSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSObject.m; sourceTree = "<group>"; };
 		C1EC4FE4178074A100BE5ABB /* MSCooperateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCooperateInfo.h; sourceTree = "<group>"; };
@@ -664,6 +662,8 @@
 		C1F2747E177FFDDE004917C6 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
 		C1F2747F177FFDDE004917C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1F27480177FFDDE004917C6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		C1FADC2117EC39B9005F5537 /* MiniObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniObject.h; sourceTree = "<group>"; };
 		C1FAFECF1752728E00A7E7F6 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C1FAFED01752728E00A7E7F6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C1FEB1BB17E3E7EB0076BEEA /* MSUIDTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUIDTView.h; sourceTree = "<group>"; };
@@ -697,6 +697,7 @@
 				C1820F3B175BA51000C87E39 /* libUMFeedback.a in Frameworks */,
 				C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 				C101D19C177CCB3E009BFA10 /* libMobClickLibrary.a in Frameworks */,
+				C1FADC2017EC37A5005F5537 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,6 +1134,7 @@
 		C169C62316FF55A800ED87D8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C1FADC2117EC39B9005F5537 /* MiniObject.h */,
 				C169C62416FF55A800ED87D8 /* MiniEmojiCodeUtil.h */,
 				C169C62516FF55A800ED87D8 /* MiniFileUtil.h */,
 				C169C62616FF55A800ED87D8 /* MiniImageCache.h */,
@@ -1263,8 +1265,6 @@
 		C1EC4FDE178074A100BE5ABB /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC4FDF178074A100BE5ABB /* MiniObject.h */,
-				C1EC4FE0178074A100BE5ABB /* MiniObject.m */,
 				C1EC4FE1178074A100BE5ABB /* MSObject.h */,
 				C1EC4FE2178074A100BE5ABB /* MSObject.m */,
 			);
@@ -1741,6 +1741,7 @@
 		C1FAFECD1752728E00A7E7F6 /* webchat */ = {
 			isa = PBXGroup;
 			children = (
+				C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */,
 				C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */,
 				C1FAFECF1752728E00A7E7F6 /* WXApi.h */,
 				C1FAFED01752728E00A7E7F6 /* WXApiObject.h */,
@@ -1967,7 +1968,6 @@
 				C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */,
 				C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */,
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
-				C1EC5065178074A100BE5ABB /* MiniObject.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
@@ -2138,6 +2138,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniShop/MiniShop-Prefix.pch";
 				INFOPLIST_FILE = "MiniShop/MiniShop-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat",
+				);
 				PRODUCT_NAME = MiniShop;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2149,6 +2153,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniShop/MiniShop-Prefix.pch";
 				INFOPLIST_FILE = "MiniShop/MiniShop-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat",
+				);
 				PRODUCT_NAME = MiniShop;
 				WRAPPER_EXTENSION = app;
 			};

@@ -17,6 +17,7 @@
 #import "MSGoodsList.h"
 #import "MRLoginViewController.h"
 #import "MSMiniUINavigationController.h"
+#import "NSString+Mini.h"
 
 //NSString* const appIDForWeiXin = @"wx5267b1263ded2fbd";
 //NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";

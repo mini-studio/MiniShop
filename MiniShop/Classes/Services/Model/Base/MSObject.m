@@ -9,4 +9,9 @@
 #import "MSObject.h"
 
 @implementation MSObject
+
+- (void)setErrorno:(int)errorno
+{
+    __errno = errorno;
+}
 @end
