@@ -105,8 +105,13 @@
 
 - (NSString *)uniqueGlobalDeviceIdentifier
 {
-    NSString *macaddress = [[UIDevice currentDevice] macaddress];
-    NSString *uniqueIdentifier = [macaddress md5];
-    return uniqueIdentifier;
+    if ( MAIN_VERSION >= 7 ) {
+        return @"";
+    }
+    else {
+        NSString *macaddress = [[UIDevice currentDevice] macaddress];
+        NSString *uniqueIdentifier = [macaddress md5];
+        return uniqueIdentifier;
+    }
 }
 @end

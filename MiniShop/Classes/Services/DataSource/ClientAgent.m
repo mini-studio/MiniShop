@@ -213,6 +213,11 @@
 
 
 ///////////////////////////////////////////////////////
+- (void)get:(NSString*)url  params:(NSDictionary *)params  block:(void (^)(NSError *error, id data, BOOL cache ))block
+{
+    [self getDataFromServer:url params:params cachekey:nil clazz:nil isJson:NO showError:NO block:block];
+}
+
 - (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
     [self getDataFromServer:url params:params cachekey:key clazz:nil isJson:YES showError:showError block:block];

@@ -27,6 +27,8 @@
 
 - (void)showServerExceptoin:(NSString *)string;
 
+- (void)get:(NSString*)url  params:(NSDictionary *)params  block:(void (^)(NSError *error, id data, BOOL cache ))block;
+
 - (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
 
 - (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;

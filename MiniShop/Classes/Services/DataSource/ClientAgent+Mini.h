@@ -20,6 +20,8 @@
 
 + (NSString *)jumpToTaoBaoUrl:(NSString *)type;
 
++ (NSString *)prefectUrl:(NSString*)url;
+
 - (void)registe:(NSString*)uname passwd:(NSString*)passwd mobile:(NSString*)mobile block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 - (void)login:(NSString*)uname passwd:(NSString*)passwd  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;

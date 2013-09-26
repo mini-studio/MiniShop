@@ -78,6 +78,21 @@
     return p;
 }
 
++ (NSString *)prefectUrl:(NSString*)url
+{
+    if ( WHO != nil && WHO.uniqid.length > 0 ) {
+        if ( [url rangeOfString:@"?"].length > 0 ) {
+            return [NSString stringWithFormat:@"%@&uniqid=%@&imei=%@",url,WHO.uniqid,UDID];
+        }
+        else {
+            return [NSString stringWithFormat:@"%@?uniqid=%@&imei=%@",url,WHO.uniqid,UDID];
+        }
+    }
+    else {
+        return url;
+    }
+}
+
 - (NSString*)requestUri:(NSString *)path
 {
     return [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];

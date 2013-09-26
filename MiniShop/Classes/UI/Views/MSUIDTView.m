@@ -19,8 +19,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        //self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handelPan:)];
-        //[self addGestureRecognizer:self.recognizer];
+        self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handelPan:)];
+        [self addGestureRecognizer:self.recognizer];
         self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
     }
@@ -105,7 +105,9 @@
 
 - (void)loadDetail
 {
-    NSString *url =[NSString stringWithFormat:@"http://www.youjiaxiaodian.com/api/showgoodsdescimage?screenY=960&screenW=640&imei=%@&id=%lld",UDID,self.mid];
+    NSString *url =[NSString stringWithFormat:@"http://www.youjiaxiaodian.com/api/showgoodsdescimage?screenY=960&screenW=640&id=%lld",self.mid];
+    url = [ClientAgent prefectUrl:url];
+    LOG_DEBUG(@"Load detail %@",url);
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 

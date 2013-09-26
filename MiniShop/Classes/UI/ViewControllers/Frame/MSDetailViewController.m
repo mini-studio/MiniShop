@@ -344,6 +344,7 @@
                if ( error == nil )
                {
                    [pSelf reloadWithData:data];
+                   [self silentAccess];
                }
            }];
         }
@@ -357,6 +358,7 @@
                 list.user_is_like_shop = data.user_is_like_shop;
                 list.body_info = ((MSShopGalleryInfo*)[data.body_info objectAtIndex:0]).goods_info;
                 [pSelf reloadWithData:list];
+                [self silentAccess];
             }
         }];
         }
@@ -445,6 +447,15 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+
+- (void)silentAccess
+{
+    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid];
+    requestStr = [ClientAgent prefectUrl:requestStr];
+    [[ClientAgent sharedInstance] get:requestStr params:nil block:^(NSError *error, id data, BOOL cache){}];
+}
+
 - (void)handleZoomInNotification:(NSNotification *)noti
 {
     MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
@@ -458,9 +469,7 @@
     if ( index >=0 && index < self.goods.body_info.count && sec > 2 )
     {
         MSGoodItem *item = [self.goods.body_info objectAtIndex:index];
-        [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {
-
-        }];
+        [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {}];
     }
 }
 
@@ -537,5 +546,6 @@
     controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }
+
 
 @end
