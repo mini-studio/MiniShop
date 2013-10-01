@@ -25,6 +25,7 @@
 #import "MSShopGroupListViewController.h"
 #import "MSPotentialViewController.h"
 #import "MRLoginViewController.h"
+#import "MSShopGalleryViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define KIMPORT_VIEW_TAG 0xAB0000
@@ -292,6 +293,11 @@
         label.text = data.name;
         [view addSubview:label];
         view.backgroundColor = [UIColor colorWithRGBA:0x33333333];
+        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = view.bounds;
+        [view addSubview:button];
+        button.userInfo = data;
+        [button addTarget:self action:@selector(actionToGalleryViewController:) forControlEvents:UIControlEventTouchUpInside];
         return view;
     }
     else{
@@ -344,15 +350,10 @@
     else if ( [MSStoreNewsTypeGoodsPromotion isEqualToString:data.type] || [MSStoreNewsTypePrevue isEqualToString:data.type] ||
              [MSStoreNewsTypeNewProduct isEqualToString:data.type])// 
     {
-//        [MobClick event:MOB_MSG_GOODS_CLICK];
-//        [data setRead:YES];
-//        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//        MSDetailViewController *controller = [[MSDetailViewController alloc] init];
-//        controller.itemInfo = data;
-//        controller.from = @"list";
-//        controller.mtitle = [MSStoreNewsTypeGoodsPromotion isEqualToString:data.type]?@"店家活动":@"最新上新";
-//        controller.more = YES;
-//        [self.navigationController pushViewController:controller animated:YES];
+        [MobClick event:MOB_MSG_GOODS_CLICK];
+        [data setRead:YES];       
+        [self viewShopGallery:data];
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if ( [MSStoreNewsTypeStorePromotion isEqualToString:data.type] ) //店铺活动
     {
@@ -666,6 +667,19 @@
         MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
         [self.navigationController pushViewController:controller animated:YES];
     }];
+}
+
+- (void)viewShopGallery:(MSNotiItemInfo*)itemInfo
+{
+    MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
+    controller.shopInfo = itemInfo;
+    controller.autoLayout = NO;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)actionToGalleryViewController:(MiniUIButton*)button
+{
+    [self viewShopGallery:button.userInfo];
 }
 
 

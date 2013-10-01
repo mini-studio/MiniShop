@@ -154,12 +154,17 @@
 
 - (NSString *)shop_title
 {
-    return self.items_info.shop_info.shop_title;
+    return [self name];
+}
+
+- (NSString *)shop_name
+{
+    return [self shop_title];
 }
 
 - (NSInteger)shop_id
 {
-    return self.items_info.shop_info.shop_id;
+    return [self.items_info.shop_info.mid integerValue];
 }
 
 - (int64_t)mid
