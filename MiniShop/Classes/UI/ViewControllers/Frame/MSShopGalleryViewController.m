@@ -163,17 +163,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)updateUIAfterLoadData
-//{
-//    if ( self.dataSource.user_is_like_shop )
-//    {
-//        [self setNaviRightButtonTitle:@"取消关注" target:self action:@selector(unFollowShop)];
-//    }
-//    else
-//    {
-//        [self setNaviRightButtonTitle:@"关注店铺" target:self action:@selector(followShop)];
-//    }
-//}
 
 - (void)updateUIAfterLoadData
 {

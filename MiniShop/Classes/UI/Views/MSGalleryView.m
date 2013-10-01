@@ -8,6 +8,7 @@
 
 #import "MSGalleryView.h"
 #import "UIImageView+WebCache.h"
+#import "MiniUIPhotoImageView.h"
 #import "UIColor+Mini.h"
 #import "UIImage+Mini.h"
 
@@ -16,7 +17,6 @@
 @property (nonatomic,strong) UIView    *headerView;
 @property (nonatomic) CGFloat imageSize;
 @property (nonatomic) CGFloat gap;
-@property (nonatomic) int numbersOfRow;
 @end
 
 @implementation MSGalleryView
@@ -25,24 +25,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.numbersOfRow = 2;
-        self.imageSize = (WINDOW.frame.size.width - 16)/self.numbersOfRow;
         self.gap = 4;
-        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 24)];
-        [self addSubview:header];
-        header.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"time_bg"]];
-        CGRect fr = header.bounds;
-        fr.origin.x = 24;
-        self.titleLabel = [[UILabel alloc] initWithFrame:fr];
-        self.titleLabel.backgroundColor = [UIColor clearColor];
-        self.titleLabel.textColor =  [UIColor colorWithRGBA:0x6c6c6cff];
-        self.titleLabel.font = [UIFont systemFontOfSize:14];
-        [header addSubview:self.titleLabel];
-        self.headerView =  header;
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"time_icon"]];
-        imageView.frame = CGRectMake(6, 4, 14, 14);
-        [header addSubview:imageView];
-
     }
     return self;
 }
@@ -50,13 +33,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if ( self.title.length > 0 )
-    {
-        [self addSubview:self.headerView];
-    }
-    else {
-        [self.headerView removeFromSuperview];
-    }
 }
 
 - (void)setTitle:(NSString *)title
@@ -68,35 +44,45 @@
 - (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr userInfo:(id (^)(int index))userinfo
 {
     UIImage *btnBg = [UIImage imageNamed:@"image_bg"];
-    CGFloat offsetY = self.title.length > 0 ? 24 : 0;
-    for ( NSInteger index = 0; index < info.count; index++ )
+    int count = info.count;
+    
+    CGFloat top = 10;
+    for ( NSInteger index = 0; index < count; index++ )
     {
-        int row = index/self.numbersOfRow;
-        int col = index%self.numbersOfRow ;
+        CGRect frame = CGRectZero;
+        int mod = index%3;
+        if ( mod == 2 ) {
+            CGFloat imageSize = self.width - 20;
+            frame = CGRectMake(10, top, imageSize, imageSize);
+            top += ( imageSize + 4 );
+        }
+        else {
+            CGFloat imageSize = (self.width - 24)/2;
+            if ( mod == 0 ) {
+                if ( index == count-1 ) {
+                    imageSize = self.width - 20;
+                }
+                frame =  CGRectMake(10, top,imageSize, imageSize);
+                top += ( imageSize + 4 );
+            }
+            else {
+                frame = CGRectMake(self.width-10-imageSize, top-4-imageSize,imageSize, imageSize);
+            }
+        }
+        MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] initWithFrame:frame];
         MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:btnBg highlightedBackGroundImage:btnBg title:@""];
-        button.frame = CGRectMake(col*(self.imageSize+self.gap)+self.gap, offsetY + row*(self.imageSize+self.gap)+self.gap, self.imageSize, self.imageSize);
-        
-        CGFloat border = 8;
-        CGRect iframe = CGRectInset( button.bounds, border, border) ;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:iframe];
-        [button addSubview:imageView];
+        button.frame = imageView.bounds;
         button.userInfo = userinfo(index);
-        [self addSubview:button];
+        [imageView addSubview:button];
+        
+        [self addSubview:imageView];
+        
         [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
         button.showsTouchWhenHighlighted = YES;
         
-        __weak UIImageView *pimageView = imageView;
-        [imageView setImageWithURL:[NSURL URLWithString:addr(index)] placeholderImage:nil success:^(UIImage *image, BOOL cached) {
-            if ( image != nil && image.size.width > 0 && image.size.height > 0 )
-            {
-                CGSize imageSize = [image sizeForScaleToFixSize:pimageView.size];
-                CGPoint btnCenter = button.center;
-                CGSize size = CGSizeMake(imageSize.width+2*border, imageSize.height+2*border);
-                button.frame = CGRectMake(btnCenter.x-size.width/2, btnCenter.y-size.height/2, size.width, size.height);
-                pimageView.size = imageSize;
-                pimageView.image = image;
-                pimageView.center = CGPointMake(size.width/2, size.height/2);
-            }
+        __weak MiniUIPhotoImageView *pimageView = imageView;
+        [imageView.imageView setImageWithURL:[NSURL URLWithString:addr(index)] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+            pimageView.image = image;
         } failure:^(NSError *error) {
             
         }];
@@ -119,17 +105,19 @@
 
 + (CGFloat)heightWithImageCount:(NSInteger)count hasTitle:(BOOL)hasTitle
 {
-    int numbersOfRow = 2;
     CGFloat viewWidth = WINDOW.frame.size.width;
-    CGFloat itemWidth = (viewWidth - 16)/numbersOfRow;
+    CGFloat singleLineHeight = viewWidth-20;
+    CGFloat multLineHeight = (singleLineHeight-4)/2;
+    int row = count/3;
+    int reset = count%3;
     CGFloat gap = 4;
-    CGFloat itemheight = itemWidth ;// + 40;
-    int rows = (count/numbersOfRow) +  (count%numbersOfRow==0?0:1);
-    CGFloat height = rows*(itemheight+gap) + gap;
-    if ( hasTitle )
-    {
-        height += 34;
+    CGFloat height = row*(singleLineHeight + multLineHeight + 2*4);
+    if ( reset == 2 ) {
+        height  += (multLineHeight+gap);
     }
-    return height;
+    else if ( reset == 1 ) {
+        height  += (singleLineHeight+gap);
+    }
+    return height + 20;
 }
 @end

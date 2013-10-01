@@ -20,12 +20,7 @@
 {
     self = [super init];
     if (self) {
-        UIImage *image = [UIImage imageNamed:@"image_bg"];
-        image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
-        self.bgImageView = [[UIImageView alloc] initWithImage:image];
-        [self addSubview:self.bgImageView];
-        self.imageView = [[UIImageView alloc] init];
-       
+         [self initSubViews];
     }
     return self;
  
@@ -35,8 +30,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self initSubViews];
     }
     return self;
+}
+
+- (void)initSubViews
+{
+    UIImage *image = [UIImage imageNamed:@"image_bg"];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
+    self.bgImageView = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:self.bgImageView];
+    self.imageView = [[UIImageView alloc] init];
+
 }
 
 - (void)layoutSubviews
