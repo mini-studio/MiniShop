@@ -16,3 +16,6 @@
 @property (nonatomic)NSInteger future_maxid;
 @property (nonatomic)NSInteger online_maxid;
 @end
+
+@interface MSPicNotify : MSNotify
+@end

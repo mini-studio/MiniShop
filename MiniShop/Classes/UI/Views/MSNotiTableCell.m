@@ -8,11 +8,18 @@
 
 #import "MSNotiTableCell.h"
 #import "UIColor+Mini.h"
+#import "UIDevice+Ext.h"
+#import "UIImageView+WebCache.h"
+#import "MiniUIPhotoImageView.h"
+#import "UIImage+Mini.h"
+#import "RTLabel.h"
 
 @interface MSNotiTableCell()
 @property (nonatomic,strong)UILabel *noteLabel;
 @property (nonatomic,strong)UIImageView *onlineImageView;
 @property (nonatomic,strong)UIImageView *msSeparatorView;
+@property (nonatomic,strong)NSMutableArray *imageArray;
+@property (nonatomic,strong)RTLabel *rtlabel;
 @end
 
 @implementation MSNotiTableCell
@@ -54,7 +61,9 @@
         [self.onlineImageView addSubview:self.noteLabel];
         self.msSeparatorView = [[UIImageView alloc] initWithImage:[MiniUIImage imageNamed:@"news_separator"]];
         [self addSubview:self.msSeparatorView];
-
+        self.imageArray = [NSMutableArray array];
+        self.rtlabel = [[RTLabel alloc] initWithFrame:CGRectMake(30,10,270,20)];
+        [self addSubview:self.rtlabel];
     }
     return self;
 }
@@ -64,6 +73,10 @@
     [super prepareForReuse];
     self.onlineImageView.hidden = YES;
     self.imageView.image = nil;
+    for ( UIImageView *imageView in self.imageArray ) {
+        [imageView removeFromSuperview];
+    }
+    [self.imageArray removeAllObjects];
 }
 
 - (void)layoutSubviews
@@ -81,8 +94,6 @@
         self.textLabel.origin = CGPointMake(10, 12);
     }
     
-    self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+10);
-
     if ( [self.item isKindOfClass:[MSNotiItemGroupInfo class]] )
     {
         self.msSeparatorView.center = CGPointMake(self.width/2, self.textLabel.bottom+10);
@@ -92,23 +103,57 @@
         {
             self.textLabel.width -= 40;
             self.onlineImageView.hidden = NO;
-            self.onlineImageView.origin = CGPointMake(self.width - 45, 12);
+            self.onlineImageView.origin = CGPointMake(self.width - 50, 12);
         }
     }
     else {
         self.msSeparatorView.hidden = YES;
     }
+    
+    self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+14);
+    
+    __block CGFloat top =  self.textLabel.bottom + 2;
+    [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+         UIView *imageView = [self.imageArray objectAtIndex:idx];
+        int mod = idx%3;
+       
+        if ( mod == 2 ) {
+            CGFloat imageSize = self.width - 30;
+            imageView.origin = CGPointMake(15, top );
+            top += imageSize;
+            top += 4;
+        }
+        else {
+            CGFloat imageSize = ( self.width  - 34)/2;
+            if ( mod == 0 ) {
+                if ( idx == self.imageArray.count-1 ) {
+                    imageSize = width - 30;
+                }
+                imageView.origin = CGPointMake(15, top );
+                top += imageSize;
+                top += 4;
+            }
+            else {
+                CGFloat secondTop = top - imageSize - 4;
+                imageView.origin = CGPointMake(imageSize + 20, secondTop );
+    
+            }
+        }
+    }];
 }
 
 - (void)setCellTheme:(UITableView*)tableView indexPath:(NSIndexPath *)indexPath backgroundCorlor:(UIColor *)backgroundCorlor highlightedBackgroundCorlor:(UIColor *)highlightedBackgroundCorlor  sectionRowNumbers:(NSInteger)numberOfRow
 {
     if ( [self.item.type isEqualToString:MSStoreNewsTypeOffical] || [self.item.type isEqualToString:MSStoreNewsTypeTopic] || [self.item.type isEqualToString:MSStoreNewsTypeURL] )
     {
-        UIImage *image = [UIImage imageNamed:@"news_cell_bg"];
+        UIImage *image = [UIImage imageNamed:@"news_online_cell_bg"];
         [super setCellTheme:tableView indexPath:indexPath background:image highlightedBackground:image sectionRowNumbers:numberOfRow];
     }
     else {
-        UIImage *image = [UIImage imageNamed:@"news_online_cell_bg"];
+        UIImage *image = nil;
+        if ( !self.item.isNews ) {
+             image = [UIImage imageNamed:@"news_online_cell_bg"];
+        }
         [super setCellTheme:tableView indexPath:indexPath background:image highlightedBackground:image sectionRowNumbers:numberOfRow];
     }
 }
@@ -116,21 +161,79 @@
 - (void)setItem:(MSNotiItemInfo *)item
 {
     _item = item;
-    self.textLabel.text = item.name;
-    self.detailTextLabel.text = item.intro;
+     self.textLabel.text = item.name;
+    
     if ( [item.type isEqualToString:MSStoreNewsTypeOffical] || [item.type isEqualToString:MSStoreNewsTypeTopic] || [item.type isEqualToString:MSStoreNewsTypeURL] )
     {
         self.textLabel.textColor = [UIColor colorWithRGBA: 0xcaab7fFF];
         self.detailTextLabel.textColor = self.textLabel.textColor;
-        self.imageView.image = [UIImage imageNamed:@"news_message_icon"];;
+        self.imageView.image = [UIImage imageNamed:@"news_message_icon"];
+        self.detailTextLabel.text = item.intro;
+        self.rtlabel.hidden = YES;
     }
     else
     {
         self.textLabel.textColor =  [UIColor colorWithRGBA:0x9E2929FF];
         self.detailTextLabel.textColor = [UIColor colorWithRGBA:0x6C6C6CFF];
-        self.noteLabel.text = [item typeNoteDesc];
+        //self.noteLabel.text = [item typeNoteDesc];
         self.noteLabel.textColor = [item typeNoteColor];
-        self.imageView.image = [UIImage imageNamed:@"news_online_icon"];
+        self.msSeparatorView.hidden = YES;
+        self.imageView.image = nil;
+        if ( [item isKindOfClass:[MSPicNotiGroupInfo class]] ) {
+            self.textLabel.text = @" ";
+            self.detailTextLabel.text = nil;
+            MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
+            int count = groupInfo.items_info.goods_info.count;
+            self.rtlabel.hidden = NO;
+            NSString *title = nil;
+            if ( item.isNews ) {
+                title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+            }
+            else {
+               title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+            }
+            [self.rtlabel setText:title];
+            for (int index = 0; index < count; index++) {
+                MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
+                [self.imageArray addObject:imageView];
+                [self addSubview:imageView];
+                int mod = index%3;
+                if ( mod == 2 ) {
+                    CGFloat imageSize = self.width - 30;
+                    imageView.size = CGSizeMake(imageSize, imageSize);
+                }
+                else {
+                    CGFloat imageSize = (self.width - 34)/2;
+                    if ( mod == 0 ) {
+                        if ( index == count-1 ) {
+                            imageSize = self.width - 30;
+                        }
+                        imageView.size =  CGSizeMake(imageSize, imageSize);
+                    }
+                    else {
+                        imageView.size = CGSizeMake(imageSize, imageSize);
+                        
+                    }
+                }
+                MSNotiItemInfo *i = [groupInfo.items_info.goods_info objectAtIndex:index];
+                
+                [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                    imageView.image = image;
+                    
+                } failure:^(NSError *error) {
+                    
+                }];
+            }
+        }
+        else {
+            self.msSeparatorView.hidden = NO;
+            self.detailTextLabel.text = item.intro;
+            self.textLabel.textColor =  [UIColor colorWithRGBA:0x9E2929FF];
+            self.detailTextLabel.textColor = [UIColor colorWithRGBA:0x6C6C6CFF];
+            self.noteLabel.text = [item typeNoteDesc];
+            self.noteLabel.textColor = [item typeNoteColor];
+            self.imageView.image = [UIImage imageNamed:@"news_online_icon"];
+        }
     }
     if ( item.publish_time == nil )
     {
@@ -139,19 +242,38 @@
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
 }
 
-- (void)sizeToFit
++ (CGFloat)heightForItem:(MSNotiItemInfo *)item width:(CGFloat)maxWidth
 {
-    [super sizeToFit];
     CGFloat height = 0;
-    CGFloat width = self.width-40;
-    self.textLabel.width = width;
-    self.detailTextLabel.width = width-40;
-    CGSize size = CGSizeMake(10,self.textLabel.font.lineHeight);
+    CGFloat width = maxWidth-20;
+    CGSize size = CGSizeMake(10,18);
     height += (size.height);
-    size = [self.detailTextLabel.text sizeWithFont:self.detailTextLabel.font constrainedToSize:CGSizeMake(self.detailTextLabel.width , MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    height += size.height;    
-    height += 36;
-    self.height = height;
+    if ( [item isKindOfClass:[MSPicNotiGroupInfo class]] ) {
+        height += 10;
+        MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
+        int count = groupInfo.items_info.goods_info.count;
+        CGFloat singleLineHeight = width-10;
+        CGFloat multLineHeight = (singleLineHeight-4)/2;
+        int row = count/3;
+        int reset = count%3;
+        size.height = row*(singleLineHeight + multLineHeight + 8);
+        if ( reset == 2 ) {
+            size.height  += (multLineHeight+4);
+        }
+        else if ( reset == 1 ) {
+             size.height  += (singleLineHeight+4);
+        }
+        height += size.height;
+         height += 24;
+    }
+    else {
+        UIFont *font = [UIFont systemFontOfSize:14];
+        size = [item.intro sizeWithFont:font constrainedToSize:CGSizeMake(width - 40 , MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+        height += size.height;
+         height += 44;
+    }
+   
+    return height;
 }
 
 @end

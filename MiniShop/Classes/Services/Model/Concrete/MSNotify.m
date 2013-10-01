@@ -24,3 +24,18 @@
     return nil;
 }
 @end
+
+@implementation MSPicNotify
+- (Class)classForAttri:(NSString *)attriName
+{
+    if ( [@"items_info" isEqualToString:attriName] )
+    {
+        return [MSPicNotiGroupInfo class];
+    }
+    else if( [@"official" isEqualToString:attriName] || [@"topic" isEqualToString:attriName] )
+    {
+        return [MSNotiItemInfo class];
+    }
+    return nil;
+}
+@end

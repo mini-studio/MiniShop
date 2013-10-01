@@ -50,6 +50,7 @@
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
 		C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */; };
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
+		C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */; };
 		C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */; };
 		C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */; };
 		C14E67B017E7D1E0000BA377 /* navi_message_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */; };
@@ -67,6 +68,8 @@
 		C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59816FF4FF400ED87D8 /* AddressBook.framework */; };
 		C1820F3B175BA51000C87E39 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1820F38175BA51000C87E39 /* libUMFeedback.a */; };
 		C1820F3C175BA51000C87E39 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1820F39175BA51000C87E39 /* umFeedback.bundle */; };
+		C1ACB74317FB370600862641 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACB74217FB370600862641 /* RTLabel.m */; };
+		C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ACB74417FB384900862641 /* CoreText.framework */; };
 		C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FD5178074A100BE5ABB /* AppDelegate.m */; };
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
 		C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDC178074A100BE5ABB /* ClientAgent.m */; };
@@ -299,6 +302,8 @@
 		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
 		C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIPhotoImageView.h; sourceTree = "<group>"; };
+		C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIPhotoImageView.m; sourceTree = "<group>"; };
 		C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav_h@2x.png"; sourceTree = "<group>"; };
 		C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav@2x.png"; sourceTree = "<group>"; };
 		C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_message_h@2x.png"; sourceTree = "<group>"; };
@@ -426,6 +431,9 @@
 		C1820F38175BA51000C87E39 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		C1820F39175BA51000C87E39 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
 		C1820F3A175BA51000C87E39 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		C1ACB74117FB370600862641 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
+		C1ACB74217FB370600862641 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
+		C1ACB74417FB384900862641 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		C1EC4FD4178074A100BE5ABB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1EC4FD5178074A100BE5ABB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1EC4FD9178074A100BE5ABB /* ClientAgent+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ClientAgent+Mini.h"; sourceTree = "<group>"; };
@@ -683,6 +691,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */,
 				C169C59116FF4F9F00ED87D8 /* MessageUI.framework in Frameworks */,
 				C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */,
 				C169C59716FF4FD200ED87D8 /* MapKit.framework in Frameworks */,
@@ -801,6 +810,7 @@
 		C169C47816FF48F200ED87D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACB74417FB384900862641 /* CoreText.framework */,
 				C101D199177CCB3E009BFA10 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
 				C1820F37175BA51000C87E39 /* ufeedback */,
 				C1FAFECD1752728E00A7E7F6 /* webchat */,
@@ -1498,12 +1508,16 @@
 		C1EC504D178074A100BE5ABB /* Mini */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACB74117FB370600862641 /* RTLabel.h */,
+				C1ACB74217FB370600862641 /* RTLabel.m */,
 				C12C2CAD17E8F8DC0097CFBD /* MiniUIASTextField.h */,
 				C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */,
 				C1EC504E178074A100BE5ABB /* MiniUIIndicator.h */,
 				C1EC504F178074A100BE5ABB /* MiniUIIndicator.m */,
 				C1EC5050178074A100BE5ABB /* MiniUIWebView.h */,
 				C1EC5051178074A100BE5ABB /* MiniUIWebView.m */,
+				C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */,
+				C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */,
 			);
 			path = Mini;
 			sourceTree = "<group>";
@@ -1961,6 +1975,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */,
+				C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */,
 				C10BE74217765C3C009E6482 /* UMContactViewController.m in Sources */,
 				C10BE74417765C3C009E6482 /* UMFeedbackTableViewCellLeft.m in Sources */,
 				C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */,
@@ -1985,6 +2000,7 @@
 				C1EC5072178074A100BE5ABB /* MSVersion.m in Sources */,
 				C1EC5073178074A100BE5ABB /* MiniNSURLProtocol.m in Sources */,
 				C1EC5074178074A100BE5ABB /* MiniURLCache.m in Sources */,
+				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,

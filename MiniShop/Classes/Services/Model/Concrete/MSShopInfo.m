@@ -10,6 +10,12 @@
 
 @implementation MSShopInfo
 
+- (void)setMid:(id)mid
+{
+    _mid =  [mid isKindOfClass:[NSString class]]?mid:[NSString stringWithFormat:@"%ld",((NSNumber*)mid).longValue];
+    _shop_id = _mid;
+}
+
 - (NSString *)realTitle
 {
     if ( self.shop_id == 0 )

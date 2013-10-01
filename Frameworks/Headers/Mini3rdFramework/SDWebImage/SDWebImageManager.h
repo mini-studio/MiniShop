@@ -22,7 +22,8 @@ typedef enum
     SDWebImageClipCenterToFits = 1 << 6,
     SDWebImageAsyncLoad = 1 << 7,
     SDWebImageShowIndicator = 1 << 8,
-    SDWebImageAutoSetImage = 1 << 9
+    SDWebImageAutoSetImage = 1 << 9,
+    SDWebImageSetImageNoAnimated = 1 << 10
 } SDWebImageOptions;
 
 #if NS_BLOCKS_AVAILABLE

@@ -172,7 +172,6 @@
 - (void)createTableView
 {
     CGRect frame = self.view.bounds;
-    frame = CGRectInset(frame, 5, 0);
     self.tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.delegate = self;
@@ -229,21 +228,81 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
+    MSNotiItemInfo *data = [ds objectAtIndex:section];
+    if ( [data isKindOfClass:[MSPicNotiGroupInfo class]] ) {
+        return 0;
+    }
+    else {
+        return 6;
+    }
+
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
+    MSNotiItemInfo *data = [ds objectAtIndex:section];
+    if ( [data isMemberOfClass:[MSPicNotiGroupInfo class]] ) {
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    }
+    else{
+        if ( [data isMemberOfClass:[MSNotiItemGroupInfo class]] ) {
+             return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        }
+        else {
+            return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 6)];
+        }
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 6;
+    NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
+    MSNotiItemInfo *data = [ds objectAtIndex:section];
+    if ( [data isMemberOfClass:[MSPicNotiGroupInfo class]] ) {
+        return 30;
+    }
+    else {
+        if ( [data isMemberOfClass:[MSNotiItemGroupInfo class]] ) {
+            return 0;
+        }
+        else {
+            return 6;
+        }
+    }
 }
+
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 6)];
+    NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
+    MSNotiItemInfo *data = [ds objectAtIndex:section];
+    if ( [data isKindOfClass:[MSPicNotiGroupInfo class]] ) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 30)];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navi_shop_h"]];
+        imageView.frame = CGRectMake(10, 5, 20, 20);
+        [view addSubview:imageView];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, tableView.width-60, 20)];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        label.font = [UIFont boldSystemFontOfSize:16];
+        label.text = data.name;
+        [view addSubview:label];
+        view.backgroundColor = [UIColor colorWithRGBA:0x33333333];
+        return view;
+    }
+    else{
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 6)];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    [cell sizeToFit];
-    return cell.height;
+    NSMutableArray *ds = [self dataSourceForType:self.segment.selectedSegmentIndex];
+    return [MSNotiTableCell heightForItem:[ds objectAtIndex:indexPath.section] width:tableView.width];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -285,15 +344,15 @@
     else if ( [MSStoreNewsTypeGoodsPromotion isEqualToString:data.type] || [MSStoreNewsTypePrevue isEqualToString:data.type] ||
              [MSStoreNewsTypeNewProduct isEqualToString:data.type])// 
     {
-        [MobClick event:MOB_MSG_GOODS_CLICK];
-        [data setRead:YES];
-        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        MSDetailViewController *controller = [[MSDetailViewController alloc] init];
-        controller.itemInfo = data;
-        controller.from = @"list";
-        controller.mtitle = [MSStoreNewsTypeGoodsPromotion isEqualToString:data.type]?@"店家活动":@"最新上新";
-        controller.more = YES;
-        [self.navigationController pushViewController:controller animated:YES];
+//        [MobClick event:MOB_MSG_GOODS_CLICK];
+//        [data setRead:YES];
+//        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        MSDetailViewController *controller = [[MSDetailViewController alloc] init];
+//        controller.itemInfo = data;
+//        controller.from = @"list";
+//        controller.mtitle = [MSStoreNewsTypeGoodsPromotion isEqualToString:data.type]?@"店家活动":@"最新上新";
+//        controller.more = YES;
+//        [self.navigationController pushViewController:controller animated:YES];
     }
     else if ( [MSStoreNewsTypeStorePromotion isEqualToString:data.type] ) //店铺活动
     {
@@ -406,7 +465,7 @@
                  {
                      if ( pSelf.mark )
                      {
-                         for ( MSNotiItemInfo *info in data.items_info )
+                         for ( MSPicNotiGroupInfo *info in data.items_info )
                          {
                              info.isNews = YES;
                          }
@@ -502,7 +561,7 @@
     [ds addObjectsFromArray:noti.official];
     [ds addObjectsFromArray:noti.topic];
     NSMutableDictionary *itemMap = [self itemMapForType:type];
-    for ( MSNotiItemGroupInfo *info in noti.items_info )
+    for ( MSPicNotiGroupInfo *info in noti.items_info )
     {
         NSString *mid = [NSString stringWithFormat:@"%lld",info.mid];
         if ( [itemMap valueForKey:mid] == nil )

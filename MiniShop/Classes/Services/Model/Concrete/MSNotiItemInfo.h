@@ -42,6 +42,15 @@
 
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *small_image_url;
+@property (nonatomic)CGSize small_image_size_;
+@property (nonatomic, strong) NSString *big_image_url;
+@property (nonatomic)CGSize big_image_size_;
+@property (nonatomic, strong) NSString *rush_buy;
+@property (nonatomic, strong) NSString *sku_num;
+@property (nonatomic, strong) NSString *activity;
 
 @property (nonatomic, strong) NSArray *goods_ids;
 @property (nonatomic, strong) NSArray *goods_names;
@@ -60,8 +69,19 @@
 
 @end
 
+@interface MSPicNotiGroupItemInfo : MSObject
+@property (nonatomic,strong) MSShopInfo *shop_info;
+@property (nonatomic,strong) NSArray    *goods_info;
+@end
 
 @interface MSNotiItemGroupInfo : MSNotiItemInfo
 @property (nonatomic,strong) MSShopInfo *shop_info;
 @property (nonatomic,strong) NSArray    *items_info;
 @end
+
+@interface MSPicNotiGroupInfo : MSNotiItemInfo
+@property (nonatomic,strong) MSPicNotiGroupItemInfo *items_info;
+- (int64_t)mid;
+@end
+
+

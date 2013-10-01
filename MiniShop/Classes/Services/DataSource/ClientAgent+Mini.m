@@ -182,8 +182,8 @@
 {
     NSDictionary * params = @{@"page":[NSString stringWithFormat:@"%d",page]};
     params = [self perfectParameters:params];
-    NSString *addr = [self requestUri:@"news12"];
-    [self getDataFromServer:addr params:params cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSNotify class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    NSString *addr = [self requestUri:@"news13"];
+    [self getDataFromServer:addr params:params cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSPicNotify class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
 }

@@ -12,6 +12,7 @@
 @property (nonatomic) bool ZM;
 @property (nonatomic) bool ZY;
 @property (nonatomic) bool c;
+@property (nonatomic,strong)NSString *mid;
 @property (nonatomic) int collectCount;
 @property (nonatomic ,strong) NSString *collecttime;
 @property (nonatomic ,strong) NSString *img;
@@ -24,6 +25,8 @@
 @property (nonatomic ,strong) NSString *tag;
 @property (nonatomic ,strong) NSString *title;
 @property (nonatomic ,strong) NSString *type;
+@property (nonatomic ,strong) NSString *goods_num;
+@property (nonatomic ) int *more_goods;
 
 @property (nonatomic) int64_t shop_id;
 @property (nonatomic ,strong) NSString *shop_title;
@@ -47,6 +50,8 @@
 @property (nonatomic,strong) NSString *taobao_domain;
 @property (nonatomic,strong) NSString *taobao_shop_mobile_url;
 @property (nonatomic,strong) NSString *taobao_shop_web_url;
+
+@property (nonatomic,strong) NSString *publish_time;
 @property (nonatomic) int num;
 
 
