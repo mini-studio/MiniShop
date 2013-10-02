@@ -8,6 +8,7 @@
 
 #import "MSNotiItemInfo.h"
 #import "UIColor+Mini.h"
+#import "MSGoodsList.h"
 
 @implementation MSNotiItemInfo
 
@@ -127,7 +128,7 @@
 {
     if ( [@"goods_info" isEqualToString:attriName] )
     {
-        return [MSNotiItemInfo class];
+        return [MSGoodItem class];
     }
     else if ( [@"shop_info" isEqualToString:attriName] )
     {
@@ -219,7 +220,7 @@
 @end
 
 
-@implementation MSNotiItemGroupInfo
+@implementation MSNotiGroupInfo
 - (Class)classForAttri:(NSString *)attriName
 {
     if ( [@"items_info" isEqualToString:attriName] )

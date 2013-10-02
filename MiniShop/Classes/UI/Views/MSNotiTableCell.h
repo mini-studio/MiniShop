@@ -11,6 +11,7 @@
 
 @interface MSNotiTableCell : UITableViewCell
 @property (nonatomic,strong)MSNotiItemInfo *item;
+@property (nonatomic,assign)UIViewController *controller;
 
 + (CGFloat)heightForItem:(MSNotiItemInfo *)item width:(CGFloat)maxWidth;
 

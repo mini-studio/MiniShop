@@ -15,7 +15,7 @@
 {
     if ( [@"items_info" isEqualToString:attriName] )
     {
-        return [MSNotiItemGroupInfo class];
+        return [MSNotiGroupInfo class];
     }
     else if( [@"official" isEqualToString:attriName] || [@"topic" isEqualToString:attriName] ) 
     {

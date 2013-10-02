@@ -250,7 +250,7 @@
         return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     }
     else{
-        if ( [data isMemberOfClass:[MSNotiItemGroupInfo class]] ) {
+        if ( [data isMemberOfClass:[MSNotiGroupInfo class]] ) {
              return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         }
         else {
@@ -267,7 +267,7 @@
         return 30;
     }
     else {
-        if ( [data isMemberOfClass:[MSNotiItemGroupInfo class]] ) {
+        if ( [data isMemberOfClass:[MSNotiGroupInfo class]] ) {
             return 0;
         }
         else {
@@ -326,6 +326,7 @@
         [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];
         
     }
+    cell.controller = self;
     return cell;
 }
 
@@ -351,9 +352,11 @@
              [MSStoreNewsTypeNewProduct isEqualToString:data.type])// 
     {
         [MobClick event:MOB_MSG_GOODS_CLICK];
-        [data setRead:YES];       
-        [self viewShopGallery:data];
-        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [data setRead:YES];
+        if ( [data isMemberOfClass:[MSNotiGroupInfo class]] ) {
+            [self viewShopGallery:data];
+            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
     else if ( [MSStoreNewsTypeStorePromotion isEqualToString:data.type] ) //店铺活动
     {

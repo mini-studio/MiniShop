@@ -74,7 +74,7 @@
 @property (nonatomic,strong) NSArray    *goods_info;
 @end
 
-@interface MSNotiItemGroupInfo : MSNotiItemInfo
+@interface MSNotiGroupInfo : MSNotiItemInfo
 @property (nonatomic,strong) MSShopInfo *shop_info;
 @property (nonatomic,strong) NSArray    *items_info;
 @end

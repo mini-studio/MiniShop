@@ -11,4 +11,6 @@
 @interface MiniUIPhotoImageView : UIView
 @property (nonatomic,readonly) UIImageView *imageView;
 @property (nonatomic,strong) UIImage *image;
+
+- (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo;
 @end

@@ -12,6 +12,7 @@
 @interface MiniUIPhotoImageView()
 @property (nonatomic,strong)UIImageView *imageView;
 @property (nonatomic,strong)UIImageView *bgImageView;
+@property (nonatomic,strong)MiniUIButton *button;
 @end
 
 @implementation MiniUIPhotoImageView
@@ -42,6 +43,8 @@
     self.bgImageView = [[UIImageView alloc] initWithImage:image];
     [self addSubview:self.bgImageView];
     self.imageView = [[UIImageView alloc] init];
+    self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+    [self addSubview:self.button];
 
 }
 
@@ -50,6 +53,7 @@
     [super layoutSubviews];
     CGRect frame = self.bounds;
     self.bgImageView.frame = frame;
+    self.button.frame = self.bounds;
 }
 
 - (void)setImage:(UIImage *)image
@@ -62,6 +66,12 @@
     self.imageView.center = CGPointMake(self.width/2, self.height/2);
     self.imageView.image = image;
     [self addSubview:_imageView];
+}
+
+- (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo
+{
+    self.button.userInfo = userInfo;
+    [self.button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

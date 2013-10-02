@@ -10,6 +10,9 @@
 #import "NSDate+Format.h"
 
 @implementation MSGoodItem
+
+@synthesize big_image_url = _big_image_url;
+
 - (NSString*)image_url
 {
     if ( _image_url == nil || _image_url.length == 0 )
@@ -26,6 +29,14 @@
         _big_image_url = _image_url;
     }
     return  _big_image_url;
+}
+
+- (void)setBig_image_url:(NSString *)big_image_url
+{
+    if ( [big_image_url hasSuffix:@".jpg_.jpg"] ) {
+        big_image_url = [big_image_url substringToIndex:big_image_url.length-5];
+    }
+    _big_image_url = big_image_url;
 }
 
 - (void)setRead:(BOOL)read

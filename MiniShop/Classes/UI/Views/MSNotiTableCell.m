@@ -13,6 +13,7 @@
 #import "MiniUIPhotoImageView.h"
 #import "UIImage+Mini.h"
 #import "RTLabel.h"
+#import "MSDetailViewController.h"
 
 @interface MSNotiTableCell()
 @property (nonatomic,strong)UILabel *noteLabel;
@@ -94,7 +95,7 @@
         self.textLabel.origin = CGPointMake(10, 12);
     }
     
-    if ( [self.item isKindOfClass:[MSNotiItemGroupInfo class]] )
+    if ( [self.item isKindOfClass:[MSNotiGroupInfo class]] )
     {
         self.msSeparatorView.center = CGPointMake(self.width/2, self.textLabel.bottom+10);
         self.msSeparatorView.width = width;
@@ -195,6 +196,7 @@
             [self.rtlabel setText:title];
             for (int index = 0; index < count; index++) {
                 MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
+               
                 [self.imageArray addObject:imageView];
                 [self addSubview:imageView];
                 int mod = index%3;
@@ -215,7 +217,8 @@
                         
                     }
                 }
-                MSNotiItemInfo *i = [groupInfo.items_info.goods_info objectAtIndex:index];
+                MSGoodItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
+                [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:i];
                 
                 [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
                     imageView.image = image;
@@ -240,6 +243,23 @@
         item.publish_time = @"";
     }
     self.textLabel.highlightedTextColor = self.textLabel.textColor;
+}
+
+- (void)actionImageTap:(MiniUIButton*)sender
+{
+    MSNotiItemInfo *info = sender.userInfo;
+    MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)self.item;
+    NSInteger index = [groupInfo.items_info.goods_info indexOfObject:info];
+    MSDetailViewController *c = [[MSDetailViewController alloc] init];
+    c.itemInfo = self.item;
+    MSGoodsList *lst = [[MSGoodsList alloc] init];
+    lst.shop_id = groupInfo.items_info.shop_info.mid.integerValue;
+    lst.shop_name = groupInfo.items_info.shop_info.shop_title;
+    lst.body_info = groupInfo.items_info.goods_info;
+    c.goods = lst;
+    c.defaultIndex = index;
+    [self.controller.navigationController pushViewController:c  animated:YES];
+    
 }
 
 + (CGFloat)heightForItem:(MSNotiItemInfo *)item width:(CGFloat)maxWidth
