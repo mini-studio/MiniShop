@@ -62,8 +62,8 @@
     [self addSubview:self.promptLabel];
     self.colorButton = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"news_online_tag"] highlightedBackGroundImage:nil title:@""];
     [self.colorButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
-    self.colorButton.size = CGSizeMake(40, 18);
-    self.colorButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    self.colorButton.size = CGSizeMake(40, 20);
+    self.colorButton.titleLabel.font = [UIFont systemFontOfSize:14];
     self.colorButton.hidden = YES;
     [self addSubview:self.colorButton];
 
@@ -106,7 +106,7 @@
 {
     [self.colorButton setTitle:colorPrompt forState:UIControlStateNormal];
     [self.colorButton sizeToFit];
-    self.colorButton.height = 16;
+    self.colorButton.height = 20;
     self.colorButton.width += 10;
     self.colorButton.hidden = NO;
 }
