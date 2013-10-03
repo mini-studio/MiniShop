@@ -16,8 +16,9 @@
     NSString *_fileType;    
     BOOL (^requestObserver)(MiniUIWebViewController *controller, NSString *url, UIWebViewNavigationType navigationType);
 }
-@property (nonatomic,retain)NSString *fileName;
-@property (nonatomic,retain)NSString *fileType;
+@property (nonatomic,strong)NSString *fileName;
+@property (nonatomic,strong)NSString *fileType;
+@property (nonatomic,strong)UIActivityIndicatorView *indicatorView;
 @end
 
 @implementation MiniUIWebViewController
@@ -74,6 +75,7 @@
         self.navigationItem.title = self.ctitle;
     }
     [self setNaviBackButton];
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 }
 
 - (void)setNaviBackButton
@@ -189,8 +191,17 @@
 
 - (void)showWating:(NSString *)message
 {
-    [super showWating:message];
-    self.view.userInteractionEnabled = YES;
+    //[super showWating:message];
+    self.indicatorView.center = CGPointMake(self.view.width/2, self.view.height/2);
+    [self.view addSubview:self.indicatorView];
+    [self.indicatorView startAnimating];
+    //self.view.userInteractionEnabled = YES;
+}
+
+- (void)dismissWating:(BOOL)animated
+{
+    [self.indicatorView stopAnimating];
+    [self.indicatorView removeFromSuperview];
 }
 
 - (void)HandleStartWebREQ:(NSNotification *)noti

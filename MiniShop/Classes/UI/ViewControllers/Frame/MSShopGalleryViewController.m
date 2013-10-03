@@ -14,6 +14,7 @@
 #import "MSGalleryGoodsCell.h"
 #import "MSDetailViewController.h"
 #import "MSWebChatUtil.h"
+#import "MSJoinViewController.h"
 
 @interface MSShopGalleryViewController ()<UITableViewDataSource,UITabBarDelegate>
 @property (nonatomic,strong) EGOUITableView *tableView;
@@ -34,6 +35,15 @@
     return self;
 }
 
+- (void)setShopInfo:(MSShopInfo *)shopInfo
+{
+    _shopInfo =  shopInfo;
+    _notiInfo = [[MSNotiItemInfo alloc] init];
+    _notiInfo.shop_id = _shopInfo.shop_id;
+    _notiInfo.shop_title = _shopInfo.realTitle;
+    _notiInfo.name = _shopInfo.realTitle;
+}
+
 - (void)loadView
 {
     [super loadView];
@@ -50,7 +60,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.view.width, 30)];
     [view addSubview:headerView];
-    headerView.text = self.shopInfo.shop_title;
+    headerView.text = self.notiInfo.shop_title;
     headerView.font = [UIFont systemFontOfSize:18];
     headerView.textColor = [UIColor colorWithRGBA:0x737270FF];
     headerView.textAlignment = NSTextAlignmentCenter;
@@ -147,7 +157,7 @@
         cell = [[MSGalleryGoodsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     MSShopGalleryInfo *info = [self.dataSource.body_info objectAtIndex:indexPath.section];
-    info.item_info.shop_name = self.shopInfo.name;
+    info.item_info.shop_name = self.notiInfo.name;
     [cell setGalleyInfo:info];
     __PSELF__;
     [cell setHandleTouchItem:^(MSGoodItem * item) {
@@ -229,7 +239,7 @@
     if ( page == 0 )
     {
         __PSELF__;
-        [[ClientAgent sharedInstance] newsbody12:self.shopInfo.shop_id block:^(NSError *error, MSShopGalleryList* data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] newsbody12:self.notiInfo.shop_id block:^(NSError *error, MSShopGalleryList* data, id userInfo, BOOL cache) {
             if ( error == nil )
             {
                 [pSelf.tableView setMoreDataAction:^{
@@ -257,7 +267,7 @@
     else
     {
         __PSELF__;
-        [[ClientAgent sharedInstance] goodsdetail12:self.shopInfo.shop_id page:page block:^(NSError *error, MSGoodsList* data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] goodsdetail12:self.notiInfo.shop_id page:page block:^(NSError *error, MSGoodsList* data, id userInfo, BOOL cache) {
             if ( error == nil )
             {
                 pSelf.page = page;
@@ -295,8 +305,8 @@
     }
     for ( MSGoodItem *item in array )
     {
-        item.shop_title = self.shopInfo.name;
-        item.shop_id = self.shopInfo.shop_id;
+        item.shop_title = self.notiInfo.name;
+        item.shop_id = self.notiInfo.shop_id;
     }
     return array;
 }
@@ -306,11 +316,11 @@
     MSGoodsList *data =[[MSGoodsList alloc] init];
     NSArray *array = [self allItems];
     data.body_info = array;
-    data.shop_name = self.shopInfo.name;
-    data.shop_id = self.shopInfo.shop_id;
+    data.shop_name = self.notiInfo.name;
+    data.shop_id = self.notiInfo.shop_id;
     NSInteger index = [array indexOfObject:item];
     MSDetailViewController *c = [[MSDetailViewController alloc] init];
-    c.mtitle = self.shopInfo.name;
+    c.mtitle = self.notiInfo.name;
     c.defaultIndex = index;
     c.more = NO;
     c.goods = data;
@@ -319,7 +329,8 @@
 
 - (void)actionGoToSocial
 {
-    
+    MSJoinViewController *controller = [[MSJoinViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)actionFav
@@ -330,8 +341,8 @@
 - (void)actionShare
 {
     MSShopInfo *info = [[MSShopInfo alloc] init];
-    info.shop_id = self.shopInfo.shop_id;
-    info.shop_title = self.shopInfo.name;
+    info.shop_id = self.notiInfo.shop_id;
+    info.shop_title = self.notiInfo.name;
     [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的店铺到" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex == 1 )
         {

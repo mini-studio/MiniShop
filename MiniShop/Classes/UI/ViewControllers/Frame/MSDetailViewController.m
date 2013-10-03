@@ -217,7 +217,7 @@
             {
                 self.loading = YES;
                 MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
-                controller.shopInfo = self.itemInfo;
+                controller.notiInfo = self.itemInfo;
                 controller.autoLayout = NO;
                 [self.navigationController pushViewController:controller animated:YES];
                 return;
@@ -556,7 +556,7 @@
         info.shop_title = self.goods.shop_name;
         info.name = self.goods.shop_name;
     }
-    controller.shopInfo = info;
+    controller.notiInfo = info;
     controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }

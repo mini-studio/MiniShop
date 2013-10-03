@@ -10,6 +10,7 @@
 @class MSNotiItemInfo;
 
 @interface MSShopGalleryViewController : MSViewController
-@property (nonatomic,strong) MSNotiItemInfo *shopInfo;
+@property (nonatomic,strong) MSNotiItemInfo *notiInfo;
+@property (nonatomic,strong) MSShopInfo *shopInfo;
 @property (nonatomic) BOOL autoLayout;
 @end

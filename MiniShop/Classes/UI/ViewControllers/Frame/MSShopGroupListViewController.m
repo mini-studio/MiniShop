@@ -13,6 +13,7 @@
 #import "UIColor+Mini.h"
 #import "MSShopInfoCell.h"
 #import "MSUIWebViewController.h"
+#import "MSShopGalleryViewController.h"
 #import "MSUISearchBar.h"
 
 @interface MSShopGroupListViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
@@ -164,7 +165,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *ds = [self dataSourceAtSection:indexPath.section];
     MSShopInfo *info = [ds objectAtIndex:indexPath.row];
-    [self actionGoToShopping:info];
+    if ( info.shop_id > 0 ) {
+        MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
+        controller.shopInfo = info;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else {
+        [self actionGoToShopping:info];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

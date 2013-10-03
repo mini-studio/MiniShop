@@ -15,6 +15,7 @@
 #import "UIColor+Mini.h"
 #import "EGOUITableView.h"
 #import "MSWebChatUtil.h"
+#import "MSShopGalleryViewController.h"
 
 @interface MSShopListViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
@@ -117,7 +118,15 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MSShopInfo *info = [self.dataSource objectAtIndex:indexPath.row];
-    [self actionGoToShopping:info];
+    if ( info.shop_id > 0 ) {
+        MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
+        controller.shopInfo = info;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else {
+        [self actionGoToShopping:info];
+    }
+
 }
 
 - (void)actionButtonTap:(MiniUIButton*)button

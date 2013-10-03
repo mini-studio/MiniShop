@@ -33,9 +33,9 @@
 
 - (void)setBig_image_url:(NSString *)big_image_url
 {
-    if ( [big_image_url hasSuffix:@".jpg_.jpg"] ) {
-        big_image_url = [big_image_url substringToIndex:big_image_url.length-5];
-    }
+//    if ( [big_image_url hasSuffix:@".jpg_.jpg"] ) {
+//        big_image_url = [big_image_url substringToIndex:big_image_url.length-5];
+//    }
     _big_image_url = big_image_url;
 }
 

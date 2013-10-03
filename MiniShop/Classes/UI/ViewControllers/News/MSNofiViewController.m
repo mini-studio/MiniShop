@@ -684,7 +684,7 @@
 - (void)viewShopGallery:(MSNotiItemInfo*)itemInfo
 {
     MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
-    controller.shopInfo = itemInfo;
+    controller.notiInfo = itemInfo;
     controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }
