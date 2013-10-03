@@ -21,6 +21,7 @@
 @property (nonatomic,strong)UIImageView *msSeparatorView;
 @property (nonatomic,strong)NSMutableArray *imageArray;
 @property (nonatomic,strong)RTLabel *rtlabel;
+@property (nonatomic,strong)UIImageView *noneNewImageView;
 @end
 
 @implementation MSNotiTableCell
@@ -65,6 +66,20 @@
         self.imageArray = [NSMutableArray array];
         self.rtlabel = [[RTLabel alloc] initWithFrame:CGRectMake(30,10,270,20)];
         [self addSubview:self.rtlabel];
+        
+        image = [UIImage imageNamed:@"news_online_cell_bg"];
+        image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.height/2, image.size.width/2, image.size.height/2, image.size.width/2)];
+        self.noneNewImageView = [[UIImageView alloc] initWithImage:image];
+        _noneNewImageView.frame = CGRectMake(10, 10, WINDOW.width-20, 80);
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.noneNewImageView.width, 30)];
+        label.backgroundColor = [UIColor clearColor];
+        label.text = @"今日无上新";
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:14];
+        label.textColor = [UIColor colorWithRGBA: 0xcaab7fFF];
+        label.center = CGPointMake(_noneNewImageView.width/2, _noneNewImageView.height/2);
+        [self.noneNewImageView addSubview:label];
+        
     }
     return self;
 }
@@ -78,6 +93,7 @@
         [imageView removeFromSuperview];
     }
     [self.imageArray removeAllObjects];
+    [self.noneNewImageView removeFromSuperview];
 }
 
 - (void)layoutSubviews
@@ -186,46 +202,51 @@
             MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
             int count = groupInfo.items_info.goods_info.count;
             self.rtlabel.hidden = NO;
-            NSString *title = nil;
-            if ( item.isNews ) {
-                title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+            if ( count == 0 ) {
+                [self addSubview:self.noneNewImageView];
             }
             else {
-               title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
-            }
-            [self.rtlabel setText:title];
-            for (int index = 0; index < count; index++) {
-                MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
-               
-                [self.imageArray addObject:imageView];
-                [self addSubview:imageView];
-                int mod = index%3;
-                if ( mod == 2 ) {
-                    CGFloat imageSize = self.width - 30;
-                    imageView.size = CGSizeMake(imageSize, imageSize);
+                NSString *title = nil;
+                if ( item.isNews ) {
+                    title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
                 }
                 else {
-                    CGFloat imageSize = (self.width - 34)/2;
-                    if ( mod == 0 ) {
-                        if ( index == count-1 ) {
-                            imageSize = self.width - 30;
-                        }
-                        imageView.size =  CGSizeMake(imageSize, imageSize);
+                   title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+                }
+                [self.rtlabel setText:title];
+                for (int index = 0; index < count; index++) {
+                    MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
+                   
+                    [self.imageArray addObject:imageView];
+                    [self addSubview:imageView];
+                    int mod = index%3;
+                    if ( mod == 2 ) {
+                        CGFloat imageSize = self.width - 30;
+                        imageView.size = CGSizeMake(imageSize, imageSize);
                     }
                     else {
-                        imageView.size = CGSizeMake(imageSize, imageSize);
-                        
+                        CGFloat imageSize = (self.width - 34)/2;
+                        if ( mod == 0 ) {
+                            if ( index == count-1 ) {
+                                imageSize = self.width - 30;
+                            }
+                            imageView.size =  CGSizeMake(imageSize, imageSize);
+                        }
+                        else {
+                            imageView.size = CGSizeMake(imageSize, imageSize);
+                            
+                        }
                     }
+                    MSGoodItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
+                    [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:i];
+                    
+                    [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                        imageView.image = image;
+                        
+                    } failure:^(NSError *error) {
+                        
+                    }];
                 }
-                MSGoodItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
-                [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:i];
-                
-                [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
-                    imageView.image = image;
-                    
-                } failure:^(NSError *error) {
-                    
-                }];
             }
         }
         else {
@@ -272,19 +293,24 @@
         height += 10;
         MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
         int count = groupInfo.items_info.goods_info.count;
-        CGFloat singleLineHeight = width-10;
-        CGFloat multLineHeight = (singleLineHeight-4)/2;
-        int row = count/3;
-        int reset = count%3;
-        size.height = row*(singleLineHeight + multLineHeight + 8);
-        if ( reset == 2 ) {
-            size.height  += (multLineHeight+4);
+        if ( count > 0 ) {
+            CGFloat singleLineHeight = width-10;
+            CGFloat multLineHeight = (singleLineHeight-4)/2;
+            int row = count/3;
+            int reset = count%3;
+            size.height = row*(singleLineHeight + multLineHeight + 8);
+            if ( reset == 2 ) {
+                size.height  += (multLineHeight+4);
+            }
+            else if ( reset == 1 ) {
+                 size.height  += (singleLineHeight+4);
+            }
+            height += size.height;
+            height += 24;
         }
-        else if ( reset == 1 ) {
-             size.height  += (singleLineHeight+4);
+        else {
+            return 100;
         }
-        height += size.height;
-         height += 24;
     }
     else {
         UIFont *font = [UIFont systemFontOfSize:14];

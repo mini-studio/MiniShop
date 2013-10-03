@@ -146,10 +146,13 @@
             importTaobaoView.tag = KIMPORT_VIEW_TAG;
             [self.view addSubview:importTaobaoView];
             self.tableView.hidden = YES;
+            __PSELF__;
             [button setTouchupHandler:^(MiniUIButton *button) {
                 [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"showImportTaobaoView"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                [self actionForImportFav];
+                [[pSelf.view viewWithTag:KIMPORT_VIEW_TAG] removeFromSuperview];
+                 pSelf.tableView.hidden = NO;
+                [pSelf actionForImportFav];
             }];
         }
     }
@@ -297,6 +300,9 @@
         button.frame = view.bounds;
         [view addSubview:button];
         button.userInfo = data;
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"white_arrow"]];
+        imageView.frame = CGRectMake(view.width - 30, 5, 20, 20);
+        [view addSubview:imageView];
         [button addTarget:self action:@selector(actionToGalleryViewController:) forControlEvents:UIControlEventTouchUpInside];
         return view;
     }
@@ -619,6 +625,7 @@
             }
         }];
     }];
+    
 }
 
 - (void)reviseRingButton:(MiniUIButton*)button

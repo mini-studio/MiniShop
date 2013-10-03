@@ -65,6 +65,16 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)loadView
+{
+    [super loadView];
+    if ( MAIN_VERSION >= 7 ) {
+        if ( [self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)] ) {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -123,7 +133,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self changePhoto:self.currentPageIndex+1 pre:self.currentPageIndex];
     UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
@@ -213,6 +222,7 @@
                 [self.navigationController pushViewController:controller animated:YES];
                 return;
             }
+            
         }
     }
     [super scrollViewDidScroll:scrollView];
@@ -271,7 +281,10 @@
 - (void)configurePage:(MWZoomingScrollView *)page forIndex:(NSUInteger)index
 {
 	[super configurePage:page forIndex:index];
-    [self updateViewContents:index];
+    if ( index == self.currentPageIndex ) {
+        [self updateViewContents:index];
+    }
+
 }
 
 - (void)handleMWPhotoLoadingDidEndNotification:(NSNotification *)notification
@@ -299,6 +312,7 @@
         [self uploadviewsec:(int)inter index:preIndex];
         self.viewStartTime = nil;
     }
+    [self updateViewContents:index];
 }
 
 - (CGSize)contentSizeForPagingScrollView {

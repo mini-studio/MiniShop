@@ -24,12 +24,14 @@ static MiniURLCache* cache = nil;
 }
 
 - (NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest *)request
-{ 
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"START_WEB_RQ" object:nil];
     return [super cachedResponseForRequest:request];
 }
 
 - (void)storeCachedResponse:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"END_WEB_RQ" object:nil];
     if ( [[[request URL] absoluteString] rangeOfString:@"mtop.order.queryOrderDetail"].length > 0 )
     {
         NSString *fpath = [ClientAgent filePathForKey:@"ms_count_queryOrderDetail"];

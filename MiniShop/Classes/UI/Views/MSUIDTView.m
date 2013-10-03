@@ -72,6 +72,7 @@
 - (void)setWebView:(MiniUIWebView *)webView
 {
     _webView = webView;
+    _webView.scalesPageToFit = YES;
     [self addSubview:_webView];
     [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     [_webView setViewBackgroundColor:[UIColor clearColor]];

@@ -20,6 +20,7 @@
     if (self = [super init])
     {
         [self regiesteBlock];
+        _dismissWaitingDelay = 5.0;
     }
     return self;
 }
@@ -101,7 +102,6 @@
         if (storeDetailRange.location != NSNotFound)
         {
             MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"店铺详情" toolbar:YES];
-            nextView.dismissWaitingDelay = 1.0;
             [self.navigationController pushViewController:nextView animated:YES];
             return NO;
         }
@@ -113,11 +113,11 @@
             [self.navigationController pushViewController:nextView animated:YES];
             return NO;
         }
-        [self showWating:nil];
+        //[self showWating:nil];
     }
     else
     {
-        [self showWating:nil];
+        //[self showWating:nil];
     }
     return YES;
 }
@@ -177,7 +177,7 @@
 {
     if (_webView.canGoBack)
     {
-        [self showWating:nil];
+        //[self showWating:nil];
         [_webView goBack];
     }
 }
@@ -186,7 +186,7 @@
 {
     if (_webView.canGoForward)
     {
-        [self showWating:nil];
+        //[self showWating:nil];
         [_webView goForward];
     }
 }

@@ -91,7 +91,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HandleStartWebREQ:) name:@"START_WEB_RQ" object:nil];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HandleEndWebREQ:) name:@"END_WEB_RQ" object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
     [self dismissWating];
+     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"START_WEB_RQ" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"END_WEB_RQ" object:nil];
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,9 +130,10 @@
     requestObserver =  block ;
 }
 
+
 - (BOOL)webView:(__strong UIWebView *)webView shouldStartLoadWithRequest:(__strong NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
     if ( !self.miniReq )
     {
         [self showWating:nil];
@@ -138,10 +149,7 @@
         return YES;
     }
 }
-- (void)webViewDidFinishLoad:(__strong UIWebView *)webView
-{
-    [self dismissWating];
-}
+
 
 - (void)webView:(__strong UIWebView *)webView didFailLoadWithError:(__strong NSError *)error
 {
@@ -176,6 +184,42 @@
         tmpBarButtonItem.style = UIBarButtonItemStyleBordered;
         
         return  tmpBarButtonItem;
+    }
+}
+
+- (void)showWating:(NSString *)message
+{
+    [super showWating:message];
+    self.view.userInteractionEnabled = YES;
+}
+
+- (void)HandleStartWebREQ:(NSNotification *)noti
+{
+    dispatch_block_t __block__ = ^{
+        [self showWating:nil];
+        [NSTimer cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismissWating) object:nil];
+        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
+    };
+    if ( [[NSThread currentThread] isMainThread] ) {
+        __block__();
+    }
+    else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            __block__();
+        });
+    }
+    
+}
+
+- (void)HandleEndWebREQ:(NSNotification *)noti
+{
+    if ( [[NSThread currentThread] isMainThread] ) {
+        [self dismissWating];
+    }
+    else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self dismissWating];
+        });
     }
 }
 
