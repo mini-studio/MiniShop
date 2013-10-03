@@ -46,6 +46,19 @@
     [def synchronize];
 }
 
+- (void)setSku_num:(id)sku_num
+{
+    if ( [sku_num isKindOfClass:[NSString class] ] ) {
+        _sku_num = sku_num;
+    }
+    else if ( [sku_num isKindOfClass:[NSNumber class]] ){
+        _sku_num = [NSString stringWithFormat:@"%d",[sku_num integerValue]];
+    }
+    else {
+        _sku_num = [sku_num string];
+    }
+}
+
 + (BOOL)isRead:(int64_t)mid
 {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];

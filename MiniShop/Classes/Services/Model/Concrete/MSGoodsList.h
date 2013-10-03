@@ -19,7 +19,7 @@
 @property (nonatomic,strong) NSString *big_image_url;
 @property (nonatomic) NSInteger user_goods_image_num;
 @property (nonatomic) NSInteger rush_buy;
-@property (nonatomic) NSInteger sku_num;
+@property (nonatomic) NSString* sku_num;
 @property (nonatomic,strong) NSString *activity;
 @property (nonatomic) NSInteger like;
 @property (nonatomic,strong)NSString *shop_title;

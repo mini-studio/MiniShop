@@ -215,7 +215,9 @@
                    title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
                 }
                 [self.rtlabel setText:title];
+                BOOL isBig = NO;
                 for (int index = 0; index < count; index++) {
+                    isBig = NO;
                     MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
                     [self.imageArray addObject:imageView];
                     [self addSubview:imageView];
@@ -223,12 +225,14 @@
                     if ( mod == 2 ) {
                         CGFloat imageSize = self.width - 30;
                         imageView.size = CGSizeMake(imageSize, imageSize);
+                        isBig = YES;
                     }
                     else {
                         CGFloat imageSize = (self.width - 34)/2;
                         if ( mod == 0 ) {
                             if ( index == count-1 ) {
                                 imageSize = self.width - 30;
+                                isBig = YES;
                             }
                             imageView.size =  CGSizeMake(imageSize, imageSize);
                         }
@@ -246,6 +250,9 @@
                     else {
                         [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
                             imageView.image = image;
+                            if ( isBig ) {
+                                 imageView.colorPrompt = [NSString stringWithFormat:@"爆%@件",i.sku_num];
+                            }
                             imageView.prompt = [NSString stringWithFormat:@"价格: %@",i.price];
                         } failure:^(NSError *error) {
                             

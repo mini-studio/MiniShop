@@ -15,6 +15,7 @@
 @property (nonatomic,strong)UIImageView *bgImageView;
 @property (nonatomic,strong)MiniUIButton *button;
 @property (nonatomic,strong)UILabel      *promptLabel;
+@property (nonatomic,strong)MiniUIButton *colorButton;
 @end
 
 @implementation MiniUIPhotoImageView
@@ -59,6 +60,12 @@
     self.promptLabel.layer.masksToBounds = YES;
     self.promptLabel.hidden = YES;
     [self addSubview:self.promptLabel];
+    self.colorButton = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"news_online_tag"] highlightedBackGroundImage:nil title:@""];
+    [self.colorButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
+    self.colorButton.size = CGSizeMake(40, 18);
+    self.colorButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    self.colorButton.hidden = YES;
+    [self addSubview:self.colorButton];
 
 }
 
@@ -68,9 +75,14 @@
     CGRect frame = self.bounds;
     self.bgImageView.frame = frame;
     self.button.frame = self.bounds;
-    [self.promptLabel sizeToFit];
-    self.promptLabel.width = self.promptLabel.width + 10;
-    self.promptLabel.center = CGPointMake(self.imageView.right - self.promptLabel.width/2-4, self.imageView.bottom- self.promptLabel.height/2-4);
+    if ( !self.promptLabel.hidden ) {
+        [self.promptLabel sizeToFit];
+        self.promptLabel.width = self.promptLabel.width + 10;
+        self.promptLabel.center = CGPointMake(self.imageView.left+self.promptLabel.width/2+2, self.imageView.bottom- self.promptLabel.height/2-2);
+    }
+    if ( !self.colorButton.hidden ) {
+        self.colorButton.center = CGPointMake(self.width-self.colorButton.width/2-1, self.height-self.colorButton.height/2-8);
+    }
 }
 
 - (void)setImage:(UIImage *)image
@@ -88,7 +100,15 @@
 {
     self.promptLabel.text = prompt;
     self.promptLabel.hidden = NO;
-    
+}
+
+- (void)setColorPrompt:(NSString *)colorPrompt
+{
+    [self.colorButton setTitle:colorPrompt forState:UIControlStateNormal];
+    [self.colorButton sizeToFit];
+    self.colorButton.height = 16;
+    self.colorButton.width += 10;
+    self.colorButton.hidden = NO;
 }
 
 - (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo

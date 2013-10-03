@@ -259,7 +259,7 @@
     MSGoodItem *item = [self.goods.body_info objectAtIndex:index];
     if ( item.rush_buy == 1 )
     {
-        title = [NSString stringWithFormat:@"%d件抢购",item.sku_num];
+        title = [NSString stringWithFormat:@"%@件抢购",item.sku_num];
     }
     else
     {

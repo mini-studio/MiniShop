@@ -12,6 +12,7 @@
 @property (nonatomic,readonly) UIImageView *imageView;
 @property (nonatomic,strong) UIImage *image;
 @property (nonatomic,strong) NSString *prompt;
+@property (nonatomic,strong) NSString *colorPrompt;
 
 - (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo;
 @end
