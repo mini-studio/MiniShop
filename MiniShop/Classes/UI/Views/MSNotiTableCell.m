@@ -14,6 +14,7 @@
 #import "UIImage+Mini.h"
 #import "RTLabel.h"
 #import "MSDetailViewController.h"
+#import "MSShopGalleryViewController.h"
 
 @interface MSNotiTableCell()
 @property (nonatomic,strong)UILabel *noteLabel;
@@ -207,7 +208,7 @@
             }
             else {
                 NSString *title = nil;
-                if ( item.isNews ) {
+                if ( item.isNews && [groupInfo.items_info.shop_info.publish_time rangeOfString:@"天"].location==NSNotFound ) {
                     title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
                 }
                 else {
@@ -216,7 +217,6 @@
                 [self.rtlabel setText:title];
                 for (int index = 0; index < count; index++) {
                     MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
-                   
                     [self.imageArray addObject:imageView];
                     [self addSubview:imageView];
                     int mod = index%3;
@@ -240,12 +240,17 @@
                     MSGoodItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
                     [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:i];
                     
-                    [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
-                        imageView.image = image;
-                        
-                    } failure:^(NSError *error) {
-                        
-                    }];
+                    if ( i.mid == MSDataType_MoreData ) {
+                        imageView.image = [UIImage imageNamed:@"more_new"];
+                    }
+                    else {
+                        [imageView.imageView setImageWithURL:[NSURL URLWithString:i.small_image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                            imageView.image = image;
+                            imageView.prompt = [NSString stringWithFormat:@"价格: %@",i.price];
+                        } failure:^(NSError *error) {
+                            
+                        }];
+                    }
                 }
             }
         }
@@ -268,20 +273,33 @@
 
 - (void)actionImageTap:(MiniUIButton*)sender
 {
-    MSNotiItemInfo *info = sender.userInfo;
-    MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)self.item;
-    NSInteger index = [groupInfo.items_info.goods_info indexOfObject:info];
-    MSDetailViewController *c = [[MSDetailViewController alloc] init];
-    c.itemInfo = self.item;
-    MSGoodsList *lst = [[MSGoodsList alloc] init];
-    lst.shop_id = groupInfo.items_info.shop_info.mid.integerValue;
-    lst.shop_name = groupInfo.items_info.shop_info.shop_title;
-    lst.body_info = groupInfo.items_info.goods_info;
-    c.goods = lst;
-    c.defaultIndex = index;
-    [self.controller.navigationController pushViewController:c  animated:YES];
-    
+    MSGoodItem *item = sender.userInfo;
+    if ( item.mid == MSDataType_MoreData ) {
+        MSShopGalleryViewController *c = [[MSShopGalleryViewController alloc] init];
+        c.shopInfo = self.item;
+        c.autoLayout = NO;
+        [self.controller.navigationController pushViewController:c animated:YES];
+    }
+    else {
+        MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)self.item;
+        NSInteger index = [groupInfo.items_info.goods_info indexOfObject:item];
+        MSDetailViewController *c = [[MSDetailViewController alloc] init];
+        c.itemInfo = self.item;
+        MSGoodsList *lst = [[MSGoodsList alloc] init];
+        lst.shop_id = groupInfo.items_info.shop_info.mid.integerValue;
+        lst.shop_name = groupInfo.items_info.shop_info.shop_title;
+        NSMutableArray *goods = [NSMutableArray arrayWithArray:groupInfo.items_info.goods_info];
+        item =  goods.lastObject;
+        if ( item.mid == MSDataType_MoreData ) {
+            [goods removeObject:item];
+        }
+        lst.body_info = goods;
+        c.goods = lst;
+        c.defaultIndex = index;
+        [self.controller.navigationController pushViewController:c  animated:YES];
+    }
 }
+
 
 + (CGFloat)heightForItem:(MSNotiItemInfo *)item width:(CGFloat)maxWidth
 {

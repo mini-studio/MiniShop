@@ -43,7 +43,6 @@
 
 - (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr userInfo:(id (^)(int index))userinfo
 {
-    UIImage *btnBg = [UIImage imageNamed:@"image_bg"];
     int count = info.count;
     
     CGFloat top = 10;
@@ -70,18 +69,11 @@
             }
         }
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] initWithFrame:frame];
-        MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:btnBg highlightedBackGroundImage:btnBg title:@""];
-        button.frame = imageView.bounds;
-        button.userInfo = userinfo(index);
-        [imageView addSubview:button];
-        
+        [imageView addTartget:self selector:@selector(buttonTap:) userInfo:userinfo(index)];
         [self addSubview:imageView];
-        
-        [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
-        button.showsTouchWhenHighlighted = YES;
-        
         __weak MiniUIPhotoImageView *pimageView = imageView;
-        [imageView.imageView setImageWithURL:[NSURL URLWithString:addr(index)] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+        NSString *uri = addr(index);
+        [imageView.imageView setImageWithURL:[NSURL URLWithString:uri] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             pimageView.image = image;
         } failure:^(NSError *error) {
             

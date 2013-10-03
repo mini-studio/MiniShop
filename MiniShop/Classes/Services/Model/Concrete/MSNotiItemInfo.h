@@ -20,6 +20,7 @@
 #define MSStoreNewsSubTypeReg           @"reg"
 #define MSStoreNewsSubTypeSubLogin      @"login"
 
+#define MSDataType_MoreData -200
 
 @interface MSNotiItemInfo : MSObject
 @property (nonatomic) int64_t  mid;
@@ -71,7 +72,7 @@
 
 @interface MSPicNotiGroupItemInfo : MSObject
 @property (nonatomic,strong) MSShopInfo *shop_info;
-@property (nonatomic,strong) NSArray    *goods_info;
+@property (nonatomic,strong) NSMutableArray  *goods_info;
 @end
 
 @interface MSNotiGroupInfo : MSNotiItemInfo

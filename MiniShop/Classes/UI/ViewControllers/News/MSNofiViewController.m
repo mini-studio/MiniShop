@@ -95,7 +95,9 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [button addTarget:self action:@selector(switchPushMessage:) forControlEvents:UIControlEventTouchUpInside];
     if ( self.navigationController.topViewController == self ) {
-        [self setNaviRightButtonTitle:@"纠结清单" target:self action:@selector(actionRightButtonTap:)];
+        button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
+        button.width = 40;
+    [self setNaviRightButtonImage:@"potential_n" highlighted:@"potential_h" target:self action:@selector(actionRightButtonTap:)];
     }
 }
 
@@ -286,8 +288,8 @@
     MSNotiItemInfo *data = [ds objectAtIndex:section];
     if ( [data isKindOfClass:[MSPicNotiGroupInfo class]] ) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 30)];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navi_shop_h"]];
-        imageView.frame = CGRectMake(10, 5, 20, 20);
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"white_icon"]];
+        imageView.frame = CGRectMake(10, 3, 24, 24);
         [view addSubview:imageView];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, tableView.width-60, 20)];
         label.backgroundColor = [UIColor clearColor];
@@ -295,7 +297,7 @@
         label.font = [UIFont boldSystemFontOfSize:16];
         label.text = data.name;
         [view addSubview:label];
-        view.backgroundColor = [UIColor colorWithRGBA:0x33333333];
+        view.backgroundColor = [UIColor colorWithRGBA:0x33333344];
         MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
         button.frame = view.bounds;
         [view addSubview:button];
@@ -580,7 +582,7 @@
             [itemMap setValue:info forKey:mid];
         }
     }
-    if ( itemMap.count == 0 && type ==0 )
+    if ( itemMap.count == 0 && type ==0 && WHO != nil )
     {
         [self createImportTaobaoView];
     }

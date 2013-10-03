@@ -26,7 +26,7 @@
 @property (nonatomic ,strong) NSString *title;
 @property (nonatomic ,strong) NSString *type;
 @property (nonatomic ,strong) NSString *goods_num;
-@property (nonatomic ) int *more_goods;
+@property (nonatomic ) int more_goods;
 
 @property (nonatomic) int64_t shop_id;
 @property (nonatomic ,strong) NSString *shop_title;

@@ -148,6 +148,15 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
+- (void)setNaviRightButtonImage:(NSString *)imageName highlighted:(NSString*)highlightedImage target:(id)target action:(SEL)action
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:imageName] highlightedImage:[UIImage imageNamed:highlightedImage]];
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    button.width += 10;
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = item;
+}
 
 
 - (void)setNaviRightButtonTitle:(NSString *)title target:(id)target action:(SEL)action

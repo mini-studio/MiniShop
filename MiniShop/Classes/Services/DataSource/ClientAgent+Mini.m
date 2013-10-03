@@ -23,6 +23,7 @@
 #import "MSCooperateInfo.h"
 #import "MSPotentialInfo.h"
 #import "UIDevice+Ext.h"
+#import "MSNotiItemInfo.h"
 
 #define TB_HTTP_REQ_PATH_NEWNOTIFY                      @"api/notify"
 #define TB_HTTP_REQ_PATH_LOOK                           @"api/look"
@@ -183,7 +184,16 @@
     NSDictionary * params = @{@"page":[NSString stringWithFormat:@"%d",page]};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"news13"];
-    [self getDataFromServer:addr params:params cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSPicNotify class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSPicNotify class] isJson:YES showError:YES block:^(NSError *error, MSPicNotify* data, BOOL cache) {
+        if ( error == nil )  {
+            for (MSPicNotiGroupInfo *groupInfo in data.items_info ) {
+                if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
+                    MSGoodItem *item = [[MSGoodItem alloc] init];
+                    item.mid = MSDataType_MoreData;
+                    [groupInfo.items_info.goods_info addObject:item];
+                }
+            }
+        }
         block(error,data,userInfo,cache);
     }];
 }

@@ -42,6 +42,8 @@
 
 - (void)setNaviRightButtonImage:(NSString *)imageName target:(id)target action:(SEL)action;
 
+- (void)setNaviRightButtonImage:(NSString *)imageName highlighted:(NSString*)highlightedImage target:(id)target action:(SEL)action;
+
 - (void)back;
 - (void)back:(BOOL)animation;
 
