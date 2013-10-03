@@ -14,5 +14,6 @@
 @property(nonatomic,strong)MiniUIWebView *webView;
 @property(nonatomic)int64_t mid;
 @property(nonatomic,strong)UIView    *toolbar;
+@property (nonatomic,assign)UIViewController *controller;
 - (void)loadDetail;
 @end

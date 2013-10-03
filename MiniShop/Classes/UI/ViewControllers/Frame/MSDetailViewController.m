@@ -429,6 +429,7 @@
     view.top = self.view.height - toolbar.height;
     self.toolbar = toolbar;
     self.toolView = view;
+    view.controller = self;
     view.webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, toolbar.height, self.view.width, view.height-toolbar.height)];
     view.toolbar = toolbar;
     return view;

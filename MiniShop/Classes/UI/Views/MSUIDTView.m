@@ -10,6 +10,7 @@
 @interface MSUIDTView()<UIWebViewDelegate>
 @property (nonatomic,strong) UIPanGestureRecognizer *recognizer;
 @property (nonatomic,strong) UIActivityIndicatorView *indicator;
+@property (nonatomic) CGPoint lastTranslation;
 @end
 
 @implementation MSUIDTView
@@ -36,13 +37,16 @@
 - (void)handelPan:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer translationInView:self];
+   
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
+             self.lastTranslation = translation;
             if ( translation.y < 0 ) {
                 [self loadDetail];
             }
         }
         case UIGestureRecognizerStateChanged: {
+             self.lastTranslation = translation;
             CGFloat top = self.top;
             top += translation.y;
             self.top = top;
@@ -50,8 +54,11 @@
         }
         case UIGestureRecognizerStateEnded: {
             CGFloat top = self.bestTop;
-            if ( self.top > self.superview.height/2 ) {
+            if ( self.top > self.bestTop + 50 && self.lastTranslation.y > 0 )  {
                 top = self.superview.height-self.toolbar.height;
+            }
+            else if ( (self.top < (self.superview.height-self.toolbar.height) - 50) && (self.lastTranslation.y < 0)) {
+                top = self.bestTop;
             }
             [UIView animateWithDuration:0.25 animations:^{
                 self.top = top;
