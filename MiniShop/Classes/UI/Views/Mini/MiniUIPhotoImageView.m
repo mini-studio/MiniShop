@@ -47,6 +47,7 @@
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self addSubview:_imageView];
     self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+    self.button.backgroundColor = [UIColor clearColor];
     [self addSubview:self.button];
     
     self.promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 16)];
