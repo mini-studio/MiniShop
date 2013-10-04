@@ -91,10 +91,6 @@
     size.width -= 16;
     size.height -= 16;
     CGSize nsize = [image sizeForScaleToFixSize:size];
-    if (nsize.width > self.width ) {
-        int k = 0;
-         nsize = [image sizeForScaleToFixSize:size];
-    }
     self.imageView.size = nsize;
     self.imageView.center = CGPointMake(self.width/2, self.height/2);
     self.imageView.image = image;

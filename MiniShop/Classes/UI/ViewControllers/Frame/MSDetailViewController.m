@@ -423,9 +423,9 @@
         [toolbar addSubview:label];
     }
     
-    CGFloat top = self.navigationController.navigationBar.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-top)];
-    view.bestTop = top;
+    //CGFloat top = self.navigationController.navigationBar.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+toolbar.height)];
+    view.bestTop = 0;
     view.top = self.view.height - toolbar.height;
     self.toolbar = toolbar;
     self.toolView = view;

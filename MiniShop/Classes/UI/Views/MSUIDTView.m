@@ -50,6 +50,7 @@
             CGFloat top = self.top;
             top += translation.y;
             self.top = top;
+            
             break;
         }
         case UIGestureRecognizerStateEnded: {

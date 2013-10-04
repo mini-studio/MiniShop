@@ -253,7 +253,7 @@
                             if ( isBig ) {
                                  imageView.colorPrompt = [NSString stringWithFormat:@"爆%@件",i.sku_num];
                             }
-                            imageView.prompt = [NSString stringWithFormat:@"价格: %@",i.price];
+                            imageView.prompt = [NSString stringWithFormat:@" ¥%@ ",i.price];
                         } failure:^(NSError *error) {
                             
                         }];
