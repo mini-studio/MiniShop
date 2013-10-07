@@ -19,6 +19,7 @@
 @property (nonatomic,strong) MSVersion *version;
 @property (nonatomic,strong) NSString *deviceToken;
 @property (nonatomic,readonly)int mainVersion;
+@property (nonatomic,readonly) NSString *appStoreUrl;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 

@@ -16,6 +16,7 @@
 #import "SDImageCache.h"
 #import "NSUserDefaults+Mini.h"
 #import "UIDevice+Ext.h"
+#import "NSUserDefaults+Mini.h"
 
 
 @interface MSSystem()
@@ -44,7 +45,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
             navbarTitleTextAttributes = dic;
         }
         [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-
+        _appStoreUrl = @"http://itunes.apple.com/app/id617697319?mt=8";
         [self initSystem];
     }
     return self;
@@ -227,6 +228,40 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         }
         [self checkVersion:^{} force:YES];
     });
+    [self invote];
+}
+
+- (void)invote
+{
+    NSString *key = [NSString stringWithFormat:@"invote_%@",[MSSystem bundleversion]];
+    dispatch_block_t __block__ = ^{
+        [MiniUIAlertView showAlertWithTitle:@"领导,求赐五星好评！" message:@"领导简单一句好评,就能让小伙伴们升职加薪，欢天喜地。马上行使您的权力，不要不把自己当领导。" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+            if (buttonIndex != alertView.cancelButtonIndex) {
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setSyncValue:[NSNumber numberWithLong:-1] forKey:key];
+                NSURL *url = [NSURL URLWithString:_appStoreUrl];
+                if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                    [[UIApplication sharedApplication] openURL:url];
+                }
+            }
+        }cancelButtonTitle:@"放弃权力" otherButtonTitles:@"赐下好评",nil];
+    };
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *lastTime = [defaults valueForKey:key];
+    if ( lastTime == nil ) {
+        lastTime = [NSNumber numberWithLong:[[NSDate date] timeIntervalSince1970]-24*3600*4+120];
+        [defaults setSyncValue:lastTime forKey:key];
+    }
+    else {
+        if ( lastTime.longValue > 0 ) {
+            long currentTime = [[NSDate date] timeIntervalSince1970];
+            if ( currentTime-lastTime.longValue > 24*3600*4) {
+                lastTime = [NSNumber numberWithLong:currentTime];
+                [defaults setSyncValue:lastTime forKey:key];
+                __block__();
+            }
+        }
+    }
 }
 
 - (void)loadImge:(NSString *)url key:(NSString *)key imagekey:(NSString *)imagekey

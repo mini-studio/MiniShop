@@ -44,4 +44,19 @@
     return v;
 }
 
+- (id)valueForKey:(NSString *)key defaultValue:(NSString*)df
+{
+    id v = [self valueForKey:key];
+    if ( v==nil) {
+        return df;
+    }
+    return v;
+}
+
+- (void)setSyncValue:(id)value forKey:(NSString *)key
+{
+    [self setValue:value forKey:key];
+    [self synchronize];
+}
+
 @end

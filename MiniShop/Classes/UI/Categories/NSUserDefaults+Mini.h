@@ -18,4 +18,8 @@
 
 - (NSString*)stringValueForKey:(NSString*)key defaultValue:(NSString*)df;
 
+- (id)valueForKey:(NSString *)key defaultValue:(NSString*)df;
+
+- (void)setSyncValue:(id)value forKey:(NSString *)key;
+
 @end

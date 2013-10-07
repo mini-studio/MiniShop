@@ -165,7 +165,7 @@
 //投票
 - (void)actionForInvote
 {
-    NSString* appstoreReview = @"http://itunes.apple.com/app/id617697319?mt=8";
+    NSString* appstoreReview = [MSSystem sharedInstance].appStoreUrl;
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:appstoreReview]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appstoreReview]];
     } else {
