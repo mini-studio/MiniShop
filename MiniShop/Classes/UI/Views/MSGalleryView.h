@@ -13,6 +13,6 @@
 @property (nonatomic,strong) void (^handleTap)(id userInfo);
 - (void)clear;
 
-- (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr userInfo:(id (^)(int index))userinfo;
+- (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr price:(NSString*(^)(int index))price userInfo:(id (^)(int index))userinfo;
 + (CGFloat)heightWithImageCount:(NSInteger)count hasTitle:(BOOL)hasTitle;
 @end

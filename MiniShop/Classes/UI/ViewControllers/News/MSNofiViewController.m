@@ -499,7 +499,7 @@
 {
     int type = 1;
     __PSELF__;
-    [[ClientAgent sharedInstance] loadTopic:@"eyJ0eXBlIjoiZ3VhbmcifQ==" page:page maxid:0 userInfo:nil block:^(NSError *error, MSNotify* data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] loadTopic:@"eyJ0eXBlIjoiZ3VhbmdfaW1hZ2UifQ==" page:page maxid:0 userInfo:nil block:^(NSError *error, MSNotify* data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if ( error == nil )
         {

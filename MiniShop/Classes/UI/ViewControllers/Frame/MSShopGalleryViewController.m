@@ -91,8 +91,14 @@
     
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-80, self.navigationController.navigationBar.height)];
     titleView.backgroundColor = [UIColor clearColor];
-    
-    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav"] highlightedImage:[UIImage imageNamed:@"navi_fav_h"]];
+   
+    if ( self.dataSource.user_is_like_shop )
+    {
+        button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav"] highlightedImage:[UIImage imageNamed:@"navi_fav_h"]];
+    }
+    else {
+        button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav_h"] highlightedImage:[UIImage imageNamed:@"navi_fav"]];
+    }
     button.frame = CGRectMake(0, 0, 30, 30);
     button.center = CGPointMake(titleView.width/3-10, titleView.height/2);
     [titleView addSubview:button];
@@ -180,10 +186,14 @@
     [self.followButton removeTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
     if ( self.dataSource.user_is_like_shop )
     {
+        [self.followButton setImage:[UIImage imageNamed:@"navi_fav"] forState:UIControlStateNormal];
+        [self.followButton setImage:[UIImage imageNamed:@"navi_fav_h"] forState:UIControlStateHighlighted];
         [self.followButton addTarget:self action:@selector(unFollowShop) forControlEvents:UIControlEventTouchUpInside];
     }
     else
     {
+        [self.followButton setImage:[UIImage imageNamed:@"navi_fav_h"] forState:UIControlStateNormal];
+        [self.followButton setImage:[UIImage imageNamed:@"navi_fav"] forState:UIControlStateHighlighted];
         [self.followButton addTarget:self action:@selector(followShop) forControlEvents:UIControlEventTouchUpInside];
     }
 }

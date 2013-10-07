@@ -41,7 +41,7 @@
     self.titleLabel.text = title;
 }
 
-- (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr userInfo:(id (^)(int index))userinfo
+- (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr price:(NSString*(^)(int index))price userInfo:(id (^)(int index))userinfo
 {
     int count = info.count;
     
@@ -75,6 +75,7 @@
         NSString *uri = addr(index);
         [imageView.imageView setImageWithURL:[NSURL URLWithString:uri] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             pimageView.image = image;
+            pimageView.prompt = [NSString stringWithFormat:@" ¥%@ ",price(index)];
         } failure:^(NSError *error) {
             
         }];

@@ -53,6 +53,9 @@
     [self.galleryView setData:galleyInfo.goods_info addr:^NSString *(int index) {
         MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
         return good.small_image_url;
+    } price:^NSString*(int index) {
+        MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
+        return good.price;
     } userInfo:^id(int index) {
         MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
         return good;

@@ -203,7 +203,16 @@
     NSDictionary * params = @{@"type":type,@"page":[NSString stringWithFormat:@"%d",page],@"maxid":[NSString stringWithFormat:@"%lld",maxid]};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"topic"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNotify class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSPicNotify class] isJson:YES showError:YES block:^(NSError *error, MSPicNotify* data, BOOL cache) {
+        if ( error == nil ) {
+            for (MSPicNotiGroupInfo *groupInfo in data.items_info ) {
+                if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
+                    MSGoodItem *item = [[MSGoodItem alloc] init];
+                    item.mid = MSDataType_MoreData;
+                    [groupInfo.items_info.goods_info addObject:item];
+                }
+            }
+        }
         block(error,data,userInfo,cache);
     }];
 }
