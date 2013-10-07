@@ -249,7 +249,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *lastTime = [defaults valueForKey:key];
     if ( lastTime == nil ) {
-        lastTime = [NSNumber numberWithLong:[[NSDate date] timeIntervalSince1970]-24*3600*4+120];
+        lastTime = [NSNumber numberWithLong:[[NSDate date] timeIntervalSince1970]-24*3600*4+180];
         [defaults setSyncValue:lastTime forKey:key];
     }
     else {
