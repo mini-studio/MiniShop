@@ -516,6 +516,7 @@
 
 - (void)shareGood:(MiniUIButton *)button
 {
+    [MobClick event:MOB_DETAIL_TOP_SHARE];
     MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     if ( item == nil || item.mid == 0 ) {
         return;
@@ -539,6 +540,7 @@
 
 - (void)copylink:(MiniUIButton *)button
 {
+    [MobClick event:MOB_DETAIL_TOP_COPY];
     MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     if ( item == nil || item.mid == 0 ) {
         return;

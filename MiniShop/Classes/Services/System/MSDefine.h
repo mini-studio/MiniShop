@@ -25,6 +25,16 @@
 #define MOB_FEEDBACK                    @"FEEDBACK"         //留言
 #define MOB_LOAD_IMAGE                  @"LOAD_IMAGE"       //载入图片
 
+#define MOB_SHARE_SHOP                  @"SHARE_SHOP"
+#define MOB_SHARE_SHOP_LIST             @"SHARE_SHOP_LIST"
+#define MOB_DETAIL_TOP_SHARE            @"DETAIL_TOP_SHARE"
+#define MOB_DETAIL_TOP_COPY             @"DETAIL_TOP_COPY"
+#define MOB_DETAIL_PULL                 @"DETAIL_PULL"
+#define MOB_ACTIVE_BY_PUSH              @"ACTIVE_BY_PUSH"
+#define MOB_ENTER_REG                   @"ENTER_REG"
+#define MOB_ENTER_LOGIN                 @"ENTER_LOGIN"
+
+
 #define MN_NOTI_RECEIVE_VERSION         @"MN_NOTI_RECEIVE_VERSION"
 
 #define LOGIN_PROMPT   @"为了您的数据安全,使用此功能需先登陆，请亮出您的高贵身份!"

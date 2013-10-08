@@ -74,6 +74,7 @@
 
 + (void)shareShop:(MSShopInfo*)shopInfo scene:(int)scene
 {
+    [MobClick event:MOB_SHARE_SHOP];
     if ( scene == WXSceneTimeline )
     {
         NSString *desc = [NSString stringWithFormat:@"这家网店不错：%@",[shopInfo realTitle]];
@@ -88,6 +89,7 @@
 
 + (void)shareShopList:(NSArray*)shopList scene:(int)scene
 {
+    [MobClick event:MOB_SHARE_SHOP_LIST];
     if ( shopList.count == 0 )
         return;
     NSMutableString *ids = [NSMutableString string];

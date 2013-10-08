@@ -105,7 +105,7 @@
 {
     [super viewDidLoad];
     [self initData];
-    self.navigationItem.title = @"上新";
+    self.navigationItem.title = @"我关注的店";
 }
 
 - (void)viewWillAppear:(BOOL)animated

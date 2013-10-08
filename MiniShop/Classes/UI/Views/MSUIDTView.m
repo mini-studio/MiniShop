@@ -42,6 +42,7 @@
         case UIGestureRecognizerStateBegan: {
              self.lastTranslation = translation;
             if ( translation.y < 0 ) {
+                [MobClick event:MOB_DETAIL_PULL];
                 [self loadDetail];
             }
         }

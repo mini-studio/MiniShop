@@ -136,24 +136,24 @@
         int mod = idx%3;
        
         if ( mod == 2 ) {
-            CGFloat imageSize = self.width - 30;
-            imageView.origin = CGPointMake(15, top );
+            CGFloat imageSize = self.width - 20;
+            imageView.origin = CGPointMake(10, top );
             top += imageSize;
             top += 4;
         }
         else {
-            CGFloat imageSize = ( self.width  - 34)/2;
+            CGFloat imageSize = ( self.width  - 24)/2;
             if ( mod == 0 ) {
                 if ( idx == self.imageArray.count-1 ) {
-                    imageSize = width - 30;
+                    imageSize = width - 20;
                 }
-                imageView.origin = CGPointMake(15, top );
+                imageView.origin = CGPointMake(10, top );
                 top += imageSize;
                 top += 4;
             }
             else {
                 CGFloat secondTop = top - imageSize - 4;
-                imageView.origin = CGPointMake(imageSize + 20, secondTop );
+                imageView.origin = CGPointMake(imageSize + 14, secondTop );
     
             }
         }
@@ -223,15 +223,15 @@
                     [self addSubview:imageView];
                     int mod = index%3;
                     if ( mod == 2 ) {
-                        CGFloat imageSize = self.width - 30;
+                        CGFloat imageSize = self.width - 20;
                         imageView.size = CGSizeMake(imageSize, imageSize);
                         isBig = YES;
                     }
                     else {
-                        CGFloat imageSize = (self.width - 34)/2;
+                        CGFloat imageSize = (self.width - 24)/2;
                         if ( mod == 0 ) {
                             if ( index == count-1 ) {
-                                imageSize = self.width - 30;
+                                imageSize = self.width - 20;
                                 isBig = YES;
                             }
                             imageView.size =  CGSizeMake(imageSize, imageSize);
