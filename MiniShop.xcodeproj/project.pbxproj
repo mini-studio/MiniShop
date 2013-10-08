@@ -68,6 +68,8 @@
 		C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59816FF4FF400ED87D8 /* AddressBook.framework */; };
 		C1820F3B175BA51000C87E39 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1820F38175BA51000C87E39 /* libUMFeedback.a */; };
 		C1820F3C175BA51000C87E39 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1820F39175BA51000C87E39 /* umFeedback.bundle */; };
+		C18597D118046C2E00A7B70D /* button_push_message_off_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C18597CF18046C2E00A7B70D /* button_push_message_off_p@2x.png */; };
+		C18597D218046C2E00A7B70D /* button_push_message_open_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C18597D018046C2E00A7B70D /* button_push_message_open_p@2x.png */; };
 		C1ACB74317FB370600862641 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACB74217FB370600862641 /* RTLabel.m */; };
 		C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ACB74417FB384900862641 /* CoreText.framework */; };
 		C1ACB74717FCD1F400862641 /* white_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74617FCD1F400862641 /* white_arrow@2x.png */; };
@@ -436,6 +438,8 @@
 		C1820F38175BA51000C87E39 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		C1820F39175BA51000C87E39 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
 		C1820F3A175BA51000C87E39 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		C18597CF18046C2E00A7B70D /* button_push_message_off_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_off_p@2x.png"; sourceTree = "<group>"; };
+		C18597D018046C2E00A7B70D /* button_push_message_open_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_open_p@2x.png"; sourceTree = "<group>"; };
 		C1ACB74117FB370600862641 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
 		C1ACB74217FB370600862641 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
 		C1ACB74417FB384900862641 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -1682,6 +1686,8 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C18597CF18046C2E00A7B70D /* button_push_message_off_p@2x.png */,
+				C18597D018046C2E00A7B70D /* button_push_message_open_p@2x.png */,
 				C1ACB74F17FD475E00862641 /* potential_h@2x.png */,
 				C1ACB75017FD475E00862641 /* potential_n@2x.png */,
 				C1ACB74D17FD3E1100862641 /* more_new@2x.png */,
@@ -1833,6 +1839,7 @@
 				C1820F3C175BA51000C87E39 /* umFeedback.bundle in Resources */,
 				C10BE72B17765C3C009E6482 /* background@2x.png in Resources */,
 				C10BE72C17765C3C009E6482 /* blueArrow.png in Resources */,
+				C18597D218046C2E00A7B70D /* button_push_message_open_p@2x.png in Resources */,
 				C10BE72D17765C3C009E6482 /* blueArrow@2x.png in Resources */,
 				C10BE72E17765C3C009E6482 /* icon_rightArrow@2x.png in Resources */,
 				C10BE72F17765C3C009E6482 /* icon_rightArrow_selected@2x.png in Resources */,
@@ -1897,6 +1904,7 @@
 				C1FEB1CD17E4A8690076BEEA /* navi_back@2x.png in Resources */,
 				C1EC512C178074D600BE5ABB /* verify_shelf@2x.png in Resources */,
 				C1EC512D178074D600BE5ABB /* verify_text_title@2x.png in Resources */,
+				C18597D118046C2E00A7B70D /* button_push_message_off_p@2x.png in Resources */,
 				C1EC512E178074D600BE5ABB /* verify_top@2x.png in Resources */,
 				C1EC512F178074D600BE5ABB /* loading1.png in Resources */,
 				C1FEB1C917E49F890076BEEA /* navi_shop@2x.png in Resources */,

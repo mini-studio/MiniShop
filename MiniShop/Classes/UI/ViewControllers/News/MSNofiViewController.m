@@ -634,9 +634,11 @@
 {
     if ( [@"0" isEqualToString:[MSSystem sharedInstance].version.push_sound] ) {
         [button setImage:[UIImage imageNamed:@"button_push_message_off"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"button_push_message_off_p"] forState:UIControlStateHighlighted];
     }
     else {
         [button setImage:[UIImage imageNamed:@"button_push_message_open"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"button_push_message_open_p"] forState:UIControlStateHighlighted];
  
     }
 }
