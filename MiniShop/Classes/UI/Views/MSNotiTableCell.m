@@ -248,7 +248,7 @@
                         imageView.image = [UIImage imageNamed:@"more_new"];
                     }
                     else {
-                        [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?i.small_image_url:i.big_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                        [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?i.big_image_url:i.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
                             imageView.image = image;
                             if ( isBig ) {
                                  imageView.colorPrompt = [NSString stringWithFormat:@"爆%@件",i.sku_num];

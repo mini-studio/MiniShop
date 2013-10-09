@@ -50,9 +50,9 @@
 {
     _galleyInfo = galleyInfo;
     //self.galleryView.title = [NSString stringWithFormat:@"%@ 上新",galleyInfo.item_info.publish_time];
-    [self.galleryView setData:galleyInfo.goods_info addr:^NSString *(int index) {
+    [self.galleryView setData:galleyInfo.goods_info addr:^NSString *(int index, bool isBig) {
         MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
-        return good.big_image_url;
+        return isBig?good.big_image_url:good.small_image_url;
     } price:^NSString*(int index) {
         MSGoodItem *good = [galleyInfo.goods_info objectAtIndex:index];
         return good.price;

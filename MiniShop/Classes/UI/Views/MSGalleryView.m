@@ -41,25 +41,27 @@
     self.titleLabel.text = title;
 }
 
-- (void)setData:(NSArray *)info addr:(NSString *(^)(int index))addr price:(NSString*(^)(int index))price userInfo:(id (^)(int index))userinfo
+- (void)setData:(NSArray *)info addr:(NSString *(^)(int index, bool isBig))addr price:(NSString*(^)(int index))price userInfo:(id (^)(int index))userinfo
 {
     int count = info.count;
-    
     CGFloat top = 10;
     for ( NSInteger index = 0; index < count; index++ )
     {
+        bool big = NO;
         CGRect frame = CGRectZero;
         int mod = index%3;
         if ( mod == 2 ) {
             CGFloat imageSize = self.width - 20;
             frame = CGRectMake(10, top, imageSize, imageSize);
             top += ( imageSize + 4 );
+            big = YES;
         }
         else {
             CGFloat imageSize = (self.width - 24)/2;
             if ( mod == 0 ) {
                 if ( index == count-1 ) {
                     imageSize = self.width - 20;
+                    big = YES;
                 }
                 frame =  CGRectMake(10, top,imageSize, imageSize);
                 top += ( imageSize + 4 );
@@ -72,7 +74,7 @@
         [imageView addTartget:self selector:@selector(buttonTap:) userInfo:userinfo(index)];
         [self addSubview:imageView];
         __weak MiniUIPhotoImageView *pimageView = imageView;
-        NSString *uri = addr(index);
+        NSString *uri = addr(index,big);
         [imageView.imageView setImageWithURL:[NSURL URLWithString:uri] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             pimageView.image = image;
             pimageView.prompt = [NSString stringWithFormat:@" ¥%@ ",price(index)];
