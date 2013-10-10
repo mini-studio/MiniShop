@@ -242,7 +242,13 @@
         return 0;
     }
     else {
-        return 6;
+        if ( ds.count > section-1  ) {
+            data = [ds objectAtIndex:section+1];
+            if ( [data isMemberOfClass:[MSPicNotiGroupInfo class]] ) {
+                return 6;
+            }
+        }
+        return 0;
     }
 
 }
@@ -276,7 +282,7 @@
             return 0;
         }
         else {
-            return 6;
+            return 0;
         }
     }
 }

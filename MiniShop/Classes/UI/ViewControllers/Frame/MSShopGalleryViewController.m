@@ -249,7 +249,9 @@
     if ( page == 0 )
     {
         __PSELF__;
+        [self showWating:nil];
         [[ClientAgent sharedInstance] newsbody12:self.notiInfo.shop_id block:^(NSError *error, MSShopGalleryList* data, id userInfo, BOOL cache) {
+            [pSelf dismissWating];
             if ( error == nil )
             {
                 [pSelf.tableView setMoreDataAction:^{

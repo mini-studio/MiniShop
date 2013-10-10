@@ -128,7 +128,7 @@
         self.msSeparatorView.hidden = YES;
     }
     
-    self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+14);
+    self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+4);
     
     __block CGFloat top =  self.textLabel.bottom + 2;
     [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -169,7 +169,7 @@
     }
     else {
         UIImage *image = nil;
-        if ( !self.item.isNews ) {
+        if ( !self.item.isNews && ![self.item isKindOfClass:[MSPicNotiGroupInfo class]]) {
              image = [UIImage imageNamed:@"news_online_cell_bg"];
         }
         [super setCellTheme:tableView indexPath:indexPath background:image highlightedBackground:image sectionRowNumbers:numberOfRow];
@@ -319,7 +319,7 @@
         MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
         int count = groupInfo.items_info.goods_info.count;
         if ( count > 0 ) {
-            CGFloat singleLineHeight = width-10;
+            CGFloat singleLineHeight = width;
             CGFloat multLineHeight = (singleLineHeight-4)/2;
             int row = count/3;
             int reset = count%3;
@@ -331,7 +331,7 @@
                  size.height  += (singleLineHeight+4);
             }
             height += size.height;
-            height += 24;
+            height += 14;
         }
         else {
             return 100;
@@ -339,9 +339,9 @@
     }
     else {
         UIFont *font = [UIFont systemFontOfSize:14];
-        size = [item.intro sizeWithFont:font constrainedToSize:CGSizeMake(width - 40 , MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+        size = [item.intro sizeWithFont:font constrainedToSize:CGSizeMake(width - 50 , MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
         height += size.height;
-         height += 44;
+        height += 40;
     }
    
     return height;
