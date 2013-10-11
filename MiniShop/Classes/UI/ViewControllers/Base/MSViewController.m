@@ -348,7 +348,7 @@
                 };
                 [pSelf.navigationController pushViewController:controller animated:YES];
             }
-        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"去登陆", nil];
+        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"去登录", nil];
     }
     else {
         block();
@@ -368,7 +368,7 @@
             [self.navigationController pushViewController:controller animated:YES];
             
         }
-    } cancelButtonTitle:nil otherButtonTitles:@"登陆/注册",@"随便逛逛",nil];
+    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
 }
 
 @end

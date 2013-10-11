@@ -148,7 +148,7 @@
     [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
             if ( user.uniqid.length==0 ) {
-                error = [NSError errorWithDomain:@"login" code:200 userInfo:@{NSLocalizedDescriptionKey:@"登陆异常"}];
+                error = [NSError errorWithDomain:@"login" code:200 userInfo:@{NSLocalizedDescriptionKey:@"登录异常"}];
             }
             else {
                 if ( user.usernick.length == 0 ) {

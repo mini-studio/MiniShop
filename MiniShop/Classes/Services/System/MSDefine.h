@@ -37,7 +37,7 @@
 
 #define MN_NOTI_RECEIVE_VERSION         @"MN_NOTI_RECEIVE_VERSION"
 
-#define LOGIN_PROMPT   @"为了您的数据安全,使用此功能需先登陆，请亮出您的高贵身份!"
-#define LOGIN_IMPORT_FAV_PROMPT   @"您需要登陆后，再导入淘宝收藏店铺，不然只能导给火星人了…"
+#define LOGIN_PROMPT   @"为了您的数据安全,使用此功能需先登录，请亮出您的高贵身份!"
+#define LOGIN_IMPORT_FAV_PROMPT   @"您需要登录后，再导入淘宝收藏店铺，不然只能导给火星人了…"
 
 #endif

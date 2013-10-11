@@ -34,7 +34,7 @@
 - (void)loadView
 {
     [super loadView];
-    [self setNaviRightButtonTitle:self.type==0?@"登陆":@"注册" target:self action:self.type==0?@selector(actionLogin):@selector(actionReg)];
+    [self setNaviRightButtonTitle:self.type==0?@"登录":@"注册" target:self action:self.type==0?@selector(actionLogin):@selector(actionReg)];
     
     UIScrollView *scrollveiw = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollveiw.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -121,7 +121,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = self.type==0?@"登陆":@"注册";
+	self.navigationItem.title = self.type==0?@"登录":@"注册";
     if ( self.type==0 )
         [MobClick event:MOB_ENTER_LOGIN];
     else

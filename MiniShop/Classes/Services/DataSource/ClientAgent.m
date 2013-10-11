@@ -82,7 +82,7 @@
 
 - (void)cancelLogin:(void (^)(NSError *error, id data))block
 {
-    block ([NSError errorWithDomain:@"ls" code:KErr_NotLogin userInfo:nil], @"取消了登陆");
+    block ([NSError errorWithDomain:@"ls" code:KErr_NotLogin userInfo:nil], @"取消了登录");
 }
 
 - (void)showHttpError:(NSString *)string
