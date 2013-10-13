@@ -20,6 +20,7 @@
 @property (nonatomic,strong) NSString *deviceToken;
 @property (nonatomic,readonly)int mainVersion;
 @property (nonatomic,readonly) NSString *appStoreUrl;
+@property (nonatomic,strong) NSString *udid;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 

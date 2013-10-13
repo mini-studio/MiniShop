@@ -17,6 +17,7 @@
 #import "NSUserDefaults+Mini.h"
 #import "UIDevice+Ext.h"
 #import "NSUserDefaults+Mini.h"
+#import "KeychainItemWrapper.h"
 
 
 @interface MSSystem()
@@ -24,6 +25,7 @@
 @end
 
 @implementation MSSystem
+@synthesize udid = _udid;
 @synthesize authForImportFav = _authForImportFav;
 
 SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
@@ -71,6 +73,28 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [def synchronize];
     }
 }
+
+- (NSString *)udid
+{
+    if ( _udid == nil ) {
+        KeychainItemWrapper *keychainWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
+        NSString *udid = (NSString*)[keychainWrapper objectForKey:(__bridge id)kSecValueData];
+        if ( udid.length > 0 ) {
+            _udid = udid;
+        }
+    }
+    return _udid;
+}
+
+- (void)setUdid:(NSString *)udid
+{
+    if ( udid.length > 0 ) {
+        KeychainItemWrapper *keychainWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
+        [keychainWrapper setObject:udid forKey:(__bridge id)kSecValueData];
+        _udid = udid;
+    }
+}
+
 - (MSUser*)loadUser
 {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
