@@ -26,6 +26,7 @@
 #import "MSPotentialViewController.h"
 #import "MRLoginViewController.h"
 #import "MSShopGalleryViewController.h"
+#import "KeychainItemWrapper.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define KIMPORT_VIEW_TAG 0xAB0000
@@ -105,6 +106,15 @@
 {
     [super viewDidLoad];
     [self initData];
+//    KeychainItemWrapper *keychainWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
+//    NSString *udid = (NSString*)[keychainWrapper objectForKey:(__bridge id)kSecValueData];
+//    if ( udid.length == 0 ) {
+//        //[keychainWrapper setObject:@"A98NUYERNV09" forKey:(__bridge id)kSecValueData];
+//    }
+//    else {
+//      
+//       //udid = (NSString*)[keychainWrapper objectForKey:(__bridge id)kSecValueData];
+//    }
     self.navigationItem.title = @"我关注的店";
 }
 
