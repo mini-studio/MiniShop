@@ -34,13 +34,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self setNaviBackButton];
-    self.navigationItem.title = @"上新";
+    self.navigationItem.title = @"全站上新";
     double delayInSeconds = 0.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.segment.selectedSegmentIndex = 1;
     });
+}
+
+- (void)setNaviButtons
+{
+    if ( self.navigationController.viewControllers.count > 0  && self.navigationController.viewControllers[0]!=self) {
+        [self setNaviBackButton];
+    }
 }
 
 

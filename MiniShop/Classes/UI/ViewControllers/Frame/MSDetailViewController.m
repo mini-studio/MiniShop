@@ -424,7 +424,7 @@
     }
     
     //CGFloat top = self.navigationController.navigationBar.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+toolbar.height)];
+    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+toolbar.height-64)];
     view.bestTop = self.navigationController.navigationBar.bottom-toolbar.height;
     view.top = self.view.height - toolbar.height;
     self.toolbar = toolbar;

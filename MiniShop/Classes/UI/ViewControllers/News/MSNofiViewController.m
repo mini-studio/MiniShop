@@ -90,6 +90,11 @@
     [super loadView];
     [self addSegmentControl];
     [self createTableView];
+    [self setNaviButtons];
+}
+
+- (void)setNaviButtons
+{
     MiniUIButton *button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
     button.width = 40;
     self.ringButton = button;
@@ -98,8 +103,9 @@
     if ( self.navigationController.topViewController == self ) {
         button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
         button.width = 40;
-    [self setNaviRightButtonImage:@"potential_n" highlighted:@"potential_h" target:self action:@selector(actionRightButtonTap:)];
+        [self setNaviRightButtonImage:@"potential_n" highlighted:@"potential_h" target:self action:@selector(actionRightButtonTap:)];
     }
+
 }
 
 - (void)viewDidLoad

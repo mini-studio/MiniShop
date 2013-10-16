@@ -12,6 +12,7 @@
 #import "MSStoreViewController.h"
 #import "MSProfileViewController.h"
 #import "MSMiniUINavigationController.h"
+#import "MSTopicViewController.h"
 #import "UIColor+Mini.h"
 #import "MSDefine.h"
 #import "MSSystem.h"
@@ -104,7 +105,8 @@
     [self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     [self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
     self.items = [NSArray arrayWithObjects:
-                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNofiViewController class] image:[MiniUIImage imageNamed:@"tab_storenews_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storenews_selected"] title:@"上新"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNofiViewController class] image:[MiniUIImage imageNamed:@"tab_storenews_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storenews_selected"] title:@"关注"],
+                   [[MiniTabBarItem alloc] initWithControllerClass:[MSTopicViewController class] image:[MiniUIImage imageNamed:@"tab_market_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_market_selected"] title:@"闲逛"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSStoreViewController class] image:[MiniUIImage imageNamed:@"tab_storemanage_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storemanage_selected"] title:@"发现"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSProfileViewController class] image:[MiniUIImage imageNamed:@"tab_mine_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_mine_selected"] title:@"我的"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSSettingsViewController class] image:[MiniUIImage imageNamed:@"tab_helper_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_helper_selected"] title:@"更多"],

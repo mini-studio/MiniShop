@@ -38,6 +38,11 @@
     self.navigationItem.title = @"好友关注的店铺";
 }
 
+- (void)setNaviButtons
+{
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

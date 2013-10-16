@@ -57,6 +57,8 @@
 		C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */; };
 		C14E67B017E7D1E0000BA377 /* navi_message_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AC17E7D1E0000BA377 /* navi_message_h@2x.png */; };
 		C14E67B117E7D1E0000BA377 /* navi_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */; };
+		C1598DDB180C2E9B005DA062 /* tab_market_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */; };
+		C1598DDC180C2E9B005DA062 /* tab_market_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
 		C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47B16FF48F200ED87D8 /* Foundation.framework */; };
 		C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47D16FF48F200ED87D8 /* CoreGraphics.framework */; };
@@ -322,6 +324,8 @@
 		C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_message@2x.png"; sourceTree = "<group>"; };
 		C15918C817021DF800331097 /* SVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
+		C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_normal@2x.png"; sourceTree = "<group>"; };
+		C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_selected@2x.png"; sourceTree = "<group>"; };
 		C169C47516FF48F200ED87D8 /* MiniShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169C47916FF48F200ED87D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C169C47B16FF48F200ED87D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1749,6 +1753,8 @@
 		C1EC5106178074D600BE5ABB /* tab */ = {
 			isa = PBXGroup;
 			children = (
+				C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */,
+				C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */,
 				C1EC5107178074D600BE5ABB /* tab_background@2x.png */,
 				C1EC5108178074D600BE5ABB /* tab_helper_normal@2x.png */,
 				C1EC5109178074D600BE5ABB /* tab_helper_selected@2x.png */,
@@ -1880,6 +1886,7 @@
 				C1EC50A2178074C700BE5ABB /* MWPhotoBrowser.bundle in Resources */,
 				C1EC50A3178074C700BE5ABB /* SVPullToRefresh.bundle in Resources */,
 				C1EC5111178074D600BE5ABB /* guide_b1@2x.png in Resources */,
+				C1598DDB180C2E9B005DA062 /* tab_market_normal@2x.png in Resources */,
 				C1FEB1C717E49F890076BEEA /* navi_share@2x.png in Resources */,
 				C1EC5112178074D600BE5ABB /* guide_b1_txt@2x.png in Resources */,
 				C1EC5113178074D600BE5ABB /* guide_b2@2x.png in Resources */,
@@ -1985,6 +1992,7 @@
 				C1EC516A178074D600BE5ABB /* tab_helper_selected@2x.png in Resources */,
 				C1EC516B178074D600BE5ABB /* tab_mine_normal@2x.png in Resources */,
 				C1EC516C178074D600BE5ABB /* tab_mine_selected@2x.png in Resources */,
+				C1598DDC180C2E9B005DA062 /* tab_market_selected@2x.png in Resources */,
 				C1EC516D178074D600BE5ABB /* tab_slider@2x.png in Resources */,
 				C1EC516E178074D600BE5ABB /* tab_storemanage_normal@2x.png in Resources */,
 				C1EC516F178074D600BE5ABB /* tab_storemanage_selected@2x.png in Resources */,

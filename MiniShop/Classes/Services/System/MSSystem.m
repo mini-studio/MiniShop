@@ -259,7 +259,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 {
     NSString *key = [NSString stringWithFormat:@"invote_%@",[MSSystem bundleversion]];
     dispatch_block_t __block__ = ^{
-        [MiniUIAlertView showAlertWithTitle:@"领导,求赐五星好评！" message:@"领导简单一句好评,就能让小伙伴们升职加薪，欢天喜地。马上行使您的权力，不要不把自己当领导。" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        [MiniUIAlertView showAlertWithTitle:@"领导,求赐五星好评！" message:@"领导,大家都好评了,就等您表态了!请您发表重要讲话!" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex != alertView.cancelButtonIndex) {
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setSyncValue:[NSNumber numberWithLong:-1] forKey:key];
