@@ -73,6 +73,7 @@
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
     }
+    self.toolView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
 }
 
 - (void)viewDidLoad
@@ -386,9 +387,9 @@
 
 - (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation
 {
-//    CGFloat height = self.toolbar.height;
+    CGFloat height = self.toolbar.height;
 //	return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
-    return self.toolView.frame;
+    return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
 }
 
 
@@ -422,17 +423,18 @@
         label.font = index == 0 ? [UIFont boldSystemFontOfSize:16]:[UIFont systemFontOfSize:14];
         [toolbar addSubview:label];
     }
+    self.toolbar = toolbar;
     
     //CGFloat top = self.navigationController.navigationBar.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+toolbar.height-64)];
-    view.bestTop = self.navigationController.navigationBar.bottom-toolbar.height;
-    view.top = self.view.height - toolbar.height;
-    self.toolbar = toolbar;
-    self.toolView = view;
-    view.controller = self;
-    view.webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, toolbar.height, self.view.width, view.height-toolbar.height)];
-    view.toolbar = toolbar;
-    return view;
+//    MSUIDTView *view = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+toolbar.height-64)];
+//    view.bestTop = self.navigationController.navigationBar.bottom-toolbar.height;
+//    view.top = self.view.height - toolbar.height;
+
+//    self.toolView = view;
+//    view.controller = self;
+//    view.webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, toolbar.height, self.view.width, view.height-toolbar.height)];
+//    view.toolbar = toolbar;
+    return self.toolbar;
 }
 
 - (void)setToolbarContent:( MSGoodItem *)item
@@ -564,5 +566,36 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (BOOL)reseponseDoubleClickControls
+{
+    return NO;
+}
+
+- (void)toggleControls
+{
+    self.toolView.alpha = 0;
+    self.toolView.top = 200;
+    self.toolView.delegate = self;
+    [self.view addSubview:self.toolView];
+    [self.toolView loadDetail];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        self.toolView.alpha = 1.0f;
+        self.toolView.top = 0;
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    }];
+}
+
+- (void)hideDTView
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.toolView.alpha = 0.0f;
+        self.toolView.top = self.view.height;
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    }completion:^(BOOL finished) {
+        [self.toolView removeFromSuperview];
+    }];
+}
 
 @end

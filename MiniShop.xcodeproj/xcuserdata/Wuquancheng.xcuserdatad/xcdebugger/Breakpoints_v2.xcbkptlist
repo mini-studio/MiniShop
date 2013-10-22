@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.m"
-            timestampString = "403637723.632608"
+            timestampString = "404145919.663201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "-setToolbarContent:"
             landmarkType = "5">
          </BreakpointContent>
