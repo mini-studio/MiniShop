@@ -48,7 +48,6 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         }
         [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
         _appStoreUrl = @"http://itunes.apple.com/app/id617697319?mt=8";
-        [self initSystem];
     }
     return self;
 }
@@ -86,9 +85,15 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     return _udid;
 }
 
-- (void)setUdid:(NSString *)udid
+- (void)setUdid:(id)udid
 {
-    if ( udid.length > 0 ) {
+    if ( [udid isKindOfClass:[NSNumber class]] ) {
+        _udid = [NSString stringWithFormat:@"%lld",[(NSNumber*)udid longLongValue]];
+    }
+    else {
+        _udid = udid;
+    }
+    if ( _udid.length > 0 ) {
         KeychainItemWrapper *keychainWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
         [keychainWrapper setObject:udid forKey:(__bridge id)kSecValueData];
         _udid = udid;
@@ -140,11 +145,14 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 {
     if ( self.lastCheckUpdate == nil || force || [self.lastCheckUpdate  timeIntervalSinceNow] < -24*3600 )
     {
-        [[ClientAgent sharedInstance] version:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] version:nil block:^(NSError *error, MSVersion* data, id userInfo, BOOL cache) {
             if ( error == nil )
             {
                 self.lastCheckUpdate = [NSDate date];
                 self.version = data;
+                if ( self.version.imei.length > 0) {
+                    self.udid = self.version.imei;
+                }
                 if ( self.version.type == 2 )
                 {
                     [MiniUIAlertView showAlertWithTitle:@"升级提示" message:self.version.intro block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
@@ -206,8 +214,10 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
                 LOG_DEBUG(@"%@",data);
             }];
         });
-        
     }
+    [[ClientAgent sharedInstance] loadNews:0 userInfo:[NSNumber numberWithInt:0]
+                                     block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    }];
 }
 
 + (NSString *)bundleversion
@@ -229,8 +239,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
                 {
                     [self loadImge:data.url key:@"MS_BG_IMAGE" imagekey:data.key];
                 }
-            }
-            
+            }            
         }];
         [[ClientAgent sharedInstance] image:@"start" block:^(NSError *error, MSImageInfo* data, id userInfo, BOOL cache) {
             if ( error == nil && data.key != nil )
@@ -259,7 +268,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 {
     NSString *key = [NSString stringWithFormat:@"invote_%@",[MSSystem bundleversion]];
     dispatch_block_t __block__ = ^{
-        [MiniUIAlertView showAlertWithTitle:@"领导,求赐五星好评！" message:@"领导,大家都好评了,就等您表态了!请您发表重要讲话!" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        [MiniUIAlertView showAlertWithTitle:@"别忘了,您有给我们打分的权力" message:@"亲,这一版,好用吗? 你的鼓励对我们十分重要！满心期待你的评语~" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex != alertView.cancelButtonIndex) {
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setSyncValue:[NSNumber numberWithLong:-1] forKey:key];

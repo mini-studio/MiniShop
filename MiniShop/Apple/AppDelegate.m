@@ -31,6 +31,8 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+    MSSystem *system = [MSSystem sharedInstance];
+    [system initSystem];
     self.isFirstRun = [MSSystem isFirstRun];
     if (  self.isFirstRun )
     {

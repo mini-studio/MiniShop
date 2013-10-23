@@ -59,13 +59,17 @@
 -(NSMutableDictionary*)perfectParameters:(NSDictionary*)param
 {
     NSMutableDictionary * p = param==nil?[NSMutableDictionary dictionary]:[NSMutableDictionary dictionaryWithDictionary:param];
-    if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
-      [p setObject:@"" forKey:@"imei"];
+    if ( [MSSystem sharedInstance].udid.length > 0 ) {
+        [p setObject:[MSSystem sharedInstance].udid forKey:@"imei"];
     }
     else {
-       [p setObject:UDID forKey:@"imei"];
+        if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
+          [p setObject:@"" forKey:@"imei"];
+        }
+        else {
+           [p setObject:UDID forKey:@"imei"];
+        }
     }
-    
     [p setObject:@"" forKey:@"usernick"];
     [p setObject:@"json" forKey:@"tn"];
     NSString *w = [NSString stringWithFormat:@"%d",(int)(SCREEN_SIZE.width*SCREEN_SCALE)];
@@ -123,7 +127,7 @@
     if (mobile==nil) {
         mobile = @"";
     }
-    NSString *addr = [self requestUri:@"reg" param:@{}];
+    NSString *addr = [self requestUri:@"newreg" param:@{}];
     NSDictionary *dic = @{@"name":uname,@"passwd":passwd,@"mobile":mobile};
     [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
@@ -143,7 +147,7 @@
 
 - (void)login:(NSString*)uname passwd:(NSString*)passwd  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
-    NSString *addr = [self requestUri:@"login" param:@{}];
+    NSString *addr = [self requestUri:@"newlogin" param:@{}];
     NSDictionary *dic = @{@"name":uname,@"passwd":passwd};
     [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
@@ -277,8 +281,8 @@
     [MSSystem clearFirstRun];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstrun":firstrun?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
     params = [self perfectParameters:params];
-    NSString *addr = [self requestUri:@"version"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+    NSString *addr = [self requestUri:@"newversion"];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, MSVersion* data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
 }

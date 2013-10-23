@@ -202,8 +202,11 @@
             self.detailTextLabel.text = nil;
             MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
             int count = groupInfo.items_info.goods_info.count;
+            if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
+                count = count-1;
+            }
             self.rtlabel.hidden = NO;
-            if ( count == 0 ) {
+            if ( count <= 0 ) {
                 [self addSubview:self.noneNewImageView];
             }
             else {

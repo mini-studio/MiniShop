@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSString *cv;
 @property (nonatomic,strong) NSString *url;
 @property (nonatomic,strong) NSString *intro;
+@property (nonatomic,strong) NSString *imei;
 @property (nonatomic) NSInteger type;
 @property (nonatomic) NSInteger auth;
 @property (nonatomic,strong) NSString  *fav_url;

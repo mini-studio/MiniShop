@@ -335,7 +335,7 @@
 
 - (void)userAuthWithString:(NSString*)string block:(void (^)())block
 {
-    if ( WHO == nil ) {
+    if ( WHO == nil && MINI_UDID.length == 0 ) {
         __PSELF__;
         [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下" message:string block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if ( buttonIndex != alertView.cancelButtonIndex ) {

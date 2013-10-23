@@ -33,6 +33,8 @@
 
 #define WHO [MSSystem sharedInstance].user
 
+#define MINI_UDID [MSSystem sharedInstance].udid
+
 #define MAIN_VERSION [MSSystem sharedInstance].mainVersion
 
 #endif
