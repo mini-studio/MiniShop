@@ -50,7 +50,6 @@
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
 		C12E4975180A345500482A10 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C4A616FF4CD800ED87D8 /* Security.framework */; };
 		C12E4978180A37B900482A10 /* MSKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C12E4977180A37B900482A10 /* MSKeychainWrapper.m */; };
-		C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */; };
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
 		C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */; };
 		C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */; };
@@ -314,7 +313,6 @@
 		C12E4977180A37B900482A10 /* MSKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSKeychainWrapper.m; sourceTree = "<group>"; };
 		C12E497C180A43BA00482A10 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
-		C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIPhotoImageView.h; sourceTree = "<group>"; };
 		C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIPhotoImageView.m; sourceTree = "<group>"; };
@@ -728,7 +726,6 @@
 				C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */,
 				C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */,
 				C1820F3B175BA51000C87E39 /* libUMFeedback.a in Frameworks */,
-				C13B852D175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 				C101D19C177CCB3E009BFA10 /* libMobClickLibrary.a in Frameworks */,
 				C1FADC2017EC37A5005F5537 /* libWeChatSDK.a in Frameworks */,
 			);
@@ -1792,7 +1789,6 @@
 			isa = PBXGroup;
 			children = (
 				C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */,
-				C13B852B175D165D00BD8AFE /* libWeChatSDK_armv7_armv7s.a */,
 				C1FAFECF1752728E00A7E7F6 /* WXApi.h */,
 				C1FAFED01752728E00A7E7F6 /* WXApiObject.h */,
 			);
@@ -1828,6 +1824,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = mini;
+				TargetAttributes = {
+					C169C47416FF48F200ED87D8 = {
+						DevelopmentTeam = SC38D3VQ43;
+					};
+				};
 			};
 			buildConfigurationList = C169C46F16FF48F200ED87D8 /* Build configuration list for PBXProject "MiniShop" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2118,8 +2119,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (KMM736B6J7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (GCD3TFD42C)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2148,7 +2148,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "F12FDF0E-C492-4EC1-B207-E65B6AD6EBFE";
+				PROVISIONING_PROFILE = "B1337075-F9B7-474A-9307-6966A5B907A3";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -2163,8 +2163,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2187,7 +2187,6 @@
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
 				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;

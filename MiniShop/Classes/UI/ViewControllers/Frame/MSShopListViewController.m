@@ -16,6 +16,7 @@
 #import "EGOUITableView.h"
 #import "MSWebChatUtil.h"
 #import "MSShopGalleryViewController.h"
+#import "MRLoginViewController.h"
 
 @interface MSShopListViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
@@ -139,8 +140,23 @@
             [pSelf dismissWating];
             if ( error == nil )
             {
-                info.like = !info.like;
-                [MSShopInfoCell resetButtonState:button shopInfo:info];
+                if ( data.show_msg.length > 0 ) {
+                    [MiniUIAlertView showAlertWithTitle:@"提示" message:data.show_msg block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+                        if ( buttonIndex != alertView.cancelButtonIndex ) {
+                            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+                            controller.loginblock = ^(BOOL login) {
+                                if ( login ) {
+                                    [pSelf.navigationController popViewControllerAnimated:NO];
+                                }
+                            };
+                            [pSelf.navigationController pushViewController:controller animated:YES];
+                        }
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                }
+                else {
+                    info.like = !info.like;
+                    [MSShopInfoCell resetButtonState:button shopInfo:info];
+                }
             }
             else
             {

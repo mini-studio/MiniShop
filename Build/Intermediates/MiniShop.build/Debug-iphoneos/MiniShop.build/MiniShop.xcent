@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>RU27FQVH63.com.wanwuhuakai.fullbloom</string>
+	<string>6SA3EGRUF8.com.wanwuhuakai.fullbloom</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>RU27FQVH63.com.wanwuhuakai.fullbloom</string>
+		<string>6SA3EGRUF8.com.wanwuhuakai.fullbloom</string>
 	</array>
 </dict>
 </plist>

@@ -15,6 +15,8 @@
 #import "MSDetailViewController.h"
 #import "MSWebChatUtil.h"
 #import "MSJoinViewController.h"
+#import "MRLoginViewController.h"
+#import "MRLoginViewController.h"
 
 @interface MSShopGalleryViewController ()<UITableViewDataSource,UITabBarDelegate>
 @property (nonatomic,strong) EGOUITableView *tableView;
@@ -205,13 +207,28 @@
         [pSelf showWating:nil];
         NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
         
-        [[ClientAgent sharedInstance] like:@"shop" action:@"on" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] like:@"shop" action:@"on" mid:shopid block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if ( error == nil )
             {
+                if ( data.show_msg.length > 0 ) {
+                    [MiniUIAlertView showAlertWithTitle:@"提示" message:data.show_msg block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+                        if ( buttonIndex != alertView.cancelButtonIndex ) {
+                            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+                            controller.loginblock = ^(BOOL login) {
+                                if ( login ) {
+                                    [pSelf.navigationController popViewControllerAnimated:NO];
+                                }
+                            };
+                            [pSelf.navigationController pushViewController:controller animated:YES];
+                        }
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                }
+                else {
                 [pSelf showMessageInfo:@"已经关注" delay:2];
                 pSelf.dataSource.user_is_like_shop = 1;
                 [pSelf updateUIAfterLoadData];
+                }
             }
             else
             {
@@ -228,13 +245,28 @@
     [self userAuth:^{
         [pSelf showWating:nil];
         NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
-        [[ClientAgent sharedInstance] like:@"shop" action:@"off" mid:shopid block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] like:@"shop" action:@"off" mid:shopid block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if ( error == nil )
             {
+                if ( data.show_msg.length > 0 ) {
+                    [MiniUIAlertView showAlertWithTitle:@"提示" message:data.show_msg block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+                        if ( buttonIndex != alertView.cancelButtonIndex ) {
+                            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+                            controller.loginblock = ^(BOOL login) {
+                                if ( login ) {
+                                    [pSelf.navigationController popViewControllerAnimated:NO];
+                                }
+                            };
+                            [pSelf.navigationController pushViewController:controller animated:YES];
+                        }
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                }
+                else {
                 [pSelf showMessageInfo:@"已经取消关注" delay:2];
                 pSelf.dataSource.user_is_like_shop = 0;
                 [pSelf updateUIAfterLoadData];
+                }
             }
             else
             {

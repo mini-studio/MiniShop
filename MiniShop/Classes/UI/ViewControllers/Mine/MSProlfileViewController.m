@@ -52,13 +52,14 @@
 
 - (void)resetDataSource
 {
-    self.dictionary = @{@"0":@[
-                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录或注册":@"注销"}
-                                ],
-                        @"1":@[
+    self.dictionary = @{
+//                        @"0":@[
+//                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录或注册":@"注销"}
+//                                ],
+                        @"0":@[
                                 @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
                                 ],
-                        @"2":@[
+                        @"1":@[
                                 @{@"action":@"actionForMyFollow",@"text":@"正在关注的店铺",@"icon":@"icon_following"},
                                 @{@"action":@"actionForImportFav",@"text":@"导入淘宝收藏夹",@"icon":@"icon_import_taobao"},
                                 ]

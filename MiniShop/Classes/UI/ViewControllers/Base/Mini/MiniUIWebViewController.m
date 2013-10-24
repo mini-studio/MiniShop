@@ -19,6 +19,7 @@
 @property (nonatomic,strong)NSString *fileName;
 @property (nonatomic,strong)NSString *fileType;
 @property (nonatomic,strong)UIActivityIndicatorView *indicatorView;
+@property (nonatomic,strong)UIActivityIndicatorView *bigIndicatorView;
 @end
 
 @implementation MiniUIWebViewController
@@ -76,6 +77,10 @@
     }
     [self setNaviBackButton];
     self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.bigIndicatorView =  [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    self.bigIndicatorView.hidden = YES;
+    [self.navigationController.navigationBar addSubview:self.bigIndicatorView];
+    self.bigIndicatorView.center = CGPointMake(self.navigationController.navigationBar.width-self.bigIndicatorView.width, self.navigationController.navigationBar.height/2);
 }
 
 - (void)setNaviBackButton
@@ -194,14 +199,20 @@
     //[super showWating:message];
     self.indicatorView.center = CGPointMake(self.view.width/2, self.view.height/2);
     [self.view addSubview:self.indicatorView];
+    if ( ![self.indicatorView isAnimating] )
     [self.indicatorView startAnimating];
     //self.view.userInteractionEnabled = YES;
+    self.bigIndicatorView.hidden = NO;
+    if ( ![self.bigIndicatorView isAnimating] )
+    [self.bigIndicatorView startAnimating];
 }
 
 - (void)dismissWating:(BOOL)animated
 {
     [self.indicatorView stopAnimating];
     [self.indicatorView removeFromSuperview];
+    self.bigIndicatorView.hidden = YES;
+    [self.bigIndicatorView stopAnimating];
 }
 
 - (void)HandleStartWebREQ:(NSNotification *)noti

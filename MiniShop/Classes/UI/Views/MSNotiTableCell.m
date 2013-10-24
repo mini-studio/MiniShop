@@ -202,20 +202,18 @@
             self.detailTextLabel.text = nil;
             MSPicNotiGroupInfo *groupInfo = (MSPicNotiGroupInfo*)item;
             int count = groupInfo.items_info.goods_info.count;
-            if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
-                count = count-1;
-            }
             self.rtlabel.hidden = NO;
             if ( count <= 0 ) {
                 [self addSubview:self.noneNewImageView];
             }
             else {
+                int total = [groupInfo.items_info.shop_info.goods_num integerValue];
                 NSString *title = nil;
                 if ( item.isNews && [groupInfo.items_info.shop_info.publish_time rangeOfString:@"天"].location==NSNotFound ) {
-                    title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+                    title = [NSString stringWithFormat:@"<font color='#333333'>今日上新 </font><font color='#7D7D7D'>%@</font><font color='#C95865'> +%dNEW</font>",groupInfo.items_info.shop_info.publish_time,total];
                 }
                 else {
-                   title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,count];
+                   title = [NSString stringWithFormat:@"<font color='#7D7D7D'>%@</font><font color='#C95865'>+%dNEW</font>",groupInfo.items_info.shop_info.publish_time,total];
                 }
                 [self.rtlabel setText:title];
                 BOOL isBig = NO;
