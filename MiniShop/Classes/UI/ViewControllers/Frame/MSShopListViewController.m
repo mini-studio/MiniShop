@@ -133,7 +133,7 @@
 - (void)actionButtonTap:(MiniUIButton*)button
 {
     __PSELF__;
-    [self userAuth:^{
+//    [self userAuth:^{
         MSShopInfo *info = button.userInfo;
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
@@ -163,7 +163,7 @@
                 [pSelf showErrorMessage:error];
             }
         }];
-    }];
+ //   }];
     
 }
 

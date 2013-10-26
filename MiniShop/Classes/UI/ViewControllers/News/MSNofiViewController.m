@@ -467,7 +467,7 @@
 
 - (void)loadData:(int)page delay:(CGFloat)delay
 {
-    self.segment.userInteractionEnabled = NO;
+    //self.segment.userInteractionEnabled = NO;
     [self showWating:nil];
     int type = self.segment.selectedSegmentIndex;
     double delayInSeconds = delay;
@@ -488,9 +488,10 @@
 {
     int type = 0;
     __weak typeof (self) pSelf = self;
+    [self showWating:nil];
     [[ClientAgent sharedInstance] loadNews:page userInfo:[NSNumber numberWithInt:0]
                                      block:^(NSError *error, MSNotify* data, id userInfo, BOOL cache) {
-         [pSelf dismissWating];
+         
          if ( [userInfo intValue] == pSelf.segment.selectedSegmentIndex )
          {
              if ( error == nil )
@@ -506,12 +507,22 @@
                      }
                      [pSelf receiveData:data page:page type:type];
                  }
+                 double delayInSeconds = 2.0;
+                 dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                 dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                     [pSelf dismissWating];
+                 });
              }
              else
              {
+                 [pSelf dismissWating];
                  [pSelf stopLoad:page];
+                 
                  [pSelf showErrorMessage:error];
              }
+         }
+         else {
+            [pSelf dismissWating];
          }
      }];
 

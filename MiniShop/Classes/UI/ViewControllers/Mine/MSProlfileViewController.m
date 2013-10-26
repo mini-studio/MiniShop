@@ -36,7 +36,7 @@
 
 @interface MSProfileViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
-@property (nonatomic,strong)NSDictionary *dictionary;
+@property (nonatomic,strong)NSMutableDictionary *dictionary;
 @property (nonatomic) BOOL importing;
 @end
 
@@ -46,25 +46,28 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.dictionary = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (void)resetDataSource
 {
-    self.dictionary = @{
-//                        @"0":@[
-//                                @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录或注册":@"注销"}
-//                                ],
-                        @"0":@[
-                                @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
-                                ],
-                        @"1":@[
-                                @{@"action":@"actionForMyFollow",@"text":@"正在关注的店铺",@"icon":@"icon_following"},
-                                @{@"action":@"actionForImportFav",@"text":@"导入淘宝收藏夹",@"icon":@"icon_import_taobao"},
-                                ]
-                        };
-
+    if ( WHO != nil ) {
+        self.dictionary[@"0"] = @[@{@"mid_text":WHO.usernick}];
+    }
+    else {
+        self.dictionary[@"0"] = @[
+                                 @{@"action":WHO==nil?@"actionForLogin":@"actionForLogout",@"text":WHO==nil?@"":WHO.usernick,@"right_text":WHO==nil?@"登录或注册":@"注销"}
+                                 ];
+    }
+    self.dictionary[@"1"] = @[
+                              @{@"action":@"actionForPotentialList",@"text":@"纠结清单",@"icon":@"icon_kink"}
+                              ];
+    self.dictionary[@"2"] = @[
+                              @{@"action":@"actionForMyFollow",@"text":@"正在关注的店铺",@"icon":@"icon_following"},
+                              @{@"action":@"actionForImportFav",@"text":@"导入淘宝收藏夹",@"icon":@"icon_import_taobao"},
+                              ];
 }
 
 - (void)loadView
@@ -119,6 +122,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self resetDataSource];
     [self.tableView reloadData];
     [super viewWillAppear:animated];
@@ -168,13 +172,34 @@
         cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_accessory"]];
         cell.detailTextLabel.font = cell.textLabel.font;
         cell.detailTextLabel.textColor = cell.textLabel.textColor;
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:cell.bounds];
+        [cell addSubview:nameLabel];
+        nameLabel.textAlignment = NSTextAlignmentCenter;
+        nameLabel.tag = 100;
+        nameLabel.backgroundColor = cell.textLabel.backgroundColor;
+        nameLabel.font = cell.textLabel.font;
+        nameLabel.textColor = cell.textLabel.textColor;
     }
     NSArray *dataSource = [self.dictionary valueForKey:[NSString stringWithFormat:@"%d",indexPath.section]];
     [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor whiteColor] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xebebebff] sectionRowNumbers:dataSource.count];
     id data = [dataSource objectAtIndex:indexPath.row];
-    cell.textLabel.text = [data valueForKey:@"text"];
-    cell.detailTextLabel.text =[data valueForKey:@"right_text"];
-    cell.imageView.image = [UIImage imageNamed:[data valueForKey:@"icon"]];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
+    NSString *midText = [data valueForKey:@"mid_text"];
+    if (midText.length > 0) {
+        cell.textLabel.text = nil;
+        nameLabel.text = midText;
+        cell.detailTextLabel.text = nil;
+        cell.imageView.image = nil;
+        nameLabel.hidden = NO;
+        cell.accessoryView = nil;
+    }
+    else {
+        nameLabel.hidden = YES;
+        cell.textLabel.text = [data valueForKey:@"text"];
+        cell.detailTextLabel.text =[data valueForKey:@"right_text"];
+        cell.imageView.image = [UIImage imageNamed:[data valueForKey:@"icon"]];
+        cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_accessory"]];
+    }
     return cell;
 }
 

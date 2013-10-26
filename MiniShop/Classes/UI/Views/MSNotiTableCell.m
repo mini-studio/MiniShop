@@ -114,22 +114,15 @@
     
     if ( [self.item isKindOfClass:[MSNotiGroupInfo class]] )
     {
-        self.msSeparatorView.center = CGPointMake(self.width/2, self.textLabel.bottom+10);
+        self.msSeparatorView.center = CGPointMake(self.width/2, self.textLabel.bottom+6);
         self.msSeparatorView.width = width;
         self.msSeparatorView.hidden = NO;
-        if (![self.item read])
-        {
-            self.textLabel.width -= 40;
-            self.onlineImageView.hidden = NO;
-            self.onlineImageView.origin = CGPointMake(self.width - 50, 12);
-        }
+        self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+10);
     }
     else {
         self.msSeparatorView.hidden = YES;
+        self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+4);
     }
-    
-    self.detailTextLabel.origin = CGPointMake(self.textLabel.left, self.textLabel.bottom+4);
-    
     __block CGFloat top =  self.textLabel.bottom + 2;
     [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
          UIView *imageView = [self.imageArray objectAtIndex:idx];

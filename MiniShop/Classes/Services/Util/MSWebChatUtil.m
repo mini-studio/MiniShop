@@ -24,6 +24,7 @@
     {
         return;
     }
+
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"分享个宝贝给你";
     message.description = goodItem.name;
@@ -32,7 +33,13 @@
     WXAppExtendObject *ext = [WXAppExtendObject object];
     ext.extInfo = @"";
     ext.url = [NSString stringWithFormat:@"youjiaxiaodian://good/%lld",goodItem.mid];
-    ext.fileData = nil;
+    
+    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+    memset(pBuffer, 0, BUFFER_SIZE);
+    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+    free(pBuffer);
+
+    ext.fileData = data;
     message.mediaObject = ext;
     
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
@@ -59,9 +66,13 @@
     
     NSString *url = [NSString stringWithFormat:@"http://youjiaxiaodian.com/share?type=share_shop&id=%@",shopIds];
     WXAppExtendObject *ext = [WXAppExtendObject object];
-    ext.extInfo = @"";
+    ext.extInfo = shopIds;
     ext.url = url;
-    ext.fileData = nil;
+    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+    memset(pBuffer, 0, BUFFER_SIZE);
+    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+    free(pBuffer);
+    ext.fileData = data;
     message.mediaObject = ext;
     [message setThumbImage:[UIImage imageNamed:@"Icon.jpg"]];
     

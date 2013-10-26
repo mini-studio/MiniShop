@@ -218,6 +218,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     [[ClientAgent sharedInstance] loadNews:0 userInfo:[NSNumber numberWithInt:0]
                                      block:^(NSError *error, id data, id userInfo, BOOL cache) {
     }];
+    
 }
 
 + (NSString *)bundleversion

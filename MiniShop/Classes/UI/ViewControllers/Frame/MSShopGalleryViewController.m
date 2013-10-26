@@ -203,7 +203,7 @@
 - (void)followShop
 {
     __PSELF__;
-    [self userAuth:^{
+  //  [self userAuth:^{
         [pSelf showWating:nil];
         NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
         
@@ -236,13 +236,13 @@
             }
         }];
 
-    }];
+//    }];
 }
 
 - (void)unFollowShop
 {
     __PSELF__;
-    [self userAuth:^{
+//    [self userAuth:^{
         [pSelf showWating:nil];
         NSInteger shopid = ((MSShopGalleryInfo*)[self.dataSource.body_info objectAtIndex:0]).item_info.shop_id;
         [[ClientAgent sharedInstance] like:@"shop" action:@"off" mid:shopid block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
@@ -273,7 +273,7 @@
                 [pSelf showErrorMessage:error];
             }
         }];
-    }];
+//    }];
 }
 
 - (void)loadData:(int)page

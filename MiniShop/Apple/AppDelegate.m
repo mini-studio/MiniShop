@@ -104,6 +104,32 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
         [def setDouble:current forKey:key];
     }
     [def synchronize];
+    
+    
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    NSDate *now=[NSDate new];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(kCFCalendarUnitYear|kCFCalendarUnitMonth | kCFCalendarUnitDay| kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond) fromDate:now];
+    NSInteger hour = [components hour];
+    if ( hour < 20 ) {
+        components.hour = 20;
+    }
+    else {
+        now=[NSDate dateWithTimeIntervalSinceNow:24*3600];
+        components = [calendar components:(kCFCalendarUnitEra | kCFCalendarUnitYear|kCFCalendarUnitMonth | kCFCalendarUnitDay| kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond) fromDate:now];
+        components.hour = 20;
+    }
+    components.second = 0;
+    components.minute = 0;
+    NSDate *fireDate  = [calendar dateFromComponents:components];
+    UILocalNotification *notification=[[UILocalNotification alloc] init];
+    if (notification!=nil) {
+        notification.fireDate=fireDate;
+        notification.timeZone=[NSTimeZone defaultTimeZone];
+        notification.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication]  scheduleLocalNotification:notification];
+    }
+    
     //[MSSystem localNotification];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -231,8 +257,52 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     });
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+
+- (UINavigationController *)currentNaviController
+{
+    if ( [self.viewController isKindOfClass:[MSMainTabViewController class]])
+    {
+        UIViewController *c = [(MSMainTabViewController*)self.viewController selectedViewController];
+        if ( c != nil )
+        {
+            if ( [c isKindOfClass:[UINavigationController class]] )
+            {
+                return (UINavigationController*)c;
+            }
+            else
+            {
+                return c.navigationController;
+            }
+        }
+    }
+    return nil;
+}
+
+-(void) onReq:(BaseReq*)req
+{
+    NSString *path = nil;
+    NSString *extInfo = nil;
+    if([req isKindOfClass:[ShowMessageFromWXReq class]])
+    {
+        ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
+        WXMediaMessage *msg = temp.message;
+        WXAppExtendObject *obj = msg.mediaObject;
+        path = obj.url;
+        extInfo = obj.extInfo;
+    }
+    if ( path.length == 0 ) {
+        return;
+    }
     CGFloat delay = 1.0;
     if (UIApplicationStateActive == [UIApplication sharedApplication].applicationState)
     {
@@ -241,7 +311,6 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSString *path = [url absoluteString];
         if ( path.length > 0 )
         {
             NSString *prefix = @"youjiaxiaodian://shop"; //关注此店铺
@@ -275,35 +344,16 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
                 controller.shopIds = shopIds;
                 [[self currentNaviController] pushViewController:controller animated:YES];
             }
+            else if ( [path hasPrefix:@"http://youjiaxiaodian.com/share?type=share_shop&id="] ){
+                NSString *shopIds =[path substringFromIndex:@"http://youjiaxiaodian.com/share?type=share_shop&id=".length];
+                if ( shopIds.length > 0 ) {
+                    MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
+                    controller.shopIds = shopIds;
+                    [[self currentNaviController] pushViewController:controller animated:YES];
+                }
+            }
         }
     });
-    return YES;
-}
-
-
-- (UINavigationController *)currentNaviController
-{
-    if ( [self.viewController isKindOfClass:[MSMainTabViewController class]])
-    {
-        UIViewController *c = [(MSMainTabViewController*)self.viewController selectedViewController];
-        if ( c != nil )
-        {
-            if ( [c isKindOfClass:[UINavigationController class]] )
-            {
-                return (UINavigationController*)c;
-            }
-            else
-            {
-                return c.navigationController;
-            }
-        }
-    }
-    return nil;
-}
-
--(void) onReq:(BaseReq*)req
-{
-   
 }
 -(void) onResp:(BaseResp*)resp
 {
