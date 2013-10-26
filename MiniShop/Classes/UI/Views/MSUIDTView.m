@@ -27,7 +27,7 @@
         [self addSubview:self.webView];
         self.backgroundColor = [UIColor whiteColor];
         self.closeButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"closep"] highlightedImage:[UIImage imageNamed:@"closep"]];
-        self.closeButton.origin = CGPointMake( self.width-self.closeButton.width-10, self.closeButton.height);
+        self.closeButton.center = CGPointMake( self.width-self.closeButton.width/2-10, self.closeButton.height/2 + 10);
         [self addSubview:self.closeButton];
         [self.closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
         

@@ -12,7 +12,7 @@
 #import "MSShopInfo.h"
 
 @implementation MSWebChatUtil
-#define BUFFER_SIZE 1024 * 100
+#define BUFFER_SIZE 10
 
 + (void)shareGoodItem:(MSGoodItem*)goodItem scene:(int)scene
 {

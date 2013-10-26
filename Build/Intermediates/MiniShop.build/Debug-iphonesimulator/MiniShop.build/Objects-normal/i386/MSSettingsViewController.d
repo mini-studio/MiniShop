@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.m \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/UMFeedback.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUISegmentView.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSJoinViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/UIImageView+WebCache.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCache.h
