@@ -143,7 +143,7 @@
     if ( self.importing ) return;
     self.importing  = YES;
     __PSELF__;
-    [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
+   // [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
@@ -161,7 +161,7 @@
                 [pSelf showErrorMessage:error];
             }
         }];
-    }];
+    //}];
 }
 
 

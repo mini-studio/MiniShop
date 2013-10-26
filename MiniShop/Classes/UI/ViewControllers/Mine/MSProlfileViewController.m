@@ -196,10 +196,10 @@
 
 - (void)actionForPotentialList
 {
-    [self userAuth:^{
+    //[self userAuth:^{
         MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
         [self.navigationController pushViewController:controller animated:YES];
-    }];
+    //}];
    
 }
 
@@ -240,7 +240,7 @@
     [MobClick event:MOB_IMPORT_FAV];
     if ( self.importing ) return;
     __PSELF__;
-    [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
+    //[self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
         pSelf.importing  = YES;
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] importFav:pSelf userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
@@ -259,57 +259,57 @@
                 [pSelf showErrorMessage:error];
             }
         }];
-    }];
+    //}];
 }
 
 - (void)actionForMyFollow
 {
     __PSELF__;
-    [pSelf userAuth:^{
+    //[pSelf userAuth:^{
         MSShopListViewController *controller = [[MSShopListViewController alloc] init];
         controller.type = EFollowed;
         [pSelf.navigationController pushViewController:controller animated:YES];
-    }];
+    //}];
 }
 
 //去淘宝收藏夹
 - (void)actionForGoToFav
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
         [MobClick event:MOB_ENTER_TAOBAO_FAV];
         [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"fav"]];
-    }];
+    //}];
 
 }
 //已经购买的
 - (void)actionForGoToPurchase
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_ORDER];
     [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"order"]];
-    }];
+    //}];
 
 }
 //我的购物车
 - (void)actionForGoToBag
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_BAG];
     [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"bag"]];
-    }];
+    //}];
 
 }
 //物流
 - (void)actionForGoToLogistics
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
     [MobClick event:MOB_ENTER_TAOBAO_LOGISTICS];
     [pSelf actionFunction:[ClientAgent jumpToTaoBaoUrl:@"logistics"]];
-    }];
+    //}];
 }
 
 - (void)actionForLogin

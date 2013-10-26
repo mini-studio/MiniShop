@@ -230,7 +230,7 @@
 - (void)buttonTap:(__weak MiniUIButton *)button
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
         MSShopInfo *info = button.userInfo;
         if ( info.shop_id == 0 ) // 收录
         {
@@ -283,7 +283,7 @@
                 }
             }];
         }
-    }];
+    //}];
 }
 @end
 

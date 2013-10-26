@@ -184,7 +184,7 @@
 - (void)actionCooperate:(BOOL)cooperate
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] usercooperate:self.cooperateInfo.taobao_shop_title shopId:self.cooperateInfo.taobao_shop_id action:cooperate?@"on":@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
             if ( error == nil )
@@ -198,7 +198,7 @@
             }
         }];
 
-    }];
+    //}];
 }
 
 - (void)actionForButtonTap:(MiniUIButton *)button

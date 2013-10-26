@@ -12,6 +12,7 @@
 @property (nonatomic,strong) UIActivityIndicatorView *indicator;
 @property (nonatomic) CGPoint lastTranslation;
 @property (nonatomic,strong) NSString *lastRequestURL;
+@property (nonatomic,strong) MiniUIButton *closeButton;
 @end
 
 @implementation MSUIDTView
@@ -25,7 +26,10 @@
         self.webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
         [self addSubview:self.webView];
         self.backgroundColor = [UIColor whiteColor];
-        
+        self.closeButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"closep"] highlightedImage:[UIImage imageNamed:@"closep"]];
+        self.closeButton.origin = CGPointMake( self.width-self.closeButton.width-10, self.closeButton.height);
+        [self addSubview:self.closeButton];
+        [self.closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
         
 //        self.recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handelPan:)];
 //        [self.webView.scrollView addGestureRecognizer:self.recognizer];
@@ -96,6 +100,7 @@
     [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     [_webView setViewBackgroundColor:[UIColor clearColor]];
     [_webView setDelegate:self];
+    [self bringSubviewToFront:self.closeButton];
 }
 
 - (void)loadurl:(NSString*)url
@@ -152,6 +157,13 @@
 {
     [self.indicator stopAnimating];
     [self.indicator removeFromSuperview];
+}
+
+- (void)close
+{
+    if ( self.delegate && [self.delegate respondsToSelector:@selector(hideDTView)] ) {
+        [self.delegate performSelectorInBackground:@selector(hideDTView) withObject:nil];
+    }
 }
 
 @end

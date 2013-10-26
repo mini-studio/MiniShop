@@ -398,11 +398,11 @@
     {
         if ( [MSStoreNewsSubTypeSubLogin isEqualToString:data.subtype] ) {
             __PSELF__;
-            [self userAuth:^{
+            //[self userAuth:^{
                 [MobClick event:MOB_MSG_URL_CLICK];
                 MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:data.url title:[data name] toolbar:YES];
                 [pSelf.navigationController pushViewController:controller animated:YES];
-            }];
+            //}];
         }
         else {
             [MobClick event:MOB_MSG_URL_CLICK];
@@ -630,7 +630,7 @@
     if ( self.importing ) return;
     self.importing  = YES;
     __PSELF__;
-    [self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
+    //[self userAuthWithString:LOGIN_IMPORT_FAV_PROMPT block:^{
         [pSelf showWating:nil];
         [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
@@ -648,7 +648,7 @@
                 [pSelf showErrorMessage:error];
             }
         }];
-    }];
+    //}];
     
 }
 
@@ -668,7 +668,7 @@
 - (void)switchPushMessage:(MiniUIButton*)button
 {
     __PSELF__;
-    [self userAuth:^{
+    //[self userAuth:^{
         if ( [MSSystem sharedInstance].version.push_sound.intValue == 1 ) {
             [[ClientAgent sharedInstance] setpushsound:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
                 if ( error == nil ) {
@@ -694,15 +694,15 @@
             }];
         }
 
-    }];
+    //}];
 }
 
 - (void)actionRightButtonTap:(UIButton *)button
 {
-    [self userAuth:^{
+    //[self userAuth:^{
         MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
         [self.navigationController pushViewController:controller animated:YES];
-    }];
+    //}];
 }
 
 - (void)viewShopGallery:(MSNotiItemInfo*)itemInfo
