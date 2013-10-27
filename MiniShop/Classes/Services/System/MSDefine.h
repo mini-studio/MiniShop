@@ -33,6 +33,7 @@
 #define MOB_ACTIVE_BY_PUSH              @"ACTIVE_BY_PUSH"
 #define MOB_ENTER_REG                   @"ENTER_REG"
 #define MOB_ENTER_LOGIN                 @"ENTER_LOGIN"
+#define MOB_OPEN_KINK_LIST              @"OPEN_KINK_LIST"
 
 
 #define MN_NOTI_RECEIVE_VERSION         @"MN_NOTI_RECEIVE_VERSION"

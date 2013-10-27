@@ -57,6 +57,7 @@
     self.label.userInteractionEnabled = NO;
     self.tableView.tableHeaderView = view;
     [self loadData:1];
+     [MobClick event:MOB_OPEN_KINK_LIST];
 }
 
 - (void)didReceiveMemoryWarning
