@@ -54,13 +54,19 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 
 - (void)setUser:(MSUser *)user
 {
+    [self setUser:user checkVersion:YES];
+}
+
+- (void)setUser:(MSUser *)user checkVersion:(BOOL)checkVersion
+{
     _user = user;
     if ( _user != nil ) {
-       NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-       [def setMiniObject:user forkey:@"MS_SYS_USER"];
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        [def setMiniObject:user forkey:@"MS_SYS_USER"];
         [[ClientAgent sharedInstance] uploadToken:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
             LOG_DEBUG(@"%@",data);
         }];
+        if ( checkVersion )
         [self checkVersion:^{
             
         } force:YES];
@@ -103,7 +109,13 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 - (MSUser*)loadUser
 {
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    return  (MSUser*)[def miniObjectValueForKey:@"MS_SYS_USER"];
+    MSUser *user = (MSUser*)[def miniObjectValueForKey:@"MS_SYS_USER"];
+    if (user.usernick.length>0) {
+        return user;
+    }
+    else {
+        return nil;
+    }
 }
 
 - (void)setAuthForImportFav:(int)authForImportFav
@@ -148,11 +160,13 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [[ClientAgent sharedInstance] version:nil block:^(NSError *error, MSVersion* data, id userInfo, BOOL cache) {
             if ( error == nil )
             {
+                if ( data.user_nick.length > 0 ) {
                 MSUser *user = [[MSUser alloc] init];
                 user.usernick = data.user_nick;
                 user.uniqid = data.uniqid;
                 user.imei = data.imei;
-                [self setUser:user];
+                [self setUser:user checkVersion:NO];
+                }
                 self.lastCheckUpdate = [NSDate date];
                 self.version = data;
                 if ( self.version.imei.length > 0) {
