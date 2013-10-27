@@ -133,38 +133,35 @@
 - (void)actionButtonTap:(MiniUIButton*)button
 {
     __PSELF__;
-//    [self userAuth:^{
-        MSShopInfo *info = button.userInfo;
-        [pSelf showWating:nil];
-        [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
-            [pSelf dismissWating];
-            if ( error == nil )
-            {
-                if ( data.show_msg.length > 0 ) {
-                    [MiniUIAlertView showAlertWithTitle:@"提示" message:data.show_msg block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-                        if ( buttonIndex != alertView.cancelButtonIndex ) {
-                            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
-                            controller.loginblock = ^(BOOL login) {
-                                if ( login ) {
-                                    [pSelf.navigationController popViewControllerAnimated:NO];
-                                }
-                            };
-                            [pSelf.navigationController pushViewController:controller animated:YES];
-                        }
-                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登录/注册", nil];
-                }
-                else {
-                    info.like = !info.like;
-                    [MSShopInfoCell resetButtonState:button shopInfo:info];
-                }
+    MSShopInfo *info = button.userInfo;
+    [pSelf showWating:nil];
+    [[ClientAgent sharedInstance] like:@"shop" action:info.like?@"off":@"on" mid:info.shop_id block:^(NSError *error,  MSObject* data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if ( error == nil )
+        {
+            if ( data.show_msg.length > 0 ) {
+                [MiniUIAlertView showAlertWithTitle:@"提示" message:data.show_msg block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+                    if ( buttonIndex != alertView.cancelButtonIndex ) {
+                        MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+                        controller.loginblock = ^(BOOL login) {
+                            if ( login ) {
+                                [pSelf.navigationController popViewControllerAnimated:NO];
+                            }
+                        };
+                        [pSelf.navigationController pushViewController:controller animated:YES];
+                    }
+                } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登录/注册", nil];
             }
-            else
-            {
-                [pSelf showErrorMessage:error];
+            else {
+                info.like = !info.like;
+                [MSShopInfoCell resetButtonState:button shopInfo:info];
             }
-        }];
- //   }];
-    
+        }
+        else
+        {
+            [pSelf showErrorMessage:error];
+        }
+    }];
 }
 
 - (void)loadData

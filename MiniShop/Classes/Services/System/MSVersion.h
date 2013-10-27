@@ -19,4 +19,7 @@
 @property (nonatomic,strong) NSString  *fav_url;
 @property (nonatomic) NSInteger list;
 @property (nonatomic,strong) NSString *push_sound;
+@property (nonatomic,strong) NSString *user_nick;
+@property (nonatomic) int like_shop_num;
+@property (nonatomic,strong)NSString *uniqid;
 @end

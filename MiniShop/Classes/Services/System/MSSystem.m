@@ -148,6 +148,11 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [[ClientAgent sharedInstance] version:nil block:^(NSError *error, MSVersion* data, id userInfo, BOOL cache) {
             if ( error == nil )
             {
+                MSUser *user = [[MSUser alloc] init];
+                user.usernick = data.user_nick;
+                user.uniqid = data.uniqid;
+                user.imei = data.imei;
+                [self setUser:user];
                 self.lastCheckUpdate = [NSDate date];
                 self.version = data;
                 if ( self.version.imei.length > 0) {
