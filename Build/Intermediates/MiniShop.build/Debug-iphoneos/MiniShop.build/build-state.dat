@@ -32,8 +32,8 @@ cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objec
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniNSURLProtocol.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniURLCache.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/RTLabel.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSWebChatUtil.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/NSDate+Format.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UIDevice+Id.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UILabel+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -820,11 +820,11 @@ t1382809683
 s5466952
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app
-t1382810155
+t1382810158
 s5678
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM
-t1382810101
+t1382810155
 s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Default-568h@2x.png
@@ -876,8 +876,8 @@ t1382809685
 s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop
-t1382810155
-s2912212
+t1382810158
+s2936288
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/PkgInfo
 t1382809683
@@ -3524,16 +3524,17 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesd42800ab391cb841^d19500ab391cb841^---0#1#1#--18"Check dependencies36"55C843D2-7F6D-48A9-9E3C-199B58E09E4D-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies344d2024c41cb841^f8377424c41cb841^---0#1#1#--18"Check dependencies36"1977B88D-D9A6-4672-A5B9-59DE0F789E39-
 
 CCodeSign /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app
-s404502955.578563
-e404502958.764768
+s404538404.792217
+e404538407.937204
 r1
 xCodeSign
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"CodeSign Build/Products/Debug-iphoneos/MiniShop.app51"CodeSign Build/Products/Debug-iphoneos/MiniShop.appb62b94ab391cb841^6dc8c3ae391cb841^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/0000000000000000^1085"CodeSign Build/Products/Debug-iphoneos/MiniShop.app    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    Using code signing identity "iPhone Developer: wu quancheng (GCD3TFD42C)" and provisioning profile "iOS Team Provisioning Profile: *" (B1337075-F9B7-474A-9307-6966A5B907A3)    codesign --force --sign E3A08C44E189C8BA63632DEF456299DF65DF7EB3 --resource-rules=/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist --entitlements /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop.xcent /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app36"4C2C2BA5-8789-4054-95B1-EBAF428A3E22-
-b8D43030A-B89A-4C54-966D-9DBFE5A709B0
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app: replacing existing signature
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"CodeSign Build/Products/Debug-iphoneos/MiniShop.app51"CodeSign Build/Products/Debug-iphoneos/MiniShop.app57e9ca24c41cb841^31edef27c41cb841^-133"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app: replacing existing signature-0#0#1#-19%DVTDocumentLocation2@110"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/0000000000000000^1085"CodeSign Build/Products/Debug-iphoneos/MiniShop.app    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    Using code signing identity "iPhone Developer: wu quancheng (GCD3TFD42C)" and provisioning profile "iOS Team Provisioning Profile: *" (B1337075-F9B7-474A-9307-6966A5B907A3)    codesign --force --sign E3A08C44E189C8BA63632DEF456299DF65DF7EB3 --resource-rules=/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist --entitlements /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop.xcent /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app36"EB720452-E113-411A-BE44-048DD50730A1-
+b24716377-DAED-44F6-A570-9AA036A7EF85
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s404502483.388238
@@ -6716,14 +6717,14 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy Bu
 b6E2F57CA-4E26-4ECC-B9E5-44967A87DA99
 
 CGenerateDSYMFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop
-s404502955.254330
-e404502955.561128
+s404538404.477056
+e404538404.767827
 r1
 xGenerateDSYMFile
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM116"GenerateDSYMFile Build/Products/Debug-iphoneos/MiniShop.app.dSYM Build/Products/Debug-iphoneos/MiniShop.app/MiniShopa12b41ab391cb841^76a78fab391cb841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM/0000000000000000^695"GenerateDSYMFile Build/Products/Debug-iphoneos/MiniShop.app.dSYM Build/Products/Debug-iphoneos/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM36"48563F8A-8D6F-4C21-B702-23B6EBC0B083-
-b8D43030A-B89A-4C54-966D-9DBFE5A709B0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM116"GenerateDSYMFile Build/Products/Debug-iphoneos/MiniShop.app.dSYM Build/Products/Debug-iphoneos/MiniShop.app/MiniShop022c7a24c41cb841^3a91c424c41cb841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM/0000000000000000^695"GenerateDSYMFile Build/Products/Debug-iphoneos/MiniShop.app.dSYM Build/Products/Debug-iphoneos/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM36"EF1DC095-5BA0-4546-8F6E-1FB874ED6BCE-
+b24716377-DAED-44F6-A570-9AA036A7EF85
 
 CLd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop normal armv7
 s404502955.046349

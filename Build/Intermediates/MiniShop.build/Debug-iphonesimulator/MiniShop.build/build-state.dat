@@ -31,8 +31,8 @@ cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.buil
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniNSURLProtocol.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniURLCache.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/RTLabel.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/NSDate+Format.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UIDevice+Id.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UILabel+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -122,8 +122,8 @@ cCpResource MiniShop/Resource/Images/Guide/guide_b2_txt@2x.png Build/Products/De
 cCpResource MiniShop/Resource/Images/Guide/guide_b3@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b3@2x.png
 cCpResource MiniShop/Resource/Images/Guide/guide_b3_txt@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b3_txt@2x.png
 cCpResource MiniShop/Resource/Images/Guide/guide_b4@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b4@2x.png
-cCpResource MiniShop/Resource/Images/Images/pub/white_icon@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/white_icon@2x.png
 cCpResource MiniShop/Resource/Images/Guide/guide_b4_txt@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b4_txt@2x.png
+cCpResource MiniShop/Resource/Images/Images/pub/white_icon@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/white_icon@2x.png
 cCpResource MiniShop/Resource/Images/Images/pub/navi_message_h@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/navi_message_h@2x.png
 cCpResource MiniShop/Resource/Images/Guide/guide_b5@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b5@2x.png
 cCpResource MiniShop/Resource/Images/Guide/guide_b5_txt@2x.png Build/Products/Debug-iphonesimulator/MiniShop.app/guide_b5_txt@2x.png
@@ -265,6 +265,11 @@ c000000005258E5AB00000000005838D0
 t1381557675
 s5781712
 
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000005258E5AB00000000005B82A0
+t1381557675
+s5997216
+
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
 c000000005258E5AB0000000000445870
 t1381557675
@@ -315,10 +320,155 @@ c000000005258E5B40000000001DB9910
 t1381557684
 s31168784
 
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+c000000005258E5C900000000002B9F20
+t1381557705
+s2858784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+c000000005258E5D70000000000002338
+t1381557719
+s9016
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+c000000005258E5D8000000000008D300
+t1381557720
+s578304
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
+c000000005258E5D800000000000681A0
+t1381557720
+s426400
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+c000000005258E5D8000000000038ACB0
+t1381557720
+s3714224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libstdc++.dylib
+c000000005258E5D8000000000018DF60
+t1381557720
+s1630048
+
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libz.dylib
 c000000005258E5D8000000000002B700
 t1381557720
 s177920
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+c0000000052681A8800000000000141F0
+t1382554248
+s82416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+c000000005258E5D80000000000013500
+t1381557720
+s79104
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+c000000005258E5D80000000000033BA0
+t1381557720
+s211872
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+c000000005258E5D8000000000001CFB0
+t1381557720
+s118704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+c000000005258E5D8000000000001B2B0
+t1381557720
+s111280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+c000000005258E5D800000000000632B0
+t1381557720
+s406192
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+c000000005258E5D80000000000008880
+t1381557720
+s34944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+c000000005258E5D80000000000015080
+t1381557720
+s86144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+c000000005258E5D800000000000230E0
+t1381557720
+s143584
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+c000000005258E5D8000000000000E380
+t1381557720
+s58240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+c000000005258E5D80000000000087200
+t1381557720
+s553472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+c000000005258E5D800000000000171A0
+t1381557720
+s94624
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+c000000005258E5D80000000000039C10
+t1381557720
+s236560
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+c000000005258E5D8000000000000B0B0
+t1381557720
+s45232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+c000000005258E5D80000000000167FE0
+t1381557720
+s1474528
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+c000000005258E5D800000000000106A0
+t1381557720
+s67232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+c000000005258E5D8000000000001CE40
+t1381557720
+s118336
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+c000000005258E5D80000000000071040
+t1381557720
+s462912
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+c000000005258E5D80000000000067A10
+t1381557720
+s424464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+c000000005258E5D8000000000001BAD0
+t1381557720
+s113360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+c000000005258E5D80000000000088BA0
+t1381557720
+s560032
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphonesimulator.a
+c000000005258E579000000000000B870
+t1381557625
+s47216
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+c000000005258E57A0000000000005004
+t1381557626
+s20484
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/AppDelegate.o
 t1382809418
@@ -521,7 +671,7 @@ t1382809419
 s130724
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o
-t1382809418
+t1382845640
 s25760
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebViewToolBar.o
@@ -622,12 +772,12 @@ t1382809418
 s5529892
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app
-t1382809420
+t1382845640
 s5576
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM
-t2
-s0
+t1382845641
+s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/Default-568h@2x.png
 t1382809420
@@ -678,7 +828,7 @@ t1382809420
 s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-t1382809419
+t1382845640
 s3266012
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/PkgInfo
@@ -1277,15 +1427,275 @@ N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debu
 t1382809420
 s1350
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/AFNetworking/AFHTTPClient.h
+c0000000051D048520000000000008016
+t1372604498
+s32790
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/AFNetworking/LICENSE
 c0000000051D048520000000000000431
 t1372604498
 s1073
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h
+c0000000051D0485100000000000007D8
+t1372604497
+s2008
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h
+c0000000051D0485100000000000004B7
+t1372604497
+s1207
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h
+c0000000051D048510000000000000418
+t1372604497
+s1048
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/Log/MiniLog.h
+c0000000051D04851000000000000027E
+t1372604497
+s638
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/Log/MiniLoggerClient.h
+c0000000051D048510000000000000225
+t1372604497
+s549
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h
+c0000000051D048510000000000000416
+t1372604497
+s1046
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h
+c0000000051D04851000000000000037A
+t1372604497
+s890
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h
+c0000000051D048510000000000000844
+t1372604497
+s2116
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h
+c0000000051D0485100000000000009D0
+t1372604497
+s2512
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWTapDetectingImageView.h
+c0000000051D048510000000000000343
+t1372604497
+s835
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWTapDetectingView.h
+c0000000051D0485100000000000002F3
+t1372604497
+s755
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWZoomingScrollView.h
+c0000000051D04851000000000000043A
+t1372604497
+s1082
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCache.h
+c0000000051D048510000000000001606
+t1372604497
+s5638
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h
+c0000000051D048510000000000000451
+t1372604497
+s1105
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h
+c0000000051D048510000000000000E87
+t1372604497
+s3719
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h
+c0000000051D04851000000000000070E
+t1372604497
+s1806
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h
+c0000000051D04851000000000000052C
+t1372604497
+s1324
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h
+c00000000524A31B50000000000001A01
+t1380594101
+s6657
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h
+c0000000051D0485100000000000008D1
+t1372604497
+s2257
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/UIImageView+WebCache.h
+c0000000051D048510000000000001736
+t1372604497
+s5942
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSData+Base64.h
+c0000000051D048520000000000000142
+t1372604498
+s322
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSDate+Mini.h
+c0000000051D048520000000000000195
+t1372604498
+s405
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+Mini.h
+c0000000051D0485200000000000001E6
+t1372604498
+s486
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+URLEncoding.h
+c0000000051D0485200000000000005D7
+t1372604498
+s1495
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h
+c0000000051D048520000000000000115
+t1372604498
+s277
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIDevice+Ext.h
+c0000000051D0485200000000000008AC
+t1372604498
+s2220
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIImage+Mini.h
+c0000000051D048520000000000000641
+t1372604498
+s1601
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIView+Mini.h
+c0000000051D048520000000000000362
+t1372604498
+s866
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniUINavigationController.h
+c0000000051D048520000000000000210
+t1372604498
+s528
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniViewController.h
+c00000000524D126A00000000000006CF
+t1380782698
+s1743
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBar.h
+c0000000051D048520000000000000561
+t1372604498
+s1377
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBarController.h
+c0000000051D048520000000000000A7C
+t1372604498
+s2684
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBarItem.h
+c0000000051D048520000000000000296
+t1372604498
+s662
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h
+c000000004C48DE520000000000000D93
+t1279843922
+s3475
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniFileUtil.h
+c0000000051D0485200000000000002AB
+t1372604498
+s683
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniImageCache.h
+c0000000051D04852000000000000021D
+t1372604498
+s541
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniObject.h
+c0000000052437C330000000000000122
+t1380154419
+s290
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniSingletonFactory.h
+c0000000051D048520000000000000190
+t1372604498
+s400
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniSysUtil.h
+c0000000051D048520000000000000446
+t1372604498
+s1094
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniUIImage.h
+c0000000051D048520000000000000107
+t1372604498
+s263
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/SynthesizeSingleton.h
+c0000000051D048520000000000001171
+t1372604498
+s4465
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUIActionSheetPickerView.h
+c0000000051D04852000000000000031A
+t1372604498
+s794
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUIAlertView.h
+c0000000051D048520000000000000F6A
+t1372604498
+s3946
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUIButton.h
+c0000000052437C3300000000000004A1
+t1380154419
+s1185
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUISegmentView.h
+c0000000051D048520000000000000352
+t1372604498
+s850
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUITextView.h
+c0000000051D048520000000000000150
+t1372604498
+s336
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID/MobClick.h
+c0000000051D048460000000000003970
+t1372604486
+s14704
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID/libMobClickLibrary.a
 c0000000052437C330000000000140498
 t1380154419
 s1311896
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMini3rdFramework.a
+c0000000052668BEB0000000000CFF474
+t1382452203
+s13628532
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMiniLiteFramework.a
+c00000000525AE7A300000000008A929C
+t1381689251
+s9081500
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/UMFeedback.h
+c0000000051D048510000000000000512
+t1372604497
+s1298
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.h
+c0000000051D0485000000000000009E7
+t1372604496
+s2535
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
 c0000000052437C340000000000002811
@@ -1407,6 +1817,11 @@ c0000000051D048500000000000001AC4
 t1372604496
 s6852
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.h
+c0000000051D048500000000000000237
+t1372604496
+s567
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m
 c0000000051D048500000000000000AFC
 t1372604496
@@ -1417,15 +1832,30 @@ c0000000051D048500000000000002173
 t1372604496
 s8563
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.h
+c0000000051D04850000000000000014C
+t1372604496
+s332
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m
 c0000000051D048500000000000000C7E
 t1372604496
 s3198
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.h
+c0000000051D048500000000000000154
+t1372604496
+s340
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m
 c0000000051D048500000000000000DC2
 t1372604496
 s3522
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.h
+c0000000051D0485000000000000003A0
+t1372604496
+s928
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m
 c0000000052437C3400000000000041E3
@@ -1447,340 +1877,690 @@ c0000000051DECAE200000000000000EE
 t1373555426
 s238
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat/WXApi.h
+c000000005237C76D00000000000010D6
+t1379387245
+s4310
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat/WXApiObject.h
+c00000000523E0D920000000000002A6A
+t1379798418
+s10858
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat/libWeChatSDK.a
 c00000000523E4AA400000000000ED60C
 t1379814052
 s972300
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h
+c0000000052437C3400000000000002BE
+t1380154420
+s702
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m
 c00000000526BF19A0000000000003BC4
 t1382805914
 s15300
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h
+c0000000052437C340000000000001544
+t1380154420
+s5444
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m
 c00000000526857C00000000000008902
 t1382569920
 s35074
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.h
+c0000000052437C340000000000000575
+t1380154420
+s1397
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m
 c00000000525804BB00000000000032FF
 t1381500091
 s13055
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Base/MSObject.h
+c0000000052437C340000000000000172
+t1380154420
+s370
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Base/MSObject.m
 c0000000052437C3400000000000000F2
 t1380154420
 s242
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.h
+c0000000051D0485E00000000000003AA
+t1372604510
+s938
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.m
 c0000000051D0485E000000000000026E
 t1372604510
 s622
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
+c00000000524D2C550000000000000969
+t1380789333
+s2409
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.m
 c00000000524D85F30000000000000FE9
 t1380812275
 s4073
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.h
+c0000000051D0485E0000000000000119
+t1372604510
+s281
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.m
 c0000000051D0485E00000000000000BF
 t1372604510
 s191
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h
+c00000000524D0B990000000000000C3B
+t1380780953
+s3131
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.m
 c00000000524C7EF80000000000001ED3
 t1380744952
 s7891
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h
+c00000000524B0E5E00000000000001FD
+t1380650590
+s509
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.m
 c00000000524BE36F000000000000036F
 t1380705135
 s879
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.h
+c0000000051D0485E00000000000001F3
+t1372604510
+s499
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.m
 c0000000051D0485E000000000000023E
 t1372604510
 s574
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSRecmdList.h
+c0000000051D0485E0000000000000291
+t1372604510
+s657
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSRecmdList.m
 c0000000051D0485E00000000000004BB
 t1372604510
 s1211
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.h
+c0000000051D0485E0000000000000154
+t1372604510
+s340
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.m
 c0000000051D0485E00000000000000CC
 t1372604510
 s204
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
+c00000000524D08F70000000000000820
+t1380780279
+s2080
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m
 c0000000052443EEF000000000000048A
 t1380204271
 s1162
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSDefine.h
+c00000000525804BB0000000000000835
+t1381500091
+s2101
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSKeychainWrapper.h
+c00000000525A006900000000000001CD
+t1381630057
+s461
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSKeychainWrapper.m
 c00000000525A025100000000000024D8
 t1381630545
 s9432
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.h
+c00000000525AA3890000000000000466
+t1381671817
+s1126
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.m
 c00000000526BA9F000000000000036C9
 t1382787568
 s14025
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSUser.h
+c00000000526857DC000000000000014E
+t1382569948
+s334
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSUser.m
 c0000000052685D3400000000000001F9
 t1382571316
 s505
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSVersion.h
+c000000005268552F000000000000026F
+t1382569263
+s623
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSVersion.m
 c00000000526856870000000000000ADC
 t1382569607
 s2780
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.h
+c0000000051D0485E0000000000000199
+t1372604510
+s409
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m
-c00000000526BF0770000000000000F70
-t1382805623
-s3952
+c00000000526C02270000000000000F68
+t1382810151
+s3944
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.h
+c0000000051D0485E00000000000000E1
+t1372604510
+s225
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.m
 c0000000052437C340000000000000588
 t1380154420
 s1416
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.h
+c0000000051D0485E00000000000000EE
+t1372604510
+s238
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.m
 c00000000524CB5CA00000000000004E7
 t1380758986
 s1255
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.h
+c0000000052437C340000000000000138
+t1380154420
+s312
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m
 c0000000052437C340000000000000465
 t1380154420
 s1125
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.h
+c0000000051D0485F0000000000000112
+t1372604511
+s274
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m
 c0000000051D0485F00000000000001C6
 t1372604511
 s454
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.h
+c0000000052525F140000000000000274
+t1381130004
+s628
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.m
 c0000000052525F0900000000000004F1
 t1381129993
 s1265
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.h
+c0000000051D0485F000000000000019D
+t1372604511
+s413
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m
 c0000000052437C340000000000000B39
 t1380154420
 s2873
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.h
+c0000000051D0485F00000000000001B4
+t1372604511
+s436
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m
 c0000000051D0485F00000000000002FB
 t1372604511
 s763
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.h
+c0000000051D0485F00000000000003BD
+t1372604511
+s957
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m
 c0000000052437C340000000000001C7E
 t1380154420
 s7294
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITextField+Mini.h
+c0000000052437C340000000000000148
+t1380154420
+s328
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITextField+Mini.m
 c0000000052437C340000000000000449
 t1380154420
 s1097
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.h
+c0000000051D0485F000000000000012E
+t1372604511
+s302
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.m
 c00000000524CA9420000000000000770
 t1380755778
 s1904
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h
+c000000005212B9620000000000000251
+t1376958818
+s593
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m
 c00000000524CA94B0000000000001415
 t1380755787
 s5141
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h
+c00000000526BD5FA0000000000000404
+t1382798842
+s1028
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m
 c00000000526859AC0000000000003432
 t1382570412
 s13362
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.h
+c0000000051D0485F0000000000000109
+t1372604511
+s265
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.m
 c0000000052437C340000000000000C21
 t1380154420
 s3105
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h
+c0000000052437C340000000000000339
+t1380154420
+s825
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m
 c000000005269707E0000000000001D71
 t1382641790
 s7537
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.h
+c0000000051D0485F000000000000012C
+t1372604511
+s300
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.m
 c0000000051D0485F0000000000000DAA
 t1372604511
 s3498
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSStoreViewController.h
+c0000000051D0485F00000000000000E7
+t1372604511
+s231
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSStoreViewController.m
 c00000000526BA6800000000000001C2B
 t1382786688
 s7211
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSVerifyViewController.h
+c0000000051D0485F00000000000000E9
+t1372604511
+s233
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSVerifyViewController.m
 c00000000526BA68900000000000027B4
 t1382786697
 s10164
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h
+c0000000051D0485F000000000000024C
+t1372604511
+s588
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.m
 c000000005266A43F0000000000005039
 t1382458431
 s20537
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSGuideViewController.h
+c0000000051D0485F0000000000000103
+t1372604511
+s259
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSGuideViewController.m
 c0000000051D0485F0000000000001422
 t1372604511
 s5154
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.h
+c0000000051D0485F000000000000013F
+t1372604511
+s319
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.m
 c0000000051D0485F0000000000000D6E
 t1372604511
 s3438
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.h
+c0000000051D0485F0000000000000113
+t1372604511
+s275
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m
 c00000000525BF87600000000000017B9
 t1381759094
 s6073
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
+c00000000524D7F4C000000000000019A
+t1380810572
+s410
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.m
 c00000000526BD61B0000000000003A2F
 t1382798875
 s14895
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.h
+c0000000051D0485F00000000000001A5
+t1372604511
+s421
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m
 c00000000526BA7510000000000002EF5
 t1382786897
 s12021
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopListViewController.h
+c0000000051D0485F0000000000000140
+t1372604511
+s320
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopListViewController.m
 c00000000526BD6850000000000001CD4
 t1382798981
 s7380
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.h
+c0000000051D0485E00000000000000EF
+t1372604510
+s239
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.m
 c0000000051D0485E000000000000142E
 t1372604510
 s5166
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSProfileViewController.h
+c0000000051D0485E00000000000000ED
+t1372604510
+s237
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSProlfileViewController.m
 c00000000526BDC6D000000000000320A
 t1382800493
 s12810
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
+c0000000052437C340000000000000125
+t1380154420
+s293
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.m
 c00000000525804BB0000000000001E1F
 t1381500091
 s7711
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRResetPasswdViewController.h
+c0000000052437C3400000000000000F3
+t1380154420
+s243
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRResetPasswdViewController.m
 c0000000052437C340000000000000E62
 t1380154420
 s3682
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.h
+c0000000052437C340000000000000108
+t1380154420
+s264
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m
 c0000000052437C340000000000000EBC
 t1380154420
 s3772
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.h
+c0000000051D0485E00000000000000ED
+t1372604510
+s237
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.m
 c0000000051D0485E00000000000011A7
 t1372604510
 s4519
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSJoinViewController.h
+c0000000051D0485E00000000000000E5
+t1372604510
+s229
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSJoinViewController.m
 c0000000051D0485E0000000000000868
 t1372604510
 s2152
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.h
+c0000000051D0485E00000000000000FE
+t1372604510
+s254
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.m
 c0000000052542B970000000000002479
 t1381247895
 s9337
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.h
+c0000000051D0485F000000000000025B
+t1372604511
+s603
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.m
 c00000000526BF49300000000000064BD
 t1382806675
 s25789
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSShopNewsViewController.h
+c0000000051D0485F0000000000000123
+t1372604511
+s291
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSShopNewsViewController.m
 c00000000525BFA4D000000000000073F
 t1381759565
 s1855
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.h
+c0000000051D0485F00000000000000EF
+t1372604511
+s239
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.m
 c00000000525C003B000000000000050E
 t1381761083
 s1294
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.h
+c0000000051D0485F00000000000001FB
+t1372604511
+s507
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.m
 c000000005255610A0000000000000843
 t1381327114
 s2115
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryView.h
+c000000005255606C0000000000000226
+t1381326956
+s550
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryView.m
 c00000000525560F20000000000000CE4
 t1381327090
 s3300
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.h
+c00000000524BE74900000000000001A6
+t1380706121
+s422
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.m
 c00000000526BF435000000000000397B
 t1382806581
 s14715
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSShopInfoCell.h
+c0000000051D0485F000000000000022E
+t1372604511
+s558
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSShopInfoCell.m
 c0000000051D0485F000000000000190C
 t1372604511
 s6412
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIDTView.h
+c0000000052669B4100000000000001BF
+t1382456129
+s447
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIDTView.m
 c00000000526BFD56000000000000162C
 t1382808918
 s5676
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.h
+c0000000051D0485F00000000000000DC
+t1372604511
+s220
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.m
 c0000000052437C340000000000000347
 t1380154420
 s839
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.h
+c0000000051D0485F00000000000001AA
+t1372604511
+s426
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.m
 c0000000051D0485F000000000000174D
 t1372604511
 s5965
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.h
+c0000000051D0485F00000000000000CD
+t1372604511
+s205
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m
 c0000000051D0485F00000000000002F1
 t1372604511
 s753
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.h
+c0000000051D0485F0000000000000207
+t1372604511
+s519
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.m
 c0000000051D0485F0000000000000D51
 t1372604511
 s3409
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIASTextField.h
+c0000000052437C34000000000000015A
+t1380154420
+s346
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIASTextField.m
 c0000000052437C340000000000000BEA
 t1380154420
 s3050
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIIndicator.h
+c0000000051D0485F00000000000002B3
+t1372604511
+s691
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIIndicator.m
 c00000000524CCCC50000000000000F63
 t1380764869
 s3939
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.h
+c00000000524D2B7600000000000001E4
+t1380789110
+s484
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m
 c00000000524E19E50000000000000F0F
 t1380850149
 s3855
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h
+c0000000052437C3400000000000001A1
+t1380154420
+s417
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.m
 c00000000525ECA89000000000000112F
 t1381943945
 s4399
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.h
+c00000000524B00F90000000000000BBC
+t1380647161
+s3004
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m
 c00000000524B00F90000000000009A41
@@ -2462,6 +3242,136 @@ c0000000051D0485F000000000000014D
 t1372604511
 s333
 
+N/usr/lib/libSystem.B.dylib
+c0000000052681A7A000000000000E6D0
+t1382554234
+s59088
+
+N/usr/lib/system/libcache.dylib
+c0000000052681A870000000000012A00
+t1382554247
+s76288
+
+N/usr/lib/system/libcommonCrypto.dylib
+c0000000052681A6D000000000002E320
+t1382554221
+s189216
+
+N/usr/lib/system/libcompiler_rt.dylib
+c0000000052681A7A0000000000021860
+t1382554234
+s137312
+
+N/usr/lib/system/libcopyfile.dylib
+c0000000052681A87000000000001B620
+t1382554247
+s112160
+
+N/usr/lib/system/libcorecrypto.dylib
+c0000000052681A8700000000000BD920
+t1382554247
+s776480
+
+N/usr/lib/system/libkeymgr.dylib
+c0000000052681A87000000000000A120
+t1382554247
+s41248
+
+N/usr/lib/system/liblaunch.dylib
+c0000000052681A87000000000001D550
+t1382554247
+s120144
+
+N/usr/lib/system/libmacho.dylib
+c0000000052681A870000000000014EE0
+t1382554247
+s85728
+
+N/usr/lib/system/libquarantine.dylib
+c0000000052681A890000000000010380
+t1382554249
+s66432
+
+N/usr/lib/system/libremovefile.dylib
+c0000000052681A89000000000000C4C0
+t1382554249
+s50368
+
+N/usr/lib/system/libsystem_asl.dylib
+c0000000052681A8700000000000357A0
+t1382554247
+s219040
+
+N/usr/lib/system/libsystem_blocks.dylib
+c0000000052681A87000000000000C070
+t1382554247
+s49264
+
+N/usr/lib/system/libsystem_c.dylib
+c0000000052681A7A0000000000168C00
+t1382554234
+s1477632
+
+N/usr/lib/system/libsystem_configuration.dylib
+c0000000052681A870000000000010630
+t1382554247
+s67120
+
+N/usr/lib/system/libsystem_dnssd.dylib
+c0000000052681A88000000000001DF10
+t1382554248
+s122640
+
+N/usr/lib/system/libsystem_info.dylib
+c0000000052681A7A0000000000075B00
+t1382554234
+s482048
+
+N/usr/lib/system/libsystem_kernel.dylib
+c0000000052681A7A000000000007CC70
+t1382554234
+s511088
+
+N/usr/lib/system/libsystem_m.dylib
+c0000000052681A7A00000000000766C0
+t1382554234
+s485056
+
+N/usr/lib/system/libsystem_malloc.dylib
+c0000000052681A880000000000044DC0
+t1382554248
+s282048
+
+N/usr/lib/system/libsystem_notify.dylib
+c0000000052681A7A0000000000021FA0
+t1382554234
+s139168
+
+N/usr/lib/system/libsystem_platform.dylib
+c0000000052681A88000000000002D900
+t1382554248
+s186624
+
+N/usr/lib/system/libsystem_pthread.dylib
+c0000000052681A88000000000001E570
+t1382554248
+s124272
+
+N/usr/lib/system/libsystem_sandbox.dylib
+c0000000052681A80000000000000CC70
+t1382554240
+s52336
+
+N/usr/lib/system/libunc.dylib
+c0000000052681A83000000000000C3F0
+t1382554243
+s50160
+
+N/usr/lib/system/libunwind.dylib
+c0000000052681A8800000000000199F0
+t1382554248
+s104944
+
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
 r0
 
@@ -2683,7 +3593,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies664c21ca361cb841^f75763ca361cb841^---0#1#1#--18"Check dependencies36"A80421D6-6917-4096-A746-B734C5DE26C1-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies8f34f80dc51cb841^02bc390ec51cb841^---0#1#1#--18"Check dependencies36"3F2964FE-7721-4DCB-81F5-3D66C324CC94-
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/AppDelegate.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s404502218.671097
@@ -3881,8 +4791,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection127"Compil
 b107FF796-1E14-446D-B483-A413925CBEF0
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s404502218.938265
-e404502218.994006
+s404538440.580263
+e404538440.614847
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o
@@ -3895,8 +4805,8 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Se
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m231"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler1895f0ca361cb841^9d7fffca361cb841^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m0000000000000000^3868"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o36"5D62695E-A1C9-4E46-9CAA-BA369A1BA861-
-b107FF796-1E14-446D-B483-A413925CBEF0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m231"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler16a59448c41cb841^62689d48c41cb841^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m0000000000000000^3868"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o36"5895E65D-7F57-43E8-9545-A172707CFD95-
+bBEF56877-CE2C-489D-B9A1-FC6E892B74D8
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebViewToolBar.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s404502219.552999
@@ -5853,18 +6763,18 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Copy Bu
 b107FF796-1E14-446D-B483-A413925CBEF0
 
 CGenerateDSYMFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-s404502219.824566
-e404502220.116767
+s404538440.783270
+e404538441.077520
 r1
 xGenerateDSYMFile
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM130"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop5723d3cb361cb841^d2e51dcc361cb841^---0#0#1#-19%DVTDocumentLocation2@121"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM003490d7ddffdf42^730"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM36"135DF83F-9B7E-4ECD-BA2B-3C5E61609D77-
-b107FF796-1E14-446D-B483-A413925CBEF0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM130"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop3e94c848c41cb841^34d91349c41cb841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM/0000000000000000^730"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM36"44D8BD8E-2BA2-460C-BDD0-CF8FF664B045-
+bBEF56877-CE2C-489D-B9A1-FC6E892B74D8
 
 CLd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386
-s404502219.654227
-e404502219.823072
+s404538440.618080
+e404538440.781746
 r1
 xLd
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
@@ -5969,8 +6879,6 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/D
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
 d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
@@ -5992,6 +6900,8 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/D
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
 d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
 d/usr/lib/system/libcache.dylib
 d/usr/lib/system/libcommonCrypto.dylib
@@ -6018,8 +6928,8 @@ d/usr/lib/system/libsystem_pthread.dylib
 d/usr/lib/system/libsystem_sandbox.dylib
 d/usr/lib/system/libunc.dylib
 d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop73"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386828da7cb361cb841^4ab6d2cb361cb841^---0#0#1#--2402"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -filelist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstdc++ -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMiniLiteFramework.a -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMini3rdFramework.a -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework Security -framework CoreText -framework MessageUI -framework AddressBook -framework MapKit -framework CoreLocation -framework ImageIO -lz -framework CFNetwork -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -lUMFeedback -lMobClickLibrary -lWeChatSDK -Xlinker -dependency_info -Xlinker /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop_dependency_info.dat -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop36"AF2A7C8B-77A9-4DE6-8AFF-47634C96D1AA-
-b107FF796-1E14-446D-B483-A413925CBEF0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop73"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386664b9e48c41cb841^f321c848c41cb841^---0#0#1#--2402"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -filelist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstdc++ -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMiniLiteFramework.a -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMini3rdFramework.a -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework Security -framework CoreText -framework MessageUI -framework AddressBook -framework MapKit -framework CoreLocation -framework ImageIO -lz -framework CFNetwork -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -lUMFeedback -lMobClickLibrary -lWeChatSDK -Xlinker -dependency_info -Xlinker /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop_dependency_info.dat -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop36"6AE4A2C1-C70A-4EE1-B2FA-86686063CBA9-
+bBEF56877-CE2C-489D-B9A1-FC6E892B74D8
 
 CProcessInfoPlistFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/Info.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
 s404502218.389279

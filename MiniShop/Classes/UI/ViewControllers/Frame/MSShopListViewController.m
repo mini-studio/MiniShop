@@ -151,7 +151,7 @@
                             };
                             [pSelf.navigationController pushViewController:controller animated:YES];
                         }
-                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登录/注册", nil];
                 }
                 else {
                     info.like = !info.like;

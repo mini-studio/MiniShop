@@ -222,7 +222,7 @@
                             };
                             [pSelf.navigationController pushViewController:controller animated:YES];
                         }
-                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登录/注册", nil];
                 }
                 else {
                 [pSelf showMessageInfo:@"已经关注" delay:2];
@@ -260,7 +260,7 @@
                             };
                             [pSelf.navigationController pushViewController:controller animated:YES];
                         }
-                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登陆/注册", nil];
+                    } cancelButtonTitle:@"忽略" otherButtonTitles:@"去登录/注册", nil];
                 }
                 else {
                 [pSelf showMessageInfo:@"已经取消关注" delay:2];
