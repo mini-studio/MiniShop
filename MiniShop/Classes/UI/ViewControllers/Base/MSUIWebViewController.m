@@ -96,29 +96,29 @@
 
 - (BOOL)halderRequest:(__strong NSString *)url navigationType:(UIWebViewNavigationType)navigationType
 {
-    if ( navigationType == UIWebViewNavigationTypeLinkClicked )
-    {
-        NSRange storeDetailRange = [url rangeOfString:@"type=shop" options:NSRegularExpressionCaseInsensitive];
-        if (storeDetailRange.location != NSNotFound)
-        {
-            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"店铺详情" toolbar:YES];
-            [self.navigationController pushViewController:nextView animated:YES];
-            return NO;
-        }
-        NSRange addCareRange = [url rangeOfString:@"pagepos=2" options:NSRegularExpressionCaseInsensitive];
-        if (addCareRange.location != NSNotFound)
-        {
-            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"添加关注" toolbar:NO];
-            nextView.rightRefresh = YES;
-            [self.navigationController pushViewController:nextView animated:YES];
-            return NO;
-        }
-        //[self showWating:nil];
-    }
-    else
-    {
-        //[self showWating:nil];
-    }
+//    if ( navigationType == UIWebViewNavigationTypeLinkClicked )
+//    {
+//        NSRange storeDetailRange = [url rangeOfString:@"type=shop" options:NSRegularExpressionCaseInsensitive];
+//        if (storeDetailRange.location != NSNotFound)
+//        {
+//            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"店铺详情" toolbar:YES];
+//            [self.navigationController pushViewController:nextView animated:YES];
+//            return NO;
+//        }
+//        NSRange addCareRange = [url rangeOfString:@"pagepos=2" options:NSRegularExpressionCaseInsensitive];
+//        if (addCareRange.location != NSNotFound)
+//        {
+//            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"添加关注" toolbar:NO];
+//            nextView.rightRefresh = YES;
+//            [self.navigationController pushViewController:nextView animated:YES];
+//            return NO;
+//        }
+//        //[self showWating:nil];
+//    }
+//    else
+//    {
+//        //[self showWating:nil];
+//    }
     return YES;
 }
 

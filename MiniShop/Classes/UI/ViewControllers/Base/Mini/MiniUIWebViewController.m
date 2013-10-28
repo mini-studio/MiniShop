@@ -215,22 +215,21 @@
     [self.bigIndicatorView stopAnimating];
 }
 
+- (void)startWebRequest
+{
+    [self showWating:nil];
+    [NSTimer cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismissWating) object:nil];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
+}
+
 - (void)HandleStartWebREQ:(NSNotification *)noti
 {
-    dispatch_block_t __block__ = ^{
-        [self showWating:nil];
-        [NSTimer cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismissWating) object:nil];
-        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
-    };
     if ( [[NSThread currentThread] isMainThread] ) {
-        __block__();
+        [self startWebRequest];
     }
     else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            __block__();
-        });
+        [self performSelector:@selector(startWebRequest) onThread:[NSThread mainThread] withObject:nil waitUntilDone:YES modes:nil];
     }
-    
 }
 
 - (void)HandleEndWebREQ:(NSNotification *)noti
@@ -239,9 +238,7 @@
         [self dismissWating];
     }
     else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self dismissWating];
-        });
+        [self performSelector:@selector(dismissWating) onThread:[NSThread mainThread] withObject:nil waitUntilDone:YES modes:nil];
     }
 }
 
