@@ -49,6 +49,11 @@
     }
 }
 
+- (void)didReceiveRemoteNotification:(NSNotification *)noti
+{
+    self.segment.selectedSegmentIndex = 1;
+    [self refreshData];
+}
 
 - (void)didReceiveMemoryWarning
 {

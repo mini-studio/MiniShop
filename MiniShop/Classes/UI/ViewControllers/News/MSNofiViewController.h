@@ -18,4 +18,6 @@
 @property (nonatomic,strong) NSMutableArray *topicDataSource;
 @property (nonatomic)BOOL mark;
 - (void)receiveData:(MSNotify *)noti page:(int)page type:(int)type;
+- (void)refreshData;
+
 @end
