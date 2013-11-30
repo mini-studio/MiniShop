@@ -49,16 +49,16 @@ typedef enum {
 @interface MiniUIAlertView : UIAlertView
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < MAX_ALLOWED_VERSION
 @property (nonatomic,assign) UIAlertViewStyle alertViewStyle;
+
 - (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex;
 #endif
+@property (nonatomic,retain) UIImage *backgroundImage;
 
 - (void)show:(void (^)(MiniUIAlertView *alertView , NSInteger buttonIndex))block;
 
 - (void)enableButtonWithTitle:(NSString *)title enable:(BOOL)enabel;
 
 - (void)enableButtonWithIndex:(NSInteger)index enable:(BOOL)enabel;
-
-- (UIImage *)backGroundImage;
 
 - (void)setMaxLength:(NSInteger)length forTextField:(UITextField *)field;
 

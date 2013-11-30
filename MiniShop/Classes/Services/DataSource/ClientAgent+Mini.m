@@ -785,3 +785,24 @@
 }
 
 @end
+
+#import "MSTopTabInfo.h"
+
+@implementation ClientAgent (LS14)
+- (void)getTopTabInfo:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSArray *ds = @[
+                    @{@"id":@"1",@"title":@"全部"},
+                    @{@"id":@"2",@"title":@"女装"},
+                    @{@"id":@"3",@"title":@"外贸"}
+                    ];
+    NSMutableArray *arry = [NSMutableArray arrayWithCapacity:ds.count];
+    for ( id d in ds) {
+        MSTopTabInfo *info = [[MSTopTabInfo alloc] init];
+        info.mid = [[d valueForKey:@"id"] integerValue];
+        info.title = [d valueForKey:@"title"];
+        [arry addObject:info];
+    }
+    block(nil,arry,nil,NO);
+}
+@end

@@ -90,5 +90,11 @@
 
 - (void)setpushsound:(int)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
+
+@end
+
+
+@interface ClientAgent (LS14)
+- (void)getTopTabInfo:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 @end
 

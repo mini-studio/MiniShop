@@ -13,11 +13,10 @@
     id                      userInfo;
     float                   shiftBy;
     CGPoint                 offset;
-    MiniUITextFieldDelegate *textFieldDelegate;
-    id                      miniUITextFieldDelegate;
     CGRect                  _keyboardBounds;
     BOOL                    _keyBoardVisible;
     BOOL                    _scrolled;
+    UIScrollView           *_scrollview;
 }
 
 @property (nonatomic,assign) id  miniUITextFieldDelegate;
@@ -25,8 +24,13 @@
 @property (nonatomic,assign) BOOL keyBoardVisible;
 @property (nonatomic,assign) BOOL scrolled;
 @property (nonatomic,assign) CGRect keyboardBounds;
+@property (nonatomic,assign) UIScrollView *scrollview;
 
-- (void)scrollToBeVisible;
+- (id)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView;
+
+
+
+- (void)scroollToVisible;
 
 @end
 

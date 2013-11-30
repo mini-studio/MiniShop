@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiniUINaviTitleView.h"
 @class MBProgressHUD;
+
 
 @interface MiniViewController : UIViewController
 {
       MBProgressHUD       *_hud;
 }
 @property (nonatomic,getter = isVisible) BOOL visible;
+@property (nonatomic,retain)MiniUINaviTitleView *naviTitleView;
+@property (nonatomic,retain)UIView              *contentView;
 
+- (void)setNaviTitleViewShow:(BOOL)shown;
 
+- (void)setNaviTitle:(NSString*)title;
 
 - (void)showMessageInfo:(NSString *)info delay:(NSInteger)delay;
 
@@ -24,6 +30,10 @@
 - (void)showWating:(NSString *)message;
 
 - (void)showWating:(NSString *)message inView:(UIView *)inView;
+
+- (void)showWating:(NSString *)message enable:(BOOL)enable;
+
+- (void)showWating:(NSString *)message inView:(UIView *)inView enable:(BOOL)enable;
 
 - (void)dismissWating;
 
@@ -40,9 +50,8 @@
 
 - (void)setNaviRightButtonTitle:(NSString *)title target:(id)target action:(SEL)action;
 
-- (void)setNaviRightButtonImage:(NSString *)imageName target:(id)target action:(SEL)action;
-
-- (void)setNaviRightButtonImage:(NSString *)imageName highlighted:(NSString*)highlightedImage target:(id)target action:(SEL)action;
+- (void)setNaviLeftButton:(MiniUIButton*)button;
+- (void)setNaviRightButton:(MiniUIButton*)button;
 
 - (void)back;
 - (void)back:(BOOL)animation;

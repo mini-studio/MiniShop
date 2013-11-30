@@ -8,4 +8,5 @@
 - (NSData*)DecryptWithKey:(NSString*)key;
 
 - (NSData*)EncryptWithKey:(NSString*)key;
+
 @end

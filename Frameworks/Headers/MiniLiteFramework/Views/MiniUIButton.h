@@ -21,13 +21,13 @@ enum {
 @property (nonatomic,retain) id userInfo;
 @property (nonatomic, assign) NSTimeInterval longPressTimeInterval;
 
-+ (MiniUIButton *)buttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage title:(NSString *)title;
++ (id)buttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage title:(NSString *)title;
 
-+ (MiniUIButton *)buttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage resizableImageWithCapInsets:(UIEdgeInsets)insets title:(NSString *)title;
++ (id)buttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage resizableImageWithCapInsets:(UIEdgeInsets)insets title:(NSString *)title;
 
-+ (MiniUIButton *)naviBackbuttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage title:(NSString *)title;
++ (id)naviBackbuttonWithBackGroundImage:(UIImage *)backGroundImage highlightedBackGroundImage:(UIImage *)highlightedBackGroundImage title:(NSString *)title;
 
-+ (MiniUIButton *)buttonWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage;
++ (id)buttonWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage;
 
 - (void)setTouchupHandler:(void (^)(MiniUIButton *button))handler;
 

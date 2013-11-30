@@ -40,6 +40,9 @@
 		C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72617765C3C009E6482 /* UMFeedbackTableViewCellRight.m */; };
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
+		C10EDD381844F01C00503993 /* MSTopTabInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD371844F01C00503993 /* MSTopTabInfo.m */; };
+		C10EDD3B1844F2ED00503993 /* MSTopTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */; };
+		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
 		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
 		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
@@ -80,6 +83,8 @@
 		C1ACB74E17FD3E1100862641 /* more_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74D17FD3E1100862641 /* more_new@2x.png */; };
 		C1ACB75117FD475E00862641 /* potential_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74F17FD475E00862641 /* potential_h@2x.png */; };
 		C1ACB75217FD475E00862641 /* potential_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB75017FD475E00862641 /* potential_n@2x.png */; };
+		C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339EE184A25E600851585 /* MSFrameViewController.m */; };
+		C1B339F2184A30B800851585 /* MSTransformButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F1184A30B800851585 /* MSTransformButton.m */; };
 		C1B7074F181BD9C400485B26 /* closep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B7074E181BD9C400485B26 /* closep@2x.png */; };
 		C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FD5178074A100BE5ABB /* AppDelegate.m */; };
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
@@ -297,6 +302,61 @@
 		C10BE72717765C3C009E6482 /* UMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedbackViewController.h; sourceTree = "<group>"; };
 		C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
+		C10EDD361844F01C00503993 /* MSTopTabInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopTabInfo.h; sourceTree = "<group>"; };
+		C10EDD371844F01C00503993 /* MSTopTabInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopTabInfo.m; sourceTree = "<group>"; };
+		C10EDD391844F2ED00503993 /* MSTopTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopTitleView.h; sourceTree = "<group>"; };
+		C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopTitleView.m; sourceTree = "<group>"; };
+		C10EDD3C18451A4100503993 /* MyStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreViewController.h; sourceTree = "<group>"; };
+		C10EDD3D18451A4100503993 /* MyStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreViewController.m; sourceTree = "<group>"; };
+		C10EDD7A18451D2A00503993 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C10EDD7B18451D2A00503993 /* NSDate+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Mini.h"; sourceTree = "<group>"; };
+		C10EDD7C18451D2A00503993 /* NSIndexPath+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Mini.h"; sourceTree = "<group>"; };
+		C10EDD7D18451D2A00503993 /* NSString+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Mini.h"; sourceTree = "<group>"; };
+		C10EDD7E18451D2A00503993 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		C10EDD7F18451D2A00503993 /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8018451D2A00503993 /* UIColor+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8118451D2A00503993 /* UIDevice+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Ext.h"; sourceTree = "<group>"; };
+		C10EDD8218451D2A00503993 /* UIImage+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8318451D2A00503993 /* UILabel+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8418451D2A00503993 /* UINavigationBar+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8518451D2A00503993 /* UIView+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Mini.h"; sourceTree = "<group>"; };
+		C10EDD8718451D2A00503993 /* MiniUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUINavigationController.h; sourceTree = "<group>"; };
+		C10EDD8818451D2A00503993 /* MiniViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniViewController.h; sourceTree = "<group>"; };
+		C10EDD8A18451D2A00503993 /* MiniUIBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIBadgeView.h; sourceTree = "<group>"; };
+		C10EDD8B18451D2A00503993 /* MiniUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBar.h; sourceTree = "<group>"; };
+		C10EDD8C18451D2A00503993 /* MiniUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBarController.h; sourceTree = "<group>"; };
+		C10EDD8D18451D2A00503993 /* MiniUITabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBarItem.h; sourceTree = "<group>"; };
+		C10EDD8F18451D2A00503993 /* MiniDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniDefine.h; sourceTree = "<group>"; };
+		C10EDD9218451D2A00503993 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		C10EDD9318451D2A00503993 /* MiniEmojiCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniEmojiCodeUtil.h; sourceTree = "<group>"; };
+		C10EDD9418451D2A00503993 /* MiniFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniFileUtil.h; sourceTree = "<group>"; };
+		C10EDD9518451D2A00503993 /* MiniImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniImageCache.h; sourceTree = "<group>"; };
+		C10EDD9618451D2A00503993 /* MiniImagePickerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniImagePickerUtil.h; sourceTree = "<group>"; };
+		C10EDD9718451D2A00503993 /* MiniLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniLocationManager.h; sourceTree = "<group>"; };
+		C10EDD9818451D2A00503993 /* MiniObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniObject.h; sourceTree = "<group>"; };
+		C10EDD9918451D2A00503993 /* MiniSingletonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSingletonFactory.h; sourceTree = "<group>"; };
+		C10EDD9A18451D2A00503993 /* MiniSysUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSysUtil.h; sourceTree = "<group>"; };
+		C10EDD9B18451D2A00503993 /* MiniUIAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAccelerometer.h; sourceTree = "<group>"; };
+		C10EDD9C18451D2A00503993 /* MiniUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIImage.h; sourceTree = "<group>"; };
+		C10EDD9D18451D2A00503993 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		C10EDDA018451D2A00503993 /* MiniUIEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIEmojiLabel.h; sourceTree = "<group>"; };
+		C10EDDA118451D2A00503993 /* MiniUIEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIEmojiView.h; sourceTree = "<group>"; };
+		C10EDDA218451D2A00503993 /* MiniPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniPageControl.h; sourceTree = "<group>"; };
+		C10EDDA318451D2A00503993 /* MiniToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniToolBar.h; sourceTree = "<group>"; };
+		C10EDDA418451D2A00503993 /* MiniUIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIActionSheet.h; sourceTree = "<group>"; };
+		C10EDDA518451D2A00503993 /* MiniUIActionSheetPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIActionSheetPickerView.h; sourceTree = "<group>"; };
+		C10EDDA618451D2A00503993 /* MiniUIAlertControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertControl.h; sourceTree = "<group>"; };
+		C10EDDA718451D2A00503993 /* MiniUIAlertTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertTableView.h; sourceTree = "<group>"; };
+		C10EDDA818451D2A00503993 /* MiniUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertView.h; sourceTree = "<group>"; };
+		C10EDDA918451D2A00503993 /* MiniUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIButton.h; sourceTree = "<group>"; };
+		C10EDDAA18451D2A00503993 /* MiniUIGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIGalleryView.h; sourceTree = "<group>"; };
+		C10EDDAB18451D2A00503993 /* MiniUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIImageView.h; sourceTree = "<group>"; };
+		C10EDDAC18451D2A00503993 /* MiniUINaviTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUINaviTitleView.h; sourceTree = "<group>"; };
+		C10EDDAD18451D2A00503993 /* MiniUISegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
+		C10EDDAE18451D2A00503993 /* MiniUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextField.h; sourceTree = "<group>"; };
+		C10EDDAF18451D2A00503993 /* MiniUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextView.h; sourceTree = "<group>"; };
+		C10EDDB018451D2A00503993 /* MiniUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIToolBar.h; sourceTree = "<group>"; };
+		C10EDDB118451D2A00503993 /* MiniUITouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITouchView.h; sourceTree = "<group>"; };
 		C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
 		C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Mini.m"; sourceTree = "<group>"; };
 		C12C2CA717E8F5930097CFBD /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRLoginViewController.h; sourceTree = "<group>"; };
@@ -312,8 +372,6 @@
 		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
 		C12E4976180A37B900482A10 /* MSKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSKeychainWrapper.h; sourceTree = "<group>"; };
 		C12E4977180A37B900482A10 /* MSKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSKeychainWrapper.m; sourceTree = "<group>"; };
-		C12E497C180A43BA00482A10 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUISegmentView.h; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIPhotoImageView.h; sourceTree = "<group>"; };
 		C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIPhotoImageView.m; sourceTree = "<group>"; };
@@ -400,49 +458,6 @@
 		C169C60816FF55A800ED87D8 /* SVPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlacemark.h; sourceTree = "<group>"; };
 		C169C60A16FF55A800ED87D8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C169C60B16FF55A800ED87D8 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		C169C60E16FF55A800ED87D8 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		C169C60F16FF55A800ED87D8 /* NSDate+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Mini.h"; sourceTree = "<group>"; };
-		C169C61016FF55A800ED87D8 /* NSIndexPath+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Mini.h"; sourceTree = "<group>"; };
-		C169C61116FF55A800ED87D8 /* NSString+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Mini.h"; sourceTree = "<group>"; };
-		C169C61216FF55A800ED87D8 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		C169C61316FF55A800ED87D8 /* UIColor+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Mini.h"; sourceTree = "<group>"; };
-		C169C61416FF55A800ED87D8 /* UIDevice+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Ext.h"; sourceTree = "<group>"; };
-		C169C61516FF55A800ED87D8 /* UIImage+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mini.h"; sourceTree = "<group>"; };
-		C169C61616FF55A800ED87D8 /* UINavigationBar+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Mini.h"; sourceTree = "<group>"; };
-		C169C61716FF55A800ED87D8 /* UIView+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Mini.h"; sourceTree = "<group>"; };
-		C169C61916FF55A800ED87D8 /* MiniUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUINavigationController.h; sourceTree = "<group>"; };
-		C169C61A16FF55A800ED87D8 /* MiniViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniViewController.h; sourceTree = "<group>"; };
-		C169C61C16FF55A800ED87D8 /* MiniUIBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIBadgeView.h; sourceTree = "<group>"; };
-		C169C61D16FF55A800ED87D8 /* MiniUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBar.h; sourceTree = "<group>"; };
-		C169C61E16FF55A800ED87D8 /* MiniUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBarController.h; sourceTree = "<group>"; };
-		C169C61F16FF55A800ED87D8 /* MiniUITabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITabBarItem.h; sourceTree = "<group>"; };
-		C169C62116FF55A800ED87D8 /* MiniDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniDefine.h; sourceTree = "<group>"; };
-		C169C62416FF55A800ED87D8 /* MiniEmojiCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniEmojiCodeUtil.h; sourceTree = "<group>"; };
-		C169C62516FF55A800ED87D8 /* MiniFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniFileUtil.h; sourceTree = "<group>"; };
-		C169C62616FF55A800ED87D8 /* MiniImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniImageCache.h; sourceTree = "<group>"; };
-		C169C62716FF55A800ED87D8 /* MiniImagePickerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniImagePickerUtil.h; sourceTree = "<group>"; };
-		C169C62816FF55A800ED87D8 /* MiniLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniLocationManager.h; sourceTree = "<group>"; };
-		C169C62916FF55A800ED87D8 /* MiniSingletonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSingletonFactory.h; sourceTree = "<group>"; };
-		C169C62A16FF55A800ED87D8 /* MiniSysUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSysUtil.h; sourceTree = "<group>"; };
-		C169C62B16FF55A800ED87D8 /* MiniUIAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAccelerometer.h; sourceTree = "<group>"; };
-		C169C62C16FF55A800ED87D8 /* MiniUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIImage.h; sourceTree = "<group>"; };
-		C169C62D16FF55A800ED87D8 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		C169C63016FF55A800ED87D8 /* MiniUIEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIEmojiLabel.h; sourceTree = "<group>"; };
-		C169C63116FF55A800ED87D8 /* MiniUIEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIEmojiView.h; sourceTree = "<group>"; };
-		C169C63216FF55A800ED87D8 /* MiniPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniPageControl.h; sourceTree = "<group>"; };
-		C169C63316FF55A800ED87D8 /* MiniToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniToolBar.h; sourceTree = "<group>"; };
-		C169C63416FF55A800ED87D8 /* MiniUIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIActionSheet.h; sourceTree = "<group>"; };
-		C169C63516FF55A800ED87D8 /* MiniUIActionSheetPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIActionSheetPickerView.h; sourceTree = "<group>"; };
-		C169C63616FF55A800ED87D8 /* MiniUIAlertTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertTableView.h; sourceTree = "<group>"; };
-		C169C63716FF55A800ED87D8 /* MiniUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertView.h; sourceTree = "<group>"; };
-		C169C63816FF55A800ED87D8 /* MiniUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIButton.h; sourceTree = "<group>"; };
-		C169C63916FF55A800ED87D8 /* MiniUIGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIGalleryView.h; sourceTree = "<group>"; };
-		C169C63A16FF55A800ED87D8 /* MiniUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIImageView.h; sourceTree = "<group>"; };
-		C169C63B16FF55A800ED87D8 /* MiniUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextField.h; sourceTree = "<group>"; };
-		C169C63C16FF55A800ED87D8 /* MiniUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextView.h; sourceTree = "<group>"; };
-		C169C63D16FF55A800ED87D8 /* MiniUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIToolBar.h; sourceTree = "<group>"; };
-		C169C63E16FF55A800ED87D8 /* MiniUITouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITouchView.h; sourceTree = "<group>"; };
-		C17385A81704A32000AFE72A /* MiniUIAlertControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniUIAlertControl.h; sourceTree = "<group>"; };
 		C1820F38175BA51000C87E39 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		C1820F39175BA51000C87E39 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
 		C1820F3A175BA51000C87E39 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
@@ -456,6 +471,10 @@
 		C1ACB74D17FD3E1100862641 /* more_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_new@2x.png"; sourceTree = "<group>"; };
 		C1ACB74F17FD475E00862641 /* potential_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "potential_h@2x.png"; sourceTree = "<group>"; };
 		C1ACB75017FD475E00862641 /* potential_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "potential_n@2x.png"; sourceTree = "<group>"; };
+		C1B339ED184A25E600851585 /* MSFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFrameViewController.h; sourceTree = "<group>"; };
+		C1B339EE184A25E600851585 /* MSFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFrameViewController.m; sourceTree = "<group>"; };
+		C1B339F0184A30B800851585 /* MSTransformButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransformButton.h; sourceTree = "<group>"; };
+		C1B339F1184A30B800851585 /* MSTransformButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransformButton.m; sourceTree = "<group>"; };
 		C1B7074E181BD9C400485B26 /* closep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closep@2x.png"; sourceTree = "<group>"; };
 		C1EC4FD4178074A100BE5ABB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1EC4FD5178074A100BE5ABB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -694,7 +713,6 @@
 		C1F2747F177FFDDE004917C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1F27480177FFDDE004917C6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		C1FADC2117EC39B9005F5537 /* MiniObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniObject.h; sourceTree = "<group>"; };
 		C1FAFECF1752728E00A7E7F6 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C1FAFED01752728E00A7E7F6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C1FEB1BB17E3E7EB0076BEEA /* MSUIDTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUIDTView.h; sourceTree = "<group>"; };
@@ -804,6 +822,126 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		C10EDD7818451D2A00503993 /* MiniLiteFramework */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD7918451D2A00503993 /* Categroy */,
+				C10EDD8618451D2A00503993 /* Controllers */,
+				C10EDD8E18451D2A00503993 /* Define */,
+				C10EDD9018451D2A00503993 /* Recorder */,
+				C10EDD9118451D2A00503993 /* Util */,
+				C10EDD9E18451D2A00503993 /* Views */,
+			);
+			path = MiniLiteFramework;
+			sourceTree = "<group>";
+		};
+		C10EDD7918451D2A00503993 /* Categroy */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD7A18451D2A00503993 /* NSData+Base64.h */,
+				C10EDD7B18451D2A00503993 /* NSDate+Mini.h */,
+				C10EDD7C18451D2A00503993 /* NSIndexPath+Mini.h */,
+				C10EDD7D18451D2A00503993 /* NSString+Mini.h */,
+				C10EDD7E18451D2A00503993 /* NSString+URLEncoding.h */,
+				C10EDD7F18451D2A00503993 /* NSUserDefaults+Mini.h */,
+				C10EDD8018451D2A00503993 /* UIColor+Mini.h */,
+				C10EDD8118451D2A00503993 /* UIDevice+Ext.h */,
+				C10EDD8218451D2A00503993 /* UIImage+Mini.h */,
+				C10EDD8318451D2A00503993 /* UILabel+Mini.h */,
+				C10EDD8418451D2A00503993 /* UINavigationBar+Mini.h */,
+				C10EDD8518451D2A00503993 /* UIView+Mini.h */,
+			);
+			path = Categroy;
+			sourceTree = "<group>";
+		};
+		C10EDD8618451D2A00503993 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD8718451D2A00503993 /* MiniUINavigationController.h */,
+				C10EDD8818451D2A00503993 /* MiniViewController.h */,
+				C10EDD8918451D2A00503993 /* TabBarViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C10EDD8918451D2A00503993 /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD8A18451D2A00503993 /* MiniUIBadgeView.h */,
+				C10EDD8B18451D2A00503993 /* MiniUITabBar.h */,
+				C10EDD8C18451D2A00503993 /* MiniUITabBarController.h */,
+				C10EDD8D18451D2A00503993 /* MiniUITabBarItem.h */,
+			);
+			path = TabBarViewController;
+			sourceTree = "<group>";
+		};
+		C10EDD8E18451D2A00503993 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD8F18451D2A00503993 /* MiniDefine.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		C10EDD9018451D2A00503993 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+		C10EDD9118451D2A00503993 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD9218451D2A00503993 /* KeychainItemWrapper.h */,
+				C10EDD9318451D2A00503993 /* MiniEmojiCodeUtil.h */,
+				C10EDD9418451D2A00503993 /* MiniFileUtil.h */,
+				C10EDD9518451D2A00503993 /* MiniImageCache.h */,
+				C10EDD9618451D2A00503993 /* MiniImagePickerUtil.h */,
+				C10EDD9718451D2A00503993 /* MiniLocationManager.h */,
+				C10EDD9818451D2A00503993 /* MiniObject.h */,
+				C10EDD9918451D2A00503993 /* MiniSingletonFactory.h */,
+				C10EDD9A18451D2A00503993 /* MiniSysUtil.h */,
+				C10EDD9B18451D2A00503993 /* MiniUIAccelerometer.h */,
+				C10EDD9C18451D2A00503993 /* MiniUIImage.h */,
+				C10EDD9D18451D2A00503993 /* SynthesizeSingleton.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C10EDD9E18451D2A00503993 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDD9F18451D2A00503993 /* em */,
+				C10EDDA218451D2A00503993 /* MiniPageControl.h */,
+				C10EDDA318451D2A00503993 /* MiniToolBar.h */,
+				C10EDDA418451D2A00503993 /* MiniUIActionSheet.h */,
+				C10EDDA518451D2A00503993 /* MiniUIActionSheetPickerView.h */,
+				C10EDDA618451D2A00503993 /* MiniUIAlertControl.h */,
+				C10EDDA718451D2A00503993 /* MiniUIAlertTableView.h */,
+				C10EDDA818451D2A00503993 /* MiniUIAlertView.h */,
+				C10EDDA918451D2A00503993 /* MiniUIButton.h */,
+				C10EDDAA18451D2A00503993 /* MiniUIGalleryView.h */,
+				C10EDDAB18451D2A00503993 /* MiniUIImageView.h */,
+				C10EDDAC18451D2A00503993 /* MiniUINaviTitleView.h */,
+				C10EDDAD18451D2A00503993 /* MiniUISegmentView.h */,
+				C10EDDAE18451D2A00503993 /* MiniUITextField.h */,
+				C10EDDAF18451D2A00503993 /* MiniUITextView.h */,
+				C10EDDB018451D2A00503993 /* MiniUIToolBar.h */,
+				C10EDDB118451D2A00503993 /* MiniUITouchView.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C10EDD9F18451D2A00503993 /* em */ = {
+			isa = PBXGroup;
+			children = (
+				C10EDDA018451D2A00503993 /* MiniUIEmojiLabel.h */,
+				C10EDDA118451D2A00503993 /* MiniUIEmojiView.h */,
+			);
+			path = em;
+			sourceTree = "<group>";
+		};
 		C15918C717021DF800331097 /* SVSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,8 +1024,8 @@
 		C169C5BD16FF55A800ED87D8 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				C10EDD7818451D2A00503993 /* MiniLiteFramework */,
 				C169C5BE16FF55A800ED87D8 /* Mini3rdFramework */,
-				C169C60C16FF55A800ED87D8 /* MiniLiteFramework */,
 			);
 			name = Headers;
 			path = Frameworks/Headers;
@@ -1098,123 +1236,6 @@
 			path = SVHUD;
 			sourceTree = "<group>";
 		};
-		C169C60C16FF55A800ED87D8 /* MiniLiteFramework */ = {
-			isa = PBXGroup;
-			children = (
-				C169C60D16FF55A800ED87D8 /* Categroy */,
-				C169C61816FF55A800ED87D8 /* Controllers */,
-				C169C62016FF55A800ED87D8 /* Define */,
-				C169C62216FF55A800ED87D8 /* Recorder */,
-				C169C62316FF55A800ED87D8 /* Util */,
-				C169C62E16FF55A800ED87D8 /* Views */,
-			);
-			path = MiniLiteFramework;
-			sourceTree = "<group>";
-		};
-		C169C60D16FF55A800ED87D8 /* Categroy */ = {
-			isa = PBXGroup;
-			children = (
-				C169C60E16FF55A800ED87D8 /* NSData+Base64.h */,
-				C169C60F16FF55A800ED87D8 /* NSDate+Mini.h */,
-				C169C61016FF55A800ED87D8 /* NSIndexPath+Mini.h */,
-				C169C61116FF55A800ED87D8 /* NSString+Mini.h */,
-				C169C61216FF55A800ED87D8 /* NSString+URLEncoding.h */,
-				C169C61316FF55A800ED87D8 /* UIColor+Mini.h */,
-				C169C61416FF55A800ED87D8 /* UIDevice+Ext.h */,
-				C169C61516FF55A800ED87D8 /* UIImage+Mini.h */,
-				C169C61616FF55A800ED87D8 /* UINavigationBar+Mini.h */,
-				C169C61716FF55A800ED87D8 /* UIView+Mini.h */,
-			);
-			path = Categroy;
-			sourceTree = "<group>";
-		};
-		C169C61816FF55A800ED87D8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C169C61916FF55A800ED87D8 /* MiniUINavigationController.h */,
-				C169C61A16FF55A800ED87D8 /* MiniViewController.h */,
-				C169C61B16FF55A800ED87D8 /* TabBarViewController */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		C169C61B16FF55A800ED87D8 /* TabBarViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C169C61C16FF55A800ED87D8 /* MiniUIBadgeView.h */,
-				C169C61D16FF55A800ED87D8 /* MiniUITabBar.h */,
-				C169C61E16FF55A800ED87D8 /* MiniUITabBarController.h */,
-				C169C61F16FF55A800ED87D8 /* MiniUITabBarItem.h */,
-			);
-			path = TabBarViewController;
-			sourceTree = "<group>";
-		};
-		C169C62016FF55A800ED87D8 /* Define */ = {
-			isa = PBXGroup;
-			children = (
-				C169C62116FF55A800ED87D8 /* MiniDefine.h */,
-			);
-			path = Define;
-			sourceTree = "<group>";
-		};
-		C169C62216FF55A800ED87D8 /* Recorder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Recorder;
-			sourceTree = "<group>";
-		};
-		C169C62316FF55A800ED87D8 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				C12E497C180A43BA00482A10 /* KeychainItemWrapper.h */,
-				C1FADC2117EC39B9005F5537 /* MiniObject.h */,
-				C169C62416FF55A800ED87D8 /* MiniEmojiCodeUtil.h */,
-				C169C62516FF55A800ED87D8 /* MiniFileUtil.h */,
-				C169C62616FF55A800ED87D8 /* MiniImageCache.h */,
-				C169C62716FF55A800ED87D8 /* MiniImagePickerUtil.h */,
-				C169C62816FF55A800ED87D8 /* MiniLocationManager.h */,
-				C169C62916FF55A800ED87D8 /* MiniSingletonFactory.h */,
-				C169C62A16FF55A800ED87D8 /* MiniSysUtil.h */,
-				C169C62B16FF55A800ED87D8 /* MiniUIAccelerometer.h */,
-				C169C62C16FF55A800ED87D8 /* MiniUIImage.h */,
-				C169C62D16FF55A800ED87D8 /* SynthesizeSingleton.h */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		C169C62E16FF55A800ED87D8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C169C62F16FF55A800ED87D8 /* em */,
-				C17385A81704A32000AFE72A /* MiniUIAlertControl.h */,
-				C1369B76170F0B7A0020DF98 /* MiniUISegmentView.h */,
-				C169C63216FF55A800ED87D8 /* MiniPageControl.h */,
-				C169C63316FF55A800ED87D8 /* MiniToolBar.h */,
-				C169C63416FF55A800ED87D8 /* MiniUIActionSheet.h */,
-				C169C63516FF55A800ED87D8 /* MiniUIActionSheetPickerView.h */,
-				C169C63616FF55A800ED87D8 /* MiniUIAlertTableView.h */,
-				C169C63716FF55A800ED87D8 /* MiniUIAlertView.h */,
-				C169C63816FF55A800ED87D8 /* MiniUIButton.h */,
-				C169C63916FF55A800ED87D8 /* MiniUIGalleryView.h */,
-				C169C63A16FF55A800ED87D8 /* MiniUIImageView.h */,
-				C169C63B16FF55A800ED87D8 /* MiniUITextField.h */,
-				C169C63C16FF55A800ED87D8 /* MiniUITextView.h */,
-				C169C63D16FF55A800ED87D8 /* MiniUIToolBar.h */,
-				C169C63E16FF55A800ED87D8 /* MiniUITouchView.h */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C169C62F16FF55A800ED87D8 /* em */ = {
-			isa = PBXGroup;
-			children = (
-				C169C63016FF55A800ED87D8 /* MiniUIEmojiLabel.h */,
-				C169C63116FF55A800ED87D8 /* MiniUIEmojiView.h */,
-			);
-			path = em;
-			sourceTree = "<group>";
-		};
 		C169C64616FF5BF800ED87D8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1326,6 +1347,8 @@
 				C1EC4FF3178074A100BE5ABB /* MSSearchKeyInfo.m */,
 				C1EC4FF4178074A100BE5ABB /* MSShopInfo.h */,
 				C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */,
+				C10EDD361844F01C00503993 /* MSTopTabInfo.h */,
+				C10EDD371844F01C00503993 /* MSTopTabInfo.m */,
 			);
 			path = Concrete;
 			sourceTree = "<group>";
@@ -1413,6 +1436,8 @@
 				C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */,
 				C1EC501C178074A100BE5ABB /* MSViewController.h */,
 				C1EC501D178074A100BE5ABB /* MSViewController.m */,
+				C1B339ED184A25E600851585 /* MSFrameViewController.h */,
+				C1B339EE184A25E600851585 /* MSFrameViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1469,6 +1494,8 @@
 				C1EC5036178074A100BE5ABB /* MSPotentialViewController.m */,
 				C1EC5037178074A100BE5ABB /* MSProfileViewController.h */,
 				C1EC5038178074A100BE5ABB /* MSProlfileViewController.m */,
+				C10EDD3C18451A4100503993 /* MyStoreViewController.h */,
+				C10EDD3D18451A4100503993 /* MyStoreViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1527,6 +1554,10 @@
 				C1EC5061178074A100BE5ABB /* MSWebViewToolBar.m */,
 				C1FEB1BB17E3E7EB0076BEEA /* MSUIDTView.h */,
 				C1FEB1BC17E3E7EB0076BEEA /* MSUIDTView.m */,
+				C10EDD391844F2ED00503993 /* MSTopTitleView.h */,
+				C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */,
+				C1B339F0184A30B800851585 /* MSTransformButton.h */,
+				C1B339F1184A30B800851585 /* MSTransformButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2032,6 +2063,7 @@
 				C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */,
 				C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */,
 				C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */,
+				C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */,
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
@@ -2041,6 +2073,7 @@
 				C1EC506A178074A100BE5ABB /* MSNotify.m in Sources */,
 				C1EC506B178074A100BE5ABB /* MSNotiItemInfo.m in Sources */,
 				C1EC506C178074A100BE5ABB /* MSPotentialInfo.m in Sources */,
+				C1B339F2184A30B800851585 /* MSTransformButton.m in Sources */,
 				C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */,
 				C1EC506D178074A100BE5ABB /* MSRecmdList.m in Sources */,
 				C1EC506E178074A100BE5ABB /* MSSearchKeyInfo.m in Sources */,
@@ -2053,6 +2086,7 @@
 				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
+				C10EDD3B1844F2ED00503993 /* MSTopTitleView.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,
 				C1EC5079178074A100BE5ABB /* UILabel+Mini.m in Sources */,
@@ -2064,6 +2098,7 @@
 				C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */,
 				C1EC5080178074A100BE5ABB /* MSSearchCategoryViewController.m in Sources */,
 				C1EC5081178074A100BE5ABB /* MSStoreViewController.m in Sources */,
+				C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */,
 				C1EC5082178074A100BE5ABB /* MSVerifyViewController.m in Sources */,
 				C1EC5083178074A100BE5ABB /* MSDetailViewController.m in Sources */,
 				C1EC5084178074A100BE5ABB /* MSGuideViewController.m in Sources */,
@@ -2093,6 +2128,7 @@
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,
 				C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */,
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,
+				C10EDD381844F01C00503993 /* MSTopTabInfo.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSUISearchBar.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,
 				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,
@@ -2152,7 +2188,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "B1337075-F9B7-474A-9307-6966A5B907A3";
+				PROVISIONING_PROFILE = "3CF234A9-603F-473B-A1E5-D83DC99DE805";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};

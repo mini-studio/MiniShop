@@ -44,6 +44,10 @@
 
 @property (nonatomic,strong) UIView *naviView;
 
+@property (nonatomic,strong) UIView *titleView;
+
+@property (nonatomic) CGRect titleViewFrame;
+
 @end
 
 @implementation MSDetailViewController
@@ -95,32 +99,38 @@
 
 - (void)createNaviView
 {
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, MAIN_VERSION>=7?64:44)];
+    titleView.backgroundColor = [UIColor colorWithRGBA:0x000000CC];
+    CGFloat gap = (titleView.width-160)/3;
+    CGFloat top = (44-30)/2 +  MAIN_VERSION>=7?20:0;
+    CGFloat right = 20;
     MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
-    button.width = 30;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    button.frame = CGRectMake(right, top, 30, 30);
+    [titleView addSubview:button];
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
-    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_link"] highlightedImage:[UIImage imageNamed:@"navi_link_h"]];
-    button.width = 30;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    [button addTarget:self action:@selector(copylink:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-80, self.navigationController.navigationBar.height)];
-    titleView.backgroundColor = [UIColor clearColor];
-    
+    right = button.right + gap;
     button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_share"] highlightedImage:[UIImage imageNamed:@"navi_share_h"]];
-    button.frame = CGRectMake(0, 0, 30, 30);
-    button.center = CGPointMake(titleView.width/3-10, titleView.height/2);
+    button.frame = CGRectMake(right, top, 30, 30);
     [titleView addSubview:button];
     [button addTarget:self action:@selector(shareGood:) forControlEvents:UIControlEventTouchUpInside];
     
+    right = button.right + gap;
     button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_shop"] highlightedImage:[UIImage imageNamed:@"navi_shop_h"]];
-    button.frame = CGRectMake(0, 0, 30, 30);
-    button.center = CGPointMake(2*titleView.width/3+10, titleView.height/2);
+    button.frame = CGRectMake(right, top, 30, 30);
     [titleView addSubview:button];
     [button addTarget:self action:@selector(gotoShop:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.titleView = titleView;
+    
+    right = button.right + gap;
+    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_link"] highlightedImage:[UIImage imageNamed:@"navi_link_h"]];
+    button.frame = CGRectMake(right, top, 30, 30);
+    [button addTarget:self action:@selector(copylink:) forControlEvents:UIControlEventTouchUpInside];
+    [titleView addSubview:button];
+    
+    [self.view addSubview:titleView];
+    self.titleView = titleView;
+    self.titleViewFrame = titleView.frame;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -134,8 +144,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+   // UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
+   // [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -245,13 +255,6 @@
 
 - (void)setNavBarAppearance:(BOOL)animated
 {
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-    if ([[UINavigationBar class] respondsToSelector:@selector(appearance)])
-    {
-        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"tool_bar"] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setBackgroundImage:[MiniUIImage imageNamed:@"tool_bar"] forBarMetrics:UIBarMetricsLandscapePhone];
-    }
 }
 
 - (void)updateViewContents:(NSInteger)index
@@ -582,6 +585,7 @@
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         self.toolView.alpha = 1.0f;
         self.toolView.top = 0;
+        self.titleView.bottom = 0.0f;
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     }];
 }
@@ -589,7 +593,7 @@
 - (void)hideDTView
 {
     [UIView animateWithDuration:0.3 animations:^{
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.titleView.frame = self.titleViewFrame;
         self.toolView.alpha = 0.0f;
         self.toolView.top = self.view.height;
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];

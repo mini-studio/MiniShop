@@ -29,6 +29,8 @@ typedef int MiniUISegmentViewStyle;
 
 - (void)setItems: (NSArray *) array;
 
+- (void)setItems: (NSArray *) array block:(id(^)(int index, NSString *attri))block;
+
 - (UIButton *)buttonAtIndex:(NSInteger)index;
 
 - (void)setTarget:(id)target selector:(SEL)selector;

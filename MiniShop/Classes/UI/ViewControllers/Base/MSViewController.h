@@ -16,7 +16,8 @@
 - (void)addRightRefreshButtonToTarget:(id)target action:(SEL)action;
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action;
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
-
+- (void)setNaviRightButtonImage:(NSString *)imageName target:(id)target action:(SEL)action;
+- (void)setNaviRightButtonImage:(NSString *)imageName highlighted:(NSString*)highlightedImage target:(id)target action:(SEL)action;
 
 - (UITableView *)createPlainTableView;
 - (UITableView*)createGroupedTableView;

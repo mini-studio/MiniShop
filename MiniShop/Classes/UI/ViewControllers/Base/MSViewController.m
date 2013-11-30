@@ -41,6 +41,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.navigationController.navigationBar.hidden = YES;
     self.navigationItem.hidesBackButton = YES;
     [self setBackGroudImage:@"view_bg"];
 }

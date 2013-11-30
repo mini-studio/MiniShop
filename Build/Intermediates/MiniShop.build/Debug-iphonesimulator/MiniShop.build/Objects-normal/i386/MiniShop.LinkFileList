@@ -6,6 +6,7 @@
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UMFeedbackViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/AppDelegate.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent+Mini.o
+/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MyStoreViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MRLoginViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSObject.o
@@ -15,6 +16,7 @@
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSNotify.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSNotiItemInfo.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSPotentialInfo.o
+/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSTransformButton.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/NSUserDefaults+Mini.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSRecmdList.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSSearchKeyInfo.o
@@ -27,6 +29,7 @@
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/RTLabel.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIButton+Mini.o
+/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSTopTitleView.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/NSDate+Format.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UIDevice+Id.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UILabel+Mini.o
@@ -38,6 +41,7 @@
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSSearchCategoryViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSStoreViewController.o
+/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSVerifyViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSDetailViewController.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSGuideViewController.o
@@ -67,6 +71,7 @@
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopInfoCell.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUIMoreDataCell.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUIPotentialCell.o
+/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSTopTabInfo.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebViewToolBar.o
 /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIASTextField.o

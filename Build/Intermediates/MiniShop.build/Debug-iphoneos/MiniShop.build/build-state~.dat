@@ -1,0 +1,1467 @@
+TMiniShop
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Info.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
+cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist
+cProcessPCH /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch MiniShop/MiniShop-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist
+c000000004F34A99100000000000001E5
+t1328851345
+s485
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/SDKSettings.plist
+c000000004F34A991000000000000058B
+t1328851345
+s1419
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c000000004F34A992000000000000019D
+t1328851346
+s413
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch
+t1385562600
+s4306428
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Info.plist
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/PkgInfo
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist
+t2
+s0
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
+c0000000052437C340000000000002811
+t1380154420
+s10257
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m
+c0000000051D048500000000000000AFC
+t1372604496
+s2812
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m
+c0000000051D048500000000000000C7E
+t1372604496
+s3198
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m
+c0000000051D048500000000000000DC2
+t1372604496
+s3522
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m
+c0000000052437C3400000000000041E3
+t1380154420
+s16867
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m
+c00000000526D1E060000000000003BC4
+t1382882822
+s15300
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m
+c000000005294BACE0000000000008BB3
+t1385478862
+s35763
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m
+c00000000529601260000000000000522
+t1385562406
+s1314
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m
+c00000000524E19E50000000000000F0F
+t1380850149
+s3855
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
+c000000005294B2E00000000000000772
+t1385476832
+s1906
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch
+c000000005268596D000000000000041D
+t1382570349
+s1053
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Base/MSObject.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSRecmdList.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSTopTabInfo.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSKeychainWrapper.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSUser.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSVersion.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITextField+Mini.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSStoreViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSVerifyViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSGuideViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopListViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSProlfileViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRResetPasswdViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSJoinViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSShopNewsViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSShopInfoCell.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSTopTitleView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIDTView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIASTextField.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIIndicator.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciese23da3673946b841^60e9f0673946b841^---0#1#1#--18"Check dependencies36"5F704DE5-41D0-45E4-8C5E-DBE1A85530AF-
+
+CCodeSign /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.170354
+e407255400.329315
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSGuideViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBarController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBar.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/TabBarViewController/MiniUITabBarItem.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSShopNewsViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniUINavigationController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSDate+Mini.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m206"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o MiniShop/Apple/AppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler2fbf2b683946b841^d74e54683946b841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m0000000000000000^3651"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o MiniShop/Apple/AppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/AppDelegate.o36"7EFC2AC2-8AD4-4505-8F02-127E0E6798B7-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.170531
+e407255400.422296
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/AFNetworking/AFHTTPClient.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+URLEncoding.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSDate+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSData+Base64.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSRecmdList.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIDevice+Ext.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSTopTabInfo.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m238"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compileraed42b683946b841^d21d6c683946b841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m0000000000000000^3725"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent+Mini.o36"5F476F7C-A580-4DC0-A6D8-19EEC22915E8-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MRLoginViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MRResetPasswdViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRResetPasswdViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSAboutViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSCooperateInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSDetailViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSFeedbackViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSGalleryGoodsCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSGalleryView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSGoodsList.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSGuideViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSGuideViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSImageInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSItemListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSJoinViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSJoinViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSKeychainWrapper.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSKeychainWrapper.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSMainTabViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSMiniUINavigationController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNofiViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNotiItemInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNotiTableCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNotify.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSObject.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Base/MSObject.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSPotentialInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSPotentialViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSProlfileViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSProlfileViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSRecmdList.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSRecmdList.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSSearchCategoryViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSSearchKeyInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSSettingsViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSSettingsViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopGalleryViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopGroupListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopInfoCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSShopInfoCell.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopListViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopNewsViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSShopNewsViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSStoreViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSStoreViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSSystem.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSTopTabInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSTopTabInfo.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSTopTitleView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSTopTitleView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSTopicViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIAuthWebViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIDTView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIDTView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIMoreDataCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIPotentialCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUISearchBar.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIWebViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUser.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSUser.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSVerifyViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSVerifyViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSVersion.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSVersion.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSWebChatUtil.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSWebViewToolBar.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniNSURLProtocol.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIASTextField.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIASTextField.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIIndicator.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIIndicator.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.168382
+e407255400.272030
+r0
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIImage+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:56:28: error: property 'cornerRadius' cannot be found in forward class object 'CALayer'
+o    self.promptLabel.layer.cornerRadius = 8;
+o    ~~~~~~~~~~~~~~~~~~~~~~ ^
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:10:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:85:75: note: forward declaration of class here
+o@class UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, CALayer;
+o                                                                          ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:59:38: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?
+o    self.promptLabel.textAlignment = NSTextAlignmentCenter;
+o                                     ^~~~~~~~~~~~~~~~~~~~~
+o                                     UITextAlignmentCenter
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here
+o    UITextAlignmentCenter,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:60:28: error: property 'masksToBounds' cannot be found in forward class object 'CALayer'
+o    self.promptLabel.layer.masksToBounds = YES;
+o    ~~~~~~~~~~~~~~~~~~~~~~ ^
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:10:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:85:75: note: forward declaration of class here
+o@class UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, CALayer;
+o                                                                          ^
+o3 errors generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m240"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compilerd3312b683946b841^d3a345683946b841^-5796"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:56:28: error: property 'cornerRadius' cannot be found in forward class object 'CALayer'    self.promptLabel.layer.cornerRadius = 8;    ~~~~~~~~~~~~~~~~~~~~~~ ^In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:10:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:85:75: note: forward declaration of class here@class UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, CALayer;                                                                          ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:59:38: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?    self.promptLabel.textAlignment = NSTextAlignmentCenter;                                     ^~~~~~~~~~~~~~~~~~~~~                                     UITextAlignmentCenterIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here    UITextAlignmentCenter,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:60:28: error: property 'masksToBounds' cannot be found in forward class object 'CALayer'    self.promptLabel.layer.masksToBounds = YES;    ~~~~~~~~~~~~~~~~~~~~~~ ^In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:10:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h:85:75: note: forward declaration of class here@class UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, CALayer;                                                                          ^3 errors generated.3(36%IDEClangDiagnosticActivityLogMessage2@73"Property 'cornerRadius' cannot be found in forward class object 'CALayer'-407255400#18446744073709551615#0#1(2@33"Forward declaration of class here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@167"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h0000000000000000^84#74#84#74#3763#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^55#27#55#27#1605#0#14"Semantic Issue1(3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^55#4#55#26#1582#17#-2@91"Use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?-407255400#18446744073709551615#0#1(2@37"'UITextAlignmentCenter' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^35#4#35#4#1929#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^58#37#58#37#1773#0#14"Semantic Issue1(3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^58#37#58#58#1773#21#-2@74"Property 'masksToBounds' cannot be found in forward class object 'CALayer'-407255400#18446744073709551615#0#1(2@33"Forward declaration of class here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@167"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h0000000000000000^84#74#84#74#3763#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^59#27#59#27#1823#0#14"Semantic Issue1(3@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^59#4#59#26#1800#17#-0#0#1#-19%DVTDocumentLocation4@120"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m0000000000000000^3737"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o36"5AB2FD3A-656D-4442-B31E-7225BA0A9488-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIWebView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIWebViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniURLCache.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.272410
+e407255400.344664
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSTopTitleView.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m252"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler7bda45683946b841^6d3c58683946b841^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m0000000000000000^3763"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MyStoreViewController.o36"A67FB423-D3C5-493F-9236-8321FBB6394D-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/NSDate+Format.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/NSUserDefaults+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/RTLabel.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UIDevice+Id.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UILabel+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UITableViewCell+GroupBackGround.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UITextField+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITextField+Mini.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.168624
+e407255400.295277
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m241"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o Frameworks/ufeedback/chat/UMContactViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler143e2b683946b841^78974b683946b841^---0#0#1#-19%DVTDocumentLocation2@118"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m0000000000000000^3745"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o Frameworks/ufeedback/chat/UMContactViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o36"6CB21C09-0E59-4AAB-BD2E-56CB834366C9-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.168135
+e407255400.317399
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m261"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler79232b683946b841^424151683946b841^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m0000000000000000^3793"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o36"3B90314B-E4FB-44E7-9C67-EB8873EA3155-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.168864
+e407255400.378759
+r0
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.h
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:23:40: error: use of undeclared identifier 'NSLineBreakByWordWrapping'
+o        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+o                                       ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:25:40: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?
+o        self.textLabel.textAlignment = NSTextAlignmentLeft;
+o                                       ^~~~~~~~~~~~~~~~~~~
+o                                       UITextAlignmentLeft
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here
+o    UITextAlignmentLeft = 0,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:30:41: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?
+o        _timestampLabel.textAlignment = NSTextAlignmentCenter;
+o                                        ^~~~~~~~~~~~~~~~~~~~~
+o                                        UITextAlignmentCenter
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here
+o    UITextAlignmentCenter,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:57:58: error: use of undeclared identifier 'NSLineBreakByCharWrapping'
+o                                           lineBreakMode:NSLineBreakByCharWrapping];
+o                                                         ^
+o4 errors generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m249"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler71572b683946b841^f5f560683946b841^-5034"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:23:40: error: use of undeclared identifier 'NSLineBreakByWordWrapping'        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;                                       ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:25:40: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?        self.textLabel.textAlignment = NSTextAlignmentLeft;                                       ^~~~~~~~~~~~~~~~~~~                                       UITextAlignmentLeftIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here    UITextAlignmentLeft = 0,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:30:41: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?        _timestampLabel.textAlignment = NSTextAlignmentCenter;                                        ^~~~~~~~~~~~~~~~~~~~~                                        UITextAlignmentCenterIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here    UITextAlignmentCenter,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m:57:58: error: use of undeclared identifier 'NSLineBreakByCharWrapping'                                           lineBreakMode:NSLineBreakByCharWrapping];                                                         ^4 errors generated.4(36%IDEClangDiagnosticActivityLogMessage2@56"Use of undeclared identifier 'NSLineBreakByWordWrapping'-407255400#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^22#39#22#39#651#0#14"Semantic Issue--2@87"Use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?-407255400#18446744073709551615#0#1(2@35"'UITextAlignmentLeft' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^34#4#34#4#1900#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^24#39#24#39#759#0#14"Semantic Issue1(3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^24#39#24#58#759#19#-2@91"Use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?-407255400#18446744073709551615#0#1(2@37"'UITextAlignmentCenter' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^35#4#35#4#1929#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^29#40#29#40#1004#0#14"Semantic Issue1(3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^29#40#29#61#1004#21#-2@56"Use of undeclared identifier 'NSLineBreakByCharWrapping'-407255400#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^56#57#56#57#2212#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m0000000000000000^3769"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o36"3CFF9531-C6E7-4843-B280-317E200FD546-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.169116
+e407255400.373318
+r0
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.h
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:23:40: error: use of undeclared identifier 'NSLineBreakByWordWrapping'
+o        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+o                                       ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:25:40: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?
+o        self.textLabel.textAlignment = NSTextAlignmentLeft;
+o                                       ^~~~~~~~~~~~~~~~~~~
+o                                       UITextAlignmentLeft
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here
+o    UITextAlignmentLeft = 0,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:30:41: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?
+o        _timestampLabel.textAlignment = NSTextAlignmentCenter;
+o                                        ^~~~~~~~~~~~~~~~~~~~~
+o                                        UITextAlignmentCenter
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here
+o    UITextAlignmentCenter,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:62:58: error: use of undeclared identifier 'NSLineBreakByCharWrapping'
+o                                           lineBreakMode:NSLineBreakByCharWrapping];
+o                                                         ^
+o4 errors generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m251"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler98692b683946b841^2e915f683946b841^-5040"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:23:40: error: use of undeclared identifier 'NSLineBreakByWordWrapping'        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;                                       ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:25:40: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?        self.textLabel.textAlignment = NSTextAlignmentLeft;                                       ^~~~~~~~~~~~~~~~~~~                                       UITextAlignmentLeftIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here    UITextAlignmentLeft = 0,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:30:41: error: use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?        _timestampLabel.textAlignment = NSTextAlignmentCenter;                                        ^~~~~~~~~~~~~~~~~~~~~                                        UITextAlignmentCenterIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:36:5: note: 'UITextAlignmentCenter' declared here    UITextAlignmentCenter,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m:62:58: error: use of undeclared identifier 'NSLineBreakByCharWrapping'                                           lineBreakMode:NSLineBreakByCharWrapping];                                                         ^4 errors generated.4(36%IDEClangDiagnosticActivityLogMessage2@56"Use of undeclared identifier 'NSLineBreakByWordWrapping'-407255400#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^22#39#22#39#660#0#14"Semantic Issue--2@87"Use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?-407255400#18446744073709551615#0#1(2@35"'UITextAlignmentLeft' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^34#4#34#4#1900#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^24#39#24#39#768#0#14"Semantic Issue1(3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^24#39#24#58#768#19#-2@91"Use of undeclared identifier 'NSTextAlignmentCenter'; did you mean 'UITextAlignmentCenter'?-407255400#18446744073709551615#0#1(2@37"'UITextAlignmentCenter' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^35#4#35#4#1929#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^29#40#29#40#1013#0#14"Semantic Issue1(3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^29#40#29#61#1013#21#-2@56"Use of undeclared identifier 'NSLineBreakByCharWrapping'-407255400#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^61#57#61#57#2432#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@123"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m0000000000000000^3775"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o36"25505C7D-B6EF-4758-B2BF-C2C6B4F1782F-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255400.169660
+e407255400.356665
+r0
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/UMFeedback.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/EGO_Refresh/UMEGORefreshTableHeaderView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellLeft.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.h
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:107:33: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?
+o    _mTextField.textAlignment = NSTextAlignmentLeft;
+o                                ^~~~~~~~~~~~~~~~~~~
+o                                UITextAlignmentLeft
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:1:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:
+oIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:
+o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here
+o    UITextAlignmentLeft = 0,
+o    ^
+o/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:316:46: error: use of undeclared identifier 'NSLineBreakByCharWrapping'
+o                               lineBreakMode:NSLineBreakByCharWrapping];
+o                                             ^
+o2 errors generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m243"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o Frameworks/ufeedback/chat/UMFeedbackViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compilerf3922b683946b841^f04d5b683946b841^-2487"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:107:33: error: use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?    _mTextField.textAlignment = NSTextAlignmentLeft;                                ^~~~~~~~~~~~~~~~~~~                                UITextAlignmentLeftIn file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:1:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch:12:In file included from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h:14:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h:10:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIPickerView.h:11:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:11:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h:35:5: note: 'UITextAlignmentLeft' declared here    UITextAlignmentLeft = 0,    ^/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m:316:46: error: use of undeclared identifier 'NSLineBreakByCharWrapping'                               lineBreakMode:NSLineBreakByCharWrapping];                                             ^2 errors generated.2(36%IDEClangDiagnosticActivityLogMessage2@87"Use of undeclared identifier 'NSTextAlignmentLeft'; did you mean 'UITextAlignmentLeft'?-407255400#18446744073709551615#0#1(2@35"'UITextAlignmentLeft' declared here-407255400#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIStringDrawing.h0000000000000000^34#4#34#4#1900#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@119"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m0000000000000000^106#32#106#32#4202#0#14"Semantic Issue1(3@119"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m0000000000000000^106#32#106#51#4202#19#-2@56"Use of undeclared identifier 'NSLineBreakByCharWrapping'-407255400#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@119"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m0000000000000000^315#45#315#45#12612#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@119"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m0000000000000000^3751"CompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o Frameworks/ufeedback/chat/UMFeedbackViewController.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackViewController.o36"2C63B948-70A5-4258-8F6A-A74C3B834BA5-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/main.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileXIB /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMContactViewController.xib
+r0
+
+CCompileXIB /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackViewController.xib
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Default-568h@2x.png MiniShop/Default-568h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Default.png MiniShop/Default.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Default@2x.png MiniShop/Default@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Icon-120.png MiniShop/Resource/Images/Icon/Icon-120.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Icon-72.png MiniShop/Resource/Images/Icon/Icon-72.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Icon.png MiniShop/Resource/Images/Icon/Icon.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Icon@2x.png MiniShop/Resource/Images/Icon/Icon@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/about_ver_bg.png MiniShop/Resource/Images/Images/more/about_ver_bg.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/background@2x.png Frameworks/ufeedback/chat/Images/background@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/blueArrow.png Frameworks/ufeedback/chat/Images/blueArrow.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/blueArrow@2x.png Frameworks/ufeedback/chat/Images/blueArrow@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_h_normal@2x.png MiniShop/Resource/Images/Images/pub/button_h_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_h_selected@2x.png MiniShop/Resource/Images/Images/pub/button_h_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_normal@2x.png MiniShop/Resource/Images/Images/pub/button_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_push_message_off@2x.png MiniShop/Resource/Images/Images/pub/button_push_message_off@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_push_message_off_p@2x.png MiniShop/Resource/Images/Images/pub/button_push_message_off_p@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_push_message_open@2x.png MiniShop/Resource/Images/Images/pub/button_push_message_open@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_push_message_open_p@2x.png MiniShop/Resource/Images/Images/pub/button_push_message_open_p@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/button_selected@2x.png MiniShop/Resource/Images/Images/pub/button_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/close@2x.png MiniShop/Resource/Images/Images/pub/close@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/close_h@2x.png MiniShop/Resource/Images/Images/pub/close_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/closep@2x.png MiniShop/Resource/Images/Images/pub/closep@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/follow_button_normal@2x.png MiniShop/Resource/Images/Images/discover/follow_button_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/follow_button_selected@2x.png MiniShop/Resource/Images/Images/discover/follow_button_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/follow_s_button_normal@2x.png MiniShop/Resource/Images/Images/pub/follow_s_button_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/follow_s_button_selected@2x.png MiniShop/Resource/Images/Images/pub/follow_s_button_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b1@2x.png MiniShop/Resource/Images/Guide/guide_b1@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b1_txt@2x.png MiniShop/Resource/Images/Guide/guide_b1_txt@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b2@2x.png MiniShop/Resource/Images/Guide/guide_b2@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b2_txt@2x.png MiniShop/Resource/Images/Guide/guide_b2_txt@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b3@2x.png MiniShop/Resource/Images/Guide/guide_b3@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b3_txt@2x.png MiniShop/Resource/Images/Guide/guide_b3_txt@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b4@2x.png MiniShop/Resource/Images/Guide/guide_b4@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b4_txt@2x.png MiniShop/Resource/Images/Guide/guide_b4_txt@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b5@2x.png MiniShop/Resource/Images/Guide/guide_b5@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_b5_txt@2x.png MiniShop/Resource/Images/Guide/guide_b5_txt@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_bg-568h@2x.png MiniShop/Resource/Images/Guide/guide_bg-568h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_bg@2x.png MiniShop/Resource/Images/Guide/guide_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_btn_normal@2x.png MiniShop/Resource/Images/Guide/guide_btn_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/guide_btn_selected@2x.png MiniShop/Resource/Images/Guide/guide_btn_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_accessory@2x.png MiniShop/Resource/Images/Images/pub/icon_accessory@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_all_goods_online@2x.png MiniShop/Resource/Images/Images/discover/icon_all_goods_online@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_following@2x.png MiniShop/Resource/Images/Images/mine/icon_following@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_import_taobao@2x.png MiniShop/Resource/Images/Images/mine/icon_import_taobao@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_kink@2x.png MiniShop/Resource/Images/Images/mine/icon_kink@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_recmd_shop@2x.png MiniShop/Resource/Images/Images/discover/icon_recmd_shop@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_rightArrow@2x.png Frameworks/ufeedback/chat/Images/icon_rightArrow@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_rightArrow_selected@2x.png Frameworks/ufeedback/chat/Images/icon_rightArrow_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_search@2x.png MiniShop/Resource/Images/Images/discover/icon_search@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_search_cate@2x.png MiniShop/Resource/Images/Images/discover/icon_search_cate@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/icon_verify@2x.png MiniShop/Resource/Images/Images/discover/icon_verify@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/image_bg@2x.png MiniShop/Resource/Images/Images/pub/image_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/image_view_bg@2x.png MiniShop/Resource/Images/Images/pub/image_view_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/import_taobao@2x.png MiniShop/Resource/Images/Images/news/import_taobao@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/item_cancel@2x.png Frameworks/ufeedback/chat/Images/item_cancel@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/item_cancel_selected@2x.png Frameworks/ufeedback/chat/Images/item_cancel_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/item_ok@2x.png Frameworks/ufeedback/chat/Images/item_ok@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/item_ok_selected@2x.png Frameworks/ufeedback/chat/Images/item_ok_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/join_us@2x.png MiniShop/Resource/Images/Images/more/join_us@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/kink_title_bar@2x.png MiniShop/Resource/Images/Images/mine/kink_title_bar@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading1.png MiniShop/Resource/Images/Images/indicator/loading1.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading10.png MiniShop/Resource/Images/Images/indicator/loading10.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading2.png MiniShop/Resource/Images/Images/indicator/loading2.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading3.png MiniShop/Resource/Images/Images/indicator/loading3.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading4.png MiniShop/Resource/Images/Images/indicator/loading4.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading5.png MiniShop/Resource/Images/Images/indicator/loading5.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading6.png MiniShop/Resource/Images/Images/indicator/loading6.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading7.png MiniShop/Resource/Images/Images/indicator/loading7.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading8.png MiniShop/Resource/Images/Images/indicator/loading8.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/loading9.png MiniShop/Resource/Images/Images/indicator/loading9.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/logistics_normal@2x.png MiniShop/Resource/Images/Images/mine/logistics_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/logistics_selected@2x.png MiniShop/Resource/Images/Images/mine/logistics_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_left_bubble@2x.png Frameworks/ufeedback/chat/Images/messages_left_bubble@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_right_bubble@2x.png Frameworks/ufeedback/chat/Images/messages_right_bubble@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_tableview_background.png Frameworks/ufeedback/chat/Images/messages_tableview_background.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_tableview_background@2x.png Frameworks/ufeedback/chat/Images/messages_tableview_background@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_toolbar_background.png Frameworks/ufeedback/chat/Images/messages_toolbar_background.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/messages_toolbar_background@2x.png Frameworks/ufeedback/chat/Images/messages_toolbar_background@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/more_new@2x.png MiniShop/Resource/Images/Images/pub/more_new@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/my_cart_normal@2x.png MiniShop/Resource/Images/Images/mine/my_cart_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/my_cart_selected@2x.png MiniShop/Resource/Images/Images/mine/my_cart_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/my_goods_normal@2x.png MiniShop/Resource/Images/Images/mine/my_goods_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/my_goods_selected@2x.png MiniShop/Resource/Images/Images/mine/my_goods_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/nav_bar_bg@2x.png Frameworks/ufeedback/chat/Images/nav_bar_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/nav_bg.png Frameworks/ufeedback/chat/Images/nav_bg.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/nav_btn_bg.png Frameworks/ufeedback/chat/Images/nav_btn_bg.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/nav_btn_bg@2x.png Frameworks/ufeedback/chat/Images/nav_btn_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/nav_btn_bg_lighted@2x.png Frameworks/ufeedback/chat/Images/nav_btn_bg_lighted@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_back@2x.png MiniShop/Resource/Images/Images/pub/navi_back@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_back_h@2x.png MiniShop/Resource/Images/Images/pub/navi_back_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_background@2x.png MiniShop/Resource/Images/Images/navi/navi_background@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_bar_back@2x.png MiniShop/Resource/Images/Images/navi/navi_bar_back@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_bar_share@2x.png MiniShop/Resource/Images/Images/navi/navi_bar_share@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_fav@2x.png MiniShop/Resource/Images/Images/pub/navi_fav@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_fav_h@2x.png MiniShop/Resource/Images/Images/pub/navi_fav_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_link@2x.png MiniShop/Resource/Images/Images/pub/navi_link@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_link_h@2x.png MiniShop/Resource/Images/Images/pub/navi_link_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_message@2x.png MiniShop/Resource/Images/Images/pub/navi_message@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_message_h@2x.png MiniShop/Resource/Images/Images/pub/navi_message_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_share@2x.png MiniShop/Resource/Images/Images/pub/navi_share@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_share_h@2x.png MiniShop/Resource/Images/Images/pub/navi_share_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_shop@2x.png MiniShop/Resource/Images/Images/pub/navi_shop@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/navi_shop_h@2x.png MiniShop/Resource/Images/Images/pub/navi_shop_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_cell_bg@2x.png MiniShop/Resource/Images/Images/news/news_cell_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_message_icon@2x.png MiniShop/Resource/Images/Images/news/news_message_icon@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_online_cell_bg@2x.png MiniShop/Resource/Images/Images/news/news_online_cell_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_online_icon@2x.png MiniShop/Resource/Images/Images/news/news_online_icon@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_online_tag@2x.png MiniShop/Resource/Images/Images/news/news_online_tag@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/news_separator@2x.png MiniShop/Resource/Images/Images/news/news_separator@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/potential_h@2x.png MiniShop/Resource/Images/Images/pub/potential_h@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/potential_n@2x.png MiniShop/Resource/Images/Images/pub/potential_n@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/segment_bg@2x.png MiniShop/Resource/Images/Images/pub/segment_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/segment_btn_normal@2x.png MiniShop/Resource/Images/Images/pub/segment_btn_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/send@2x.png Frameworks/ufeedback/chat/Images/send@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/send_selected@2x.png Frameworks/ufeedback/chat/Images/send_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_background@2x.png MiniShop/Resource/Images/Images/tab/tab_background@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_helper_normal@2x.png MiniShop/Resource/Images/Images/tab/tab_helper_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_helper_selected@2x.png MiniShop/Resource/Images/Images/tab/tab_helper_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_market_normal@2x.png MiniShop/Resource/Images/Images/tab/tab_market_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_market_selected@2x.png MiniShop/Resource/Images/Images/tab/tab_market_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_mine_normal@2x.png MiniShop/Resource/Images/Images/tab/tab_mine_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_mine_selected@2x.png MiniShop/Resource/Images/Images/tab/tab_mine_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_slider@2x.png MiniShop/Resource/Images/Images/tab/tab_slider@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_storemanage_normal@2x.png MiniShop/Resource/Images/Images/tab/tab_storemanage_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_storemanage_selected@2x.png MiniShop/Resource/Images/Images/tab/tab_storemanage_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_storenews_normal@2x.png MiniShop/Resource/Images/Images/tab/tab_storenews_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tab_storenews_selected@2x.png MiniShop/Resource/Images/Images/tab/tab_storenews_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/time_bg@2x.png MiniShop/Resource/Images/Images/pub/time_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/time_icon.png MiniShop/Resource/Images/Images/pub/time_icon.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/tool_bar@2x.png MiniShop/Resource/Images/Images/pub/tool_bar@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/transparent@2x.png MiniShop/Resource/Images/Images/pub/transparent@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/umeng_logo.png Frameworks/ufeedback/chat/Images/umeng_logo.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/unfollow_button_normal@2x.png MiniShop/Resource/Images/Images/discover/unfollow_button_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/unfollow_button_selected@2x.png MiniShop/Resource/Images/Images/discover/unfollow_button_selected@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/verify_btn_bg@2x.png MiniShop/Resource/Images/Images/discover/verify_btn_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/verify_shelf@2x.png MiniShop/Resource/Images/Images/discover/verify_shelf@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/verify_text_title@2x.png MiniShop/Resource/Images/Images/discover/verify_text_title@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/verify_top@2x.png MiniShop/Resource/Images/Images/discover/verify_top@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/view_bg@2x.png MiniShop/Resource/Images/Images/pub/view_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_bg@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_bg@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_bg_@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_bg_@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_btn_left_disable@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_btn_left_disable@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_btn_left_normal@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_btn_left_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_btn_refresh@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_btn_refresh@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_btn_right_disable@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_btn_right_disable@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/web_toolbar_btn_right_normal@2x.png MiniShop/Resource/Images/Images/pub/web_toolbar_btn_right_normal@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/white_arrow@2x.png MiniShop/Resource/Images/Images/pub/white_arrow@2x.png
+r0
+
+CCopyPNGFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/white_icon@2x.png MiniShop/Resource/Images/Images/pub/white_icon@2x.png
+r0
+
+CCopyStringsFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Localizable.strings MiniShop/Localizable.strings
+r0
+
+CCopyStringsFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/en.lproj/InfoPlist.strings MiniShop/en.lproj/InfoPlist.strings
+r0
+
+CCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist
+s407255399.943753
+e407255399.944340
+r1
+xCpResource
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist
+xBuild/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist195"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plistb1a3f1673946b841^ecc0f1673946b841^---0#0#1#-19%DVTDocumentLocation2@129"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist0034c057dfffdf42^788"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/ResourceRules.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app36"C4DFC2D2-C49A-44F1-8C9F-C81F5E015D60-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CCpResource Frameworks/Headers/Mini3rdFramework/AFNetworking/LICENSE Build/Products/Debug-iphoneos/MiniShop.app/LICENSE
+r0
+
+CCpResource Frameworks/ufeedback/umFeedback.bundle Build/Products/Debug-iphoneos/MiniShop.app/umFeedback.bundle
+r0
+
+CCpResource MiniShop/Resource/Bundle/MWPhotoBrowser.bundle Build/Products/Debug-iphoneos/MiniShop.app/MWPhotoBrowser.bundle
+r0
+
+CCpResource MiniShop/Resource/Bundle/SVPullToRefresh.bundle Build/Products/Debug-iphoneos/MiniShop.app/SVPullToRefresh.bundle
+r0
+
+CCpResource MiniShop/Resource/Images/Images/more/about-568h@2x.jpg Build/Products/Debug-iphoneos/MiniShop.app/about-568h@2x.jpg
+r0
+
+CCpResource MiniShop/Resource/Images/Images/more/about@2x.jpg Build/Products/Debug-iphoneos/MiniShop.app/about@2x.jpg
+r0
+
+CCpResource MiniShop/Resource/Images/Images/pub/Icon.jpg Build/Products/Debug-iphoneos/MiniShop.app/Icon.jpg
+r0
+
+CGenerateDSYMFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app.dSYM /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop
+r0
+
+CLd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/MiniShop normal armv7
+r0
+
+CProcessInfoPlistFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Info.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
+s407255399.942046
+e407255399.943475
+r1
+xProcessInfoPlistFile
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Info.plist
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Process /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist103"ProcessInfoPlistFile Build/Products/Debug-iphoneos/MiniShop.app/Info.plist MiniShop/MiniShop-Info.plist4c37f1673946b841^a587f1673946b841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist0000000000000000^914"ProcessInfoPlistFile Build/Products/Debug-iphoneos/MiniShop.app/Info.plist MiniShop/MiniShop-Info.plist    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist -genpkginfo /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/ResourceRules.plist -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/Info.plist36"D086CE5D-2065-4B28-8A02-E57D3BB40F6A-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CProcessPCH /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch MiniShop/MiniShop-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407255399.944776
+e407255400.167424
+r1
+xProcessPCH
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch
+xMiniShop/MiniShop-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat/WXApi.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat/WXApiObject.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSDefine.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/Log/MiniLog.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/Log/MiniLoggerClient.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIView+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUIButton.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniUIImage.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUINaviTitleView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUIAlertView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Base/MSObject.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniObject.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID/MobClick.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniSingletonFactory.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/SynthesizeSingleton.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSUser.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSVersion.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile MiniShop/MiniShop-Prefix.pch216"ProcessPCH Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch MiniShop/MiniShop-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compilerc4ecf1673946b841^9cdd2a683946b841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch0000000000000000^3515"ProcessPCH Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch MiniShop/MiniShop-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources/armv7 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.dia -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.d -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Prefix.pch -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-ckqecitykcfjwdbxysqhdajouvcm/MiniShop-Prefix.pch.pch36"F2AB2E9A-78E4-47F9-B172-1CBC3A3900E0-
+b4C6F1794-A1F2-456E-AEF7-77CD42755167
+
+CProcessPCH /Users/Wuquancheng/Library/Developer/Xcode/DerivedData/MiniShop-cbgpobyeyicmjzezyhppupcbbsmj/Index/PrecompiledHeaders/MiniShop-Prefix-fizvbebikqieeqbqrdsllzaxcnyw_ast/MiniShop-Prefix.pch.pch MiniShop/MiniShop-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Entitlements.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/MiniShop.xcent
+r0
+
+CProcessProductPackaging /Users/Wuquancheng/Library/MobileDevice/Provisioning\ Profiles/3CF234A9-603F-473B-A1E5-D83DC99DE805.mobileprovision /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app/embedded.mobileprovision
+r0
+
+CTouch /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphoneos/MiniShop.app
+r0
+

@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface MiniImagePickerUtil : NSObject
+@property (nonatomic) BOOL useEditeImage;
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MiniImagePickerUtil)
 
-- (void)pickerImage:(UIViewController *)controller block:(void(^)(UIImage *image))block;
+- (void)pickerImage:(UIViewController *)controller title:(NSString*)title block:(void(^)(UIImage *image))block;
 
 - (void)pickerImageFromCamera:(UIViewController *)controller block:(void(^)(UIImage *image))block;
 

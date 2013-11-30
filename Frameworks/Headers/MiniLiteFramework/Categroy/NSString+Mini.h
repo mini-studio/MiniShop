@@ -14,10 +14,12 @@
 - (NSString*)trimSpaceAndReturn;
 - (NSDate *)dataWithStyle:(DateStyle)style;
 + (NSString *)uuid;
++ (NSString *)unistring;
 
 - (NSString*)base64Encode;
 - (NSString*)base64Decode;
 
 - (NSString*)EncryptWithKey:(NSString*)key;
 - (NSString*)DecryptWithKey:(NSString*)key;
+
 @end
