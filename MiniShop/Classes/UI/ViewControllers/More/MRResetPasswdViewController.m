@@ -32,11 +32,11 @@
     [self setNaviBackButton];
     [self setNaviRightButtonTitle:@"找回密码" target:self action:@selector(actionResetPasswd)];
     
-    UIScrollView *scrollveiw = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    UIScrollView *scrollveiw = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
     scrollveiw.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:scrollveiw];
+    [self.contentView addSubview:scrollveiw];
     
-    self.nameField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, 20, self.view.width-40, 28)];
+    self.nameField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, 20, self.contentView.width-40, 28)];
     [self.nameField  setLeftTitle:@"用  户  名" color:[UIColor grayColor] placeholder:@"请输入用户名"];
     [self.nameField  setBottomLine:[UIColor grayColor]];
     self.nameField .returnKeyType = UIReturnKeyNext;
@@ -44,14 +44,14 @@
     self.nameField.delegate = self;
     //self.nameField.text = @"wolfxy_a";
     
-    self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.view.width-40, 28)];
+    self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.contentView.width-40, 28)];
     [self.mobileField setLeftTitle:@"手机号码" color:[UIColor grayColor] placeholder:@"请输入联系方式"];
     [self.mobileField setBottomLine:[UIColor grayColor]];
     self.mobileField.returnKeyType = UIReturnKeyDone;
     self.mobileField.delegate = self;
     [scrollveiw addSubview:self.mobileField];
     
-    scrollveiw.contentSize = CGSizeMake(self.view.width, self.view.height+1);
+    scrollveiw.contentSize = CGSizeMake(self.contentView.width, self.contentView.height+1);
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -72,7 +72,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = @"找回密码";
+	self.naviTitleView.title = @"找回密码";
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,7 +92,7 @@
     else {
         __PSELF__;
         WHO = nil;
-        [self.view endEditing:YES];
+        [self.contentView endEditing:YES];
         [self showWating:nil];
         [[ClientAgent sharedInstance] resetpasswd:name mobile:mobile block:^(NSError *error, MSObject* data, id userInfo, BOOL cache) {
             [pSelf dismissWating];

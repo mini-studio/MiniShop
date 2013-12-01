@@ -112,16 +112,7 @@
 {
     [super viewDidLoad];
     [self initData];
-//    KeychainItemWrapper *keychainWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
-//    NSString *udid = (NSString*)[keychainWrapper objectForKey:(__bridge id)kSecValueData];
-//    if ( udid.length == 0 ) {
-//        //[keychainWrapper setObject:@"A98NUYERNV09" forKey:(__bridge id)kSecValueData];
-//    }
-//    else {
-//      
-//       //udid = (NSString*)[keychainWrapper objectForKey:(__bridge id)kSecValueData];
-//    }
-    self.navigationItem.title = @"我关注的店";
+    self.naviTitleView.title = @"我关注的店";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -193,7 +184,7 @@
 
 - (void)createTableView
 {
-    CGRect frame = self.view.bounds;
+    CGRect frame = self.contentView.bounds;
     self.tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.delegate = self;
@@ -208,7 +199,7 @@
     }];
     self.tableView.showsVerticalScrollIndicator = NO;
     [self setPullToRefreshViewStyle:self.tableView.pullToRefreshView];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (void)addSegmentControl
@@ -236,7 +227,7 @@
             [(MiniUIButton*)view setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         }
     }
-    //self.navigationItem.titleView = segment;
+    //self.naviTitleView.titleView = segment;
     self.segment = segment;
 }
 

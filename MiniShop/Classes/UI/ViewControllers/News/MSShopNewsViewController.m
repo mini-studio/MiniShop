@@ -28,14 +28,13 @@
 - (void)loadView
 {
     [super loadView];
-    self.navigationItem.titleView = nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	[self setNaviBackButton];
-    self.navigationItem.title = @"好友关注的店铺";
+    self.naviTitleView.title = @"好友关注的店铺";
 }
 
 - (void)setNaviButtons

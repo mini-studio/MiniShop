@@ -123,7 +123,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = @"审核求收录";
+	self.naviTitleView.title = @"审核求收录";
     [self setNaviBackButton];
     [self loadData];
 }

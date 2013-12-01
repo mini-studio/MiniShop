@@ -17,16 +17,15 @@
 #import "MSUISearchBar.h"
 #import "MRLoginViewController.h"
 
-@interface MSShopGroupListViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface MSShopGroupListViewController ()<UITableViewDataSource,UITableViewDelegate,MSUISearchBarDelegate>
 @property (nonatomic,strong) NSDictionary *dataSource;
 @property (nonatomic,strong) UITableView    *tableView;
-@property (nonatomic,strong) UISearchDisplayController *searchController;
 @property (nonatomic) BOOL inited;
 @end
 
 @interface MSShopGroupListViewController (search)
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar;
-- (UISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder;
+- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar;
+- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder;
 - (void)search:(NSString *)key;
 @end
 
@@ -47,33 +46,29 @@
     
 }
 
+- (void)loadView
+{
+    [super loadView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createTableView];
     [self setNaviBackButton];
+    [self createTableView];
     if ( self.type == EImportFav )
     {
-        self.navigationItem.title = @"导入收藏夹";
+        self.naviTitleView.title = @"导入收藏夹";
         if ( self.favData != nil )
         {
             [self loadFavData];
         }
-    }
-    else if ( self.type == ESearch || self.type == ESearchInCategory )
-    {
-        self.navigationItem.title = @"搜索";
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if ( self.type == ESearch && !self.inited )
-    {
-        [self.searchDisplayController setActive:YES animated:YES];
-        [self.searchDisplayController.searchBar becomeFirstResponder];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -81,7 +76,7 @@
     [super viewDidAppear:animated];    
     if ( self.type == ESearchInCategory && self.key.length > 0 && !self.inited)
     {
-        [self search:self.key];
+      //  [self search:self.key];
     }
     self.inited = YES;
 }
@@ -90,7 +85,7 @@
 {
     self.tableView = [self createPlainTableView];
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
     if ( self.type == ESearch )
     {
         [self createSearchBar:self placeHolder:@""];
@@ -126,7 +121,7 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 20)];
     UIColor *bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"web_toolbar_bg_"]];
     view.backgroundColor = bgColor;
     UILabel *label = [UILabel LabelWithFrame:CGRectMake(5, 0, view.width-10, 30) bgColor:bgColor text:[self titleForHeaderInSection:section] color:[UIColor colorWithRGBA:0x785530ff] font:[UIFont boldSystemFontOfSize:16] alignment:NSTextAlignmentLeft shadowColor:nil shadowSize:CGSizeZero];
@@ -290,40 +285,26 @@
 
 @implementation  MSShopGroupListViewController (search)
 
-- (UISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
+- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
 {
-    MSUISearchBar *searchBar = [[MSUISearchBar  alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, 44)];
+    MSUISearchBar *searchBar = [[MSUISearchBar  alloc] initWithFrame:self.naviTitleView.bounds];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
-    self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-    self.searchController.searchResultsDelegate = (id<UITableViewDelegate>) self;
-    self.searchController.searchResultsDataSource = (id<UITableViewDataSource>)self;
-    self.searchController.delegate = self;
-    self.tableView.tableHeaderView = searchBar;
-    [self configureSearchBar:searchBar];
+    [self.naviTitleView addSubview:searchBar];
     return searchBar;
 }
 
-- (void)configureSearchBar:(MSUISearchBar *)searchBar
+- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar
 {
-}
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    if ( self.searchDisplayController.isActive)
+    NSString  *key = searchBar.text;
+    if ( key.length > 0 )
     {
-        NSString  *key = searchBar.text;
-        if ( key.length > 0 )
-        {
-            [self search:key];
-        }
-        [self.searchDisplayController setActive:NO animated:YES];
+        [self search:key];
     }
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+- (void)searchBarCancelButtonClicked:(MSUISearchBar *)searchBar
 {
-    [self.searchDisplayController setActive:NO animated:NO];
     [self back];
 }
 

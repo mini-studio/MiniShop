@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MSUISearchBar;
 
-@interface MSUISearchBar : UISearchBar
+@protocol MSUISearchBarDelegate <NSObject>
 
+@optional
+- (void)searchBarCancelButtonClicked:(MSUISearchBar *)searchBar;
+- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar;
+
+@end
+
+@interface MSUISearchBar : UIView
+@property (nonatomic,assign)id<MSUISearchBarDelegate> delegate;
+@property (nonatomic,strong)NSString *placeholder;
+@property (nonatomic,readonly)NSString *text;
 @end

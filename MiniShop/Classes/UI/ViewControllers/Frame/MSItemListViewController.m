@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
     [self setNaviBackButton];
-    self.navigationItem.title = self.info.name;
+    self.naviTitleView.title = self.info.name;
     [self.tableView triggerRefresh];
 }
 

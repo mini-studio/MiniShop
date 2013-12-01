@@ -36,11 +36,11 @@
     [super loadView];
     [self setNaviRightButtonTitle:self.type==0?@"登录":@"注册" target:self action:self.type==0?@selector(actionLogin):@selector(actionReg)];
     
-    UIScrollView *scrollveiw = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    UIScrollView *scrollveiw = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
     scrollveiw.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:scrollveiw];
+    [self.contentView addSubview:scrollveiw];
     
-    self.nameField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, 20, self.view.width-40, 28)];
+    self.nameField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, 20, self.contentView.width-40, 28)];
     [self.nameField  setLeftTitle:@"用  户  名" color:[UIColor grayColor] placeholder:@"请输入用户名"];
     [self.nameField  setBottomLine:[UIColor grayColor]];
     self.nameField .returnKeyType = UIReturnKeyNext;
@@ -48,7 +48,7 @@
     self.nameField.delegate = self;
     //self.nameField.text = @"wolfxy_a";
     
-    self.passwdField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.view.width-40, 28)];
+    self.passwdField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.contentView.width-40, 28)];
     [self.passwdField setLeftTitle:@"密       码" color:[UIColor grayColor] placeholder:@"请输入密码"];
     [self.passwdField setBottomLine:[UIColor grayColor]];
     self.passwdField.returnKeyType = self.type==0?UIReturnKeyDone:UIReturnKeyNext;
@@ -82,7 +82,7 @@
         [scrollveiw addSubview:button];
     }
     else {
-        self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.passwdField.bottom + 10, self.view.width-40, 28)];
+        self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.passwdField.bottom + 10, self.contentView.width-40, 28)];
         [self.mobileField setLeftTitle:@"手机号码" color:[UIColor grayColor] placeholder:@"可以找回密码哟"];
         [self.mobileField setBottomLine:[UIColor grayColor]];
         self.mobileField.returnKeyType = UIReturnKeyDone;
@@ -90,7 +90,7 @@
         [scrollveiw addSubview:self.mobileField];
     }
     
-    scrollveiw.contentSize = CGSizeMake(self.view.width, self.view.height+1);
+    scrollveiw.contentSize = CGSizeMake(self.contentView.width, self.contentView.height+1);
 
     if ( self.navigationController.viewControllers.count>1) {
         [self setNaviBackButton];
@@ -121,7 +121,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = self.type==0?@"登录":@"注册";
+	self.naviTitleView.title = self.type==0?@"登录":@"注册";
     if ( self.type==0 )
         [MobClick event:MOB_ENTER_LOGIN];
     else
@@ -145,7 +145,7 @@
     else {
         __PSELF__;
         [self showWating:nil];
-        [self.view endEditing:YES];
+        [self.contentView endEditing:YES];
         [[ClientAgent sharedInstance] login:name passwd:passwd block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if ( error == nil ) {
@@ -174,7 +174,7 @@
     else {
         __PSELF__;
         WHO = nil;
-        [self.view endEditing:YES];
+        [self.contentView endEditing:YES];
         [self showWating:nil];
         [[ClientAgent sharedInstance] registe:name passwd:passwd mobile:self.mobileField.text block:^(NSError *error, id data, id userInfo, BOOL cache) {
             [pSelf dismissWating];

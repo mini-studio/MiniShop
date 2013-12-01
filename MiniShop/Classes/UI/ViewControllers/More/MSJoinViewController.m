@@ -28,11 +28,11 @@
 {
     [super viewDidLoad];
 	[self setNaviBackButton];
-    self.navigationItem.title = @"QQ群";
+    self.naviTitleView.title = @"QQ群";
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[MiniUIImage imageNamed:@"join_us"]];
     imageView.userInteractionEnabled = YES;
     imageView.center = CGPointMake(self.view.width+self.view.width/2, imageView.height/2+20);
-    [self.view addSubview:imageView];
+    [self.contentView addSubview:imageView];
     self.imageView = imageView;
     for ( int index = 0; index < 2; index++ )
     {

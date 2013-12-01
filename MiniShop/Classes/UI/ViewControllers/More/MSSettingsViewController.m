@@ -71,14 +71,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = @"更多";    
+	self.naviTitleView.title = @"更多";    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor lightGrayColor];
     self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.backgroundView = nil;
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
     
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,20 )];
     header.backgroundColor = self.tableView.backgroundColor;

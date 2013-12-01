@@ -28,9 +28,9 @@
 - (void)loadView
 {
     [super loadView];
-    self.navigationController.navigationBarHidden = YES;
     [self setNaviTitleViewShow:YES];
     self.containerView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
+    self.containerView.backgroundColor = [UIColor redColor];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:self.containerView];
     [self.containerView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];

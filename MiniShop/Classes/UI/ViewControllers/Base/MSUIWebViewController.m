@@ -67,7 +67,7 @@
 
 - (void)createToolBar
 {
-    self.minitoolbar = [[MSWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.view.height - 45, self.view.width, 45)];
+    self.minitoolbar = [[MSWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.contentView.height - 45, self.contentView.width, 45)];
     self.minitoolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     [self.minitoolbar.backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.minitoolbar.forwardButton addTarget:self action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
@@ -75,7 +75,7 @@
     
     self.minitoolbar.backButton.enabled = NO;
     self.minitoolbar.forwardButton.enabled = NO;
-    [self.view addSubview:self.minitoolbar];
+    [self.contentView addSubview:self.minitoolbar];
 
 }
 
@@ -128,7 +128,7 @@
     if ( self.ctitle.length == 0 )
     {
         NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-        self.navigationItem.title = title;
+        self.naviTitleView.title = title;
     }
     double delayInSeconds = self.dismissWaitingDelay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));

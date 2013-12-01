@@ -8,35 +8,61 @@
 
 #import "MSUISearchBar.h"
 
+@interface MSUISearchBar()<UISearchBarDelegate>
+@property (nonatomic,strong)MiniUIButton *searchButton;
+@property (nonatomic,strong)UISearchBar *searchBar;
+
+@end
+
 @implementation MSUISearchBar
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor redColor];
+        CGRect frame = self.bounds;
+        frame.size = CGSizeMake(self.width - 50, self.height);
+        self.searchBar = [[UISearchBar alloc] initWithFrame:frame];
+        self.searchBar.delegate = self;
+        self.searchBar.barTintColor = [UIColor clearColor];
+        [self addSubview:self.searchBar];
+        self.searchButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        self.searchButton.backgroundColor = self.backgroundColor;
+        [self.searchButton setTitle:@"取消" forState:UIControlStateNormal];
+        [self.searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.searchButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.searchButton.frame = CGRectMake(self.width-50, 10, 50, self.height-20);
+        [self addSubview:self.searchButton];
+        [self.searchButton addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;
 }
 
-- (void)addSubview:(UIView *)view
+
+- (void)buttonTap:(MiniUIButton*)button
 {
-    [super addSubview:view];
-    if([view isKindOfClass:[UIButton class]])
-    {
-        UIButton *btn = (UIButton *)view;
-        [btn setTitle:@"取消"  forState:UIControlStateNormal];
+    if ( self.delegate != nil ) {
+        [self.delegate searchBarCancelButtonClicked:self];
     }
 }
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setPlaceholder:(NSString*)placeholder
 {
-    // Drawing code
+    self.searchBar.placeholder = placeholder;
 }
-*/
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
+    if ( self.delegate != nil ) {
+        [self.delegate searchBarSearchButtonClicked:self];
+    }
+}
+
+- (NSString*)text
+{
+    return self.searchBar.text;
+}
 
 @end

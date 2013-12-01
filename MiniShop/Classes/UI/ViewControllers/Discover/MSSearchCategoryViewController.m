@@ -31,11 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"分类搜索";
+    self.naviTitleView.title = @"分类搜索";
     [self setNaviBackButton];
 	self.tableView = [self createGroupedTableView];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
     [self loadData];
 }
 

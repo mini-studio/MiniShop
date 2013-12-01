@@ -49,11 +49,11 @@
     [super viewDidLoad];
     if ( self.type == ERecommend )
     {
-        self.navigationItem.title = @"店铺推荐";
+        self.naviTitleView.title = @"店铺推荐";
     }
     else if ( self.type == EFollowed )
     {
-        self.navigationItem.title = @"正在关注";
+        self.naviTitleView.title = @"正在关注";
         [self setNaviRightButtonImage:@"navi_bar_share" target:self action:@selector(shareAll)];
     }
     [self createTableView];
@@ -66,7 +66,7 @@
 {
     self.tableView = [self createPlainTableView];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning

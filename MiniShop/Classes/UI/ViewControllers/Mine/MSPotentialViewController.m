@@ -38,14 +38,14 @@
 {
     [super loadView];
     self.tableView = (EGOUITableView*)[self createPlainTableView];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setNaviBackButton];
-	self.navigationItem.title = @"纠结清单";
+	self.naviTitleView.title = @"纠结清单";
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 60)];
     UIImage *image = [UIImage imageNamed:@"kink_title_bar"];
     self.label = [MiniUIButton buttonWithBackGroundImage:image highlightedBackGroundImage:image title:@"我曾仔细或反复看过的商品:"];

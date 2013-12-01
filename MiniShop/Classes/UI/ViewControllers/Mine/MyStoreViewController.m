@@ -109,6 +109,10 @@
     }
     return self;
 }
+- (void)setStatusBar
+{
+    
+}
 
 - (void)dealloc
 {
@@ -194,7 +198,7 @@
     }];
     self.tableView.showsVerticalScrollIndicator = NO;
     [self setPullToRefreshViewStyle:self.tableView.pullToRefreshView];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

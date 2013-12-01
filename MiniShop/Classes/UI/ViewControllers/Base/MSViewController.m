@@ -42,8 +42,23 @@
 {
     [super loadView];
     self.navigationController.navigationBar.hidden = YES;
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
     [self setBackGroudImage:@"view_bg"];
+    [self setNaviTitleViewShow:YES];
+    [self setStatusBar];
+    self.naviTitleView.backgroundColor = [UIColor redColor];
+}
+
+- (void)setStatusBar
+{
+    if ( MAIN_VERSION >= 7 ) {
+        UIView *view = [self.view viewWithTag:0x0C00C];
+        if ( view == nil ) {
+            view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+            view.backgroundColor = [UIColor blackColor];
+            [self.view addSubview:view];
+        }
+    }
 }
 
 
@@ -58,8 +73,6 @@
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
     }
-    //[self setViewBackgroundColor];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -99,13 +112,16 @@
 
 - (void)setViewBackGroundWithColor:(UIColor *)color
 {
-    self.view.backgroundColor = color;
+    self.contentView.backgroundColor = color;
 }
 
 - (void)setNaviBackButton
 {
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
+    UIButton *button = (UIButton*)((UIBarButtonItem *)[self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)]).customView;
+    CGFloat top = (self.naviTitleView.height - 30)/2;
+    button.frame = CGRectMake(20, top, 30, 30);
+    [self.naviTitleView addSubview:button];
 }
 
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -241,24 +257,24 @@
 
 - (UITableView *)createPlainTableView
 {
-    UITableView *tableView = [[EGOUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITableView *tableView = [[EGOUITableView alloc] initWithFrame:self.contentView.bounds style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundView = nil;
-    tableView.backgroundColor = self.view.backgroundColor;
+    tableView.backgroundColor = self.contentView.backgroundColor;
     tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     return tableView;
 }
 
 - (UITableView*)createGroupedTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds style:UITableViewStyleGrouped];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorColor = [UIColor lightGrayColor];
-    tableView.backgroundColor = self.view.backgroundColor;
+    tableView.backgroundColor = self.contentView.backgroundColor;
     tableView.backgroundView = nil;
     return tableView;
 }
@@ -274,7 +290,7 @@
          self.indicator.labelText = @"正在努力加载...";
     else
         self.indicator.labelText = @"";
-    [self.indicator showInView:self.view];
+    [self.indicator showInView:self.contentView];
 }
 
 - (void)dismissWating:(BOOL)animated

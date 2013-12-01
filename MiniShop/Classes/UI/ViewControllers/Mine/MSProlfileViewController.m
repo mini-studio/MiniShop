@@ -110,13 +110,13 @@
         [footer addSubview:button];
     }
     self.tableView.tableFooterView = footer;
-     [self.view addSubview:self.tableView];
+     [self.contentView addSubview:self.tableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = @"我的";    
+	self.naviTitleView.title = @"我的";    
    
 }
 

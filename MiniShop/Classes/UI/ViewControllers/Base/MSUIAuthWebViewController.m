@@ -56,7 +56,7 @@
     }
     else
     {
-        self.navigationItem.title = title;
+        self.naviTitleView.title = title;
     }
 }
 

@@ -33,13 +33,13 @@
 {
     [super viewDidLoad];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.backgroundView = nil;
     self.tableView.separatorColor = [UIColor lightGrayColor];
-    self.navigationItem.title = @"留言吐槽";
+    self.naviTitleView.title = @"留言吐槽";
 
     self.textView = [[MiniUITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
     self.textView.backgroundColor = [UIColor clearColor];

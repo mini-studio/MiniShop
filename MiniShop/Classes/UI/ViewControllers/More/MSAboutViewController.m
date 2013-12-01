@@ -45,9 +45,9 @@
     [self setNaviBackButton];
     UIImage *image = [MiniUIImage imagePreciseNamed:@"about" ext:@"jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = self.view.bounds;
+    imageView.frame = self.contentView.bounds;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:imageView];
+    [self.contentView addSubview:imageView];
     [self addLogo];
 }
 
@@ -67,26 +67,26 @@
     lable.layer.cornerRadius =  lable.size.height/2;
     lable.layer.masksToBounds = YES;
     lable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    lable.center = CGPointMake(self.view.width/2, self.view.height - 60 );
-    [self.view addSubview:lable];
-    CGFloat width = self.view.width - 160;
+    lable.center = CGPointMake(self.contentView.width/2, self.contentView.height - 60 );
+    [self.contentView addSubview:lable];
+    CGFloat width = self.contentView.width - 160;
     MiniUIButton * tel = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     //tel.backgroundColor = [UIColor redColor];
-    tel.frame = CGRectMake(80, self.view.height/2+(IS_IPHONE5?0:30) , width, 40);
+    tel.frame = CGRectMake(80, self.contentView.height/2+(IS_IPHONE5?0:30) , width, 40);
     tel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [tel setTouchupHandler:^(MiniUIButton *button) {
         [MiniSysUtil call:@"01082858599"];
     }];
-    [self.view addSubview:tel];
+    [self.contentView addSubview:tel];
     MiniUIButton * address = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-    address.frame = CGRectMake(20, self.view.height - 30 , self.view.width - 40, 30);
+    address.frame = CGRectMake(20, self.contentView.height - 30 , self.contentView.width - 40, 30);
     address.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     __weak typeof (self) pSelf = self;
     [address setTouchupHandler:^(MiniUIButton *button) {
         MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com" title:nil toolbar:YES];
         [pSelf.navigationController pushViewController:controller animated:YES];
     }];
-    [self.view addSubview:address];
+    [self.contentView addSubview:address];
 
     
 }
@@ -94,7 +94,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationItem.title = @"关于";
+	self.naviTitleView.title = @"关于";
 }
 
 - (void)didReceiveMemoryWarning

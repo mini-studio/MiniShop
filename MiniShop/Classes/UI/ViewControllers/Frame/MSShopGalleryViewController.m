@@ -67,33 +67,34 @@
     headerView.textColor = [UIColor colorWithRGBA:0x737270FF];
     headerView.textAlignment = NSTextAlignmentCenter;
     headerView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self createNaviView];
-    //[self setNaviBackButton];
-    self.navigationItem.title = @"上新";
     [self loadData:0];
 }
 
 - (void)createNaviView
 {
+    CGFloat left = 20;
+    CGFloat gap = (self.naviTitleView.width-160)/3;
+    CGFloat top = (self.naviTitleView.height - 30)/2;
     MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
-    button.width = 30;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    button.frame = CGRectMake(left, top, 30, 30);
+    left = button.right + gap;
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [self.naviTitleView addSubview:button];
+    
     
     button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_message"] highlightedImage:[UIImage imageNamed:@"navi_message_h"]];
-    button.width = 30;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    button.frame = CGRectMake(left, top, 30, 30);
+    left = button.right + gap;
+    [self.naviTitleView addSubview:button];
     [button addTarget:self action:@selector(actionGoToSocial) forControlEvents:UIControlEventTouchUpInside];
     
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-80, self.navigationController.navigationBar.height)];
-    titleView.backgroundColor = [UIColor clearColor];
-   
     if ( self.dataSource.user_is_like_shop )
     {
         button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav"] highlightedImage:[UIImage imageNamed:@"navi_fav_h"]];
@@ -101,18 +102,16 @@
     else {
         button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_fav_h"] highlightedImage:[UIImage imageNamed:@"navi_fav"]];
     }
-    button.frame = CGRectMake(0, 0, 30, 30);
-    button.center = CGPointMake(titleView.width/3-10, titleView.height/2);
-    [titleView addSubview:button];
+    button.frame = CGRectMake(left, top, 30, 30);
+    left = button.right + gap;
+     [self.naviTitleView addSubview:button];
     self.followButton = button;
     
     button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_share"] highlightedImage:[UIImage imageNamed:@"navi_share_h"]];
-    button.frame = CGRectMake(0, 0, 30, 30);
-    button.center = CGPointMake(2*titleView.width/3+10, titleView.height/2);
-    [titleView addSubview:button];
+    button.frame = CGRectMake(left, top, 30, 30);
+    //left = button.right + gap;
+    [self.naviTitleView addSubview:button];
     [button addTarget:self action:@selector(actionShare) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.titleView = titleView;
 }
 
 

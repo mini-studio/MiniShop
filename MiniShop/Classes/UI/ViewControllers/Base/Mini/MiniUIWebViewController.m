@@ -48,19 +48,19 @@
 - (void)loadView
 {
     [super loadView];
-    self.navigationItem.title = self.ctitle;
+    self.naviTitleView.title = self.ctitle;
     if ( self.autoLayout )
     {
-        _webView = [[MiniUIWebView alloc] initWithFrame:self.view.bounds];
+        _webView = [[MiniUIWebView alloc] initWithFrame:self.contentView.bounds];
     }
     else
     {
         if ( MAIN_VERSION >= 7 ) {
-            _webView = [[MiniUIWebView alloc] initWithFrame:self.view.bounds];
+            _webView = [[MiniUIWebView alloc] initWithFrame:self.contentView.bounds];
         }
         else {
         CGFloat offsetY = self.navigationController.navigationBar.height;
-       _webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, offsetY, self.view.width, self.view.height-offsetY)];
+       _webView = [[MiniUIWebView alloc] initWithFrame:CGRectMake(0, offsetY, self.contentView.width, self.contentView.height-offsetY)];
         }
     }
     _webView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
@@ -69,11 +69,11 @@
     
     _webView.miniReq = self.miniReq;
     
-    [self.view addSubview:_webView];
+    [self.contentView addSubview:_webView];
     if ( self.fileName != nil )
     {
       [_webView loadFile:self.fileName ofType:self.fileType];
-        self.navigationItem.title = self.ctitle;
+        self.naviTitleView.title = self.ctitle;
     }
     [self setNaviBackButton];
     self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -122,7 +122,7 @@
     if ( _webView != nil )
     {
        [_webView loadFile:fileName ofType:type];
-       self.navigationItem.title = title;
+       self.naviTitleView.title = title;
     }
     else
     {
@@ -197,11 +197,11 @@
 - (void)showWating:(NSString *)message
 {
     //[super showWating:message];
-    self.indicatorView.center = CGPointMake(self.view.width/2, self.view.height/2);
-    [self.view addSubview:self.indicatorView];
+    self.indicatorView.center = CGPointMake(self.contentView.width/2, self.contentView.height/2);
+    [self.contentView addSubview:self.indicatorView];
     if ( ![self.indicatorView isAnimating] )
     [self.indicatorView startAnimating];
-    //self.view.userInteractionEnabled = YES;
+    //self.contentView.userInteractionEnabled = YES;
     self.bigIndicatorView.hidden = NO;
     if ( ![self.bigIndicatorView isAnimating] )
     [self.bigIndicatorView startAnimating];

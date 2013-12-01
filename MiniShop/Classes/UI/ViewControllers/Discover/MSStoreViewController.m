@@ -52,8 +52,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"发现";
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.naviTitleView.title = @"发现";
+    self.tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor lightGrayColor];
@@ -62,7 +62,7 @@
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,20)];
     header.backgroundColor = self.tableView.backgroundColor;
     self.tableView.tableHeaderView = header;
-    [self.view addSubview:self.tableView];
+    [self.contentView addSubview:self.tableView];
 }
 
 - (void)setNaviBackButton

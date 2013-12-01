@@ -26,6 +26,7 @@ static UITapGestureRecognizer *tapRecognizer;
 
 @interface UMFeedbackViewController ()
 @property(nonatomic, copy) NSString *mContactInfo;
+@property(nonatomic, strong) MiniUINaviTitleView *naviTitleView;
 @end
 
 @implementation UMFeedbackViewController
@@ -54,8 +55,22 @@ static UITapGestureRecognizer *tapRecognizer;
     return image;
 }
 
+- (CGFloat)navigationheight
+{
+    return MAIN_VERSION>=7?64:44;
+}
+
+- (void)loadView
+{
+    [super loadView];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.naviTitleView = [[MiniUINaviTitleView alloc] initWithFrame:CGRectMake(0, MAIN_VERSION>=7?20:0, self.view.width, 44)];
+    self.naviTitleView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.naviTitleView];
+}
+
 - (void)setupTableView {
-    _tableViewTopMargin = self.navigationController.navigationBar.frame.size.height;
+    _tableViewTopMargin = [self navigationheight];
 
     BOOL contactViewHide = [[[NSUserDefaults standardUserDefaults] objectForKey:@"UMFB_ShowContactView"] boolValue];
 
@@ -65,7 +80,6 @@ static UITapGestureRecognizer *tapRecognizer;
         title.text = NSLocalizedString(@"Your contact information", @"您的联系方式");
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"UMFB_ShowContactView"];
     } else {
-        _tableViewTopMargin = 0;
         [self.mContactView removeFromSuperview];
     }
 
@@ -138,7 +152,7 @@ static UITapGestureRecognizer *tapRecognizer;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.title = NSLocalizedString(@"小主留言", @"用户反馈");
+    self.naviTitleView.title = NSLocalizedString(@"小主留言", @"用户反馈");
 
     [self setBackButton];
     [self setBackgroundColor];
@@ -148,6 +162,8 @@ static UITapGestureRecognizer *tapRecognizer;
     [self setFeedbackClient];
     [self updateTableView:nil];
     [self handleKeyboard];
+    
+     self.mTableView.frame = CGRectMake(0, self.naviTitleView.bottom, self.mTableView.width, self.view.height-self.naviTitleView.bottom-self.mToolBar.height);
 
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(handleSingleTap:)];
@@ -194,7 +210,11 @@ static UITapGestureRecognizer *tapRecognizer;
 
 - (void)setBackButton {
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)];
+    UIButton *button = (UIButton*)((UIBarButtonItem *)[self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)]).customView;
+    CGFloat top = (self.naviTitleView.height - 30)/2;
+    button.frame = CGRectMake(20, top, 30, 30);
+    [self.naviTitleView addSubview:button];
+    
 }
 
 - (void)back
@@ -248,7 +268,7 @@ static UITapGestureRecognizer *tapRecognizer;
                          self.mToolBar.frame = toolbarFrame;
 
                          CGRect tableViewFrame = self.mTableView.frame;
-                         tableViewFrame.size.height = self.view.bounds.size.height - self.navigationController.navigationBar.frame.size.height - keyboardHeight;
+                         tableViewFrame.size.height = self.view.bounds.size.height - [self navigationheight] - keyboardHeight;
                          self.mTableView.frame = tableViewFrame;
                      }
                      completion:^(BOOL finished) {
@@ -273,7 +293,7 @@ static UITapGestureRecognizer *tapRecognizer;
     self.mToolBar.frame = toolbarFrame;
 
     CGRect tableViewFrame = self.mTableView.frame;
-    tableViewFrame.size.height = self.view.bounds.size.height - self.navigationController.navigationBar.frame.size.height;
+    tableViewFrame.size.height = self.view.bounds.size.height - [self navigationheight];
     self.mTableView.frame = tableViewFrame;
 
     [UIView commitAnimations];
