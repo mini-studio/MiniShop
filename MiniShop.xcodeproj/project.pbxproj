@@ -41,7 +41,7 @@
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
 		C10EDD381844F01C00503993 /* MSTopTabInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD371844F01C00503993 /* MSTopTabInfo.m */; };
-		C10EDD3B1844F2ED00503993 /* MSTopTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */; };
+		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
 		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
@@ -304,8 +304,8 @@
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
 		C10EDD361844F01C00503993 /* MSTopTabInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopTabInfo.h; sourceTree = "<group>"; };
 		C10EDD371844F01C00503993 /* MSTopTabInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopTabInfo.m; sourceTree = "<group>"; };
-		C10EDD391844F2ED00503993 /* MSTopTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopTitleView.h; sourceTree = "<group>"; };
-		C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopTitleView.m; sourceTree = "<group>"; };
+		C10EDD391844F2ED00503993 /* MSNaviMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNaviMenuView.h; sourceTree = "<group>"; };
+		C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNaviMenuView.m; sourceTree = "<group>"; };
 		C10EDD3C18451A4100503993 /* MyStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreViewController.h; sourceTree = "<group>"; };
 		C10EDD3D18451A4100503993 /* MyStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreViewController.m; sourceTree = "<group>"; };
 		C10EDD7A18451D2A00503993 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -1554,8 +1554,8 @@
 				C1EC5061178074A100BE5ABB /* MSWebViewToolBar.m */,
 				C1FEB1BB17E3E7EB0076BEEA /* MSUIDTView.h */,
 				C1FEB1BC17E3E7EB0076BEEA /* MSUIDTView.m */,
-				C10EDD391844F2ED00503993 /* MSTopTitleView.h */,
-				C10EDD3A1844F2ED00503993 /* MSTopTitleView.m */,
+				C10EDD391844F2ED00503993 /* MSNaviMenuView.h */,
+				C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */,
 				C1B339F0184A30B800851585 /* MSTransformButton.h */,
 				C1B339F1184A30B800851585 /* MSTransformButton.m */,
 			);
@@ -2086,7 +2086,7 @@
 				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
-				C10EDD3B1844F2ED00503993 /* MSTopTitleView.m in Sources */,
+				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,
 				C1EC5079178074A100BE5ABB /* UILabel+Mini.m in Sources */,

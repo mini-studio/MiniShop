@@ -102,7 +102,7 @@
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, MAIN_VERSION>=7?64:44)];
     titleView.backgroundColor = [UIColor colorWithRGBA:0x000000CC];
     CGFloat gap = (titleView.width-160)/3;
-    CGFloat top = (44-30)/2 +  MAIN_VERSION>=7?20:0;
+    CGFloat top = (44-30)/2 + (MAIN_VERSION>=7?20:0);
     CGFloat right = 20;
     MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
     button.frame = CGRectMake(right, top, 30, 30);

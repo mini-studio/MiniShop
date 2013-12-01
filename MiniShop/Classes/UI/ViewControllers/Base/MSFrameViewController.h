@@ -7,10 +7,10 @@
 //
 
 #import "MSViewController.h"
-#import "MSTopTitleView.h"
+#import "MSNaviMenuView.h"
 
 @interface MSFrameViewController : MSViewController
 @property (nonatomic,strong)NSMutableArray *subControllers;
 @property (nonatomic,strong)UIScrollView *containerView;
-@property (nonatomic,strong)MSTopTitleView *topTitleView;
+@property (nonatomic,strong)MSNaviMenuView *topTitleView;
 @end

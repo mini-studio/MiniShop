@@ -35,7 +35,7 @@
     [self.contentView addSubview:self.containerView];
     [self.containerView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     self.containerView.pagingEnabled = YES;
-    self.topTitleView = [self createTopTitleViewAndSubControllers];
+    self.topTitleView = [self createNaviMenuAndSubControllers];
     [self.naviTitleView addSubview:self.topTitleView];
     self.containerView.alwaysBounceVertical = NO;
     self.containerView.showsHorizontalScrollIndicator = NO;
@@ -48,28 +48,28 @@
     self.containerView.contentSize = CGSizeMake(self.subControllers.count*self.contentView.width,0);
 }
 
-- (MSTopTitleView*)createTopTitleViewAndSubControllers
+- (MSNaviMenuView*)createNaviMenuAndSubControllers
 {
-    MSTopTitleView *topTitleView = [[MSTopTitleView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
+    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
     return topTitleView;
 }
 
 - (void)setCurrentController:(MSViewController *)currentController
 {
     _currentController = currentController;
+    [_currentController selectedAsChild];
 }
 
 - (void)setCurrentControllerWithIndex:(NSInteger)index
 {
     MSViewController *controller = [self.subControllers objectAtIndex:index];
-    _currentController = controller;
+    [self setCurrentController:controller];
     self.containerView.contentOffset = CGPointMake(index*self.containerView.width, 0);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +86,8 @@
         int page = point.x / self.containerView.width;
         if ( page * self.containerView.width == point.x ) {
             [self.topTitleView setSelectedIndex:page cascade:NO];
+            MSViewController *controller = [self.subControllers objectAtIndex:page];
+            [self setCurrentController:controller];
         }
         else {
             [self.topTitleView setSlidePercent:(point.x/self.containerView.contentSize.width) left:(point.x > lastPoint.x)];

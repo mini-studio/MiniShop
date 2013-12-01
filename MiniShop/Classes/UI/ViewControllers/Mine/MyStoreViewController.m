@@ -7,7 +7,7 @@
 //
 
 #import "MyStoreViewController.h"
-#import "MSTopTitleView.h"
+#import "MSNaviMenuView.h"
 #import "MSTransformButton.h"
 
 @interface MyStoreViewController ()
@@ -37,13 +37,13 @@
     [self.naviTitleView addSubview:searchButton];
 }
 
-- (MSTopTitleView*)createTopTitleViewAndSubControllers
+- (MSNaviMenuView*)createNaviMenuAndSubControllers
 {
-    MSTopTitleView *topTitleView = [[MSTopTitleView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
+    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
     topTitleView.backgroundColor = [UIColor redColor];
     int count  = 10;
     for (int index = 0; index < count; index++) {
-        [topTitleView addTitle:[NSString stringWithFormat:@"全部(%d)",index] userInfo:[NSString stringWithFormat:@"%d",index]];
+        [topTitleView addMenuTitle:[NSString stringWithFormat:@"全部(%d)",index] userInfo:[NSString stringWithFormat:@"%d",index]];
         MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
         controller.mid = index;
         [self.subControllers addObject:controller];
@@ -57,7 +57,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.topTitleView.selectedIndex = 2;
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,8 +155,7 @@
         button  = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"button_push_message_open"] highlightedImage:nil];
         button.width = 40;
         [self setNaviRightButtonImage:@"potential_n" highlighted:@"potential_h" target:self action:@selector(actionRightButtonTap:)];
-    }
-    
+    }    
 }
 
 - (void)viewDidLoad
@@ -411,6 +410,12 @@
     [self.tableView triggerRefresh];
 }
 
+- (void)selectedAsChild
+{
+    if ( self.dataSource.count == 0 ) {
+        [self refreshData];
+    }
+}
 
 - (void)loadMore
 {

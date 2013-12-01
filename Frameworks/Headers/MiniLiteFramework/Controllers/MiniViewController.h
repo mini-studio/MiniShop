@@ -60,9 +60,7 @@
 
 + (void)showImageInWindow:(UIImage *)image oriFrame:(CGRect)frame;
 
-- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller;
-
-- (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller;
+- (void)selectedAsChild;
 @end
 
 @interface MiniViewController (http)
