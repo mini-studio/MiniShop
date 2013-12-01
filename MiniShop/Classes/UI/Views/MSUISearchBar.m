@@ -22,7 +22,7 @@
     if (self) {
         self.backgroundColor = [UIColor redColor];
         CGRect frame = self.bounds;
-        frame.size = CGSizeMake(self.width - 50, self.height);
+        frame.size = CGSizeMake(self.width, self.height);
         self.searchBar = [[UISearchBar alloc] initWithFrame:frame];
         self.searchBar.delegate = self;
         self.searchBar.barTintColor = [UIColor clearColor];
@@ -32,18 +32,45 @@
         [self.searchButton setTitle:@"取消" forState:UIControlStateNormal];
         [self.searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.searchButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        self.searchButton.frame = CGRectMake(self.width-50, 10, 50, self.height-20);
-        [self addSubview:self.searchButton];
+        self.searchButton.frame = CGRectMake(self.width, 10, 50, self.height-20);
         [self.searchButton addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;
 }
 
+- (void)setShowCancelButton:(BOOL)showCancelButton
+{
+    CGRect frame = self.bounds;
+    CGFloat btnLeft = self.width;
+    _showCancelButton = showCancelButton;
+    if ( !_showCancelButton ) {
+        [self.searchButton removeFromSuperview];
+    }
+    else {
+        [self addSubview:self.searchButton];
+        frame.size = CGSizeMake(self.width - 50, self.height);
+        btnLeft = self.width - 50;
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.searchBar.frame = frame;
+        self.searchButton.left = btnLeft;
+    }];
+}
+
+- (void)setAlwaysShowCancelButton:(BOOL)alwaysShowCancelButton
+{
+    _alwaysShowCancelButton = alwaysShowCancelButton;
+    self.showCancelButton = alwaysShowCancelButton;
+}
+
 
 - (void)buttonTap:(MiniUIButton*)button
 {
+    [self.searchBar resignFirstResponder];
     if ( self.delegate != nil ) {
+        if ( [self.delegate respondsToSelector:@selector(searchBarCancelButtonClicked:)])
         [self.delegate searchBarCancelButtonClicked:self];
     }
 }
@@ -53,10 +80,29 @@
     self.searchBar.placeholder = placeholder;
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    if ( !_alwaysShowCancelButton )
+    {
+        if ( !_showCancelButton ) {
+        self.showCancelButton = YES;
+        }
+    }
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    if ( !_alwaysShowCancelButton )
+    {
+        self.showCancelButton = NO;
+    }
+}
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [self.searchBar resignFirstResponder];
     if ( self.delegate != nil ) {
-        [self.delegate searchBarSearchButtonClicked:self];
+        if ( [self.delegate respondsToSelector:@selector(searchBarSearchButtonClicked:)])
+            [self.delegate searchBarSearchButtonClicked:self];
     }
 }
 

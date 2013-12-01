@@ -80,9 +80,13 @@
 		<data>
 		KXh3oR3hZ3+NqnEjMJDk8oqm2QQ=
 		</data>
-		<key>UMFeedbackViewController.nib</key>
+		<key>UMFeedbackViewController.nib/objects.nib</key>
 		<data>
-		+Q4fh/CIr2f6g6rAwsyr/KAsBYI=
+		Ag+K4dSlF7qLrxhxuWIG7czAHZ8=
+		</data>
+		<key>UMFeedbackViewController.nib/runtime.nib</key>
+		<data>
+		EJyBFQp4I7TMdkLDXf6nGN//3ig=
 		</data>
 		<key>about-568h@2x.jpg</key>
 		<data>
@@ -847,9 +851,13 @@
 		<data>
 		KXh3oR3hZ3+NqnEjMJDk8oqm2QQ=
 		</data>
-		<key>UMFeedbackViewController.nib</key>
+		<key>UMFeedbackViewController.nib/objects.nib</key>
 		<data>
-		+Q4fh/CIr2f6g6rAwsyr/KAsBYI=
+		Ag+K4dSlF7qLrxhxuWIG7czAHZ8=
+		</data>
+		<key>UMFeedbackViewController.nib/runtime.nib</key>
+		<data>
+		EJyBFQp4I7TMdkLDXf6nGN//3ig=
 		</data>
 		<key>about-568h@2x.jpg</key>
 		<data>

@@ -34,7 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -72,7 +72,7 @@
     CGFloat width = self.contentView.width - 160;
     MiniUIButton * tel = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     //tel.backgroundColor = [UIColor redColor];
-    tel.frame = CGRectMake(80, self.contentView.height/2+(IS_IPHONE5?0:30) , width, 40);
+    tel.frame = CGRectMake(80, self.contentView.height/2, width, 40);
     tel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [tel setTouchupHandler:^(MiniUIButton *button) {
         [MiniSysUtil call:@"01082858599"];

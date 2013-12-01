@@ -85,6 +85,8 @@
 		C1ACB75217FD475E00862641 /* potential_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB75017FD475E00862641 /* potential_n@2x.png */; };
 		C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339EE184A25E600851585 /* MSFrameViewController.m */; };
 		C1B339F2184A30B800851585 /* MSTransformButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F1184A30B800851585 /* MSTransformButton.m */; };
+		C1B339FA184B836800851585 /* EspecialIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F9184B836800851585 /* EspecialIndexViewController.m */; };
+		C1B339FE184B841F00851585 /* CreditableIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339FD184B841F00851585 /* CreditableIndexViewController.m */; };
 		C1B7074F181BD9C400485B26 /* closep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B7074E181BD9C400485B26 /* closep@2x.png */; };
 		C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FD5178074A100BE5ABB /* AppDelegate.m */; };
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
@@ -475,6 +477,10 @@
 		C1B339EE184A25E600851585 /* MSFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFrameViewController.m; sourceTree = "<group>"; };
 		C1B339F0184A30B800851585 /* MSTransformButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransformButton.h; sourceTree = "<group>"; };
 		C1B339F1184A30B800851585 /* MSTransformButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransformButton.m; sourceTree = "<group>"; };
+		C1B339F8184B836800851585 /* EspecialIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EspecialIndexViewController.h; sourceTree = "<group>"; };
+		C1B339F9184B836800851585 /* EspecialIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EspecialIndexViewController.m; sourceTree = "<group>"; };
+		C1B339FC184B841F00851585 /* CreditableIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditableIndexViewController.h; sourceTree = "<group>"; };
+		C1B339FD184B841F00851585 /* CreditableIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditableIndexViewController.m; sourceTree = "<group>"; };
 		C1B7074E181BD9C400485B26 /* closep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closep@2x.png"; sourceTree = "<group>"; };
 		C1EC4FD4178074A100BE5ABB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1EC4FD5178074A100BE5ABB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1266,6 +1272,24 @@
 			path = Resource/Bundle;
 			sourceTree = "<group>";
 		};
+		C1B339F7184B836800851585 /* Especial */ = {
+			isa = PBXGroup;
+			children = (
+				C1B339F8184B836800851585 /* EspecialIndexViewController.h */,
+				C1B339F9184B836800851585 /* EspecialIndexViewController.m */,
+			);
+			path = Especial;
+			sourceTree = "<group>";
+		};
+		C1B339FB184B83D500851585 /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+				C1B339FC184B841F00851585 /* CreditableIndexViewController.h */,
+				C1B339FD184B841F00851585 /* CreditableIndexViewController.m */,
+			);
+			path = Credit;
+			sourceTree = "<group>";
+		};
 		C1EC4FD3178074A100BE5ABB /* Apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,6 +1440,8 @@
 		C1EC5011178074A100BE5ABB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1B339FB184B83D500851585 /* Credit */,
+				C1B339F7184B836800851585 /* Especial */,
 				C1EC5012178074A100BE5ABB /* Base */,
 				C1EC501E178074A100BE5ABB /* Discover */,
 				C1EC5025178074A100BE5ABB /* Frame */,
@@ -2087,6 +2113,7 @@
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
+				C1B339FE184B841F00851585 /* CreditableIndexViewController.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,
 				C1EC5079178074A100BE5ABB /* UILabel+Mini.m in Sources */,
@@ -2107,6 +2134,7 @@
 				C1EC5086178074A100BE5ABB /* MSMainTabViewController.m in Sources */,
 				C1EC5087178074A100BE5ABB /* MSShopGalleryViewController.m in Sources */,
 				C1EC5088178074A100BE5ABB /* MSShopGroupListViewController.m in Sources */,
+				C1B339FA184B836800851585 /* EspecialIndexViewController.m in Sources */,
 				C1EC5089178074A100BE5ABB /* MSShopListViewController.m in Sources */,
 				C1EC508A178074A100BE5ABB /* MSPotentialViewController.m in Sources */,
 				C1EC508B178074A100BE5ABB /* MSProlfileViewController.m in Sources */,

@@ -17,6 +17,8 @@
 #import "MSDefine.h"
 #import "MSSystem.h"
 #import "MyStoreViewController.h"
+#import "EspecialIndexViewController.h"
+#import "CreditableIndexViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -107,8 +109,8 @@
     [self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
     self.items = [NSArray arrayWithObjects:
                   [[MiniTabBarItem alloc] initWithControllerClass:[MyStoreViewController class] image:[MiniUIImage imageNamed:@"tab_storenews_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storenews_selected"] title:@"我的商城"],
-                   [[MiniTabBarItem alloc] initWithControllerClass:[MSTopicViewController class] image:[MiniUIImage imageNamed:@"tab_market_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_market_selected"] title:@"闲逛"],
-                  [[MiniTabBarItem alloc] initWithControllerClass:[MSStoreViewController class] image:[MiniUIImage imageNamed:@"tab_storemanage_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storemanage_selected"] title:@"发现"],
+                   [[MiniTabBarItem alloc] initWithControllerClass:[EspecialIndexViewController class] image:[MiniUIImage imageNamed:@"tab_market_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_market_selected"] title:@"特卖汇"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[CreditableIndexViewController class] image:[MiniUIImage imageNamed:@"tab_storemanage_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storemanage_selected"] title:@"好店汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSProfileViewController class] image:[MiniUIImage imageNamed:@"tab_mine_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_mine_selected"] title:@"我的"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSSettingsViewController class] image:[MiniUIImage imageNamed:@"tab_helper_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_helper_selected"] title:@"更多"],
                   nil];

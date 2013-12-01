@@ -35,6 +35,8 @@ cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.buil
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/RTLabel.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/RTLabel.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MSWebChatUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIButton+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSNaviMenuView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/NSDate+Format.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSDate+Format.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UIDevice+Id.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UILabel+Mini.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -55,6 +57,7 @@ cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.buil
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGalleryViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSPotentialViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSProlfileViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSProlfileViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -81,7 +84,6 @@ cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.buil
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebViewToolBar.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIASTextField.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIASTextField.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/main.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSNaviMenuView.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386
 cGenerateDSYMFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
 cCpResource Frameworks/ufeedback/umFeedback.bundle Build/Products/Debug-iphonesimulator/MiniShop.app/umFeedback.bundle
@@ -487,6 +489,14 @@ N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates
 t1385905864
 s114144
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o
+t1385911251
+s59612
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o
+t1385912261
+s180000
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MRLoginViewController.o
 t1385905864
 s91448
@@ -496,8 +506,8 @@ t1385905865
 s73480
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o
-t1385905865
-s67652
+t1385912304
+s66728
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSCooperateInfo.o
 t1385905864
@@ -512,8 +522,8 @@ t1385905865
 s92444
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o
-t1385905865
-s72416
+t1385912261
+s72040
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSGalleryGoodsCell.o
 t1385905865
@@ -548,8 +558,8 @@ t1385905865
 s27596
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o
-t1385905865
-s84060
+t1385909481
+s84076
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMiniUINavigationController.o
 t1385905865
@@ -612,8 +622,8 @@ t1385905865
 s150400
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o
-t1385905865
-s135556
+t1385910937
+s135620
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopInfo.o
 t1385905864
@@ -673,8 +683,8 @@ t1385905865
 s96544
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o
-t1385905865
-s65000
+t1385911440
+s72756
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUIWebViewController.o
 t1385905865
@@ -709,9 +719,9 @@ t1385905864
 s9500
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop.LinkFileList
-c00000000529B359100000000000034A4
-t1385903505
-s13476
+c00000000529B4CE80000000000003612
+t1385909480
+s13842
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIASTextField.o
 t1385905865
@@ -802,11 +812,11 @@ t1385905864
 s5535800
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app
-t1385905865
+t1385912305
 s5576
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM
-t1385905866
+t1385912261
 s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/Default-568h@2x.png
@@ -858,8 +868,8 @@ t1385861384
 s102
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-t1385905865
-s3381132
+t1385912305
+s3449596
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/PkgInfo
 t1385861382
@@ -2218,9 +2228,9 @@ t1385903501
 s433
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m
-c00000000529B3EC30000000000000D40
-t1385905859
-s3392
+c00000000529B55C00000000000000D03
+t1385911744
+s3331
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.h
 c0000000051D0485F000000000000012E
@@ -2272,6 +2282,16 @@ c00000000529A9E280000000000001DE6
 t1385864744
 s7654
 
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h
+c00000000529B4CB700000000000000F7
+t1385909431
+s247
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m
+c00000000529B53D20000000000000807
+t1385911250
+s2055
+
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.h
 c0000000051D0485F000000000000012C
 t1372604511
@@ -2301,6 +2321,16 @@ N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI
 c00000000529A99D900000000000027B3
 t1385863641
 s10163
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h
+c00000000529B49C40000000000000512
+t1385908676
+s1298
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m
+c00000000529B55710000000000005461
+t1385911665
+s21601
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h
 c0000000051D0485F000000000000024C
@@ -2338,9 +2368,9 @@ t1372604511
 s275
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m
-c000000005294E30B00000000000017E2
-t1385489163
-s6114
+c00000000529B4CE70000000000001848
+t1385909479
+s6216
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
 c00000000524D7F4C000000000000019A
@@ -2428,9 +2458,9 @@ t1380154420
 s264
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m
-c00000000529A9D240000000000000F08
-t1385864484
-s3848
+c00000000529B57EF0000000000000EFF
+t1385912303
+s3839
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSFeedbackViewController.h
 c0000000051D0485E00000000000000ED
@@ -2491,6 +2521,16 @@ N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI
 c00000000529A9A390000000000000567
 t1385863737
 s1383
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.h
+c00000000529B49C40000000000000512
+t1385908676
+s1298
+
+N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m
+c00000000529B4ACE000000000000544E
+t1385908942
+s21582
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.h
 c0000000051D0485F00000000000001FB
@@ -2593,14 +2633,14 @@ t1372604511
 s5965
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.h
-c00000000529B2A61000000000000023D
-t1385900641
-s573
+c00000000529B520D000000000000029B
+t1385910797
+s667
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m
-c00000000529B2A7500000000000007C7
-t1385900661
-s1991
+c00000000529B548B0000000000000CA9
+t1385911435
+s3241
 
 N/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSWebViewToolBar.h
 c0000000051D0485F0000000000000207
@@ -3589,6 +3629,9 @@ r0
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m
 r0
 
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m
+r0
+
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSSearchCategoryViewController.m
 r0
 
@@ -3596,6 +3639,9 @@ CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Mini
 r0
 
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Discover/MSVerifyViewController.m
+r0
+
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m
 r0
 
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.m
@@ -3655,6 +3701,9 @@ r0
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.m
 r0
 
+CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m
+r0
+
 CBuild AST from /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.m
 r0
 
@@ -3711,7 +3760,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies48faac4c764bb841^ea5cad4c764bb841^---0#1#1#--18"Check dependencies36"D9D458CF-A6B4-4EA1-8509-CA5EC1E3786D-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies259581708f4bb841^3dd7c7708f4bb841^---0#1#1#--18"Check dependencies36"DCFD61EE-D377-409C-BFE8-AEC3A098A97D-
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/AppDelegate.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Apple/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598664.622739
@@ -3809,6 +3858,133 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/
 lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m233"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.o MiniShop/Classes/Services/DataSource/ClientAgent.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler1b63b348764bb841^7429da48764bb841^---0#0#1#-19%DVTDocumentLocation2@117"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m0000000000000000^3868"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.o MiniShop/Classes/Services/DataSource/ClientAgent.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/ClientAgent.o36"FA259145-856A-4C76-92FC-6437488DD8F0-
 bC187E632-5426-4B89-8401-CB40748F0789
 
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407604051.491039
+e407604051.535431
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection142"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m275"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerc9c87d538b4bb841^f91389538b4bb841^---0#0#1#-19%DVTDocumentLocation2@141"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m0000000000000000^3988"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o36"8F6AEEBE-3C9B-4890-B126-0B068CBAEFB3-
+b71742AD7-189D-4F0D-992F-B0D4A4FE2880
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController-4C0D5086ADFFEC41.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController-E9F672AB871F2F44.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407605061.004224
+e407605061.136802
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSDate+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+URLEncoding.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUISegmentView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection142"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m273"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilered2901458f4bb841^180723458f4bb841^---0#0#1#-19%DVTDocumentLocation2@141"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m0000000000000000^3980"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o36"2CB2E69B-8399-44C9-B627-9CA8D4F610ED-
+bB485E284-ECA4-4492-B2D7-5F2B16F70725
+
+CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s407601843.958209
+e407601844.079574
+r1
+xCompileC
+xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o
+x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSNofiViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSDate+Mini.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/NSString+URLEncoding.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUIMoreDataCell.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUISegmentView.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection142"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m273"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler3d61f5b3824bb841^af5f14b4824bb841^---0#0#1#-19%DVTDocumentLocation2@141"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m0000000000000000^3980"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/especial/EspecialIndexViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o36"B1C58790-E76F-4334-A464-F3C6BE143319-
+b6B4303BD-7C00-4F9B-8A0B-A2219D551B83
+
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MRLoginViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598664.703381
 e407598664.836499
@@ -3848,8 +4024,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Compil
 bC187E632-5426-4B89-8401-CB40748F0789
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407598665.274339
-e407598665.369656
+s407605104.796762
+e407605104.850989
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o
@@ -3867,8 +4043,8 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniSysUtil.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIDevice+Ext.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m257"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerc45c4649764bb841^1aa25e49764bb841^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m0000000000000000^3936"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o36"BCAC12F3-6C2A-4A5B-9240-7D6841888D17-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m257"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler3010cc708f4bb841^6eddd9708f4bb841^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m0000000000000000^3936"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSAboutViewController.o36"725790E9-8DB4-43D0-8236-CBD80DDE4E22-
+b672B23EF-E376-41CF-A387-D9A8DE3DB99A
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSCooperateInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSCooperateInfo.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598664.729932
@@ -3947,8 +4123,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Compil
 bC187E632-5426-4B89-8401-CB40748F0789
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407598665.085479
-e407598665.182663
+s407605061.001980
+e407605061.061981
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o
@@ -3960,8 +4136,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m257"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler86021649764bb841^9c172f49764bb841^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m0000000000000000^3936"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o36"4FADEA83-C517-4D38-8975-64D267652842-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m257"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler7c9900458f4bb841^7ae00f458f4bb841^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m0000000000000000^3936"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSFrameViewController.o36"DC6DB306-F38F-4EC2-A573-6094326CE384-
+bB485E284-ECA4-4492-B2D7-5F2B16F70725
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSGalleryGoodsCell.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSGalleryGoodsCell.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598665.457071
@@ -4131,8 +4307,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compil
 bC187E632-5426-4B89-8401-CB40748F0789
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407598665.179445
-e407598665.305485
+s407602280.937502
+e407602281.009059
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o
@@ -4191,8 +4367,10 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m262"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler51162e49764bb841^2f354e49764bb841^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m0000000000000000^3950"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o36"B4D095AE-338A-416E-938F-39BB44A63904-
-bC187E632-5426-4B89-8401-CB40748F0789
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m262"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler4417f068844bb841^9ab30269844bb841^---0#0#1#-19%DVTDocumentLocation2@134"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m0000000000000000^3950"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSMainTabViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o36"32A40990-492A-44A1-AFE7-6C38BF57D156-
+b505AAA6D-D198-447A-9019-CCDE08C68776
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMiniUINavigationController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MSMiniUINavigationController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598664.995060
@@ -4581,8 +4759,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection139"Compil
 bC187E632-5426-4B89-8401-CB40748F0789
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407598665.194284
-e407598665.356048
+s407603737.377774
+e407603737.484931
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o
@@ -4606,8 +4784,8 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.h
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection141"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m274"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler371c3249764bb841^9a3e5b49764bb841^---0#0#1#-19%DVTDocumentLocation2@140"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m0000000000000000^3986"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o36"2EDBBB1F-50AD-4AA7-B4EC-F7801971650F-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection141"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m274"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler41d560198a4bb841^74277c198a4bb841^---0#0#1#-19%DVTDocumentLocation2@140"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m0000000000000000^3986"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGroupListViewController.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o36"95939B55-C605-41E6-8A86-5D52E9491B7B-
+b01B80A05-A7A0-4BDD-870C-8E1012415D4D
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopInfo.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598664.853462
@@ -4906,8 +5084,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compil
 bC187E632-5426-4B89-8401-CB40748F0789
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s407598665.555318
-e407598665.637163
+s407604240.076840
+e407604240.130093
 r1
 xCompileC
 xBuild/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o
@@ -4918,8 +5096,8 @@ xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m226"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o MiniShop/Classes/UI/Views/MSUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5a4a8e49764bb841^5c1ea349764bb841^---0#0#1#-19%DVTDocumentLocation2@108"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m0000000000000000^3858"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o MiniShop/Classes/UI/Views/MSUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o36"D2E98952-03B5-4DD7-911A-243186D45BE4-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m226"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o MiniShop/Classes/UI/Views/MSUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler2ac413108c4bb841^6a4f21108c4bb841^---0#0#1#-19%DVTDocumentLocation2@108"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m0000000000000000^3858"CompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o MiniShop/Classes/UI/Views/MSUISearchBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-generated-files.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-own-target-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-all-target-headers.hmap -iquote /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/MiniShop-project-headers.hmap -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources/i386 -I/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/DerivedSources -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -include /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/PrecompiledHeaders/MiniShop-Prefix-atkmkepiuttvdsfclbchfrkipcbh/MiniShop-Prefix.pch -MMD -MT dependencies -MF /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.d --serialize-diagnostics /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.dia -c /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSUISearchBar.m -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUISearchBar.o36"BB9EDDE5-0958-4EA9-98F0-F2EBFDC3770D-
+b81F02223-2615-44E0-886E-7DF50B690FC5
 
 CCompileC Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSUIWebViewController.o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s407598665.028645
@@ -7053,18 +7231,18 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Copy Bu
 bE489CBA8-EBC2-4BDA-9D9C-04F27D8AD898
 
 CGenerateDSYMFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-s407598665.880163
-e407598666.179026
+s407605105.029963
+e407605105.326682
 r1
 xGenerateDSYMFile
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM130"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShope561e149764bb841^4ed52d4a764bb841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM/0000000000000000^730"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM36"1CFEF913-977C-48C7-AB03-9D2128D3E841-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Generate /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM130"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShopa6b707718f4bb841^8ca253718f4bb841^---0#0#1#-19%DVTDocumentLocation2@122"file:///Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM/0000000000000000^730"GenerateDSYMFile Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app.dSYM36"1CF23E85-F254-48F9-B609-9E549C4A08AD-
+b672B23EF-E376-41CF-A387-D9A8DE3DB99A
 
 CLd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386
-s407598665.687636
-e407598665.878713
+s407605104.854186
+e407605105.028445
 r1
 xLd
 x/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop
@@ -7106,6 +7284,7 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSWebChatUtil.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniUIButton+Mini.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSNaviMenuView.o
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/CreditableIndexViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/NSDate+Format.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UIDevice+Id.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/UILabel+Mini.o
@@ -7126,6 +7305,7 @@ d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSMainTabViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGalleryViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopGroupListViewController.o
+d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/EspecialIndexViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSShopListViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSPotentialViewController.o
 d/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MSProlfileViewController.o
@@ -7173,9 +7353,9 @@ d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
 d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
@@ -7223,8 +7403,8 @@ d/usr/lib/system/libsystem_pthread.dylib
 d/usr/lib/system/libsystem_sandbox.dylib
 d/usr/lib/system/libunc.dylib
 d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop73"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i3868a1eb049764bb841^aaf3e049764bb841^---0#0#1#--2402"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -filelist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstdc++ -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMiniLiteFramework.a -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMini3rdFramework.a -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework Security -framework CoreText -framework MessageUI -framework AddressBook -framework MapKit -framework CoreLocation -framework ImageIO -lz -framework CFNetwork -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -lUMFeedback -lMobClickLibrary -lWeChatSDK -Xlinker -dependency_info -Xlinker /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop_dependency_info.dat -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop36"0250C404-4938-4B9C-88BE-631F59D09E76-
-bC187E632-5426-4B89-8401-CB40748F0789
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop73"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i38690bdda708f4bb841^f54807718f4bb841^---0#0#1#--2402"Ld Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop normal i386    cd /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID -L/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat -F/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator -filelist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstdc++ -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMiniLiteFramework.a -force_load /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/libMini3rdFramework.a -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework Security -framework CoreText -framework MessageUI -framework AddressBook -framework MapKit -framework CoreLocation -framework ImageIO -lz -framework CFNetwork -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -lUMFeedback -lMobClickLibrary -lWeChatSDK -Xlinker -dependency_info -Xlinker /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphonesimulator/MiniShop.build/Objects-normal/i386/MiniShop_dependency_info.dat -o /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/MiniShop36"891DC0FD-9B56-4318-BFFF-EA2424B4D7AA-
+b672B23EF-E376-41CF-A387-D9A8DE3DB99A
 
 CProcessInfoPlistFile /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Build/Products/Debug-iphonesimulator/MiniShop.app/Info.plist /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/MiniShop-Info.plist
 s407554182.495718

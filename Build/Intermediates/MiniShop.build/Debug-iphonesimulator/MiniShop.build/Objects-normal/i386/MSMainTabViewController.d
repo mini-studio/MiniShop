@@ -48,4 +48,6 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h

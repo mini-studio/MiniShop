@@ -15,7 +15,7 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSTopTitleView.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h \
@@ -48,4 +48,6 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSPotentialViewController.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h \
   /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h \
+  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h
