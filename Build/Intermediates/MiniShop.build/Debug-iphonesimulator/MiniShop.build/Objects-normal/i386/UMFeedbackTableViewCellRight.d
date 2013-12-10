@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.h
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.m \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/ufeedback/chat/UMFeedbackTableViewCellRight.h

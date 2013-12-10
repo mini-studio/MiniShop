@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.m \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.h
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.m \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSSearchKeyInfo.h

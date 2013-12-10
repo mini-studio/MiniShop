@@ -13,10 +13,6 @@
 
 
 @interface ClientAgent : NSObject
-{
-
-}
-
 //+ (NSString *)host;
 
 - (void)throwNetWorkException:(NSString*)mess;
@@ -24,6 +20,8 @@
 + (NSString *)filePathForKey:(NSString *)key;
 
 + (ClientAgent*)sharedInstance;
+
+- (void)setRequestHeaderWithKey:(NSString*)key value:(NSString*)value;
 
 - (void)showServerExceptoin:(NSString *)string;
 

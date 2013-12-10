@@ -9,6 +9,7 @@
 #import "MyStoreViewController.h"
 #import "MSNaviMenuView.h"
 #import "MSTransformButton.h"
+#import "MSShopCate.h"
 
 @interface MyStoreViewController ()
 @property (nonatomic,strong)MSTransformButton *transformButton;
@@ -41,29 +42,47 @@
 {
     MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
     topTitleView.backgroundColor = [UIColor redColor];
-    int count  = 10;
-    for (int index = 0; index < count; index++) {
-        [topTitleView addMenuTitle:[NSString stringWithFormat:@"全部(%d)",index] userInfo:[NSString stringWithFormat:@"%d",index]];
-        MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
-        controller.mid = index;
-        [self.subControllers addObject:controller];
-        [self addChildViewController:controller];
-        controller.view.frame = CGRectMake(index*self.containerView.width, 0, self.containerView.width, self.containerView.height);
-        [self.containerView addSubview:controller.view];
-    }
     return topTitleView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.topTitleView.selectedIndex = 2;
+	[self loadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadData
+{
+    __PSELF__;
+    [self showWating:nil];
+    [[ClientAgent sharedInstance] getTopTabInfo:^(NSError *error, MSShopCate* data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if ( error==nil ) {
+            int count = data.info.count;
+            for ( int index = 0; index < count; index++ ) {
+                MSTag *tag = [data.info objectAtIndex:index];
+                [pSelf.topTitleView addMenuTitle:tag.tag_name userInfo:[NSString stringWithFormat:@"%d",index]];
+                MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
+                controller.tagid = tag.tag_id;
+                [pSelf.subControllers addObject:controller];
+                [pSelf addChildViewController:controller];
+                controller.view.frame = CGRectMake(index*pSelf.containerView.width, 0, pSelf.containerView.width, pSelf.containerView.height);
+                [pSelf.containerView addSubview:controller.view];
+            }
+            pSelf.containerView.contentSize = CGSizeMake(count*pSelf.containerView.width, 0);
+            [pSelf.topTitleView setNeedsLayout];
+            pSelf.topTitleView.selectedIndex = 0;
+        }
+        else {
+            [pSelf showErrorMessage:error];
+        }
+    }];
 }
 
 @end

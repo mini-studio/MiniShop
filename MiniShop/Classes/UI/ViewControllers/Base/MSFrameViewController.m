@@ -79,6 +79,10 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    if ( self.subControllers.count==0)
+    {
+        return;
+    }
     static CGPoint lastPoint;
     if ( [@"contentOffset" isEqualToString:keyPath] ) {
         CGPoint point = [[change valueForKey:NSKeyValueChangeNewKey] CGPointValue];

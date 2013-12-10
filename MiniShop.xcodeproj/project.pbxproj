@@ -48,6 +48,7 @@
 		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
 		C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */; };
 		C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */; };
+		C12CFEFC18578D120056308C /* MSShopCate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12CFEFB18578D120056308C /* MSShopCate.m */; };
 		C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA017C2E8580048DC2A /* close_h@2x.png */; };
 		C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA117C2E8580048DC2A /* close@2x.png */; };
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
@@ -61,6 +62,8 @@
 		C14E67B117E7D1E0000BA377 /* navi_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */; };
 		C1598DDB180C2E9B005DA062 /* tab_market_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */; };
 		C1598DDC180C2E9B005DA062 /* tab_market_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */; };
+		C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2C1856196700F54499 /* FBEncryptorAES.m */; };
+		C1618C301856196700F54499 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2E1856196700F54499 /* NSData+Base64.m */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
 		C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47B16FF48F200ED87D8 /* Foundation.framework */; };
 		C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47D16FF48F200ED87D8 /* CoreGraphics.framework */; };
@@ -369,6 +372,8 @@
 		C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Mini.m"; sourceTree = "<group>"; };
 		C12C2CB317E913C60097CFBD /* MRResetPasswdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRResetPasswdViewController.h; sourceTree = "<group>"; };
 		C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRResetPasswdViewController.m; sourceTree = "<group>"; };
+		C12CFEFA18578D120056308C /* MSShopCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopCate.h; sourceTree = "<group>"; };
+		C12CFEFB18578D120056308C /* MSShopCate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopCate.m; sourceTree = "<group>"; };
 		C12DCAA017C2E8580048DC2A /* close_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_h@2x.png"; sourceTree = "<group>"; };
 		C12DCAA117C2E8580048DC2A /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
@@ -385,6 +390,10 @@
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_normal@2x.png"; sourceTree = "<group>"; };
 		C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_selected@2x.png"; sourceTree = "<group>"; };
+		C1618C2B1856196700F54499 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
+		C1618C2C1856196700F54499 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
+		C1618C2D1856196700F54499 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C1618C2E1856196700F54499 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		C169C47516FF48F200ED87D8 /* MiniShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169C47916FF48F200ED87D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C169C47B16FF48F200ED87D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -957,6 +966,17 @@
 			path = SVSegmentedControl;
 			sourceTree = "<group>";
 		};
+		C1618C2A1856196700F54499 /* FBEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				C1618C2B1856196700F54499 /* FBEncryptorAES.h */,
+				C1618C2C1856196700F54499 /* FBEncryptorAES.m */,
+				C1618C2D1856196700F54499 /* NSData+Base64.h */,
+				C1618C2E1856196700F54499 /* NSData+Base64.m */,
+			);
+			path = FBEncrypt;
+			sourceTree = "<group>";
+		};
 		C169C46A16FF48F200ED87D8 = {
 			isa = PBXGroup;
 			children = (
@@ -1313,6 +1333,7 @@
 		C1EC4FD7178074A100BE5ABB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C1618C2A1856196700F54499 /* FBEncrypt */,
 				C1EC4FD8178074A100BE5ABB /* DataSource */,
 				C1EC4FDD178074A100BE5ABB /* Model */,
 				C1EC4FF6178074A100BE5ABB /* System */,
@@ -1373,6 +1394,8 @@
 				C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */,
 				C10EDD361844F01C00503993 /* MSTopTabInfo.h */,
 				C10EDD371844F01C00503993 /* MSTopTabInfo.m */,
+				C12CFEFA18578D120056308C /* MSShopCate.h */,
+				C12CFEFB18578D120056308C /* MSShopCate.m */,
 			);
 			path = Concrete;
 			sourceTree = "<group>";
@@ -2083,6 +2106,7 @@
 			files = (
 				C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */,
 				C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */,
+				C12CFEFC18578D120056308C /* MSShopCate.m in Sources */,
 				C10BE74217765C3C009E6482 /* UMContactViewController.m in Sources */,
 				C10BE74417765C3C009E6482 /* UMFeedbackTableViewCellLeft.m in Sources */,
 				C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */,
@@ -2112,6 +2136,7 @@
 				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
+				C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */,
 				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
 				C1B339FE184B841F00851585 /* CreditableIndexViewController.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
@@ -2151,6 +2176,7 @@
 				C1EC5095178074A100BE5ABB /* MiniUIWebView.m in Sources */,
 				C1EC5096178074A100BE5ABB /* MSGalleryGoodsCell.m in Sources */,
 				C12E4978180A37B900482A10 /* MSKeychainWrapper.m in Sources */,
+				C1618C301856196700F54499 /* NSData+Base64.m in Sources */,
 				C1EC5097178074A100BE5ABB /* MSGalleryView.m in Sources */,
 				C1EC5098178074A100BE5ABB /* MSNotiTableCell.m in Sources */,
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,

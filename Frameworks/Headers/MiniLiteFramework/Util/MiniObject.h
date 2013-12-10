@@ -11,4 +11,5 @@
 @interface MiniObject : NSObject<NSCoding>
 - (void)convertWithJson:(id)json;
 - (Class)classForAttri:(NSString *)attriName;
+- (void)setAttri:(NSString*)attri clazz:(Class)clazz;
 @end

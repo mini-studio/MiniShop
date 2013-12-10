@@ -58,16 +58,42 @@
 
 -(NSMutableDictionary*)perfectParameters:(NSDictionary*)param
 {
+    return [self perfectParameters:param security:NO];
+}
+
+-(NSMutableDictionary*)perfectParameters:(NSDictionary*)param security:(BOOL)security
+{
     NSMutableDictionary * p = param==nil?[NSMutableDictionary dictionary]:[NSMutableDictionary dictionaryWithDictionary:param];
-    if ( [MSSystem sharedInstance].udid.length > 0 ) {
-        [p setObject:[MSSystem sharedInstance].udid forKey:@"imei"];
-    }
-    else {
-        if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
-          [p setObject:@"" forKey:@"imei"];
+    {
+        NSString *imei = @"";
+        if ( [MSSystem sharedInstance].udid.length > 0 ) {
+            imei = [MSSystem sharedInstance].udid;
         }
         else {
-           [p setObject:UDID forKey:@"imei"];
+            if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
+                ;
+            }
+            else {
+                imei = UDID;
+            }
+        }
+        [p setObject:imei forKey:@"imei"];
+        [self setRequestHeaderWithKey:@"imei" value:imei];
+    }
+    {
+        if ( WHO !=nil && WHO.uniqid.length>0) {
+            [p setValue:WHO.uniqid forKey:@"uniqid"];
+            [self setRequestHeaderWithKey:@"uniqid" value:WHO.uniqid];
+        }
+    }
+    {
+        [self setRequestHeaderWithKey:@"sys_device" value:@"iphone"];
+        [self setRequestHeaderWithKey:@"sys_version" value:[NSString stringWithFormat:@"%d",MAIN_VERSION]];
+        [self setRequestHeaderWithKey:@"app_version" value:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    }
+    {
+        if ( security ) {
+            [p setValue:@"1" forKey:@"security"];
         }
     }
     [p setObject:@"" forKey:@"usernick"];
@@ -77,9 +103,8 @@
     [p setValue:w forKey:@"screenW"];
     [p setValue:h forKey:@"screenY"];
     [p setValue:h forKey:@"screenH"];
-    if ( WHO !=nil && WHO.uniqid.length>0) {
-         [p setValue:WHO.uniqid forKey:@"uniqid"];
-    }
+    
+   
     return p;
 }
 
@@ -787,22 +812,24 @@
 @end
 
 #import "MSTopTabInfo.h"
+#import "MSShopCate.h"
 
 @implementation ClientAgent (LS14)
+
+- (NSString*)requestUri14:(NSString *)path
+{
+    return [NSString stringWithFormat:@"%@/new/%@",[ClientAgent host],path];
+}
+
 - (void)getTopTabInfo:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
-    NSArray *ds = @[
-                    @{@"id":@"1",@"title":@"全部"},
-                    @{@"id":@"2",@"title":@"女装"},
-                    @{@"id":@"3",@"title":@"外贸"}
-                    ];
-    NSMutableArray *arry = [NSMutableArray arrayWithCapacity:ds.count];
-    for ( id d in ds) {
-        MSTopTabInfo *info = [[MSTopTabInfo alloc] init];
-        info.mid = [[d valueForKey:@"id"] integerValue];
-        info.title = [d valueForKey:@"title"];
-        [arry addObject:info];
-    }
-    block(nil,arry,nil,NO);
+    NSString *addr = [self requestUri14:@"favshopcate"];
+    NSDictionary *params = [self perfectParameters:@{} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSShopCate class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
 }
 @end

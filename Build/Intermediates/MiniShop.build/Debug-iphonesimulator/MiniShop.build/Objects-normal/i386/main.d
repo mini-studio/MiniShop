@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/main.m
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/main.m

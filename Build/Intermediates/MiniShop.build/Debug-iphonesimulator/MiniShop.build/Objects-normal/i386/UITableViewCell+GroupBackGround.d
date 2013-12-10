@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m

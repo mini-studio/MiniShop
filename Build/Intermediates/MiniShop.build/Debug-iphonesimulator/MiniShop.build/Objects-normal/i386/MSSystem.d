@@ -1,24 +1,24 @@
 dependencies: \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/System/MSSystem.m \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniFileUtil.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCache.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIDevice+Ext.h \
-  /Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/System/MSSystem.m \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSImageInfo.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotiItemInfo.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSDetailViewController.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoBrowser.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhoto.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWPhotoProtocol.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDecoder.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageCompat.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManager.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageDownloaderDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDWebImageManagerDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCacheDelegate.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/MWPhoto/MWCaptionView.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSGoodsList.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Util/MiniNSURLProtocol.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Util/MiniURLCache.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/MiniFileUtil.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/SDWebImage/SDImageCache.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Categories/NSUserDefaults+Mini.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIDevice+Ext.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h

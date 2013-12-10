@@ -38,7 +38,7 @@
 @class MSNotify;
 @class MiniUISegmentView;
 @interface MyStoreContentViewController : MSViewController
-@property (nonatomic) NSInteger mid;
+@property (nonatomic) NSString* tagid;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) NSMutableArray *topicDataSource;

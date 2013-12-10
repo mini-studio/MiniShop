@@ -30,6 +30,12 @@
 
 #import "NSString+URLEncoding.h"
 
+#import "FBEncryptorAES.h"
+
+@interface ClientAgent()
+@property (nonatomic,strong)NSMutableDictionary *headers;
+@end
+
 @implementation ClientAgent
 
 #pragma mark * Properties
@@ -60,9 +66,14 @@
     self = [super init];
     if (self)
     {
-        // Customized initialization
+        self.headers = [NSMutableDictionary dictionaryWithCapacity:1];
     }
     return self;
+}
+
+- (void)setRequestHeaderWithKey:(NSString*)key value:(NSString*)value
+{
+    [self.headers setValue:value forKey:key];
 }
 
 - (void)throwNetWorkException:(NSString*)message
@@ -228,9 +239,9 @@
     [self loadDataFromServer:url method:@"GET" params:params cachekey:key clazz:clazz isJson:isJson mergeobj:nil showError:showError block:block];
 }
 
-- (void)receiveRespose:(NSString *)url responseObject:(NSData*)responseObject clazz:(Class)clazz  isJson:(BOOL)isJson key:(NSString*)key mergeobj:(MiniObject*)mergeobj  block:(void (^)(NSError *error, id data, BOOL cache ))block
+- (void)receiveRespose:(NSString *)url responseObject:(NSData*)responseObject clazz:(Class)clazz  isJson:(BOOL)isJson key:(NSString*)key mergeobj:(MiniObject*)mergeobj encoding:(NSStringEncoding)encoding block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
-    NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:encoding];
     LOG_DEBUG(@"\n<<<<<================================================\nResponse data for request: %@\n\n%@\n<<<<<================================================",url,responseStr);
     NSError *error = nil;
     if ( isJson )
@@ -305,6 +316,23 @@
     }
 }
 
+- (NSData*)decryptedData:(NSData*)responseData security:(BOOL)security
+{
+    if ( !security ) {
+        return responseData;
+    }
+    else {
+        NSString *aesKEY = @"Ddiw@#dijf)JR7#$";
+        NSString *aesIV = @"+(*^$bdjdDR948D('";
+        NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        responseData = [FBEncryptorAES dataForHexString:responseStr];
+        NSData* decryptedData = [FBEncryptorAES decryptData:responseData
+                                                        key:[aesKEY dataUsingEncoding:NSUTF8StringEncoding]
+                                                         iv:[aesIV dataUsingEncoding:NSUTF8StringEncoding]];
+        return decryptedData;
+    }
+
+}
 
 - (void)loadDataFromServer:(NSString *)url method:(NSString *)method params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
@@ -339,10 +367,17 @@
         [client setDefaultHeader:@"platform" value:@"iphone"];
         [client setDefaultHeader:[NSString stringWithFormat:@"%d",MAIN_VERSION] value:@"mainversion"];
         [client setDefaultHeader:@"version" value:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        NSEnumerator *enumerator = self.headers.keyEnumerator;
+        NSString *hkey = enumerator.nextObject;
+        while (hkey != nil) {
+            [client setDefaultHeader:hkey value:[self.headers valueForKey:hkey]];
+            hkey = enumerator.nextObject;
+        }
+        BOOL security = [@"1" isEqualToString:[params valueForKey:@"security"]];
         if ( [@"POST" isEqualToString:method] )
         {
            [client postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               [self receiveRespose:addr responseObject:responseObject clazz:clazz isJson:isJson key:key mergeobj:mergeobj block:block];
+               [self receiveRespose:addr responseObject:[self decryptedData:responseObject security:security] clazz:clazz isJson:isJson key:key mergeobj:mergeobj encoding:(security?NSASCIIStringEncoding:NSUTF8StringEncoding) block:block];
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                LOG_DEBUG(@"Response for request >> %@ \n %@",addr,[error localizedDescription]);
                block(error,nil,NO);
@@ -353,7 +388,7 @@
         else
         {
            [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               [self receiveRespose:addr responseObject:responseObject clazz:clazz isJson:isJson key:key mergeobj:mergeobj block:block];
+               [self receiveRespose:addr responseObject:[self decryptedData:responseObject security:security] clazz:clazz isJson:isJson key:key mergeobj:mergeobj encoding:(security?NSASCIIStringEncoding:NSUTF8StringEncoding) block:block];
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                LOG_DEBUG(@"Response for request >> %@ \n %@",addr,[error localizedDescription]);
                block(error,nil,NO);
