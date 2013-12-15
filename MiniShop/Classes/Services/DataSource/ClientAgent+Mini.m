@@ -811,8 +811,8 @@
 
 @end
 
-#import "MSTopTabInfo.h"
-#import "MSShopCate.h"
+#import "MSNShopCate.h"
+#import "MSNFavshopList.h"
 
 @implementation ClientAgent (LS14)
 
@@ -821,15 +821,29 @@
     return [NSString stringWithFormat:@"%@/new/%@",[ClientAgent host],path];
 }
 
-- (void)getTopTabInfo:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)favshopcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"favshopcate"];
     NSDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSShopCate class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopCateInfo class] isJson:YES showError:NO block:^(NSError *error, MSNShopCateInfo* data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
         }
     }];
 }
+
+- (void)favshoplist:(int)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"favshoplist"];
+    NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":ITOS(tagId),@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNFavshopList class] isJson:YES showError:NO block:^(NSError *error, MSNFavshopList *data, BOOL cache) {
+        if ( block )
+        {
+            data.sort = sort;
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
 @end

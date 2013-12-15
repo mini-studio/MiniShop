@@ -8,6 +8,10 @@
 
 #import "MiniObject.h"
 
+#define ITOS(i) [NSString stringWithFormat:@"%d",i]
+#define LTOS(i) [NSString stringWithFormat:@"%ld",i]
+#define LLTOS(i) [NSString stringWithFormat:@"%lld",i]
+
 @interface MSObject : MiniObject
 @property (nonatomic) NSInteger _errno;
 @property (nonatomic,strong) NSString *error;

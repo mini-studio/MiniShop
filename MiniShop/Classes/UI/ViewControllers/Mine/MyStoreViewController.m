@@ -9,7 +9,9 @@
 #import "MyStoreViewController.h"
 #import "MSNaviMenuView.h"
 #import "MSTransformButton.h"
-#import "MSShopCate.h"
+#import "MSNShopCate.h"
+
+#include "MSNFavshopList.h"
 
 @interface MyStoreViewController ()
 @property (nonatomic,strong)MSTransformButton *transformButton;
@@ -61,12 +63,12 @@
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] getTopTabInfo:^(NSError *error, MSShopCate* data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNShopCateInfo* data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if ( error==nil ) {
             int count = data.info.count;
             for ( int index = 0; index < count; index++ ) {
-                MSTag *tag = [data.info objectAtIndex:index];
+                MSNShopCate *tag = [data.info objectAtIndex:index];
                 [pSelf.topTitleView addMenuTitle:tag.tag_name userInfo:[NSString stringWithFormat:@"%d",index]];
                 MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
                 controller.tagid = tag.tag_id;
@@ -81,6 +83,13 @@
         }
         else {
             [pSelf showErrorMessage:error];
+        }
+    }];
+    
+    [[ClientAgent sharedInstance] favshoplist:14 sort:SORT_TIME page:1 block:^(NSError *error, MSNFavshopList *data, id userInfo, BOOL cache) {
+        if (error == nil) {
+            [data group];
+           // LOG_DEBUG(@"%@",[d description]);
         }
     }];
 }

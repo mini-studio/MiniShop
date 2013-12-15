@@ -40,7 +40,7 @@
 		C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72617765C3C009E6482 /* UMFeedbackTableViewCellRight.m */; };
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
-		C10EDD381844F01C00503993 /* MSTopTabInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD371844F01C00503993 /* MSTopTabInfo.m */; };
+		C10C9C4B185E028E00797BD0 /* MSNFavshopList.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
@@ -48,7 +48,7 @@
 		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
 		C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */; };
 		C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */; };
-		C12CFEFC18578D120056308C /* MSShopCate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12CFEFB18578D120056308C /* MSShopCate.m */; };
+		C12CFEFC18578D120056308C /* MSNShopCate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12CFEFB18578D120056308C /* MSNShopCate.m */; };
 		C12DCAA217C2E8580048DC2A /* close_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA017C2E8580048DC2A /* close_h@2x.png */; };
 		C12DCAA317C2E8580048DC2A /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA117C2E8580048DC2A /* close@2x.png */; };
 		C12DCAA517C2F3CB0048DC2A /* tool_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */; };
@@ -307,8 +307,9 @@
 		C10BE72717765C3C009E6482 /* UMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedbackViewController.h; sourceTree = "<group>"; };
 		C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
-		C10EDD361844F01C00503993 /* MSTopTabInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopTabInfo.h; sourceTree = "<group>"; };
-		C10EDD371844F01C00503993 /* MSTopTabInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopTabInfo.m; sourceTree = "<group>"; };
+		C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "新版接口(v1.4).txt"; sourceTree = "<group>"; };
+		C10C9C49185E028E00797BD0 /* MSNFavshopList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNFavshopList.h; sourceTree = "<group>"; };
+		C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNFavshopList.m; sourceTree = "<group>"; };
 		C10EDD391844F2ED00503993 /* MSNaviMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNaviMenuView.h; sourceTree = "<group>"; };
 		C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNaviMenuView.m; sourceTree = "<group>"; };
 		C10EDD3C18451A4100503993 /* MyStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreViewController.h; sourceTree = "<group>"; };
@@ -372,8 +373,8 @@
 		C12C2CB117E8FABE0097CFBD /* UITextField+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Mini.m"; sourceTree = "<group>"; };
 		C12C2CB317E913C60097CFBD /* MRResetPasswdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRResetPasswdViewController.h; sourceTree = "<group>"; };
 		C12C2CB417E913C60097CFBD /* MRResetPasswdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRResetPasswdViewController.m; sourceTree = "<group>"; };
-		C12CFEFA18578D120056308C /* MSShopCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopCate.h; sourceTree = "<group>"; };
-		C12CFEFB18578D120056308C /* MSShopCate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopCate.m; sourceTree = "<group>"; };
+		C12CFEFA18578D120056308C /* MSNShopCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopCate.h; sourceTree = "<group>"; };
+		C12CFEFB18578D120056308C /* MSNShopCate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopCate.m; sourceTree = "<group>"; };
 		C12DCAA017C2E8580048DC2A /* close_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_h@2x.png"; sourceTree = "<group>"; };
 		C12DCAA117C2E8580048DC2A /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		C12DCAA417C2F3C90048DC2A /* tool_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_bar@2x.png"; sourceTree = "<group>"; };
@@ -837,6 +838,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		C10C9C46185CDBEF00797BD0 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */,
+			);
+			path = Doc;
+			sourceTree = "<group>";
+		};
 		C10EDD7818451D2A00503993 /* MiniLiteFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1023,6 +1032,7 @@
 		C169C47F16FF48F200ED87D8 /* MiniShop */ = {
 			isa = PBXGroup;
 			children = (
+				C10C9C46185CDBEF00797BD0 /* Doc */,
 				C1EC4FD3178074A100BE5ABB /* Apple */,
 				C1EC4FD6178074A100BE5ABB /* Classes */,
 				C169C48016FF48F200ED87D8 /* Supporting Files */,
@@ -1392,10 +1402,10 @@
 				C1EC4FF3178074A100BE5ABB /* MSSearchKeyInfo.m */,
 				C1EC4FF4178074A100BE5ABB /* MSShopInfo.h */,
 				C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */,
-				C10EDD361844F01C00503993 /* MSTopTabInfo.h */,
-				C10EDD371844F01C00503993 /* MSTopTabInfo.m */,
-				C12CFEFA18578D120056308C /* MSShopCate.h */,
-				C12CFEFB18578D120056308C /* MSShopCate.m */,
+				C12CFEFA18578D120056308C /* MSNShopCate.h */,
+				C12CFEFB18578D120056308C /* MSNShopCate.m */,
+				C10C9C49185E028E00797BD0 /* MSNFavshopList.h */,
+				C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */,
 			);
 			path = Concrete;
 			sourceTree = "<group>";
@@ -2106,7 +2116,7 @@
 			files = (
 				C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */,
 				C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */,
-				C12CFEFC18578D120056308C /* MSShopCate.m in Sources */,
+				C12CFEFC18578D120056308C /* MSNShopCate.m in Sources */,
 				C10BE74217765C3C009E6482 /* UMContactViewController.m in Sources */,
 				C10BE74417765C3C009E6482 /* UMFeedbackTableViewCellLeft.m in Sources */,
 				C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */,
@@ -2117,6 +2127,7 @@
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
+				C10C9C4B185E028E00797BD0 /* MSNFavshopList.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
 				C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */,
 				C1EC5069178074A100BE5ABB /* MSImageInfo.m in Sources */,
@@ -2182,7 +2193,6 @@
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,
 				C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */,
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,
-				C10EDD381844F01C00503993 /* MSTopTabInfo.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSUISearchBar.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,
 				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,

@@ -39,4 +39,5 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/MSTransformButton.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopCate.h
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNShopCate.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNFavshopList.h
