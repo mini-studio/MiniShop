@@ -62,6 +62,7 @@
 		C14E67B117E7D1E0000BA377 /* navi_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AD17E7D1E0000BA377 /* navi_message@2x.png */; };
 		C1598DDB180C2E9B005DA062 /* tab_market_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */; };
 		C1598DDC180C2E9B005DA062 /* tab_market_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */; };
+		C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */; };
 		C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2C1856196700F54499 /* FBEncryptorAES.m */; };
 		C1618C301856196700F54499 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2E1856196700F54499 /* NSData+Base64.m */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
@@ -391,6 +392,8 @@
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C1598DD9180C2E9B005DA062 /* tab_market_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_normal@2x.png"; sourceTree = "<group>"; };
 		C1598DDA180C2E9B005DA062 /* tab_market_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_market_selected@2x.png"; sourceTree = "<group>"; };
+		C15DF8F1186127A70011EF94 /* MSNGoodsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsTableCell.h; sourceTree = "<group>"; };
+		C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsTableCell.m; sourceTree = "<group>"; };
 		C1618C2B1856196700F54499 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
 		C1618C2C1856196700F54499 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
 		C1618C2D1856196700F54499 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -1617,6 +1620,8 @@
 				C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */,
 				C1B339F0184A30B800851585 /* MSTransformButton.h */,
 				C1B339F1184A30B800851585 /* MSTransformButton.m */,
+				C15DF8F1186127A70011EF94 /* MSNGoodsTableCell.h */,
+				C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2174,6 +2179,7 @@
 				C1EC5089178074A100BE5ABB /* MSShopListViewController.m in Sources */,
 				C1EC508A178074A100BE5ABB /* MSPotentialViewController.m in Sources */,
 				C1EC508B178074A100BE5ABB /* MSProlfileViewController.m in Sources */,
+				C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
 				C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */,
 				C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */,

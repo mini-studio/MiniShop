@@ -22,8 +22,8 @@
 - (void)append:(MSNFavshopList*)list;
 - (void)group;
 
-- (NSArray *)dataAtSection:(unsigned)index;
-- (int)numbersOfSecion;
+- (NSArray *)dataAtIndex:(unsigned)index;
+- (int)numberOfRows;
 @end
 
 @interface MSNGoodItem : MSObject

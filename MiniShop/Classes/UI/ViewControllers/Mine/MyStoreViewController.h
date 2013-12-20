@@ -40,10 +40,7 @@
 @interface MyStoreContentViewController : MSViewController
 @property (nonatomic) NSString* tagid;
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) NSMutableArray *dataSource;
-@property (nonatomic,strong) NSMutableArray *topicDataSource;
 @property (nonatomic)BOOL mark;
-- (void)receiveData:(MSNotify *)noti page:(int)page type:(int)type;
 - (void)refreshData;
 - (void)selectedAsChild;
 @end

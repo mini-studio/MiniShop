@@ -33,7 +33,7 @@
 - (void)group
 {
     [_dataSource removeAllObjects];
-    if (![self.sort isEqualToString:@"time"])
+    if ([self.sort isEqualToString:SORT_TIME])
     {
         for (MSNGoodItem *item in self.info ) {
             NSMutableArray *array = _dataSource[item.goods_date];
@@ -63,7 +63,7 @@
     }];
 }
 
-- (NSArray *)dataAtSection:(unsigned)index
+- (NSArray *)dataAtIndex:(unsigned)index
 {
     if (index >= self.dataKey.count) {
         return nil;
@@ -72,7 +72,7 @@
     return self.dataSource[key];
 }
 
-- (int)numbersOfSecion
+- (int)numberOfRows
 {
     return self.dataKey.count;
 }
