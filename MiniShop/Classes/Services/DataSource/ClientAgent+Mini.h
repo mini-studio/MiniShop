@@ -96,6 +96,6 @@
 
 @interface ClientAgent (LS14)
 - (void)favshopcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
-- (void)favshoplist:(int)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+- (void)favshoplist:(NSString*)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 @end
 

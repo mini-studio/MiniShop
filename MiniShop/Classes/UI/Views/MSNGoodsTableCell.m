@@ -28,6 +28,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _imageArray = [NSMutableArray arrayWithCapacity:1];
+        self.backgroundColor = [UIColor clearColor];
+        self.backgroundView = nil;
     }
     return self;
 }
@@ -53,7 +55,7 @@
 {
     [super layoutSubviews];
     CGFloat width = self.width-20;
-    __block CGFloat top =  self.textLabel.bottom + 2;
+    __block CGFloat top =  self.textLabel.bottom + 4;
     [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIView *imageView = [self.imageArray objectAtIndex:idx];
         int mod = idx%3;
@@ -137,7 +139,7 @@
 {
     CGFloat height = 0;
     CGFloat width = maxWidth-20;
-    CGSize size = CGSizeMake(10,18);
+    CGSize size = CGSizeMake(10,2);
     height += (size.height);
     int count = items.count;
     if ( count>0 ) { // 3图片两行为一组
@@ -153,7 +155,6 @@
             size.height  += (singleLineHeight+4);
         }
         height += size.height;
-        height += 14;
     }
     return height;
 }

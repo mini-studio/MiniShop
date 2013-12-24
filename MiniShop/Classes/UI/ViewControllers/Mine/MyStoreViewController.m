@@ -209,8 +209,7 @@
     if ( indexPath.section < ds.count )
     {
         cell.items = ds;
-        [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];
-        
+        [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];   
     }
     cell.controller = self;
     return cell;
@@ -229,9 +228,9 @@
 
 - (void)selectedAsChild
 {
-//    if ( self.dataSource.count == 0 ) {
-//        [self refreshData];
-//    }
+    if ( self.dataSource.info.count == 0 ) {
+        [self refreshData];
+    }
 }
 
 - (void)loadMore
@@ -251,7 +250,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self showWating:nil];
-        [[ClientAgent sharedInstance] favshoplist:14 sort:SORT_TIME page:1 block:^(NSError *error, MSNFavshopList *data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:SORT_TIME page:page block:^(NSError *error, MSNFavshopList *data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
                 [pSelf receiveData:data page:page];

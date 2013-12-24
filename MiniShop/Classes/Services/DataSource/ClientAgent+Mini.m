@@ -833,10 +833,10 @@
     }];
 }
 
-- (void)favshoplist:(int)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)favshoplist:(NSString*)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"favshoplist"];
-    NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":ITOS(tagId),@"page":ITOS(page)} security:YES];
+    NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":tagId,@"page":ITOS(page)} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNFavshopList class] isJson:YES showError:NO block:^(NSError *error, MSNFavshopList *data, BOOL cache) {
         if ( block )
         {
