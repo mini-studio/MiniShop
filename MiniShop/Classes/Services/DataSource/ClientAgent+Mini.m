@@ -812,7 +812,7 @@
 @end
 
 #import "MSNShopCate.h"
-#import "MSNFavshopList.h"
+#import "MSNGoodsList.h"
 
 @implementation ClientAgent (LS14)
 
@@ -837,10 +837,38 @@
 {
     NSString *addr = [self requestUri14:@"favshoplist"];
     NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":tagId,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNFavshopList class] isJson:YES showError:NO block:^(NSError *error, MSNFavshopList *data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             data.sort = sort;
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)specialcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSArray *items = @[@{@"_id":@"off",@"name":@"汇打折"},
+                   @{@"_id":@"off_time",@"name":@"汇降价"},
+                   @{@"_id":@"hot",@"name":@"热卖榜"},
+                   @{@"_id":@"activity",@"name":@"购刺激"}];
+    NSMutableArray *array = [NSMutableArray array];
+    for ( id item in items) {
+        MSNSpecialcate *cate = [[MSNSpecialcate alloc] init];
+        cate.mid = [item valueForKey:@"_id"];
+        cate.name = [item valueForKey:@"name"];
+        [array addObject:cate];
+    }
+    block (nil,array,nil,NO);
+}
+
+- (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"specialgoods"];
+    NSDictionary *params = [self perfectParameters:@{@"type":type,@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+        if ( block )
+        {
             block(error,data,nil,cache);
         }
     }];

@@ -15,7 +15,7 @@
 #import "RTLabel.h"
 #import "MSDetailViewController.h"
 #import "MSShopGalleryViewController.h"
-#import "MSNFavshopList.h"
+#import "MSNGoodsList.h"
 
 @interface MSNGoodsTableCell()
 @property (nonatomic,strong)NSMutableArray *imageArray;

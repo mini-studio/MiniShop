@@ -16,3 +16,9 @@
 @interface MSNShopCateInfo : MSObject
 @property (nonatomic,strong)NSArray *info;
 @end
+
+
+@interface MSNSpecialcate : MSObject
+@property (nonatomic,strong) NSString *mid;
+@property (nonatomic,strong) NSString *name;
+@end

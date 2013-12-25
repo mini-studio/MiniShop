@@ -89,13 +89,13 @@
 @end
 
 /****************************************************************************/
-#include "MSNFavshopList.h"
+#include "MSNGoodsList.h"
 
 #import "MSNGoodsTableCell.h"
 /****************************************************************************/
 
 @interface MyStoreContentViewController()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong)MSNFavshopList *dataSource;
+@property (nonatomic,strong)MSNGoodsList *dataSource;
 @property (nonatomic)NSInteger page;
 @end
 
@@ -250,7 +250,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self showWating:nil];
-        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:SORT_TIME page:page block:^(NSError *error, MSNFavshopList *data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:SORT_TIME page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
                 [pSelf receiveData:data page:page];

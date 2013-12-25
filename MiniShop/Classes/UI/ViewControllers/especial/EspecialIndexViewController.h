@@ -27,6 +27,7 @@
 #import "MSPotentialViewController.h"
 #import "MRLoginViewController.h"
 #import "MSShopGalleryViewController.h"
+#import "MSNShopCate.h"
 
 @interface EspecialIndexViewController : MSFrameViewController
 
@@ -34,12 +35,5 @@
 
 
 @interface EspecialContentViewController: MSViewController
-@property (nonatomic) NSInteger mid;
-@property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) NSMutableArray *dataSource;
-@property (nonatomic,strong) NSMutableArray *topicDataSource;
-@property (nonatomic)BOOL mark;
-- (void)receiveData:(MSNotify *)noti page:(int)page type:(int)type;
-- (void)refreshData;
-- (void)selectedAsChild;
+@property (nonatomic,strong)MSNSpecialcate *cate;
 @end

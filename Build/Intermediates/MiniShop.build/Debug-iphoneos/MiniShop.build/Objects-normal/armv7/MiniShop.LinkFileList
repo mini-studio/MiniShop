@@ -1,6 +1,6 @@
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMEGORefreshTableHeaderView.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIPhotoImageView.o
-/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopCate.o
+/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNShopCate.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMContactViewController.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellLeft.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UMFeedbackTableViewCellRight.o
@@ -11,6 +11,7 @@
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/ClientAgent.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MRLoginViewController.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSObject.o
+/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNFavshopList.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSCooperateInfo.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSGoodsList.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSImageInfo.o
@@ -57,6 +58,7 @@
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopListViewController.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSPotentialViewController.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSProlfileViewController.o
+/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSNGoodsTableCell.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSAboutViewController.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/UITextField+Mini.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSFeedbackViewController.o
@@ -76,7 +78,6 @@
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSShopInfoCell.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIMoreDataCell.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUIPotentialCell.o
-/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSTopTabInfo.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSUISearchBar.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MSWebViewToolBar.o
 /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Build/Intermediates/MiniShop.build/Debug-iphoneos/MiniShop.build/Objects-normal/armv7/MiniUIASTextField.o

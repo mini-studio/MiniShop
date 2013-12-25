@@ -21,3 +21,7 @@
     return self;
 }
 @end
+
+
+@implementation MSNSpecialcate
+@end

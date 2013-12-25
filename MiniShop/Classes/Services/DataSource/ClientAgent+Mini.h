@@ -95,7 +95,13 @@
 
 
 @interface ClientAgent (LS14)
+//我的商城分类
 - (void)favshopcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//我的商城列表
 - (void)favshoplist:(NSString*)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//特卖汇分类
+- (void)specialcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//特卖汇列表
+- (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 @end
 

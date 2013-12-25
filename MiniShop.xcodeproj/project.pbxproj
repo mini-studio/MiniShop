@@ -40,7 +40,7 @@
 		C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72617765C3C009E6482 /* UMFeedbackTableViewCellRight.m */; };
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
-		C10C9C4B185E028E00797BD0 /* MSNFavshopList.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */; };
+		C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
@@ -309,8 +309,8 @@
 		C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
 		C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "新版接口(v1.4).txt"; sourceTree = "<group>"; };
-		C10C9C49185E028E00797BD0 /* MSNFavshopList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNFavshopList.h; sourceTree = "<group>"; };
-		C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNFavshopList.m; sourceTree = "<group>"; };
+		C10C9C49185E028E00797BD0 /* MSNGoodsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsList.h; sourceTree = "<group>"; };
+		C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsList.m; sourceTree = "<group>"; };
 		C10EDD391844F2ED00503993 /* MSNaviMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNaviMenuView.h; sourceTree = "<group>"; };
 		C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNaviMenuView.m; sourceTree = "<group>"; };
 		C10EDD3C18451A4100503993 /* MyStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreViewController.h; sourceTree = "<group>"; };
@@ -1407,8 +1407,8 @@
 				C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */,
 				C12CFEFA18578D120056308C /* MSNShopCate.h */,
 				C12CFEFB18578D120056308C /* MSNShopCate.m */,
-				C10C9C49185E028E00797BD0 /* MSNFavshopList.h */,
-				C10C9C4A185E028E00797BD0 /* MSNFavshopList.m */,
+				C10C9C49185E028E00797BD0 /* MSNGoodsList.h */,
+				C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */,
 			);
 			path = Concrete;
 			sourceTree = "<group>";
@@ -2132,7 +2132,7 @@
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
-				C10C9C4B185E028E00797BD0 /* MSNFavshopList.m in Sources */,
+				C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
 				C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */,
 				C1EC5069178074A100BE5ABB /* MSImageInfo.m in Sources */,
