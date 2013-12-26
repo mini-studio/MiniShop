@@ -21,6 +21,7 @@
 
 - (UITableView *)createPlainTableView;
 - (UITableView*)createGroupedTableView;
+- (UITableView*)createEGOTableView;
 
 - (void)setPullToRefreshViewStyle:(SVPullToRefresh*)view;
 

@@ -279,6 +279,22 @@
     return tableView;
 }
 
+- (UITableView*)createEGOTableView
+{
+    CGRect frame = self.view.bounds;
+    EGOUITableView *tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.backgroundView = nil;
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
+    tableView.showsVerticalScrollIndicator = NO;
+    [self setPullToRefreshViewStyle:tableView.pullToRefreshView];
+    return tableView;
+}
+
 
 - (void)showWating:(NSString *)message
 {

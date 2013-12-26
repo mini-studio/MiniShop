@@ -119,22 +119,12 @@
 
 - (void)createTableView
 {
-    CGRect frame = self.view.bounds;
-    self.tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.backgroundView = nil;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
+    self.tableView = [self createEGOTableView];
+    [self.contentView addSubview:self.tableView];
     __weak typeof (self) itSelf = self;
     [self.tableView setPullToRefreshAction:^{
         [itSelf loadData:1];
     }];
-    self.tableView.showsVerticalScrollIndicator = NO;
-    [self setPullToRefreshViewStyle:self.tableView.pullToRefreshView];
-    [self.contentView addSubview:self.tableView];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

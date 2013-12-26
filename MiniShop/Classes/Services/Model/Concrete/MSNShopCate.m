@@ -11,7 +11,7 @@
 @implementation MSNShopCate
 @end
 
-@implementation MSNShopCateInfo
+@implementation MSNShopCateList
 - (id)init
 {
     self = [super init];
@@ -24,4 +24,30 @@
 
 
 @implementation MSNSpecialcate
+@end
+
+
+@implementation MSNWellCate
+@end
+
+@implementation MSNWellCateGroup
+- (id)init
+{
+    self = [super init];
+    if ( self ) {
+        [self setAttri:@"item" clazz:[MSNWellCate class]];
+    }
+    return self;
+}
+@end
+
+@implementation MSNWellCateList
+- (id)init
+{
+    self = [super init];
+    if ( self ) {
+        [self setAttri:@"info" clazz:[MSNWellCateGroup class]];
+    }
+    return self;
+}
 @end

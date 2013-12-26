@@ -41,6 +41,7 @@
 		C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */; };
 		C10BE74717765C3C009E6482 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */; };
 		C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */; };
+		C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C10DF880186C891F0094B86B /* MSNWellCateCell.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
@@ -311,6 +312,8 @@
 		C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "新版接口(v1.4).txt"; sourceTree = "<group>"; };
 		C10C9C49185E028E00797BD0 /* MSNGoodsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsList.h; sourceTree = "<group>"; };
 		C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsList.m; sourceTree = "<group>"; };
+		C10DF87F186C891F0094B86B /* MSNWellCateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNWellCateCell.h; sourceTree = "<group>"; };
+		C10DF880186C891F0094B86B /* MSNWellCateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNWellCateCell.m; sourceTree = "<group>"; };
 		C10EDD391844F2ED00503993 /* MSNaviMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNaviMenuView.h; sourceTree = "<group>"; };
 		C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNaviMenuView.m; sourceTree = "<group>"; };
 		C10EDD3C18451A4100503993 /* MyStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreViewController.h; sourceTree = "<group>"; };
@@ -1622,6 +1625,8 @@
 				C1B339F1184A30B800851585 /* MSTransformButton.m */,
 				C15DF8F1186127A70011EF94 /* MSNGoodsTableCell.h */,
 				C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */,
+				C10DF87F186C891F0094B86B /* MSNWellCateCell.h */,
+				C10DF880186C891F0094B86B /* MSNWellCateCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2120,6 +2125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */,
+				C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */,
 				C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */,
 				C12CFEFC18578D120056308C /* MSNShopCate.m in Sources */,
 				C10BE74217765C3C009E6482 /* UMContactViewController.m in Sources */,

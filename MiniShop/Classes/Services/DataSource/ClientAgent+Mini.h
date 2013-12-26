@@ -103,5 +103,7 @@
 - (void)specialcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //特卖汇列表
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//好店汇分类
+- (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 @end
 

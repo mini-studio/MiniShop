@@ -825,7 +825,7 @@
 {
     NSString *addr = [self requestUri14:@"favshopcate"];
     NSDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopCateInfo class] isJson:YES showError:NO block:^(NSError *error, MSNShopCateInfo* data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopCateList class] isJson:YES showError:NO block:^(NSError *error, MSNShopCateList* data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -867,6 +867,18 @@
     NSString *addr = [self requestUri14:@"specialgoods"];
     NSDictionary *params = [self perfectParameters:@{@"type":type,@"page":ITOS(page)} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"catelist"];
+    NSDictionary *params = [self perfectParameters:@{} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
