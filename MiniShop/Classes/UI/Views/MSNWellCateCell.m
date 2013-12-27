@@ -65,7 +65,7 @@
     int itemCount = group.item.count;
     int rownum = (itemCount/3) + ((itemCount%3)==0?0:1);
     CGFloat rowHeight = ([[UIScreen mainScreen] bounds].size.width - 40)/3 + 10;
-    return rownum * rowHeight;
+    return rownum * rowHeight + 10;
 }
 
 @end

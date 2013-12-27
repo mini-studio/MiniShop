@@ -111,7 +111,7 @@
                   [[MiniTabBarItem alloc] initWithControllerClass:[MyStoreViewController class] image:[MiniUIImage imageNamed:@"tab_storenews_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storenews_selected"] title:@"我的商城"],
                    [[MiniTabBarItem alloc] initWithControllerClass:[EspecialIndexViewController class] image:[MiniUIImage imageNamed:@"tab_market_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_market_selected"] title:@"特卖汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[CreditableIndexViewController class] image:[MiniUIImage imageNamed:@"tab_storemanage_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storemanage_selected"] title:@"好店汇"],
-                  [[MiniTabBarItem alloc] initWithControllerClass:[MSProfileViewController class] image:[MiniUIImage imageNamed:@"tab_mine_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_mine_selected"] title:@"我的"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[MSProfileViewController class] image:[MiniUIImage imageNamed:@"tab_mine_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_mine_selected"] title:@"收藏夹"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSSettingsViewController class] image:[MiniUIImage imageNamed:@"tab_helper_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_helper_selected"] title:@"更多"],
                   nil];
 }
