@@ -44,6 +44,7 @@
 		C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C10DF880186C891F0094B86B /* MSNWellCateCell.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MyStoreViewController.m */; };
+		C1254B5A186E4E960007D510 /* MSNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B59186E4E960007D510 /* MSNDetailViewController.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
 		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
 		C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CAE17E8F8DC0097CFBD /* MiniUIASTextField.m */; };
@@ -367,6 +368,8 @@
 		C10EDDAF18451D2A00503993 /* MiniUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextView.h; sourceTree = "<group>"; };
 		C10EDDB018451D2A00503993 /* MiniUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIToolBar.h; sourceTree = "<group>"; };
 		C10EDDB118451D2A00503993 /* MiniUITouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITouchView.h; sourceTree = "<group>"; };
+		C1254B58186E4E960007D510 /* MSNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNDetailViewController.h; sourceTree = "<group>"; };
+		C1254B59186E4E960007D510 /* MSNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNDetailViewController.m; sourceTree = "<group>"; };
 		C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
 		C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Mini.m"; sourceTree = "<group>"; };
 		C12C2CA717E8F5930097CFBD /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRLoginViewController.h; sourceTree = "<group>"; };
@@ -1548,6 +1551,8 @@
 				C1EC5031178074A100BE5ABB /* MSShopGroupListViewController.m */,
 				C1EC5032178074A100BE5ABB /* MSShopListViewController.h */,
 				C1EC5033178074A100BE5ABB /* MSShopListViewController.m */,
+				C1254B58186E4E960007D510 /* MSNDetailViewController.h */,
+				C1254B59186E4E960007D510 /* MSNDetailViewController.m */,
 			);
 			path = Frame;
 			sourceTree = "<group>";
@@ -2160,6 +2165,7 @@
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */,
 				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
+				C1254B5A186E4E960007D510 /* MSNDetailViewController.m in Sources */,
 				C1B339FE184B841F00851585 /* CreditableIndexViewController.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,

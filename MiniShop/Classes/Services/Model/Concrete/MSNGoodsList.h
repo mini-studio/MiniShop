@@ -27,6 +27,7 @@
 @end
 
 @interface MSNGoodItem : MSObject
+@property (nonatomic)int64_t mid;
 @property (nonatomic,strong)NSString *big_image_url;
 @property (nonatomic,strong)NSString *goods_create_time;
 @property (nonatomic,strong)NSString *goods_id;

@@ -12,6 +12,18 @@
 #import "MSNShopCate.h"
 #import "MSNWellCateCell.h"
 
+@interface MSNCreditableHeaderView : UITableViewHeaderFooterView
+@end
+
+@implementation MSNCreditableHeaderView
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.textLabel.textAlignment = UITextAlignmentCenter;
+    self.textLabel.font = [UIFont systemFontOfSize:12];
+}
+@end
+
 @interface CreditableIndexViewController ()<MSUISearchBarDelegate>
 @property (nonatomic,strong)MSUISearchBar *searchBar;
 @property (nonatomic,strong)NSString *key;
@@ -37,7 +49,7 @@
     self.tableView = [self createPlainTableView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.contentView addSubview:self.tableView];
-    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"header"];
+    [self.tableView registerClass:[MSNCreditableHeaderView class] forHeaderFooterViewReuseIdentifier:@"header"];
 }
 
 - (void)viewDidLoad
@@ -79,14 +91,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 20;
+    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
+    return (group.title.length>0?20:0);
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-    view.textLabel.textAlignment = UITextAlignmentCenter;
     MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
+    if (group.title.length == 0) {
+        return nil;
+    }
+    MSNCreditableHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
     view.textLabel.text = group.title;
     return view;
 }

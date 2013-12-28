@@ -43,7 +43,7 @@
     NSString *url = @"http://il1.alicdn.com/bao/uploaded/i1/17115031376399884/T1O6T2FfXaXXXXXXXX_!!0-item_pic.jpg_b.jpg";
     int count = group.item.count;
     for ( int index = 0; index < count; index++ ) {
-        //MSNWellCate *cate = group.item[index];
+        MSNWellCate *cate = group.item[index];
         int row = index/3;
         int pos = index%3;
         int x = 10 + (pos*(buttonSize+10));
@@ -51,11 +51,16 @@
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
         imageView.frame = CGRectMake(x, y, buttonSize, buttonSize);
         [self.contentView addSubview:imageView];
-        [imageView.imageView setImageWithURL:[NSURL URLWithString:url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
-            imageView.image = image;
-        } failure:^(NSError *error) {
-            
-        }];
+        if ([cate.image_url rangeOfString:@"http"].location == 0 ) {
+            [imageView.imageView setImageWithURL:[NSURL URLWithString:url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                imageView.image = image;
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+        else {
+            imageView.image = [UIImage imageNamed:cate.image_url];
+        }
     }
 }
 

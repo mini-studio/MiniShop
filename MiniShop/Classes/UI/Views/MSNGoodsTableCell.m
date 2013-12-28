@@ -16,6 +16,7 @@
 #import "MSDetailViewController.h"
 #import "MSShopGalleryViewController.h"
 #import "MSNGoodsList.h"
+#import "MSNDetailViewController.h"
 
 @interface MSNGoodsTableCell()
 @property (nonatomic,strong)NSMutableArray *imageArray;
@@ -126,9 +127,12 @@
     }
 }
 
-- (void)actionImageTap:(MSNGoodItem*)item
+- (void)actionImageTap:(MiniUIButton*)button
 {
-    
+    MSNGoodItem *item = [button userInfo];
+    MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+    controller.items = @[item];
+    [self.controller.navigationController pushViewController:controller animated:YES];
 }
 
 

@@ -881,6 +881,18 @@
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
         if ( block )
         {
+            if (error==nil) {
+                MSNWellCateGroup *group = [[MSNWellCateGroup alloc] init];
+                NSMutableArray *item = [NSMutableArray arrayWithCapacity:3];
+                group.item = item;
+                for (int index = 0; index<3; index++) {
+                    MSNWellCate *cate = [[MSNWellCate alloc] init];
+                    cate.image_url = (index==0?@"join_us":(index==1?@"join_us":@"join_us"));
+                    cate.param = -100+index;
+                    [item addObject:cate];
+                }
+                [(NSMutableArray*)data.info insertObject:group atIndex:0];
+            }
             block(error,data,nil,cache);
         }
     }];
