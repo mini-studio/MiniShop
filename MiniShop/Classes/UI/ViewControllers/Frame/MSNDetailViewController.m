@@ -70,6 +70,7 @@
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
     }
+    self.toolView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
 }
 
 - (void)viewDidLoad
@@ -78,6 +79,7 @@
     [self setNaviBackButton];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"image_view_bg"]];
     [self createNaviView];
+    [self setInitialPageIndex:self.defaultIndex];
 }
 
 - (void)createNaviView
@@ -318,7 +320,7 @@
     ((UILabel *)[self.toolbar viewWithTag:10000]).text = [NSString stringWithFormat:@"价格:%@",item.goods_marked_price];
     ((UILabel *)[self.toolbar viewWithTag:10001]).text = @"店铺名";
     ((UILabel *)[self.toolbar viewWithTag:10002]).text = item.goods_title;
-    self.toolView.mid = item.mid;
+    self.toolView.mid = item.goods_id;
 }
 
 //查看详情
@@ -442,18 +444,20 @@
 
 - (void)toggleControls
 {
-    self.toolView.alpha = 0;
-    self.toolView.top = 200;
-    self.toolView.delegate = self;
-    [self.view addSubview:self.toolView];
-    [self.toolView loadDetail];
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        self.toolView.alpha = 1.0f;
-        self.toolView.top = 0;
-        self.titleView.bottom = 0.0f;
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    }];
+    if ( self.toolView.mid > 0 ) {
+        self.toolView.alpha = 0;
+        self.toolView.top = 200;
+        self.toolView.delegate = self;
+        [self.view addSubview:self.toolView];
+        [self.toolView loadDetail];
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            self.toolView.alpha = 1.0f;
+            self.toolView.top = 0;
+            self.titleView.bottom = 0.0f;
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+        }];
+    }
 }
 
 - (void)hideDTView

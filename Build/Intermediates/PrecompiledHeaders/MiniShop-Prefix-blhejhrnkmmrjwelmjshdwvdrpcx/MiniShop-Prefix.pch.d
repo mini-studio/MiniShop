@@ -13,6 +13,9 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Views/MiniUINaviTitleView.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Categories/UIDevice+Id.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/DataSource/ClientAgent.h \

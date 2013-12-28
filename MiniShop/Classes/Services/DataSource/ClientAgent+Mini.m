@@ -811,8 +811,9 @@
 
 @end
 
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 #import "MSNGoodsList.h"
+#import "MSNShop.h"
 
 @implementation ClientAgent (LS14)
 
@@ -825,7 +826,7 @@
 {
     NSString *addr = [self requestUri14:@"favshopcate"];
     NSDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopCateList class] isJson:YES showError:NO block:^(NSError *error, MSNShopCateList* data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNCateList class] isJson:YES showError:NO block:^(NSError *error, MSNCateList* data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -893,6 +894,21 @@
                 }
                 [(NSMutableArray*)data.info insertObject:group atIndex:0];
             }
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"searchshop"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,@"page":ITOS(page)} security:YES];
+    if (tag_id>0) {
+        params[@"tag_id"] = ITOS(tag_id);
+    }
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+        if ( block )
+        {
             block(error,data,nil,cache);
         }
     }];

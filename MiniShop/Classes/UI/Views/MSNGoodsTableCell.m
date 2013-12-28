@@ -131,7 +131,16 @@
 {
     MSNGoodItem *item = [button userInfo];
     MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
-    controller.items = @[item];
+    if ( [self.controller respondsToSelector:@selector(allGoodItems)] ) {
+        NSArray *all = [self.controller valueForKey:@"allGoodItems"];
+        controller.items = all;
+        NSUInteger index = [all indexOfObject:item];
+        if (index != NSNotFound)
+            controller.defaultIndex = index;
+    }
+    else {
+        controller.items = @[item];
+    }
     [self.controller.navigationController pushViewController:controller animated:YES];
 }
 

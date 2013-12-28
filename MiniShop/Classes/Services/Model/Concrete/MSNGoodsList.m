@@ -81,6 +81,15 @@
     return self.dataKey.count;
 }
 
+- (NSArray *)allSortedItems
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSString *key in self.dataKey) {
+        [array addObjectsFromArray:self.dataSource[key]];
+    }
+    return array;
+}
+
 @end
 
 @implementation MSNGoodItem

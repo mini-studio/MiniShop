@@ -1,5 +1,5 @@
 //
-//  MyStoreViewController.h
+//  MSNMyStoreViewController.h
 //  MiniShop
 //  我的商城
 //  Created by Wuquancheng on 13-11-27.
@@ -32,14 +32,14 @@
 #import "KeychainItemWrapper.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface MyStoreViewController : MSFrameViewController
+@interface MSNMyStoreViewController : MSFrameViewController
 @end
 
 @class MSNotify;
 @class MiniUISegmentView;
 @interface MyStoreContentViewController : MSViewController
 @property (nonatomic) NSString* tagid;
-@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) EGOUITableView *tableView;
 @property (nonatomic)BOOL mark;
 - (void)refreshData;
 - (void)selectedAsChild;

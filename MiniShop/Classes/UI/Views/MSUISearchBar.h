@@ -20,7 +20,7 @@
 @interface MSUISearchBar : UIView
 @property (nonatomic,assign)id<MSUISearchBarDelegate> delegate;
 @property (nonatomic,strong)NSString *placeholder;
-@property (nonatomic,readonly)NSString *text;
+@property (nonatomic,strong)NSString *text;
 @property (nonatomic)BOOL showCancelButton;
 @property (nonatomic)BOOL alwaysShowCancelButton;
 @end

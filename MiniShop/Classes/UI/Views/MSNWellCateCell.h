@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 
 @interface MSNWellCateCell : UITableViewCell
 @property(nonatomic,strong)MSNWellCateGroup *group;

@@ -8,12 +8,12 @@
 
 #import "MSObject.h"
 //我的商城分类
-@interface MSNShopCate : MSObject
+@interface MSNCate : MSObject
 @property (nonatomic,strong) NSString *tag_id;
 @property (nonatomic,strong) NSString *tag_name;
 @end
 //我的商城分类列表
-@interface MSNShopCateList : MSObject
+@interface MSNCateList : MSObject
 @property (nonatomic,strong)NSArray *info;
 @end
 

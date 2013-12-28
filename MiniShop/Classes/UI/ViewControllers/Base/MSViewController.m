@@ -15,6 +15,7 @@
 #import "MiniUIIndicator.h"
 #import "MRLoginViewController.h"
 #import "MSTopicViewController.h"
+#import "MSUIMoreDataCell.h"
 
 #define KBACKGROUDIMAGEVIEWTAG 0x20000
 
@@ -122,6 +123,7 @@
     CGFloat top = (self.naviTitleView.height - 30)/2;
     button.frame = CGRectMake(20, top, 30, 30);
     [self.naviTitleView addSubview:button];
+    self.naviTitleView.leftButton = (MiniUIButton*)button;
 }
 
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -279,7 +281,7 @@
     return tableView;
 }
 
-- (UITableView*)createEGOTableView
+- (EGOUITableView*)createEGOTableView
 {
     CGRect frame = self.view.bounds;
     EGOUITableView *tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
@@ -402,6 +404,34 @@
             
         }
     } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
+}
+
+- (void)loadMore
+{
+    
+}
+
+- (void)setMoreDataAction:(BOOL)more tableView:(EGOUITableView*)tableView
+{
+    if ( more )
+    {
+        if ( tableView.moreDataAction == nil)
+        {
+            if ( tableView.moreDataCell == nil )
+            {
+                tableView.moreDataCell = [[MSUIMoreDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"__More_Data_Cell"];
+            }
+            __PSELF__;
+            [tableView setMoreDataAction:^{
+                [pSelf loadMore];
+            } keepCellWhenNoData:NO loadSection:NO];
+            
+        }
+    }
+    else
+    {
+        [tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
+    }
 }
 
 @end

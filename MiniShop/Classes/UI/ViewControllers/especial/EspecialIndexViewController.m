@@ -68,7 +68,8 @@
 @interface EspecialContentViewController()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)MSNGoodsList *dataSource;
 @property (nonatomic)NSInteger page;
-@property (nonatomic,strong)UITableView *tableView;
+@property (nonatomic,strong)EGOUITableView *tableView;
+- (NSArray*)allGoodItems;
 @end
 
 @implementation EspecialContentViewController
@@ -215,30 +216,8 @@
     });
 }
 
-- (void)setMoreDataAction
-{
-    if ( self.dataSource.next_page == 1 )
-    {
-        if (((EGOUITableView*)self.tableView).moreDataAction == nil)
-        {
-            if ( self.tableView.moreDataCell == nil )
-            {
-                self.tableView.moreDataCell = [[MSUIMoreDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"__More_Data_Cell"];
-            }
-            __PSELF__;
-            [self.tableView setMoreDataAction:^{
-                [pSelf loadMore];
-            } keepCellWhenNoData:NO loadSection:NO];
-            
-        }
-    }
-    else
-    {
-        [self.tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
-    }
-}
 
-- (void)receiveData:(id)data page:(int)page
+- (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
     if ( page == 1 )
     {
@@ -250,10 +229,14 @@
     }
     _page = page;
     [self.dataSource group];
-    [self setMoreDataAction];
+    [self setMoreDataAction:(data.next_page==1) tableView:self.tableView];
     [self.tableView reloadData];
     LOG_DEBUG(@"%@",[data description]);
 }
 
+- (NSArray*)allGoodItems
+{
+    return [self.dataSource allSortedItems];
+}
 
 @end

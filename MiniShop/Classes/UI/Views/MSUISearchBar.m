@@ -106,6 +106,11 @@
     }
 }
 
+- (void)setText:(NSString *)text
+{
+    self.searchBar.text = text;
+}
+
 - (NSString*)text
 {
     return self.searchBar.text;

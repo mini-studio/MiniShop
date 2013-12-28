@@ -27,7 +27,7 @@
 #import "MSPotentialViewController.h"
 #import "MRLoginViewController.h"
 #import "MSShopGalleryViewController.h"
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 
 @interface EspecialIndexViewController : MSFrameViewController
 

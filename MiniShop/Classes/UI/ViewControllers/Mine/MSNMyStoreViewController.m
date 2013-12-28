@@ -1,21 +1,21 @@
 //
-//  MyStoreViewController.m
+//  MSNMyStoreViewController.m
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-11-27.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MyStoreViewController.h"
+#import "MSNMyStoreViewController.h"
 #import "MSNaviMenuView.h"
 #import "MSTransformButton.h"
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 
-@interface MyStoreViewController ()
+@interface MSNMyStoreViewController ()
 @property (nonatomic,strong)MSTransformButton *transformButton;
 @end
 
-@implementation MyStoreViewController
+@implementation MSNMyStoreViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,12 +61,12 @@
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNShopCateList* data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNCateList* data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if ( error==nil ) {
             int count = data.info.count;
             for ( int index = 0; index < count; index++ ) {
-                MSNShopCate *tag = [data.info objectAtIndex:index];
+                MSNCate *tag = [data.info objectAtIndex:index];
                 [pSelf.topTitleView addMenuTitle:tag.tag_name userInfo:[NSString stringWithFormat:@"%d",index]];
                 MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
                 controller.tagid = tag.tag_id;
@@ -97,6 +97,8 @@
 @interface MyStoreContentViewController()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)MSNGoodsList *dataSource;
 @property (nonatomic)NSInteger page;
+
+- (NSArray*)allGoodItems;
 @end
 
 @implementation MyStoreContentViewController
@@ -249,30 +251,7 @@
     });
 }
 
-- (void)setMoreDataAction
-{
-    if ( self.dataSource.next_page == 1 )
-    {
-        if (((EGOUITableView*)self.tableView).moreDataAction == nil)
-        {
-            if ( self.tableView.moreDataCell == nil )
-            {
-                self.tableView.moreDataCell = [[MSUIMoreDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"__More_Data_Cell"];
-            }
-            __PSELF__;
-            [self.tableView setMoreDataAction:^{
-                [pSelf loadMore];
-            } keepCellWhenNoData:NO loadSection:NO];
-            
-        }
-    }
-    else
-    {
-        [self.tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
-    }
-}
-
-- (void)receiveData:(id)data page:(int)page
+- (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
     if ( page == 1 )
     {
@@ -284,7 +263,7 @@
     }
     _page = page;
     [self.dataSource group];
-    [self setMoreDataAction];
+    [self setMoreDataAction:(data.next_page==1) tableView:self.tableView];
     [self.tableView reloadData];
     LOG_DEBUG(@"%@",[data description]);
 }
@@ -292,6 +271,11 @@
 - (void)didReceiveRemoteNotification:(NSNotification *)noti
 {
     [self refreshData];
+}
+
+- (NSArray*)allGoodItems
+{
+    return [self.dataSource allSortedItems];
 }
 
 

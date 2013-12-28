@@ -6,17 +6,17 @@
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 
-@implementation MSNShopCate
+@implementation MSNCate
 @end
 
-@implementation MSNShopCateList
+@implementation MSNCateList
 - (id)init
 {
     self = [super init];
     if ( self ) {
-        [self setAttri:@"info" clazz:[MSNShopCate class]];
+        [self setAttri:@"info" clazz:[MSNCate class]];
     }
     return self;
 }

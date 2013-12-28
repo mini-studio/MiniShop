@@ -7,9 +7,10 @@
 //
 
 #import "CreditableIndexViewController.h"
+#import "MSNSearchShopViewController.h"
 #import "MSUISearchBar.h"
 #import "ClientAgent+Mini.h"
-#import "MSNShopCate.h"
+#import "MSNCate.h"
 #import "MSNWellCateCell.h"
 
 @interface MSNCreditableHeaderView : UITableViewHeaderFooterView
@@ -132,13 +133,9 @@
 - (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar
 {
     NSString  *key = searchBar.text;
-    if ( key.length > 0 ) {
-        [self search:key];
-    }
-}
-
-- (void)search:(NSString *)key
-{
+    MSNSearchShopViewController *controller = [[MSNSearchShopViewController alloc] init];
+    controller.key = key;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)loadData

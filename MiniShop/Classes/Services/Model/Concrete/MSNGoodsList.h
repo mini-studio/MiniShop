@@ -24,6 +24,8 @@
 
 - (NSArray *)dataAtIndex:(unsigned)index;
 - (int)numberOfRows;
+
+- (NSArray *)allSortedItems;
 @end
 
 @interface MSNGoodItem : MSObject

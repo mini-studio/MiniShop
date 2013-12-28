@@ -7,6 +7,7 @@
 //
 
 #import "MiniViewController.h"
+#import "EGOUITableView.h"
 @class SVPullToRefresh;
 @class MSShopInfo;
 
@@ -21,7 +22,7 @@
 
 - (UITableView *)createPlainTableView;
 - (UITableView*)createGroupedTableView;
-- (UITableView*)createEGOTableView;
+- (EGOUITableView*)createEGOTableView;
 
 - (void)setPullToRefreshViewStyle:(SVPullToRefresh*)view;
 
@@ -38,5 +39,7 @@
 //- (void)userAuthWithString:(NSString*)string block:(void (^)())block;
 
 - (void)setDefaultNaviBackground;
+
+- (void)setMoreDataAction:(BOOL)more tableView:(EGOUITableView*)tableView;
 
 @end

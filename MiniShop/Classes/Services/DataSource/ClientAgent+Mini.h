@@ -105,5 +105,7 @@
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //好店汇分类
 - (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//搜索店铺 key=a&sort=&page=1&tag_id=
+- (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 @end
 

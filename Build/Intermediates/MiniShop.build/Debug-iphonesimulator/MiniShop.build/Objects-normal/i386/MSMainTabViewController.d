@@ -13,7 +13,7 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Controllers/MiniUINavigationController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/News/MSTopicViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MyStoreViewController.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSNMyStoreViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/MSNaviMenuView.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNotify.h \
@@ -21,9 +21,6 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/MSNotiTableCell.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSItemListViewController.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/Mini/MiniUIWebView.h \
@@ -50,5 +47,5 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNShopCate.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNCate.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h

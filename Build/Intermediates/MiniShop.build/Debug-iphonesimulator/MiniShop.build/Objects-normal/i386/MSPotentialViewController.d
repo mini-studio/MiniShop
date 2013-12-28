@@ -18,7 +18,4 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Categories/UILabel+Mini.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Categroy/UIColor+Mini.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSPotentialInfo.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/UITableView+EGO.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/EGOUITableView.h \
-  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/Mini3rdFramework/EGOTable/SVPullToRefresh/SVPullToRefresh.h
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/Views/MSUIPotentialCell.h
