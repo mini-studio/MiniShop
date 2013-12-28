@@ -61,6 +61,32 @@
     return [self perfectParameters:param security:NO];
 }
 
+- (void)perfectHttpRequest:(NSMutableURLRequest *)requst
+{
+    NSString *imei = @"";
+    if ( [MSSystem sharedInstance].udid.length > 0 ) {
+        imei = [MSSystem sharedInstance].udid;
+    }
+    else {
+        if ( [MSSystem sharedInstance].mainVersion >= 7 ) {
+            ;
+        }
+        else {
+            imei = UDID;
+        }
+    }
+    if (imei.length > 0)
+    [requst setValue:imei forHTTPHeaderField:@"imei"];
+    
+    if ( WHO !=nil && WHO.uniqid.length>0) {
+        [requst setValue:WHO.uniqid forHTTPHeaderField:@"uniqid"];
+    }
+    
+    [requst setValue:@"iphone" forHTTPHeaderField:@"sys_device"];
+    [requst setValue:[NSString stringWithFormat:@"%d",MAIN_VERSION] forHTTPHeaderField:@"sys_version"];
+    [requst setValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forHTTPHeaderField:@"app_version"];
+}
+
 -(NSMutableDictionary*)perfectParameters:(NSDictionary*)param security:(BOOL)security
 {
     NSMutableDictionary * p = param==nil?[NSMutableDictionary dictionary]:[NSMutableDictionary dictionaryWithDictionary:param];

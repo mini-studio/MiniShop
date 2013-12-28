@@ -12,7 +12,7 @@
 @interface MSUIDTView : UIView
 @property(nonatomic)CGFloat bestTop;
 @property(nonatomic,strong)MiniUIWebView *webView;
-@property(nonatomic)int64_t mid;
+@property(nonatomic,strong)NSString *mid;
 @property(nonatomic,strong)UIView    *toolbar;
 @property(nonatomic,assign)id delegate;
 - (void)loadDetail;

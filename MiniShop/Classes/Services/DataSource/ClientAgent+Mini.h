@@ -21,6 +21,7 @@
 + (NSString *)jumpToTaoBaoUrl:(NSString *)type;
 
 + (NSString *)prefectUrl:(NSString*)url;
+- (void)perfectHttpRequest:(NSMutableURLRequest *)requst;
 
 - (void)registe:(NSString*)uname passwd:(NSString*)passwd mobile:(NSString*)mobile block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 

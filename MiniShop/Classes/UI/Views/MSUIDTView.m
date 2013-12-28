@@ -127,15 +127,16 @@
 - (void)loadDetail
 {
     [MobClick event:MOB_DETAIL_PULL];
-    NSString *url =[NSString stringWithFormat:@"http://www.youjiaxiaodian.com/api/showgoodsdescimage?screenY=960&screenW=640&id=%lld",self.mid];
+    NSString *url =[NSString stringWithFormat:@"http://www.youjiaxiaodian.com/new/showgoodsdescimage?screenY=960&screenW=640&id=%@",self.mid];
     if ( ![url isEqualToString:self.lastRequestURL] ) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]];
         [_webView loadRequest:request];
     }
     self.lastRequestURL=url;
-    url = [ClientAgent prefectUrl:url];
     LOG_DEBUG(@"Load detail %@",url);
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [[ClientAgent sharedInstance] perfectHttpRequest:request];
+    [self.webView loadRequest:request];
 
 }
 

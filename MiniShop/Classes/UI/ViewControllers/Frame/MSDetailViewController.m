@@ -453,7 +453,7 @@
     {
         ((UILabel *)[self.toolbar viewWithTag:10003]).text = @"";
     }
-    self.toolView.mid = item.mid;
+    self.toolView.mid = [NSString stringWithFormat:@"%lld",item.mid];
 }
 
 //查看详情
