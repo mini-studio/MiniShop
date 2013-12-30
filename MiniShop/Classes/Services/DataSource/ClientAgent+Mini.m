@@ -940,4 +940,52 @@
     }];
 }
 
+- (void)setfavgoods:(NSString*)mid action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
+{
+    NSString *addr = [self requestUri14:@"setfavgoods"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"goods_id":mid} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)mygoodslist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"mygoodslist"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
+{
+    NSString *addr = [self requestUri14:@"setfavshop"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"shop_id":shopId} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)myshoplist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"myshoplist"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
 @end

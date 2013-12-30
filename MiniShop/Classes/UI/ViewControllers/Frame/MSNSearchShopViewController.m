@@ -101,15 +101,6 @@
         [cell.shareButton addTarget:self action:@selector(shareShop:) forControlEvents:UIControlEventTouchUpInside];
         
     }
-//    if ( self.type == EFollowed )
-//    {
-//        cell.showsShareButton = YES;
-//        cell.shareButton.userInfo = info;
-//    }
-//    else
-//    {
-//        cell.showsShareButton = NO;
-//    }
     cell.shopInfo = info;
     cell.button.userInfo = info;
     return cell;
@@ -167,6 +158,14 @@
         if (error==nil) {
             [pSelf recevieData:data page:page];
         }
+    }];
+}
+
+- (void)actionButtonTap:(MiniUIButton*)button
+{
+    MSNShopInfo *info = button.userInfo;
+    [[ClientAgent sharedInstance] setfavshop:info.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        
     }];
 }
 

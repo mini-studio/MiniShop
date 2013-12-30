@@ -60,6 +60,7 @@
 		C12E4975180A345500482A10 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C4A616FF4CD800ED87D8 /* Security.framework */; };
 		C12E4978180A37B900482A10 /* MSKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C12E4977180A37B900482A10 /* MSKeychainWrapper.m */; };
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
+		C143AD8A1871D49C0089949C /* MSNFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C143AD891871D49C0089949C /* MSNFavViewController.m */; };
 		C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */; };
 		C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */; };
 		C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */; };
@@ -397,6 +398,8 @@
 		C12E4976180A37B900482A10 /* MSKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSKeychainWrapper.h; sourceTree = "<group>"; };
 		C12E4977180A37B900482A10 /* MSKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSKeychainWrapper.m; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		C143AD881871D49C0089949C /* MSNFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNFavViewController.h; sourceTree = "<group>"; };
+		C143AD891871D49C0089949C /* MSNFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNFavViewController.m; sourceTree = "<group>"; };
 		C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIPhotoImageView.h; sourceTree = "<group>"; };
 		C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIPhotoImageView.m; sourceTree = "<group>"; };
 		C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav_h@2x.png"; sourceTree = "<group>"; };
@@ -1579,6 +1582,8 @@
 				C1EC5038178074A100BE5ABB /* MSProlfileViewController.m */,
 				C10EDD3C18451A4100503993 /* MSNMyStoreViewController.h */,
 				C10EDD3D18451A4100503993 /* MSNMyStoreViewController.m */,
+				C143AD881871D49C0089949C /* MSNFavViewController.h */,
+				C143AD891871D49C0089949C /* MSNFavViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2157,6 +2162,7 @@
 				C10EDD3E18451A4100503993 /* MSNMyStoreViewController.m in Sources */,
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
+				C143AD8A1871D49C0089949C /* MSNFavViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,

@@ -415,11 +415,17 @@
 {
     [MobClick event:MOB_DETAIL_TOP_COPY];
     MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
-    if ( item == nil || item.mid == 0 ) {
+    if ( item == nil || [item.goods_id isEqualToString:0] ) {
         return;
     }
     [[MiniSysUtil sharedInstance] copyToBoard:[self itemUri:item]];
     [self showMessageInfo:@"商品链接地址已经复制啦" delay:2];
+    __PSELF__;
+    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if ( error != nil ) {
+            [pSelf showMessageInfo:[error localizedDescription] delay:2];
+        }
+    }];
 }
 
 - (void)gotoShop:(MiniUIButton *)button

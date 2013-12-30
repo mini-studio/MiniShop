@@ -139,6 +139,8 @@
         self.button.hidden = NO;
     }
     self.detailTextLabel.text = @"";
+    self.button.userInfo = shopInfo;
+    [MSNShopInfoCell resetButtonState:self.button shopInfo:shopInfo];
 }
 
 + (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSNShopInfo*)shopInfo

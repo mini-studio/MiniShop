@@ -46,6 +46,7 @@ dependencies: \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/More/MRLoginViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Frame/MSShopGalleryViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/Headers/MiniLiteFramework/Util/KeychainItemWrapper.h \
+  /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Mine/MSNFavViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Especial/EspecialIndexViewController.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/Services/Model/Concrete/MSNCate.h \
   /Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/MiniShop/Classes/UI/ViewControllers/Credit/CreditableIndexViewController.h

@@ -108,5 +108,12 @@
 - (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //搜索店铺 key=a&sort=&page=1&tag_id=
 - (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+//收藏店铺
+- (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+- (void)myshoplist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+//收藏商品
+- (void)setfavgoods:(NSString*)mid action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+- (void)mygoodslist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+
 @end
 
