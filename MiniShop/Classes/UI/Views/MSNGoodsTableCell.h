@@ -13,4 +13,6 @@
 @property (nonatomic,assign)UIViewController *controller;
 
 + (CGFloat)heightForItems:(NSArray*)items width:(CGFloat)maxWidth;
+
+- (void)clearMemory;
 @end

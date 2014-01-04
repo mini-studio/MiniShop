@@ -144,6 +144,12 @@
     [self.controller.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)clearMemory
+{
+    for ( MiniUIPhotoImageView *imageView in self.imageArray ) {
+        imageView.image=nil;
+    }
+}
 
 /**
  NSArray 元素的类型为 MSNGoodsItem

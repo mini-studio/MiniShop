@@ -3,7 +3,7 @@
 //  LS
 //
 //  Created by wu quancheng on 12-6-10.
-//  Copyright (c) 2012年 YouLu. All rights reserved.
+//  Copyright (c) 2012年 Mini. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,7 +13,7 @@
 
 @interface MiniViewController : UIViewController
 {
-      MBProgressHUD       *_hud;
+    MBProgressHUD       *_hud;
 }
 @property (nonatomic,getter = isVisible) BOOL visible;
 @property (nonatomic,retain)MiniUINaviTitleView *naviTitleView;
@@ -60,10 +60,15 @@
 
 + (void)showImageInWindow:(UIImage *)image oriFrame:(CGRect)frame;
 
-- (void)selectedAsChild;
+
 @end
 
 @interface MiniViewController (http)
 - (void)requestStart:(NSDictionary *)properties;
 - (void)requestEnd:(NSDictionary *)properties;
+@end
+
+@interface MiniViewController (child)
+- (void)selectedAsChild;
+- (void)deselectedAsChild;
 @end

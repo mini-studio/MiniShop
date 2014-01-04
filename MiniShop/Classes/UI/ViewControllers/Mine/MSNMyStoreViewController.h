@@ -40,5 +40,4 @@
 @class MiniUISegmentView;
 @interface MSNMyStoreContentViewController : MSNGoodListViewController
 @property (nonatomic) NSString* tagid;
-- (void)selectedAsChild;
 @end

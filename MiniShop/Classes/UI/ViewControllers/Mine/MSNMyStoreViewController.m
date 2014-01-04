@@ -142,13 +142,6 @@
     return self;
 }
 
-- (void)selectedAsChild
-{
-    if ( self.dataSource.info.count == 0 ) {
-        [self refreshData];
-    }
-}
-
 - (void)setStatusBar
 {
 }

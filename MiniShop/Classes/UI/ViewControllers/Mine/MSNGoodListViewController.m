@@ -86,6 +86,7 @@
     return 0;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *ds = (NSArray*)[self.dataSource dataAtIndex:(unsigned)indexPath.row];
@@ -125,6 +126,23 @@
 {
     if ( self.dataSource.info.count == 0 ) {
         [self refreshData];
+    }
+    else {
+        [self.tableView reloadData];
+    }
+}
+
+- (void)deselectedAsChild
+{
+    int sections = [self numberOfSectionsInTableView:self.tableView];
+    for (int section=0; section<sections; section++) {
+        int rows = [self tableView:self.tableView numberOfRowsInSection:section];
+        for (int row=0; row<rows; row++) {
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
+            if ( [cell isKindOfClass:[MSNGoodsTableCell class]] ) {
+                [(MSNGoodsTableCell*)cell clearMemory];
+            }
+        }
     }
 }
 
