@@ -1,20 +1,20 @@
 //
-//  MSUISearchBar.m
+//  MSNUISearchBar.m
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-5-25.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSUISearchBar.h"
+#import "MSNUISearchBar.h"
 
-@interface MSUISearchBar()<UISearchBarDelegate>
+@interface MSNUISearchBar()<UISearchBarDelegate>
 @property (nonatomic,strong)MiniUIButton *searchButton;
 @property (nonatomic,strong)UISearchBar *searchBar;
 
 @end
 
-@implementation MSUISearchBar
+@implementation MSNUISearchBar
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -116,4 +116,95 @@
     return self.searchBar.text;
 }
 
+@end
+
+
+@interface MSNSearchView()<UITextFieldDelegate>
+@property (nonatomic,strong)MiniUIButton *cancelButton;
+@property (nonatomic,strong)UITextField  *searchBar;
+@end
+
+@implementation MSNSearchView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initSubViews];
+    }
+    return self;
+}
+
+- (void)initSubViews
+{
+    self.backgroundColor = [UIColor redColor];
+    CGRect rect = CGRectInset(self.bounds, 50, 5);
+    self.searchBar = [[UITextField alloc] initWithFrame:rect];
+    self.searchBar.backgroundColor = [UIColor whiteColor];
+    [self addSubview:self.searchBar];
+    self.searchBar.returnKeyType = UIReturnKeySearch;
+    self.searchBar.delegate = self;
+    
+    self.cancelButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+    [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.cancelButton.frame = CGRectMake(self.width-45, (self.height-40)/2, 40,40);
+    [self addSubview:self.cancelButton];
+    [self.cancelButton addTarget:self action:@selector(actionCancel) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)actionCancel
+{
+    [self hide];
+    if ( self.delegate != nil ) {
+        if ( [self.delegate respondsToSelector:@selector(searchViewCancelButtonClicked:)]) {
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.delegate searchViewCancelButtonClicked:self];
+            });
+        }
+    }
+}
+
+- (void)show
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.top = 0;
+    } completion:^(BOOL finished) {
+        [self.searchBar becomeFirstResponder];
+    }];
+}
+
+- (void)hide
+{
+    [self.searchBar resignFirstResponder];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bottom = 0;
+    }];
+    
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ( [string isEqualToString:@"\n"] ) {
+        [self hide];
+         if ( [self.delegate respondsToSelector:@selector(searchViewSearchButtonClicked:)]) {
+            if ( self.delegate != nil ) {
+                double delayInSeconds = 0.5;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [self.delegate searchViewSearchButtonClicked:self];
+                });
+            }
+         }
+        return NO;
+    }
+    return YES;
+}
+
+- (NSString*)text
+{
+    return self.searchBar.text;
+}
 @end

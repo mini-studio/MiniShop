@@ -9,6 +9,6 @@
 #import "MSViewController.h"
 #import "UMFeedback.h"
 
-@interface MSSettingsViewController : MSViewController
+@interface MSNSettingsViewController : MSViewController
 
 @end

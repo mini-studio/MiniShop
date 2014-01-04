@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSSettingsViewController.h"
+#import "MSNSettingsViewController.h"
 #import "UMFeedbackViewController.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "UIColor+Mini.h"
@@ -34,28 +34,34 @@
 // 字体高度配置
 #define KLabelHeight          12.0f
 
-@interface MSSettingsViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MSNSettingsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)NSDictionary *dictionary;
 @property (nonatomic,strong)UMFeedback *umFeedback;
 @end
 
-@implementation MSSettingsViewController
+@implementation MSNSettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.dictionary = @{@"0":@[
-                                    @{@"action":@"actionForInvote",@"text":@"小主，跪求评分"}
+                                    @{@"action":@"actionForInvote",@"text":@"请赐好评,我们会更加努力"},
+                                    @{@"action":@"actionForMessage",@"text":@"公告消息"}
                                     ],
                             @"1":@[
-                                    @{@"action":@"actionForFeedback",@"text":@"来聊聊您的想法"},
-                                    @{@"action":@"actionForJoin",@"text":@"加入QQ群"},
-                                    @{@"action":@"actionForSeller",@"text":@"卖家管理"},
-                                    @{@"action":@"actionForClearCache",@"text":@"清除缓存"}
+                                    @{@"action":@"actionForReg",@"text":@"登陆注册 和  绑定支付宝",@"subtext":@"登录绑定后才能参加积分活动哦~"},
+                                    @{@"action":@"actionForFeedback",@"text":@"微信"},
+                                    @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
                                     ],
                             @"2":@[
+                                    //@{@"action":@"actionForJoin",@"text":@"加入QQ群"},
+                                    @{@"action":@"actionForSeller",@"text":@"消息推送提示音",@"type":@"switch"},
+                                    @{@"action":@"actionForClearCache",@"text":@"清除缓存"}
+                                    ],
+                            @"3":@[
+                                    @{@"action":@"actionForAbout",@"text":@"精品推荐"},
                                     @{@"action":@"actionForAbout",@"text":@"关于"}
                                   ]
                             };
@@ -72,7 +78,7 @@
 {
     [super viewDidLoad];
 	self.naviTitleView.title = @"更多";    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor lightGrayColor];

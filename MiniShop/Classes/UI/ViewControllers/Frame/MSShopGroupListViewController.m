@@ -14,18 +14,18 @@
 #import "MSShopInfoCell.h"
 #import "MSUIWebViewController.h"
 #import "MSShopGalleryViewController.h"
-#import "MSUISearchBar.h"
+#import "MSNUISearchBar.h"
 #import "MRLoginViewController.h"
 
-@interface MSShopGroupListViewController ()<UITableViewDataSource,UITableViewDelegate,MSUISearchBarDelegate>
+@interface MSShopGroupListViewController ()<UITableViewDataSource,UITableViewDelegate,MSNUISearchBarDelegate>
 @property (nonatomic,strong) NSDictionary *dataSource;
 @property (nonatomic,strong) UITableView    *tableView;
 @property (nonatomic) BOOL inited;
 @end
 
 @interface MSShopGroupListViewController (search)
-- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar;
-- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder;
+- (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar;
+- (MSNUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder;
 - (void)search:(NSString *)key;
 @end
 
@@ -285,16 +285,16 @@
 
 @implementation  MSShopGroupListViewController (search)
 
-- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
+- (MSNUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
 {
-    MSUISearchBar *searchBar = [[MSUISearchBar  alloc] initWithFrame:self.naviTitleView.bounds];
+    MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:self.naviTitleView.bounds];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
     [self.naviTitleView addSubview:searchBar];
     return searchBar;
 }
 
-- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar
+- (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
 {
     NSString  *key = searchBar.text;
     if ( key.length > 0 )
@@ -303,7 +303,7 @@
     }
 }
 
-- (void)searchBarCancelButtonClicked:(MSUISearchBar *)searchBar
+- (void)searchBarCancelButtonClicked:(MSNUISearchBar *)searchBar
 {
     [self back];
 }

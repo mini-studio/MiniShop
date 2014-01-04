@@ -30,6 +30,7 @@
 #import "MRLoginViewController.h"
 #import "MSShopGalleryViewController.h"
 #import "KeychainItemWrapper.h"
+#import "MSNGoodListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface MSNMyStoreViewController : MSFrameViewController
@@ -37,10 +38,7 @@
 
 @class MSNotify;
 @class MiniUISegmentView;
-@interface MyStoreContentViewController : MSViewController
+@interface MSNMyStoreContentViewController : MSNGoodListViewController
 @property (nonatomic) NSString* tagid;
-@property (nonatomic,strong) EGOUITableView *tableView;
-@property (nonatomic)BOOL mark;
-- (void)refreshData;
 - (void)selectedAsChild;
 @end

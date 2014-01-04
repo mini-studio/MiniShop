@@ -8,7 +8,7 @@
 
 #import "CreditableIndexViewController.h"
 #import "MSNSearchShopViewController.h"
-#import "MSUISearchBar.h"
+#import "MSNUISearchBar.h"
 #import "ClientAgent+Mini.h"
 #import "MSNCate.h"
 #import "MSNWellCateCell.h"
@@ -25,8 +25,8 @@
 }
 @end
 
-@interface CreditableIndexViewController ()<MSUISearchBarDelegate>
-@property (nonatomic,strong)MSUISearchBar *searchBar;
+@interface CreditableIndexViewController ()<MSNUISearchBarDelegate>
+@property (nonatomic,strong)MSNUISearchBar *searchBar;
 @property (nonatomic,strong)NSString *key;
 @property (nonatomic,strong)MSNWellCateList *dataSource;
 @property (nonatomic,strong) UITableView *tableView;
@@ -70,9 +70,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
+- (MSNUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
 {
-    MSUISearchBar *searchBar = [[MSUISearchBar  alloc] initWithFrame:self.naviTitleView.bounds];
+    MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:self.naviTitleView.bounds];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
     [self.naviTitleView addSubview:searchBar];
@@ -130,7 +130,7 @@
 {
 }
 
-- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar
+- (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
 {
     NSString  *key = searchBar.text;
     MSNSearchShopViewController *controller = [[MSNSearchShopViewController alloc] init];

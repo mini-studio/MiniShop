@@ -7,14 +7,14 @@
 //
 
 #import "MSNSearchShopViewController.h"
-#import "MSUISearchBar.h"
+#import "MSNUISearchBar.h"
 #import "MSNShop.h"
 #import "MSNShopInfoCell.h"
 #import "EGOUITableView.h"
 #import "MSUIMoreDataCell.h"
 
-@interface MSNSearchShopViewController ()<MSUISearchBarDelegate>
-@property (nonatomic,strong)MSUISearchBar *searchBar;
+@interface MSNSearchShopViewController ()<MSNUISearchBarDelegate>
+@property (nonatomic,strong)MSNUISearchBar *searchBar;
 @property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic,strong)MSNShopList   *dataSource;
 @property (nonatomic)int page;
@@ -40,11 +40,11 @@
     [self createTableView];
 }
 
-- (MSUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
+- (MSNUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
 {
     CGRect frame = self.naviTitleView.bounds;
     frame = CGRectInset(frame, 44, 0);
-    MSUISearchBar *searchBar = [[MSUISearchBar  alloc] initWithFrame:frame];
+    MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:frame];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
     [self.naviTitleView addSubview:searchBar];
@@ -120,7 +120,7 @@
 //    }
 }
 
-- (void)searchBarSearchButtonClicked:(MSUISearchBar *)searchBar
+- (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
 {
     self.key = searchBar.text;
     [self search:1 delay:0];

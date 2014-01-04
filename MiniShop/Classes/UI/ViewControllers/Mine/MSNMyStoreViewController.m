@@ -7,12 +7,15 @@
 //
 
 #import "MSNMyStoreViewController.h"
+#import "MSNSearchGoodsViewController.h"
 #import "MSNaviMenuView.h"
 #import "MSTransformButton.h"
 #import "MSNCate.h"
+#import "MSNUISearchBar.h"
 
-@interface MSNMyStoreViewController ()
+@interface MSNMyStoreViewController ()<MSNSearchViewDelegate>
 @property (nonatomic,strong)MSTransformButton *transformButton;
+@property (nonatomic,strong)MSNSearchView *searchView;
 @end
 
 @implementation MSNMyStoreViewController
@@ -28,6 +31,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.naviTitleView.layer.masksToBounds = YES;
     self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.width, 0, 50, self.naviTitleView.height)];
     [self.naviTitleView addSubview:self.transformButton];
     self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
@@ -36,6 +40,10 @@
     CGFloat centerX = self.transformButton.right + (self.naviTitleView.width-self.transformButton.right)/2;
     searchButton.center = CGPointMake(centerX, self.transformButton.height/2);
     [self.naviTitleView addSubview:searchButton];
+    [searchButton addTarget:self action:@selector(actionShowSearchBar:) forControlEvents:UIControlEventTouchUpInside];
+    self.searchView = [[MSNSearchView alloc] initWithFrame:CGRectMake(0, -self.naviTitleView.height, self.naviTitleView.width, self.naviTitleView.height)];
+    self.searchView.delegate = self;
+    [self.naviTitleView addSubview:self.searchView];
 }
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
@@ -68,7 +76,7 @@
             for ( int index = 0; index < count; index++ ) {
                 MSNCate *tag = [data.info objectAtIndex:index];
                 [pSelf.topTitleView addMenuTitle:tag.tag_name userInfo:[NSString stringWithFormat:@"%d",index]];
-                MyStoreContentViewController *controller = [[MyStoreContentViewController alloc] init];
+                MSNMyStoreContentViewController *controller = [[MSNMyStoreContentViewController alloc] init];
                 controller.tagid = tag.tag_id;
                 [pSelf.subControllers addObject:controller];
                 [pSelf addChildViewController:controller];
@@ -78,7 +86,7 @@
             pSelf.containerView.contentSize = CGSizeMake(count*pSelf.containerView.width, 0);
             [pSelf.topTitleView setNeedsLayout];
             pSelf.topTitleView.selectedIndex = 0;
-            [(MyStoreContentViewController*)[pSelf.subControllers objectAtIndex:0] refreshData];
+            [(MSNMyStoreContentViewController*)[pSelf.subControllers objectAtIndex:0] refreshData];
         }
         else {
             [pSelf showErrorMessage:error];
@@ -86,27 +94,37 @@
     }];
 }
 
+- (void)actionShowSearchBar:(MiniUIButton*)button
+{
+    [self.searchView show];
+}
+
+- (void)searchViewSearchButtonClicked:(MSNSearchView *)searchBar
+{
+    NSString *key = searchBar.text;
+    if (key.length > 0) {
+        MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
+        controller.key = key;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
 @end
 
 /****************************************************************************/
-#include "MSNGoodsList.h"
+#import "MSNGoodsList.h"
 
 #import "MSNGoodsTableCell.h"
 /****************************************************************************/
 
-@interface MyStoreContentViewController()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong)MSNGoodsList *dataSource;
-@property (nonatomic)NSInteger page;
-
-- (NSArray*)allGoodItems;
+@interface MSNMyStoreContentViewController()
 @end
 
-@implementation MyStoreContentViewController
+@implementation MSNMyStoreContentViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _page = 1;
     }
     return self;
 }
@@ -121,103 +139,6 @@
     return self;
 }
 
-- (void)setStatusBar
-{
-    
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)loadView
-{
-    [super loadView];
-    [self setNaviTitleViewShow:NO];
-    [self createTableView];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)createTableView
-{
-    self.tableView = [self createEGOTableView];
-    [self.contentView addSubview:self.tableView];
-    __weak typeof (self) itSelf = self;
-    [self.tableView setPullToRefreshAction:^{
-        [itSelf loadData:1];
-    }];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.dataSource numberOfRows];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0;
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *ds = (NSArray*)[self.dataSource dataAtIndex:(unsigned)indexPath.row];
-    return [MSNGoodsTableCell heightForItems:ds width:tableView.width];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *identifier = @"cell";
-    MSNGoodsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if ( cell == nil )
-    {
-        cell = [[MSNGoodsTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    }
-    NSArray *ds = [self.dataSource dataAtIndex:indexPath.row];
-    if ( indexPath.section < ds.count )
-    {
-        cell.items = ds;
-        [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];   
-    }
-    cell.controller = self;
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-}
-
-
-- (void)refreshData
-{
-    [self.tableView setContentOffset:CGPointMake(0, 0)];
-    [self.tableView triggerRefresh];
-}
-
 - (void)selectedAsChild
 {
     if ( self.dataSource.info.count == 0 ) {
@@ -225,14 +146,9 @@
     }
 }
 
-- (void)loadMore
+- (void)didReceiveRemoteNotification:(NSNotification *)noti
 {
-    [self loadData:(_page+1) delay:0.50f];
-}
-
-- (void)loadData:(int)page
-{
-    [self loadData:page delay:0.10];
+    [self refreshData];
 }
 
 - (void)loadData:(int)page delay:(CGFloat)delay
@@ -250,33 +166,5 @@
         }];
     });
 }
-
-- (void)receiveData:(MSNGoodsList*)data page:(int)page
-{
-    if ( page == 1 )
-    {
-        [self.tableView refreshDone];
-         self.dataSource = data;
-    }
-    else {
-        [self.dataSource append:data];
-    }
-    _page = page;
-    [self.dataSource group];
-    [self setMoreDataAction:(data.next_page==1) tableView:self.tableView];
-    [self.tableView reloadData];
-    LOG_DEBUG(@"%@",[data description]);
-}
-
-- (void)didReceiveRemoteNotification:(NSNotification *)noti
-{
-    [self refreshData];
-}
-
-- (NSArray*)allGoodItems
-{
-    return [self.dataSource allSortedItems];
-}
-
 
 @end

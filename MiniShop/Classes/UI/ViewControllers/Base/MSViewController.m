@@ -283,7 +283,7 @@
 
 - (EGOUITableView*)createEGOTableView
 {
-    CGRect frame = self.view.bounds;
+    CGRect frame = self.contentView.bounds;
     EGOUITableView *tableView = [[EGOUITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     tableView.delegate = self;

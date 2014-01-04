@@ -9,5 +9,5 @@
 #import "MSViewController.h"
 
 @interface MSNFavViewController : MSViewController
-
+@property (nonatomic,strong) EGOUITableView *tableView;
 @end

@@ -1,53 +1,63 @@
 //
-//  MSNFavViewController.m
+//  MSNGoodListViewController.m
 //  MiniShop
 //
-//  Created by Wuquancheng on 13-12-31.
-//  Copyright (c) 2013年 mini. All rights reserved.
+//  Created by Wuquancheng on 14-1-4.
+//  Copyright (c) 2014年 mini. All rights reserved.
 //
 
-#import "MSNFavViewController.h"
+#import "MSNGoodListViewController.h"
 #import "MSNGoodsList.h"
 #import "MSNGoodsTableCell.h"
-
 #import "UIColor+Mini.h"
 
-@interface MSNFavViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic) int page;
-@property (nonatomic,strong)MSNGoodsList *dataSource;
+@interface MSNGoodListViewController ()
 
-- (NSArray*)allGoodItems;
 @end
 
-@implementation MSNFavViewController
+@implementation MSNGoodListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super init];
+    if (self)
+    {
+        _page = 1;
+        _showNaviView = NO;
     }
     return self;
+}
+
+- (void)setStatusBar
+{
+    
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)loadView
+{
+    [super loadView];
+    [self setNaviTitleViewShow:_showNaviView];
+    [self createTableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.naviTitleView.title = @"我的收藏";
-    [self createTableView];
-        [self loadData:1];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)createTableView
@@ -108,14 +118,32 @@
 {
 }
 
-- (NSArray*)allGoodItems
+
+- (void)refreshData
 {
-    return [self.dataSource allSortedItems];
+    [self.tableView setContentOffset:CGPointMake(0, 0)];
+    [self.tableView triggerRefresh];
+}
+
+- (void)selectedAsChild
+{
+    if ( self.dataSource.info.count == 0 ) {
+        [self refreshData];
+    }
 }
 
 - (void)loadMore
 {
-    [self loadData:(_page+1)];
+    [self loadData:(_page+1) delay:0.50f];
+}
+
+- (void)loadData:(int)page
+{
+    [self loadData:page delay:0.10];
+}
+
+- (void)loadData:(int)page delay:(CGFloat)delay
+{
 }
 
 - (void)receiveData:(MSNGoodsList*)data page:(int)page
@@ -135,19 +163,14 @@
     LOG_DEBUG(@"%@",[data description]);
 }
 
-- (void)loadData:(int)page
+- (void)didReceiveRemoteNotification:(NSNotification *)noti
 {
-    __PSELF__;
-    [self showWating:nil];
-    [[ClientAgent sharedInstance] mygoodslist:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        if ( error == nil ) {
-            [self receiveData:data page:page];
-        }
-        else {
-            [pSelf showErrorMessage:error];
-        }
-    }];
+    [self refreshData];
+}
+
+- (NSArray*)allGoodItems
+{
+    return [self.dataSource allSortedItems];
 }
 
 @end
