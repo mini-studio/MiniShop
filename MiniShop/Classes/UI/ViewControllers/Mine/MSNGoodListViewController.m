@@ -28,10 +28,6 @@
     return self;
 }
 
-- (void)setStatusBar
-{
-    
-}
 
 - (void)dealloc
 {

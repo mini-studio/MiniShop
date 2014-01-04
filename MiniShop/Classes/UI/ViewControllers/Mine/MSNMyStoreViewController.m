@@ -148,6 +148,10 @@
     }
 }
 
+- (void)setStatusBar
+{
+}
+
 - (void)didReceiveRemoteNotification:(NSNotification *)noti
 {
     [self refreshData];
