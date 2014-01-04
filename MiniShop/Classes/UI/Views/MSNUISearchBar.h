@@ -35,6 +35,7 @@
 @end
 @interface MSNSearchView : UIView
 @property (nonatomic,assign)id<MSNSearchViewDelegate> delegate;
+@property (nonatomic)BOOL floatting;
 - (void)show;
 - (void)hide;
 - (NSString*)text;

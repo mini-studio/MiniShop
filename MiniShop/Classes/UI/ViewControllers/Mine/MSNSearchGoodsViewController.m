@@ -7,9 +7,10 @@
 //
 
 #import "MSNSearchGoodsViewController.h"
+#import "MSNUISearchBar.h"
 
-@interface MSNSearchGoodsViewController ()
-
+@interface MSNSearchGoodsViewController ()<MSNSearchViewDelegate>
+@property (nonatomic,strong)MSNSearchView *searchView;
 @end
 
 @implementation MSNSearchGoodsViewController
@@ -25,11 +26,19 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    self.searchView = [[MSNSearchView alloc] initWithFrame:CGRectMake(0, 0, self.naviTitleView.width, self.naviTitleView.height)];
+    self.searchView.floatting = NO;
+    self.searchView.delegate = self;
+    [self.naviTitleView addSubview:self.searchView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.naviTitleView.title = @"搜索";
-    [self setNaviBackButton];
     [self refreshData];
 }
 
@@ -59,5 +68,14 @@
     });
 }
 
+- (void)searchViewCancelButtonClicked:(MSNSearchView *)searchBar
+{
+    [self back];
+}
+
+- (void)searchViewSearchButtonClicked:(MSNSearchView *)searchBar
+{
+    
+}
 
 @end

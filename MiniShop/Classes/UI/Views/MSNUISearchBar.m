@@ -130,6 +130,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _floatting = YES;
         [self initSubViews];
     }
     return self;
@@ -158,7 +159,7 @@
     [self hide];
     if ( self.delegate != nil ) {
         if ( [self.delegate respondsToSelector:@selector(searchViewCancelButtonClicked:)]) {
-            double delayInSeconds = 0.5;
+            double delayInSeconds = 0.01;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 [self.delegate searchViewCancelButtonClicked:self];
@@ -169,20 +170,23 @@
 
 - (void)show
 {
-    [UIView animateWithDuration:0.25 animations:^{
-        self.top = 0;
-    } completion:^(BOOL finished) {
-        [self.searchBar becomeFirstResponder];
-    }];
+    if ( _floatting ) {
+        [UIView animateWithDuration:0.25 animations:^{
+            self.top = 0;
+        } completion:^(BOOL finished) {
+            [self.searchBar becomeFirstResponder];
+        }];
+    }
 }
 
 - (void)hide
 {
-    [self.searchBar resignFirstResponder];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.bottom = 0;
-    }];
-    
+    if (_floatting) {
+        [self.searchBar resignFirstResponder];
+        [UIView animateWithDuration:0.25 animations:^{
+            self.bottom = 0;
+        }];
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -191,7 +195,7 @@
         [self hide];
          if ( [self.delegate respondsToSelector:@selector(searchViewSearchButtonClicked:)]) {
             if ( self.delegate != nil ) {
-                double delayInSeconds = 0.5;
+                double delayInSeconds = 0.01;
                 dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                 dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                     [self.delegate searchViewSearchButtonClicked:self];
