@@ -31,12 +31,17 @@
 @optional
 - (void)searchViewCancelButtonClicked:(MSNSearchView *)searchBar;
 - (void)searchViewSearchButtonClicked:(MSNSearchView *)searchBar;
-
+- (void)searchViewScopeValueChanged:(MSNSearchView *)searchBar;
 @end
+
 @interface MSNSearchView : UIView
 @property (nonatomic,assign)id<MSNSearchViewDelegate> delegate;
 @property (nonatomic)BOOL floatting;
+@property (nonatomic,strong)NSString *text;
+@property (nonatomic,strong)NSArray *scopeString;
+@property (nonatomic)NSInteger scopeIndex;
 - (void)show;
 - (void)hide;
-- (NSString*)text;
+
+- (void)setScopeString:(NSArray *)scopeString defaultIndex:(int)index;
 @end

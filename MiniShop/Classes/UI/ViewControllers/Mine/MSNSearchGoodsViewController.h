@@ -10,4 +10,5 @@
 
 @interface MSNSearchGoodsViewController : MSNGoodListViewController
 @property (nonatomic,strong)NSString *key;
+@property (nonatomic)int scopeIndex;
 @end

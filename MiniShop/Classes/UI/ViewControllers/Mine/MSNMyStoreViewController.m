@@ -43,6 +43,7 @@
     [searchButton addTarget:self action:@selector(actionShowSearchBar:) forControlEvents:UIControlEventTouchUpInside];
     self.searchView = [[MSNSearchView alloc] initWithFrame:CGRectMake(0, -self.naviTitleView.height, self.naviTitleView.width, self.naviTitleView.height)];
     self.searchView.delegate = self;
+    self.searchView.scopeString = @[@"我的商城",@"整个好店汇"];
     [self.naviTitleView addSubview:self.searchView];
 }
 
@@ -105,6 +106,7 @@
     if (key.length > 0) {
         MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
         controller.key = key;
+        controller.scopeIndex = searchBar.scopeIndex;
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

@@ -32,6 +32,7 @@
     self.searchView = [[MSNSearchView alloc] initWithFrame:CGRectMake(0, 0, self.naviTitleView.width, self.naviTitleView.height)];
     self.searchView.floatting = NO;
     self.searchView.delegate = self;
+    [self.searchView setScopeString:@[@"我的商城",@"整个好店汇"] defaultIndex:_scopeIndex];
     [self.naviTitleView addSubview:self.searchView];
 }
 
@@ -39,6 +40,8 @@
 {
     [super viewDidLoad];
 	self.naviTitleView.title = @"搜索";
+    self.searchView.text = _key;
+    self.searchView.scopeIndex = _scopeIndex;
     [self refreshData];
 }
 

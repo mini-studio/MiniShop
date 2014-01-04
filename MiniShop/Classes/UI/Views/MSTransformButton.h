@@ -8,7 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class MSTransformButton;
+
+@protocol MSTransformButtonDelegate <NSObject>
+@optional
+- (void)transformButtonValueChanged:(MSTransformButton*)button;
+@end
+
 @interface MSTransformButton : UIView
+@property (nonatomic,assign) id<MSTransformButtonDelegate> delegate;
 @property (nonatomic,strong) MiniUIButton *button;
-@property (nonatomic,strong) NSArray *items;
+@property (nonatomic,strong) NSArray *items;//string array
+@property (nonatomic) int selectedIndex;
+@property (nonatomic) int fontSize;
+
+- (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated;
+- (void)setItems:(NSArray *)items defaultIndex:(int)index;
 @end

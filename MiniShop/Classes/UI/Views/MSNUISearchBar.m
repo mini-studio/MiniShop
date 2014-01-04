@@ -7,6 +7,7 @@
 //
 
 #import "MSNUISearchBar.h"
+#import "MSTransformButton.h"
 
 @interface MSNUISearchBar()<UISearchBarDelegate>
 @property (nonatomic,strong)MiniUIButton *searchButton;
@@ -119,12 +120,14 @@
 @end
 
 
-@interface MSNSearchView()<UITextFieldDelegate>
+@interface MSNSearchView()<UITextFieldDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MiniUIButton *cancelButton;
 @property (nonatomic,strong)UITextField  *searchBar;
+@property (nonatomic,strong)MSTransformButton *transformButton;
 @end
 
 @implementation MSNSearchView
+@synthesize scopeIndex = _scopeIndex;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -141,6 +144,8 @@
     self.backgroundColor = [UIColor redColor];
     CGRect rect = CGRectInset(self.bounds, 50, 5);
     self.searchBar = [[UITextField alloc] initWithFrame:rect];
+    self.searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.searchBar.font = [UIFont systemFontOfSize:14];
     self.searchBar.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.searchBar];
     self.searchBar.returnKeyType = UIReturnKeySearch;
@@ -152,6 +157,36 @@
     self.cancelButton.frame = CGRectMake(self.width-45, (self.height-40)/2, 40,40);
     [self addSubview:self.cancelButton];
     [self.cancelButton addTarget:self action:@selector(actionCancel) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(0, 0, 80, self.searchBar.height)];
+    self.transformButton.fontSize = 14;
+    self.transformButton.delegate = self;
+    self.searchBar.leftViewMode = UITextFieldViewModeAlways;
+    self.searchBar.leftView = self.transformButton;
+}
+
+- (void)setScopeString:(NSArray *)scopeString
+{
+    _scopeString = scopeString;
+    self.transformButton.items = scopeString;
+}
+
+- (void)setScopeString:(NSArray *)scopeString defaultIndex:(int)index
+{
+    _scopeString = scopeString;
+    _scopeIndex = index;
+    [self.transformButton setItems:scopeString defaultIndex:index];
+}
+
+- (void)setScopeIndex:(NSInteger)scopeIndex
+{
+    _scopeIndex = scopeIndex;
+    self.transformButton.selectedIndex = scopeIndex;
+}
+
+- (NSInteger)scopeIndex
+{
+    return _scopeIndex;
 }
 
 - (void)actionCancel
@@ -211,4 +246,18 @@
 {
     return self.searchBar.text;
 }
+
+- (void)setText:(NSString *)text
+{
+    self.searchBar.text = text;
+}
+
+- (void)transformButtonValueChanged:(MSTransformButton*)button
+{
+    _scopeIndex = button.selectedIndex;
+    if (self.delegate)
+        if ([self.delegate respondsToSelector:@selector(searchViewScopeValueChanged:)])
+            [self.delegate searchViewScopeValueChanged:self];
+}
+
 @end
