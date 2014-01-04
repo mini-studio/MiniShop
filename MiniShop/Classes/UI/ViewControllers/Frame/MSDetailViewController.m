@@ -247,7 +247,7 @@
 
 - (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:index];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:index];
     [MobClick event:MOB_LOAD_IMAGE];
     return [MWPhoto photoWithURL:[NSURL URLWithString:[item big_image_url]]];
 }
@@ -260,7 +260,7 @@
 - (void)updateViewContents:(NSInteger)index
 {
     NSString *title = nil;
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:index];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:index];
     if ( item.rush_buy == 1 )
     {
         title = [NSString stringWithFormat:@"%@件抢购",item.sku_num];
@@ -440,7 +440,7 @@
     return self.toolbar;
 }
 
-- (void)setToolbarContent:( MSGoodItem *)item
+- (void)setToolbarContent:( MSGoodsItem *)item
 {
     ((UILabel *)[self.toolbar viewWithTag:10000]).text = [NSString stringWithFormat:@"价格:%@",item.price];
     ((UILabel *)[self.toolbar viewWithTag:10001]).text = item.shop_name;
@@ -460,7 +460,7 @@
 - (void)actionGoToShopping
 {
     [MobClick event:MOB_GOODS_DETAIL];
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:requestStr title:[self.itemInfo typeTitleDesc] toolbar:YES];
     controller.autoLayout = NO;
@@ -470,7 +470,7 @@
 
 - (void)silentAccess
 {
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid];
     requestStr = [ClientAgent prefectUrl:requestStr];
     [[ClientAgent sharedInstance] get:requestStr params:nil block:^(NSError *error, id data, BOOL cache){}];
@@ -478,7 +478,7 @@
 
 - (void)handleZoomInNotification:(NSNotification *)noti
 {
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     [[ClientAgent sharedInstance] zoom:item.mid from:self.from userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
         
     }];
@@ -488,7 +488,7 @@
 {
     if ( index >=0 && index < self.goods.body_info.count && sec > 2 )
     {
-        MSGoodItem *item = [self.goods.body_info objectAtIndex:index];
+        MSGoodsItem *item = [self.goods.body_info objectAtIndex:index];
         [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {}];
     }
 }
@@ -522,22 +522,22 @@
 - (void)shareGood:(MiniUIButton *)button
 {
     [MobClick event:MOB_DETAIL_TOP_SHARE];
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     if ( item == nil || item.mid == 0 ) {
         return;
     }
     [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex == 1 )
         {
-            [MSWebChatUtil shareGoodItem:item scene:WXSceneTimeline];
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
         }
         else if ( buttonIndex == 2 )
         {
-            [MSWebChatUtil shareGoodItem:item scene:WXSceneSession];
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
         }
     } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
-- (NSString*)itemUri:(MSGoodItem *)item
+- (NSString*)itemUri:(MSGoodsItem *)item
 {
     NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
     return uri;
@@ -546,7 +546,7 @@
 - (void)copylink:(MiniUIButton *)button
 {
     [MobClick event:MOB_DETAIL_TOP_COPY];
-    MSGoodItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
     if ( item == nil || item.mid == 0 ) {
         return;
     }

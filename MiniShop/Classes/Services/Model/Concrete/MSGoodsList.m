@@ -9,7 +9,7 @@
 #import "MSGoodsList.h"
 #import "NSDate+Format.h"
 
-@implementation MSGoodItem
+@implementation MSGoodsItem
 
 @synthesize big_image_url = _big_image_url;
 
@@ -78,7 +78,7 @@
 {
     if ( [attriName isEqualToString:@"body_info"] )
     {
-        return [MSGoodItem class];
+        return [MSGoodsItem class];
     }
     else if ( [attriName isEqualToString:@"pre_info"] || [attriName isEqualToString:@"next_info"] )
     {
@@ -93,7 +93,7 @@
     {
         _body_info = body_info;
     }
-    else if ( [body_info isKindOfClass:[MSGoodItem class]])
+    else if ( [body_info isKindOfClass:[MSGoodsItem class]])
     {
         _body_info = [NSMutableArray array];
         [(NSMutableArray*)_body_info addObject:body_info];
@@ -110,7 +110,7 @@
 {
     if ( [attriName isEqualToString:@"goods_info"] )
     {
-        return [MSGoodItem class];
+        return [MSGoodsItem class];
     }
     else if ( [attriName isEqualToString:@"item_info"])
     {
@@ -134,13 +134,13 @@
     return nil;
 }
 
-- (void)appendGoodItems:(NSArray *)items
+- (void)appendGoodsItems:(NSArray *)items
 {
     if ( self.dictionary == nil )
     {
         self.dictionary = [NSMutableDictionary dictionary];
     }
-    for (MSGoodItem *item in items)
+    for (MSGoodsItem *item in items)
     {
         NSString *date = item.date;
         NSDate *da = [NSDate dateFromString:date format:@"yyyy-MM-dd"];

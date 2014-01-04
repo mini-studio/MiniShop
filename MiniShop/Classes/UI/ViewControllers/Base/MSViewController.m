@@ -16,6 +16,7 @@
 #import "MRLoginViewController.h"
 #import "MSTopicViewController.h"
 #import "MSUIMoreDataCell.h"
+#import "SDImageCache.h"
 
 #define KBACKGROUDIMAGEVIEWTAG 0x20000
 
@@ -43,11 +44,10 @@
 {
     [super loadView];
     self.navigationController.navigationBar.hidden = YES;
-    //self.navigationItem.hidesBackButton = YES;
     [self setBackGroudImage:@"view_bg"];
     [self setNaviTitleViewShow:YES];
     [self setStatusBar];
-    self.naviTitleView.backgroundColor = [UIColor redColor];
+    self.naviTitleView.backgroundColor = NAVI_BG_COLOR;
 }
 
 - (void)setStatusBar
@@ -56,7 +56,7 @@
         UIView *view = [self.view viewWithTag:0x0C00C];
         if ( view == nil ) {
             view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
-            view.backgroundColor = [UIColor blackColor];
+            view.backgroundColor =  NAVI_BG_COLOR;
             [self.view addSubview:view];
         }
     }
@@ -85,7 +85,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 - (void)setBackGroudImage:(NSString *)imageName

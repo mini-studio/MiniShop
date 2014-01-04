@@ -26,7 +26,7 @@
         [self addSubview:self.scrollview];
         _selectedIndex = 0;
         self.slideView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollview.height-6, 0, 6)];
-        self.slideView.backgroundColor = [UIColor blackColor];
+        self.slideView.backgroundColor = [UIColor whiteColor];
         [self.scrollview addSubview:self.slideView];
         self.scrollview.showsHorizontalScrollIndicator = NO;
     }
@@ -59,7 +59,7 @@
     MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     button.size = CGSizeMake(10, self.height);
     [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.buttons addObject:button];
     [self.scrollview addSubview:button];

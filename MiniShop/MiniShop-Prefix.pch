@@ -37,4 +37,6 @@
 
 #define MAIN_VERSION [MSSystem sharedInstance].mainVersion
 
+#define NAVI_BG_COLOR [UIColor colorWithRGBA:0xd95b71FF]
+
 #endif

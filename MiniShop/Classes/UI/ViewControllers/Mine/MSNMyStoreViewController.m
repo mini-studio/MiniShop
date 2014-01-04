@@ -32,7 +32,8 @@
 {
     [super loadView];
     self.naviTitleView.layer.masksToBounds = YES;
-    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.width, 0, 50, self.naviTitleView.height)];
+    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.right+10, 0, 50, self.naviTitleView.height)];
+    self.transformButton.backgroundColor = NAVI_BG_COLOR;
     [self.naviTitleView addSubview:self.transformButton];
     self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
     UIImage *image = [UIImage imageNamed:@"icon_search"];
@@ -49,8 +50,8 @@
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
 {
-    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width-100,44)];
-    topTitleView.backgroundColor = [UIColor redColor];
+    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(10, 0,self.naviTitleView.width-120,44)];
+    topTitleView.backgroundColor = NAVI_BG_COLOR;
     return topTitleView;
 }
 

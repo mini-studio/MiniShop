@@ -86,7 +86,7 @@
     }
     cell.dataSource = self.dataSource;
     __weak typeof (self) pSelf = self;
-    [cell setHandleTouchItem:^(MSGoodItem *item) {
+    [cell setHandleTouchItem:^(MSGoodsItem *item) {
         [pSelf handleTouchItem:item];
     }];
     return cell;
@@ -145,7 +145,7 @@
 }
 
 
-- (void)handleTouchItem:(MSGoodItem *)item
+- (void)handleTouchItem:(MSGoodsItem *)item
 {
     MSGoodsList *goodsList = [[MSGoodsList alloc] init];
     goodsList.body_info = self.dataSource;

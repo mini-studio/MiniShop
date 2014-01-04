@@ -235,7 +235,7 @@
                             
                         }
                     }
-                    MSGoodItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
+                    MSGoodsItem *i = [groupInfo.items_info.goods_info objectAtIndex:index];
                     [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:i];
                     
                     if ( i.mid == MSDataType_MoreData ) {
@@ -274,7 +274,7 @@
 
 - (void)actionImageTap:(MiniUIButton*)sender
 {
-    MSGoodItem *item = sender.userInfo;
+    MSGoodsItem *item = sender.userInfo;
     if ( item.mid == MSDataType_MoreData ) {
         MSShopGalleryViewController *c = [[MSShopGalleryViewController alloc] init];
         c.notiInfo = self.item;

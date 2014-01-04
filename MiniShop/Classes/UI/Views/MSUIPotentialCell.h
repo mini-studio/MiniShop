@@ -13,7 +13,7 @@
 
 @property (nonatomic,strong)NSMutableArray *dataSource;
 
-@property (nonatomic,strong) void (^handleTouchItem)(MSGoodItem *item);
+@property (nonatomic,strong) void (^handleTouchItem)(MSGoodsItem *item);
 
 + (CGFloat)heightForShopInfo:(NSMutableArray*)array;
 @end

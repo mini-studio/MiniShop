@@ -14,6 +14,7 @@
 @property(nonatomic,strong)NSString *shop_goods_num;
 @property(nonatomic,strong)NSString *shop_grade;
 @property(nonatomic,strong)NSString *shop_id;
+@property(nonatomic,strong)NSString *shop_logo;
 @property(nonatomic,strong)NSString *shop_like_num;
 @property(nonatomic,strong)NSString *shop_title;
 @property(nonatomic,strong)NSString *shop_type;

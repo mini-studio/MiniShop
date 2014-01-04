@@ -18,6 +18,7 @@
 #import "NSString+Mini.h"
 #import "MSUIDTView.h"
 #import "MiniSysUtil.h"
+#import "MSNShopDetailViewController.h"
 
 #import "MSNGoodsList.h"
 
@@ -43,6 +44,9 @@
 @property (nonatomic,strong) UIView *titleView;
 
 @property (nonatomic) CGRect titleViewFrame;
+
+@property (nonatomic,strong) MSNGoodsItem *currentGoodsItem;
+
 @end
 
 @implementation MSNDetailViewController
@@ -198,7 +202,7 @@
 
 - (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
 {
-    MSNGoodItem *item = [self.items objectAtIndex:index];
+    MSNGoodsItem *item = [self.items objectAtIndex:index];
     [MobClick event:MOB_LOAD_IMAGE];
     return [MWPhoto photoWithURL:[NSURL URLWithString:[item big_image_url]]];
 }
@@ -211,7 +215,7 @@
 - (void)updateViewContents:(NSInteger)index
 {
     NSString *title = @"去淘宝看看";
-    MSNGoodItem *item = [self.items objectAtIndex:index];
+    MSNGoodsItem *item = [self.items objectAtIndex:index];
     [self.button setTitle:title forState:UIControlStateNormal];
     [self setToolbarContent:item];
     [self setNaviTitle];
@@ -315,19 +319,31 @@
     return self.toolbar;
 }
 
-- (void)setToolbarContent:( MSNGoodItem* )item
+- (void)setToolbarContent:( MSNGoodsItem* )item
 {
     ((UILabel *)[self.toolbar viewWithTag:10000]).text = [NSString stringWithFormat:@"价格:%@",item.goods_marked_price];
     ((UILabel *)[self.toolbar viewWithTag:10001]).text = @"店铺名";
     ((UILabel *)[self.toolbar viewWithTag:10002]).text = item.goods_title;
+    self.currentGoodsItem = item;
     self.toolView.mid = item.goods_id;
+    [self loadGoodsInfo:item];
+}
+
+- (void)loadGoodsInfo:(MSNGoodsItem*)item
+{
+    if (item.detail == nil) {
+        [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, MSNGoodsDetail *data, id userInfo, BOOL cache) {
+            if ( error==nil )
+                item.detail = data;
+        }];
+    }
 }
 
 //查看详情
 - (void)actionGoToShopping
 {
 //    [MobClick event:MOB_GOODS_DETAIL];
-//    MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
+//    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
 //    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, @"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
 //    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:requestStr title:[self.itemInfo typeTitleDesc] toolbar:YES];
 //    controller.autoLayout = NO;
@@ -337,7 +353,7 @@
 
 - (void)silentAccess
 {
-//    MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
+//    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
 //    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid];
 //    requestStr = [ClientAgent prefectUrl:requestStr];
 //    [[ClientAgent sharedInstance] get:requestStr params:nil block:^(NSError *error, id data, BOOL cache){}];
@@ -345,7 +361,7 @@
 
 - (void)handleZoomInNotification:(NSNotification *)noti
 {
-    MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
+    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
     [[ClientAgent sharedInstance] zoom:item.mid from:self.from userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
         
     }];
@@ -355,7 +371,7 @@
 {
     if ( index >=0 && index < self.items.count && sec > 2 )
     {
-        MSNGoodItem *item = [self.items objectAtIndex:index];
+        MSNGoodsItem *item = [self.items objectAtIndex:index];
         [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {}];
     }
 }
@@ -389,22 +405,22 @@
 - (void)shareGood:(MiniUIButton *)button
 {
 //    [MobClick event:MOB_DETAIL_TOP_SHARE];
-//    MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
+//    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
 //    if ( item == nil || item.mid == 0 ) {
 //        return;
 //    }
 //    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
 //        if ( buttonIndex == 1 )
 //        {
-//            [MSWebChatUtil shareGoodItem:item scene:WXSceneTimeline];
+//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
 //        }
 //        else if ( buttonIndex == 2 )
 //        {
-//            [MSWebChatUtil shareGoodItem:item scene:WXSceneSession];
+//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
 //        }
 //    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
-- (NSString*)itemUri:(MSNGoodItem *)item
+- (NSString*)itemUri:(MSNGoodsItem *)item
 {
 //    NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
 //    return uri;
@@ -414,7 +430,7 @@
 - (void)copylink:(MiniUIButton *)button
 {
     [MobClick event:MOB_DETAIL_TOP_COPY];
-    MSNGoodItem *item = [self.items objectAtIndex:self.currentPageIndex];
+    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
     if ( item == nil || [item.goods_id isEqualToString:0] ) {
         return;
     }
@@ -430,6 +446,12 @@
 
 - (void)gotoShop:(MiniUIButton *)button
 {
+    if ( self.currentGoodsItem != nil && self.currentGoodsItem.detail.shop_info != nil ) {
+        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+        controller.shopInfo = self.currentGoodsItem.detail.shop_info;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
 //    MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
 //    MSNotiItemInfo *info = self.itemInfo;
 //    if ( info == nil ) {

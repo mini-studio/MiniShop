@@ -16,7 +16,7 @@
 @property (nonatomic) int page;
 @property (nonatomic,strong)MSNGoodsList *dataSource;
 
-- (NSArray*)allGoodItems;
+- (NSArray*)allGoodsItems;
 @end
 
 @implementation MSNFavViewController
@@ -108,7 +108,7 @@
 {
 }
 
-- (NSArray*)allGoodItems
+- (NSArray*)allGoodsItems
 {
     return [self.dataSource allSortedItems];
 }

@@ -69,7 +69,7 @@
 @property (nonatomic,strong)MSNGoodsList *dataSource;
 @property (nonatomic)NSInteger page;
 @property (nonatomic,strong)EGOUITableView *tableView;
-- (NSArray*)allGoodItems;
+- (NSArray*)allGoodsItems;
 @end
 
 @implementation EspecialContentViewController
@@ -234,7 +234,7 @@
     LOG_DEBUG(@"%@",[data description]);
 }
 
-- (NSArray*)allGoodItems
+- (NSArray*)allGoodsItems
 {
     return [self.dataSource allSortedItems];
 }

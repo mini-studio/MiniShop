@@ -243,7 +243,7 @@
         if ( error == nil )  {
             for (MSPicNotiGroupInfo *groupInfo in data.items_info ) {
                 if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
-                    MSGoodItem *item = [[MSGoodItem alloc] init];
+                    MSGoodsItem *item = [[MSGoodsItem alloc] init];
                     item.mid = MSDataType_MoreData;
                     [groupInfo.items_info.goods_info addObject:item];
                 }
@@ -262,7 +262,7 @@
         if ( error == nil ) {
             for (MSPicNotiGroupInfo *groupInfo in data.items_info ) {
                 if ( groupInfo.items_info.shop_info.more_goods == 1 ) {
-                    MSGoodItem *item = [[MSGoodItem alloc] init];
+                    MSGoodsItem *item = [[MSGoodsItem alloc] init];
                     item.mid = MSDataType_MoreData;
                     [groupInfo.items_info.goods_info addObject:item];
                 }
@@ -320,7 +320,7 @@
     NSDictionary *params = @{@"type":type,@"id":[NSString stringWithFormat:@"%lld",mid]};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"goods"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSGoodItem class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSGoodsItem class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
 }
@@ -999,6 +999,35 @@
             block(error,data,nil,cache);
         }
     }];
+}
+
+- (void)goodsinfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"goodsinfo"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)shopgoods:(NSString*)shopId tagId:(NSString*)tagId sort:(NSString*)sort key:(NSString*)key page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"shopgoods"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId,@"tag_id":tagId,@"sort":sort,@"key":key,@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
+- (void)shoptag:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    
 }
 
 @end

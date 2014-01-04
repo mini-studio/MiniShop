@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class MSShopGalleryInfo;
-@class MSGoodItem;
+@class MSGoodsItem;
 
 @interface MSGalleryGoodsCell : UITableViewCell
 @property (nonatomic,strong)MSShopGalleryInfo *galleyInfo;
 @property (nonatomic,assign)MSViewController *controller;
-@property (nonatomic,strong) void (^handleTouchItem)(MSGoodItem* itemInfo);
+@property (nonatomic,strong) void (^handleTouchItem)(MSGoodsItem* itemInfo);
 
 + (CGFloat)heightWithImageCount:(NSInteger)count;
 @end

@@ -9,7 +9,7 @@
 #import "MSObject.h"
 
 
-@interface MSGoodItem : MSObject
+@interface MSGoodsItem : MSObject
 @property (nonatomic) int64_t mid;
 @property (nonatomic) NSString *ogoods_id;
 @property (nonatomic,strong) NSString *name;
@@ -58,7 +58,7 @@
 @property (nonatomic) NSInteger next_page;
 @end
 
-@interface MSShopGalleryItemInfo : MSGoodItem
+@interface MSShopGalleryItemInfo : MSGoodsItem
 @property (nonatomic,strong) NSString *publish_time;
 @property (nonatomic) NSInteger  goods_num;
 @property (nonatomic,strong)NSString *shop_name;
@@ -73,5 +73,5 @@
 @property (nonatomic) NSInteger user_is_like_shop;
 @property (nonatomic,strong)NSArray *body_info;
 
-- (void)appendGoodItems:(NSArray *)items;
+- (void)appendGoodsItems:(NSArray *)items;
 @end

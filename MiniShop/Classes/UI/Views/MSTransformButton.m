@@ -33,8 +33,17 @@
         self.slabel.textAlignment = NSTextAlignmentLeft;
         
         self.layer.masksToBounds = YES;
+        [self setFontSize:16];
+        [self setFontColor:[UIColor whiteColor]];
     }
     return self;
+}
+
+- (void)setFontColor:(UIColor *)fontColor
+{
+    _fontColor = fontColor;
+    self.label.textColor = fontColor;
+    self.slabel.textColor = fontColor;
 }
 
 - (void)setFontSize:(int)fontSize

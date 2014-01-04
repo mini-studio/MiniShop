@@ -7,7 +7,7 @@
 //
 
 #import "MSFrameViewController.h"
-
+#import "UIColor+Mini.h"
 
 @interface MSFrameViewController ()
 @property (nonatomic,strong)MSViewController *currentController;
@@ -29,6 +29,7 @@
 {
     [super loadView];
     [self setNaviTitleViewShow:YES];
+    self.naviTitleView.backgroundColor = NAVI_BG_COLOR;
     self.containerView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:self.containerView];

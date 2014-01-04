@@ -128,7 +128,7 @@
 {
     if ( [@"goods_info" isEqualToString:attriName] )
     {
-        return [MSGoodItem class];
+        return [MSGoodsItem class];
     }
     else if ( [@"shop_info" isEqualToString:attriName] )
     {

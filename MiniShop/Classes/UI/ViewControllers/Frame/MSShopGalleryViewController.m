@@ -167,7 +167,7 @@
     info.item_info.shop_name = self.notiInfo.name;
     [cell setGalleyInfo:info];
     __PSELF__;
-    [cell setHandleTouchItem:^(MSGoodItem * item) {
+    [cell setHandleTouchItem:^(MSGoodsItem * item) {
         [pSelf handleTouchItem:item];
     }];
     return cell;
@@ -314,7 +314,7 @@
             if ( error == nil )
             {
                 pSelf.page = page;
-                [pSelf.dataSource appendGoodItems:data.body_info];
+                [pSelf.dataSource appendGoodsItems:data.body_info];
                 if ( data.next_page == 0 )
                 {
                    [pSelf.tableView setMoreDataAction:nil keepCellWhenNoData:NO loadSection:NO];
@@ -346,7 +346,7 @@
     {
         [array addObjectsFromArray:info.goods_info];
     }
-    for ( MSGoodItem *item in array )
+    for ( MSGoodsItem *item in array )
     {
         item.shop_title = self.notiInfo.name;
         item.shop_id = self.notiInfo.shop_id;
@@ -354,7 +354,7 @@
     return array;
 }
 
-- (void)handleTouchItem:( MSGoodItem *)item
+- (void)handleTouchItem:( MSGoodsItem *)item
 {
     MSGoodsList *data =[[MSGoodsList alloc] init];
     NSArray *array = [self allItems];

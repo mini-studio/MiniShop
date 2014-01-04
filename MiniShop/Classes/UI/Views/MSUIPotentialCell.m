@@ -19,12 +19,12 @@
 @interface MSUIPotentialGoodsView : UIView
 @property (nonatomic,strong) MiniUIButton *imageButton;
 @property (nonatomic,strong) MiniUIButton *shareButton;
-@property (nonatomic,strong) MSGoodItem   *info;
+@property (nonatomic,strong) MSGoodsItem   *info;
 @end
 
 @implementation MSUIPotentialGoodsView
 
-- (id)initWithFrame:(CGRect)frame userInfo:(MSGoodItem*)info
+- (id)initWithFrame:(CGRect)frame userInfo:(MSGoodsItem*)info
 {
     if (self = [super initWithFrame:frame])
     {
@@ -117,7 +117,7 @@
     {
         int col = index%self.numbersOfRow;
         int row = index/self.numbersOfRow;
-        MSGoodItem *item = [dataSource objectAtIndex:index];
+        MSGoodsItem *item = [dataSource objectAtIndex:index];
         CGRect rect = CGRectMake( col*(itemWidth+gap) + gap,  (row*(itemheight+gap)), itemWidth, itemheight);
         MSUIPotentialGoodsView *v = [[MSUIPotentialGoodsView alloc] initWithFrame:rect userInfo:item];
         [self.goodsArray addObject:v];
@@ -148,7 +148,7 @@
 }
 
 
-- (void)actionForDetail:(MSGoodItem *)item
+- (void)actionForDetail:(MSGoodsItem *)item
 {
     if ( self.handleTouchItem )
     {
@@ -156,17 +156,17 @@
     }
 }
 
-- (void)actionForShare:(MSGoodItem *)item
+- (void)actionForShare:(MSGoodsItem *)item
 {
     //item.shop_name = self.shopInfo.title;
     [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的店铺到" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
         if ( buttonIndex == 1 )
         {
-            [MSWebChatUtil shareGoodItem:item scene:WXSceneTimeline];
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
         }
         else if ( buttonIndex == 2 )
         {
-            [MSWebChatUtil shareGoodItem:item scene:WXSceneSession];
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
         }
     } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }

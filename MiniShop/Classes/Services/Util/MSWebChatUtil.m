@@ -14,7 +14,7 @@
 @implementation MSWebChatUtil
 #define BUFFER_SIZE 10
 
-+ (void)shareGoodItem:(MSGoodItem*)goodItem scene:(int)scene
++ (void)shareGoodsItem:(MSGoodsItem*)GoodsItem scene:(int)scene
 {
     if(![WXApi isWXAppInstalled])
     {
@@ -27,12 +27,12 @@
 
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"分享个宝贝给你";
-    message.description = goodItem.name;
-    [message setThumbImage:goodItem.image];
+    message.description = GoodsItem.name;
+    [message setThumbImage:GoodsItem.image];
     
     WXAppExtendObject *ext = [WXAppExtendObject object];
     ext.extInfo = @"";
-    ext.url = [NSString stringWithFormat:@"youjiaxiaodian://good/%lld",goodItem.mid];
+    ext.url = [NSString stringWithFormat:@"youjiaxiaodian://good/%lld",GoodsItem.mid];
     
     Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
     memset(pBuffer, 0, BUFFER_SIZE);

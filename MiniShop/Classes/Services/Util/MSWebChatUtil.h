@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class MSGoodItem;
+@class MSGoodsItem;
 
 @interface MSWebChatUtil : NSObject
-+ (void)shareGoodItem:(MSGoodItem*)goodItem scene:(int)scene;
++ (void)shareGoodsItem:(MSGoodsItem*)GoodsItem scene:(int)scene;
 + (void)shareShop:(MSShopInfo*)shopInfo scene:(int)scene;
 + (void)shareShopList:(NSArray*)shopList scene:(int)scene;
 @end

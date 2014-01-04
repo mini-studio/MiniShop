@@ -164,7 +164,7 @@
     [self refreshData];
 }
 
-- (NSArray*)allGoodItems
+- (NSArray*)allGoodsItems
 {
     return [self.dataSource allSortedItems];
 }

@@ -8,6 +8,7 @@
 
 #import "MSNUISearchBar.h"
 #import "MSTransformButton.h"
+#import "UIColor+Mini.h"
 
 @interface MSNUISearchBar()<UISearchBarDelegate>
 @property (nonatomic,strong)MiniUIButton *searchButton;
@@ -21,7 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = NAVI_BG_COLOR;
         CGRect frame = self.bounds;
         frame.size = CGSizeMake(self.width, self.height);
         self.searchBar = [[UISearchBar alloc] initWithFrame:frame];
@@ -133,6 +134,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = NAVI_BG_COLOR;
         _floatting = YES;
         [self initSubViews];
     }
@@ -141,7 +143,6 @@
 
 - (void)initSubViews
 {
-    self.backgroundColor = [UIColor redColor];
     CGRect rect = CGRectInset(self.bounds, 50, 5);
     self.searchBar = [[UITextField alloc] initWithFrame:rect];
     self.searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -159,6 +160,7 @@
     [self.cancelButton addTarget:self action:@selector(actionCancel) forControlEvents:UIControlEventTouchUpInside];
     
     self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(0, 0, 80, self.searchBar.height)];
+    self.transformButton.fontColor = NAVI_BG_COLOR;
     self.transformButton.fontSize = 14;
     self.transformButton.delegate = self;
     self.searchBar.leftViewMode = UITextFieldViewModeAlways;

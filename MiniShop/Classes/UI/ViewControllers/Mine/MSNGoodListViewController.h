@@ -16,6 +16,6 @@
 @property (nonatomic)NSInteger page;
 @property (nonatomic)BOOL showNaviView;
 - (void)refreshData;
-- (NSArray*)allGoodItems;
+- (NSArray*)allGoodsItems;
 - (void)receiveData:(MSNGoodsList*)data page:(int)page;
 @end

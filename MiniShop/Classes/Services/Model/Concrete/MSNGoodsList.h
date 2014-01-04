@@ -7,11 +7,14 @@
 //
 
 #import "MSObject.h"
+#import "MSNShop.h"
 
 #define SORT_TIME @"time"
 #define SORT_SALE @"sale"
 #define SORT_DISCOUNT @"off"
 #define SORT_OFF_TIME @"off_time"
+
+@class MSNGoodsDetail;
 
 @interface MSNGoodsList : MSObject
 @property (nonatomic)int goods_num;
@@ -28,7 +31,7 @@
 - (NSArray *)allSortedItems;
 @end
 
-@interface MSNGoodItem : MSObject
+@interface MSNGoodsItem : MSObject
 @property (nonatomic)int64_t mid;
 @property (nonatomic,strong)NSString *big_image_url;
 @property (nonatomic,strong)NSString *goods_create_time;
@@ -42,4 +45,14 @@
 @property (nonatomic,strong)NSString *small_image_url;
 
 @property (nonatomic,strong)NSString *goods_date;
+
+@property (nonatomic,strong)MSNGoodsDetail *detail;
+@end
+
+@interface MSNGoodsDetailInfo : MSObject
+@property (nonatomic,strong)MSNGoodsItem *goods_info;
+@end
+@interface MSNGoodsDetail : MSObject
+@property (nonatomic,strong) MSNShopInfo *shop_info;
+@property (nonatomic,strong) MSNGoodsDetailInfo *info;
 @end

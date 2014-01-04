@@ -14,7 +14,7 @@
 {
     if ( [@"kink_goods_info" isEqualToString:attriName] )
     {
-        return [MSGoodItem class];
+        return [MSGoodsItem class];
     }
     return nil;
 }
@@ -27,7 +27,7 @@
 {
     if ( [@"goods_info" isEqualToString:attriName] )
     {
-        return [MSGoodItem class];
+        return [MSGoodsItem class];
     }
     return nil;
 }

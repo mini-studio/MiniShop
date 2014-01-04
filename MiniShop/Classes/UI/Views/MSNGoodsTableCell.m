@@ -116,7 +116,7 @@
                 
             }
         }
-        MSNGoodItem *item = [_items objectAtIndex:index];
+        MSNGoodsItem *item = [_items objectAtIndex:index];
         [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:item];
         [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.big_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
@@ -129,10 +129,10 @@
 
 - (void)actionImageTap:(MiniUIButton*)button
 {
-    MSNGoodItem *item = [button userInfo];
+    MSNGoodsItem *item = [button userInfo];
     MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
-    if ( [self.controller respondsToSelector:@selector(allGoodItems)] ) {
-        NSArray *all = [self.controller valueForKey:@"allGoodItems"];
+    if ( [self.controller respondsToSelector:@selector(allGoodsItems)] ) {
+        NSArray *all = [self.controller valueForKey:@"allGoodsItems"];
         controller.items = all;
         NSUInteger index = [all indexOfObject:item];
         if (index != NSNotFound)
@@ -146,7 +146,7 @@
 
 
 /**
- NSArray 元素的类型为 MSNGoodItem
+ NSArray 元素的类型为 MSNGoodsItem
  */
 + (CGFloat)heightForItems:(NSArray*)items width:(CGFloat)maxWidth
 {

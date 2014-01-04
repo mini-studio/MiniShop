@@ -17,7 +17,7 @@
 - (id)init
 {
     if (self=[super init]){
-        [self setAttri:@"info" clazz:[MSNGoodItem class]];
+        [self setAttri:@"info" clazz:[MSNGoodsItem class]];
         self.dataSource = [NSMutableDictionary dictionaryWithCapacity:12];
         self.dataKey = [NSMutableArray arrayWithCapacity:12];
     }
@@ -35,7 +35,7 @@
     [_dataSource removeAllObjects];
     if ([self.sort isEqualToString:SORT_TIME])
     {
-        for (MSNGoodItem *item in self.info ) {
+        for (MSNGoodsItem *item in self.info ) {
             NSMutableArray *array = _dataSource[item.goods_date];
             if (array == nil) {
                 array = [NSMutableArray array];
@@ -92,7 +92,7 @@
 
 @end
 
-@implementation MSNGoodItem
+@implementation MSNGoodsItem
 
 - (void)setGoods_create_time:(NSString *)goods_create_time
 {
@@ -101,5 +101,26 @@
     if ( array.count > 0 ) {
         _goods_date = array[0];
     }
+}
+@end
+
+@implementation MSNGoodsDetailInfo : MSObject
+- (id)init
+{
+    if (self=[super init]){
+        [self setAttri:@"goods_info" clazz:[MSNGoodsItem class]];
+    }
+    return self;
+}
+@end
+
+@implementation MSNGoodsDetail : MSObject
+- (id)init
+{
+    if (self=[super init]){
+        [self setAttri:@"shop_info" clazz:[MSNShopInfo class]];
+        [self setAttri:@"info" clazz:[MSNGoodsDetailInfo class]];
+    }
+    return self;
 }
 @end
