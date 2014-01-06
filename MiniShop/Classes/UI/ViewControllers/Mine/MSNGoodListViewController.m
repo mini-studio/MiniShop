@@ -23,7 +23,7 @@
     if (self)
     {
         _page = 1;
-        _showNaviView = NO;
+        self.showNaviView = NO;
     }
     return self;
 }
@@ -37,7 +37,6 @@
 - (void)loadView
 {
     [super loadView];
-    [self setNaviTitleViewShow:_showNaviView];
     [self createTableView];
 }
 

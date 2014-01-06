@@ -14,7 +14,6 @@
 @property (nonatomic)BOOL mark;
 @property (nonatomic,strong)MSNGoodsList *dataSource;
 @property (nonatomic)NSInteger page;
-@property (nonatomic)BOOL showNaviView;
 - (void)refreshData;
 - (NSArray*)allGoodsItems;
 - (void)receiveData:(MSNGoodsList*)data page:(int)page;

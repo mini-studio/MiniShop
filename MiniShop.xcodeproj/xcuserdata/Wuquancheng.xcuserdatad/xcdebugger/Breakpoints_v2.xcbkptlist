@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MiniShop/Classes/UI/ViewControllers/Mine/MSNShopDetailViewController.m"
-            timestampString = "410526858.639796"
+            filePath = "MiniShop/Classes/UI/Views/MSNShopInfoView.m"
+            timestampString = "410722680.330182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-loadData:delay:"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-setShopInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,6 +12,8 @@
 @class MSShopInfo;
 
 @interface MSViewController : MiniViewController
+@property (nonatomic)BOOL showNaviView;
+
 - (void)setBackGroudImage:(NSString *)imageName;
 - (void)setViewBackgroundColor;
 - (void)addRightRefreshButtonToTarget:(id)target action:(SEL)action;

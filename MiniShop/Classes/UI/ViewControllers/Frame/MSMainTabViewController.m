@@ -109,7 +109,7 @@
     [self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     //[self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
     self.items = [NSArray arrayWithObjects:
-                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNMyStoreViewController class] image:[MiniUIImage imageNamed:@"tab_storenews_normal"] highlightedImage:[MiniUIImage imageNamed:@"tab_storenews_selected"] title:@"我的商城"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNMyStoreViewController class] image:[MiniUIImage imageNamed:@"mymall"] highlightedImage:[MiniUIImage imageNamed:@"mymall_hover"] title:@"我的商城"],
                    [[MiniTabBarItem alloc] initWithControllerClass:[EspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"特卖汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[CreditableIndexViewController class] image:[MiniUIImage imageNamed:@"shop"] highlightedImage:[MiniUIImage imageNamed:@"shop_hover"] title:@"好店汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNFavViewController class] image:[MiniUIImage imageNamed:@"star"] highlightedImage:[MiniUIImage imageNamed:@"star_hover"] title:@"收藏夹"],

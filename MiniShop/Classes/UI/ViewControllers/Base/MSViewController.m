@@ -26,11 +26,11 @@
 
 @implementation MSViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        _showNaviView = YES;
     }
     return self;
 }
@@ -44,10 +44,12 @@
 {
     [super loadView];
     self.navigationController.navigationBar.hidden = YES;
-    [self setBackGroudImage:@"view_bg"];
-    [self setNaviTitleViewShow:YES];
+    [self setBackGroudImage:@"background"];
+    [self setNaviTitleViewShow:_showNaviView];
     [self setStatusBar];
-    self.naviTitleView.backgroundColor = NAVI_BG_COLOR;
+    if ( _showNaviView) {
+        self.naviTitleView.backgroundColor = NAVI_BG_COLOR;
+    }
 }
 
 - (void)setStatusBar
