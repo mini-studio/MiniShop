@@ -8,7 +8,7 @@
 
 #import "MSObject.h"
 
-@interface MSNShopInfo : MSObject
+@interface MSNShopInfo:MSObject
 @property(nonatomic,strong)NSString *seller_nick;
 @property(nonatomic,strong)NSString *shop_address;
 @property(nonatomic,strong)NSString *shop_goods_num;
@@ -22,8 +22,18 @@
 @end
 
 
-@interface MSNShopList : MSObject
+@interface MSNShopList:MSObject
 @property (nonatomic,strong) NSArray *info;
 
 - (void)append:(MSNShopList*)list;
+@end
+
+@interface MSNShopDetailInfo:MSObject
+@property (nonatomic,strong)MSNShopInfo *shop_info;
+@property (nonatomic,strong)NSArray     *goods_info;
+@end
+
+@interface MSNShopDetail:MSObject
+@property (nonatomic,strong)NSString *goods_num;
+@property (nonatomic,strong)MSNShopDetailInfo *info;
 @end

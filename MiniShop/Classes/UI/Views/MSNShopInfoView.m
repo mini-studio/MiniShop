@@ -11,7 +11,9 @@
 @interface MSNShopInfoView()
 @property (nonatomic,strong)UIImageView *imageView;
 @property (nonatomic,strong)UILabel *nameLabel;
-@property (nonatomic,strong)UILabel *address;
+@property (nonatomic,strong)UILabel *addressLabel;
+@property (nonatomic,strong)UILabel *sellerNickLabel;
+@property (nonatomic,strong)UILabel *followerLabel;
 @end
 
 @implementation MSNShopInfoView
@@ -20,17 +22,37 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
         [self addSubview:self.imageView];
+        CGFloat left = self.imageView.right + 6;
+        self.nameLabel = [self createLable:CGRectMake(left, 4, self.width-left, 16)];
+        [self addSubview:self.nameLabel];
+        self.addressLabel = [self createLable:CGRectMake(left, self.nameLabel.bottom, self.nameLabel.width, 16)];
+        [self addSubview:self.addressLabel];
+        self.sellerNickLabel = [self createLable:CGRectMake(left, self.addressLabel.bottom, self.nameLabel.width, 16)];
+        [self addSubview:self.sellerNickLabel];
+        self.followerLabel = [self createLable:CGRectMake(left, self.sellerNickLabel.bottom, self.nameLabel.width, 16)];
+        [self addSubview:self.followerLabel];
     }
     return self;
 }
 
 
+- (UILabel *)createLable:(CGRect)frame
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.font = [UIFont systemFontOfSize:14];
+    return label;
+}
+
 - (void)setShopInfo:(MSNShopInfo *)shopInfo
 {
     _shopInfo = shopInfo;
+    self.nameLabel.text = shopInfo.shop_title;
+    self.addressLabel.text = shopInfo.shop_address;
+    self.sellerNickLabel.text = shopInfo.seller_nick;
+    self.followerLabel.text = [NSString stringWithFormat:@"%@人关注",shopInfo.shop_like_num];
     if ( shopInfo.shop_logo.length >0 ) {
         __weak UIImageView *imageView = self.imageView;
         [imageView setImageWithURL:[NSURL URLWithString:shopInfo.shop_logo]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {

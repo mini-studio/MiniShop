@@ -35,7 +35,6 @@
 {
     MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width,self.naviTitleView.height)];
     self.topTitleView = topTitleView;
-    topTitleView.backgroundColor = [UIColor redColor];
     __PSELF__;
     [[ClientAgent sharedInstance] specialcate:^(NSError *error, NSArray *data, id userInfo, BOOL cache) {
         if ( data != nil ) {

@@ -8,9 +8,42 @@
 
 #import "MSNShopDetailViewController.h"
 #import "MSNShopInfoView.h"
+#import "MSNUISearchBar.h"
+#import "MSTransformButton.h"
+#import "UIColor+Mini.h"
 
-@interface MSNShopDetailViewController ()
+@interface MSNShopMessageView : UIView
+@property (nonatomic,strong)UILabel *numberLabel;
+@property (nonatomic,strong)MSTransformButton *transformButton;
+@property (nonatomic,strong)MiniUIButton *searchButton;
+@end
+
+@implementation MSNShopMessageView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, self.height)];
+        
+        self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(200, 0, 50, self.height)];
+        self.transformButton.backgroundColor = NAVI_BG_COLOR;
+        self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
+        [self addSubview:self.transformButton];
+        
+        UIImage *image = [UIImage imageNamed:@"icon_search"];
+        self.searchButton= [MiniUIButton buttonWithImage:image highlightedImage:nil];
+        self.searchButton.center = CGPointMake(self.width-10 - self.searchButton.width/2 , self.height/2);
+        [self addSubview:self.searchButton];
+    }
+    return self;
+}
+
+@end
+
+@interface MSNShopDetailViewController () <MSNSearchViewDelegate>
 @property (nonatomic,strong)MSNShopInfoView *shopInfoView;
+@property (nonatomic,strong)MSNSearchView *searchView;
 @end
 
 @implementation MSNShopDetailViewController
@@ -28,8 +61,25 @@
 {
     [super loadView];
 	[self setNaviBackButton];
-    self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 60)];
-    [self.contentView addSubview:self.shopInfoView];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 120)];
+    self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 80)];
+    [view addSubview:self.shopInfoView];
+    
+    CGRect rect = CGRectMake(0, self.shopInfoView.bottom, self.naviTitleView.width, 40);
+    UIView *subView = [[UIView alloc] initWithFrame:rect];
+    [view addSubview:subView];
+    
+    MSNShopMessageView *messageView = [[MSNShopMessageView alloc] initWithFrame:subView.bounds];
+    [subView addSubview:messageView];
+    
+    self.searchView = [[MSNSearchView alloc] initWithFrame:subView.bounds];
+    self.searchView.floatting = NO;
+    self.searchView.delegate = self;
+    [self.searchView setScopeString:@[@"店内"] defaultIndex:0];
+    [subView addSubview:self.searchView];
+    self.searchView.hidden = YES;
+    
+    self.tableView.tableHeaderView = view;
 }
 
 - (void)viewDidLoad
@@ -49,8 +99,12 @@
 
 - (void)loadData:(int)page delay:(CGFloat)delay
 {
-    [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:@"time" key:@"" page:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        
+    [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:@"time" key:@"" page:page block:^(NSError *error, MSNShopDetail* data, id userInfo, BOOL cache) {
+        MSNGoodsList *list = [[MSNGoodsList alloc] init];
+        list.info = data.info.goods_info;
+        list.goods_num = [data.goods_num integerValue];
+        list.next_page = data.next_page;
+        [self receiveData:list page:page];
     }];
 }
 

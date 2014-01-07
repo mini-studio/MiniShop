@@ -7,6 +7,7 @@
 //
 
 #import "MSNShop.h"
+#import "MSNGoodsList.h"
 
 @implementation MSNShopInfo
 
@@ -25,5 +26,28 @@
 - (void)append:(MSNShopList*)list
 {
     [(NSMutableArray*)self.info addObjectsFromArray:list.info];
+}
+@end
+
+@implementation MSNShopDetailInfo:MSObject
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setAttri:@"shop_info" clazz:[MSNShopInfo class]];
+        [self setAttri:@"goods_info" clazz:[MSNGoodsItem class]];
+    }
+    return self;
+}
+@end
+
+@implementation MSNShopDetail:MSObject
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setAttri:@"info" clazz:[MSNShopDetailInfo class]];
+    }
+    return self;
 }
 @end
