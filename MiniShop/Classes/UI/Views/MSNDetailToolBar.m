@@ -51,22 +51,26 @@
 
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)layoutSubviews
 {
-    // Drawing code
+    [super layoutSubviews];
+    CGFloat width = self.width-20;
+    self.goodsPriceLabel.width = width;
+    [self.goodsNameLabel sizeToFit];
+    self.goodsPriceLabel.width = width;
+    [self.goodsPriceLabel sizeToFit];
+    self.goodsPriceLabel.top = self.goodsNameLabel.bottom;
+    self.button.top = self.goodsPriceLabel.top;
 }
-*/
 - (void)setGoodsInfo:(MSNGoodsItem*)item
 {
     self.goodsNameLabel.text = item.goods_title;
-    self.goodsPriceLabel.text = [NSString stringWithFormat:@"￥:%@",item.goods_marked_price];
+    self.goodsPriceLabel.text = [NSString stringWithFormat:@"¥ %@",item.goods_marked_price];
     __PSELF__;
     [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
             item.detail = data;
+            [pSelf setNeedsLayout];
         }
     }];
 }
