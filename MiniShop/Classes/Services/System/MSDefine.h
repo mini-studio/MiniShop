@@ -41,4 +41,6 @@
 #define LOGIN_PROMPT   @"为了您的数据安全,使用此功能需先登录，请亮出您的高贵身份!"
 #define LOGIN_IMPORT_FAV_PROMPT   @"您需要登录后，再导入淘宝收藏店铺，不然只能导给火星人了…"
 
+#define UM_KEY @"51375dd152701512ce000002"
+
 #endif

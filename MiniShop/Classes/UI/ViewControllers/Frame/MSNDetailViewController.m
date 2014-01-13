@@ -18,6 +18,7 @@
 #import "NSString+Mini.h"
 #import "MSUIDTView.h"
 #import "MiniSysUtil.h"
+#import "MSNDetailToolBar.h"
 #import "MSNShopDetailViewController.h"
 
 #import "MSNGoodsList.h"
@@ -214,11 +215,18 @@
 
 - (void)updateViewContents:(NSInteger)index
 {
-    NSString *title = @"去淘宝看看";
+    NSString *title = @"购买";
     MSNGoodsItem *item = [self.items objectAtIndex:index];
     [self.button setTitle:title forState:UIControlStateNormal];
     [self setToolbarContent:item];
     [self setNaviTitle];
+    __PSELF__;
+    [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if (error==nil){
+            item.detail = data;
+            [pSelf setToolbarContent:item];
+        }
+    }];
 }
 
 - (void)configurePage:(MWZoomingScrollView *)page forIndex:(NSUInteger)index
@@ -275,6 +283,7 @@
 
 - (void)loadData
 {
+    
 }
 
 - (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation
@@ -287,57 +296,23 @@
 
 - (UIView *)createToolBar
 {
-    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
-    [toolbar removeAllSubviews];
-    UIImage *image = [MiniUIImage imageNamed:@"tool_bar"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = toolbar.bounds;
-    [toolbar addSubview:imageView];
-    NSString *title = @"去淘宝看看";
-    
-    MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:title];
-    [button prefect];
-    button.frame = CGRectMake(toolbar.width - 100, 12, 90, 30);
-    [toolbar addSubview:button];
-    __PSELF__;
-    [button setTouchupHandler:^(MiniUIButton *button) {
-        [pSelf actionGoToShopping];
-    }];
-    self.button = button;
-    
-    CGFloat width = toolbar.width - button.width - 20;
-    for ( NSInteger index = 0; index < 4; index++)
-    {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, index==0?10:10+index*20, width, 20)];
-        label.tag = 10000 + index;
-        label.textColor = [UIColor colorWithRGBA:0xEEEEEEEE];
-        label.backgroundColor = [UIColor clearColor];
-        label.font = index == 0 ? [UIFont boldSystemFontOfSize:16]:[UIFont systemFontOfSize:14];
-        [toolbar addSubview:label];
-    }
+    UIView *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
     self.toolbar = toolbar;
     return self.toolbar;
 }
 
-- (void)setToolbarContent:( MSNGoodsItem* )item
+- (void)layoutToolBar
 {
-    ((UILabel *)[self.toolbar viewWithTag:10000]).text = [NSString stringWithFormat:@"价格:%@",item.goods_marked_price];
-    ((UILabel *)[self.toolbar viewWithTag:10001]).text = @"店铺名";
-    ((UILabel *)[self.toolbar viewWithTag:10002]).text = item.goods_title;
-    self.currentGoodsItem = item;
-    self.toolView.mid = item.goods_id;
-    [self loadGoodsInfo:item];
+    
 }
 
-- (void)loadGoodsInfo:(MSNGoodsItem*)item
+- (void)setToolbarContent:( MSNGoodsItem* )item
 {
-    if (item.detail == nil) {
-        [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, MSNGoodsDetail *data, id userInfo, BOOL cache) {
-            if ( error==nil )
-                item.detail = data;
-        }];
-    }
+    [(MSNDetailToolBar *)self.toolbar setGoodsInfo:item];
+    self.currentGoodsItem = item;
+    self.toolView.mid = item.goods_id;
 }
+
 
 //查看详情
 - (void)actionGoToShopping

@@ -108,6 +108,12 @@
 		C1B001AC187B08A7004BA1AE /* mymall_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B001AA187B08A7004BA1AE /* mymall_hover@2x.png */; };
 		C1B001AD187B08A7004BA1AE /* mymall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B001AB187B08A7004BA1AE /* mymall@2x.png */; };
 		C1B001B0187B0F5A004BA1AE /* MSNShopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B001AF187B0F5A004BA1AE /* MSNShopInfoView.m */; };
+		C1B0F2081884319200D222E5 /* libUMAppNetwork_3.5.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B0F1FE1884319200D222E5 /* libUMAppNetwork_3.5.6.a */; };
+		C1B0F2091884319200D222E5 /* UMUFP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1B0F1FF1884319200D222E5 /* UMUFP.bundle */; };
+		C1B0F211188439E800D222E5 /* UMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F20C188439E800D222E5 /* UMTableViewCell.m */; };
+		C1B0F212188439E800D222E5 /* UMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F20E188439E800D222E5 /* UMTableViewController.m */; };
+		C1B0F213188439E800D222E5 /* UMTableViewLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F210188439E800D222E5 /* UMTableViewLoadingCell.m */; };
+		C1B0F216188469F600D222E5 /* MSNDetailToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */; };
 		C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339EE184A25E600851585 /* MSFrameViewController.m */; };
 		C1B339F2184A30B800851585 /* MSTransformButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F1184A30B800851585 /* MSTransformButton.m */; };
 		C1B339FA184B836800851585 /* EspecialIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F9184B836800851585 /* EspecialIndexViewController.m */; };
@@ -537,6 +543,24 @@
 		C1B001AB187B08A7004BA1AE /* mymall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymall@2x.png"; sourceTree = "<group>"; };
 		C1B001AE187B0F5A004BA1AE /* MSNShopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopInfoView.h; sourceTree = "<group>"; };
 		C1B001AF187B0F5A004BA1AE /* MSNShopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopInfoView.m; sourceTree = "<group>"; };
+		C1B0F1FE1884319200D222E5 /* libUMAppNetwork_3.5.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMAppNetwork_3.5.6.a; sourceTree = "<group>"; };
+		C1B0F1FF1884319200D222E5 /* UMUFP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMUFP.bundle; sourceTree = "<group>"; };
+		C1B0F2001884319200D222E5 /* UMUFPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPBadgeView.h; sourceTree = "<group>"; };
+		C1B0F2011884319200D222E5 /* UMUFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPBannerView.h; sourceTree = "<group>"; };
+		C1B0F2021884319200D222E5 /* UMUFPGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPGridCell.h; sourceTree = "<group>"; };
+		C1B0F2031884319200D222E5 /* UMUFPGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPGridView.h; sourceTree = "<group>"; };
+		C1B0F2041884319200D222E5 /* UMUFPHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPHandleView.h; sourceTree = "<group>"; };
+		C1B0F2051884319200D222E5 /* UMUFPImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPImageView.h; sourceTree = "<group>"; };
+		C1B0F2061884319200D222E5 /* UMUFPTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPTableView.h; sourceTree = "<group>"; };
+		C1B0F2071884319200D222E5 /* UMUFPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMUFPWebView.h; sourceTree = "<group>"; };
+		C1B0F20B188439E800D222E5 /* UMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewCell.h; sourceTree = "<group>"; };
+		C1B0F20C188439E800D222E5 /* UMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewCell.m; sourceTree = "<group>"; };
+		C1B0F20D188439E800D222E5 /* UMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController.h; sourceTree = "<group>"; };
+		C1B0F20E188439E800D222E5 /* UMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewController.m; sourceTree = "<group>"; };
+		C1B0F20F188439E800D222E5 /* UMTableViewLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewLoadingCell.h; sourceTree = "<group>"; };
+		C1B0F210188439E800D222E5 /* UMTableViewLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewLoadingCell.m; sourceTree = "<group>"; };
+		C1B0F214188469F600D222E5 /* MSNDetailToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNDetailToolBar.h; sourceTree = "<group>"; };
+		C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNDetailToolBar.m; sourceTree = "<group>"; };
 		C1B339ED184A25E600851585 /* MSFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFrameViewController.h; sourceTree = "<group>"; };
 		C1B339EE184A25E600851585 /* MSFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFrameViewController.m; sourceTree = "<group>"; };
 		C1B339F0184A30B800851585 /* MSTransformButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransformButton.h; sourceTree = "<group>"; };
@@ -816,6 +840,7 @@
 				C169C4A116FF493B00ED87D8 /* CFNetwork.framework in Frameworks */,
 				C169C49F16FF493000ED87D8 /* QuartzCore.framework in Frameworks */,
 				C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */,
+				C1B0F2081884319200D222E5 /* libUMAppNetwork_3.5.6.a in Frameworks */,
 				C169C47C16FF48F200ED87D8 /* Foundation.framework in Frameworks */,
 				C169C47E16FF48F200ED87D8 /* CoreGraphics.framework in Frameworks */,
 				C1820F3B175BA51000C87E39 /* libUMFeedback.a in Frameworks */,
@@ -1063,6 +1088,7 @@
 		C169C47816FF48F200ED87D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1B0F1FD1884319200D222E5 /* UMAppNetwork */,
 				C1ACB74417FB384900862641 /* CoreText.framework */,
 				C101D199177CCB3E009BFA10 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
 				C1820F37175BA51000C87E39 /* ufeedback */,
@@ -1357,6 +1383,38 @@
 			);
 			name = Bundle;
 			path = Resource/Bundle;
+			sourceTree = "<group>";
+		};
+		C1B0F1FD1884319200D222E5 /* UMAppNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				C1B0F20A188439E800D222E5 /* TableView */,
+				C1B0F1FE1884319200D222E5 /* libUMAppNetwork_3.5.6.a */,
+				C1B0F1FF1884319200D222E5 /* UMUFP.bundle */,
+				C1B0F2001884319200D222E5 /* UMUFPBadgeView.h */,
+				C1B0F2011884319200D222E5 /* UMUFPBannerView.h */,
+				C1B0F2021884319200D222E5 /* UMUFPGridCell.h */,
+				C1B0F2031884319200D222E5 /* UMUFPGridView.h */,
+				C1B0F2041884319200D222E5 /* UMUFPHandleView.h */,
+				C1B0F2051884319200D222E5 /* UMUFPImageView.h */,
+				C1B0F2061884319200D222E5 /* UMUFPTableView.h */,
+				C1B0F2071884319200D222E5 /* UMUFPWebView.h */,
+			);
+			name = UMAppNetwork;
+			path = Frameworks/UMAppNetwork;
+			sourceTree = "<group>";
+		};
+		C1B0F20A188439E800D222E5 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C1B0F20B188439E800D222E5 /* UMTableViewCell.h */,
+				C1B0F20C188439E800D222E5 /* UMTableViewCell.m */,
+				C1B0F20D188439E800D222E5 /* UMTableViewController.h */,
+				C1B0F20E188439E800D222E5 /* UMTableViewController.m */,
+				C1B0F20F188439E800D222E5 /* UMTableViewLoadingCell.h */,
+				C1B0F210188439E800D222E5 /* UMTableViewLoadingCell.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		C1B339F7184B836800851585 /* Especial */ = {
@@ -1696,6 +1754,8 @@
 				C1254B63186EB2E80007D510 /* MSNShopInfoCell.m */,
 				C1B001AE187B0F5A004BA1AE /* MSNShopInfoView.h */,
 				C1B001AF187B0F5A004BA1AE /* MSNShopInfoView.m */,
+				C1B0F214188469F600D222E5 /* MSNDetailToolBar.h */,
+				C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2053,6 +2113,7 @@
 				C10BE73617765C3C009E6482 /* messages_tableview_background.png in Resources */,
 				C1FEB1C817E49F890076BEEA /* navi_shop_h@2x.png in Resources */,
 				C10BE73717765C3C009E6482 /* messages_tableview_background@2x.png in Resources */,
+				C1B0F2091884319200D222E5 /* UMUFP.bundle in Resources */,
 				C10BE73817765C3C009E6482 /* messages_toolbar_background.png in Resources */,
 				C10BE73917765C3C009E6482 /* messages_toolbar_background@2x.png in Resources */,
 				C1B001A9187B071F004BA1AE /* background@2x.png in Resources */,
@@ -2274,6 +2335,7 @@
 				C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */,
 				C1EC5080178074A100BE5ABB /* MSSearchCategoryViewController.m in Sources */,
 				C1EC5081178074A100BE5ABB /* MSStoreViewController.m in Sources */,
+				C1B0F216188469F600D222E5 /* MSNDetailToolBar.m in Sources */,
 				C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */,
 				C1EC5082178074A100BE5ABB /* MSVerifyViewController.m in Sources */,
 				C1EC5083178074A100BE5ABB /* MSDetailViewController.m in Sources */,
@@ -2298,15 +2360,18 @@
 				C1EC5092178074A100BE5ABB /* MSShopNewsViewController.m in Sources */,
 				C1EC5093178074A100BE5ABB /* MSTopicViewController.m in Sources */,
 				C1EC5094178074A100BE5ABB /* MiniUIIndicator.m in Sources */,
+				C1B0F213188439E800D222E5 /* UMTableViewLoadingCell.m in Sources */,
 				C1EC5095178074A100BE5ABB /* MiniUIWebView.m in Sources */,
 				C1EC5096178074A100BE5ABB /* MSGalleryGoodsCell.m in Sources */,
 				C12E4978180A37B900482A10 /* MSKeychainWrapper.m in Sources */,
 				C1618C301856196700F54499 /* NSData+Base64.m in Sources */,
+				C1B0F211188439E800D222E5 /* UMTableViewCell.m in Sources */,
 				C1EC5097178074A100BE5ABB /* MSGalleryView.m in Sources */,
 				C1EC5098178074A100BE5ABB /* MSNotiTableCell.m in Sources */,
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,
 				C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */,
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,
+				C1B0F212188439E800D222E5 /* UMTableViewController.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSNUISearchBar.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,
 				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,
@@ -2420,6 +2485,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat",
+					/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/UMAppNetwork,
 				);
 				PRODUCT_NAME = MiniShop;
 				WRAPPER_EXTENSION = app;
@@ -2435,6 +2501,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Wuquancheng/Documents/workspace/mini-studio/MiniShop/Frameworks/webchat",
+					/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/UMAppNetwork,
 				);
 				PRODUCT_NAME = MiniShop;
 				WRAPPER_EXTENSION = app;

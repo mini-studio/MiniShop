@@ -832,7 +832,19 @@
             block(error,data,nil,cache);
         }
     }];
+}
 
+- (void)getpushsound:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    [[ClientAgent sharedInstance] version:nil block:^(NSError *error, MSVersion* data, id userInfo, BOOL cache) {
+        if ( error == nil )
+        {
+            block(nil,data.push_sound,nil,NO);
+        }
+        else {
+            block(error,nil,nil,NO);
+        }
+    }];
 }
 
 @end

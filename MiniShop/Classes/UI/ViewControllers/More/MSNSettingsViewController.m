@@ -8,10 +8,12 @@
 
 #import "MSNSettingsViewController.h"
 #import "UMFeedbackViewController.h"
+#import "MRLoginViewController.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "UIColor+Mini.h"
 #import "MSFeedbackViewController.h"
 #import "MiniUIWebViewController.h"
+#import "UMTableViewController.h"
 #import "UILabel+Mini.h"
 #import "MSUIAuthWebViewController.h"
 #import "MSSystem.h"
@@ -38,13 +40,15 @@
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)NSDictionary *dictionary;
 @property (nonatomic,strong)UMFeedback *umFeedback;
+@property (nonatomic,strong)UISwitch *uiSwitch;
+@property (nonatomic)BOOL pushOn;
 @end
 
 @implementation MSNSettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         self.dictionary = @{@"0":@[
                                     @{@"action":@"actionForInvote",@"text":@"请赐好评,我们会更加努力"},
@@ -61,7 +65,7 @@
                                     @{@"action":@"actionForClearCache",@"text":@"清除缓存"}
                                     ],
                             @"3":@[
-                                    @{@"action":@"actionForAbout",@"text":@"精品推荐"},
+                                    @{@"action":@"actionForRecommend",@"text":@"精品推荐"},
                                     @{@"action":@"actionForAbout",@"text":@"关于"}
                                   ]
                             };
@@ -72,6 +76,13 @@
 - (void)dealloc
 {
     _umFeedback.delegate = nil;
+}
+
+- (void)loadView
+{
+    [super loadView];
+     self.uiSwitch = [[UISwitch alloc] init];
+    [self.uiSwitch addTarget:self action:@selector(actionPushSwitch:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidLoad
@@ -89,6 +100,12 @@
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,20 )];
     header.backgroundColor = self.tableView.backgroundColor;
     self.tableView.tableHeaderView = header;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,10 +145,22 @@
         cell.textLabel.highlightedTextColor = cell.textLabel.textColor = [UIColor colorWithRGBA:0x555555ff];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
         cell.accessoryView =  [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_accessory"]];
+        UISwitch *uiSwitch = [[UISwitch alloc] init];
+        uiSwitch.center = CGPointMake(cell.width-uiSwitch.width-8, 25);
+        uiSwitch.hidden = YES;
+        uiSwitch.tag = 1000;
+        [cell addSubview:uiSwitch];
     }
     NSArray *dataSource = [self.dictionary valueForKey:[NSString stringWithFormat:@"%d",indexPath.section]];
     [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor whiteColor] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xebebebff] sectionRowNumbers:dataSource.count];
     id data = [dataSource objectAtIndex:indexPath.row];
+    NSString *type = [data valueForKey:@"type"];
+    UISwitch *uiSwitch = (UISwitch *)[cell viewWithTag:1000];
+    if ([@"switch" isEqualToString:type]){
+        [cell addSubview:self.uiSwitch];
+        self.uiSwitch.center = CGPointMake(cell.width-uiSwitch.width-8, 25);uiSwitch.hidden = NO;
+        self.uiSwitch.on = self.pushOn;
+    }
     cell.textLabel.text = [data valueForKey:@"text"];
     return cell;
 }
@@ -259,6 +288,37 @@
 {
      MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com/api/sellerreg" title:@"" toolbar:NO];
     controller.defaultBackButton = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (void)actionForRecommend
+{
+    UMTableViewController *controller = [[UMTableViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)loadData
+{
+    [[ClientAgent sharedInstance] getpushsound:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if (error==nil) {
+            self.pushOn = [@"1" isEqualToString:data];
+            [self.uiSwitch setOn:self.pushOn animated:YES];
+        }
+    }];
+}
+
+- (void)actionPushSwitch:(UISwitch*)sender
+{
+    __PSELF__;
+    [[ClientAgent sharedInstance] setpushsound:sender.isOn?1:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if (error!=nil){
+            [pSelf showErrorMessage:error];
+        }
+    }];
+}
+
+- (void)actionForReg
+{
+    MRLoginViewController *controller = [[MRLoginViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

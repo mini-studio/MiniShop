@@ -91,6 +91,8 @@
 
 - (void)setpushsound:(int)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
+- (void)getpushsound:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+
 
 @end
 
