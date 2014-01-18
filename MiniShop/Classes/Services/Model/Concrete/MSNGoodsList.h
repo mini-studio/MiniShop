@@ -47,6 +47,8 @@
 @property (nonatomic,strong)NSString *goods_date;
 
 @property (nonatomic,strong)MSNGoodsDetail *detail;
+
+@property (nonatomic,strong)UIImage *image;
 @end
 
 @interface MSNGoodsDetailInfo : MSObject

@@ -521,21 +521,21 @@
 
 - (void)shareGood:(MiniUIButton *)button
 {
-    [MobClick event:MOB_DETAIL_TOP_SHARE];
-    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
-    if ( item == nil || item.mid == 0 ) {
-        return;
-    }
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 1 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
-        }
-        else if ( buttonIndex == 2 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
-        }
-    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+//    [MobClick event:MOB_DETAIL_TOP_SHARE];
+//    MSGoodsItem *item = [self.goods.body_info objectAtIndex:self.currentPageIndex];
+//    if ( item == nil || item.mid == 0 ) {
+//        return;
+//    }
+//    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+//        if ( buttonIndex == 1 )
+//        {
+//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
+//        }
+//        else if ( buttonIndex == 2 )
+//        {
+//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
+//        }
+//    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
 - (NSString*)itemUri:(MSGoodsItem *)item
 {

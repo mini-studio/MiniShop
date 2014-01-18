@@ -20,6 +20,7 @@
 #import "MiniSysUtil.h"
 #import "MSNDetailToolBar.h"
 #import "MSNShopDetailViewController.h"
+#import "MSWebChatUtil.h"
 
 #import "MSNGoodsList.h"
 
@@ -253,6 +254,8 @@
 {
     [super loadAdjacentPhotosIfNecessary:photo];
     self.viewStartTime = [NSDate date];
+    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
+    item.image = [photo underlyingImage];
 }
 
 - (void)changePhoto:(NSInteger)index pre:(NSInteger)preIndex
@@ -296,9 +299,28 @@
 
 - (UIView *)createToolBar
 {
-    UIView *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+    MSNDetailToolBar *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 120)];
     self.toolbar = toolbar;
+    [toolbar.buybutton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
+    [toolbar.featureView.buyButton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
+    [toolbar.featureView.favButton addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
+    [toolbar.featureView.shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
     return self.toolbar;
+}
+
+- (void)actionToolBarBuy:(MiniUIButton*)button
+{
+    
+}
+
+- (void)actionToolBarFav:(MiniUIButton*)button
+{
+    
+}
+
+- (void)actionToolBarShare:(MiniUIButton*)button
+{
+    
 }
 
 - (void)layoutToolBar
@@ -379,21 +401,25 @@
 
 - (void)shareGood:(MiniUIButton *)button
 {
-//    [MobClick event:MOB_DETAIL_TOP_SHARE];
-//    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-//    if ( item == nil || item.mid == 0 ) {
-//        return;
-//    }
-//    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-//        if ( buttonIndex == 1 )
-//        {
-//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
-//        }
-//        else if ( buttonIndex == 2 )
-//        {
-//            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
-//        }
-//    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+    [MobClick event:MOB_DETAIL_TOP_SHARE];
+    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
+    if ( item == nil ) {
+        return;
+    }
+    if (item.image==nil) {
+        return;
+    }
+    
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
 - (NSString*)itemUri:(MSNGoodsItem *)item
 {

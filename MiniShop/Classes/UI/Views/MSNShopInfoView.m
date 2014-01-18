@@ -42,7 +42,7 @@
 - (UILabel *)createLable:(CGRect)frame
 {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.font = [UIFont systemFontOfSize:14];
+    label.font = [UIFont systemFontOfSize:12];
     return label;
 }
 

@@ -10,11 +10,13 @@
 #import "WXApi.h"
 #import "MSGoodsList.h"
 #import "MSShopInfo.h"
+#import "MSNGoodsList.h"
+
 
 @implementation MSWebChatUtil
 #define BUFFER_SIZE 10
 
-+ (void)shareGoodsItem:(MSGoodsItem*)GoodsItem scene:(int)scene
++ (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem scene:(int)scene
 {
     if(![WXApi isWXAppInstalled])
     {
@@ -27,7 +29,8 @@
 
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"分享个宝贝给你";
-    message.description = GoodsItem.name;
+    message.description = GoodsItem.goods_title;
+    if (GoodsItem.image!=nil)
     [message setThumbImage:GoodsItem.image];
     
     WXAppExtendObject *ext = [WXAppExtendObject object];
