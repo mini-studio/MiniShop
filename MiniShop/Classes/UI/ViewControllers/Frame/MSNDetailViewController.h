@@ -8,7 +8,7 @@
 
 #import "MWPhotoBrowser.h"
 
-@interface MSNDetailViewController : MWPhotoBrowser
+@interface MSNDetailViewController : MSViewController
 @property (nonatomic,strong)NSArray  *items;
 @property (nonatomic,strong)NSString *from;
 @property (nonatomic)NSInteger defaultIndex;

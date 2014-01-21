@@ -19,7 +19,7 @@
 @property (nonatomic,strong)UILabel *goodsNameLabel;
 @property (nonatomic,strong)UILabel *goodsPriceLabel;
 @property (nonatomic,strong)MiniUIButton *buybutton;
-@property (nonatomic,strong)MSNDetailToolFeatureView *featureView;
+
 
 - (void)setGoodsInfo:(MSNGoodsItem*)item;
 

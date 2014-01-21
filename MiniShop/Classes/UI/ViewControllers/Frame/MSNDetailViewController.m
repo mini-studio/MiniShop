@@ -21,34 +21,135 @@
 #import "MSNDetailToolBar.h"
 #import "MSNShopDetailViewController.h"
 #import "MSWebChatUtil.h"
-
 #import "MSNGoodsList.h"
+#import "UIImage+Mini.h"
+#import "UIImageView+WebCache.h"
 
-@interface MSNDetailViewController ()<MWPhotoBrowserDelegate>
-@property (nonatomic,retain)NSArray *urls;
-@property (nonatomic)NSInteger selectedIndex;
-@property (nonatomic,retain)UIImage *placeholderImage;
+@interface MSNUIDetailImageView : UIView
+@property (nonatomic,strong)UIImageView *imageView;
+@end
 
-@property (nonatomic)bool loading;
-@property (nonatomic,strong) UIView *coverView;
-@property (nonatomic,strong) MiniUIButton *button;
+@implementation MSNUIDetailImageView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self addSubview:self.imageView];
+    }
+    return self;
+}
+
+- (void)setImage:(UIImage*)image
+{
+    CGSize size = image.size;
+    self.imageView.size = size;
+    self.imageView.image = image;
+    [self.superview sizeToFit];
+    [self.superview setNeedsLayout];
+}
+
+- (void)setImageURL:(NSString*)url
+{
+    __PSELF__;
+    [self.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+        [pSelf setImage:image];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.imageView.center = CGPointMake(self.width/2, self.height/2);
+}
+
+- (void)sizeToFit
+{
+    [super sizeToFit];
+    CGFloat height = self.imageView.height;
+    CGFloat width = self.imageView.width;
+    if (height>350) {
+        CGFloat scale = 350.0f/height;
+        width = self.imageView.width * scale;
+        height = 350;
+    }
+    if (width>320) {
+        CGFloat scale = 320.0f/width;
+        height = scale*height;
+        width = 320;
+    }
+    self.imageView.size = CGSizeMake(width, height);
+    self.height = height;
+}
+@end
+
+@interface MSNUIDetailContentView : UIView
+@property(nonatomic,strong)MSNGoodsItem *goodsItem;
+@property(nonatomic,strong)MSNUIDetailImageView *imageView;
+@property(nonatomic,strong)MSNDetailToolBar *toolbar;
+
+@end
+
+@implementation MSNUIDetailContentView
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initSubviews];
+    }
+    return self;
+}
+
+- (void)initSubviews
+{
+    self.imageView = [[MSNUIDetailImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, 700)];
+    self.toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.width, 120)];
+    [self addSubview:self.imageView];
+    [self addSubview:self.toolbar];
+}
+
+- (void)sizeToFit
+{
+    [super sizeToFit];
+    [self.imageView sizeToFit];
+    [self.toolbar sizeToFit];
+    self.imageView.origin = CGPointMake(0, 0);
+    CGFloat top = self.imageView.bottom;
+    if (self.imageView.height==0){
+        top = self.height-120;
+    }
+    self.toolbar.origin = CGPointMake(0, top);
+    self.height = self.toolbar.bottom;
+    
+    UIScrollView *superView = (UIScrollView *)[self superview];
+    superView.contentSize = CGSizeMake(superView.width, self.height);
+}
+
+- (void)setGoodsItem:(MSNGoodsItem *)goodsItem
+{
+    _goodsItem = goodsItem;
+    [self.toolbar setGoodsInfo:goodsItem];
+    [self.imageView setImageURL:goodsItem.big_image_url];
+}
+
+@end
+
+
+@interface MSNDetailViewController ()
+@property (nonatomic,strong) UIScrollView *scrollView;
+
 @property (nonatomic,strong) UIView    *toolbar;
-@property (nonatomic,strong) NSMutableDictionary *dataCache;
+@property (nonatomic,strong) MSUIDTView *dtView;
 
-@property (nonatomic,strong) MiniUIActivityIndicatorView *indicator;
-
-@property (nonatomic,strong) NSDate *viewStartTime;
-
-@property (nonatomic,strong) MSUIDTView *toolView;
-
-@property (nonatomic,strong) UIView *naviView;
-
-@property (nonatomic,strong) UIView *titleView;
-
-@property (nonatomic) CGRect titleViewFrame;
 
 @property (nonatomic,strong) MSNGoodsItem *currentGoodsItem;
 
+@property (nonatomic,strong) NSDate *viewStartTime;
+@property (nonatomic)NSInteger selectedIndex;
+@property (nonatomic)bool loading;
 @end
 
 @implementation MSNDetailViewController
@@ -57,86 +158,40 @@
 {
     self = [super init];
     if (self) {
-        [self setDelegate:self];
-        self.displayActionButton = NO;
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)loadView
 {
     [super loadView];
-    if ( MAIN_VERSION >= 7 ) {
-        if ( [self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)] ) {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-    }
-    self.toolView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    self.dtView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
+    [self.contentView addSubview:self.scrollView];
+    
+    MSNUIDetailContentView * view = [[MSNUIDetailContentView alloc] initWithFrame:self.contentView.bounds];
+    [self.scrollView addSubview:view];
+    [view setGoodsItem:[self.items objectAtIndex:self.defaultIndex]];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setNaviBackButton];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"image_view_bg"]];
-    [self createNaviView];
-    [self setInitialPageIndex:self.defaultIndex];
+    [self.naviTitleView setTitle:@"宝贝详情"];
 }
 
-- (void)createNaviView
-{
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, MAIN_VERSION>=7?64:44)];
-    titleView.backgroundColor = [UIColor colorWithRGBA:0x000000CC];
-    CGFloat gap = (titleView.width-160)/3;
-    CGFloat top = (44-30)/2 + (MAIN_VERSION>=7?20:0);
-    CGFloat right = 20;
-    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
-    button.frame = CGRectMake(right, top, 30, 30);
-    [titleView addSubview:button];
-    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    
-    right = button.right + gap;
-    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_share"] highlightedImage:[UIImage imageNamed:@"navi_share_h"]];
-    button.frame = CGRectMake(right, top, 30, 30);
-    [titleView addSubview:button];
-    [button addTarget:self action:@selector(shareGood:) forControlEvents:UIControlEventTouchUpInside];
-    
-    right = button.right + gap;
-    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_shop"] highlightedImage:[UIImage imageNamed:@"navi_shop_h"]];
-    button.frame = CGRectMake(right, top, 30, 30);
-    [titleView addSubview:button];
-    [button addTarget:self action:@selector(gotoShop:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    right = button.right + gap;
-    button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_link"] highlightedImage:[UIImage imageNamed:@"navi_link_h"]];
-    button.frame = CGRectMake(right, top, 30, 30);
-    [button addTarget:self action:@selector(copylink:) forControlEvents:UIControlEventTouchUpInside];
-    [titleView addSubview:button];
-    
-    [self.view addSubview:titleView];
-    self.titleView = titleView;
-    self.titleViewFrame = titleView.frame;
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar addSubview:self.naviView];
-    self.naviView.left = 0;
-    self.naviView.alpha = 1;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    // UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background":@"navi_background")];
-    // [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -147,54 +202,23 @@
         self.viewStartTime = [NSDate date];
     }
     self.loading = NO;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleZoomInNotification:) name:MWPHOTO_ZOOM_IN_NOTIFICATION object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (UIColor *)backgroundColor
-{
-    return [UIColor clearColor];
-}
-
-- (void)setNaviBackButton
-{
-    self.navigationItem.hidesBackButton = YES;
-}
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
 {
-    [self setInitialPageIndex:selectedIndex];
+   // [self setInitialPageIndex:selectedIndex];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setNaviTitle
-{
-}
-
-- (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
-{
-    UIImage* bgImage = [UIImage imageNamed:@"navi_bar_back"];
-    
-    MiniUIButton *button = [MiniUIButton buttonWithImage:bgImage highlightedImage:bgImage];
-    button.width += 4;
-    button.imageEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
-    button.showsTouchWhenHighlighted = YES;
-    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem* tmpBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    tmpBarButtonItem.style = UIBarButtonItemStyleBordered;
-    
-    return  tmpBarButtonItem;
 }
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
@@ -216,11 +240,8 @@
 
 - (void)updateViewContents:(NSInteger)index
 {
-    NSString *title = @"购买";
     MSNGoodsItem *item = [self.items objectAtIndex:index];
-    [self.button setTitle:title forState:UIControlStateNormal];
     [self setToolbarContent:item];
-    [self setNaviTitle];
     __PSELF__;
     [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil){
@@ -228,34 +249,6 @@
             [pSelf setToolbarContent:item];
         }
     }];
-}
-
-- (void)configurePage:(MWZoomingScrollView *)page forIndex:(NSUInteger)index
-{
-	[super configurePage:page forIndex:index];
-    if ( index == self.currentPageIndex ) {
-        [self updateViewContents:index];
-    }
-    
-}
-
-- (void)handleMWPhotoLoadingDidEndNotification:(NSNotification *)notification
-{
-    [super handleMWPhotoLoadingDidEndNotification:notification];
-    id <MWPhoto> currentPhoto = [self photoAtIndex:self.currentPageIndex];
-    id <MWPhoto> photo = [notification object];
-    if (currentPhoto == photo)
-    {
-        self.viewStartTime = [NSDate date];
-    }
-}
-
-- (void)loadAdjacentPhotosIfNecessary:(id<MWPhoto>)photo
-{
-    [super loadAdjacentPhotosIfNecessary:photo];
-    self.viewStartTime = [NSDate date];
-    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-    item.image = [photo underlyingImage];
 }
 
 - (void)changePhoto:(NSInteger)index pre:(NSInteger)preIndex
@@ -267,17 +260,6 @@
         self.viewStartTime = nil;
     }
     [self updateViewContents:index];
-}
-
-- (CGSize)contentSizeForPagingScrollView {
-    // We have to use the paging scroll view's bounds to calculate the contentSize, for the same reason outlined above.
-    CGRect bounds = self.pagingScrollView.bounds;
-    return CGSizeMake(bounds.size.width * [self numberOfPhotos], bounds.size.height);
-}
-
-- (NSString *)loadingTitle
-{
-    return @"正在努力加载...";
 }
 
 - (void)loadData:(int)type
@@ -297,16 +279,16 @@
 }
 
 
-- (UIView *)createToolBar
-{
-    MSNDetailToolBar *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 120)];
-    self.toolbar = toolbar;
-    [toolbar.buybutton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
-    [toolbar.featureView.buyButton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
-    [toolbar.featureView.favButton addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
-    [toolbar.featureView.shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
-    return self.toolbar;
-}
+//- (UIView *)createToolBar
+//{
+//    MSNDetailToolBar *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 120)];
+//    self.toolbar = toolbar;
+//    [toolbar.buybutton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
+//    [toolbar.featureView.buyButton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
+//    [toolbar.featureView.favButton addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
+//    [toolbar.featureView.shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
+//    return self.toolbar;
+//}
 
 - (void)actionToolBarBuy:(MiniUIButton*)button
 {
@@ -315,12 +297,37 @@
 
 - (void)actionToolBarFav:(MiniUIButton*)button
 {
-    
+    __PSELF__;
+    MSNGoodsItem *item = [self currentGoodsItem];
+    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if ( error != nil ) {
+            [pSelf showMessageInfo:[error localizedDescription] delay:2];
+        }
+    }];
 }
 
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
+    [MobClick event:MOB_DETAIL_TOP_SHARE];
+    MSNGoodsItem *item = [self currentGoodsItem];
+    if ( item == nil ) {
+        return;
+    }
+    if (item.image==nil) {
+        return;
+    }
     
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+
 }
 
 - (void)layoutToolBar
@@ -332,7 +339,7 @@
 {
     [(MSNDetailToolBar *)self.toolbar setGoodsInfo:item];
     self.currentGoodsItem = item;
-    self.toolView.mid = item.goods_id;
+    self.dtView.mid = item.goods_id;
 }
 
 
@@ -356,13 +363,6 @@
 //    [[ClientAgent sharedInstance] get:requestStr params:nil block:^(NSError *error, id data, BOOL cache){}];
 }
 
-- (void)handleZoomInNotification:(NSNotification *)noti
-{
-    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-    [[ClientAgent sharedInstance] zoom:item.mid from:self.from userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        
-    }];
-}
 
 - (void)uploadviewsec:(int)sec index:(NSInteger)index
 {
@@ -373,76 +373,12 @@
     }
 }
 
-- (Class)scrollViewIndicatorViewClass
-{
-    return [Indicator class];
-}
 
-- (void)showWating:(NSString *)message
-{
-    if ( self.indicator == nil )
-    {
-        self.indicator = [[MiniUIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        
-    }
-    if ( message == nil )
-        self.indicator.labelText = @"正在努力加载...";
-    else
-        self.indicator.labelText = @"";
-    self.indicator.userInteractionEnabled = NO;
-    [self.indicator showInView:self.view userInterfaceEnable:YES];
-}
-
-- (void)dismissWating:(BOOL)animated
-{
-    [self.indicator hide];
-}
-
-
-- (void)shareGood:(MiniUIButton *)button
-{
-    [MobClick event:MOB_DETAIL_TOP_SHARE];
-    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-    if ( item == nil ) {
-        return;
-    }
-    if (item.image==nil) {
-        return;
-    }
-    
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 1 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
-        }
-        else if ( buttonIndex == 2 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
-        }
-    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
-}
 - (NSString*)itemUri:(MSNGoodsItem *)item
 {
 //    NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
 //    return uri;
     return nil;
-}
-
-- (void)copylink:(MiniUIButton *)button
-{
-    [MobClick event:MOB_DETAIL_TOP_COPY];
-    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-    if ( item == nil || [item.goods_id isEqualToString:0] ) {
-        return;
-    }
-    [[MiniSysUtil sharedInstance] copyToBoard:[self itemUri:item]];
-    [self showMessageInfo:@"商品链接地址已经复制啦" delay:2];
-    __PSELF__;
-    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        if ( error != nil ) {
-            [pSelf showMessageInfo:[error localizedDescription] delay:2];
-        }
-    }];
 }
 
 - (void)gotoShop:(MiniUIButton *)button
@@ -473,17 +409,16 @@
 
 - (void)toggleControls
 {
-    if ( self.toolView.mid > 0 ) {
-        self.toolView.alpha = 0;
-        self.toolView.top = 200;
-        self.toolView.delegate = self;
-        [self.view addSubview:self.toolView];
-        [self.toolView loadDetail];
+    if ( self.dtView.mid > 0 ) {
+        self.dtView.alpha = 0;
+        self.dtView.top = 200;
+        self.dtView.delegate = self;
+        [self.view addSubview:self.dtView];
+        [self.dtView loadDetail];
         [UIView animateWithDuration:0.3 animations:^{
             [self.navigationController setNavigationBarHidden:YES animated:YES];
-            self.toolView.alpha = 1.0f;
-            self.toolView.top = 0;
-            self.titleView.bottom = 0.0f;
+            self.dtView.alpha = 1.0f;
+            self.dtView.top = 0;
             [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
         }];
     }
@@ -492,12 +427,11 @@
 - (void)hideDTView
 {
     [UIView animateWithDuration:0.3 animations:^{
-        self.titleView.frame = self.titleViewFrame;
-        self.toolView.alpha = 0.0f;
-        self.toolView.top = self.view.height;
+        self.dtView.alpha = 0.0f;
+        self.dtView.top = self.view.height;
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     }completion:^(BOOL finished) {
-        [self.toolView removeFromSuperview];
+        [self.dtView removeFromSuperview];
     }];
 }
 

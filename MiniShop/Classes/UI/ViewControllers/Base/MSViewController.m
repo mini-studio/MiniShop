@@ -43,6 +43,14 @@
 - (void)loadView
 {
     [super loadView];
+    if ( MAIN_VERSION >= 7 ) {
+        if ( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] ) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+        if ( [self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)] ) {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+    }
     self.navigationController.navigationBar.hidden = YES;
     [self setBackGroudImage:@"background"];
     [self setNaviTitleViewShow:_showNaviView];
@@ -68,14 +76,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ( MAIN_VERSION >= 7 ) {
-        if ( [self respondsToSelector:@selector(setEdgesForExtendedLayout:)] ) {
-            self.edgesForExtendedLayout = UIRectEdgeNone;
-        }
-        if ( [self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)] ) {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated

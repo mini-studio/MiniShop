@@ -99,13 +99,11 @@
     self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 80)];
     [self.contentView addSubview:self.shopInfoView];
     
-    self.featureView = [[MSNDetailToolFeatureView alloc] initWithFrame:CGRectMake(0, self.height-40, self.width, 40)];
-    [self addSubview:self.featureView];
 }
 
-- (void)layoutSubviews
+- (void)sizeToFit
 {
-    [super layoutSubviews];
+    [super sizeToFit];
     CGFloat width = self.width-20;
     self.goodsPriceLabel.width = width;
     [self.goodsNameLabel sizeToFit];
@@ -114,8 +112,9 @@
     self.goodsPriceLabel.top = self.goodsNameLabel.bottom;
     self.buybutton.top = self.goodsPriceLabel.top;
     self.shopInfoView.top = self.buybutton.bottom;
-    self.contentView.contentSize = CGSizeMake(self.width, self.shopInfoView.bottom);
+    self.height = self.shopInfoView.bottom;
 }
+
 - (void)setGoodsInfo:(MSNGoodsItem*)item
 {
     
