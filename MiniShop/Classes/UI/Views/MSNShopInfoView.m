@@ -26,13 +26,17 @@
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
         [self addSubview:self.imageView];
         CGFloat left = self.imageView.right + 6;
-        self.nameLabel = [self createLable:CGRectMake(left, 4, self.width-left, 16)];
+        CGFloat top = 4;
+        self.nameLabel = [self createLable:CGRectMake(left, top, self.width-left, 16)];
         [self addSubview:self.nameLabel];
-        self.addressLabel = [self createLable:CGRectMake(left, self.nameLabel.bottom, self.nameLabel.width, 16)];
+        top = self.nameLabel.bottom + 4;
+        self.addressLabel = [self createLable:CGRectMake(left, top, self.nameLabel.width, 16)];
         [self addSubview:self.addressLabel];
-        self.sellerNickLabel = [self createLable:CGRectMake(left, self.addressLabel.bottom, self.nameLabel.width, 16)];
+        top = self.addressLabel.bottom + 4;
+        self.sellerNickLabel = [self createLable:CGRectMake(left, top, self.nameLabel.width, 16)];
         [self addSubview:self.sellerNickLabel];
-        self.followerLabel = [self createLable:CGRectMake(left, self.sellerNickLabel.bottom, self.nameLabel.width, 16)];
+        top = self.sellerNickLabel.bottom + 4;
+        self.followerLabel = [self createLable:CGRectMake(left, top, self.nameLabel.width, 16)];
         [self addSubview:self.followerLabel];
     }
     return self;

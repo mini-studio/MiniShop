@@ -24,9 +24,16 @@
 #import "MSNGoodsList.h"
 #import "UIImage+Mini.h"
 #import "UIImageView+WebCache.h"
+#import "MiniUIIndicator.h"
+
+@protocol MSNUIDetailImageViewDelegate <NSObject>
+- (void)willLoadImage;
+- (void)didLoadImage;
+@end
 
 @interface MSNUIDetailImageView : UIView
 @property (nonatomic,strong)UIImageView *imageView;
+@property (nonatomic,assign)id<MSNUIDetailImageViewDelegate> imageViewDelegate;
 @end
 
 @implementation MSNUIDetailImageView
@@ -46,17 +53,31 @@
     CGSize size = image.size;
     self.imageView.size = size;
     self.imageView.image = image;
-    [self.superview sizeToFit];
-    [self.superview setNeedsLayout];
+}
+
+- (void)startLoadImage
+{
+    if (self.imageViewDelegate) {
+        [self.imageViewDelegate willLoadImage];
+    }
+}
+
+- (void)didLoadImage
+{
+    if (self.imageViewDelegate) {
+        [self.imageViewDelegate didLoadImage];
+    }
 }
 
 - (void)setImageURL:(NSString*)url
 {
     __PSELF__;
+    [self startLoadImage];
     [self.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
         [pSelf setImage:image];
+        [pSelf didLoadImage];
     } failure:^(NSError *error) {
-        
+        [pSelf didLoadImage];
     }];
 }
 
@@ -86,11 +107,12 @@
 }
 @end
 
-@interface MSNUIDetailContentView : UIView
+@interface MSNUIDetailContentView : UIView <MSNUIDetailImageViewDelegate>
 @property(nonatomic,strong)MSNGoodsItem *goodsItem;
 @property(nonatomic,strong)MSNUIDetailImageView *imageView;
 @property(nonatomic,strong)MSNDetailToolBar *toolbar;
-
+@property(nonatomic,strong)UIScrollView *contentView;
+@property(nonatomic,strong)MiniUIActivityIndicatorView *indicator;
 @end
 
 @implementation MSNUIDetailContentView
@@ -105,10 +127,14 @@
 
 - (void)initSubviews
 {
-    self.imageView = [[MSNUIDetailImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, 700)];
-    self.toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.width, 120)];
-    [self addSubview:self.imageView];
-    [self addSubview:self.toolbar];
+    self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    self.contentView.showsVerticalScrollIndicator = NO;
+    [self addSubview:self.contentView];
+    self.imageView = [[MSNUIDetailImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, 350)];
+    self.toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, self.imageView.bottom, self.width, 0)];
+    [self.contentView addSubview:self.imageView];
+    [self.contentView addSubview:self.toolbar];
+    self.imageView.imageViewDelegate = self;
 }
 
 - (void)sizeToFit
@@ -122,10 +148,7 @@
         top = self.height-120;
     }
     self.toolbar.origin = CGPointMake(0, top);
-    self.height = self.toolbar.bottom;
-    
-    UIScrollView *superView = (UIScrollView *)[self superview];
-    superView.contentSize = CGSizeMake(superView.width, self.height);
+    self.contentView.contentSize = CGSizeMake(self.width, self.toolbar.bottom);
 }
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem
@@ -133,13 +156,88 @@
     _goodsItem = goodsItem;
     [self.toolbar setGoodsInfo:goodsItem];
     [self.imageView setImageURL:goodsItem.big_image_url];
+    [self sizeToFit];
+}
+
+- (void)willLoadImage
+{
+    [self showWating];
+}
+
+- (void)didLoadImage
+{
+    [self dismissWating];
+    [self sizeToFit];
+}
+
+- (void)showWating
+{
+    if ( self.indicator == nil )
+    {
+        self.indicator = [[MiniUIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    }
+    if ( self.indicator.showing) {
+        return;
+    }
+    self.indicator.labelText = @"正在努力加载...";
+    self.indicator.userInteractionEnabled = NO;
+    [self.indicator showInView:self userInterfaceEnable:YES];
+}
+
+- (void)dismissWating
+{
+    [self.indicator hide];
 }
 
 @end
 
 
+@interface MSNDetailView : UIScrollView
+@property (nonatomic,strong)NSArray  *items;
+@property (nonatomic)NSInteger selectedIndex;
+@end
+
+@implementation MSNDetailView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self){
+        self.showsVerticalScrollIndicator = NO;
+        self.showsHorizontalScrollIndicator = NO;
+        self.pagingEnabled = YES;
+    }
+    return self;
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    CGPoint contentOffset = CGPointMake(selectedIndex*self.width, 0);
+    if (contentOffset.x != self.contentOffset.x) {
+        self.contentOffset = contentOffset;
+    }
+    if (self.items != nil && self.items.count>0) {
+        MSNUIDetailContentView * view = [[self subviews] objectAtIndex:selectedIndex];
+        [view setGoodsItem:[self.items objectAtIndex:selectedIndex]];
+    }
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset
+{
+    [super setContentOffset:contentOffset];
+    if ((int)contentOffset.x%(int)self.width == 0) {
+        int page = (int)contentOffset.x/(int)self.width;
+        if (page!=self.selectedIndex) {
+            self.selectedIndex = page;
+        }
+    }
+}
+@end
+
+
 @interface MSNDetailViewController ()
-@property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) MSNDetailView *detailView;
 
 @property (nonatomic,strong) UIView    *toolbar;
 @property (nonatomic,strong) MSUIDTView *dtView;
@@ -166,14 +264,28 @@
 - (void)loadView
 {
     [super loadView];
+    
     self.dtView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
-    [self.contentView addSubview:self.scrollView];
+    CGRect frame = self.contentView.bounds;
+    frame.size = CGSizeMake(frame.size.width, frame.size.height-44);
     
-    MSNUIDetailContentView * view = [[MSNUIDetailContentView alloc] initWithFrame:self.contentView.bounds];
-    [self.scrollView addSubview:view];
-    [view setGoodsItem:[self.items objectAtIndex:self.defaultIndex]];
+    self.detailView = [[MSNDetailView alloc] initWithFrame:frame];
+    [self.contentView addSubview:self.detailView];
+   
+    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.detailView.bottom, self.contentView.width, 44)];
+    toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
+    [self.contentView addSubview:toolbar];
+    
+    int count = self.items.count;
+    for (int index=0; index<count; index++) {
+        CGRect frame = CGRectMake(index*self.detailView.width, 0, self.detailView.width, self.detailView.height);
+        MSNUIDetailContentView * detailContentView = [[MSNUIDetailContentView alloc] initWithFrame:frame];
+        [self.detailView addSubview:detailContentView];
+    }
+    self.detailView.contentSize = CGSizeMake(count*self.detailView.width, self.detailView.height);
+    self.detailView.items = self.items;
+    self.detailView.selectedIndex = self.defaultIndex;
 }
 
 - (void)viewDidLoad

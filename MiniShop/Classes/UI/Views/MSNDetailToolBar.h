@@ -9,11 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MSNGoodsList.h"
 
-@interface MSNDetailToolFeatureView : UIView
-@property (nonatomic,strong)MiniUIButton *buyButton;
-@property (nonatomic,strong)MiniUIButton *favButton;
-@property (nonatomic,strong)MiniUIButton *shareButton;
-@end
 
 @interface MSNDetailToolBar : UIView
 @property (nonatomic,strong)UILabel *goodsNameLabel;
