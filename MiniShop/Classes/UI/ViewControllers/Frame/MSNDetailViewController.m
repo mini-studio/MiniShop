@@ -273,9 +273,7 @@
     self.detailView = [[MSNDetailView alloc] initWithFrame:frame];
     [self.contentView addSubview:self.detailView];
    
-    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.detailView.bottom, self.contentView.width, 44)];
-    toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
-    [self.contentView addSubview:toolbar];
+    [self createToolbar:44];
     
     int count = self.items.count;
     for (int index=0; index<count; index++) {
@@ -286,6 +284,43 @@
     self.detailView.contentSize = CGSizeMake(count*self.detailView.width, self.detailView.height);
     self.detailView.items = self.items;
     self.detailView.selectedIndex = self.defaultIndex;
+}
+
+- (void)createToolbar:(CGFloat)height
+{
+    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.height-height, self.contentView.width, height)];
+    toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
+    [self.contentView addSubview:toolbar];
+    
+    CGFloat centerY = toolbar.height/2-4;
+    MiniUIButton *button = [self createToolBarButton:@"购买" imageName:@"money" hImageName:@"money_hover"];
+    button.center = CGPointMake(50,centerY);
+    [toolbar addSubview:button];
+    
+    button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star_hover"];
+    button.center = CGPointMake(toolbar.width/2,centerY);
+    [toolbar addSubview:button];
+    
+    button = [self createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+    button.center = CGPointMake(toolbar.width-50,centerY);
+    [toolbar addSubview:button];
+    
+
+}
+
+- (MiniUIButton*)createToolBarButton:(NSString*)title imageName:(NSString*)imageName hImageName:(NSString*)hImageName
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:imageName] highlightedImage:[UIImage imageNamed:hImageName]];
+    button.size = CGSizeMake(44, 44);
+    [button setTitleColor:[UIColor colorWithRGBA:0xe74764FF] forState:UIControlStateNormal];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, button.height-14, button.width, 20)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor colorWithRGBA:0xe74764FF];
+    label.font = [UIFont systemFontOfSize:8];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = title;
+    [button addSubview:label];
+    return button;
 }
 
 - (void)viewDidLoad
