@@ -52,7 +52,7 @@
         }
     }
     self.navigationController.navigationBar.hidden = YES;
-    [self setBackGroudImage:@"background"];
+    [self setBackGroudImage:@"background_image"];
     [self setNaviTitleViewShow:_showNaviView];
     [self setStatusBar];
     if ( _showNaviView) {

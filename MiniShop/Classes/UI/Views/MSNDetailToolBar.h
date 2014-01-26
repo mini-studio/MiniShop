@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MSNGoodsList.h"
-
+#import "MSNShopInfoView.h"
 
 @interface MSNDetailToolBar : UIView
 @property (nonatomic,strong)UILabel *goodsNameLabel;
 @property (nonatomic,strong)UILabel *goodsPriceLabel;
 @property (nonatomic,strong)MiniUIButton *buybutton;
-
+@property (nonatomic,strong)MSNShopInfoView* shopInfoView;
 
 - (void)setGoodsInfo:(MSNGoodsItem*)item;
 

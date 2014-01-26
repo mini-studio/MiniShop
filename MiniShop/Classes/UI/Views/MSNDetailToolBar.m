@@ -8,12 +8,10 @@
 
 #import "MSNDetailToolBar.h"
 #import "UIColor+Mini.h"
-#import "MSNShopInfoView.h"
+
 
 @interface MSNDetailToolBar()
 @property (nonatomic,strong)UIScrollView *contentView;
-@property (nonatomic,strong)MSNShopInfoView* shopInfoView;
-
 @end
 
 @implementation MSNDetailToolBar
@@ -27,12 +25,12 @@
     return self;
 }
 
-- (UILabel*)createLabel:(CGRect)frame
+- (UILabel*)createLabel:(CGRect)frame fontSize:(int)fontSize
 {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.textColor = [UIColor colorWithRGBA:0xEEEEEEEE];
+    label.textColor = [UIColor colorWithRGBA:0x414345FF];
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:12];
+    label.font = [UIFont systemFontOfSize:fontSize];
     label.numberOfLines = 0;
     return label;
 }
@@ -40,16 +38,11 @@
 - (void)initSubViews
 {
     self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    self.contentView.backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     [self addSubview:self.contentView];
-    UIImage *image = [MiniUIImage imageNamed:@"tool_bar"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = self.bounds;
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    [self.contentView addSubview:imageView];
-    
-    self.goodsNameLabel = [self createLabel:CGRectMake(10, 10, self.width-20, 30)];
+    self.goodsNameLabel = [self createLabel:CGRectMake(10, 10, self.width-20, 30) fontSize:16];
     [self.contentView addSubview:self.goodsNameLabel];
-    self.goodsPriceLabel = [self createLabel:CGRectMake(10, self.goodsNameLabel.bottom, 100, 30)];
+    self.goodsPriceLabel = [self createLabel:CGRectMake(10, self.goodsNameLabel.bottom+6, 100, 30) fontSize:21];
     [self.contentView addSubview:self.goodsPriceLabel];
     
     self.buybutton = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:@"购买"];
@@ -69,7 +62,7 @@
     [self.goodsNameLabel sizeToFit];
     self.goodsPriceLabel.width = width;
     [self.goodsPriceLabel sizeToFit];
-    self.goodsPriceLabel.top = self.goodsNameLabel.bottom;
+    self.goodsPriceLabel.top = self.goodsNameLabel.bottom+6;
     self.buybutton.top = self.goodsPriceLabel.top;
     self.shopInfoView.top = self.buybutton.bottom;
     self.height = self.shopInfoView.bottom;

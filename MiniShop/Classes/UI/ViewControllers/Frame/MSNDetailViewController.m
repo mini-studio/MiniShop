@@ -26,13 +26,16 @@
 #import "UIImageView+WebCache.h"
 #import "MiniUIIndicator.h"
 
+
 @protocol MSNUIDetailImageViewDelegate <NSObject>
 - (void)willLoadImage;
 - (void)didLoadImage;
+- (void)touchupImage;
 @end
 
 @interface MSNUIDetailImageView : UIView
 @property (nonatomic,strong)UIImageView *imageView;
+@property (nonatomic,strong)MiniUIButton *button;
 @property (nonatomic,assign)id<MSNUIDetailImageViewDelegate> imageViewDelegate;
 @end
 
@@ -44,6 +47,10 @@
     if (self) {
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self addSubview:self.imageView];
+        self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        self.button.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.button];
+        [self.button addTarget:self action:@selector(touchupImage) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -69,6 +76,13 @@
     }
 }
 
+- (void)touchupImage
+{
+    if (self.imageViewDelegate) {
+        [self.imageViewDelegate touchupImage];
+    }
+}
+
 - (void)setImageURL:(NSString*)url
 {
     __PSELF__;
@@ -85,6 +99,7 @@
 {
     [super layoutSubviews];
     self.imageView.center = CGPointMake(self.width/2, self.height/2);
+    self.button.frame = self.imageView.frame;
 }
 
 - (void)sizeToFit
@@ -103,8 +118,18 @@
         width = 320;
     }
     self.imageView.size = CGSizeMake(width, height);
+    self.button.frame = self.imageView.frame;
     self.height = height;
 }
+@end
+
+@protocol MSNUIDetailContentViewDelegate <NSObject>
+@required
+- (void)willLoadImage:(MSNGoodsItem *)goodsItem;
+- (void)didLoadImage:(MSNGoodsItem *)goodsItem;
+- (void)touchupImage:(MSNGoodsItem *)goodsItem;
+- (void)jumpShopDetail:(MSNGoodsItem *)goodsItem;
+- (void)jumpToBuy:(MSNGoodsItem *)goodsItem;
 @end
 
 @interface MSNUIDetailContentView : UIView <MSNUIDetailImageViewDelegate>
@@ -113,6 +138,7 @@
 @property(nonatomic,strong)MSNDetailToolBar *toolbar;
 @property(nonatomic,strong)UIScrollView *contentView;
 @property(nonatomic,strong)MiniUIActivityIndicatorView *indicator;
+@property(nonatomic,assign)id<MSNUIDetailContentViewDelegate>  detailContentViewDelegate;
 @end
 
 @implementation MSNUIDetailContentView
@@ -135,6 +161,9 @@
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.toolbar];
     self.imageView.imageViewDelegate = self;
+    
+    [self.toolbar.shopInfoView.eventButton addTarget:self action:@selector(jumpShopDetail) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolbar.buybutton addTarget:self action:@selector(jumpToBuy) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)sizeToFit
@@ -153,6 +182,7 @@
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem
 {
+    self.toolbar.hidden = YES;
     _goodsItem = goodsItem;
     [self.toolbar setGoodsInfo:goodsItem];
     [self.imageView setImageURL:goodsItem.big_image_url];
@@ -162,12 +192,41 @@
 - (void)willLoadImage
 {
     [self showWating];
+    if (self.detailContentViewDelegate != nil) {
+        [self.detailContentViewDelegate willLoadImage:self.goodsItem];
+    }
 }
 
 - (void)didLoadImage
 {
     [self dismissWating];
+    self.toolbar.hidden = NO;
     [self sizeToFit];
+    if (self.detailContentViewDelegate != nil) {
+        self.goodsItem.image=self.imageView.imageView.image;
+        [self.detailContentViewDelegate didLoadImage:self.goodsItem];
+    }
+}
+
+- (void)touchupImage
+{
+    if (self.detailContentViewDelegate != nil) {
+        [self.detailContentViewDelegate touchupImage:self.goodsItem];
+    }
+}
+
+- (void)jumpShopDetail
+{
+    if (self.detailContentViewDelegate != nil) {
+        [self.detailContentViewDelegate jumpShopDetail:self.goodsItem];
+    }
+}
+
+- (void)jumpToBuy
+{
+    if (self.detailContentViewDelegate != nil) {
+        [self.detailContentViewDelegate jumpToBuy:self.goodsItem];
+    }
 }
 
 - (void)showWating
@@ -192,9 +251,19 @@
 @end
 
 
-@interface MSNDetailView : UIScrollView
+@protocol MSNDetailViewDelegate <NSObject>
+@required
+- (void)willLoadAtIndex:(NSInteger)index;
+- (void)didLoadAtIndex:(NSInteger)index current:(BOOL)isCurrent;
+- (void)touchupImage:(NSInteger)index;
+- (void)jumpShopDetail:(NSInteger)index;
+- (void)jumpToBuy:(NSInteger)index;
+@end
+
+@interface MSNDetailView : UIScrollView <MSNUIDetailContentViewDelegate>
 @property (nonatomic,strong)NSArray  *items;
 @property (nonatomic)NSInteger selectedIndex;
+@property (nonatomic,assign)id<MSNDetailViewDelegate> detailViewDelegate;
 @end
 
 @implementation MSNDetailView
@@ -218,8 +287,50 @@
         self.contentOffset = contentOffset;
     }
     if (self.items != nil && self.items.count>0) {
+        if (self.detailViewDelegate!=nil){
+            [self.detailViewDelegate willLoadAtIndex:selectedIndex];
+        }
         MSNUIDetailContentView * view = [[self subviews] objectAtIndex:selectedIndex];
         [view setGoodsItem:[self.items objectAtIndex:selectedIndex]];
+    }
+}
+
+- (void)willLoadImage:(MSNGoodsItem *)goodsItem
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (self.detailViewDelegate!=nil){
+        [self.detailViewDelegate willLoadAtIndex:index];
+    }
+}
+- (void)didLoadImage:(MSNGoodsItem *)goodsItem
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (self.detailViewDelegate!=nil){
+        [self.detailViewDelegate didLoadAtIndex:index current:(index==self.selectedIndex)];
+    }
+}
+
+- (void)touchupImage:(MSNGoodsItem *)goodsItem
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (index==self.selectedIndex){
+        [self.detailViewDelegate touchupImage:index];
+    }
+}
+
+- (void)jumpShopDetail:(MSNGoodsItem *)goodsItem;
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (self.detailViewDelegate!=nil){
+        [self.detailViewDelegate jumpShopDetail:index];
+    }
+}
+
+- (void)jumpToBuy:(MSNGoodsItem *)goodsItem;
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (self.detailViewDelegate!=nil){
+        [self.detailViewDelegate jumpToBuy:index];
     }
 }
 
@@ -233,10 +344,23 @@
         }
     }
 }
+
+- (void)setItems:(NSArray *)items
+{
+    _items = items;
+    int count = self.items.count;
+    for (int index=0; index<count; index++) {
+        CGRect frame = CGRectMake(index*self.width, 0, self.width, self.height);
+        MSNUIDetailContentView * detailContentView = [[MSNUIDetailContentView alloc] initWithFrame:frame];
+        detailContentView.detailContentViewDelegate = self;
+        [self addSubview:detailContentView];
+    }
+    self.contentSize = CGSizeMake(count*self.width, self.height);
+}
 @end
 
 
-@interface MSNDetailViewController ()
+@interface MSNDetailViewController () <MSNDetailViewDelegate>
 @property (nonatomic,strong) MSNDetailView *detailView;
 
 @property (nonatomic,strong) UIView    *toolbar;
@@ -248,6 +372,8 @@
 @property (nonatomic,strong) NSDate *viewStartTime;
 @property (nonatomic)NSInteger selectedIndex;
 @property (nonatomic)bool loading;
+
+@property (nonatomic)NSInteger preSelectedIndex;
 @end
 
 @implementation MSNDetailViewController
@@ -257,13 +383,14 @@
     self = [super init];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        self.preSelectedIndex = -1;
     }
     return self;
 }
 
 - (void)loadView
 {
-    [super loadView];
+    [super loadView]; 
     
     self.dtView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     
@@ -271,19 +398,13 @@
     frame.size = CGSizeMake(frame.size.width, frame.size.height-44);
     
     self.detailView = [[MSNDetailView alloc] initWithFrame:frame];
+    self.detailView.detailViewDelegate = self;
     [self.contentView addSubview:self.detailView];
    
     [self createToolbar:44];
-    
-    int count = self.items.count;
-    for (int index=0; index<count; index++) {
-        CGRect frame = CGRectMake(index*self.detailView.width, 0, self.detailView.width, self.detailView.height);
-        MSNUIDetailContentView * detailContentView = [[MSNUIDetailContentView alloc] initWithFrame:frame];
-        [self.detailView addSubview:detailContentView];
-    }
-    self.detailView.contentSize = CGSizeMake(count*self.detailView.width, self.detailView.height);
     self.detailView.items = self.items;
     self.detailView.selectedIndex = self.defaultIndex;
+    
 }
 
 - (void)createToolbar:(CGFloat)height
@@ -300,12 +421,12 @@
     button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star_hover"];
     button.center = CGPointMake(toolbar.width/2,centerY);
     [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
     
     button = [self createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
     button.center = CGPointMake(toolbar.width-50,centerY);
     [toolbar addSubview:button];
-    
-
+    [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (MiniUIButton*)createToolBarButton:(NSString*)title imageName:(NSString*)imageName hImageName:(NSString*)hImageName
@@ -351,96 +472,59 @@
     self.loading = NO;
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-
-- (void)setSelectedIndex:(NSInteger)selectedIndex
-{
-   // [self setInitialPageIndex:selectedIndex];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
+- (MSNGoodsItem*)currentGoodsItem
 {
-    return self.items.count;
+    return [self.items objectAtIndex:self.detailView.selectedIndex];
 }
 
-- (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
+- (void)willLoadAtIndex:(NSInteger)index
 {
-    MSNGoodsItem *item = [self.items objectAtIndex:index];
     [MobClick event:MOB_LOAD_IMAGE];
-    return [MWPhoto photoWithURL:[NSURL URLWithString:[item big_image_url]]];
-}
-
-
-- (void)setNavBarAppearance:(BOOL)animated
-{
-}
-
-- (void)updateViewContents:(NSInteger)index
-{
-    MSNGoodsItem *item = [self.items objectAtIndex:index];
-    [self setToolbarContent:item];
-    __PSELF__;
-    [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        if (error==nil){
-            item.detail = data;
-            [pSelf setToolbarContent:item];
-        }
-    }];
-}
-
-- (void)changePhoto:(NSInteger)index pre:(NSInteger)preIndex
-{
-    if ( preIndex != index && preIndex >=0 && self.viewStartTime != nil )
-    {
+    if (self.preSelectedIndex!=-1) {
         NSTimeInterval inter = 0-[self.viewStartTime timeIntervalSinceNow];
-        [self uploadviewsec:(int)inter index:preIndex];
+        [self uploadviewsec:(int)inter index:self.preSelectedIndex];
         self.viewStartTime = nil;
     }
-    [self updateViewContents:index];
 }
 
-- (void)loadData:(int)type
+- (void)didLoadAtIndex:(NSInteger)index current:(BOOL)isCurrent
 {
+    self.viewStartTime = [NSDate date];
 }
 
-- (void)loadData
+- (void)touchupImage:(NSInteger)index
 {
-    
+    MSNGoodsItem *item = [self.items objectAtIndex:index];
+    self.dtView.mid = item.goods_id;
+    [self showDTView];
 }
 
-- (CGRect)frameForToolbarAtOrientation:(UIInterfaceOrientation)orientation
+- (void)jumpShopDetail:(NSInteger)index
 {
-    CGFloat height = self.toolbar.height;
-    //	return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
-    return CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height);
+    if ( self.currentGoodsItem != nil && self.currentGoodsItem.detail.shop_info != nil ) {
+        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+        controller.shopInfo = self.currentGoodsItem.detail.shop_info;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
-
-//- (UIView *)createToolBar
-//{
-//    MSNDetailToolBar *toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 120)];
-//    self.toolbar = toolbar;
-//    [toolbar.buybutton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
-//    [toolbar.featureView.buyButton addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
-//    [toolbar.featureView.favButton addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
-//    [toolbar.featureView.shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
-//    return self.toolbar;
-//}
-
-- (void)actionToolBarBuy:(MiniUIButton*)button
+// 跳转淘宝
+- (void)jumpToBuy:(NSInteger)index
 {
-    
+//    [MobClick event:MOB_GOODS_DETAIL];
+//    MSNGoodsItem *item = [self.items objectAtIndex:index];
+//    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%@&imei=%@&usernick=", StoreGoUrl, @"online", item.goods_id,UDID];
+//    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:requestStr title:[self.itemInfo typeTitleDesc] toolbar:YES];
+//    controller.autoLayout = NO;
+//    [self.navigationController pushViewController:controller animated:YES];
 }
+
 
 - (void)actionToolBarFav:(MiniUIButton*)button
 {
@@ -477,38 +561,14 @@
 
 }
 
-- (void)layoutToolBar
-{
-    
-}
 
-- (void)setToolbarContent:( MSNGoodsItem* )item
-{
-    [(MSNDetailToolBar *)self.toolbar setGoodsInfo:item];
-    self.currentGoodsItem = item;
-    self.dtView.mid = item.goods_id;
-}
-
-
-//查看详情
-- (void)actionGoToShopping
-{
-//    [MobClick event:MOB_GOODS_DETAIL];
-//    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
-//    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, @"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
-//    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:requestStr title:[self.itemInfo typeTitleDesc] toolbar:YES];
-//    controller.autoLayout = NO;
-//    [self.navigationController pushViewController:controller animated:YES];
-}
-
-
-- (void)silentAccess
-{
+//- (void)silentAccess
+//{
 //    MSNGoodsItem *item = [self.items objectAtIndex:self.currentPageIndex];
 //    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid];
 //    requestStr = [ClientAgent prefectUrl:requestStr];
 //    [[ClientAgent sharedInstance] get:requestStr params:nil block:^(NSError *error, id data, BOOL cache){}];
-}
+//}
 
 
 - (void)uploadviewsec:(int)sec index:(NSInteger)index
@@ -528,33 +588,8 @@
     return nil;
 }
 
-- (void)gotoShop:(MiniUIButton *)button
-{
-    if ( self.currentGoodsItem != nil && self.currentGoodsItem.detail.shop_info != nil ) {
-        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
-        controller.shopInfo = self.currentGoodsItem.detail.shop_info;
-        [self.navigationController pushViewController:controller animated:YES];
-    }
-    
-//    MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
-//    MSNotiItemInfo *info = self.itemInfo;
-//    if ( info == nil ) {
-//        info = [[MSNotiItemInfo alloc] init];
-//        info.shop_id = self.goods.shop_id;
-//        info.shop_title = self.goods.shop_name;
-//        info.name = self.goods.shop_name;
-//    }
-//    controller.notiInfo = info;
-//    controller.autoLayout = NO;
-//    [self.navigationController pushViewController:controller animated:YES];
-}
 
-- (BOOL)reseponseDoubleClickControls
-{
-    return NO;
-}
-
-- (void)toggleControls
+- (void)showDTView
 {
     if ( self.dtView.mid > 0 ) {
         self.dtView.alpha = 0;
