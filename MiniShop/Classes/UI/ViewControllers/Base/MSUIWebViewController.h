@@ -15,5 +15,6 @@
 @property (nonatomic)BOOL rightRefresh;
 @property (nonatomic)BOOL toolbar;
 - (id)initWithUri:(NSString *)uri title:(NSString *)title toolbar:(BOOL)toolbar;
+- (id)initWithRequest:(NSURLRequest *)request title:(NSString *)title toolbar:(BOOL)toolbar;
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 @end

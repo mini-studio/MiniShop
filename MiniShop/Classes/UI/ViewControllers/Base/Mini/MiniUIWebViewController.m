@@ -169,11 +169,15 @@
 
 - (void)loadURL:(NSURL*)url
 {
-    [self showWating:nil];
-    [_webView loadRequest:[NSURLRequest requestWithURL:url]];
-    _webView.miniReq = NO;
+    [self loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
+- (void)loadRequest:(NSURLRequest*)request
+{
+    [self showWating:nil];
+    [_webView loadRequest:request];
+     _webView.miniReq = NO;
+}
 
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {

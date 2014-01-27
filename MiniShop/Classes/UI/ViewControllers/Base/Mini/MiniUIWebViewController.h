@@ -26,6 +26,8 @@
 
 - (void)loadURL:(NSURL*)url;
 
+- (void)loadRequest:(NSURLRequest*)request;
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
 
 @end

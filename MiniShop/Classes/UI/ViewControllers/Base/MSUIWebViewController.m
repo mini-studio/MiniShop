@@ -11,6 +11,7 @@
 
 @interface MSUIWebViewController ()
 @property (nonatomic,strong)MSWebViewToolBar *minitoolbar;
+@property (nonatomic,strong)NSURLRequest *request;
 @end
 
 @implementation MSUIWebViewController
@@ -37,6 +38,18 @@
     return self;
 }
 
+- (id)initWithRequest:(NSURLRequest *)request title:(NSString *)title toolbar:(BOOL)toolbar
+{
+    self = [super init];
+    if (self) {
+        self.ctitle = title;
+        self.request = request;
+        self.toolbar = toolbar;
+        [self regiesteBlock];
+    }
+    return self;
+}
+
 - (void)regiesteBlock
 {
     __weak typeof (self) itSelf = self;
@@ -48,20 +61,19 @@
 - (void)loadView
 {
     [super loadView];
-    if ( self.toolbar )
-    {
+    if ( self.toolbar ){
         _webView.height = _webView.height - 45;
         [self createToolBar];
     }
     
-    if ( self.htmlStr.length > 0 )
-    {
+    if ( self.htmlStr.length > 0 ){
         [_webView loadHTMLString:self.htmlStr baseURL:nil];
     }
-    else
-    if ( self.uri.length > 0 )
-    {
+    else if ( self.uri.length > 0 ){
         [self loadURL:[NSURL URLWithString:self.uri]];
+    }
+    else if (self.request != nil) {
+        [self loadRequest:self.request];
     }
 }
 

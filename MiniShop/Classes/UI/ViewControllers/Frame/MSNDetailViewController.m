@@ -153,17 +153,19 @@
 
 - (void)initSubviews
 {
+    UIColor *backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.contentView.showsVerticalScrollIndicator = NO;
     [self addSubview:self.contentView];
     self.imageView = [[MSNUIDetailImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, 350)];
-    self.toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, self.imageView.bottom, self.width, 0)];
+    self.toolbar = [[MSNDetailToolBar alloc] initWithFrame:CGRectMake(0, self.imageView.bottom, self.width, self.contentView.height)];
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.toolbar];
     self.imageView.imageViewDelegate = self;
-    
+    self.imageView.backgroundColor = backgroundColor;
     [self.toolbar.shopInfoView.eventButton addTarget:self action:@selector(jumpShopDetail) forControlEvents:UIControlEventTouchUpInside];
     [self.toolbar.buybutton addTarget:self action:@selector(jumpToBuy) forControlEvents:UIControlEventTouchUpInside];
+    self.toolbar.backgroundColor = backgroundColor;
 }
 
 - (void)sizeToFit
@@ -417,6 +419,7 @@
     MiniUIButton *button = [self createToolBarButton:@"购买" imageName:@"money" hImageName:@"money_hover"];
     button.center = CGPointMake(50,centerY);
     [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
     
     button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star_hover"];
     button.center = CGPointMake(toolbar.width/2,centerY);
@@ -517,12 +520,19 @@
 // 跳转淘宝
 - (void)jumpToBuy:(NSInteger)index
 {
-//    [MobClick event:MOB_GOODS_DETAIL];
-//    MSNGoodsItem *item = [self.items objectAtIndex:index];
-//    NSString* requestStr = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%@&imei=%@&usernick=", StoreGoUrl, @"online", item.goods_id,UDID];
-//    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:requestStr title:[self.itemInfo typeTitleDesc] toolbar:YES];
-//    controller.autoLayout = NO;
-//    [self.navigationController pushViewController:controller animated:YES];
+    [MobClick event:MOB_GOODS_DETAIL];
+    MSNGoodsItem *item = [self.items objectAtIndex:index];
+    NSString* requestStr = [NSString stringWithFormat:@"http://www.youjiaxiaodian.com/new/jump?type=%@&id=%@&sche=youjiaxiaodian", @"goods", item.goods_id];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestStr]];
+    [[ClientAgent sharedInstance] perfectHttpRequest:request];
+    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithRequest:request title:item.goods_title toolbar:YES];
+    controller.autoLayout = NO;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)actionToolBarBuy:(MiniUIButton*)button
+{
+    [self jumpToBuy:self.detailView.selectedIndex];
 }
 
 
@@ -578,14 +588,6 @@
         MSNGoodsItem *item = [self.items objectAtIndex:index];
         [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {}];
     }
-}
-
-
-- (NSString*)itemUri:(MSNGoodsItem *)item
-{
-//    NSString* uri = [NSString stringWithFormat:@"http://%@?type=%@&activity_id=%@&id=%lld&imei=%@&usernick=", StoreGoUrl, self.itemInfo==nil?@"online":self.itemInfo.type, self.itemInfo==nil?@"":[self.itemInfo iId] , item.mid,UDID];
-//    return uri;
-    return nil;
 }
 
 

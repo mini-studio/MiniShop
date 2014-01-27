@@ -38,7 +38,6 @@
 - (void)initSubViews
 {
     self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    self.contentView.backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     [self addSubview:self.contentView];
     self.goodsNameLabel = [self createLabel:CGRectMake(10, 10, self.width-20, 30) fontSize:16];
     [self.contentView addSubview:self.goodsNameLabel];
@@ -52,6 +51,11 @@
     self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 85)];
     [self.contentView addSubview:self.shopInfoView];
     
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    self.contentView.backgroundColor = backgroundColor;
 }
 
 - (void)sizeToFit
