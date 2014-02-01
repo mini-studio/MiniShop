@@ -12,4 +12,5 @@
 @interface MSNShopInfoView : UIView
 @property (nonatomic,strong)MSNShopInfo *shopInfo;
 @property (nonatomic,strong)MiniUIButton *eventButton;
+@property (nonatomic,strong)UIImageView *accessoryImageView;
 @end

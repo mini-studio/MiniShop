@@ -19,6 +19,8 @@
 @property(nonatomic,strong)NSString *shop_title;
 @property(nonatomic,strong)NSString *shop_type;
 @property(nonatomic)int like;
+
+- (NSInteger)gradeValue;
 @end
 
 

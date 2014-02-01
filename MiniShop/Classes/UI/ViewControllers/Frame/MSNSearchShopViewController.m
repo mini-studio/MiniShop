@@ -12,8 +12,9 @@
 #import "MSNShopInfoCell.h"
 #import "EGOUITableView.h"
 #import "MSUIMoreDataCell.h"
+#import "UIColor+Mini.h"
 
-@interface MSNSearchShopViewController ()<MSNUISearchBarDelegate>
+@interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
 @property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic,strong)MSNShopList   *dataSource;
@@ -47,6 +48,7 @@
     MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:frame];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
+    searchBar.button = nil;
     [self.naviTitleView addSubview:searchBar];
     return searchBar;
 }
@@ -97,27 +99,15 @@
     if ( cell == nil )
     {
         cell = [[MSNShopInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        [cell.button addTarget:self action:@selector(actionButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.shareButton addTarget:self action:@selector(shareShop:) forControlEvents:UIControlEventTouchUpInside];
-        
+        cell.shopInfoDelegate = self;
     }
     cell.shopInfo = info;
-    cell.button.userInfo = info;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    MSNShopInfo *info = [self.dataSource.info objectAtIndex:indexPath.row];
-//    if ( info.shop_id > 0 ) {
-//        MSShopGalleryViewController *controller = [[MSShopGalleryViewController alloc] init];
-//        controller.shopInfo = info;
-//        [self.navigationController pushViewController:controller animated:YES];
-//    }
-//    else {
-//        [self actionGoToShopping:info];
-//    }
 }
 
 - (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
@@ -161,11 +151,34 @@
     }];
 }
 
-- (void)actionButtonTap:(MiniUIButton*)button
+- (void)favShop:(MSNShopInfo*)shopInfo
 {
-    MSNShopInfo *info = button.userInfo;
-    [[ClientAgent sharedInstance] setfavshop:info.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        
+    [self showWating:nil];
+    __PSELF__;
+    [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if (error==nil) {
+            shopInfo.like = 1;
+            [pSelf.tableView reloadData];
+        }
+        else {
+            [self showErrorMessage:error];
+        }
+    }];
+}
+
+- (void)cancelFavShop:(MSNShopInfo*)shopInfo
+{
+    [self showWating:nil];
+    __PSELF__;
+    [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if (error==nil) {
+            shopInfo.like = 0;
+            [pSelf.tableView reloadData];
+        }
+        else {
+            [self showErrorMessage:error];
+        }
     }];
 }
 

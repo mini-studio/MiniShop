@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MSNShop.h"
 
+@protocol MSNShopInfoCellDelegate <NSObject>
+@required
+- (void)favShop:(MSNShopInfo*)shopInfo;
+- (void)cancelFavShop:(MSNShopInfo*)shopInfo;
+@end
+
 @interface MSNShopInfoCell : UITableViewCell
+@property (nonatomic,assign) id<MSNShopInfoCellDelegate> shopInfoDelegate;
 @property (nonatomic,strong) MSNShopInfo* shopInfo;
-@property (nonatomic,strong) MiniUIButton *button;
-@property (nonatomic,strong) MiniUIButton *shareButton;
-@property (nonatomic) BOOL showsShareButton;
 + (CGFloat)height:(MSNShopInfo *)shopInfo;
-+ (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSNShopInfo*)shopInfo;
 @end

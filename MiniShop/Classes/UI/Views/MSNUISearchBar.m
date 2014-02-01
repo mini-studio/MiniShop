@@ -11,8 +11,8 @@
 #import "UIColor+Mini.h"
 
 @interface MSNUISearchBar()<UISearchBarDelegate>
-@property (nonatomic,strong)MiniUIButton *searchButton;
 @property (nonatomic,strong)UISearchBar *searchBar;
+@property (nonatomic,strong)MiniUIButton *watcherButton;
 
 @end
 
@@ -29,35 +29,60 @@
         self.searchBar.delegate = self;
         self.searchBar.barTintColor = [UIColor clearColor];
         [self addSubview:self.searchBar];
-        self.searchButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-        self.searchButton.backgroundColor = self.backgroundColor;
-        [self.searchButton setTitle:@"取消" forState:UIControlStateNormal];
-        [self.searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.searchButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        self.searchButton.frame = CGRectMake(self.width, 10, 50, self.height-20);
-        [self.searchButton addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
-        
+        self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        self.button.backgroundColor = self.backgroundColor;
+        [self.button setTitle:@"取消" forState:UIControlStateNormal];
+        [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.button.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.button.frame = CGRectMake(self.width, 10, 50, self.height-20);
+        [self.button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
+        self.watcherButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        self.watcherButton.backgroundColor = [UIColor colorWithRGBA:0x00000055];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        [self.watcherButton addTarget:self action:@selector(watcherButtonTouchup:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardWillShow:(NSNotification*)noti
+{
+    CGFloat f = [UIScreen mainScreen].bounds.size.height-64;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    self.watcherButton.frame = CGRectMake(0, 64, w, f);
+    [WINDOW addSubview:self.watcherButton];
+}
+
+- (void)keyboardWillHide:(NSNotification*)noti
+{
+    [self.watcherButton removeFromSuperview];
+}
+
 - (void)setShowCancelButton:(BOOL)showCancelButton
 {
+    if (self.button==nil) {
+        return;
+    }
     CGRect frame = self.bounds;
     CGFloat btnLeft = self.width;
     _showCancelButton = showCancelButton;
     if ( !_showCancelButton ) {
-        [self.searchButton removeFromSuperview];
+        [self.button removeFromSuperview];
     }
     else {
-        [self addSubview:self.searchButton];
+        [self addSubview:self.button];
         frame.size = CGSizeMake(self.width - 50, self.height);
         btnLeft = self.width - 50;
     }
     
     [UIView animateWithDuration:0.25 animations:^{
         self.searchBar.frame = frame;
-        self.searchButton.left = btnLeft;
+        self.button.left = btnLeft;
     }];
 }
 
@@ -65,6 +90,12 @@
 {
     _alwaysShowCancelButton = alwaysShowCancelButton;
     self.showCancelButton = alwaysShowCancelButton;
+}
+
+- (void)watcherButtonTouchup:(MiniUIButton*)button
+{
+    [self.watcherButton removeFromSuperview];
+    [self.searchBar resignFirstResponder];
 }
 
 

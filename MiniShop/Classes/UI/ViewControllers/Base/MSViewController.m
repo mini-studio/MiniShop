@@ -293,7 +293,6 @@
     tableView.backgroundView = nil;
     tableView.backgroundColor = [UIColor clearColor];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
     tableView.showsVerticalScrollIndicator = NO;
     [self setPullToRefreshViewStyle:tableView.pullToRefreshView];
     return tableView;

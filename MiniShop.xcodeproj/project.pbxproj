@@ -45,7 +45,7 @@
 		C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C10DF880186C891F0094B86B /* MSNWellCateCell.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
 		C10EDD3E18451A4100503993 /* MSNMyStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MSNMyStoreViewController.m */; };
-		C10FD762189572390014521E /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C10FD761189572390014521E /* heart@2x.png */; };
+		C10FD762189572390014521E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C10FD761189572390014521E /* heart.png */; };
 		C1254B5A186E4E960007D510 /* MSNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B59186E4E960007D510 /* MSNDetailViewController.m */; };
 		C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B5C186E9AB40007D510 /* MSNShop.m */; };
 		C1254B61186EABAF0007D510 /* MSNSearchShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B60186EABAF0007D510 /* MSNSearchShopViewController.m */; };
@@ -96,6 +96,10 @@
 		C1820F3C175BA51000C87E39 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1820F39175BA51000C87E39 /* umFeedback.bundle */; };
 		C18597D118046C2E00A7B70D /* button_push_message_off_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C18597CF18046C2E00A7B70D /* button_push_message_off_p@2x.png */; };
 		C18597D218046C2E00A7B70D /* button_push_message_open_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C18597D018046C2E00A7B70D /* button_push_message_open_p@2x.png */; };
+		C1867346189D34B4006EC8C5 /* add_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867344189D34B4006EC8C5 /* add_hover@2x.png */; };
+		C1867347189D34B4006EC8C5 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867345189D34B4006EC8C5 /* add@2x.png */; };
+		C186734A189D34EA006EC8C5 /* cancel_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */; };
+		C186734B189D34EA006EC8C5 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867349189D34EA006EC8C5 /* cancel@2x.png */; };
 		C1ACB74317FB370600862641 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACB74217FB370600862641 /* RTLabel.m */; };
 		C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ACB74417FB384900862641 /* CoreText.framework */; };
 		C1ACB74717FCD1F400862641 /* white_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74617FCD1F400862641 /* white_arrow@2x.png */; };
@@ -103,6 +107,7 @@
 		C1ACB74E17FD3E1100862641 /* more_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74D17FD3E1100862641 /* more_new@2x.png */; };
 		C1ACB75117FD475E00862641 /* potential_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74F17FD475E00862641 /* potential_h@2x.png */; };
 		C1ACB75217FD475E00862641 /* potential_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB75017FD475E00862641 /* potential_n@2x.png */; };
+		C1ADE0E2189CEAA2002D6327 /* MSNGradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ADE0E1189CEAA2002D6327 /* MSNGradeView.m */; };
 		C1B001A5187B063C004BA1AE /* entrance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B001A2187B063C004BA1AE /* entrance@2x.png */; };
 		C1B001A6187B063C004BA1AE /* guess_hobby@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B001A3187B063C004BA1AE /* guess_hobby@2x.png */; };
 		C1B001A7187B063C004BA1AE /* present@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B001A4187B063C004BA1AE /* present@2x.png */; };
@@ -403,7 +408,7 @@
 		C10EDDAF18451D2A00503993 /* MiniUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextView.h; sourceTree = "<group>"; };
 		C10EDDB018451D2A00503993 /* MiniUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIToolBar.h; sourceTree = "<group>"; };
 		C10EDDB118451D2A00503993 /* MiniUITouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITouchView.h; sourceTree = "<group>"; };
-		C10FD761189572390014521E /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
+		C10FD761189572390014521E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C1254B58186E4E960007D510 /* MSNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNDetailViewController.h; sourceTree = "<group>"; };
 		C1254B59186E4E960007D510 /* MSNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNDetailViewController.m; sourceTree = "<group>"; };
 		C1254B5B186E9AB40007D510 /* MSNShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShop.h; sourceTree = "<group>"; };
@@ -537,6 +542,10 @@
 		C1820F3A175BA51000C87E39 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
 		C18597CF18046C2E00A7B70D /* button_push_message_off_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_off_p@2x.png"; sourceTree = "<group>"; };
 		C18597D018046C2E00A7B70D /* button_push_message_open_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_push_message_open_p@2x.png"; sourceTree = "<group>"; };
+		C1867344189D34B4006EC8C5 /* add_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_hover@2x.png"; sourceTree = "<group>"; };
+		C1867345189D34B4006EC8C5 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_hover@2x.png"; sourceTree = "<group>"; };
+		C1867349189D34EA006EC8C5 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
 		C1ACB74117FB370600862641 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
 		C1ACB74217FB370600862641 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
 		C1ACB74417FB384900862641 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -545,6 +554,8 @@
 		C1ACB74D17FD3E1100862641 /* more_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_new@2x.png"; sourceTree = "<group>"; };
 		C1ACB74F17FD475E00862641 /* potential_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "potential_h@2x.png"; sourceTree = "<group>"; };
 		C1ACB75017FD475E00862641 /* potential_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "potential_n@2x.png"; sourceTree = "<group>"; };
+		C1ADE0E0189CEAA2002D6327 /* MSNGradeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGradeView.h; sourceTree = "<group>"; };
+		C1ADE0E1189CEAA2002D6327 /* MSNGradeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGradeView.m; sourceTree = "<group>"; };
 		C1B001A2187B063C004BA1AE /* entrance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entrance@2x.png"; sourceTree = "<group>"; };
 		C1B001A3187B063C004BA1AE /* guess_hobby@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guess_hobby@2x.png"; sourceTree = "<group>"; };
 		C1B001A4187B063C004BA1AE /* present@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "present@2x.png"; sourceTree = "<group>"; };
@@ -1772,6 +1783,8 @@
 				C1B001AF187B0F5A004BA1AE /* MSNShopInfoView.m */,
 				C1B0F214188469F600D222E5 /* MSNDetailToolBar.h */,
 				C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */,
+				C1ADE0E0189CEAA2002D6327 /* MSNGradeView.h */,
+				C1ADE0E1189CEAA2002D6327 /* MSNGradeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1944,8 +1957,12 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */,
+				C1867349189D34EA006EC8C5 /* cancel@2x.png */,
+				C1867344189D34B4006EC8C5 /* add_hover@2x.png */,
+				C1867345189D34B4006EC8C5 /* add@2x.png */,
 				C10611501895813D006F667F /* rightarrow@2x.png */,
-				C10FD761189572390014521E /* heart@2x.png */,
+				C10FD761189572390014521E /* heart.png */,
 				C1D5493B18919CD1000755D4 /* money_hover@2x.png */,
 				C1D5493C18919CD1000755D4 /* money@2x.png */,
 				C1D5493D18919CD1000755D4 /* share@2x.png */,
@@ -2144,6 +2161,7 @@
 				C1B001A9187B071F004BA1AE /* background_image@2x.png in Resources */,
 				C10BE73A17765C3C009E6482 /* nav_bar_bg@2x.png in Resources */,
 				C180FB271878555800F25C2C /* shop_hover@2x.png in Resources */,
+				C186734B189D34EA006EC8C5 /* cancel@2x.png in Resources */,
 				C10BE73B17765C3C009E6482 /* nav_bg.png in Resources */,
 				C10BE73C17765C3C009E6482 /* nav_btn_bg.png in Resources */,
 				C1FEB1CC17E4A8690076BEEA /* navi_back_h@2x.png in Resources */,
@@ -2163,6 +2181,7 @@
 				C1EC50A3178074C700BE5ABB /* SVPullToRefresh.bundle in Resources */,
 				C1EC5111178074D600BE5ABB /* guide_b1@2x.png in Resources */,
 				C1FEB1C717E49F890076BEEA /* navi_share@2x.png in Resources */,
+				C186734A189D34EA006EC8C5 /* cancel_hover@2x.png in Resources */,
 				C1EC5112178074D600BE5ABB /* guide_b1_txt@2x.png in Resources */,
 				C1EC5113178074D600BE5ABB /* guide_b2@2x.png in Resources */,
 				C180FB2C1878630D00F25C2C /* icon_search_hover@2x.png in Resources */,
@@ -2182,6 +2201,7 @@
 				C1EC511C178074D600BE5ABB /* guide_bg@2x.png in Resources */,
 				C1EC511D178074D600BE5ABB /* guide_btn_normal@2x.png in Resources */,
 				C1EC511E178074D600BE5ABB /* guide_btn_selected@2x.png in Resources */,
+				C1867347189D34B4006EC8C5 /* add@2x.png in Resources */,
 				C1ACB75217FD475E00862641 /* potential_n@2x.png in Resources */,
 				C1EC511F178074D600BE5ABB /* Icon-72.png in Resources */,
 				C1EC5120178074D600BE5ABB /* Icon.png in Resources */,
@@ -2190,6 +2210,7 @@
 				C1EC5123178074D600BE5ABB /* follow_button_selected@2x.png in Resources */,
 				C1EC5124178074D600BE5ABB /* icon_all_goods_online@2x.png in Resources */,
 				C1EC5125178074D600BE5ABB /* icon_recmd_shop@2x.png in Resources */,
+				C1867346189D34B4006EC8C5 /* add_hover@2x.png in Resources */,
 				C1EC5126178074D600BE5ABB /* icon_search@2x.png in Resources */,
 				C1EC5127178074D600BE5ABB /* icon_search_cate@2x.png in Resources */,
 				C1EC5128178074D600BE5ABB /* icon_verify@2x.png in Resources */,
@@ -2232,7 +2253,7 @@
 				C1EC5141178074D600BE5ABB /* my_goods_normal@2x.png in Resources */,
 				C1EC5142178074D600BE5ABB /* my_goods_selected@2x.png in Resources */,
 				C1EC5143178074D600BE5ABB /* about-568h@2x.jpg in Resources */,
-				C10FD762189572390014521E /* heart@2x.png in Resources */,
+				C10FD762189572390014521E /* heart.png in Resources */,
 				C1EC5144178074D600BE5ABB /* about@2x.jpg in Resources */,
 				C1D5494318919CD1000755D4 /* share@2x.png in Resources */,
 				C1ACB74717FCD1F400862641 /* white_arrow@2x.png in Resources */,
@@ -2348,6 +2369,7 @@
 				C1EC5073178074A100BE5ABB /* MiniNSURLProtocol.m in Sources */,
 				C1EC5074178074A100BE5ABB /* MiniURLCache.m in Sources */,
 				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
+				C1ADE0E2189CEAA2002D6327 /* MSNGradeView.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */,
