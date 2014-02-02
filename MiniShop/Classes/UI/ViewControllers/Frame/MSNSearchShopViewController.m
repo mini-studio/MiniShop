@@ -13,12 +13,18 @@
 #import "EGOUITableView.h"
 #import "MSUIMoreDataCell.h"
 #import "UIColor+Mini.h"
+#import "RTLabel.h"
+#import "MSTransformButton.h"
+#import "MSNSearchShopTitleView.h"
 
-@interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate>
+@interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
 @property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic,strong)MSNShopList   *dataSource;
+@property (nonatomic,strong)MSNSearchShopTitleView *searchTitleView;
 @property (nonatomic)int page;
+//空为按相关度(默认), like关注度, grade信用, sale总售出件数
+@property (nonatomic,strong)NSString *orderby;
 @end
 
 @implementation MSNSearchShopViewController
@@ -28,6 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        self.orderby = @"";
     }
     return self;
 }
@@ -37,6 +44,7 @@
     [super loadView];
     self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
     [self setNaviBackButton];
+    [self setNaviRightButtonImage:@"contact_info" highlighted:@"contact_info_hover" target:self action:@selector(actionRightButtonTap)];
     self.naviTitleView.leftButton.left = 10;
     [self createTableView];
 }
@@ -79,6 +87,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIColor*)backgroundColor
+{
+    return [UIColor colorWithRGBA:0xfaf1f2ff];
+}
+
+- (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28;
+}
+
+- (UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (_searchTitleView==nil){
+        _searchTitleView=[[MSNSearchShopTitleView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, 28)];;
+        _searchTitleView.backgroundColor = [self backgroundColor];
+        _searchTitleView.transformButton.delegate = self;
+        _searchTitleView.transformButton.items = @[@"按相关度排序",@"按关注度排序",@"按信用度排序",@"按总售数排序"];
+    }
+    _searchTitleView.keyWord = self.key;
+    return _searchTitleView;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -100,6 +129,7 @@
     {
         cell = [[MSNShopInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.shopInfoDelegate = self;
+        cell.backgroundColor = [self backgroundColor];
     }
     cell.shopInfo = info;
     return cell;
@@ -138,12 +168,17 @@
     [self search:(_page+1) delay:0.50f];
 }
 
+- (void)actionRightButtonTap
+{
+    
+}
+
 
 - (void)search:(int)page delay:(CGFloat)delay
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] searchshop:_key sort:@"" page:page tag_id:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] searchshop:_key sort:self.orderby page:page tag_id:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
             [pSelf recevieData:data page:page];
@@ -180,6 +215,23 @@
             [self showErrorMessage:error];
         }
     }];
+}
+
+- (void)transformButtonValueChanged:(MSTransformButton*)button
+{
+    if (button.selectedIndex==0) {
+        self.orderby = @"";
+    }
+    else if (button.selectedIndex==1) {
+        self.orderby = @"like";
+    }
+    else if (button.selectedIndex==2) {
+        self.orderby = @"grade";
+    }
+    else if (button.selectedIndex==3) {
+        self.orderby = @"sale";
+    }
+    [self search:1 delay:0];
 }
 
 @end

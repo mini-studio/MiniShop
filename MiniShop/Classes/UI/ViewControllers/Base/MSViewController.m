@@ -124,7 +124,6 @@
     UIButton *button = (UIButton*)((UIBarButtonItem *)[self navLeftButtonWithTitle:@"返回" target:self action:@selector(back)]).customView;
     CGFloat top = (self.naviTitleView.height - 30)/2;
     button.frame = CGRectMake(20, top, 30, 30);
-    [self.naviTitleView addSubview:button];
     self.naviTitleView.leftButton = (MiniUIButton*)button;
 }
 
@@ -161,29 +160,25 @@
 {
     UIImage* bgImage = [UIImage imageNamed:imageName];
     MiniUIButton *button = [MiniUIButton buttonWithImage:bgImage highlightedImage:bgImage];
-    button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     button.width += 10;
     button.showsTouchWhenHighlighted = YES;
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = item;
+    self.naviTitleView.rightButton = button;
 }
 
 - (void)setNaviRightButtonImage:(NSString *)imageName highlighted:(NSString*)highlightedImage target:(id)target action:(SEL)action
 {
     MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:imageName] highlightedImage:[UIImage imageNamed:highlightedImage]];
-    button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     button.width += 10;
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = item;
+    self.naviTitleView.rightButton = button;
 }
 
 
 - (void)setNaviRightButtonTitle:(NSString *)title target:(id)target action:(SEL)action
 {
     UIBarButtonItem *item = [self navButtonWithTitle:title target:target action:action];
-    self.navigationItem.rightBarButtonItem = item;
+    self.naviTitleView.rightButton = (MiniUIButton*)item.customView;
 }
 
 - (UIBarButtonItem *)navButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action {

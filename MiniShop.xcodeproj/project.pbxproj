@@ -100,6 +100,11 @@
 		C1867347189D34B4006EC8C5 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867345189D34B4006EC8C5 /* add@2x.png */; };
 		C186734A189D34EA006EC8C5 /* cancel_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */; };
 		C186734B189D34EA006EC8C5 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867349189D34EA006EC8C5 /* cancel@2x.png */; };
+		C186734E189D4EDC006EC8C5 /* contact_info_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C186734C189D4EDC006EC8C5 /* contact_info_hover@2x.png */; };
+		C186734F189D4EDC006EC8C5 /* contact_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C186734D189D4EDC006EC8C5 /* contact_info@2x.png */; };
+		C1867352189D5EF7006EC8C5 /* order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867350189D5EF7006EC8C5 /* order@2x.png */; };
+		C1867353189D5EF7006EC8C5 /* order_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1867351189D5EF7006EC8C5 /* order_hover@2x.png */; };
+		C1867359189E4119006EC8C5 /* MSNSearchShopTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1867358189E4119006EC8C5 /* MSNSearchShopTitleView.m */; };
 		C1ACB74317FB370600862641 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACB74217FB370600862641 /* RTLabel.m */; };
 		C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ACB74417FB384900862641 /* CoreText.framework */; };
 		C1ACB74717FCD1F400862641 /* white_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1ACB74617FCD1F400862641 /* white_arrow@2x.png */; };
@@ -546,6 +551,12 @@
 		C1867345189D34B4006EC8C5 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_hover@2x.png"; sourceTree = "<group>"; };
 		C1867349189D34EA006EC8C5 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		C186734C189D4EDC006EC8C5 /* contact_info_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_info_hover@2x.png"; sourceTree = "<group>"; };
+		C186734D189D4EDC006EC8C5 /* contact_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_info@2x.png"; sourceTree = "<group>"; };
+		C1867350189D5EF7006EC8C5 /* order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order@2x.png"; sourceTree = "<group>"; };
+		C1867351189D5EF7006EC8C5 /* order_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_hover@2x.png"; sourceTree = "<group>"; };
+		C1867357189E4119006EC8C5 /* MSNSearchShopTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchShopTitleView.h; sourceTree = "<group>"; };
+		C1867358189E4119006EC8C5 /* MSNSearchShopTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchShopTitleView.m; sourceTree = "<group>"; };
 		C1ACB74117FB370600862641 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
 		C1ACB74217FB370600862641 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
 		C1ACB74417FB384900862641 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -1785,6 +1796,8 @@
 				C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */,
 				C1ADE0E0189CEAA2002D6327 /* MSNGradeView.h */,
 				C1ADE0E1189CEAA2002D6327 /* MSNGradeView.m */,
+				C1867357189E4119006EC8C5 /* MSNSearchShopTitleView.h */,
+				C1867358189E4119006EC8C5 /* MSNSearchShopTitleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1957,6 +1970,10 @@
 		C1EC50EE178074D600BE5ABB /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C1867350189D5EF7006EC8C5 /* order@2x.png */,
+				C1867351189D5EF7006EC8C5 /* order_hover@2x.png */,
+				C186734C189D4EDC006EC8C5 /* contact_info_hover@2x.png */,
+				C186734D189D4EDC006EC8C5 /* contact_info@2x.png */,
 				C1867348189D34EA006EC8C5 /* cancel_hover@2x.png */,
 				C1867349189D34EA006EC8C5 /* cancel@2x.png */,
 				C1867344189D34B4006EC8C5 /* add_hover@2x.png */,
@@ -2150,6 +2167,7 @@
 				C10BE73317765C3C009E6482 /* item_ok_selected@2x.png in Resources */,
 				C10BE73417765C3C009E6482 /* messages_left_bubble@2x.png in Resources */,
 				C1B001A7187B063C004BA1AE /* present@2x.png in Resources */,
+				C186734F189D4EDC006EC8C5 /* contact_info@2x.png in Resources */,
 				C10BE73517765C3C009E6482 /* messages_right_bubble@2x.png in Resources */,
 				C1D5494618919CD1000755D4 /* star@2x.png in Resources */,
 				C10BE73617765C3C009E6482 /* messages_tableview_background.png in Resources */,
@@ -2230,6 +2248,7 @@
 				C1FEB1C517E49F890076BEEA /* navi_link@2x.png in Resources */,
 				C1EC5131178074D600BE5ABB /* loading2.png in Resources */,
 				C1ACB74E17FD3E1100862641 /* more_new@2x.png in Resources */,
+				C1867353189D5EF7006EC8C5 /* order_hover@2x.png in Resources */,
 				C180FB231878555800F25C2C /* more_hover@2x.png in Resources */,
 				C1EC5132178074D600BE5ABB /* loading3.png in Resources */,
 				C1B001AC187B08A7004BA1AE /* mymall_hover@2x.png in Resources */,
@@ -2294,6 +2313,7 @@
 				C1EC5161178074D600BE5ABB /* web_toolbar_bg@2x.png in Resources */,
 				C1EC5162178074D600BE5ABB /* web_toolbar_bg_@2x.png in Resources */,
 				C1EC5163178074D600BE5ABB /* web_toolbar_btn_left_disable@2x.png in Resources */,
+				C1867352189D5EF7006EC8C5 /* order@2x.png in Resources */,
 				C1EC5164178074D600BE5ABB /* web_toolbar_btn_left_normal@2x.png in Resources */,
 				C180FB261878555800F25C2C /* sale@2x.png in Resources */,
 				C1EC5165178074D600BE5ABB /* web_toolbar_btn_refresh@2x.png in Resources */,
@@ -2305,6 +2325,7 @@
 				C1EC516B178074D600BE5ABB /* tab_mine_normal@2x.png in Resources */,
 				C1EC516C178074D600BE5ABB /* tab_mine_selected@2x.png in Resources */,
 				C1EC516E178074D600BE5ABB /* tab_storemanage_normal@2x.png in Resources */,
+				C186734E189D4EDC006EC8C5 /* contact_info_hover@2x.png in Resources */,
 				C1EC516F178074D600BE5ABB /* tab_storemanage_selected@2x.png in Resources */,
 				C1EC5170178074D600BE5ABB /* tab_storenews_normal@2x.png in Resources */,
 				C1EC5171178074D600BE5ABB /* tab_storenews_selected@2x.png in Resources */,
@@ -2425,6 +2446,7 @@
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,
 				C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */,
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,
+				C1867359189E4119006EC8C5 /* MSNSearchShopTitleView.m in Sources */,
 				C1B0F212188439E800D222E5 /* UMTableViewController.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSNUISearchBar.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,

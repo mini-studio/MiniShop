@@ -77,6 +77,12 @@
 
 - (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated
 {
+    if (selectedIndex<0) {
+        selectedIndex = self.items.count-1;
+    }
+    else if (selectedIndex>=self.items.count){
+        selectedIndex = 0;
+    }
     BOOL changed = (selectedIndex != _selectedIndex);
     _selectedIndex = selectedIndex;
     NSString *title = [self.items objectAtIndex:selectedIndex];
@@ -105,9 +111,6 @@
 - (void)buttonTap:(MiniUIButton *)button
 {
     int index = self.selectedIndex+1;
-    if ( index >= self.items.count ) {
-        index = 0;
-    }
     self.selectedIndex = index;
 }
 
