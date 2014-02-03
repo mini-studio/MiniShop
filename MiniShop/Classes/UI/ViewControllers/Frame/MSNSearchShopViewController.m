@@ -16,6 +16,7 @@
 #import "RTLabel.h"
 #import "MSTransformButton.h"
 #import "MSNSearchShopTitleView.h"
+#import "MSNShopDetailViewController.h"
 
 @interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
@@ -56,7 +57,7 @@
     MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:frame];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
-    searchBar.button = nil;
+    searchBar.cancelButton = nil;
     [self.naviTitleView addSubview:searchBar];
     return searchBar;
 }
@@ -138,6 +139,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+    controller.shopInfo = [self.dataSource.info objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
@@ -170,7 +174,7 @@
 
 - (void)actionRightButtonTap
 {
-    
+    [self showMessageInfo:@"wating for implemention..." delay:2];
 }
 
 

@@ -23,7 +23,7 @@
 @property (nonatomic,strong)NSString *text;
 @property (nonatomic)BOOL showCancelButton;
 @property (nonatomic)BOOL alwaysShowCancelButton;
-@property (nonatomic,strong)MiniUIButton *button;
+@property (nonatomic,strong)MiniUIButton *cancelButton;
 @end
 
 @class MSNSearchView;

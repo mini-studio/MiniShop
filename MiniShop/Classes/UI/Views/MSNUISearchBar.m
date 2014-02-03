@@ -29,13 +29,13 @@
         self.searchBar.delegate = self;
         self.searchBar.barTintColor = [UIColor clearColor];
         [self addSubview:self.searchBar];
-        self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-        self.button.backgroundColor = self.backgroundColor;
-        [self.button setTitle:@"取消" forState:UIControlStateNormal];
-        [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.button.titleLabel.font = [UIFont systemFontOfSize:16];
-        self.button.frame = CGRectMake(self.width, 10, 50, self.height-20);
-        [self.button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
+        self.cancelButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        self.cancelButton.backgroundColor = self.backgroundColor;
+        [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+        [self.cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.cancelButton.frame = CGRectMake(self.width, 10, 50, self.height-20);
+        [self.cancelButton addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
         self.watcherButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
         self.watcherButton.backgroundColor = [UIColor colorWithRGBA:0x00000055];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -50,12 +50,26 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (UIView *)topSuperView
+{
+    UIView *superView = [self superview];
+    while (superView!=nil) {
+        if ( CGSizeEqualToSize(superView.size , WINDOW.size)) {
+            return superView;
+        }
+        superView = [superView superview];
+    }
+    return nil;
+}
+
 - (void)keyboardWillShow:(NSNotification*)noti
 {
     CGFloat f = [UIScreen mainScreen].bounds.size.height-64;
     CGFloat w = [UIScreen mainScreen].bounds.size.width;
     self.watcherButton.frame = CGRectMake(0, 64, w, f);
-    [WINDOW addSubview:self.watcherButton];
+    UIView* view = [self topSuperView];
+    if (view!=nil)
+    [view addSubview:self.watcherButton];
 }
 
 - (void)keyboardWillHide:(NSNotification*)noti
@@ -65,24 +79,24 @@
 
 - (void)setShowCancelButton:(BOOL)showCancelButton
 {
-    if (self.button==nil) {
+    if (self.cancelButton==nil) {
         return;
     }
     CGRect frame = self.bounds;
     CGFloat btnLeft = self.width;
     _showCancelButton = showCancelButton;
     if ( !_showCancelButton ) {
-        [self.button removeFromSuperview];
+        [self.cancelButton removeFromSuperview];
     }
     else {
-        [self addSubview:self.button];
+        [self addSubview:self.cancelButton];
         frame.size = CGSizeMake(self.width - 50, self.height);
         btnLeft = self.width - 50;
     }
     
     [UIView animateWithDuration:0.25 animations:^{
         self.searchBar.frame = frame;
-        self.button.left = btnLeft;
+        self.cancelButton.left = btnLeft;
     }];
 }
 
