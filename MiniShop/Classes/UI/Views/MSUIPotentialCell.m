@@ -10,7 +10,6 @@
 #import "MSGoodsList.h"
 #import "UIImageView+WebCache.h"
 #import "UIColor+Mini.h"
-#import "MSDetailViewController.h"
 #import "MSWebChatUtil.h"
 #import "UIImage+Mini.h"
 #import "WXApiObject.h"

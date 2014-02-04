@@ -11,8 +11,6 @@
 
 #import "MSGuideViewController.h"
 #import "MSMainTabViewController.h"
-#import "MSDetailViewController.h"
-#import "MSShopNewsViewController.h"
 #import "MSSystem.h"
 #import "MSGoodsList.h"
 #import "MRLoginViewController.h"
@@ -325,32 +323,32 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
             }
             else if ( [path hasPrefix:@"youjiaxiaodian://good/"] ) //跳转详情页
             {
-                NSString *goodId = [path substringFromIndex:@"youjiaxiaodian://good/".length];
-                [[ClientAgent sharedInstance] singlegoodsdetail:goodId.longLongValue from:@"list" block:^(NSError *error, MSGoodsList* data, id userInfo, BOOL cache) {
-                    if (error==nil)
-                    {
-                        MSDetailViewController *c = [[MSDetailViewController alloc] init];
-                        c.mtitle = @"";
-                        c.from = @"list";
-                        c.goods = data;
-                        [[self currentNaviController] pushViewController:c animated:YES];
-                    }
-                }];
+//                NSString *goodId = [path substringFromIndex:@"youjiaxiaodian://good/".length];
+//                [[ClientAgent sharedInstance] singlegoodsdetail:goodId.longLongValue from:@"list" block:^(NSError *error, MSGoodsList* data, id userInfo, BOOL cache) {
+//                    if (error==nil)
+//                    {
+//                        MSDetailViewController *c = [[MSDetailViewController alloc] init];
+//                        c.mtitle = @"";
+//                        c.from = @"list";
+//                        c.goods = data;
+//                        [[self currentNaviController] pushViewController:c animated:YES];
+//                    }
+//                }];
             }
             else if ( [path hasPrefix:@"youjiaxiaodian://mshopnews/"] )
             {
-                NSString *shopIds =[path substringFromIndex:@"youjiaxiaodian://mshopnews/".length];
-                MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
-                controller.shopIds = shopIds;
-                [[self currentNaviController] pushViewController:controller animated:YES];
+//                NSString *shopIds =[path substringFromIndex:@"youjiaxiaodian://mshopnews/".length];
+//                MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
+//                controller.shopIds = shopIds;
+//                [[self currentNaviController] pushViewController:controller animated:YES];
             }
             else if ( [path hasPrefix:@"http://youjiaxiaodian.com/share?type=share_shop&id="] ){
-                NSString *shopIds =[path substringFromIndex:@"http://youjiaxiaodian.com/share?type=share_shop&id=".length];
-                if ( shopIds.length > 0 ) {
-                    MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
-                    controller.shopIds = shopIds;
-                    [[self currentNaviController] pushViewController:controller animated:YES];
-                }
+//                NSString *shopIds =[path substringFromIndex:@"http://youjiaxiaodian.com/share?type=share_shop&id=".length];
+//                if ( shopIds.length > 0 ) {
+//                    MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
+//                    controller.shopIds = shopIds;
+//                    [[self currentNaviController] pushViewController:controller animated:YES];
+//                }
             }
         }
     });

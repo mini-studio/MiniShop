@@ -169,30 +169,17 @@
 		C1EC507D178074A100BE5ABB /* MSUIAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5019178074A100BE5ABB /* MSUIAuthWebViewController.m */; };
 		C1EC507E178074A100BE5ABB /* MSUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */; };
 		C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501D178074A100BE5ABB /* MSViewController.m */; };
-		C1EC5080178074A100BE5ABB /* MSSearchCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5020178074A100BE5ABB /* MSSearchCategoryViewController.m */; };
-		C1EC5081178074A100BE5ABB /* MSStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5022178074A100BE5ABB /* MSStoreViewController.m */; };
-		C1EC5082178074A100BE5ABB /* MSVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5024178074A100BE5ABB /* MSVerifyViewController.m */; };
-		C1EC5083178074A100BE5ABB /* MSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5027178074A100BE5ABB /* MSDetailViewController.m */; };
 		C1EC5084178074A100BE5ABB /* MSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5029178074A100BE5ABB /* MSGuideViewController.m */; };
-		C1EC5085178074A100BE5ABB /* MSItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC502B178074A100BE5ABB /* MSItemListViewController.m */; };
 		C1EC5086178074A100BE5ABB /* MSMainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */; };
-		C1EC5087178074A100BE5ABB /* MSShopGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC502F178074A100BE5ABB /* MSShopGalleryViewController.m */; };
-		C1EC5088178074A100BE5ABB /* MSShopGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5031178074A100BE5ABB /* MSShopGroupListViewController.m */; };
-		C1EC5089178074A100BE5ABB /* MSShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5033178074A100BE5ABB /* MSShopListViewController.m */; };
-		C1EC508A178074A100BE5ABB /* MSPotentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5036178074A100BE5ABB /* MSPotentialViewController.m */; };
 		C1EC508B178074A100BE5ABB /* MSProlfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5038178074A100BE5ABB /* MSProlfileViewController.m */; };
 		C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC503E178074A100BE5ABB /* MSAboutViewController.m */; };
 		C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5040178074A100BE5ABB /* MSFeedbackViewController.m */; };
 		C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5042178074A100BE5ABB /* MSJoinViewController.m */; };
 		C1EC5090178074A100BE5ABB /* MSNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5044178074A100BE5ABB /* MSNSettingsViewController.m */; };
-		C1EC5091178074A100BE5ABB /* MSNofiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5047178074A100BE5ABB /* MSNofiViewController.m */; };
-		C1EC5092178074A100BE5ABB /* MSShopNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5049178074A100BE5ABB /* MSShopNewsViewController.m */; };
-		C1EC5093178074A100BE5ABB /* MSTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC504B178074A100BE5ABB /* MSTopicViewController.m */; };
 		C1EC5094178074A100BE5ABB /* MiniUIIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC504F178074A100BE5ABB /* MiniUIIndicator.m */; };
 		C1EC5095178074A100BE5ABB /* MiniUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5051178074A100BE5ABB /* MiniUIWebView.m */; };
 		C1EC5096178074A100BE5ABB /* MSGalleryGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5053178074A100BE5ABB /* MSGalleryGoodsCell.m */; };
 		C1EC5097178074A100BE5ABB /* MSGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5055178074A100BE5ABB /* MSGalleryView.m */; };
-		C1EC5098178074A100BE5ABB /* MSNotiTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5057178074A100BE5ABB /* MSNotiTableCell.m */; };
 		C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5059178074A100BE5ABB /* MSShopInfoCell.m */; };
 		C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC505B178074A100BE5ABB /* MSUIMoreDataCell.m */; };
 		C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC505D178074A100BE5ABB /* MSUIPotentialCell.m */; };
@@ -673,28 +660,10 @@
 		C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUIWebViewController.m; sourceTree = "<group>"; };
 		C1EC501C178074A100BE5ABB /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		C1EC501D178074A100BE5ABB /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
-		C1EC501F178074A100BE5ABB /* MSSearchCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSearchCategoryViewController.h; sourceTree = "<group>"; };
-		C1EC5020178074A100BE5ABB /* MSSearchCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSearchCategoryViewController.m; sourceTree = "<group>"; };
-		C1EC5021178074A100BE5ABB /* MSStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStoreViewController.h; sourceTree = "<group>"; };
-		C1EC5022178074A100BE5ABB /* MSStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStoreViewController.m; sourceTree = "<group>"; };
-		C1EC5023178074A100BE5ABB /* MSVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVerifyViewController.h; sourceTree = "<group>"; };
-		C1EC5024178074A100BE5ABB /* MSVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVerifyViewController.m; sourceTree = "<group>"; };
-		C1EC5026178074A100BE5ABB /* MSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDetailViewController.h; sourceTree = "<group>"; };
-		C1EC5027178074A100BE5ABB /* MSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDetailViewController.m; sourceTree = "<group>"; };
 		C1EC5028178074A100BE5ABB /* MSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideViewController.h; sourceTree = "<group>"; };
 		C1EC5029178074A100BE5ABB /* MSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGuideViewController.m; sourceTree = "<group>"; };
-		C1EC502A178074A100BE5ABB /* MSItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSItemListViewController.h; sourceTree = "<group>"; };
-		C1EC502B178074A100BE5ABB /* MSItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSItemListViewController.m; sourceTree = "<group>"; };
 		C1EC502C178074A100BE5ABB /* MSMainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainTabViewController.h; sourceTree = "<group>"; };
 		C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainTabViewController.m; sourceTree = "<group>"; };
-		C1EC502E178074A100BE5ABB /* MSShopGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopGalleryViewController.h; sourceTree = "<group>"; };
-		C1EC502F178074A100BE5ABB /* MSShopGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopGalleryViewController.m; sourceTree = "<group>"; };
-		C1EC5030178074A100BE5ABB /* MSShopGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopGroupListViewController.h; sourceTree = "<group>"; };
-		C1EC5031178074A100BE5ABB /* MSShopGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopGroupListViewController.m; sourceTree = "<group>"; };
-		C1EC5032178074A100BE5ABB /* MSShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopListViewController.h; sourceTree = "<group>"; };
-		C1EC5033178074A100BE5ABB /* MSShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopListViewController.m; sourceTree = "<group>"; };
-		C1EC5035178074A100BE5ABB /* MSPotentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPotentialViewController.h; sourceTree = "<group>"; };
-		C1EC5036178074A100BE5ABB /* MSPotentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPotentialViewController.m; sourceTree = "<group>"; };
 		C1EC5037178074A100BE5ABB /* MSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProfileViewController.h; sourceTree = "<group>"; };
 		C1EC5038178074A100BE5ABB /* MSProlfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProlfileViewController.m; sourceTree = "<group>"; };
 		C1EC503D178074A100BE5ABB /* MSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAboutViewController.h; sourceTree = "<group>"; };
@@ -705,12 +674,6 @@
 		C1EC5042178074A100BE5ABB /* MSJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSJoinViewController.m; sourceTree = "<group>"; };
 		C1EC5043178074A100BE5ABB /* MSNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSettingsViewController.h; sourceTree = "<group>"; };
 		C1EC5044178074A100BE5ABB /* MSNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSettingsViewController.m; sourceTree = "<group>"; };
-		C1EC5046178074A100BE5ABB /* MSNofiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNofiViewController.h; sourceTree = "<group>"; };
-		C1EC5047178074A100BE5ABB /* MSNofiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNofiViewController.m; sourceTree = "<group>"; };
-		C1EC5048178074A100BE5ABB /* MSShopNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopNewsViewController.h; sourceTree = "<group>"; };
-		C1EC5049178074A100BE5ABB /* MSShopNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopNewsViewController.m; sourceTree = "<group>"; };
-		C1EC504A178074A100BE5ABB /* MSTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTopicViewController.h; sourceTree = "<group>"; };
-		C1EC504B178074A100BE5ABB /* MSTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTopicViewController.m; sourceTree = "<group>"; };
 		C1EC504E178074A100BE5ABB /* MiniUIIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIIndicator.h; sourceTree = "<group>"; };
 		C1EC504F178074A100BE5ABB /* MiniUIIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIIndicator.m; sourceTree = "<group>"; };
 		C1EC5050178074A100BE5ABB /* MiniUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIWebView.h; sourceTree = "<group>"; };
@@ -719,8 +682,6 @@
 		C1EC5053178074A100BE5ABB /* MSGalleryGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGalleryGoodsCell.m; sourceTree = "<group>"; };
 		C1EC5054178074A100BE5ABB /* MSGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGalleryView.h; sourceTree = "<group>"; };
 		C1EC5055178074A100BE5ABB /* MSGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGalleryView.m; sourceTree = "<group>"; };
-		C1EC5056178074A100BE5ABB /* MSNotiTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNotiTableCell.h; sourceTree = "<group>"; };
-		C1EC5057178074A100BE5ABB /* MSNotiTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNotiTableCell.m; sourceTree = "<group>"; };
 		C1EC5058178074A100BE5ABB /* MSShopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopInfoCell.h; sourceTree = "<group>"; };
 		C1EC5059178074A100BE5ABB /* MSShopInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopInfoCell.m; sourceTree = "<group>"; };
 		C1EC505A178074A100BE5ABB /* MSUIMoreDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUIMoreDataCell.h; sourceTree = "<group>"; };
@@ -1633,11 +1594,9 @@
 				C1B339FB184B83D500851585 /* Credit */,
 				C1B339F7184B836800851585 /* Especial */,
 				C1EC5012178074A100BE5ABB /* Base */,
-				C1EC501E178074A100BE5ABB /* Discover */,
 				C1EC5025178074A100BE5ABB /* Frame */,
 				C1EC5034178074A100BE5ABB /* Mine */,
 				C1EC503C178074A100BE5ABB /* More */,
-				C1EC5045178074A100BE5ABB /* News */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1669,36 +1628,13 @@
 			path = Mini;
 			sourceTree = "<group>";
 		};
-		C1EC501E178074A100BE5ABB /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				C1EC501F178074A100BE5ABB /* MSSearchCategoryViewController.h */,
-				C1EC5020178074A100BE5ABB /* MSSearchCategoryViewController.m */,
-				C1EC5021178074A100BE5ABB /* MSStoreViewController.h */,
-				C1EC5022178074A100BE5ABB /* MSStoreViewController.m */,
-				C1EC5023178074A100BE5ABB /* MSVerifyViewController.h */,
-				C1EC5024178074A100BE5ABB /* MSVerifyViewController.m */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
 		C1EC5025178074A100BE5ABB /* Frame */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC5026178074A100BE5ABB /* MSDetailViewController.h */,
-				C1EC5027178074A100BE5ABB /* MSDetailViewController.m */,
 				C1EC5028178074A100BE5ABB /* MSGuideViewController.h */,
 				C1EC5029178074A100BE5ABB /* MSGuideViewController.m */,
-				C1EC502A178074A100BE5ABB /* MSItemListViewController.h */,
-				C1EC502B178074A100BE5ABB /* MSItemListViewController.m */,
 				C1EC502C178074A100BE5ABB /* MSMainTabViewController.h */,
 				C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */,
-				C1EC502E178074A100BE5ABB /* MSShopGalleryViewController.h */,
-				C1EC502F178074A100BE5ABB /* MSShopGalleryViewController.m */,
-				C1EC5030178074A100BE5ABB /* MSShopGroupListViewController.h */,
-				C1EC5031178074A100BE5ABB /* MSShopGroupListViewController.m */,
-				C1EC5032178074A100BE5ABB /* MSShopListViewController.h */,
-				C1EC5033178074A100BE5ABB /* MSShopListViewController.m */,
 				C1254B58186E4E960007D510 /* MSNDetailViewController.h */,
 				C1254B59186E4E960007D510 /* MSNDetailViewController.m */,
 				C1254B5F186EABAF0007D510 /* MSNSearchShopViewController.h */,
@@ -1710,8 +1646,6 @@
 		C1EC5034178074A100BE5ABB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC5035178074A100BE5ABB /* MSPotentialViewController.h */,
-				C1EC5036178074A100BE5ABB /* MSPotentialViewController.m */,
 				C1EC5037178074A100BE5ABB /* MSProfileViewController.h */,
 				C1EC5038178074A100BE5ABB /* MSProlfileViewController.m */,
 				C10EDD3C18451A4100503993 /* MSNMyStoreViewController.h */,
@@ -1747,19 +1681,6 @@
 			path = More;
 			sourceTree = "<group>";
 		};
-		C1EC5045178074A100BE5ABB /* News */ = {
-			isa = PBXGroup;
-			children = (
-				C1EC5046178074A100BE5ABB /* MSNofiViewController.h */,
-				C1EC5047178074A100BE5ABB /* MSNofiViewController.m */,
-				C1EC5048178074A100BE5ABB /* MSShopNewsViewController.h */,
-				C1EC5049178074A100BE5ABB /* MSShopNewsViewController.m */,
-				C1EC504A178074A100BE5ABB /* MSTopicViewController.h */,
-				C1EC504B178074A100BE5ABB /* MSTopicViewController.m */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
 		C1EC504C178074A100BE5ABB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1768,8 +1689,6 @@
 				C1EC5053178074A100BE5ABB /* MSGalleryGoodsCell.m */,
 				C1EC5054178074A100BE5ABB /* MSGalleryView.h */,
 				C1EC5055178074A100BE5ABB /* MSGalleryView.m */,
-				C1EC5056178074A100BE5ABB /* MSNotiTableCell.h */,
-				C1EC5057178074A100BE5ABB /* MSNotiTableCell.m */,
 				C1EC5058178074A100BE5ABB /* MSShopInfoCell.h */,
 				C1EC5059178074A100BE5ABB /* MSShopInfoCell.m */,
 				C1EC505A178074A100BE5ABB /* MSUIMoreDataCell.h */,
@@ -2412,21 +2331,12 @@
 				C1EC507D178074A100BE5ABB /* MSUIAuthWebViewController.m in Sources */,
 				C1EC507E178074A100BE5ABB /* MSUIWebViewController.m in Sources */,
 				C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */,
-				C1EC5080178074A100BE5ABB /* MSSearchCategoryViewController.m in Sources */,
-				C1EC5081178074A100BE5ABB /* MSStoreViewController.m in Sources */,
 				C1B0F216188469F600D222E5 /* MSNDetailToolBar.m in Sources */,
 				C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */,
-				C1EC5082178074A100BE5ABB /* MSVerifyViewController.m in Sources */,
-				C1EC5083178074A100BE5ABB /* MSDetailViewController.m in Sources */,
 				C1EC5084178074A100BE5ABB /* MSGuideViewController.m in Sources */,
 				C1FEB1BD17E3E7EB0076BEEA /* MSUIDTView.m in Sources */,
-				C1EC5085178074A100BE5ABB /* MSItemListViewController.m in Sources */,
 				C1EC5086178074A100BE5ABB /* MSMainTabViewController.m in Sources */,
-				C1EC5087178074A100BE5ABB /* MSShopGalleryViewController.m in Sources */,
-				C1EC5088178074A100BE5ABB /* MSShopGroupListViewController.m in Sources */,
 				C1B339FA184B836800851585 /* EspecialIndexViewController.m in Sources */,
-				C1EC5089178074A100BE5ABB /* MSShopListViewController.m in Sources */,
-				C1EC508A178074A100BE5ABB /* MSPotentialViewController.m in Sources */,
 				C1EC508B178074A100BE5ABB /* MSProlfileViewController.m in Sources */,
 				C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
@@ -2435,9 +2345,6 @@
 				C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */,
 				C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */,
 				C1EC5090178074A100BE5ABB /* MSNSettingsViewController.m in Sources */,
-				C1EC5091178074A100BE5ABB /* MSNofiViewController.m in Sources */,
-				C1EC5092178074A100BE5ABB /* MSShopNewsViewController.m in Sources */,
-				C1EC5093178074A100BE5ABB /* MSTopicViewController.m in Sources */,
 				C1EC5094178074A100BE5ABB /* MiniUIIndicator.m in Sources */,
 				C1B0F213188439E800D222E5 /* UMTableViewLoadingCell.m in Sources */,
 				C1EC5095178074A100BE5ABB /* MiniUIWebView.m in Sources */,
@@ -2446,7 +2353,6 @@
 				C1618C301856196700F54499 /* NSData+Base64.m in Sources */,
 				C1B0F211188439E800D222E5 /* UMTableViewCell.m in Sources */,
 				C1EC5097178074A100BE5ABB /* MSGalleryView.m in Sources */,
-				C1EC5098178074A100BE5ABB /* MSNotiTableCell.m in Sources */,
 				C1EC5099178074A100BE5ABB /* MSShopInfoCell.m in Sources */,
 				C1EC509A178074A100BE5ABB /* MSUIMoreDataCell.m in Sources */,
 				C1EC509B178074A100BE5ABB /* MSUIPotentialCell.m in Sources */,

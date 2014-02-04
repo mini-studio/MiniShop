@@ -9,7 +9,6 @@
 #import "MSSystem.h"
 #import "MSImageInfo.h"
 #import "MSNotiItemInfo.h"
-#import "MSDetailViewController.h"
 #import "MiniNSURLProtocol.h"
 #import "MiniURLCache.h"
 #import "MiniFileUtil.h"
@@ -367,10 +366,10 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
             itemInfo.type = type;
             itemInfo.mid = mid;
             itemInfo.shop_id = shopId;
-            MSDetailViewController *controller = [[MSDetailViewController alloc] init];
-            controller.itemInfo = itemInfo;
-            controller.from = @"push";
-            [naviController pushViewController:controller animated:YES];
+//            MSDetailViewController *controller = [[MSDetailViewController alloc] init];
+//            controller.itemInfo = itemInfo;
+//            controller.from = @"push";
+//            [naviController pushViewController:controller animated:YES];
         }
     }
 }

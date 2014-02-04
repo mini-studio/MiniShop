@@ -13,8 +13,6 @@
 #import "MiniUIPhotoImageView.h"
 #import "UIImage+Mini.h"
 #import "RTLabel.h"
-#import "MSDetailViewController.h"
-#import "MSShopGalleryViewController.h"
 #import "MSNGoodsList.h"
 #import "MSNDetailViewController.h"
 

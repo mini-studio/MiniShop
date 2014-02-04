@@ -13,7 +13,6 @@
 #import "MSDefine.h"
 #import "MiniUIIndicator.h"
 #import "MiniUIIndicator.h"
-#import "MSShopGalleryViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSString+Mini.h"
 #import "MSUIDTView.h"

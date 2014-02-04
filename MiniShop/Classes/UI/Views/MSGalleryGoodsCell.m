@@ -9,7 +9,6 @@
 #import "MSGalleryGoodsCell.h"
 #import "MSGalleryView.h"
 #import "MSGoodsList.h"
-#import "MSDetailViewController.h"
 
 @interface MSGalleryGoodsCell ()
 @property (nonatomic,strong) MSGalleryView *galleryView;

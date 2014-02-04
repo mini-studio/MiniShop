@@ -128,6 +128,7 @@
             self.handleSearchBlock(textField.text,[self getOrderbyValue]);
         }
         self.lastKey = self.searchField.text;
+        [self hideSearchView];
         return NO;
     }
     else {
@@ -144,10 +145,13 @@
 
 @end
 
+
 @interface MSNShopDetailViewController () <MSNSearchViewDelegate>
 @property (nonatomic,strong)MSNShopInfoView *shopInfoView;
 @property (nonatomic,strong)MSNSearchView *searchView;
 @property (nonatomic,strong)MSNShopMessageView *messageView;
+
+@property (nonatomic,strong)MiniUIButton *favButton;
 @end
 
 @implementation MSNShopDetailViewController
@@ -172,7 +176,18 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
     line.backgroundColor = [UIColor colorWithRGBA:0xcd796fff];
     [view addSubview:line];
+    if (self.shopInfo.like==1) {
+        self.favButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"cancel"] highlightedImage:[UIImage imageNamed:@"cancel_hover"]];
+        [view addSubview:self.shopInfoView];
+    }
+    else {
+        self.favButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"add"] highlightedImage:[UIImage imageNamed:@"add_hover"]];
+    }
+    self.favButton.center = CGPointMake(view.width-15-(self.favButton.width/2), view.height/2);
+    [self.favButton addTarget:self action:@selector(actionFavButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+    view.layer.masksToBounds = YES;
     [view addSubview:self.shopInfoView];
+    [view addSubview:self.favButton];
     
     __PSELF__;
     self.messageView = [[MSNShopMessageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 36)];
@@ -182,6 +197,18 @@
     }];
     
     self.tableView.tableHeaderView = view;
+}
+
+- (void)resetFavButton
+{
+    if (self.shopInfo.like==1) {
+        [self.favButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+        [self.favButton setImage:[UIImage imageNamed:@"cancel_hover"] forState:UIControlStateHighlighted];
+    }
+    else {
+        [self.favButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+        [self.favButton setImage:[UIImage imageNamed:@"add_hover"] forState:UIControlStateHighlighted];
+    }
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -249,6 +276,24 @@
 - (void)searchWithKey:(NSString*)key orderby:(NSString*)orderby
 {
      [self loadData:1 orderby:orderby key:key delay:0];
+}
+
+- (void)actionFavButtonTap:(MiniUIButton*)button
+{
+    [self showWating:nil];
+    __PSELF__;
+    NSString *action = self.shopInfo.like==1?@"off":@"on";
+    [[ClientAgent sharedInstance] setfavshop:self.shopInfo.shop_id action:action block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if (error==nil) {
+            pSelf.shopInfo.like = (self.shopInfo.like==1?0:1);
+            [pSelf resetFavButton];
+        }
+        else {
+            [pSelf showErrorMessage:error];
+        }
+    }];
+
 }
 
 @end

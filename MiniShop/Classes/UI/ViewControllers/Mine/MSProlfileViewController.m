@@ -17,11 +17,7 @@
 #import "MSDefine.h"
 #import "MiniUISegmentView.h"
 #import "MSAboutViewController.h"
-#import "MSPotentialViewController.h"
-#import "MSShopGroupListViewController.h"
-#import "MSShopListViewController.h"
 #import "MRLoginViewController.h"
-#import "MSTopicViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/message.h>
 
@@ -222,8 +218,8 @@
 - (void)actionForPotentialList
 {
     //[self userAuth:^{
-        MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
+//        MSPotentialViewController *controller = [[MSPotentialViewController alloc] init];
+//        [self.navigationController pushViewController:controller animated:YES];
     //}];
    
 }
@@ -274,10 +270,10 @@
             if ( error == nil )
             {
                 LOG_DEBUG(@"%@",data);
-                MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
-                controller.type = EImportFav;
-                controller.favData = data;
-                [pSelf.navigationController pushViewController:controller animated:YES];
+//                MSShopGroupListViewController *controller = [[MSShopGroupListViewController alloc] init];
+//                controller.type = EImportFav;
+//                controller.favData = data;
+//                [pSelf.navigationController pushViewController:controller animated:YES];
             }
             else
             {
@@ -291,9 +287,9 @@
 {
     __PSELF__;
     //[pSelf userAuth:^{
-        MSShopListViewController *controller = [[MSShopListViewController alloc] init];
-        controller.type = EFollowed;
-        [pSelf.navigationController pushViewController:controller animated:YES];
+//        MSShopListViewController *controller = [[MSShopListViewController alloc] init];
+//        controller.type = EFollowed;
+//        [pSelf.navigationController pushViewController:controller animated:YES];
     //}];
 }
 

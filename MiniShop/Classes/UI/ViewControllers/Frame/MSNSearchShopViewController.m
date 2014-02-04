@@ -201,7 +201,7 @@
             [pSelf.tableView reloadData];
         }
         else {
-            [self showErrorMessage:error];
+            [pSelf showErrorMessage:error];
         }
     }];
 }

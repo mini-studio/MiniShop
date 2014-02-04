@@ -14,7 +14,6 @@
 #import "EGOUITableView.h"
 #import "MiniUIIndicator.h"
 #import "MRLoginViewController.h"
-#import "MSTopicViewController.h"
 #import "MSUIMoreDataCell.h"
 #import "SDImageCache.h"
 
@@ -387,20 +386,6 @@
 
 }
 
-- (void)remindLogin
-{
-    [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下, 您可以" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 0 ) {
-            MRLoginViewController *controller = [[MRLoginViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-        else if ( buttonIndex == 1 ) {
-            MSTopicViewController *controller = [[MSTopicViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
-            
-        }
-    } cancelButtonTitle:nil otherButtonTitles:@"登录/注册",@"随便逛逛",nil];
-}
 
 - (void)loadMore
 {

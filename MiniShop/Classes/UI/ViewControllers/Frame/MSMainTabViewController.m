@@ -8,11 +8,8 @@
 
 #import "MSMainTabViewController.h"
 #import "MSNSettingsViewController.h"
-#import "MSNofiViewController.h"
-#import "MSStoreViewController.h"
 #import "MSProfileViewController.h"
 #import "MSMiniUINavigationController.h"
-#import "MSTopicViewController.h"
 #import "UIColor+Mini.h"
 #import "MSDefine.h"
 #import "MSSystem.h"
