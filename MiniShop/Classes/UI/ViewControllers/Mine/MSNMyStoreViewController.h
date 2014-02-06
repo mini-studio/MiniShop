@@ -33,4 +33,5 @@
 @class MiniUISegmentView;
 @interface MSNMyStoreContentViewController : MSNGoodListViewController
 @property (nonatomic) NSString* tagid;
+@property (nonatomic,strong)NSString *orderby;
 @end

@@ -33,7 +33,7 @@
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
 {
-    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(0, 0,self.naviTitleView.width,self.naviTitleView.height)];
+    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(15, 0,self.naviTitleView.width-30,self.naviTitleView.height)];
     self.topTitleView = topTitleView;
     __PSELF__;
     [[ClientAgent sharedInstance] specialcate:^(NSError *error, NSArray *data, id userInfo, BOOL cache) {
@@ -92,6 +92,10 @@
 }
 
 - (void)setStatusBar
+{
+}
+
+- (void)setBackGroudImage:(NSString *)imageName
 {
 }
 

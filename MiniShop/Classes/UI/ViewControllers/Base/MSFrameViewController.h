@@ -13,4 +13,5 @@
 @property (nonatomic,strong)NSMutableArray *subControllers;
 @property (nonatomic,strong)UIScrollView *containerView;
 @property (nonatomic,strong)MSNaviMenuView *topTitleView;
+@property (nonatomic,readonly)MSViewController *currentController;
 @end

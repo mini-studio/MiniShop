@@ -11,6 +11,8 @@
 @interface MSTransformButton()
 @property (nonatomic,strong) UILabel *label;
 @property (nonatomic,strong) UILabel *slabel;
+@property (nonatomic,strong) MiniUIButton *button;
+@property (nonatomic,strong) MiniUIButton *accessorybutton;
 @end
 
 @implementation MSTransformButton
@@ -39,6 +41,15 @@
     return self;
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    if (self.accessorybutton!=nil) {
+        self.accessorybutton.center = CGPointMake(self.width-self.accessorybutton.width/2, self.height/2);
+        self.label.width = self.slabel.width = self.width-self.accessorybutton.width;
+    }
+}
+
 - (void)setFontColor:(UIColor *)fontColor
 {
     _fontColor = fontColor;
@@ -62,6 +73,16 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;
     return label;
+}
+
+- (void)setAccessoryImage:(UIImage *)accessoryImage himage:(UIImage *)hImage
+{
+    self.accessorybutton = [MiniUIButton buttonWithImage:accessoryImage highlightedImage:hImage];
+    [self addSubview:self.accessorybutton];
+    __PSELF__;
+    [self.accessorybutton setTouchupHandler:^(MiniUIButton *button) {
+        pSelf.selectedIndex = pSelf.selectedIndex+1;
+    }];
 }
 
 - (void)setItems:(NSArray *)items

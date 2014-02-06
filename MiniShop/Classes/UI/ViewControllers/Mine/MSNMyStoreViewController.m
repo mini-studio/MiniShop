@@ -13,7 +13,7 @@
 #import "MSNCate.h"
 #import "MSNUISearchBar.h"
 
-@interface MSNMyStoreViewController ()
+@interface MSNMyStoreViewController ()<MSTransformButtonDelegate>
 @property (nonatomic,strong)MSTransformButton *transformButton;
 @end
 
@@ -32,9 +32,13 @@
     [super loadView];
     self.naviTitleView.layer.masksToBounds = YES;
     self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.right+10, 0, 50, self.naviTitleView.height)];
+    [self.transformButton setAccessoryImage:[UIImage imageNamed:@"arrow_white"] himage:[UIImage imageNamed:@"arrow_white"]];
     self.transformButton.backgroundColor = NAVI_BG_COLOR;
     [self.naviTitleView addSubview:self.transformButton];
     self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
+    self.transformButton.values = @[@"time",@"sale",@"off",@"off_time"];
+    self.transformButton.delegate = self;
+    self.transformButton.hidden = YES;
     UIImage *image = [UIImage imageNamed:@"icon_search"];
     MiniUIButton *searchButton= [MiniUIButton buttonWithImage:image highlightedImage:nil];
     CGFloat centerX = self.transformButton.right + (self.naviTitleView.width-self.transformButton.right)/2;
@@ -45,7 +49,7 @@
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
 {
-    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(10, 0,self.naviTitleView.width-120,44)];
+    MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(15, 0,self.naviTitleView.width-125,44)];
     topTitleView.backgroundColor = NAVI_BG_COLOR;
     return topTitleView;
 }
@@ -69,6 +73,7 @@
     [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNCateList* data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if ( error==nil ) {
+            pSelf.transformButton.hidden = NO;
             int count = data.info.count;
             for ( int index = 0; index < count; index++ ) {
                 MSNCate *tag = [data.info objectAtIndex:index];
@@ -97,6 +102,13 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)transformButtonValueChanged:(MSTransformButton*)button
+{
+    for (MSNMyStoreContentViewController *controller in self.subControllers ) {
+        controller.orderby = button.selectedValue;
+    }
+}
+
 @end
 
 /****************************************************************************/
@@ -106,6 +118,7 @@
 /****************************************************************************/
 
 @interface MSNMyStoreContentViewController()
+@property (nonatomic) BOOL needReloadWhenDisplay;
 @end
 
 @implementation MSNMyStoreContentViewController
@@ -113,6 +126,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        _orderby = SORT_TIME;
     }
     return self;
 }
@@ -131,6 +145,10 @@
 {
 }
 
+- (void)setBackGroudImage:(NSString *)imageName
+{
+}
+
 - (void)didReceiveRemoteNotification:(NSNotification *)noti
 {
     [self refreshData];
@@ -143,13 +161,34 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self showWating:nil];
-        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:SORT_TIME page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:self.orderby page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
                 [pSelf receiveData:data page:page];
             }
         }];
     });
+}
+
+- (BOOL)needsRefreshData
+{
+    BOOL needs =  (self.dataSource.info.count == 0 || _needReloadWhenDisplay);
+    _needReloadWhenDisplay = NO;
+    return needs;
+}
+
+
+- (void)setOrderby:(NSString *)orderby
+{
+    _orderby = orderby;
+    MSNMyStoreViewController *parentController = (MSNMyStoreViewController *)[self parentViewController];
+    if (parentController.currentController==self) {
+       [self loadData:1 delay:0];
+    }
+    else {
+        _needReloadWhenDisplay = YES;
+    }
+    
 }
 
 @end

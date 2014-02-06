@@ -121,9 +121,14 @@
     [self.tableView triggerRefresh];
 }
 
+- (BOOL)needsRefreshData
+{
+    return self.dataSource.info.count == 0;
+}
+
 - (void)selectedAsChild
 {
-    if ( self.dataSource.info.count == 0 ) {
+    if ( [self needsRefreshData]) {
         [self refreshData];
     }
     else {
