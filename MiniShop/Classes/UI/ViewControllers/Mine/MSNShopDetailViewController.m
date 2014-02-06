@@ -146,9 +146,8 @@
 @end
 
 
-@interface MSNShopDetailViewController () <MSNSearchViewDelegate>
+@interface MSNShopDetailViewController ()
 @property (nonatomic,strong)MSNShopInfoView *shopInfoView;
-@property (nonatomic,strong)MSNSearchView *searchView;
 @property (nonatomic,strong)MSNShopMessageView *messageView;
 
 @property (nonatomic,strong)MiniUIButton *favButton;
@@ -254,22 +253,6 @@
         else {
             [pSelf showErrorMessage:error];
         }
-    }];
-}
-
-- (void)actionShowSearchView
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        self.searchView.top=0;
-        self.messageView.top=self.searchView.superview.height;
-    }];
-}
-
-- (void)searchViewCancelButtonClicked:(MSNSearchView *)searchBar
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        self.searchView.top=-self.searchView.superview.height;
-        self.messageView.top=0;
     }];
 }
 

@@ -57,15 +57,21 @@
 {
     CGRect frame = self.button.bounds;
     frame = CGRectInset(frame, 4, 0);
-    UILabel *lable = [[UILabel alloc] initWithFrame:frame];
-    lable.font = [UIFont systemFontOfSize:18];
-    lable.textAlignment = NSTextAlignmentCenter;
-    return lable;
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.font = [UIFont systemFontOfSize:18];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.numberOfLines = 0;
+    return label;
 }
 
 - (void)setItems:(NSArray *)items
 {
     [self setItems:items defaultIndex:0];
+}
+
+- (id)selectedValue
+{
+    return [self.values objectAtIndex:self.selectedIndex];
 }
 
 - (void)setItems:(NSArray *)items defaultIndex:(int)index

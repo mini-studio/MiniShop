@@ -13,9 +13,8 @@
 #import "MSNCate.h"
 #import "MSNUISearchBar.h"
 
-@interface MSNMyStoreViewController ()<MSNSearchViewDelegate>
+@interface MSNMyStoreViewController ()
 @property (nonatomic,strong)MSTransformButton *transformButton;
-@property (nonatomic,strong)MSNSearchView *searchView;
 @end
 
 @implementation MSNMyStoreViewController
@@ -41,11 +40,7 @@
     CGFloat centerX = self.transformButton.right + (self.naviTitleView.width-self.transformButton.right)/2;
     searchButton.center = CGPointMake(centerX, self.transformButton.height/2);
     [self.naviTitleView addSubview:searchButton];
-    [searchButton addTarget:self action:@selector(actionShowSearchBar:) forControlEvents:UIControlEventTouchUpInside];
-    self.searchView = [[MSNSearchView alloc] initWithFrame:CGRectMake(0, -self.naviTitleView.height, self.naviTitleView.width, self.naviTitleView.height)];
-    self.searchView.delegate = self;
-    self.searchView.scopeString = @[@"我的商城",@"整个好店汇"];
-    [self.naviTitleView addSubview:self.searchView];
+    [searchButton addTarget:self action:@selector(actionJumpSearch:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
@@ -96,20 +91,10 @@
     }];
 }
 
-- (void)actionShowSearchBar:(MiniUIButton*)button
+- (void)actionJumpSearch:(MiniUIButton *)button
 {
-    [self.searchView show];
-}
-
-- (void)searchViewSearchButtonClicked:(MSNSearchView *)searchBar
-{
-    NSString *key = searchBar.text;
-    if (key.length > 0) {
-        MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
-        controller.key = key;
-        controller.scopeIndex = searchBar.scopeIndex;
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+    MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

@@ -19,10 +19,12 @@
 @property (nonatomic,assign) id<MSTransformButtonDelegate> delegate;
 @property (nonatomic,strong) MiniUIButton *button;
 @property (nonatomic,strong) NSArray *items;//string array
+@property (nonatomic,strong) NSArray *values;//string array
 @property (nonatomic) int selectedIndex;
 @property (nonatomic) int fontSize;
 @property (nonatomic,strong)UIColor *fontColor;
 
 - (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated;
 - (void)setItems:(NSArray *)items defaultIndex:(int)index;
+- (id)selectedValue;
 @end

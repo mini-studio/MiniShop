@@ -50,6 +50,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
 - (UIView *)topSuperView
 {
     UIView *superView = [self superview];
@@ -166,145 +167,145 @@
 @end
 
 
-@interface MSNSearchView()<UITextFieldDelegate,MSTransformButtonDelegate>
-@property (nonatomic,strong)MiniUIButton *cancelButton;
-@property (nonatomic,strong)UITextField  *searchBar;
-@property (nonatomic,strong)MSTransformButton *transformButton;
-@end
-
-@implementation MSNSearchView
-@synthesize scopeIndex = _scopeIndex;
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = NAVI_BG_COLOR;
-        _floatting = YES;
-        [self initSubViews];
-    }
-    return self;
-}
-
-- (void)initSubViews
-{
-    CGRect rect = CGRectInset(self.bounds, 50, 5);
-    self.searchBar = [[UITextField alloc] initWithFrame:rect];
-    self.searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.searchBar.font = [UIFont systemFontOfSize:14];
-    self.searchBar.backgroundColor = [UIColor whiteColor];
-    [self addSubview:self.searchBar];
-    self.searchBar.returnKeyType = UIReturnKeySearch;
-    self.searchBar.delegate = self;
-    
-    self.cancelButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-    [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [self.cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.cancelButton.frame = CGRectMake(self.width-45, (self.height-40)/2, 40,40);
-    [self addSubview:self.cancelButton];
-    [self.cancelButton addTarget:self action:@selector(actionCancel) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(0, 0, 80, self.searchBar.height)];
-    self.transformButton.fontColor = NAVI_BG_COLOR;
-    self.transformButton.fontSize = 14;
-    self.transformButton.delegate = self;
-    self.searchBar.leftViewMode = UITextFieldViewModeAlways;
-    self.searchBar.leftView = self.transformButton;
-}
-
-- (void)setScopeString:(NSArray *)scopeString
-{
-    _scopeString = scopeString;
-    self.transformButton.items = scopeString;
-}
-
-- (void)setScopeString:(NSArray *)scopeString defaultIndex:(int)index
-{
-    _scopeString = scopeString;
-    _scopeIndex = index;
-    [self.transformButton setItems:scopeString defaultIndex:index];
-}
-
-- (void)setScopeIndex:(NSInteger)scopeIndex
-{
-    _scopeIndex = scopeIndex;
-    self.transformButton.selectedIndex = scopeIndex;
-}
-
-- (NSInteger)scopeIndex
-{
-    return _scopeIndex;
-}
-
-- (void)actionCancel
-{
-    [self hide];
-    if ( self.delegate != nil ) {
-        if ( [self.delegate respondsToSelector:@selector(searchViewCancelButtonClicked:)]) {
-            double delayInSeconds = 0.01;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self.delegate searchViewCancelButtonClicked:self];
-            });
-        }
-    }
-}
-
-- (void)show
-{
-    if ( _floatting ) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.top = 0;
-        } completion:^(BOOL finished) {
-            [self.searchBar becomeFirstResponder];
-        }];
-    }
-}
-
-- (void)hide
-{
-    if (_floatting) {
-        [self.searchBar resignFirstResponder];
-        [UIView animateWithDuration:0.25 animations:^{
-            self.bottom = 0;
-        }];
-    }
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if ( [string isEqualToString:@"\n"] ) {
-        [self hide];
-         if ( [self.delegate respondsToSelector:@selector(searchViewSearchButtonClicked:)]) {
-            if ( self.delegate != nil ) {
-                double delayInSeconds = 0.01;
-                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                    [self.delegate searchViewSearchButtonClicked:self];
-                });
-            }
-         }
-        return NO;
-    }
-    return YES;
-}
-
-- (NSString*)text
-{
-    return self.searchBar.text;
-}
-
-- (void)setText:(NSString *)text
-{
-    self.searchBar.text = text;
-}
-
-- (void)transformButtonValueChanged:(MSTransformButton*)button
-{
-    _scopeIndex = button.selectedIndex;
-    if (self.delegate)
-        if ([self.delegate respondsToSelector:@selector(searchViewScopeValueChanged:)])
-            [self.delegate searchViewScopeValueChanged:self];
-}
-
-@end
+//@interface MSNSearchView()<UITextFieldDelegate,MSTransformButtonDelegate>
+//@property (nonatomic,strong)MiniUIButton *cancelButton;
+//@property (nonatomic,strong)UITextField  *searchBar;
+//@property (nonatomic,strong)MSTransformButton *transformButton;
+//@end
+//
+//@implementation MSNSearchView
+//@synthesize scopeIndex = _scopeIndex;
+//
+//- (id)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        self.backgroundColor = NAVI_BG_COLOR;
+//        _floatting = YES;
+//        [self initSubViews];
+//    }
+//    return self;
+//}
+//
+//- (void)initSubViews
+//{
+//    CGRect rect = CGRectInset(self.bounds, 50, 5);
+//    self.searchBar = [[UITextField alloc] initWithFrame:rect];
+//    self.searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+//    self.searchBar.font = [UIFont systemFontOfSize:14];
+//    self.searchBar.backgroundColor = [UIColor whiteColor];
+//    [self addSubview:self.searchBar];
+//    self.searchBar.returnKeyType = UIReturnKeySearch;
+//    self.searchBar.delegate = self;
+//    
+//    self.cancelButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+//    [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+//    [self.cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    self.cancelButton.frame = CGRectMake(self.width-45, (self.height-40)/2, 40,40);
+//    [self addSubview:self.cancelButton];
+//    [self.cancelButton addTarget:self action:@selector(actionCancel) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(0, 0, 80, self.searchBar.height)];
+//    self.transformButton.fontColor = NAVI_BG_COLOR;
+//    self.transformButton.fontSize = 14;
+//    self.transformButton.delegate = self;
+//    self.searchBar.leftViewMode = UITextFieldViewModeAlways;
+//    self.searchBar.leftView = self.transformButton;
+//}
+//
+//- (void)setScopeString:(NSArray *)scopeString
+//{
+//    _scopeString = scopeString;
+//    self.transformButton.items = scopeString;
+//}
+//
+//- (void)setScopeString:(NSArray *)scopeString defaultIndex:(int)index
+//{
+//    _scopeString = scopeString;
+//    _scopeIndex = index;
+//    [self.transformButton setItems:scopeString defaultIndex:index];
+//}
+//
+//- (void)setScopeIndex:(NSInteger)scopeIndex
+//{
+//    _scopeIndex = scopeIndex;
+//    self.transformButton.selectedIndex = scopeIndex;
+//}
+//
+//- (NSInteger)scopeIndex
+//{
+//    return _scopeIndex;
+//}
+//
+//- (void)actionCancel
+//{
+//    [self hide];
+//    if ( self.delegate != nil ) {
+//        if ( [self.delegate respondsToSelector:@selector(searchViewCancelButtonClicked:)]) {
+//            double delayInSeconds = 0.01;
+//            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//                [self.delegate searchViewCancelButtonClicked:self];
+//            });
+//        }
+//    }
+//}
+//
+//- (void)show
+//{
+//    if ( _floatting ) {
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.top = 0;
+//        } completion:^(BOOL finished) {
+//            [self.searchBar becomeFirstResponder];
+//        }];
+//    }
+//}
+//
+//- (void)hide
+//{
+//    if (_floatting) {
+//        [self.searchBar resignFirstResponder];
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.bottom = 0;
+//        }];
+//    }
+//}
+//
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    if ( [string isEqualToString:@"\n"] ) {
+//        [self hide];
+//         if ( [self.delegate respondsToSelector:@selector(searchViewSearchButtonClicked:)]) {
+//            if ( self.delegate != nil ) {
+//                double delayInSeconds = 0.01;
+//                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//                    [self.delegate searchViewSearchButtonClicked:self];
+//                });
+//            }
+//         }
+//        return NO;
+//    }
+//    return YES;
+//}
+//
+//- (NSString*)text
+//{
+//    return self.searchBar.text;
+//}
+//
+//- (void)setText:(NSString *)text
+//{
+//    self.searchBar.text = text;
+//}
+//
+//- (void)transformButtonValueChanged:(MSTransformButton*)button
+//{
+//    _scopeIndex = button.selectedIndex;
+//    if (self.delegate)
+//        if ([self.delegate respondsToSelector:@selector(searchViewScopeValueChanged:)])
+//            [self.delegate searchViewScopeValueChanged:self];
+//}
+//
+//@end
