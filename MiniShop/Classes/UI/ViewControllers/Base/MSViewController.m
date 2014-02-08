@@ -185,16 +185,16 @@
     
     CGSize size = [title sizeWithFont:btnFont];
     
-    UIImage* bgImage = [[UIImage imageNamed:@"follow_s_button_normal"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    UIImage* bgImage2 = [[UIImage imageNamed:@"follow_s_button_selected"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    //UIImage* bgImage = [[UIImage imageNamed:@"follow_s_button_normal"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    //UIImage* bgImage2 = [[UIImage imageNamed:@"follow_s_button_selected"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
     
     MiniUIButton* button = [UIButton buttonWithType:UIButtonTypeCustom]; //自定义
     
     button.frame = CGRectMake(0.0, 0.0, size.width + 20, 30);
     button.titleLabel.font = btnFont;
     
-    [button setBackgroundImage:bgImage forState:UIControlStateNormal];
-    [button setBackgroundImage:bgImage2 forState:UIControlStateHighlighted];
+//    [button setBackgroundImage:bgImage forState:UIControlStateNormal];
+//    [button setBackgroundImage:bgImage2 forState:UIControlStateHighlighted];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateHighlighted];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

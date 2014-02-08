@@ -8,15 +8,14 @@
 
 #import "MSMainTabViewController.h"
 #import "MSNSettingsViewController.h"
-#import "MSProfileViewController.h"
 #import "MSMiniUINavigationController.h"
 #import "UIColor+Mini.h"
 #import "MSDefine.h"
 #import "MSSystem.h"
-#import "MSNMyStoreViewController.h"
+#import "MSNStoreViewController.h"
 #import "MSNFavViewController.h"
-#import "EspecialIndexViewController.h"
-#import "CreditableIndexViewController.h"
+#import "MSNEspecialIndexViewController.h"
+#import "MSNCreditableIndexViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -102,13 +101,13 @@
 - (void)loadView
 {
     [super loadView];
-    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"26"};
+    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"24",@"bottomSpace":@"4"};
     [self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     //[self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
     self.items = [NSArray arrayWithObjects:
-                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNMyStoreViewController class] image:[MiniUIImage imageNamed:@"mymall"] highlightedImage:[MiniUIImage imageNamed:@"mymall_hover"] title:@"我的商城"],
-                   [[MiniTabBarItem alloc] initWithControllerClass:[EspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"特卖汇"],
-                  [[MiniTabBarItem alloc] initWithControllerClass:[CreditableIndexViewController class] image:[MiniUIImage imageNamed:@"shop"] highlightedImage:[MiniUIImage imageNamed:@"shop_hover"] title:@"好店汇"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNStoreViewController class] image:[MiniUIImage imageNamed:@"mymall"] highlightedImage:[MiniUIImage imageNamed:@"mymall_hover"] title:@"我的商城"],
+                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNEspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"特卖汇"],
+                  [[MiniTabBarItem alloc] initWithControllerClass:[MSNCreditableIndexViewController class] image:[MiniUIImage imageNamed:@"shop"] highlightedImage:[MiniUIImage imageNamed:@"shop_hover"] title:@"好店汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNFavViewController class] image:[MiniUIImage imageNamed:@"star"] highlightedImage:[MiniUIImage imageNamed:@"star_hover"] title:@"收藏夹"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNSettingsViewController class] image:[MiniUIImage imageNamed:@"more"] highlightedImage:[MiniUIImage imageNamed:@"more_hover"] title:@"更多"],
                   nil];

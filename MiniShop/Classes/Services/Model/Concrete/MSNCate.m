@@ -28,6 +28,15 @@
 
 
 @implementation MSNWellCate
+
+- (void)setParam:(id)param {
+    if ([param isKindOfClass:[NSNumber class]]) {
+        _param = [NSString stringWithFormat:@"%d",[param integerValue]];
+    }
+    else {
+        _param = param;
+    }
+}
 @end
 
 @implementation MSNWellCateGroup

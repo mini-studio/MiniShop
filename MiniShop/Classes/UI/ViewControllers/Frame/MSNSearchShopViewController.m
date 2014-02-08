@@ -57,7 +57,7 @@
     MSNUISearchBar *searchBar = [[MSNUISearchBar  alloc] initWithFrame:frame];
     searchBar.delegate = self;
     searchBar.placeholder = placeHolder;
-    searchBar.cancelButton = nil;
+    searchBar.showCancelButtonWhenEdit = NO;
     [self.naviTitleView addSubview:searchBar];
     return searchBar;
 }

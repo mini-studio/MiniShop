@@ -60,7 +60,13 @@
                 array = [NSMutableArray array];
                 _dataSource[key] = array;
             }
-            [array addObjectsFromArray:[self.info subarrayWithRange:NSMakeRange(index, 3)]];
+            int length = 3;
+            if (length+index>=count){
+                length = count-index;
+            }
+            NSRange rang = NSMakeRange(index, length);
+            
+            [array addObjectsFromArray:[self.info subarrayWithRange:rang]];
             [self.dataKey addObject:key];
             index += 3;
         }

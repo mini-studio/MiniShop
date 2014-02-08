@@ -61,6 +61,14 @@
         else {
             imageView.image = [UIImage imageNamed:cate.image_url];
         }
+        [imageView addTartget:self selector:@selector(handleTouchImage:) userInfo:cate];
+    }
+}
+
+- (void)handleTouchImage:(MiniUIButton*)button
+{
+    if (self.wellCateCellDelegate != nil ) {
+        [self.wellCateCellDelegate handleTouchInfo:button.userInfo];
     }
 }
 

@@ -927,7 +927,7 @@
                 for (int index = 0; index<3; index++) {
                     MSNWellCate *cate = [[MSNWellCate alloc] init];
                     cate.image_url = (index==0?@"entrance":(index==1?@"guess_hobby":@"present"));
-                    cate.param = -100+index;
+                    cate.param = [NSString stringWithFormat:@"%d",-100+index];
                     [item addObject:cate];
                 }
                 [(NSMutableArray*)data.info insertObject:group atIndex:0];

@@ -41,16 +41,16 @@
     [self.contentView addSubview:scrollveiw];
     
     self.nameField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, 20, self.contentView.width-40, 28)];
-    [self.nameField  setLeftTitle:@"用  户  名" color:[UIColor grayColor] placeholder:@"请输入用户名"];
-    [self.nameField  setBottomLine:[UIColor grayColor]];
+    [self.nameField  setLeftTitle:@"用  户  名" color:[UIColor whiteColor] placeholder:@"请输入用户名"];
+    [self.nameField  setBottomLine:[UIColor whiteColor]];
     self.nameField .returnKeyType = UIReturnKeyNext;
     [scrollveiw addSubview:self.nameField ];
     self.nameField.delegate = self;
     //self.nameField.text = @"wolfxy_a";
     
     self.passwdField = [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.nameField.bottom + 10, self.contentView.width-40, 28)];
-    [self.passwdField setLeftTitle:@"密       码" color:[UIColor grayColor] placeholder:@"请输入密码"];
-    [self.passwdField setBottomLine:[UIColor grayColor]];
+    [self.passwdField setLeftTitle:@"密       码" color:[UIColor whiteColor] placeholder:@"请输入密码"];
+    [self.passwdField setBottomLine:[UIColor whiteColor]];
     self.passwdField.returnKeyType = self.type==0?UIReturnKeyDone:UIReturnKeyNext;
     self.passwdField.delegate = self;
     self.passwdField.secureTextEntry = YES;
@@ -58,33 +58,21 @@
     [scrollveiw addSubview:self.passwdField];
     
     if ( self.type == 0 ) {
-//        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-//        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//        [button setTitleColor:[UIColor colorWithRGBA:0x55555555] forState:UIControlStateHighlighted];
-//        [button setTitle:@"忘记密码" forState:UIControlStateNormal];
-//        [button sizeToFit];
-//        button.width +=10;
-//        [button setBottomLine:[UIColor grayColor]];
-//        button.center = CGPointMake(scrollveiw.width/2, scrollveiw.height-240);
-//        [scrollveiw addSubview:button];
-//        [button addTarget:self action:@selector(actionForgotPasswd:) forControlEvents:UIControlEventTouchUpInside];
-
-        
         MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithRGBA:0x55555555] forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitle:@"新用户注册" forState:UIControlStateNormal];
         [button sizeToFit];
         button.width +=10;
-        [button setBottomLine:[UIColor grayColor]];
+        [button setBottomLine:[UIColor whiteColor]];
         button.center = CGPointMake(scrollveiw.width/2, scrollveiw.height-200);
         [button addTarget:self action:@selector(actionToRegiste:) forControlEvents:UIControlEventTouchUpInside];
         [scrollveiw addSubview:button];
     }
     else {
         self.mobileField =  [[MiniUIASTextField alloc] initWithFrame:CGRectMake(20, self.passwdField.bottom + 10, self.contentView.width-40, 28)];
-        [self.mobileField setLeftTitle:@"手机号码" color:[UIColor grayColor] placeholder:@"可以找回密码哟"];
-        [self.mobileField setBottomLine:[UIColor grayColor]];
+        [self.mobileField setLeftTitle:@"手机号码" color:[UIColor whiteColor] placeholder:@"可以找回密码哟"];
+        [self.mobileField setBottomLine:[UIColor whiteColor]];
         self.mobileField.returnKeyType = UIReturnKeyDone;
         self.mobileField.delegate = self;
         [scrollveiw addSubview:self.mobileField];
