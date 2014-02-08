@@ -13,6 +13,7 @@
 #import "MSNCate.h"
 #import "MSNWellCateCell.h"
 #import "MSUIWebViewController.h"
+#import "MSNShopListViewController.h"
 
 @interface MSNCreditableHeaderView : UITableViewHeaderFooterView
 @property (nonatomic,strong)UIView *leftview;
@@ -153,7 +154,9 @@
 - (void)handleTouchInfo:(MSNWellCate *)cate
 {
     if ([cate.param isEqualToString:@"-100"]) { //我的商城
-        
+        MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
+        controller.ctitle = @"我的商城";
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else if ([cate.param isEqualToString:@"-99"]){
         

@@ -98,12 +98,12 @@
     else {
         self.followerLabel.text = [NSString stringWithFormat:@"%@人关注",shopInfo.shop_like_num];
     }
+    //shopInfo.shop_logo = @"http://logo.taobao.com//51/dd/T1e521XehlXXb1upjX";
     if ( shopInfo.shop_logo.length >0 ) {
         __weak UIImageView *imageView = self.imageView;
         [imageView setImageWithURL:[NSURL URLWithString:shopInfo.shop_logo]  placeholderImage:[UIImage imageNamed:@"shop"] options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
         } failure:^(NSError *error) {
-            
         }];
     }
     else {
