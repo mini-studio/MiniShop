@@ -40,6 +40,7 @@
     [super layoutSubviews];
     self.leftview.height = self.height;
     self.textLabel.left = 10;
+    self.textLabel.centerY = self.height/2;
     self.tintColor = [UIColor clearColor];
     self.backgroundView = nil;
 }
@@ -107,44 +108,71 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section==0)
+        return 1;
+    else
+        return 2;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
-    return (group.title.length>0?20:0);
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
-    if (group.title.length == 0) {
-        return nil;
-    }
-    MSNCreditableHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-    view.textLabel.text = group.title;
-    return view;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
+//    return (group.title.length>0?20:0);
+//}
+//
+//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
+//    if (group.title.length == 0) {
+//        return nil;
+//    }
+//    MSNCreditableHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+//    view.textLabel.text = group.title;
+//    return view;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];
-    return [MSNWellCateCell heightForGroup:group];
+    if (indexPath.section>0 && indexPath.row==0) {
+        return 20;
+    }
+    else {
+        MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];
+        return [MSNWellCateCell heightForGroup:group];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"cell";
-    MSNWellCateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if ( cell == nil )
-    {
-        cell = [[MSNWellCateCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        cell.wellCateCellDelegate = self;
+    if (indexPath.section>0 && indexPath.row==0) {
+        NSString *identifier = @"cell-header";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if ( cell == nil )
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+            cell.backgroundView = nil;
+            cell.backgroundColor = [UIColor clearColor];
+            MSNCreditableHeaderView *view = [[MSNCreditableHeaderView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 20)];
+            view.tag = 100;
+            [cell addSubview:view];
+        }
+        MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];
+        MSNCreditableHeaderView *view = (MSNCreditableHeaderView*)[cell viewWithTag:100];
+        view.textLabel.text = group.title;
+        return cell;
     }
-    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];
-    cell.group = group;
-    return cell;
+    else {
+        NSString *identifier = @"cell";
+        MSNWellCateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if ( cell == nil )
+        {
+            cell = [[MSNWellCateCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+            cell.wellCateCellDelegate = self;
+        }
+        MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];
+        cell.group = group;
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
