@@ -10,5 +10,5 @@
 #import "MiniUITabBarController.h"
 
 @interface MSMainTabViewController : MiniUITabBarController
-
++ (MSMainTabViewController*)sharedInstance;
 @end

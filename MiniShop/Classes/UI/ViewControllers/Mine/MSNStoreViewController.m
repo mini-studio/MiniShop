@@ -12,6 +12,7 @@
 #import "MSTransformButton.h"
 #import "MSNCate.h"
 #import "MSNUISearchBar.h"
+#import "MSMainTabViewController.h"
 
 @interface MSNStoreViewController ()<MSTransformButtonDelegate>
 @property (nonatomic,strong)MSTransformButton *transformButton;
@@ -97,6 +98,8 @@
 
 - (void)actionJumpSearch:(MiniUIButton *)button
 {
+//    MSMainTabViewController *controller = [MSMainTabViewController sharedInstance];
+//    controller.currentSelectedIndex = 2;
     MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }

@@ -19,6 +19,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 
+MSMainTabViewController *tabController=nil;
+
 @interface MSTabBarView : MiniUITabBar
 
 @end
@@ -65,6 +67,7 @@
     self = [super init];
     if (self)
     {
+        tabController = self;
         self.controllerDelegate = self;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkEvent:) name:MSNetWorkErrorNitification object:nil];
     }
@@ -182,6 +185,11 @@
             [self.notiLabel removeFromSuperview];
         }];
     }];
+}
+
++ (MSMainTabViewController*)sharedInstance
+{
+    return tabController;
 }
 
 @end
