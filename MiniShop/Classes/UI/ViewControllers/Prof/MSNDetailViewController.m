@@ -15,7 +15,7 @@
 #import "MiniUIIndicator.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSString+Mini.h"
-#import "MSUIDTView.h"
+#import "MSNUIDTView.h"
 #import "MiniSysUtil.h"
 #import "MSNDetailToolBar.h"
 #import "MSNShopDetailViewController.h"
@@ -365,7 +365,7 @@
 @property (nonatomic,strong) MSNDetailView *detailView;
 
 @property (nonatomic,strong) UIView    *toolbar;
-@property (nonatomic,strong) MSUIDTView *dtView;
+@property (nonatomic,strong) MSNUIDTView *dtView;
 
 
 @property (nonatomic,strong) MSNGoodsItem *currentGoodsItem;
@@ -393,7 +393,7 @@
 {
     [super loadView]; 
     
-    self.dtView = [[MSUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    self.dtView = [[MSNUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     
     CGRect frame = self.contentView.bounds;
     frame.size = CGSizeMake(frame.size.width, frame.size.height-44);

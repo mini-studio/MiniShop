@@ -1,5 +1,5 @@
 //
-//  MSUIDTView.h
+//  MSNUIDTView.h
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-9-14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MiniUIWebView.h"
 
-@interface MSUIDTView : UIView
+@interface MSNUIDTView : UIView
 @property(nonatomic)CGFloat bestTop;
 @property(nonatomic,strong)MiniUIWebView *webView;
 @property(nonatomic,strong)NSString *mid;

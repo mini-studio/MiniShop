@@ -7,10 +7,10 @@
 //
 
 #import "MSUIWebViewController.h"
-#import "MSWebViewToolBar.h"
+#import "MSNWebViewToolBar.h"
 
 @interface MSUIWebViewController ()
-@property (nonatomic,strong)MSWebViewToolBar *minitoolbar;
+@property (nonatomic,strong)MSNWebViewToolBar *minitoolbar;
 @property (nonatomic,strong)NSURLRequest *request;
 @end
 
@@ -79,7 +79,7 @@
 
 - (void)createToolBar
 {
-    self.minitoolbar = [[MSWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.contentView.height - 45, self.contentView.width, 45)];
+    self.minitoolbar = [[MSNWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.contentView.height - 45, self.contentView.width, 45)];
     self.minitoolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     [self.minitoolbar.backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.minitoolbar.forwardButton addTarget:self action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];

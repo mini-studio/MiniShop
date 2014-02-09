@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 simo. All rights reserved.
 //
 
-#import "MSWebViewToolBar.h"
+#import "MSNWebViewToolBar.h"
 
-@implementation MSWebViewToolBar
+@implementation MSNWebViewToolBar
 
 const CGSize    KWebToolbarButtonForderSize = {300.0f, 41.0f};
 const CGSize    KWebToolbarButtonSize = {30.0f, 25.0f};

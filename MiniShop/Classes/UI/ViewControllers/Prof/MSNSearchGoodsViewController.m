@@ -8,13 +8,13 @@
 
 #import "MSNSearchGoodsViewController.h"
 #import "MSNUISearchBar.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "UIColor+Mini.h"
 #import "RTLabel.h"
 
 @interface MSNSearchGoodsViewHeaderView : UIView
 @property (nonatomic,strong)RTLabel *titleLabel;
-@property (nonatomic,strong)MSTransformButton *orderbyButton;
+@property (nonatomic,strong)MSNTransformButton *orderbyButton;
 @end
 
 @implementation MSNSearchGoodsViewHeaderView
@@ -25,7 +25,7 @@
     if (self) {
         self.titleLabel = [[RTLabel alloc] initWithFrame:CGRectMake(15, (self.height-16)/2, self.width*2/3-30, 16)];
         self.titleLabel.font = [UIFont systemFontOfSize:14];
-        self.orderbyButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.titleLabel.right + 30, 0, self.width/3-60, self.height)];
+        self.orderbyButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(self.titleLabel.right + 30, 0, self.width/3-60, self.height)];
         UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(self.titleLabel.right, 0, 1, self.height)];
         separator.backgroundColor = [UIColor colorWithRGBA:0xd14c60ff];
         [self addSubview:self.titleLabel];
@@ -53,7 +53,7 @@
 
 @interface MSNSearchGoodsViewController ()<UITextFieldDelegate,MSTransformButtonDelegate,MSNUISearchBarDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
-@property (nonatomic,strong)MSTransformButton *transformButton;
+@property (nonatomic,strong)MSNTransformButton *transformButton;
 @property (nonatomic,strong)MiniUIButton *cancelButton;
 
 @property (nonatomic,strong)MSNSearchGoodsViewHeaderView *titleSectionView;
@@ -93,7 +93,7 @@
     [self.naviTitleView addSubview:self.cancelButton];
     [self.cancelButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
-    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(15, 0, 60, self.naviTitleView.height)];
+    self.transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(15, 0, 60, self.naviTitleView.height)];
     self.transformButton.items = @[@"在我的\n商城搜",@"在好店\n汇搜索"];
     self.transformButton.fontSize = 14;
     self.transformButton.delegate = self;
@@ -171,7 +171,7 @@
      [self loadData:1 delay:0];
 }
 
-- (void)transformButtonValueChanged:(MSTransformButton*)button
+- (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     [self loadData:1 delay:0];
 }

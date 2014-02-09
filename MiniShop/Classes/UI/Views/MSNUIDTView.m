@@ -1,13 +1,13 @@
 //
-//  MSUIDTView.m
+//  MSNUIDTView.m
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-9-14.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSUIDTView.h"
-@interface MSUIDTView()<UIWebViewDelegate>
+#import "MSNUIDTView.h"
+@interface MSNUIDTView()<UIWebViewDelegate>
 @property (nonatomic,strong) UIPanGestureRecognizer *recognizer;
 @property (nonatomic,strong) UIActivityIndicatorView *indicator;
 @property (nonatomic) CGPoint lastTranslation;
@@ -15,7 +15,7 @@
 @property (nonatomic,strong) MiniUIButton *closeButton;
 @end
 
-@implementation MSUIDTView
+@implementation MSNUIDTView
 
 - (id)initWithFrame:(CGRect)frame
 {

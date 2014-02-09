@@ -8,7 +8,7 @@
 
 #import "MSNSearchShopTitleView.h"
 #import "RTLabel.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "UIColor+Mini.h"
 
 @interface MSNSearchShopTitleView()
@@ -39,7 +39,7 @@
     [self addSubview:separator];
     
 
-    _transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.width-100, 0, 80, 28)];
+    _transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(self.width-100, 0, 80, 28)];
     _transformButton.fontColor = [UIColor colorWithRGBA:0xd14c60ff];
     _transformButton.fontSize = 12;
     [self addSubview:_transformButton];

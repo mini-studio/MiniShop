@@ -14,7 +14,7 @@
 #import "MSUIMoreDataCell.h"
 #import "UIColor+Mini.h"
 #import "RTLabel.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "MSNSearchShopTitleView.h"
 #import "MSNShopDetailViewController.h"
 
@@ -221,7 +221,7 @@
     }];
 }
 
-- (void)transformButtonValueChanged:(MSTransformButton*)button
+- (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     if (button.selectedIndex==0) {
         self.orderby = @"";

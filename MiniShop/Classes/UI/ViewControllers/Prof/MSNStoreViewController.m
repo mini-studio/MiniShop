@@ -9,13 +9,13 @@
 #import "MSNStoreViewController.h"
 #import "MSNSearchGoodsViewController.h"
 #import "MSNaviMenuView.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "MSNCate.h"
 #import "MSNUISearchBar.h"
 #import "MSMainTabViewController.h"
 
 @interface MSNStoreViewController ()<MSTransformButtonDelegate>
-@property (nonatomic,strong)MSTransformButton *transformButton;
+@property (nonatomic,strong)MSNTransformButton *transformButton;
 @end
 
 @implementation MSNStoreViewController
@@ -32,7 +32,7 @@
 {
     [super loadView];
     self.naviTitleView.layer.masksToBounds = YES;
-    self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.right+10, 0, 50, self.naviTitleView.height)];
+    self.transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(self.topTitleView.right+10, 0, 50, self.naviTitleView.height)];
     [self.transformButton setAccessoryImage:[UIImage imageNamed:@"arrow_white"] himage:[UIImage imageNamed:@"arrow_white"]];
     self.transformButton.backgroundColor = NAVI_BG_COLOR;
     [self.naviTitleView addSubview:self.transformButton];
@@ -104,7 +104,7 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)transformButtonValueChanged:(MSTransformButton*)button
+- (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     for (MSNStoreContentViewController *controller in self.subControllers ) {
         controller.orderby = button.selectedValue;

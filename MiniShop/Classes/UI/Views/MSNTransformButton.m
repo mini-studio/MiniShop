@@ -1,21 +1,21 @@
 //
-//  MSTransformButton.m
+//  MSNTransformButton.m
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-11-30.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 
-@interface MSTransformButton()
+@interface MSNTransformButton()
 @property (nonatomic,strong) UILabel *label;
 @property (nonatomic,strong) UILabel *slabel;
 @property (nonatomic,strong) MiniUIButton *button;
 @property (nonatomic,strong) MiniUIButton *accessorybutton;
 @end
 
-@implementation MSTransformButton
+@implementation MSNTransformButton
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSWebViewToolBar : UIImageView
+@interface MSNWebViewToolBar : UIImageView
 {
     UIImageView*    _buttonForderImageView;
     

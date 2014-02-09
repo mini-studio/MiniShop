@@ -7,7 +7,7 @@
 //
 
 #import "MSNUISearchBar.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "UIColor+Mini.h"
 
 @interface InnerUISearchBar : UISearchBar

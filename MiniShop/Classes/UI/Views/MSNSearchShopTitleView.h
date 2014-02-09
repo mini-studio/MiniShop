@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 
 @interface MSNSearchShopTitleView : UIView
 @property (nonatomic,strong)NSString *keyWord;
-@property (nonatomic,readonly) MSTransformButton *transformButton;
+@property (nonatomic,readonly) MSNTransformButton *transformButton;
 @end

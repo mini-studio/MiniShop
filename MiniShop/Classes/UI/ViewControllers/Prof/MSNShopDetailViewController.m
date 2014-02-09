@@ -9,13 +9,13 @@
 #import "MSNShopDetailViewController.h"
 #import "MSNShopInfoView.h"
 #import "MSNUISearchBar.h"
-#import "MSTransformButton.h"
+#import "MSNTransformButton.h"
 #import "UIColor+Mini.h"
 
 @interface MSNShopMessageView : UIView <UITextFieldDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)UIView *messageView;
 @property (nonatomic,strong)UILabel *numberLabel;
-@property (nonatomic,strong)MSTransformButton *transformButton;
+@property (nonatomic,strong)MSNTransformButton *transformButton;
 @property (nonatomic,strong)MiniUIButton *searchButton;
 @property (nonatomic,strong)MiniUIButton *arrowButton;
 
@@ -42,7 +42,7 @@
         self.numberLabel.textColor = [UIColor colorWithRGBA:0x414345FF];
         [self.messageView addSubview:self.numberLabel];
         
-        self.transformButton = [[MSTransformButton alloc] initWithFrame:CGRectMake(230, top, 36, 14)];
+        self.transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(230, top, 36, 14)];
         self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
         self.transformButton.fontColor = [UIColor colorWithRGBA:0xd14c60ff];
         self.transformButton.fontSize=14;
@@ -136,7 +136,7 @@
     }
 }
 
-- (void)transformButtonValueChanged:(MSTransformButton*)button
+- (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     if (self.handleSearchBlock!=nil) {
         self.handleSearchBlock(self.searchField.text,[self getOrderbyValue]);
