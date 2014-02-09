@@ -44,12 +44,20 @@
 		C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */; };
 		C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C10DF880186C891F0094B86B /* MSNWellCateCell.m */; };
 		C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */; };
-		C10EDD3E18451A4100503993 /* MSNStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10EDD3D18451A4100503993 /* MSNStoreViewController.m */; };
-		C10FC68A18A6A6D400A23F02 /* MSNShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC68918A6A6D400A23F02 /* MSNShopListViewController.m */; };
+		C10FC6A818A7C25900A23F02 /* MSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69118A7C25900A23F02 /* MSGuideViewController.m */; };
+		C10FC6A918A7C25900A23F02 /* MSMainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69318A7C25900A23F02 /* MSMainTabViewController.m */; };
+		C10FC6AA18A7C25900A23F02 /* MSNCreditableIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69518A7C25900A23F02 /* MSNCreditableIndexViewController.m */; };
+		C10FC6AB18A7C25900A23F02 /* MSNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69718A7C25900A23F02 /* MSNDetailViewController.m */; };
+		C10FC6AC18A7C25900A23F02 /* MSNEspecialIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69918A7C25900A23F02 /* MSNEspecialIndexViewController.m */; };
+		C10FC6AD18A7C25900A23F02 /* MSNFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69B18A7C25900A23F02 /* MSNFavViewController.m */; };
+		C10FC6AE18A7C25900A23F02 /* MSNGoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69D18A7C25900A23F02 /* MSNGoodListViewController.m */; };
+		C10FC6AF18A7C25900A23F02 /* MSNSearchGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69F18A7C25900A23F02 /* MSNSearchGoodsViewController.m */; };
+		C10FC6B018A7C25900A23F02 /* MSNSearchShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A118A7C25900A23F02 /* MSNSearchShopViewController.m */; };
+		C10FC6B118A7C25900A23F02 /* MSNShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A318A7C25900A23F02 /* MSNShopDetailViewController.m */; };
+		C10FC6B218A7C25900A23F02 /* MSNShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */; };
+		C10FC6B318A7C25900A23F02 /* MSNStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */; };
 		C10FD762189572390014521E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C10FD761189572390014521E /* heart.png */; };
-		C1254B5A186E4E960007D510 /* MSNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B59186E4E960007D510 /* MSNDetailViewController.m */; };
 		C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B5C186E9AB40007D510 /* MSNShop.m */; };
-		C1254B61186EABAF0007D510 /* MSNSearchShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B60186EABAF0007D510 /* MSNSearchShopViewController.m */; };
 		C1254B64186EB2E80007D510 /* MSNShopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B63186EB2E80007D510 /* MSNShopInfoCell.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
 		C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA817E8F5930097CFBD /* MRLoginViewController.m */; };
@@ -63,7 +71,6 @@
 		C12E4975180A345500482A10 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C4A616FF4CD800ED87D8 /* Security.framework */; };
 		C12E4978180A37B900482A10 /* MSKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C12E4977180A37B900482A10 /* MSKeychainWrapper.m */; };
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
-		C143AD8A1871D49C0089949C /* MSNFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C143AD891871D49C0089949C /* MSNFavViewController.m */; };
 		C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */; };
 		C14E67AE17E7D1E0000BA377 /* navi_fav_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */; };
 		C14E67AF17E7D1E0000BA377 /* navi_fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E67AB17E7D1E0000BA377 /* navi_fav@2x.png */; };
@@ -83,7 +90,6 @@
 		C169C59516FF4FC600ED87D8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59416FF4FC600ED87D8 /* CoreLocation.framework */; };
 		C169C59716FF4FD200ED87D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59616FF4FD200ED87D8 /* MapKit.framework */; };
 		C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59816FF4FF400ED87D8 /* AddressBook.framework */; };
-		C180FB1A18780BFF00F25C2C /* MSNShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C180FB1918780BFF00F25C2C /* MSNShopDetailViewController.m */; };
 		C180FB231878555800F25C2C /* more_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1B1878555800F25C2C /* more_hover@2x.png */; };
 		C180FB241878555800F25C2C /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1C1878555800F25C2C /* more@2x.png */; };
 		C180FB251878555800F25C2C /* sale_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1D1878555800F25C2C /* sale_hover@2x.png */; };
@@ -130,14 +136,10 @@
 		C1B0F216188469F600D222E5 /* MSNDetailToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B0F215188469F600D222E5 /* MSNDetailToolBar.m */; };
 		C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339EE184A25E600851585 /* MSFrameViewController.m */; };
 		C1B339F2184A30B800851585 /* MSTransformButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F1184A30B800851585 /* MSTransformButton.m */; };
-		C1B339FA184B836800851585 /* MSNEspecialIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339F9184B836800851585 /* MSNEspecialIndexViewController.m */; };
-		C1B339FE184B841F00851585 /* MSNCreditableIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B339FD184B841F00851585 /* MSNCreditableIndexViewController.m */; };
 		C1B7074F181BD9C400485B26 /* closep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B7074E181BD9C400485B26 /* closep@2x.png */; };
 		C1B9E3EC18A2962A00FC89EF /* close_s_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B9E3EA18A2962A00FC89EF /* close_s_hover@2x.png */; };
 		C1B9E3ED18A2962A00FC89EF /* close_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B9E3EB18A2962A00FC89EF /* close_s@2x.png */; };
 		C1BC455E18A231D50020D05C /* arrow_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BC455D18A231D50020D05C /* arrow_white@2x.png */; };
-		C1C7BBA618777FE8008EE14E /* MSNGoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C7BBA518777FE8008EE14E /* MSNGoodListViewController.m */; };
-		C1C7BBA918778208008EE14E /* MSNSearchGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C7BBA818778208008EE14E /* MSNSearchGoodsViewController.m */; };
 		C1D5494118919CD1000755D4 /* money_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D5493B18919CD1000755D4 /* money_hover@2x.png */; };
 		C1D5494218919CD1000755D4 /* money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D5493C18919CD1000755D4 /* money@2x.png */; };
 		C1D5494318919CD1000755D4 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D5493D18919CD1000755D4 /* share@2x.png */; };
@@ -173,8 +175,6 @@
 		C1EC507D178074A100BE5ABB /* MSUIAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5019178074A100BE5ABB /* MSUIAuthWebViewController.m */; };
 		C1EC507E178074A100BE5ABB /* MSUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */; };
 		C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501D178074A100BE5ABB /* MSViewController.m */; };
-		C1EC5084178074A100BE5ABB /* MSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5029178074A100BE5ABB /* MSGuideViewController.m */; };
-		C1EC5086178074A100BE5ABB /* MSMainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */; };
 		C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC503E178074A100BE5ABB /* MSAboutViewController.m */; };
 		C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5040178074A100BE5ABB /* MSFeedbackViewController.m */; };
 		C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5042178074A100BE5ABB /* MSJoinViewController.m */; };
@@ -349,8 +349,6 @@
 		C10DF880186C891F0094B86B /* MSNWellCateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNWellCateCell.m; sourceTree = "<group>"; };
 		C10EDD391844F2ED00503993 /* MSNaviMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNaviMenuView.h; sourceTree = "<group>"; };
 		C10EDD3A1844F2ED00503993 /* MSNaviMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNaviMenuView.m; sourceTree = "<group>"; };
-		C10EDD3C18451A4100503993 /* MSNStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNStoreViewController.h; sourceTree = "<group>"; };
-		C10EDD3D18451A4100503993 /* MSNStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNStoreViewController.m; sourceTree = "<group>"; };
 		C10EDD7A18451D2A00503993 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		C10EDD7B18451D2A00503993 /* NSDate+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Mini.h"; sourceTree = "<group>"; };
 		C10EDD7C18451D2A00503993 /* NSIndexPath+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Mini.h"; sourceTree = "<group>"; };
@@ -400,15 +398,33 @@
 		C10EDDAF18451D2A00503993 /* MiniUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITextView.h; sourceTree = "<group>"; };
 		C10EDDB018451D2A00503993 /* MiniUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIToolBar.h; sourceTree = "<group>"; };
 		C10EDDB118451D2A00503993 /* MiniUITouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUITouchView.h; sourceTree = "<group>"; };
-		C10FC68818A6A6D400A23F02 /* MSNShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopListViewController.h; sourceTree = "<group>"; };
-		C10FC68918A6A6D400A23F02 /* MSNShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopListViewController.m; sourceTree = "<group>"; };
+		C10FC69018A7C25900A23F02 /* MSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideViewController.h; sourceTree = "<group>"; };
+		C10FC69118A7C25900A23F02 /* MSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGuideViewController.m; sourceTree = "<group>"; };
+		C10FC69218A7C25900A23F02 /* MSMainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainTabViewController.h; sourceTree = "<group>"; };
+		C10FC69318A7C25900A23F02 /* MSMainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainTabViewController.m; sourceTree = "<group>"; };
+		C10FC69418A7C25900A23F02 /* MSNCreditableIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNCreditableIndexViewController.h; sourceTree = "<group>"; };
+		C10FC69518A7C25900A23F02 /* MSNCreditableIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNCreditableIndexViewController.m; sourceTree = "<group>"; };
+		C10FC69618A7C25900A23F02 /* MSNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNDetailViewController.h; sourceTree = "<group>"; };
+		C10FC69718A7C25900A23F02 /* MSNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNDetailViewController.m; sourceTree = "<group>"; };
+		C10FC69818A7C25900A23F02 /* MSNEspecialIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNEspecialIndexViewController.h; sourceTree = "<group>"; };
+		C10FC69918A7C25900A23F02 /* MSNEspecialIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNEspecialIndexViewController.m; sourceTree = "<group>"; };
+		C10FC69A18A7C25900A23F02 /* MSNFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNFavViewController.h; sourceTree = "<group>"; };
+		C10FC69B18A7C25900A23F02 /* MSNFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNFavViewController.m; sourceTree = "<group>"; };
+		C10FC69C18A7C25900A23F02 /* MSNGoodListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodListViewController.h; sourceTree = "<group>"; };
+		C10FC69D18A7C25900A23F02 /* MSNGoodListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodListViewController.m; sourceTree = "<group>"; };
+		C10FC69E18A7C25900A23F02 /* MSNSearchGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchGoodsViewController.h; sourceTree = "<group>"; };
+		C10FC69F18A7C25900A23F02 /* MSNSearchGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchGoodsViewController.m; sourceTree = "<group>"; };
+		C10FC6A018A7C25900A23F02 /* MSNSearchShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchShopViewController.h; sourceTree = "<group>"; };
+		C10FC6A118A7C25900A23F02 /* MSNSearchShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchShopViewController.m; sourceTree = "<group>"; };
+		C10FC6A218A7C25900A23F02 /* MSNShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopDetailViewController.h; sourceTree = "<group>"; };
+		C10FC6A318A7C25900A23F02 /* MSNShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopDetailViewController.m; sourceTree = "<group>"; };
+		C10FC6A418A7C25900A23F02 /* MSNShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopListViewController.h; sourceTree = "<group>"; };
+		C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopListViewController.m; sourceTree = "<group>"; };
+		C10FC6A618A7C25900A23F02 /* MSNStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNStoreViewController.h; sourceTree = "<group>"; };
+		C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNStoreViewController.m; sourceTree = "<group>"; };
 		C10FD761189572390014521E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
-		C1254B58186E4E960007D510 /* MSNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNDetailViewController.h; sourceTree = "<group>"; };
-		C1254B59186E4E960007D510 /* MSNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNDetailViewController.m; sourceTree = "<group>"; };
 		C1254B5B186E9AB40007D510 /* MSNShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShop.h; sourceTree = "<group>"; };
 		C1254B5C186E9AB40007D510 /* MSNShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShop.m; sourceTree = "<group>"; };
-		C1254B5F186EABAF0007D510 /* MSNSearchShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchShopViewController.h; sourceTree = "<group>"; };
-		C1254B60186EABAF0007D510 /* MSNSearchShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchShopViewController.m; sourceTree = "<group>"; };
 		C1254B62186EB2E80007D510 /* MSNShopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopInfoCell.h; sourceTree = "<group>"; };
 		C1254B63186EB2E80007D510 /* MSNShopInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopInfoCell.m; sourceTree = "<group>"; };
 		C12C2CA217E8A2D40097CFBD /* NSUserDefaults+Mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Mini.h"; sourceTree = "<group>"; };
@@ -429,8 +445,6 @@
 		C12E4976180A37B900482A10 /* MSKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSKeychainWrapper.h; sourceTree = "<group>"; };
 		C12E4977180A37B900482A10 /* MSKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSKeychainWrapper.m; sourceTree = "<group>"; };
 		C14341ED17D0F38E004E1AFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
-		C143AD881871D49C0089949C /* MSNFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNFavViewController.h; sourceTree = "<group>"; };
-		C143AD891871D49C0089949C /* MSNFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNFavViewController.m; sourceTree = "<group>"; };
 		C14D9EBD17F7A6760027627E /* MiniUIPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniUIPhotoImageView.h; sourceTree = "<group>"; };
 		C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniUIPhotoImageView.m; sourceTree = "<group>"; };
 		C14E67AA17E7D1E0000BA377 /* navi_fav_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_fav_h@2x.png"; sourceTree = "<group>"; };
@@ -520,8 +534,6 @@
 		C169C60816FF55A800ED87D8 /* SVPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlacemark.h; sourceTree = "<group>"; };
 		C169C60A16FF55A800ED87D8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C169C60B16FF55A800ED87D8 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		C180FB1818780BFF00F25C2C /* MSNShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopDetailViewController.h; sourceTree = "<group>"; };
-		C180FB1918780BFF00F25C2C /* MSNShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopDetailViewController.m; sourceTree = "<group>"; };
 		C180FB1B1878555800F25C2C /* more_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_hover@2x.png"; sourceTree = "<group>"; };
 		C180FB1C1878555800F25C2C /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		C180FB1D1878555800F25C2C /* sale_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sale_hover@2x.png"; sourceTree = "<group>"; };
@@ -587,18 +599,10 @@
 		C1B339EE184A25E600851585 /* MSFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFrameViewController.m; sourceTree = "<group>"; };
 		C1B339F0184A30B800851585 /* MSTransformButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransformButton.h; sourceTree = "<group>"; };
 		C1B339F1184A30B800851585 /* MSTransformButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransformButton.m; sourceTree = "<group>"; };
-		C1B339F8184B836800851585 /* MSNEspecialIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNEspecialIndexViewController.h; sourceTree = "<group>"; };
-		C1B339F9184B836800851585 /* MSNEspecialIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNEspecialIndexViewController.m; sourceTree = "<group>"; };
-		C1B339FC184B841F00851585 /* MSNCreditableIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNCreditableIndexViewController.h; sourceTree = "<group>"; };
-		C1B339FD184B841F00851585 /* MSNCreditableIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNCreditableIndexViewController.m; sourceTree = "<group>"; };
 		C1B7074E181BD9C400485B26 /* closep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closep@2x.png"; sourceTree = "<group>"; };
 		C1B9E3EA18A2962A00FC89EF /* close_s_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_s_hover@2x.png"; sourceTree = "<group>"; };
 		C1B9E3EB18A2962A00FC89EF /* close_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_s@2x.png"; sourceTree = "<group>"; };
 		C1BC455D18A231D50020D05C /* arrow_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_white@2x.png"; sourceTree = "<group>"; };
-		C1C7BBA418777FE8008EE14E /* MSNGoodListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodListViewController.h; sourceTree = "<group>"; };
-		C1C7BBA518777FE8008EE14E /* MSNGoodListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodListViewController.m; sourceTree = "<group>"; };
-		C1C7BBA718778208008EE14E /* MSNSearchGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchGoodsViewController.h; sourceTree = "<group>"; };
-		C1C7BBA818778208008EE14E /* MSNSearchGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchGoodsViewController.m; sourceTree = "<group>"; };
 		C1D5493B18919CD1000755D4 /* money_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_hover@2x.png"; sourceTree = "<group>"; };
 		C1D5493C18919CD1000755D4 /* money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money@2x.png"; sourceTree = "<group>"; };
 		C1D5493D18919CD1000755D4 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
@@ -664,10 +668,6 @@
 		C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUIWebViewController.m; sourceTree = "<group>"; };
 		C1EC501C178074A100BE5ABB /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		C1EC501D178074A100BE5ABB /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
-		C1EC5028178074A100BE5ABB /* MSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideViewController.h; sourceTree = "<group>"; };
-		C1EC5029178074A100BE5ABB /* MSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGuideViewController.m; sourceTree = "<group>"; };
-		C1EC502C178074A100BE5ABB /* MSMainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainTabViewController.h; sourceTree = "<group>"; };
-		C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainTabViewController.m; sourceTree = "<group>"; };
 		C1EC503D178074A100BE5ABB /* MSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAboutViewController.h; sourceTree = "<group>"; };
 		C1EC503E178074A100BE5ABB /* MSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAboutViewController.m; sourceTree = "<group>"; };
 		C1EC503F178074A100BE5ABB /* MSFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFeedbackViewController.h; sourceTree = "<group>"; };
@@ -1043,6 +1043,37 @@
 			path = em;
 			sourceTree = "<group>";
 		};
+		C10FC68F18A7C25900A23F02 /* Prof */ = {
+			isa = PBXGroup;
+			children = (
+				C10FC69018A7C25900A23F02 /* MSGuideViewController.h */,
+				C10FC69118A7C25900A23F02 /* MSGuideViewController.m */,
+				C10FC69218A7C25900A23F02 /* MSMainTabViewController.h */,
+				C10FC69318A7C25900A23F02 /* MSMainTabViewController.m */,
+				C10FC69418A7C25900A23F02 /* MSNCreditableIndexViewController.h */,
+				C10FC69518A7C25900A23F02 /* MSNCreditableIndexViewController.m */,
+				C10FC69618A7C25900A23F02 /* MSNDetailViewController.h */,
+				C10FC69718A7C25900A23F02 /* MSNDetailViewController.m */,
+				C10FC69818A7C25900A23F02 /* MSNEspecialIndexViewController.h */,
+				C10FC69918A7C25900A23F02 /* MSNEspecialIndexViewController.m */,
+				C10FC69A18A7C25900A23F02 /* MSNFavViewController.h */,
+				C10FC69B18A7C25900A23F02 /* MSNFavViewController.m */,
+				C10FC69C18A7C25900A23F02 /* MSNGoodListViewController.h */,
+				C10FC69D18A7C25900A23F02 /* MSNGoodListViewController.m */,
+				C10FC69E18A7C25900A23F02 /* MSNSearchGoodsViewController.h */,
+				C10FC69F18A7C25900A23F02 /* MSNSearchGoodsViewController.m */,
+				C10FC6A018A7C25900A23F02 /* MSNSearchShopViewController.h */,
+				C10FC6A118A7C25900A23F02 /* MSNSearchShopViewController.m */,
+				C10FC6A218A7C25900A23F02 /* MSNShopDetailViewController.h */,
+				C10FC6A318A7C25900A23F02 /* MSNShopDetailViewController.m */,
+				C10FC6A418A7C25900A23F02 /* MSNShopListViewController.h */,
+				C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */,
+				C10FC6A618A7C25900A23F02 /* MSNStoreViewController.h */,
+				C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */,
+			);
+			path = Prof;
+			sourceTree = "<group>";
+		};
 		C15918C717021DF800331097 /* SVSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1412,24 +1443,6 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		C1B339F7184B836800851585 /* Especial */ = {
-			isa = PBXGroup;
-			children = (
-				C1B339F8184B836800851585 /* MSNEspecialIndexViewController.h */,
-				C1B339F9184B836800851585 /* MSNEspecialIndexViewController.m */,
-			);
-			path = Especial;
-			sourceTree = "<group>";
-		};
-		C1B339FB184B83D500851585 /* Credit */ = {
-			isa = PBXGroup;
-			children = (
-				C1B339FC184B841F00851585 /* MSNCreditableIndexViewController.h */,
-				C1B339FD184B841F00851585 /* MSNCreditableIndexViewController.m */,
-			);
-			path = Credit;
-			sourceTree = "<group>";
-		};
 		C1EC4FD3178074A100BE5ABB /* Apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -1585,11 +1598,8 @@
 		C1EC5011178074A100BE5ABB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1B339FB184B83D500851585 /* Credit */,
-				C1B339F7184B836800851585 /* Especial */,
+				C10FC68F18A7C25900A23F02 /* Prof */,
 				C1EC5012178074A100BE5ABB /* Base */,
-				C1EC5025178074A100BE5ABB /* Frame */,
-				C1EC5034178074A100BE5ABB /* Mine */,
 				C1EC503C178074A100BE5ABB /* More */,
 			);
 			path = ViewControllers;
@@ -1620,40 +1630,6 @@
 				C1EC5017178074A100BE5ABB /* MSMiniUINavigationController.m */,
 			);
 			path = Mini;
-			sourceTree = "<group>";
-		};
-		C1EC5025178074A100BE5ABB /* Frame */ = {
-			isa = PBXGroup;
-			children = (
-				C1EC5028178074A100BE5ABB /* MSGuideViewController.h */,
-				C1EC5029178074A100BE5ABB /* MSGuideViewController.m */,
-				C1EC502C178074A100BE5ABB /* MSMainTabViewController.h */,
-				C1EC502D178074A100BE5ABB /* MSMainTabViewController.m */,
-				C1254B58186E4E960007D510 /* MSNDetailViewController.h */,
-				C1254B59186E4E960007D510 /* MSNDetailViewController.m */,
-				C1254B5F186EABAF0007D510 /* MSNSearchShopViewController.h */,
-				C1254B60186EABAF0007D510 /* MSNSearchShopViewController.m */,
-				C10FC68818A6A6D400A23F02 /* MSNShopListViewController.h */,
-				C10FC68918A6A6D400A23F02 /* MSNShopListViewController.m */,
-			);
-			path = Frame;
-			sourceTree = "<group>";
-		};
-		C1EC5034178074A100BE5ABB /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-				C10EDD3C18451A4100503993 /* MSNStoreViewController.h */,
-				C10EDD3D18451A4100503993 /* MSNStoreViewController.m */,
-				C143AD881871D49C0089949C /* MSNFavViewController.h */,
-				C143AD891871D49C0089949C /* MSNFavViewController.m */,
-				C1C7BBA418777FE8008EE14E /* MSNGoodListViewController.h */,
-				C1C7BBA518777FE8008EE14E /* MSNGoodListViewController.m */,
-				C1C7BBA718778208008EE14E /* MSNSearchGoodsViewController.h */,
-				C1C7BBA818778208008EE14E /* MSNSearchGoodsViewController.m */,
-				C180FB1818780BFF00F25C2C /* MSNShopDetailViewController.h */,
-				C180FB1918780BFF00F25C2C /* MSNShopDetailViewController.m */,
-			);
-			path = Mine;
 			sourceTree = "<group>";
 		};
 		C1EC503C178074A100BE5ABB /* More */ = {
@@ -2267,28 +2243,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C7BBA618777FE8008EE14E /* MSNGoodListViewController.m in Sources */,
 				C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */,
 				C10DF881186C891F0094B86B /* MSNWellCateCell.m in Sources */,
 				C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */,
 				C12CFEFC18578D120056308C /* MSNCate.m in Sources */,
 				C10BE74217765C3C009E6482 /* UMContactViewController.m in Sources */,
 				C10BE74417765C3C009E6482 /* UMFeedbackTableViewCellLeft.m in Sources */,
+				C10FC6AF18A7C25900A23F02 /* MSNSearchGoodsViewController.m in Sources */,
 				C10BE74517765C3C009E6482 /* UMFeedbackTableViewCellRight.m in Sources */,
+				C10FC6B318A7C25900A23F02 /* MSNStoreViewController.m in Sources */,
 				C10BE74617765C3C009E6482 /* UMFeedbackViewController.m in Sources */,
 				C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */,
 				C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */,
-				C10EDD3E18451A4100503993 /* MSNStoreViewController.m in Sources */,
 				C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */,
 				C12C2CA917E8F5930097CFBD /* MRLoginViewController.m in Sources */,
-				C143AD8A1871D49C0089949C /* MSNFavViewController.m in Sources */,
+				C10FC6A918A7C25900A23F02 /* MSMainTabViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */,
 				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
+				C10FC6B118A7C25900A23F02 /* MSNShopDetailViewController.m in Sources */,
 				C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */,
 				C1EC5069178074A100BE5ABB /* MSImageInfo.m in Sources */,
-				C10FC68A18A6A6D400A23F02 /* MSNShopListViewController.m in Sources */,
-				C180FB1A18780BFF00F25C2C /* MSNShopDetailViewController.m in Sources */,
 				C1EC506A178074A100BE5ABB /* MSNotify.m in Sources */,
 				C1EC506B178074A100BE5ABB /* MSNotiItemInfo.m in Sources */,
 				C1EC506C178074A100BE5ABB /* MSPotentialInfo.m in Sources */,
@@ -2301,7 +2276,6 @@
 				C1EC5070178074A100BE5ABB /* MSSystem.m in Sources */,
 				C1EC5071178074A100BE5ABB /* MSUser.m in Sources */,
 				C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */,
-				C1254B61186EABAF0007D510 /* MSNSearchShopViewController.m in Sources */,
 				C1EC5072178074A100BE5ABB /* MSVersion.m in Sources */,
 				C1EC5073178074A100BE5ABB /* MiniNSURLProtocol.m in Sources */,
 				C1EC5074178074A100BE5ABB /* MiniURLCache.m in Sources */,
@@ -2310,30 +2284,31 @@
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */,
-				C1C7BBA918778208008EE14E /* MSNSearchGoodsViewController.m in Sources */,
 				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
 				C1B001B0187B0F5A004BA1AE /* MSNShopInfoView.m in Sources */,
-				C1254B5A186E4E960007D510 /* MSNDetailViewController.m in Sources */,
-				C1B339FE184B841F00851585 /* MSNCreditableIndexViewController.m in Sources */,
+				C10FC6B018A7C25900A23F02 /* MSNSearchShopViewController.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,
 				C1EC5079178074A100BE5ABB /* UILabel+Mini.m in Sources */,
+				C10FC6B218A7C25900A23F02 /* MSNShopListViewController.m in Sources */,
 				C1EC507A178074A100BE5ABB /* UITableViewCell+GroupBackGround.m in Sources */,
 				C1EC507B178074A100BE5ABB /* MiniUIWebViewController.m in Sources */,
 				C1EC507C178074A100BE5ABB /* MSMiniUINavigationController.m in Sources */,
 				C1EC507D178074A100BE5ABB /* MSUIAuthWebViewController.m in Sources */,
+				C10FC6AE18A7C25900A23F02 /* MSNGoodListViewController.m in Sources */,
 				C1EC507E178074A100BE5ABB /* MSUIWebViewController.m in Sources */,
 				C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */,
 				C1B0F216188469F600D222E5 /* MSNDetailToolBar.m in Sources */,
 				C1B339EF184A25E600851585 /* MSFrameViewController.m in Sources */,
-				C1EC5084178074A100BE5ABB /* MSGuideViewController.m in Sources */,
+				C10FC6AD18A7C25900A23F02 /* MSNFavViewController.m in Sources */,
 				C1FEB1BD17E3E7EB0076BEEA /* MSUIDTView.m in Sources */,
-				C1EC5086178074A100BE5ABB /* MSMainTabViewController.m in Sources */,
-				C1B339FA184B836800851585 /* MSNEspecialIndexViewController.m in Sources */,
+				C10FC6AB18A7C25900A23F02 /* MSNDetailViewController.m in Sources */,
+				C10FC6A818A7C25900A23F02 /* MSGuideViewController.m in Sources */,
 				C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
 				C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */,
 				C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */,
+				C10FC6AA18A7C25900A23F02 /* MSNCreditableIndexViewController.m in Sources */,
 				C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */,
 				C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */,
 				C1EC5090178074A100BE5ABB /* MSNSettingsViewController.m in Sources */,
@@ -2347,6 +2322,7 @@
 				C1867359189E4119006EC8C5 /* MSNSearchShopTitleView.m in Sources */,
 				C1B0F212188439E800D222E5 /* UMTableViewController.m in Sources */,
 				C1EC509C178074A100BE5ABB /* MSNUISearchBar.m in Sources */,
+				C10FC6AC18A7C25900A23F02 /* MSNEspecialIndexViewController.m in Sources */,
 				C1EC509D178074A100BE5ABB /* MSWebViewToolBar.m in Sources */,
 				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,
 				C1EC51751780751A00BE5ABB /* main.m in Sources */,
