@@ -72,42 +72,77 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataSource numberOfRows];
+    if ([self.dataSource.sort isEqualToString:SORT_TIME]) {
+        return  2*[self.dataSource numberOfRows];
+    }
+    else {
+        return [self.dataSource numberOfRows];
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0;
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return 0;
+    return nil;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *ds = (NSArray*)[self.dataSource dataAtIndex:(unsigned)indexPath.row];
-    return [MSNGoodsTableCell heightForItems:ds width:tableView.width];
+    if ([self.dataSource.sort isEqualToString:SORT_TIME] && indexPath.row%2==0) {
+        return  42;
+    }
+    else {
+        int index = indexPath.row;
+        if ([self.dataSource.sort isEqualToString:SORT_TIME]) {
+            index/=2;
+        }
+        NSArray *ds = (NSArray*)[self.dataSource dataAtIndex:index];
+        return [MSNGoodsTableCell heightForItems:ds width:tableView.width];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"cell";
-    MSNGoodsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if ( cell == nil )
-    {
-        cell = [[MSNGoodsTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    BOOL isHeader = ([self.dataSource.sort isEqualToString:SORT_TIME] && indexPath.row%2==0);
+    if (isHeader) {
+        NSString *identifier = @"h-cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (cell==nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.backgroundView = nil;
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 200, 12)];
+            label.font = [UIFont systemFontOfSize:12];
+            label.textColor = [UIColor colorWithRGBA:0xF2deddff];
+            [cell addSubview:label];
+            label.tag = 110;
+        }
+        UILabel *label = (UILabel*)[cell viewWithTag:110];
+        label.text = [NSString stringWithFormat:@"%@上新",[self.dataSource keyAtIndex:indexPath.row/2]];
+        return cell;
     }
-    NSArray *ds = [self.dataSource dataAtIndex:indexPath.row];
-    if ( indexPath.section < ds.count )
-    {
-        cell.items = ds;
-        [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];
+    else {
+        NSString *identifier = @"cell";
+        MSNGoodsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if ( cell == nil )
+        {
+            cell = [[MSNGoodsTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        }
+        int index = [self.dataSource.sort isEqualToString:SORT_TIME]?(indexPath.row)/2:indexPath.row;
+        NSArray *ds = [self.dataSource dataAtIndex:index];
+        if ( indexPath.section < ds.count )
+        {
+            cell.items = ds;
+            [cell setCellTheme:tableView indexPath:indexPath backgroundCorlor:[UIColor colorWithWhite:1.0f alpha:0.8f] highlightedBackgroundCorlor:[UIColor colorWithRGBA:0xCCCCCCAA]  sectionRowNumbers:1];
+        }
+        cell.controller = self;
+        return cell;
     }
-    cell.controller = self;
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

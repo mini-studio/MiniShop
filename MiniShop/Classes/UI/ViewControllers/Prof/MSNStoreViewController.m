@@ -156,6 +156,65 @@
     [self refreshData];
 }
 
+- (void)receiveData:(MSNGoodsList*)data page:(int)page
+{
+    if (page==1) {
+        [self showEmptyView];
+    }
+    else {
+        [super receiveData:data page:page];
+    }
+}
+
+- (void)showEmptyView
+{
+    UIView *view = [self.view.superview viewWithTag:100];
+    if (view==nil) {
+    UIView *view = [[UIView alloc] initWithFrame:self.contentView.bounds];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.width, WINDOW.size.height)];
+    bgImageView.image = [UIImage imageNamed:@"background_image"];
+    [view addSubview:bgImageView];
+    bgImageView.centerY = view.height/2;
+    CGFloat scale = (WINDOW.size.height/1136.0f);
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80.0f*scale, view.width, 16)];
+    label.textAlignment = UITextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:16];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"现在，建一座自己的商城！";
+    [view addSubview:label];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"newpic"]];
+    imageView.center = CGPointMake(view.width/2, imageView.height/2+label.bottom+26*scale);
+    [view addSubview:imageView];
+    
+    label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.bottom+20*scale, view.width, 90)];
+    label.textAlignment = UITextAlignmentCenter;
+    label.numberOfLines = 0;
+    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor whiteColor];
+    label.text =@"想象一下，拥有一座属于您自己的商城\n里面都是你喜欢的品牌，信赖的卖家\n您可以在里面放心购物，自由血拼\n这是您自己的新光、万隆、春熙......\n期待吗？那就马上开始吧";
+    [view addSubview:label];
+    
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"bigbtn"] highlightedImage:nil];
+    button.size = CGSizeMake(200 , button.height*(200.0f/button.width));
+    button.center = CGPointMake(view.width/2,view.height-(WINDOW.size.height>480?46:22)-button.height/2);
+    [view addSubview:button];
+    
+    [self.view.superview addSubview:view];
+    view.tag = 100;
+    
+    [button setTouchupHandler:^(MiniUIButton *button) {
+        [UIView animateWithDuration:0.5 animations:^{
+            view.right=0;
+        } completion:^(BOOL finished) {
+            [view removeFromSuperview];
+            MSMainTabViewController *controller = [MSMainTabViewController sharedInstance];
+            controller.currentSelectedIndex = 2;
+        }];
+
+    }];
+    }
+}
+
 - (void)loadData:(int)page delay:(CGFloat)delay
 {
     __PSELF__;

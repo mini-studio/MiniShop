@@ -26,6 +26,7 @@
 - (void)group;
 
 - (NSArray *)dataAtIndex:(unsigned)index;
+- (NSString *)keyAtIndex:(unsigned)index;
 - (int)numberOfRows;
 
 - (NSArray *)allSortedItems;

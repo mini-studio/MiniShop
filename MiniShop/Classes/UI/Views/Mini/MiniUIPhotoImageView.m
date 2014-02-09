@@ -52,8 +52,8 @@
     [self addSubview:self.button];
     
     self.promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 16)];
-    self.promptLabel.backgroundColor = [UIColor colorWithRGBA:0x33333355];
-    self.promptLabel.layer.cornerRadius = 8;
+    self.promptLabel.backgroundColor = [UIColor colorWithRGBA:0x000000AA];
+    //self.promptLabel.layer.cornerRadius = 2;
     self.promptLabel.textColor = [UIColor whiteColor];
     self.promptLabel.font = [UIFont systemFontOfSize:12];
     self.promptLabel.textAlignment = NSTextAlignmentCenter;
@@ -78,7 +78,7 @@
     if ( !self.promptLabel.hidden ) {
         [self.promptLabel sizeToFit];
         self.promptLabel.width = self.promptLabel.width + 10;
-        self.promptLabel.center = CGPointMake(self.imageView.left+self.promptLabel.width/2+2, self.imageView.bottom- self.promptLabel.height/2-2);
+        self.promptLabel.center = CGPointMake(self.imageView.left+self.promptLabel.width/2, self.imageView.bottom- self.promptLabel.height/2);
     }
     if ( !self.colorButton.hidden ) {
         self.colorButton.center = CGPointMake(self.width-self.colorButton.width/2-1, self.height-self.colorButton.height/2-8);

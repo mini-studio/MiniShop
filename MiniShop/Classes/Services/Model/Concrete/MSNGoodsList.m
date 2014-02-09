@@ -83,6 +83,16 @@
     return self.dataSource[key];
 }
 
+- (NSString *)keyAtIndex:(unsigned)index
+{
+    if (index >= self.dataKey.count) {
+        return nil;
+    }
+    else {
+        return [self.dataKey objectAtIndex:index];
+    }
+}
+
 - (int)numberOfRows
 {
     return self.dataKey.count;
