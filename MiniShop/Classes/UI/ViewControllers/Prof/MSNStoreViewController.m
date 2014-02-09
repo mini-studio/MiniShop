@@ -158,7 +158,7 @@
 
 - (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
-    if (page==1) {
+    if (page==1 && data.info.count==0) {
         [self showEmptyView];
     }
     else {
