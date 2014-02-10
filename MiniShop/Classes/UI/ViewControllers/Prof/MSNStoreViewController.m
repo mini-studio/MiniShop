@@ -159,6 +159,9 @@
 - (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
     if (page==1 && data.info.count==0) {
+        if ( page == 1 ) {
+            [self.tableView refreshDone];
+        }
         [self showEmptyView];
     }
     else {
@@ -168,7 +171,7 @@
 
 - (void)showEmptyView
 {
-    UIView *view = [self.view.superview viewWithTag:100];
+    UIView *view = [self.contentView viewWithTag:100];
     if (view==nil) {
     UIView *view = [[UIView alloc] initWithFrame:self.contentView.bounds];
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.width, WINDOW.size.height)];
@@ -199,7 +202,7 @@
     button.center = CGPointMake(view.width/2,view.height-(WINDOW.size.height>480?46:22)-button.height/2);
     [view addSubview:button];
     
-    [self.view.superview addSubview:view];
+    [self.contentView addSubview:view];
     view.tag = 100;
     
     [button setTouchupHandler:^(MiniUIButton *button) {
