@@ -104,6 +104,7 @@ MSMainTabViewController *tabController=nil;
 - (void)loadView
 {
     [super loadView];
+    self.view.backgroundColor = nil;
     self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"24",@"bottomSpace":@"4"};
     [self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     //[self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];

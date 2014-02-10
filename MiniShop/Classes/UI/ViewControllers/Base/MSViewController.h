@@ -34,8 +34,6 @@
 
 - (void)showErrorMessage:(NSError *)error;
 
-- (void)remindLogin;
-
 //- (void)userAuth:(void (^)())block;
 //
 //- (void)userAuthWithString:(NSString*)string block:(void (^)())block;

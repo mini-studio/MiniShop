@@ -152,7 +152,7 @@
 
 - (void)initSubviews
 {
-    UIColor *backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
+    UIColor *backgroundColor = nil;
     self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.contentView.showsVerticalScrollIndicator = NO;
     [self addSubview:self.contentView];
@@ -190,6 +190,21 @@
     [self sizeToFit];
 }
 
+- (void)setGoodsItem:(MSNGoodsItem *)goodsItem delay:(int)delay
+{
+    self.toolbar.hidden = YES;
+    _goodsItem = goodsItem;
+    [self.toolbar setGoodsInfo:goodsItem];
+    [self showWating];
+    double delayInSeconds = delay;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.imageView setImageURL:goodsItem.big_image_url];
+        [self sizeToFit];
+    });
+
+}
+
 - (void)willLoadImage
 {
     [self showWating];
@@ -200,6 +215,9 @@
 
 - (void)didLoadImage
 {
+    UIColor *backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
+    self.imageView.backgroundColor = backgroundColor;
+    self.toolbar.backgroundColor = backgroundColor;
     [self dismissWating];
     self.toolbar.hidden = NO;
     [self sizeToFit];
@@ -265,6 +283,7 @@
 @property (nonatomic,strong)NSArray  *items;
 @property (nonatomic)NSInteger selectedIndex;
 @property (nonatomic,assign)id<MSNDetailViewDelegate> detailViewDelegate;
+- (void)setSelectedIndex:(NSInteger)selectedIndex delay:(int)delay;
 @end
 
 @implementation MSNDetailView
@@ -293,6 +312,22 @@
         }
         MSNUIDetailContentView * view = [[self subviews] objectAtIndex:selectedIndex];
         [view setGoodsItem:[self.items objectAtIndex:selectedIndex]];
+    }
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex delay:(int)delay
+{
+    _selectedIndex = selectedIndex;
+    CGPoint contentOffset = CGPointMake(selectedIndex*self.width, 0);
+    if (contentOffset.x != self.contentOffset.x) {
+        self.contentOffset = contentOffset;
+    }
+    if (self.items != nil && self.items.count>0) {
+        if (self.detailViewDelegate!=nil){
+            [self.detailViewDelegate willLoadAtIndex:selectedIndex];
+        }
+        MSNUIDetailContentView * view = [[self subviews] objectAtIndex:selectedIndex];
+        [view setGoodsItem:[self.items objectAtIndex:selectedIndex] delay:delay];
     }
 }
 
@@ -392,7 +427,6 @@
 - (void)loadView
 {
     [super loadView]; 
-    
     self.dtView = [[MSNUIDTView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     
     CGRect frame = self.contentView.bounds;
@@ -404,8 +438,13 @@
    
     [self createToolbar:44];
     self.detailView.items = self.items;
-    self.detailView.selectedIndex = self.defaultIndex;
-    
+    [self.detailView setSelectedIndex:self.defaultIndex delay:1];
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.detailView.selectedIndex = self.defaultIndex;
+    });
+
 }
 
 - (void)createToolbar:(CGFloat)height

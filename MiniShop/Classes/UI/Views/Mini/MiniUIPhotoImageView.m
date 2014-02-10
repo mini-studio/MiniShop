@@ -35,6 +35,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSubViews];
+        self.layer.masksToBounds = YES;
     }
     return self;
 }
@@ -45,6 +46,7 @@
 //    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
 //    self.bgImageView = [[UIImageView alloc] initWithImage:image];
 //    [self addSubview:self.bgImageView];
+    self.backgroundColor = [UIColor whiteColor];
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self addSubview:_imageView];
     self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
@@ -78,11 +80,11 @@
     if ( !self.promptLabel.hidden ) {
         [self.promptLabel sizeToFit];
         self.promptLabel.width = self.promptLabel.width + 10;
-        self.promptLabel.center = CGPointMake(self.imageView.left+self.promptLabel.width/2, self.imageView.bottom- self.promptLabel.height/2);
+        self.promptLabel.origin = CGPointMake(0, self.height-self.promptLabel.height);
     }
-    if ( !self.colorButton.hidden ) {
-        self.colorButton.center = CGPointMake(self.width-self.colorButton.width/2-1, self.height-self.colorButton.height/2-8);
-    }
+//    if ( !self.colorButton.hidden ) {
+//        self.colorButton.center = CGPointMake(self.width-self.colorButton.width/2-1, self.height-self.colorButton.height/2-8);
+//    }
 }
 
 - (void)setImage:(UIImage *)image
