@@ -10,4 +10,7 @@
 
 @interface MSNSearchShopViewController : MSViewController
 @property (nonatomic,strong) NSString *key;
+
+@property (nonatomic) int tagId;
+@property (nonatomic,strong) NSString *ctitle;
 @end

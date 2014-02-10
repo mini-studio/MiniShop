@@ -114,23 +114,6 @@
         return 2;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
-//    return (group.title.length>0?20:0);
-//}
-//
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:section];
-//    if (group.title.length == 0) {
-//        return nil;
-//    }
-//    MSNCreditableHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-//    view.textLabel.text = group.title;
-//    return view;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section>0 && indexPath.row==0) {
@@ -175,10 +158,6 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-}
-
 - (void)handleTouchInfo:(MSNWellCate *)cate
 {
     if ([cate.param isEqualToString:@"-100"]) { //我的商城
@@ -186,10 +165,10 @@
         controller.ctitle = @"我的商城";
         [self.navigationController pushViewController:controller animated:YES];
     }
-    else if ([cate.param isEqualToString:@"-99"]){
+    else if ([cate.param isEqualToString:@"-99"]){//猜你喜欢
         
     }
-    else if ([cate.param isEqualToString:@"-98"]){
+    else if ([cate.param isEqualToString:@"-98"]){//下单有礼
         
     }
     else {
@@ -199,7 +178,10 @@
             [self.navigationController pushViewController:controller animated:YES];
         }
         else {
-            
+            MSNSearchShopViewController *controller = [[MSNSearchShopViewController alloc] init];
+            controller.tagId = [cate.param integerValue];
+            controller.ctitle = cate.title;
+            [self.navigationController pushViewController:controller animated:YES];
         }
     }
 }

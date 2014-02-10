@@ -959,6 +959,9 @@
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
+            if (error==nil) {
+                data.sort = sort;
+            }
             block(error,data,nil,cache);
         }
     }];

@@ -41,10 +41,10 @@
 
 - (void)initSubViews
 {
-    UIImage *image = [UIImage imageNamed:@"image_bg"];
-    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
-    self.bgImageView = [[UIImageView alloc] initWithImage:image];
-    [self addSubview:self.bgImageView];
+//    UIImage *image = [UIImage imageNamed:@"image_bg"];
+//    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
+//    self.bgImageView = [[UIImageView alloc] initWithImage:image];
+//    [self addSubview:self.bgImageView];
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self addSubview:_imageView];
     self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
@@ -87,13 +87,23 @@
 
 - (void)setImage:(UIImage *)image
 {
-    CGSize size = self.size;
-    size.width -= 16;
-    size.height -= 16;
-    CGSize nsize = [image sizeForScaleToFixSize:size];
-    self.imageView.size = nsize;
-    self.imageView.center = CGPointMake(self.width/2, self.height/2);
-    self.imageView.image = image;
+    if (image==nil) {
+        self.imageView.image = nil;
+    }
+    else {
+        CGSize size = self.size;
+        CGSize imageSize = image.size;
+        CGFloat scal = size.width/imageSize.width;
+        CGSize nsize = CGSizeMake(imageSize.width*scal, imageSize.height*scal);
+        if (nsize.height<size.height) {
+            scal = size.height/nsize.height;
+            nsize.width = nsize.width*scal;
+            nsize.height = nsize.height*scal;
+        }
+        self.imageView.size = nsize;
+        self.imageView.center = CGPointMake(self.width/2, self.height/2);
+        self.imageView.image = image;
+    }
 }
 
 - (void)setPrompt:(NSString *)prompt

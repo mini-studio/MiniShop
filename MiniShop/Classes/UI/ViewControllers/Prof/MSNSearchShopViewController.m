@@ -36,6 +36,8 @@
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
         self.orderby = @"";
+        self.key = @"";
+        self.tagId = 0;
     }
     return self;
 }
@@ -43,10 +45,15 @@
 - (void)loadView
 {
     [super loadView];
-    self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
     [self setNaviBackButton];
-    [self setNaviRightButtonImage:@"contact_info" highlighted:@"contact_info_hover" target:self action:@selector(actionRightButtonTap)];
-    self.naviTitleView.leftButton.left = 10;
+    if (self.ctitle.length>0) {
+        [self.naviTitleView setTitle:self.ctitle];
+    }
+    else {
+        self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
+        [self setNaviRightButtonImage:@"contact_info" highlighted:@"contact_info_hover" target:self action:@selector(actionRightButtonTap)];
+        self.naviTitleView.leftButton.left = 10;
+    }
     [self createTableView];
 }
 
@@ -66,7 +73,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.key.length>0){
+    if (self.key.length>0 || self.tagId>0){
         self.searchBar.text = self.key;
         [self search:1 delay:0];
     }
@@ -93,21 +100,31 @@
     return [UIColor colorWithRGBA:0xfaf1f2ff];
 }
 
+- (BOOL)showSearchTitleView
+{
+    return self.ctitle.length==0;
+}
+
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 28;
+    return ([self showSearchTitleView]?28:0);
 }
 
 - (UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (_searchTitleView==nil){
-        _searchTitleView=[[MSNSearchShopTitleView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, 28)];;
-        _searchTitleView.backgroundColor = [self backgroundColor];
-        _searchTitleView.transformButton.delegate = self;
-        _searchTitleView.transformButton.items = @[@"按相关度排序",@"按关注度排序",@"按信用度排序",@"按总售数排序"];
+    if ([self showSearchTitleView]) {
+        if (_searchTitleView==nil){
+            _searchTitleView=[[MSNSearchShopTitleView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, 28)];;
+            _searchTitleView.backgroundColor = [self backgroundColor];
+            _searchTitleView.transformButton.delegate = self;
+            _searchTitleView.transformButton.items = @[@"按相关度排序",@"按关注度排序",@"按信用度排序",@"按总售数排序"];
+        }
+        _searchTitleView.keyWord = self.key;
+        return _searchTitleView;
     }
-    _searchTitleView.keyWord = self.key;
-    return _searchTitleView;
+    else {
+        return nil;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -182,7 +199,7 @@
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] searchshop:_key sort:self.orderby page:page tag_id:0 block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] searchshop:_key sort:self.orderby page:page tag_id:self.tagId block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
             [pSelf recevieData:data page:page];

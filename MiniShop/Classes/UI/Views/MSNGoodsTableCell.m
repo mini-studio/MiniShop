@@ -53,30 +53,28 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat width = self.width-20;
-    __block CGFloat top =  self.textLabel.bottom + 4;
+    CGFloat width = self.width;
+    __block CGFloat top =  self.textLabel.bottom;
     [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIView *imageView = [self.imageArray objectAtIndex:idx];
         int mod = idx%3;
         if ( mod == 2 ) {
-            CGFloat imageSize = self.width - 20;
-            imageView.origin = CGPointMake(10, top );
+            CGFloat imageSize = self.width;
+            imageView.origin = CGPointMake(0, top );
             top += imageSize;
-            top += 4;
         }
         else {
-            CGFloat imageSize = ( self.width  - 24)/2;
+            CGFloat imageSize = self.width/2;
             if ( mod == 0 ) {
                 if ( idx == self.imageArray.count-1 ) {
-                    imageSize = width - 20;
+                    imageSize = width;
                 }
-                imageView.origin = CGPointMake(10, top );
+                imageView.origin = CGPointMake(0, top );
                 top += imageSize;
-                top += 4;
             }
             else {
-                CGFloat secondTop = top - imageSize - 4;
-                imageView.origin = CGPointMake(imageSize + 14, secondTop );        
+                CGFloat secondTop = top - imageSize;
+                imageView.origin = CGPointMake(imageSize, secondTop );
             }
         }
     }];
@@ -96,15 +94,15 @@
         [self addSubview:imageView];
         int mod = index%3;
         if ( mod == 2 ) {
-            CGFloat imageSize = self.width - 20;
+            CGFloat imageSize = self.width;
             imageView.size = CGSizeMake(imageSize, imageSize);
             isBig = YES;
         }
         else {
-            CGFloat imageSize = (self.width - 24)/2;
+            CGFloat imageSize = self.width/2;
             if ( mod == 0 ) {
                 if ( index == count-1 ) {
-                    imageSize = self.width - 20;
+                    imageSize = self.width;
                     isBig = YES;
                 }
                 imageView.size =  CGSizeMake(imageSize, imageSize);
@@ -118,7 +116,7 @@
         [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:item];
         [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.big_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
-            imageView.prompt = [NSString stringWithFormat:@" ¥%@ ",item.goods_sale_price];
+            imageView.prompt = [NSString stringWithFormat:@" ¥ %@ ",item.goods_sale_price];
         } failure:^(NSError *error) {
             
         }];
@@ -155,21 +153,21 @@
 + (CGFloat)heightForItems:(NSArray*)items width:(CGFloat)maxWidth
 {
     CGFloat height = 0;
-    CGFloat width = maxWidth-20;
-    CGSize size = CGSizeMake(10,2);
+    CGFloat width = maxWidth;
+    CGSize size = CGSizeMake(0,0);
     height += (size.height);
     int count = items.count;
     if ( count>0 ) { // 3图片两行为一组
         CGFloat singleLineHeight = width;
-        CGFloat multLineHeight = (singleLineHeight-4)/2;
+        CGFloat multLineHeight = (singleLineHeight)/2;
         int row = count/3;
         int reset = count%3;
-        size.height = row*(singleLineHeight + multLineHeight + 8);
+        size.height = row*(singleLineHeight + multLineHeight);
         if ( reset == 2 ) {
-            size.height  += (multLineHeight+4);
+            size.height  += (multLineHeight);
         }
         else if ( reset == 1 ) {
-            size.height  += (singleLineHeight+4);
+            size.height  += (singleLineHeight);
         }
         height += size.height;
     }
