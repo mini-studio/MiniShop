@@ -197,6 +197,9 @@
     }];
     
     self.tableView.tableHeaderView = view;
+    if (self.random) {
+        self.contentView.hidden=YES;
+    }
 }
 
 - (void)resetFavButton
@@ -247,9 +250,13 @@
     [self showWating:nil];
     [[ClientAgent sharedInstance] guesslikeshop:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
-            self.shopInfo = [[MSNShopInfo alloc] init];
-            self.shopInfo.shop_id = data;
-            [self loadData:1 orderby:@"time" key:@"" delay:0];
+            pSelf.shopInfo = data;
+            pSelf.naviTitleView.title = self.shopInfo.shop_title;
+            [pSelf.naviTitleView setNeedsLayout];
+            [pSelf.shopInfoView setShopInfo:self.shopInfo];
+            [pSelf resetFavButton];
+            pSelf.contentView.hidden=NO;
+            [pSelf loadData:1 orderby:@"time" key:@"" delay:0];
         }
         else {
             [pSelf dismissWating];

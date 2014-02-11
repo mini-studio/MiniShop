@@ -41,10 +41,6 @@
 @end
 
 
-@interface MSNGuessInfo : MSObject
-@property (nonatomic,strong)NSString *shop_id;
-@end
-
 @interface MSNGuessObject : MSObject
-@property (nonatomic,strong)MSNGuessInfo *info;
+@property (nonatomic,strong)MSNShopInfo *info;
 @end

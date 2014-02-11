@@ -1053,7 +1053,7 @@
         if ( block )
         {
             if (error==nil)
-                block(error,data.info.shop_id,nil,cache);
+                block(error,data.info,nil,cache);
             else
                block(error,nil,nil,cache);
         }
