@@ -55,7 +55,7 @@
 {
     _shopInfo = shopInfo;
     self.shopInfoView.shopInfo = shopInfo;
-    if (shopInfo.like==1) {
+    if (shopInfo.user_like==1) {
         [self.button setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
         [self.button setImage:[UIImage imageNamed:@"cancel_hover"] forState:UIControlStateHighlighted];
     }
@@ -67,7 +67,7 @@
 
 - (void)actionButtonTap:(MiniUIButton*)button
 {
-    if (self.shopInfo.like==0) {
+    if (self.shopInfo.user_like==0) {
         if (self.shopInfoDelegate!=nil) {
             [self.shopInfoDelegate favShop:self.shopInfo];
         }

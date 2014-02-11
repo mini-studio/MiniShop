@@ -10,4 +10,5 @@
 
 @interface MSNShopDetailViewController : MSNGoodListViewController
 @property (nonatomic,strong)MSNShopInfo *shopInfo;
+@property (nonatomic)BOOL random;
 @end

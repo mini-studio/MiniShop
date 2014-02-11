@@ -214,7 +214,7 @@
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
-            shopInfo.like = 1;
+            shopInfo.user_like = 1;
             [pSelf.tableView reloadData];
         }
         else {
@@ -229,7 +229,7 @@
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
-            shopInfo.like = 0;
+            shopInfo.user_like = 0;
             [pSelf.tableView reloadData];
         }
         else {

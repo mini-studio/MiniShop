@@ -123,6 +123,8 @@
 - (void)shopgoods:(NSString*)shopId tagId:(NSString*)tagId sort:(NSString*)sort key:(NSString*)key page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //店铺内标签
 - (void)shoptag:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+//猜你喜欢
+- (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;;
 
 @end
 

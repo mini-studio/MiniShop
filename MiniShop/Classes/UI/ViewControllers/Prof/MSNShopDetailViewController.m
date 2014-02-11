@@ -160,6 +160,7 @@
     self = [super init];
     if (self) {
         self.showNaviView = YES;
+        self.random = NO;
     }
     return self;
 }
@@ -175,7 +176,7 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
     line.backgroundColor = [UIColor colorWithRGBA:0xcd796fff];
     [view addSubview:line];
-    if (self.shopInfo.like==1) {
+    if (self.shopInfo.user_like==1) {
         self.favButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"cancel"] highlightedImage:[UIImage imageNamed:@"cancel_hover"]];
         [view addSubview:self.shopInfoView];
     }
@@ -200,7 +201,7 @@
 
 - (void)resetFavButton
 {
-    if (self.shopInfo.like==1) {
+    if (self.shopInfo.user_like==1) {
         [self.favButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
         [self.favButton setImage:[UIImage imageNamed:@"cancel_hover"] forState:UIControlStateHighlighted];
     }
@@ -208,6 +209,20 @@
         [self.favButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
         [self.favButton setImage:[UIImage imageNamed:@"add_hover"] forState:UIControlStateHighlighted];
     }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.naviTitleView setTitle:self.shopInfo.shop_title];
+    [self.shopInfoView setShopInfo:self.shopInfo];
+    if (self.random) {
+        [self randomShop];
+    }
+    else {
+        [self loadData:1 orderby:@"time" key:@"" delay:0];
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -220,20 +235,27 @@
     return self.messageView;
 }
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.naviTitleView setTitle:self.shopInfo.shop_title];
-    [self.shopInfoView setShopInfo:self.shopInfo];
-    [self loadData:1 orderby:@"time" key:@"" delay:0];
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)randomShop
+{
+    __PSELF__;
+    [self showWating:nil];
+    [[ClientAgent sharedInstance] guesslikeshop:^(NSError *error, id data, id userInfo, BOOL cache) {
+        if (error==nil) {
+            self.shopInfo = [[MSNShopInfo alloc] init];
+            self.shopInfo.shop_id = data;
+            [self loadData:1 orderby:@"time" key:@"" delay:0];
+        }
+        else {
+            [pSelf dismissWating];
+            [pSelf showErrorMessage:error];
+        }
+    }];
 }
 
 - (void)loadData:(int)page orderby:(NSString*)orderby key:(NSString*)key  delay:(CGFloat)delay
@@ -265,11 +287,11 @@
 {
     [self showWating:nil];
     __PSELF__;
-    NSString *action = self.shopInfo.like==1?@"off":@"on";
+    NSString *action = self.shopInfo.user_like==1?@"off":@"on";
     [[ClientAgent sharedInstance] setfavshop:self.shopInfo.shop_id action:action block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
-            pSelf.shopInfo.like = (self.shopInfo.like==1?0:1);
+            pSelf.shopInfo.user_like = (self.shopInfo.user_like==1?0:1);
             [pSelf resetFavButton];
         }
         else {

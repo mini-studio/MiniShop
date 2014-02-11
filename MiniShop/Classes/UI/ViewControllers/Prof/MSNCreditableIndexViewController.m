@@ -14,6 +14,7 @@
 #import "MSNWellCateCell.h"
 #import "MSUIWebViewController.h"
 #import "MSNShopListViewController.h"
+#import "MSNShopDetailViewController.h"
 
 @interface MSNCreditableHeaderView : UITableViewHeaderFooterView
 @property (nonatomic,strong)UIView *leftview;
@@ -166,7 +167,9 @@
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if ([cate.param isEqualToString:@"-99"]){//猜你喜欢
-        
+        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+        controller.random = YES;
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else if ([cate.param isEqualToString:@"-98"]){//下单有礼
         

@@ -1045,4 +1045,19 @@
     
 }
 
+- (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+{
+    NSString *addr = [self requestUri14:@"guesslikeshop"];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGuessObject class] isJson:YES showError:NO block:^(NSError *error, MSNGuessObject *data, BOOL cache) {
+        if ( block )
+        {
+            if (error==nil)
+                block(error,data.info.shop_id,nil,cache);
+            else
+               block(error,nil,nil,cache);
+        }
+    }];
+}
+
 @end

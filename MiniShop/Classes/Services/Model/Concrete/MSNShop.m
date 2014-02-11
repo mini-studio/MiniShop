@@ -115,3 +115,17 @@
     return self;
 }
 @end
+
+@implementation MSNGuessInfo
+@end
+
+@implementation MSNGuessObject
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setAttri:@"info" clazz:[MSNGuessInfo class]];
+    }
+    return self;
+}
+@end

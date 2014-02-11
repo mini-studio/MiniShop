@@ -18,7 +18,7 @@
 @property(nonatomic,strong)NSString *shop_like_num;
 @property(nonatomic,strong)NSString *shop_title;
 @property(nonatomic,strong)NSString *shop_type;
-@property(nonatomic)int like;
+@property(nonatomic)int user_like;
 
 - (NSInteger)gradeValue;
 @end
@@ -38,4 +38,13 @@
 @interface MSNShopDetail:MSObject
 @property (nonatomic,strong)NSString *goods_num;
 @property (nonatomic,strong)MSNShopDetailInfo *info;
+@end
+
+
+@interface MSNGuessInfo : MSObject
+@property (nonatomic,strong)NSString *shop_id;
+@end
+
+@interface MSNGuessObject : MSObject
+@property (nonatomic,strong)MSNGuessInfo *info;
 @end
