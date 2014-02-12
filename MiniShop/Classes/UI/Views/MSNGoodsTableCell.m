@@ -114,7 +114,7 @@
         }
         MSNGoodsItem *item = [_items objectAtIndex:index];
         [imageView addTartget:self selector:@selector(actionImageTap:) userInfo:item];
-        [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.big_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+        [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.middle_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
             imageView.prompt = [NSString stringWithFormat:@" ¥ %@ ",item.goods_sale_price];
         } failure:^(NSError *error) {

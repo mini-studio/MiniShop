@@ -13,62 +13,17 @@
 - (NSInteger)gradeValue
 {
     int grade = [self.shop_grade intValue];
-    if (grade>10000000) {
-        return 45;
+    if (grade>=16) {
+        return 40+(grade-15);
     }
-    else if (grade>5000000) {
-        return 44;
+    else if (grade>=11) {
+        return 30+(grade-10);
     }
-    else if (grade>2000000) {
-        return 43;
+    else if (grade>=6) {
+        return 20+(grade-5);
     }
-    else if (grade>1000000) {
-        return 42;
-    }
-    else if (grade>500000) {
-        return 41;
-    }
-    else if (grade>200000) {
-        return 35;
-    }
-    else if (grade>100000) {
-        return 34;
-    }
-    else if (grade>20000) {
-        return 33;
-    }
-    else if (grade>10000) {
-        return 32;
-    }
-    else if (grade>5000) {
-        return 25;
-    }
-    else if (grade>2000) {
-        return 24;
-    }
-    else if (grade>1000) {
-        return 23;
-    }
-    else if (grade>500) {
-        return 22;
-    }
-    else if (grade>250) {
-        return 21;
-    }
-    else if (grade>150) {
-        return 15;
-    }
-    else if (grade>90) {
-        return 14;
-    }
-    else if (grade>40) {
-        return 13;
-    }
-    else if (grade>10) {
-        return 12;
-    }
-    else if (grade>4) {
-        return 11;
+    else if (grade>=1) {
+        return 10+grade;
     }
     else {
         return 10;
