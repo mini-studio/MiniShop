@@ -233,9 +233,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
             }];
         });
     }
-    [[ClientAgent sharedInstance] loadNews:0 userInfo:[NSNumber numberWithInt:0]
-                                     block:^(NSError *error, id data, id userInfo, BOOL cache) {
-    }];
+    
     
 }
 
@@ -247,39 +245,6 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 
 - (void)didBecomeActive
 {
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [[ClientAgent sharedInstance] image:@"bg" block:^(NSError *error, MSImageInfo* data, id userInfo, BOOL cache) {
-            if ( error == nil && data.key != nil )
-            {
-                NSString *key = [[NSUserDefaults standardUserDefaults] valueForKey:@"MS_BG_IMAGE"];
-                if ( key == nil || ![data.key isEqualToString:key] )
-                {
-                    [self loadImge:data.url key:@"MS_BG_IMAGE" imagekey:data.key];
-                }
-            }            
-        }];
-        [[ClientAgent sharedInstance] image:@"start" block:^(NSError *error, MSImageInfo* data, id userInfo, BOOL cache) {
-            if ( error == nil && data.key != nil )
-            {
-                NSString *key = [[NSUserDefaults standardUserDefaults] valueForKey:@"MS_START_IMAGE"];
-                if ( key == nil || ![data.key isEqualToString:key] )
-                {
-                    [self loadImge:data.url key:@"MS_START_IMAGE" imagekey:data.key];
-                }
-            }
-        }];
-        
-        NSString *fpath = [ClientAgent filePathForKey:@"ms_count_queryOrderDetail"];
-        NSData *data = [NSData dataWithContentsOfFile:fpath];
-        if ( data != nil )
-        {
-            [[ClientAgent sharedInstance] countlist:data userInfo:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
-            }];
-        }
-        [self checkVersion:^{} force:YES];
-    });
     [self invote];
 }
 

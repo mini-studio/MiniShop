@@ -319,8 +319,7 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
                 NSString *shopId = [path substringFromIndex:prefix.length];
                 if ( shopId.length > 0 )
                 {
-                    [[ClientAgent sharedInstance] like:@"shop" action:@"on" mid:[shopId integerValue] block:^(NSError *error, id data, id userInfo, BOOL cache) {
-                    }];
+                   
                 }
             }
             else if ( [path hasPrefix:@"youjiaxiaodian://good/"] ) //跳转详情页

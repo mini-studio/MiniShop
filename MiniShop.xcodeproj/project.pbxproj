@@ -166,7 +166,6 @@
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
 		C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDC178074A100BE5ABB /* ClientAgent.m */; };
 		C1EC5066178074A100BE5ABB /* MSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE2178074A100BE5ABB /* MSObject.m */; };
-		C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE5178074A100BE5ABB /* MSCooperateInfo.m */; };
 		C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE7178074A100BE5ABB /* MSGoodsList.m */; };
 		C1EC5069178074A100BE5ABB /* MSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE9178074A100BE5ABB /* MSImageInfo.m */; };
 		C1EC506A178074A100BE5ABB /* MSNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FEB178074A100BE5ABB /* MSNotify.m */; };
@@ -572,8 +571,6 @@
 		C1EC4FDC178074A100BE5ABB /* ClientAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientAgent.m; sourceTree = "<group>"; };
 		C1EC4FE1178074A100BE5ABB /* MSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSObject.h; sourceTree = "<group>"; };
 		C1EC4FE2178074A100BE5ABB /* MSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSObject.m; sourceTree = "<group>"; };
-		C1EC4FE4178074A100BE5ABB /* MSCooperateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCooperateInfo.h; sourceTree = "<group>"; };
-		C1EC4FE5178074A100BE5ABB /* MSCooperateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCooperateInfo.m; sourceTree = "<group>"; };
 		C1EC4FE6178074A100BE5ABB /* MSGoodsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGoodsList.h; sourceTree = "<group>"; };
 		C1EC4FE7178074A100BE5ABB /* MSGoodsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGoodsList.m; sourceTree = "<group>"; };
 		C1EC4FE8178074A100BE5ABB /* MSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSImageInfo.h; sourceTree = "<group>"; };
@@ -1450,8 +1447,6 @@
 		C1EC4FE3178074A100BE5ABB /* Concrete */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC4FE4178074A100BE5ABB /* MSCooperateInfo.h */,
-				C1EC4FE5178074A100BE5ABB /* MSCooperateInfo.m */,
 				C1EC4FE6178074A100BE5ABB /* MSGoodsList.h */,
 				C1EC4FE7178074A100BE5ABB /* MSGoodsList.m */,
 				C1EC4FE8178074A100BE5ABB /* MSImageInfo.h */,
@@ -1976,7 +1971,6 @@
 				C10FC6A918A7C25900A23F02 /* MSMainTabViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */,
-				C1EC5067178074A100BE5ABB /* MSCooperateInfo.m in Sources */,
 				C10FC6B118A7C25900A23F02 /* MSNShopDetailViewController.m in Sources */,
 				C1EC5068178074A100BE5ABB /* MSGoodsList.m in Sources */,
 				C1EC5069178074A100BE5ABB /* MSImageInfo.m in Sources */,
