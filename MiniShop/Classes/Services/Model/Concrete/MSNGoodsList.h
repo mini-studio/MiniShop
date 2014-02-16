@@ -44,6 +44,7 @@
 @property (nonatomic,strong)NSString *micro_image_url;
 @property (nonatomic,strong)NSString *middle_image_url;
 @property (nonatomic,strong)NSString *small_image_url;
+@property (nonatomic,strong)NSString *price_history_intro;
 
 @property (nonatomic,strong)NSString *goods_date;
 

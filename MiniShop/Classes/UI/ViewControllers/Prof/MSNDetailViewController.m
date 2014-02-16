@@ -131,6 +131,7 @@
 - (void)jumpToBuy:(MSNGoodsItem *)goodsItem;
 @end
 
+/** 单个商品详情*/
 @interface MSNUIDetailContentView : UIView <MSNUIDetailImageViewDelegate>
 @property(nonatomic,strong)MSNGoodsItem *goodsItem;
 @property(nonatomic,strong)MSNUIDetailImageView *imageView;

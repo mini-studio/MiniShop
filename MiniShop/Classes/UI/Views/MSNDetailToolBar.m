@@ -9,9 +9,35 @@
 #import "MSNDetailToolBar.h"
 #import "UIColor+Mini.h"
 
+@interface MSNImageLabel : UIView
+@property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UILabel *label;
+@end
+
+@implementation MSNImageLabel
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        [self addSubview:self.imageView];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.width-self.imageView.width-10, self.height)];
+        [self addSubview:self.label];
+    }
+    return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+}
+
+@end
 
 @interface MSNDetailToolBar()
 @property (nonatomic,strong)UIScrollView *contentView;
+
+@property (nonatomic,strong)UILabel *priceHistoryIntroLabel;
 @end
 
 @implementation MSNDetailToolBar
