@@ -225,7 +225,7 @@ static UITapGestureRecognizer *tapRecognizer;
 
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
-    UIImage* bgImage = [UIImage imageNamed:@"navi_bar_back"];
+    UIImage* bgImage = [UIImage imageNamed:@"navi_back"];
     
     MiniUIButton *button = [MiniUIButton buttonWithImage:bgImage highlightedImage:bgImage];
     button.width += 4;
