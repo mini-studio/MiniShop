@@ -8,8 +8,6 @@
 
 #import "MSFrameViewController.h"
 #import "UIColor+Mini.h"
-#import "MSNotify.h"
-#import "MSNotiItemInfo.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "EGOUITableView.h"
 #import "MSUIWebViewController.h"

@@ -10,8 +10,6 @@
 #import "MSFrameViewController.h"
 
 #import "UIColor+Mini.h"
-#import "MSNotify.h"
-#import "MSNotiItemInfo.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "EGOUITableView.h"
 #import "MSUIWebViewController.h"
@@ -28,8 +26,6 @@
 
 @interface MSNStoreViewController : MSFrameViewController
 @end
-
-@class MSNotify;
 @class MiniUISegmentView;
 @interface MSNStoreContentViewController : MSNGoodListViewController
 @property (nonatomic) NSString* tagid;

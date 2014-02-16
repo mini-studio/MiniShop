@@ -7,8 +7,6 @@
 //
 
 #import "MSSystem.h"
-#import "MSImageInfo.h"
-#import "MSNotiItemInfo.h"
 #import "MiniNSURLProtocol.h"
 #import "MiniURLCache.h"
 #import "MiniFileUtil.h"
@@ -326,11 +324,11 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         {
             NSString *type = [msg valueForKey:@"type"];
             NSInteger mid = [[msg valueForKey:@"id"] integerValue];
-            NSInteger shopId = [[msg valueForKey:@"shop_id"] integerValue];
-            MSNotiItemInfo *itemInfo = [[MSNotiItemInfo alloc] init];
-            itemInfo.type = type;
-            itemInfo.mid = mid;
-            itemInfo.shop_id = shopId;
+//            NSInteger shopId = [[msg valueForKey:@"shop_id"] integerValue];
+//            MSNotiItemInfo *itemInfo = [[MSNotiItemInfo alloc] init];
+//            itemInfo.type = type;
+//            itemInfo.mid = mid;
+//            itemInfo.shop_id = shopId;
 //            MSDetailViewController *controller = [[MSDetailViewController alloc] init];
 //            controller.itemInfo = itemInfo;
 //            controller.from = @"push";

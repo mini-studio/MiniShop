@@ -8,7 +8,6 @@
 
 #import "MSWebChatUtil.h"
 #import "WXApi.h"
-#import "MSGoodsList.h"
 #import "MSShopInfo.h"
 #import "MSNGoodsList.h"
 
@@ -86,20 +85,20 @@
     [WXApi sendReq:req];
 }
 
-+ (void)shareShop:(MSShopInfo*)shopInfo scene:(int)scene
-{
-    [MobClick event:MOB_SHARE_SHOP];
-    if ( scene == WXSceneTimeline )
-    {
-        NSString *desc = [NSString stringWithFormat:@"这家网店不错：%@",[shopInfo realTitle]];
-        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:desc description:desc scene:scene];
-    }
-    else
-    {
-        NSString *desc = [NSString stringWithFormat:@"%@\n我觉得不错，你也看看",[shopInfo realTitle]];
-        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:@"分享个网店给你" description:desc scene:scene];
-    }
-}
+//+ (void)shareShop:(MSShopInfo*)shopInfo scene:(int)scene
+//{
+//    [MobClick event:MOB_SHARE_SHOP];
+//    if ( scene == WXSceneTimeline )
+//    {
+//        NSString *desc = [NSString stringWithFormat:@"这家网店不错：%@",[shopInfo realTitle]];
+//        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:desc description:desc scene:scene];
+//    }
+//    else
+//    {
+//        NSString *desc = [NSString stringWithFormat:@"%@\n我觉得不错，你也看看",[shopInfo realTitle]];
+//        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:@"分享个网店给你" description:desc scene:scene];
+//    }
+//}
 
 + (void)shareShopList:(NSArray*)shopList scene:(int)scene
 {

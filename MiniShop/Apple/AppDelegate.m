@@ -12,7 +12,6 @@
 #import "MSGuideViewController.h"
 #import "MSMainTabViewController.h"
 #import "MSSystem.h"
-#import "MSGoodsList.h"
 #import "MRLoginViewController.h"
 #import "MSMiniUINavigationController.h"
 #import "NSString+Mini.h"
