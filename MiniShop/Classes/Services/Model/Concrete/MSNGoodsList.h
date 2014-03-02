@@ -47,6 +47,7 @@
 @property (nonatomic,strong)NSString *price_history_intro;
 @property (nonatomic,strong)NSString *shop_id;
 @property (nonatomic,strong)NSString *shop_title;
+@property (nonatomic)int like_goods;
 
 @property (nonatomic,strong)NSString *goods_date;
 @property (nonatomic,strong)MSNGoodsDetail *detail;

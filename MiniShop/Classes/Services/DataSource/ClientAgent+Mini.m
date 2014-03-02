@@ -611,6 +611,7 @@
 - (void)searchgoods:(NSString*)key type:(NSString*)type sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchgoods"];
+    [self saveSearchWord:key];
     NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,@"type":type,@"page":ITOS(page)} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
@@ -740,4 +741,45 @@
         }
     }];
 }
+
+- (void)loadSearchHistory:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    id data = [ClientAgent loadDataForKey:@"search-history"];
+    if (data!=nil && [data isKindOfClass:[NSData class]]) {
+        @try{
+            NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+             block(nil,array,nil,NO);
+        }
+        @catch (NSException* e) {
+            block(nil,nil,nil,NO);
+        }
+    }
+    else {
+        block(nil,nil,nil,NO);
+    }
+}
+
+- (void)saveSearchHistroy:(NSArray*)items
+{
+   NSData *data = [NSKeyedArchiver archivedDataWithRootObject:items];
+   [ClientAgent saveData:data forKey:@"search-history"];
+}
+
+- (void)saveSearchWord:(NSString*)word
+{
+    [self loadSearchHistory:^(NSError *error, NSMutableArray* data, id userInfo, BOOL cache) {
+        if (data==nil) {
+           data = [NSMutableArray array];
+        }
+        else {
+            [data removeObject:word];
+        }
+        [data insertObject:word atIndex:0];
+        if (data.count>3) {
+            [data removeObjectsInRange:NSMakeRange(3, data.count-3)];
+        }
+        [self saveSearchHistroy:data];
+    }];
+}
+
 @end

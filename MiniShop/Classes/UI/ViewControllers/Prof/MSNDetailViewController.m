@@ -126,6 +126,7 @@
 @required
 - (void)willLoadImage:(MSNGoodsItem *)goodsItem;
 - (void)didLoadImage:(MSNGoodsItem *)goodsItem;
+- (void)didLoadDetail:(MSNGoodsItem *)goodsItem;
 - (void)touchupImage:(MSNGoodsItem *)goodsItem;
 - (void)jumpShopDetail:(MSNGoodsItem *)goodsItem;
 - (void)jumpToBuy:(MSNGoodsItem *)goodsItem;
@@ -186,7 +187,12 @@
 {
     self.toolbar.hidden = YES;
     _goodsItem = goodsItem;
-    [self.toolbar setGoodsInfo:goodsItem];
+    __PSELF__;
+    [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
+        if (pSelf.detailContentViewDelegate != nil) {
+            [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
+        }
+    }];
     [self.imageView setImageURL:goodsItem.big_image_url];
     [self sizeToFit];
 }
@@ -195,7 +201,12 @@
 {
     self.toolbar.hidden = YES;
     _goodsItem = goodsItem;
-    [self.toolbar setGoodsInfo:goodsItem];
+    __PSELF__;
+    [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
+        if (pSelf.detailContentViewDelegate != nil) {
+            [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
+        }
+    }];
     [self showWating];
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -347,6 +358,14 @@
     }
 }
 
+- (void)didLoadDetail:(MSNGoodsItem *)goodsItem
+{
+    int index = [self.items indexOfObject:goodsItem];
+    if (self.detailViewDelegate!=nil){
+        [self.detailViewDelegate didLoadAtIndex:index current:(index==self.selectedIndex)];
+    }
+}
+
 - (void)touchupImage:(MSNGoodsItem *)goodsItem
 {
     int index = [self.items indexOfObject:goodsItem];
@@ -399,7 +418,7 @@
 
 @interface MSNDetailViewController () <MSNDetailViewDelegate>
 @property (nonatomic,strong) MSNDetailView *detailView;
-
+@property (nonatomic,strong) MiniUIButton *favbutton;
 @property (nonatomic,strong) UIView    *toolbar;
 @property (nonatomic,strong) MSNUIDTView *dtView;
 
@@ -460,10 +479,11 @@
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
     
-    button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star_hover"];
+    button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
     button.center = CGPointMake(toolbar.width/2,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
+    self.favbutton = button;
     
     button = [self createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
     button.center = CGPointMake(toolbar.width-50,centerY);
@@ -538,6 +558,7 @@
 - (void)didLoadAtIndex:(NSInteger)index current:(BOOL)isCurrent
 {
     self.viewStartTime = [NSDate date];
+    [self resetFavButton:self.favbutton];
 }
 
 - (void)touchupImage:(NSInteger)index
@@ -574,14 +595,35 @@
     [self jumpToBuy:self.detailView.selectedIndex];
 }
 
+- (void)resetFavButton:(MiniUIButton*)button
+{
+    MSNGoodsItem *item = [self currentGoodsItem];
+    UIImage *image = [UIImage imageNamed:(item.like_goods==1?@"star_hover":@"star")];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateHighlighted];
+}
 
 - (void)actionToolBarFav:(MiniUIButton*)button
 {
     __PSELF__;
+    [self showWating:nil];
     MSNGoodsItem *item = [self currentGoodsItem];
-    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:(item.like_goods==1?@"off":@"on") block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
         if ( error != nil ) {
             [pSelf showMessageInfo:[error localizedDescription] delay:2];
+        }
+        else {
+            if (item.like_goods==0){
+               [pSelf showMessageInfo:@"收藏成功" delay:2];
+                item.like_goods=1;
+                
+            }
+            else {
+                [pSelf showMessageInfo:@"取消成功" delay:2];
+                item.like_goods=0;
+            }
+            [self resetFavButton:button];
         }
     }];
 }

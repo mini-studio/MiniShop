@@ -95,10 +95,21 @@
 {
     CGFloat f = [UIScreen mainScreen].bounds.size.height-64;
     CGFloat w = [UIScreen mainScreen].bounds.size.width;
-    self.watcherButton.frame = CGRectMake(0, 64, w, f);
-    UIView* view = [self topSuperView];
-    if (view!=nil)
-    [view addSubview:self.watcherButton];
+    if (self.inView!=nil) {
+        self.watcherButton.frame = self.inView.bounds;
+        [self.inView addSubview:self.watcherButton];
+    }
+    else {
+        self.watcherButton.frame = CGRectMake(0, 64, w, f);
+        UIView* view = [self topSuperView];
+        if (view!=nil)
+        [view addSubview:self.watcherButton];
+    }
+    if ( self.delegate != nil ) {
+        if ( [self.delegate respondsToSelector:@selector(searchBarTextDidBeginEditing:)]) {
+            [self.delegate searchBarTextDidBeginEditing:self];
+        }
+    }
 }
 
 - (void)keyboardWillHide:(NSNotification*)noti
@@ -155,6 +166,11 @@
         if ( [self.delegate respondsToSelector:@selector(searchBarSearchButtonClicked:)])
             [self.delegate searchBarSearchButtonClicked:self];
     }
+}
+
+- (BOOL)endEditing:(BOOL)animated
+{
+    return [self.searchBar endEditing:animated];
 }
 
 - (void)setText:(NSString *)text

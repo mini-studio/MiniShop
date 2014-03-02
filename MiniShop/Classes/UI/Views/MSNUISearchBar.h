@@ -13,9 +13,11 @@
 @optional
 - (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar;
 - (void)searchBarCancelButtonClicked:(MSNUISearchBar *)searchBar;
+- (void)searchBarTextDidBeginEditing:(MSNUISearchBar *)searchBar;
 @end
 
 @interface MSNUISearchBar : UIView
+@property (nonatomic,assign)UIView *inView;
 @property (nonatomic,assign)id<MSNUISearchBarDelegate> delegate;
 @property (nonatomic,strong)NSString *placeholder;
 @property (nonatomic,strong)NSString *text;

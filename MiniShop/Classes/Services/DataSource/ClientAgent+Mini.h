@@ -89,5 +89,10 @@
 
 - (void)getpushsound:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
+- (void)loadSearchHistory:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+
+- (void)saveSearchHistroy:(NSArray*)items;
+
+- (void)saveSearchWord:(NSString*)word;
 @end
 

@@ -16,6 +16,6 @@
 @property (nonatomic,strong)MiniUIButton *buybutton;
 @property (nonatomic,strong)MSNShopInfoView* shopInfoView;
 
-- (void)setGoodsInfo:(MSNGoodsItem*)item;
+- (void)setGoodsInfo:(MSNGoodsItem*)item action:(void (^)(bool loaded))action;
 
 @end

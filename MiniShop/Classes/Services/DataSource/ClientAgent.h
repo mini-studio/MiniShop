@@ -35,7 +35,7 @@
 
 + (NSString *)keyForCache:(NSString *)addr params:(NSDictionary*)params;
 + (id)loadDataForKey:(NSString*)key;
-
++ (void)saveData:(id)data forKey:(NSString*)key;
 + (void)clearCache;
 
 @end

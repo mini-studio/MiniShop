@@ -181,7 +181,7 @@
 + (void)saveData:(id)data forKey:(NSString*)key
 {
     NSString *fp = [self filePathForKey:key];
-    BOOL ret = [data writeToFile:fp atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    BOOL ret = [data writeToFile:fp atomically:YES];
     if ( ret )
     {
         ;

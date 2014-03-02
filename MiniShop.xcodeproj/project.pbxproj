@@ -81,6 +81,7 @@
 		C169C59516FF4FC600ED87D8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59416FF4FC600ED87D8 /* CoreLocation.framework */; };
 		C169C59716FF4FD200ED87D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59616FF4FD200ED87D8 /* MapKit.framework */; };
 		C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C59816FF4FF400ED87D8 /* AddressBook.framework */; };
+		C176AD5318C37D360024888A /* MSNHistroyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C176AD5218C37D360024888A /* MSNHistroyView.m */; };
 		C180FB231878555800F25C2C /* more_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1B1878555800F25C2C /* more_hover@2x.png */; };
 		C180FB241878555800F25C2C /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1C1878555800F25C2C /* more@2x.png */; };
 		C180FB251878555800F25C2C /* sale_hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C180FB1D1878555800F25C2C /* sale_hover@2x.png */; };
@@ -458,6 +459,8 @@
 		C169C60816FF55A800ED87D8 /* SVPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlacemark.h; sourceTree = "<group>"; };
 		C169C60A16FF55A800ED87D8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C169C60B16FF55A800ED87D8 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		C176AD5118C37D360024888A /* MSNHistroyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNHistroyView.h; sourceTree = "<group>"; };
+		C176AD5218C37D360024888A /* MSNHistroyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNHistroyView.m; sourceTree = "<group>"; };
 		C180FB1B1878555800F25C2C /* more_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_hover@2x.png"; sourceTree = "<group>"; };
 		C180FB1C1878555800F25C2C /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		C180FB1D1878555800F25C2C /* sale_hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sale_hover@2x.png"; sourceTree = "<group>"; };
@@ -1590,6 +1593,8 @@
 				C1ADE0E1189CEAA2002D6327 /* MSNGradeView.m */,
 				C1867357189E4119006EC8C5 /* MSNSearchShopTitleView.h */,
 				C1867358189E4119006EC8C5 /* MSNSearchShopTitleView.m */,
+				C176AD5118C37D360024888A /* MSNHistroyView.h */,
+				C176AD5218C37D360024888A /* MSNHistroyView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1981,6 +1986,7 @@
 				C10FC6AB18A7C25900A23F02 /* MSNDetailViewController.m in Sources */,
 				C10FC6A818A7C25900A23F02 /* MSGuideViewController.m in Sources */,
 				C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */,
+				C176AD5318C37D360024888A /* MSNHistroyView.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
 				C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */,
 				C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */,
