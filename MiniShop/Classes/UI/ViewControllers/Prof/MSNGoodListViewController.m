@@ -116,7 +116,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
             cell.backgroundColor = [UIColor clearColor];
             cell.backgroundView = nil;
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 200, 12)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, tableView.width-20, 12)];
             label.font = [UIFont systemFontOfSize:12];
             label.textColor = [UIColor colorWithRGBA:0xF2deddff];
             [cell addSubview:label];

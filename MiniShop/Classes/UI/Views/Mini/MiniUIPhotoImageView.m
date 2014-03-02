@@ -10,11 +10,78 @@
 #import "UIImage+Mini.h"
 #import "UIColor+Mini.h"
 
+@interface MiniUIPhotoImagePromptView()
+@property (nonatomic,strong)UIImageView *arrowImageView;
+@end
+
+@implementation MiniUIPhotoImagePromptView
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.left = [self createLable:CGRectMake(0, 0, 40, self.height)];
+        self.right = [self createLable:CGRectMake(0, 0, 40, self.height)];
+        [self addSubview:self.left];
+        [self addSubview:self.right];
+        self.backgroundColor = [UIColor colorWithRGBA:0x000000AA];
+        self.userInteractionEnabled = NO;
+        self.arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrowicon"]];
+        self.arrowImageView.size = CGSizeMake(6, 10);
+        self.arrowImageView.centerY = self.height/2;
+        [self addSubview:self.arrowImageView];
+    }
+    return self;
+}
+
+- (UILabel*)createLable:(CGRect)frame
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:12];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.layer.masksToBounds = YES;
+    return label;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.left.left = 5;
+    if (self.right.text.length>0) {
+        self.arrowImageView.hidden = NO;
+        self.arrowImageView.left = self.left.right+5;
+        self.right.left = self.arrowImageView.right+5;
+    }
+    else {
+        self.arrowImageView.hidden = YES;
+    }
+}
+
+- (void)sizeToFit
+{
+    [super sizeToFit];
+    self.left.width = 100;
+    [self.left sizeToFit];
+    if (self.right.text.length>0) {
+        self.right.width = 100;
+        [self.right sizeToFit];
+        self.width = 20 + self.left.width + self.right.width + self.arrowImageView.width;
+    }
+    else {
+        self.right.width = 0;
+        self.width = 10 + self.left.width;
+    }
+   
+    [self setNeedsLayout];
+}
+
+@end
+
 @interface MiniUIPhotoImageView()
 @property (nonatomic,strong)UIImageView *imageView;
 @property (nonatomic,strong)UIImageView *bgImageView;
 @property (nonatomic,strong)MiniUIButton *button;
-@property (nonatomic,strong)UILabel      *promptLabel;
 @property (nonatomic,strong)MiniUIButton *colorButton;
 @end
 
@@ -42,10 +109,6 @@
 
 - (void)initSubViews
 {
-//    UIImage *image = [UIImage imageNamed:@"image_bg"];
-//    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.width/2, image.size.height/2,image.size.width/2, image.size.height/2)];
-//    self.bgImageView = [[UIImageView alloc] initWithImage:image];
-//    [self addSubview:self.bgImageView];
     self.backgroundColor = [UIColor whiteColor];
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self addSubview:_imageView];
@@ -53,15 +116,9 @@
     self.button.backgroundColor = [UIColor clearColor];
     [self addSubview:self.button];
     
-    self.promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 16)];
-    self.promptLabel.backgroundColor = [UIColor colorWithRGBA:0x000000AA];
-    //self.promptLabel.layer.cornerRadius = 2;
-    self.promptLabel.textColor = [UIColor whiteColor];
-    self.promptLabel.font = [UIFont systemFontOfSize:12];
-    self.promptLabel.textAlignment = NSTextAlignmentCenter;
-    self.promptLabel.layer.masksToBounds = YES;
-    self.promptLabel.hidden = YES;
-    [self addSubview:self.promptLabel];
+    self.prompView = [[MiniUIPhotoImagePromptView alloc] initWithFrame:CGRectMake(0, 0, 40, 16)];
+    self.prompView.hidden = YES;
+    [self addSubview:self.prompView];
     self.colorButton = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"news_online_tag"] highlightedBackGroundImage:nil title:@""];
     [self.colorButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
     self.colorButton.size = CGSizeMake(40, 20);
@@ -77,14 +134,7 @@
     CGRect frame = self.bounds;
     self.bgImageView.frame = frame;
     self.button.frame = self.bounds;
-    if ( !self.promptLabel.hidden ) {
-        [self.promptLabel sizeToFit];
-        self.promptLabel.width = self.promptLabel.width + 10;
-        self.promptLabel.origin = CGPointMake(0, self.height-self.promptLabel.height);
-    }
-//    if ( !self.colorButton.hidden ) {
-//        self.colorButton.center = CGPointMake(self.width-self.colorButton.width/2-1, self.height-self.colorButton.height/2-8);
-//    }
+    self.prompView.origin = CGPointMake(0, self.height-self.prompView.height);
 }
 
 - (void)setImage:(UIImage *)image
@@ -108,10 +158,17 @@
     }
 }
 
-- (void)setPrompt:(NSString *)prompt
+- (void)setLeftPrompt:(NSString*)left rightPrompt:(NSString*)right
 {
-    self.promptLabel.text = prompt;
-    self.promptLabel.hidden = NO;
+    self.prompView.left.text = left;
+    self.prompView.right.text = right;
+    self.prompView.hidden = NO;
+    [self.prompView sizeToFit];
+}
+
+- (void)prepareForReuse
+{
+    self.prompView.hidden = YES;
 }
 
 - (void)setColorPrompt:(NSString *)colorPrompt

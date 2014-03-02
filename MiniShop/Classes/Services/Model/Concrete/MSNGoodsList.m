@@ -36,10 +36,11 @@
     if ([SORT_TIME isEqualToString:self.sort])
     {
         for (MSNGoodsItem *item in self.info ) {
-            NSMutableArray *array = _dataSource[item.goods_date];
+            NSString *key = [NSString stringWithFormat:@"%@ %@",item.goods_date,item.shop_title];
+            NSMutableArray *array = _dataSource[key];
             if (array == nil) {
                 array = [NSMutableArray array];
-                _dataSource[item.goods_date] = array;
+                _dataSource[key] = array;
             }
             [array addObject:item];
         }
@@ -118,6 +119,21 @@
     if ( array.count > 0 ) {
         _goods_date = array[0];
     }
+}
+
+- (NSString*)discountMessage
+{
+    if (_discountMessage==nil) {
+        CGFloat sale = self.goods_sale_price.floatValue;
+        CGFloat marke = self.goods_marked_price.floatValue;
+        if (sale==marke) {
+            _discountMessage = @"";
+        }
+        else {
+            _discountMessage = [NSString stringWithFormat:@"%0.1f折",10*(sale/marke)];
+        }
+    }
+    return _discountMessage;
 }
 @end
 

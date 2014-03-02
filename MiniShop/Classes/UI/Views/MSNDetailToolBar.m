@@ -21,7 +21,8 @@
     if (self) {
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
         [self addSubview:self.imageView];
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.width-self.imageView.width-10, self.height)];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
+        self.label.numberOfLines = 0;
         [self addSubview:self.label];
     }
     return self;
@@ -32,12 +33,29 @@
     [super layoutSubviews];
 }
 
+- (void)sizeToFit
+{
+    [super sizeToFit];
+    self.label.width = self.width-self.imageView.width-6;
+    if (self.label.text.length==0) {
+        self.imageView.height = 0;
+        self.label.height = 0;
+        self.height = 0;
+    }
+    else {
+        self.imageView.size = CGSizeMake(20, 20);
+        [self.label sizeToFit];
+        self.label.origin = CGPointMake(26, 0);
+        self.height = self.label.height;
+    }
+}
+
 @end
 
 @interface MSNDetailToolBar()
 @property (nonatomic,strong)UIScrollView *contentView;
 
-@property (nonatomic,strong)UILabel *priceHistoryIntroLabel;
+@property (nonatomic,strong)MSNImageLabel *priceHistoryIntroLabel;
 @end
 
 @implementation MSNDetailToolBar
@@ -77,6 +95,10 @@
     self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 85)];
     [self.contentView addSubview:self.shopInfoView];
     
+    self.priceHistoryIntroLabel = [[MSNImageLabel alloc] initWithFrame:CGRectMake(10, 0, self.width-20, 0)];
+    self.priceHistoryIntroLabel.imageView.image = [UIImage imageNamed:@"arrowdown"];
+    [self addSubview:self.priceHistoryIntroLabel];
+    
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor
@@ -94,14 +116,15 @@
     [self.goodsPriceLabel sizeToFit];
     self.goodsPriceLabel.top = self.goodsNameLabel.bottom+6;
     self.buybutton.top = self.goodsPriceLabel.top;
-    self.shopInfoView.top = self.buybutton.bottom;
+    [self.priceHistoryIntroLabel sizeToFit];
+    self.priceHistoryIntroLabel.top = self.buybutton.bottom + 6;
+    self.shopInfoView.top = self.priceHistoryIntroLabel.bottom;
     self.height = self.shopInfoView.bottom;
     self.contentView.height = self.height;
 }
 
 - (void)setGoodsInfo:(MSNGoodsItem*)item
 {
-    
     self.goodsNameLabel.text = item.goods_title;
     self.goodsPriceLabel.text = [NSString stringWithFormat:@"¥ %@",item.goods_marked_price];
     __PSELF__;

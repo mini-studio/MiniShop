@@ -45,11 +45,12 @@
 @property (nonatomic,strong)NSString *middle_image_url;
 @property (nonatomic,strong)NSString *small_image_url;
 @property (nonatomic,strong)NSString *price_history_intro;
+@property (nonatomic,strong)NSString *shop_id;
+@property (nonatomic,strong)NSString *shop_title;
 
 @property (nonatomic,strong)NSString *goods_date;
-
 @property (nonatomic,strong)MSNGoodsDetail *detail;
-
+@property (nonatomic,strong)NSString *discountMessage;
 @property (nonatomic,strong)UIImage *image;
 @end
 
