@@ -24,6 +24,7 @@
 #import "UIImage+Mini.h"
 #import "UIImageView+WebCache.h"
 #import "MiniUIIndicator.h"
+#import "MiniUIButton+Mini.h"
 
 
 @protocol MSNUIDetailImageViewDelegate <NSObject>
@@ -419,7 +420,6 @@
 @interface MSNDetailViewController () <MSNDetailViewDelegate>
 @property (nonatomic,strong) MSNDetailView *detailView;
 @property (nonatomic,strong) MiniUIButton *favbutton;
-@property (nonatomic,strong) UIView    *toolbar;
 @property (nonatomic,strong) MSNUIDTView *dtView;
 
 
@@ -474,37 +474,23 @@
     [self.contentView addSubview:toolbar];
     
     CGFloat centerY = toolbar.height/2-4;
-    MiniUIButton *button = [self createToolBarButton:@"购买" imageName:@"money" hImageName:@"money_hover"];
+    MiniUIButton *button = [MiniUIButton createToolBarButton:@"购买" imageName:@"money" hImageName:@"money_hover"];
     button.center = CGPointMake(50,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarBuy:) forControlEvents:UIControlEventTouchUpInside];
     
-    button = [self createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
+    button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
     button.center = CGPointMake(toolbar.width/2,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
     self.favbutton = button;
     
-    button = [self createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+    button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
     button.center = CGPointMake(toolbar.width-50,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (MiniUIButton*)createToolBarButton:(NSString*)title imageName:(NSString*)imageName hImageName:(NSString*)hImageName
-{
-    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:imageName] highlightedImage:[UIImage imageNamed:hImageName]];
-    button.size = CGSizeMake(44, 44);
-    [button setTitleColor:[UIColor colorWithRGBA:0xe74764FF] forState:UIControlStateNormal];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, button.height-14, button.width, 20)];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor colorWithRGBA:0xe74764FF];
-    label.font = [UIFont systemFontOfSize:8];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = title;
-    [button addSubview:label];
-    return button;
-}
 
 - (void)viewDidLoad
 {

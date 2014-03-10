@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 @class MSNGoodsItem;
+@class MSNShopInfo;
 
 @interface MSWebChatUtil : NSObject
 + (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem scene:(int)scene;
-//+ (void)shareShop:(MSShopInfo*)shopInfo scene:(int)scene;
++ (void)shareShop:(MSNShopInfo*)shopInfo scene:(int)scene;
 + (void)shareShopList:(NSArray*)shopList scene:(int)scene;
 @end

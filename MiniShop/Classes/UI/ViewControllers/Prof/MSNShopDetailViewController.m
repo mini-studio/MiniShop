@@ -8,9 +8,9 @@
 
 #import "MSNShopDetailViewController.h"
 #import "MSNShopInfoView.h"
-#import "MSNUISearchBar.h"
 #import "MSNTransformButton.h"
 #import "UIColor+Mini.h"
+#import "MSWebChatUtil.h"
 
 @interface MSNShopMessageView : UIView <UITextFieldDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)UIView *messageView;
@@ -114,7 +114,7 @@
     }];
 }
 
-- (NSString*)getOrderbyValue
+- (NSString*)getOrderByValue
 {
     NSDictionary *dic = @{@"0":@"time",@"1":@"sale",@"2":@"off",@"3":@"off_time"};
     return [dic valueForKey:[NSString stringWithFormat:@"%d",self.transformButton.selectedIndex]];
@@ -125,7 +125,7 @@
     if ([string isEqualToString:@"\n"]) {
         [textField resignFirstResponder];
         if (self.handleSearchBlock!=nil) {
-            self.handleSearchBlock(textField.text,[self getOrderbyValue]);
+            self.handleSearchBlock(textField.text, [self getOrderByValue]);
         }
         self.lastKey = self.searchField.text;
         [self hideSearchView];
@@ -139,7 +139,7 @@
 - (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     if (self.handleSearchBlock!=nil) {
-        self.handleSearchBlock(self.searchField.text,[self getOrderbyValue]);
+        self.handleSearchBlock(self.searchField.text, [self getOrderByValue]);
     }
 }
 
@@ -149,8 +149,11 @@
 @interface MSNShopDetailViewController ()
 @property (nonatomic,strong)MSNShopInfoView *shopInfoView;
 @property (nonatomic,strong)MSNShopMessageView *messageView;
-
 @property (nonatomic,strong)MiniUIButton *favButton;
+
+@property (nonatomic, strong)MiniUIButton *toolBarFavButton;
+@property (nonatomic, strong)MiniUIButton *toolBarShareButton;
+@property (nonatomic, strong)MiniUIButton *toolBarTryButton;
 @end
 
 @implementation MSNShopDetailViewController
@@ -163,6 +166,12 @@
         self.random = NO;
     }
     return self;
+}
+
+- (void)setRandom:(BOOL)random
+{
+    _random = random;
+    self.hidesBottomBarWhenPushed = random;
 }
 
 - (void)loadView
@@ -200,6 +209,11 @@
     if (self.random) {
         self.contentView.hidden=YES;
     }
+
+    if ([self random]) {
+        self.tableView.height = self.tableView.height-44;
+        [self createToolbar:44];
+    }
 }
 
 - (void)resetFavButton
@@ -226,6 +240,32 @@
         [self loadData:1 orderby:@"time" key:@"" delay:0];
     }
     
+}
+
+- (void)createToolbar:(CGFloat)height
+{
+    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.height-height, self.contentView.width, height)];
+    toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
+    [self.contentView addSubview:toolbar];
+
+    CGFloat centerY = toolbar.height/2-4;
+
+    MiniUIButton *button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
+    button.center = CGPointMake(50,centerY);
+    [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
+    self.toolBarFavButton = button;
+
+    button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+    button.center = CGPointMake(toolbar.width/2,centerY);
+    [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
+
+    button = [MiniUIButton createToolBarButton:@"再猜" imageName:@"money" hImageName:@"money_hover"];
+    button.center = CGPointMake(toolbar.width-50,centerY);
+    [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -278,6 +318,7 @@
             list.goods_num = [data.goods_num integerValue];
             list.next_page = data.next_page;
             [pSelf receiveData:list page:page];
+            [pSelf resetToolBarFavButton:self.toolBarFavButton];
         }
         else {
             [pSelf showErrorMessage:error];
@@ -307,5 +348,59 @@
     }];
 
 }
+
+- (void)resetToolBarFavButton:(MiniUIButton*)button
+{
+    UIImage *image = [UIImage imageNamed:(self.shopInfo.user_like==1?@"star_hover":@"star")];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateHighlighted];
+}
+
+- (void)actionToolBarFav:(MiniUIButton*)button
+{
+    __PSELF__;
+    [self showWating:nil];
+    [[ClientAgent sharedInstance] setfavshop:self.shopInfo.shop_id action:self.shopInfo.user_like?@"off":@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if ( error != nil ) {
+            [pSelf showMessageInfo:[error localizedDescription] delay:2];
+        }
+        else {
+            if (self.shopInfo.user_like==0){
+                [pSelf showMessageInfo:@"收藏成功" delay:2];
+                self.shopInfo.user_like=1;
+
+            }
+            else {
+                [pSelf showMessageInfo:@"取消成功" delay:2];
+                self.shopInfo.user_like=0;
+            }
+            [self resetToolBarFavButton:button];
+        }
+    }];
+}
+
+- (void)actionToolBarShare:(MiniUIButton*)button
+{
+    [MobClick event:MOB_DETAIL_TOP_SHARE];
+
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareShop:self.shopInfo scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareShop:self.shopInfo scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+}
+
+- (void)actionToolTryAgain:(MiniUIButton *)button
+{
+    [self randomShop];
+}
+
+
 
 @end

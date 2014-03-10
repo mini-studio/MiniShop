@@ -41,4 +41,20 @@
     [self setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
++ (MiniUIButton*)createToolBarButton:(NSString*)title imageName:(NSString*)imageName hImageName:(NSString*)hImageName
+{
+    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:imageName] highlightedImage:[UIImage imageNamed:hImageName]];
+    button.size = CGSizeMake(44, 44);
+    [button setTitleColor:[UIColor colorWithRGBA:0xe74764FF] forState:UIControlStateNormal];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, button.height-14, button.width, 20)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor colorWithRGBA:0xe74764FF];
+    label.font = [UIFont systemFontOfSize:8];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = title;
+    [button addSubview:label];
+    return button;
+}
+
+
 @end

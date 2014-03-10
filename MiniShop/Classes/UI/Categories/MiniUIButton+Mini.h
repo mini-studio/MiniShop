@@ -17,4 +17,6 @@
 - (void)prefect;
 
 - (void)prefectDefault;
+
++ (MiniUIButton*)createToolBarButton:(NSString*)title imageName:(NSString*)imageName hImageName:(NSString*)hImageName;
 @end
