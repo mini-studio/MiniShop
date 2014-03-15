@@ -15,4 +15,5 @@
 - (id)userInfoAtIndex:(int)index;
 - (void)setSelectedIndex:(int)selectedIndex cascade:(BOOL)cascade;
 - (void)setSlidePercent:(CGFloat)percent left:(BOOL)left;
+- (void)clear;
 @end

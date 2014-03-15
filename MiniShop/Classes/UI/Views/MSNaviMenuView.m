@@ -67,6 +67,14 @@
     [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)clear
+{
+    [self.buttons removeAllObjects];
+    [self.scrollview removeAllSubviews];
+    [self.scrollview addSubview:self.slideView];
+    self.slideView.left = 0;
+}
+
 - (id)userInfoAtIndex:(int)index
 {
     MiniUIButton *button = self.buttons[index];

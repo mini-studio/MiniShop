@@ -1,7 +1,7 @@
 //
 //  MSNShopListViewController.m
 //  MiniShop
-//
+//  我的商城列表
 //  Created by Wuquancheng on 14-2-9.
 //  Copyright (c) 2014年 mini. All rights reserved.
 //
@@ -13,6 +13,7 @@
 #import "MSUIMoreDataCell.h"
 #import "UIColor+Mini.h"
 #import "MSNShopDetailViewController.h"
+#import "MRLoginViewController.h"
 
 @interface MSNShopListViewController () <MSNShopInfoCellDelegate>
 @property (nonatomic,strong)MSNShopList   *dataSource;
@@ -26,7 +27,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -42,7 +43,9 @@
 - (void)createTableView
 {
     self.tableView = [self createEGOTableView];
+    self.tableView.height = self.contentView.height-44;
     [self.contentView addSubview:self.tableView];
+    [self createToolbar:44];
     __weak typeof (self) itSelf = self;
     [self.tableView setPullToRefreshAction:^{
         [itSelf loadFavShopListData:1];
@@ -166,6 +169,44 @@
         }
     }];
 }
+
+- (void)createToolbar:(CGFloat)height
+{
+    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.height-height, self.contentView.width, height)];
+    toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
+    [self.contentView addSubview:toolbar];
+
+    CGFloat centerY = toolbar.height/2-4;
+    MiniUIButton *button = nil;
+    if (WHO==nil) {
+        button = [MiniUIButton createToolBarButton:@"注册/登录" imageName:@"share" hImageName:@"share_hover"];
+        button.center = CGPointMake(100,centerY);
+        [toolbar addSubview:button];
+        [button addTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else {
+        
+    }
+    
+    button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+    button.center = CGPointMake(toolbar.width-100,centerY);
+    [toolbar addSubview:button];
+    [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+}
+
+- (void)actionToolBarShare:(MiniUIButton*)button
+{
+   
+}
+
+- (void)actionToolBarReg:(MiniUIButton*)button
+{
+    MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 
 
 @end

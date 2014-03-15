@@ -37,10 +37,21 @@
     [super addSubview:view];
 }
 
+- (void)clearBackgroud:(UIView *)view
+{
+    for (UIView *v in view.subviews) {
+        if ([v isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            v.hidden=YES;
+            break;
+        }
+        [self clearBackgroud:v];
+    }
+}
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    [self clearBackgroud:self];
 }
 
 @end
@@ -63,7 +74,7 @@
         frame.size = CGSizeMake(self.width, self.height);
         self.searchBar = [[InnerUISearchBar alloc] initWithFrame:frame];
         self.searchBar.delegate = self;
-        self.searchBar.barTintColor = [UIColor clearColor];
+        //self.searchBar.barTintColor = [UIColor clearColor];
         [self addSubview:self.searchBar];
         self.watcherButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
         self.watcherButton.backgroundColor = [UIColor colorWithRGBA:0x00000055];

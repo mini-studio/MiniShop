@@ -206,14 +206,11 @@
     }];
     
     self.tableView.tableHeaderView = view;
-    if (self.random) {
-        self.contentView.hidden=YES;
-    }
-
-    if ([self random]) {
-        self.tableView.height = self.tableView.height-44;
-        [self createToolbar:44];
-    }
+//    if (self.random) {
+//        self.contentView.hidden=YES;
+//    }
+    self.tableView.height = self.tableView.height-44;
+    [self createToolbar:44];
 }
 
 - (void)resetFavButton
@@ -250,6 +247,7 @@
 
     CGFloat centerY = toolbar.height/2-4;
 
+
     MiniUIButton *button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
     button.center = CGPointMake(50,centerY);
     [toolbar addSubview:button];
@@ -260,12 +258,18 @@
     button.center = CGPointMake(toolbar.width/2,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
+    self.toolBarShareButton = button;
 
-    button = [MiniUIButton createToolBarButton:@"再猜" imageName:@"money" hImageName:@"money_hover"];
-    button.center = CGPointMake(toolbar.width-50,centerY);
-    [toolbar addSubview:button];
-    [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];
-
+    if (self.random) {
+        button = [MiniUIButton createToolBarButton:@"再猜" imageName:@"money" hImageName:@"money_hover"];
+        button.center = CGPointMake(toolbar.width-50,centerY);
+        [toolbar addSubview:button];
+        [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else {
+        self.toolBarFavButton.left = 60;
+        self.toolBarShareButton.right = self.contentView.width-60;
+    }
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section

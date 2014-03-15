@@ -141,7 +141,8 @@
                     self.loginblock(YES);
                 }
                 else {
-                    [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_USER_LOGIN object:nil];
+                    [self back];
                 }
             }
             else {
@@ -171,7 +172,8 @@
                     self.loginblock(YES);
                 }
                 else {
-                    [(AppDelegate*)[UIApplication sharedApplication].delegate loadMainController];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_USER_LOGIN object:nil];
+                    [self back];
                 }
             }
             else {
@@ -192,7 +194,9 @@
 {
     MRLoginViewController *controller = [[MRLoginViewController alloc] init];
     controller.type = 1;
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navi = self.navigationController;
+    [navi popViewControllerAnimated:NO];
+    [navi pushViewController:controller animated:YES];
 }
 
 @end

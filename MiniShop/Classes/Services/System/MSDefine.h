@@ -43,4 +43,6 @@
 
 #define UM_KEY @"51375dd152701512ce000002"
 
+#define NOTI_USER_LOGIN  @"USER_LOGIN"
+
 #endif

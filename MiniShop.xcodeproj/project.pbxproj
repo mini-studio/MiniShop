@@ -50,7 +50,6 @@
 		C10FC6AE18A7C25900A23F02 /* MSNGoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69D18A7C25900A23F02 /* MSNGoodListViewController.m */; };
 		C10FC6AF18A7C25900A23F02 /* MSNSearchGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC69F18A7C25900A23F02 /* MSNSearchGoodsViewController.m */; };
 		C10FC6B018A7C25900A23F02 /* MSNSearchShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A118A7C25900A23F02 /* MSNSearchShopViewController.m */; };
-		C10FC6B118A7C25900A23F02 /* MSNShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A318A7C25900A23F02 /* MSNShopDetailViewController.m */; };
 		C10FC6B218A7C25900A23F02 /* MSNShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */; };
 		C10FC6B318A7C25900A23F02 /* MSNStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */; };
 		C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B5C186E9AB40007D510 /* MSNShop.m */; };
@@ -165,6 +164,7 @@
 		C1C7763F18B1007900382F6B /* web_toolbar_btn_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1C775E918B1007900382F6B /* web_toolbar_btn_refresh@2x.png */; };
 		C1C7764018B1007900382F6B /* web_toolbar_btn_right_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1C775EA18B1007900382F6B /* web_toolbar_btn_right_disable@2x.png */; };
 		C1C7764118B1007900382F6B /* web_toolbar_btn_right_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1C775EB18B1007900382F6B /* web_toolbar_btn_right_normal@2x.png */; };
+		C1DC95A818D22A7A006698CB /* MSNShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A318A7C25900A23F02 /* MSNShopDetailViewController.m */; };
 		C1EC5062178074A100BE5ABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FD5178074A100BE5ABB /* AppDelegate.m */; };
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
 		C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDC178074A100BE5ABB /* ClientAgent.m */; };
@@ -1949,7 +1949,6 @@
 				C10FC6A918A7C25900A23F02 /* MSMainTabViewController.m in Sources */,
 				C1EC5066178074A100BE5ABB /* MSObject.m in Sources */,
 				C10C9C4B185E028E00797BD0 /* MSNGoodsList.m in Sources */,
-				C10FC6B118A7C25900A23F02 /* MSNShopDetailViewController.m in Sources */,
 				C1B339F2184A30B800851585 /* MSNTransformButton.m in Sources */,
 				C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */,
 				C1254B64186EB2E80007D510 /* MSNShopInfoCell.m in Sources */,
@@ -1963,6 +1962,7 @@
 				C1ACB74317FB370600862641 /* RTLabel.m in Sources */,
 				C1ADE0E2189CEAA2002D6327 /* MSNGradeView.m in Sources */,
 				C1EC5075178074A100BE5ABB /* MSWebChatUtil.m in Sources */,
+				C1DC95A818D22A7A006698CB /* MSNShopDetailViewController.m in Sources */,
 				C1EC5076178074A100BE5ABB /* MiniUIButton+Mini.m in Sources */,
 				C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */,
 				C10EDD3B1844F2ED00503993 /* MSNaviMenuView.m in Sources */,
@@ -2047,7 +2047,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -2064,8 +2064,7 @@
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
 				PROVISIONING_PROFILE = "3CF234A9-603F-473B-A1E5-D83DC99DE805";
-				SDKROOT = iphoneos;
-				VALID_ARCHS = armv7;
+				SDKROOT = iphoneos7.1;
 			};
 			name = Debug;
 		};
@@ -2085,7 +2084,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -2102,9 +2101,8 @@
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
 				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};

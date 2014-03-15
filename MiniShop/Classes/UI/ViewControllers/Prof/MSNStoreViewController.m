@@ -24,6 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_USER_LOGIN object:nil];
     }
     return self;
 }
@@ -69,6 +70,9 @@
 - (void)loadData
 {
     __PSELF__;
+    [self.subControllers removeAllObjects];
+    [self.topTitleView clear];
+    [self.containerView removeAllSubviews];
     [self showWating:nil];
     [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNCateList* data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
@@ -98,8 +102,6 @@
 
 - (void)actionJumpSearch:(MiniUIButton *)button
 {
-//    MSMainTabViewController *controller = [MSMainTabViewController sharedInstance];
-//    controller.currentSelectedIndex = 2;
     MSNSearchGoodsViewController *controller = [[MSNSearchGoodsViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -109,6 +111,11 @@
     for (MSNStoreContentViewController *controller in self.subControllers ) {
         controller.orderby = button.selectedValue;
     }
+}
+
+- (void)reloadData
+{
+    [self loadData];
 }
 
 @end
