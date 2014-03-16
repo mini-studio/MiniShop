@@ -24,9 +24,9 @@
 
 @implementation MSNShopListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
     }
@@ -86,8 +86,7 @@
     static NSString *identifier = @"cell";
     MSNShopInfo *info = [self.dataSource.info objectAtIndex:indexPath.row];
     MSNShopInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if ( cell == nil )
-    {
+    if ( cell == nil ) {
         cell = [[MSNShopInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.shopInfoDelegate = self;
         cell.backgroundColor = [self backgroundColor];

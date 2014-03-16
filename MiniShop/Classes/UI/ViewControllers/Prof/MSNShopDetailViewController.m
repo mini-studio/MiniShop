@@ -173,7 +173,6 @@
 - (void)setRandom:(BOOL)random
 {
     _random = random;
-    self.hidesBottomBarWhenPushed = random;
 }
 
 - (void)loadView
@@ -227,17 +226,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.shopInfo.shop_title.length==0) {
-        [self loadShopInfo];
-    }
-    else {
-        [self.naviTitleView setTitle:self.shopInfo.shop_title];
-        [self.shopInfoView setShopInfo:self.shopInfo];
-    }
     if (self.random) {
         [self randomShop];
     }
     else {
+        if (self.shopInfo.shop_title.length==0) {
+            [self loadShopInfo];
+        }
+        else {
+            [self.naviTitleView setTitle:self.shopInfo.shop_title];
+            [self.shopInfoView setShopInfo:self.shopInfo];
+        }
         [self loadData:1 orderby:@"time" key:@"" delay:0];
     }
     
