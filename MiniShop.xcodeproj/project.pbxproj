@@ -961,7 +961,6 @@
 		C169C46A16FF48F200ED87D8 = {
 			isa = PBXGroup;
 			children = (
-				C15FA3C018D567970042C2A7 /* safeudid.framework */,
 				C169C47F16FF48F200ED87D8 /* MiniShop */,
 				C169C47816FF48F200ED87D8 /* Frameworks */,
 				C169C47616FF48F200ED87D8 /* Products */,
@@ -979,6 +978,7 @@
 		C169C47816FF48F200ED87D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C15FA3C018D567970042C2A7 /* safeudid.framework */,
 				C1B0F1FD1884319200D222E5 /* UMAppNetwork */,
 				C1ACB74417FB384900862641 /* CoreText.framework */,
 				C101D199177CCB3E009BFA10 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
@@ -2067,8 +2067,8 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "3CF234A9-603F-473B-A1E5-D83DC99DE805";
 				SDKROOT = iphoneos7.1;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2104,15 +2104,17 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "C356D4DE-1956-4A92-80AB-3D539031B7D0";
 				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		C169C49A16FF48F200ED87D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2126,6 +2128,7 @@
 					/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/UMAppNetwork,
 				);
 				PRODUCT_NAME = MiniShop;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2133,6 +2136,8 @@
 		C169C49B16FF48F200ED87D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2146,6 +2151,7 @@
 					/Users/Wuquancheng/Documents/workspace/iPhone/Mini/MiniShop/Frameworks/UMAppNetwork,
 				);
 				PRODUCT_NAME = MiniShop;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
