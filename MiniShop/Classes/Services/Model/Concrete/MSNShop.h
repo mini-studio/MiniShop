@@ -41,6 +41,6 @@
 @end
 
 
-@interface MSNGuessObject : MSObject
+@interface MSNShopInfoObject : MSObject
 @property (nonatomic,strong)MSNShopInfo *info;
 @end

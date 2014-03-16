@@ -14,6 +14,7 @@
 #import "UIColor+Mini.h"
 #import "MSNShopDetailViewController.h"
 #import "MRLoginViewController.h"
+#import "MSWebChatUtil.h"
 
 @interface MSNShopListViewController () <MSNShopInfoCellDelegate>
 @property (nonatomic,strong)MSNShopList   *dataSource;
@@ -160,6 +161,7 @@
     [self showWating:nil];
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 0;
             [pSelf.tableView reloadData];
@@ -176,29 +178,35 @@
     toolbar.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
     [self.contentView addSubview:toolbar];
 
-    CGFloat centerY = toolbar.height/2-4;
+    CGFloat centerY = toolbar.height/2;
+    MiniUIButton *shareButton = [MiniUIButton createToolBarButton:@"分享此列表" imageName:nil hImageName:nil];
+    shareButton.center = CGPointMake(toolbar.width-100,centerY);
+    [toolbar addSubview:shareButton];
+    [shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
     MiniUIButton *button = nil;
     if (WHO==nil) {
-        button = [MiniUIButton createToolBarButton:@"注册/登录" imageName:@"share" hImageName:@"share_hover"];
+        button = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
         button.center = CGPointMake(100,centerY);
         [toolbar addSubview:button];
         [button addTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
     }
     else {
-        
+        shareButton.centerX = toolbar.width/2;
     }
-    
-    button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
-    button.center = CGPointMake(toolbar.width-100,centerY);
-    [toolbar addSubview:button];
-    [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
 }
 
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
-   
+    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        if ( buttonIndex == 1 )
+        {
+            [MSWebChatUtil shareShopList:self.dataSource.info scene:WXSceneTimeline];
+        }
+        else if ( buttonIndex == 2 )
+        {
+            [MSWebChatUtil shareShopList:self.dataSource.info scene:WXSceneSession];
+        }
+    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
 }
 
 - (void)actionToolBarReg:(MiniUIButton*)button

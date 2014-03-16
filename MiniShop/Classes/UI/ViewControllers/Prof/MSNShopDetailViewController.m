@@ -38,6 +38,7 @@
         [self addSubview:self.messageView];
         CGFloat top = (self.height-14)/2;
         self.numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, top, 200, 14)];
+        self.numberLabel.backgroundColor = [UIColor clearColor];
         self.numberLabel.font = [UIFont systemFontOfSize:14];
         self.numberLabel.textColor = [UIColor colorWithRGBA:0x414345FF];
         [self.messageView addSubview:self.numberLabel];
@@ -164,6 +165,7 @@
     if (self) {
         self.showNaviView = YES;
         self.random = NO;
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -206,9 +208,6 @@
     }];
     
     self.tableView.tableHeaderView = view;
-//    if (self.random) {
-//        self.contentView.hidden=YES;
-//    }
     self.tableView.height = self.tableView.height-44;
     [self createToolbar:44];
 }
@@ -228,8 +227,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.naviTitleView setTitle:self.shopInfo.shop_title];
-    [self.shopInfoView setShopInfo:self.shopInfo];
+    if (self.shopInfo.shop_title.length==0) {
+        [self loadShopInfo];
+    }
+    else {
+        [self.naviTitleView setTitle:self.shopInfo.shop_title];
+        [self.shopInfoView setShopInfo:self.shopInfo];
+    }
     if (self.random) {
         [self randomShop];
     }
@@ -288,6 +292,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)loadShopInfo
+{
+    __PSELF__;
+    [[ClientAgent sharedInstance] shopinfo:self.shopInfo.shop_id block:^(NSError *error, MSNShopInfo* data, id userInfo, BOOL cache) {
+        if (error==nil){
+            pSelf.shopInfo = data;
+            pSelf.title = data.shop_title;
+            [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
+        }
+    }];
+}
+
 - (void)randomShop
 {
     __PSELF__;
@@ -295,9 +311,9 @@
     [[ClientAgent sharedInstance] guesslikeshop:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
             pSelf.shopInfo = data;
-            pSelf.naviTitleView.title = self.shopInfo.shop_title;
+            pSelf.naviTitleView.title = pSelf.shopInfo.shop_title;
             [pSelf.naviTitleView setNeedsLayout];
-            [pSelf.shopInfoView setShopInfo:self.shopInfo];
+            [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
             [pSelf resetFavButton];
             pSelf.contentView.hidden=NO;
             [pSelf loadData:1 orderby:@"time" key:@"" delay:0];

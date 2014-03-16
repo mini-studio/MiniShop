@@ -415,4 +415,10 @@
     }
 }
 
+- (void)setTitle:(NSString *)title
+{
+    self.naviTitleView.title = title;
+    [self.naviTitleView setNeedsLayout];
+}
+
 @end

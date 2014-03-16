@@ -7,6 +7,7 @@
 //
 
 #import "MSNGoodListViewController.h"
+#import "MSNShopDetailViewController.h"
 #import "MSNGoodsList.h"
 #import "MSNGoodsTableCell.h"
 #import "UIColor+Mini.h"
@@ -111,19 +112,27 @@
     BOOL isHeader = ([self.dataSource.sort isEqualToString:SORT_TIME] && indexPath.row%2==0);
     if (isHeader) {
         NSString *identifier = @"h-cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        MSNGoodsHeaderTableCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell==nil){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[MSNGoodsHeaderTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.backgroundColor = [UIColor clearColor];
             cell.backgroundView = nil;
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, tableView.width-20, 12)];
+            label.backgroundColor = [UIColor clearColor];
             label.font = [UIFont systemFontOfSize:12];
             label.textColor = [UIColor colorWithRGBA:0xF2deddff];
             [cell addSubview:label];
             label.tag = 110;
         }
         UILabel *label = (UILabel*)[cell viewWithTag:110];
-        label.text = [NSString stringWithFormat:@"%@上新",[self.dataSource keyAtIndex:indexPath.row/2]];
+        int index = indexPath.row/2;
+        label.text = [NSString stringWithFormat:@"%@上新",[self.dataSource keyAtIndex:index]];
+        NSArray *ds = [self.dataSource dataAtIndex:index];
+        if (ds.count>0) {
+            MSNGoodsItem *item = [ds objectAtIndex:0];
+            cell.headerUserInfo = item.shop_id;
+        }
         return cell;
     }
     else {
@@ -147,6 +156,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[MSNGoodsHeaderTableCell class]]) {
+        NSString *shopId = [(MSNGoodsHeaderTableCell*)cell headerUserInfo];
+        if (shopId.length>0) {
+            MSNShopInfo *info = [[MSNShopInfo alloc] init];
+            info.shop_id = shopId;
+            MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+            controller.shopInfo = info;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }
 }
 
 

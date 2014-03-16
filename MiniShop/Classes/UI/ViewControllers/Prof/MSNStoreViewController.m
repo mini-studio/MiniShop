@@ -25,8 +25,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_USER_LOGIN object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CONTENT_CHANGE object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:nil object:nil];
 }
 
 - (void)loadView
@@ -187,7 +193,8 @@
     bgImageView.centerY = view.height/2;
     CGFloat scale = (WINDOW.size.height/1136.0f);
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80.0f*scale, view.width, 16)];
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize:16];
     label.textColor = [UIColor whiteColor];
     label.text = @"现在，建一座自己的商城！";
@@ -197,7 +204,8 @@
     [view addSubview:imageView];
     
     label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.bottom+20*scale, view.width, 90)];
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
     label.font = [UIFont systemFontOfSize:12];
     label.textColor = [UIColor whiteColor];

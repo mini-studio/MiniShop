@@ -72,7 +72,7 @@
 @end
 
 
-@implementation MSNGuessObject
+@implementation MSNShopInfoObject
 - (id)init
 {
     self = [super init];

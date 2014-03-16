@@ -37,6 +37,7 @@
         self.layer.masksToBounds = YES;
         [self setFontSize:16];
         [self setFontColor:[UIColor whiteColor]];
+        
     }
     return self;
 }
@@ -69,6 +70,7 @@
     CGRect frame = self.button.bounds;
     frame = CGRectInset(frame, 4, 0);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize:18];
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;

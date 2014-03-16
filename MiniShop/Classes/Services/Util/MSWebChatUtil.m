@@ -92,12 +92,12 @@
     if ( scene == WXSceneTimeline )
     {
         NSString *desc = [NSString stringWithFormat:@"这家网店不错：%@",[shopInfo shop_title]];
-        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:desc description:desc scene:scene];
+        [self shareShop:[NSString stringWithFormat:@"%@",shopInfo.shop_id] title:desc description:desc scene:scene];
     }
     else
     {
         NSString *desc = [NSString stringWithFormat:@"%@\n我觉得不错，你也看看",[shopInfo shop_title]];
-        [self shareShop:[NSString stringWithFormat:@"%lld",shopInfo.shop_id] title:@"分享个网店给你" description:desc scene:scene];
+        [self shareShop:[NSString stringWithFormat:@"%@",shopInfo.shop_id] title:@"分享个网店给你" description:desc scene:scene];
     }
 }
 
@@ -108,10 +108,10 @@
         return;
     NSMutableString *ids = [NSMutableString string];
     NSMutableString *desc = [NSMutableString stringWithFormat:@"一共%d家",[shopList count]];
-    for ( MSShopInfo *shop  in shopList )
+    for ( MSNShopInfo *shop  in shopList )
     {
-        [ids appendFormat:@"%lld,",shop.shop_id];
-        [desc appendFormat:@"，%@",shop.realTitle];
+        [ids appendFormat:@"%@,",shop.shop_id];
+        [desc appendFormat:@"，%@",shop.shop_title];
     }
     if ( ids.length > 0 )
     {

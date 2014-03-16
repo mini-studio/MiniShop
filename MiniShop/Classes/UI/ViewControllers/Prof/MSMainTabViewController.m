@@ -35,23 +35,17 @@ MSMainTabViewController *tabController=nil;
     highLightImageView.top = 1.7;
 }
 
-- (void)setTabBackImage:(UIImage *)tabBg
-{
-    UIImageView *tab = (UIImageView *)[self viewWithTag:0x110];
-    UIImage *tabBackImg = tabBg;
-    if ( tabBackImg.size.width < 20 )
-    {
-        tabBackImg = [tabBackImg stretchableImageWithLeftCapWidth:ceil(tabBackImg.size.width/2) topCapHeight:ceil(tabBackImg.size.height/2)];
-    }
-    tab.image = tabBackImg;
-    tab.frame = self.bounds;
-}
-
 - (CGFloat)bottomHighlightImageXAtIndex:(NSUInteger)tabIndex
 {
 	CGFloat tabItemWidth = ceil(self.frame.size.width / self.tabItemsArray.count);
 	return (tabIndex * tabItemWidth);
 }
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+}
+
 
 @end
 
@@ -82,7 +76,7 @@ MSMainTabViewController *tabController=nil;
 
 - (NSInteger)heightForTabBarView
 {
-    return 46;
+    return 50;
 }
 
 - (NSDictionary *)tableBarItemAttriAtIndex:(NSInteger)index
@@ -105,9 +99,10 @@ MSMainTabViewController *tabController=nil;
 {
     [super loadView];
     self.view.backgroundColor = nil;
-    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"24",@"bottomSpace":@"4"};
-    [self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
+    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"26",@"bottomSpace":@"4"};
+    //[self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     //[self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
+    self.tabBarView.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
     self.items = [NSArray arrayWithObjects:
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNStoreViewController class] image:[MiniUIImage imageNamed:@"mymall"] highlightedImage:[MiniUIImage imageNamed:@"mymall_hover"] title:@"我的商城"],
                    [[MiniTabBarItem alloc] initWithControllerClass:[MSNEspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"特卖广场"],

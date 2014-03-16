@@ -634,6 +634,9 @@
         {
             block(error,data,nil,cache);
         }
+        if (error==nil) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CONTENT_CHANGE object:nil userInfo:nil];
+        }
     }];
 }
 
@@ -657,6 +660,9 @@
         if ( block )
         {
             block(error,data,nil,cache);
+        }
+        if (error==nil) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CONTENT_CHANGE object:nil userInfo:nil];
         }
     }];
 }
@@ -685,6 +691,18 @@
     }];
 }
 
+- (void)shopinfo:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"shopinfo"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data.info,nil,cache);
+        }
+    }];
+}
+
 - (void)shopgoods:(NSString*)shopId tagId:(NSString*)tagId sort:(NSString*)sort key:(NSString*)key page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"shopgoods"];
@@ -706,7 +724,7 @@
 {
     NSString *addr = [self requestUri14:@"guesslikeshop"];
     NSMutableDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGuessObject class] isJson:YES showError:NO block:^(NSError *error, MSNGuessObject *data, BOOL cache) {
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
         if ( block )
         {
             if (error==nil)

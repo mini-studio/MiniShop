@@ -22,6 +22,7 @@
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 12, 12)];
         [self addSubview:self.imageView];
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 12)];
+        self.label.backgroundColor = [UIColor clearColor];
         self.label.font = [UIFont systemFontOfSize:12];
         self.label.numberOfLines = 0;
         [self addSubview:self.label];

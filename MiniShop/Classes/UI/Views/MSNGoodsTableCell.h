@@ -16,3 +16,7 @@
 
 - (void)clearMemory;
 @end
+
+@interface MSNGoodsHeaderTableCell : UITableViewCell
+@property(nonatomic,strong)id headerUserInfo;
+@end

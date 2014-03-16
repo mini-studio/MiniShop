@@ -175,3 +175,9 @@
 }
 
 @end
+
+
+@implementation MSNGoodsHeaderTableCell
+
+
+@end

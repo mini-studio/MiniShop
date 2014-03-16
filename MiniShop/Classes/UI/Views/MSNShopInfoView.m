@@ -80,6 +80,7 @@
 - (UILabel *)createLable:(CGRect)frame fontSize:(CGFloat)fontSize
 {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor colorWithRGBA:0x414345FF];
     label.lineBreakMode = NSLineBreakByTruncatingTail;
     label.font = [UIFont systemFontOfSize:fontSize];
