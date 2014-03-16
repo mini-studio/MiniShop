@@ -15,6 +15,7 @@
 #import "MRLoginViewController.h"
 #import "MSMiniUINavigationController.h"
 #import "NSString+Mini.h"
+#import <safeudid/SafeDevice.h>
 
 //NSString* const appIDForWeiXin = @"wx5267b1263ded2fbd";
 //NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
@@ -28,6 +29,8 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+    SafeDevice *device = [SafeDevice build];
+    NSLog(@"%@",[device deviceInfo]);
     MSSystem *system = [MSSystem sharedInstance];
     [system initSystem];
     self.isFirstRun = [MSSystem isFirstRun];

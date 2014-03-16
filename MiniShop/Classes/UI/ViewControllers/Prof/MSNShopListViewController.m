@@ -89,7 +89,7 @@
     if ( cell == nil ) {
         cell = [[MSNShopInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.shopInfoDelegate = self;
-        cell.backgroundColor = [self backgroundColor];
+        cell.contentView.backgroundColor = [self backgroundColor];
     }
     cell.shopInfo = info;
     return cell;
