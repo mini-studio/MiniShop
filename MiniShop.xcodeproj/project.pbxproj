@@ -67,7 +67,6 @@
 		C14341EE17D0F38E004E1AFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = C14341ED17D0F38E004E1AFC /* Icon-120.png */; };
 		C14D9EBF17F7A6760027627E /* MiniUIPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14D9EBE17F7A6760027627E /* MiniUIPhotoImageView.m */; };
 		C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */; };
-		C15FA3C118D567970042C2A7 /* safeudid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15FA3C018D567970042C2A7 /* safeudid.framework */; };
 		C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2C1856196700F54499 /* FBEncryptorAES.m */; };
 		C1618C301856196700F54499 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2E1856196700F54499 /* NSData+Base64.m */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
@@ -381,7 +380,6 @@
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C15DF8F1186127A70011EF94 /* MSNGoodsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsTableCell.h; sourceTree = "<group>"; };
 		C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsTableCell.m; sourceTree = "<group>"; };
-		C15FA3C018D567970042C2A7 /* safeudid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = safeudid.framework; path = Frameworks/safeudid.framework; sourceTree = "<group>"; };
 		C1618C2B1856196700F54499 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
 		C1618C2C1856196700F54499 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
 		C1618C2D1856196700F54499 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -690,7 +688,6 @@
 				C12E4975180A345500482A10 /* Security.framework in Frameworks */,
 				C1ACB74517FB384900862641 /* CoreText.framework in Frameworks */,
 				C169C59116FF4F9F00ED87D8 /* MessageUI.framework in Frameworks */,
-				C15FA3C118D567970042C2A7 /* safeudid.framework in Frameworks */,
 				C169C59916FF4FF400ED87D8 /* AddressBook.framework in Frameworks */,
 				C169C59716FF4FD200ED87D8 /* MapKit.framework in Frameworks */,
 				C169C59516FF4FC600ED87D8 /* CoreLocation.framework in Frameworks */,
@@ -978,7 +975,6 @@
 		C169C47816FF48F200ED87D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C15FA3C018D567970042C2A7 /* safeudid.framework */,
 				C1B0F1FD1884319200D222E5 /* UMAppNetwork */,
 				C1ACB74417FB384900862641 /* CoreText.framework */,
 				C101D199177CCB3E009BFA10 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
@@ -2038,7 +2034,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (GCD3TFD42C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd (6SA3EGRUF8)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2067,7 +2063,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "F19AB43D-E084-4AB3-B293-E171B7D92A69";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -2082,8 +2078,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd (6SA3EGRUF8)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2105,7 +2100,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "F19AB43D-E084-4AB3-B293-E171B7D92A69";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -2115,8 +2110,6 @@
 		C169C49A16FF48F200ED87D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2138,8 +2131,6 @@
 		C169C49B16FF48F200ED87D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
