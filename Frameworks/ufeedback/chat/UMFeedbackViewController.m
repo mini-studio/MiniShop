@@ -10,6 +10,7 @@
 #import "UMFeedbackTableViewCellLeft.h"
 #import "UMFeedbackTableViewCellRight.h"
 #import "UMContactViewController.h"
+#import "UIColor+Mini.h"
 
 #define TOP_MARGIN 20.0f
 #define kNavigationBar_ToolBarBackGroundColor  [UIColor colorWithRed:0.149020 green:0.149020 blue:0.149020 alpha:1.0]
@@ -60,13 +61,26 @@ static UITapGestureRecognizer *tapRecognizer;
     return MAIN_VERSION>=7?64:44;
 }
 
+- (void)setStatusBar
+{
+    if ( MAIN_VERSION >= 7 ) {
+        UIView *view = [self.view viewWithTag:0x0C00C];
+        if ( view == nil ) {
+            view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+            view.backgroundColor =  NAVI_BG_COLOR;
+            [self.view addSubview:view];
+        }
+    }
+}
+
 - (void)loadView
 {
     [super loadView];
     self.view.backgroundColor = [UIColor blackColor];
     self.naviTitleView = [[MiniUINaviTitleView alloc] initWithFrame:CGRectMake(0, MAIN_VERSION>=7?20:0, self.view.width, 44)];
-    self.naviTitleView.backgroundColor = [UIColor redColor];
+    self.naviTitleView.backgroundColor = NAVI_BG_COLOR;
     [self.view addSubview:self.naviTitleView];
+    [self setStatusBar];
 }
 
 - (void)setupTableView {
@@ -198,14 +212,14 @@ static UITapGestureRecognizer *tapRecognizer;
 }
 
 - (void)setBackgroundColor {
-    self.mTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"view_bg"]];
-    if ([self.mToolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
-        UIImage *image = [self imageWithColor:kNavigationBar_ToolBarBackGroundColor];
-        [self.mToolBar setBackgroundImage:image forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
-    } else {
-        self.mToolBar.barStyle = UIBarStyleBlack;
-    }
-    self.mContactView.backgroundColor = kContactViewBackgroundColor;
+    //self.mTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"view_bg"]];
+//    if ([self.mToolBar respondsToSelector:@selector(setBackgroundImage:forToolbarPosition:barMetrics:)]) {
+//        UIImage *image = [self imageWithColor:kNavigationBar_ToolBarBackGroundColor];
+//        [self.mToolBar setBackgroundImage:image forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
+//    } else {
+//        self.mToolBar.barStyle = UIBarStyleBlack;
+//    }
+    //self.mContactView.backgroundColor = kContactViewBackgroundColor;
 }
 
 - (void)setBackButton {

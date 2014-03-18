@@ -25,6 +25,7 @@
 
 
 @interface MSNShopList:MSObject
+@property (nonatomic,strong) NSString *info_message;
 @property (nonatomic,strong) NSArray *info;
 
 - (void)append:(MSNShopList*)list;

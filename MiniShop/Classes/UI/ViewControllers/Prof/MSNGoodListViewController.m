@@ -199,6 +199,7 @@
         for (int row=0; row<rows; row++) {
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
             if ( [cell isKindOfClass:[MSNGoodsTableCell class]] ) {
+                if ([[self.tableView visibleCells] indexOfObject:cell]==NSNotFound)
                 [(MSNGoodsTableCell*)cell clearMemory];
             }
         }
@@ -221,8 +222,7 @@
 
 - (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
-    if ( page == 1 )
-    {
+    if(page == 1){
         [self.tableView refreshDone];
         self.dataSource = data;
     }

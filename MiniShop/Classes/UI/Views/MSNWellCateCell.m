@@ -40,7 +40,6 @@
 {
     _group = group;
     CGFloat buttonSize = ([[UIScreen mainScreen] bounds].size.width - 40)/3;
-    NSString *url = @"http://il1.alicdn.com/bao/uploaded/i1/17115031376399884/T1O6T2FfXaXXXXXXXX_!!0-item_pic.jpg_b.jpg";
     int count = group.item.count;
     for ( int index = 0; index < count; index++ ) {
         MSNWellCate *cate = group.item[index];
@@ -52,7 +51,7 @@
         imageView.frame = CGRectMake(x, y, buttonSize, buttonSize);
         [self.contentView addSubview:imageView];
         if ([cate.image_url rangeOfString:@"http"].location == 0 ) {
-            [imageView.imageView setImageWithURL:[NSURL URLWithString:url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+            [imageView.imageView setImageWithURL:[NSURL URLWithString:cate.image_url]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
                 imageView.image = image;
             } failure:^(NSError *error) {
                 

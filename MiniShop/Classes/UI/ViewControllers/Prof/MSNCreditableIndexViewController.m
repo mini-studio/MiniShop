@@ -29,7 +29,7 @@
         self.leftview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 4, self.height)];
         self.leftview.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.leftview];
-        self.textLabel.textAlignment = UITextAlignmentLeft;
+        self.textLabel.textAlignment = NSTextAlignmentLeft;
         [self.textLabel setTextColor:[UIColor whiteColor]];
         [self.textLabel setFont:[UIFont boldSystemFontOfSize:14]];
     }

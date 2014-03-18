@@ -60,7 +60,7 @@
 
 - (void)setKeyWord:(NSString *)keyWord
 {
-    [_keylabel setText:[NSString stringWithFormat:@"<font color='#414345'>销售</font><font color='#d14c60'>%@</font><font color='#414345'>的精品店</font>",keyWord]];
+    [_keylabel setText:keyWord];
 }
 
 @end

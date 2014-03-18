@@ -11,7 +11,6 @@
 #import "MRLoginViewController.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "UIColor+Mini.h"
-#import "MSFeedbackViewController.h"
 #import "MiniUIWebViewController.h"
 #import "UMTableViewController.h"
 #import "UILabel+Mini.h"
@@ -55,7 +54,7 @@
                                     @{@"action":@"actionForMessage",@"text":@"公告消息"}
                                     ],
                             @"1":@[
-                                    @{@"action":@"actionForReg",@"text":@"登陆注册 和  绑定支付宝",@"subtext":@"登录绑定后才能参加积分活动哦~"},
+                                    @{@"action":@"actionForReg",@"text":@"登陆注册",@"subtext":@"登录绑定后才能参加积分活动哦~"},
                                     @{@"action":@"actionForFeedback",@"text":@"微信"},
                                     @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
                                     ],

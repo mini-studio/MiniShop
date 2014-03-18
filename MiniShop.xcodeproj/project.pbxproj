@@ -187,7 +187,6 @@
 		C1EC507E178074A100BE5ABB /* MSUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501B178074A100BE5ABB /* MSUIWebViewController.m */; };
 		C1EC507F178074A100BE5ABB /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC501D178074A100BE5ABB /* MSViewController.m */; };
 		C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC503E178074A100BE5ABB /* MSAboutViewController.m */; };
-		C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5040178074A100BE5ABB /* MSFeedbackViewController.m */; };
 		C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5042178074A100BE5ABB /* MSJoinViewController.m */; };
 		C1EC5090178074A100BE5ABB /* MSNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC5044178074A100BE5ABB /* MSNSettingsViewController.m */; };
 		C1EC5094178074A100BE5ABB /* MiniUIIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC504F178074A100BE5ABB /* MiniUIIndicator.m */; };
@@ -608,8 +607,6 @@
 		C1EC501D178074A100BE5ABB /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
 		C1EC503D178074A100BE5ABB /* MSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAboutViewController.h; sourceTree = "<group>"; };
 		C1EC503E178074A100BE5ABB /* MSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAboutViewController.m; sourceTree = "<group>"; };
-		C1EC503F178074A100BE5ABB /* MSFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFeedbackViewController.h; sourceTree = "<group>"; };
-		C1EC5040178074A100BE5ABB /* MSFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFeedbackViewController.m; sourceTree = "<group>"; };
 		C1EC5041178074A100BE5ABB /* MSJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSJoinViewController.h; sourceTree = "<group>"; };
 		C1EC5042178074A100BE5ABB /* MSJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSJoinViewController.m; sourceTree = "<group>"; };
 		C1EC5043178074A100BE5ABB /* MSNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSettingsViewController.h; sourceTree = "<group>"; };
@@ -1549,8 +1546,6 @@
 			children = (
 				C1EC503D178074A100BE5ABB /* MSAboutViewController.h */,
 				C1EC503E178074A100BE5ABB /* MSAboutViewController.m */,
-				C1EC503F178074A100BE5ABB /* MSFeedbackViewController.h */,
-				C1EC5040178074A100BE5ABB /* MSFeedbackViewController.m */,
 				C1EC5041178074A100BE5ABB /* MSJoinViewController.h */,
 				C1EC5042178074A100BE5ABB /* MSJoinViewController.m */,
 				C1EC5043178074A100BE5ABB /* MSNSettingsViewController.h */,
@@ -1989,7 +1984,6 @@
 				C176AD5318C37D360024888A /* MSNHistroyView.m in Sources */,
 				C1EC508D178074A100BE5ABB /* MSAboutViewController.m in Sources */,
 				C12C2CB217E8FABE0097CFBD /* UITextField+Mini.m in Sources */,
-				C1EC508E178074A100BE5ABB /* MSFeedbackViewController.m in Sources */,
 				C10FC6AA18A7C25900A23F02 /* MSNCreditableIndexViewController.m in Sources */,
 				C12C2CB517E913C60097CFBD /* MRResetPasswdViewController.m in Sources */,
 				C1EC508F178074A100BE5ABB /* MSJoinViewController.m in Sources */,
@@ -2034,7 +2028,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd (6SA3EGRUF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2078,7 +2072,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wanwuhuakai Network Technology Co., Ltd (6SA3EGRUF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

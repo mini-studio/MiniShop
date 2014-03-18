@@ -119,7 +119,7 @@
             _searchTitleView.transformButton.delegate = self;
             _searchTitleView.transformButton.items = @[@"按相关度排序",@"按关注度排序",@"按信用度排序",@"按总售数排序"];
         }
-        _searchTitleView.keyWord = self.key;
+        _searchTitleView.keyWord = _dataSource.info_message;
         return _searchTitleView;
     }
     else {
