@@ -33,6 +33,7 @@
 - (void)group
 {
     [_dataSource removeAllObjects];
+    [self.dataKey removeAllObjects];
     if ([SORT_TIME isEqualToString:self.sort])
     {
         for (MSNGoodsItem *item in self.info ) {
@@ -43,16 +44,13 @@
                 _dataSource[key] = array;
             }
             [array addObject:item];
+            if ([self.dataKey indexOfObject:key]==NSNotFound) {
+                [self.dataKey addObject:key];
+            }
         }
-        NSArray *allkey = self.dataSource.allKeys;
-        [self.dataKey removeAllObjects];
-        [self.dataKey addObjectsFromArray:[allkey sortedArrayWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(NSString * obj1, NSString * obj2) {
-            return [obj2 compare:obj1];
-        }]];
     }
     else
     {
-        [self.dataKey removeAllObjects];
         int count = self.info.count;
         for ( int index = 0; index < count; ) {
             NSString *key = ITOS(index/3);
