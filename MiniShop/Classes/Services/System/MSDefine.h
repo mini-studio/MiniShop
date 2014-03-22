@@ -45,5 +45,6 @@
 
 #define NOTI_USER_LOGIN      @"USER_LOGIN"
 #define NOTI_CONTENT_CHANGE  @"CONTENT_CHANGE"
+#define NOTI_FAV_CHANGE      @"FAV_CHANGE"
 
 #endif

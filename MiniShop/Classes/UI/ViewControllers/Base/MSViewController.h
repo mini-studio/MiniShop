@@ -14,8 +14,8 @@
 @interface MSViewController : MiniViewController
 @property (nonatomic)BOOL showNaviView;
 
-- (void)setBackGroudImage:(NSString *)imageName;
-- (void)setViewBackgroundColor;
+- (void)setBackGroundImage:(NSString *)imageName;
+- (UIColor*)backgroundColor;
 - (void)addRightRefreshButtonToTarget:(id)target action:(SEL)action;
 - (void)setNaviLeftButtonTitle:(NSString *)title target:(id)target action:(SEL)action;
 - (UIBarButtonItem *)navLeftButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
@@ -33,10 +33,6 @@
 - (BOOL)isLoading;
 
 - (void)showErrorMessage:(NSError *)error;
-
-//- (void)userAuth:(void (^)())block;
-//
-//- (void)userAuthWithString:(NSString*)string block:(void (^)())block;
 
 - (void)setDefaultNaviBackground;
 

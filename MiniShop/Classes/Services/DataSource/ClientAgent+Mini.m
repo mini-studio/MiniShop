@@ -608,6 +608,19 @@
     }];
 }
 
+- (void)searchshop:(NSString*)key type:(NSString*)type page:(int)page block:(void (^)(NSError
+*error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"searchshop"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":@"",
+            @"type":type,@"page":ITOS(page)} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+        if ( block ) {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
 - (void)searchgoods:(NSString*)key type:(NSString*)type sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchgoods"];

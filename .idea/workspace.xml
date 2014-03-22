@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Resource/Images/Images/pub/add_b@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/find.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/xcuserdata/Wuquancheng.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/xcuserdata/Wuquancheng.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGradeView.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGradeView.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNShopInfoView.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNShopInfoView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSDefine.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSDefine.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcshareddata/MiniShop.xccheckout" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcshareddata/MiniShop.xccheckout" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
@@ -43,49 +38,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MSNShopListViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
+      <file leaf-file-name="MSNSearchShopViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="218" column="21" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0" vertical-offset="3609" max-vertical-offset="4389">
+            <state line="234" column="1" selection-start="6942" selection-end="6942" vertical-scroll-proportion="0.0" vertical-offset="2527" max-vertical-offset="4940">
               <folding>
-                <element signature="e#152#189#0" expanded="true" />
+                <element signature="e#148#187#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MSNSearchGoodsViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="45" selection-start="2710" selection-end="2946" vertical-scroll-proportion="0.0" vertical-offset="1378" max-vertical-offset="4199">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UISearchBar.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UISearchBar.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="4" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2926">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MSNUISearchBar.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNUISearchBar.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="57" selection-start="1988" selection-end="1988" vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="3800">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MSNUISearchBar.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNUISearchBar.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="11" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,25 +52,72 @@
       <file leaf-file-name="MSNTransformButton.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNTransformButton.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+            <state line="12" column="10" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UITextInputTraits.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITextInputTraits.h">
+      <file leaf-file-name="MSNShopDetailViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="27" selection-start="5121" selection-end="5136" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="2660">
+            <state line="10" column="31" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UITextField.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITextField.h">
+      <file leaf-file-name="MSNShopDetailViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="42" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="2432">
+            <state line="159" column="16" selection-start="6681" selection-end="6681" vertical-scroll-proportion="0.0" vertical-offset="3675" max-vertical-offset="8075">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSObject.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/include/objc/NSObject.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="15" selection-start="1311" selection-end="1318" vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="2033">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNShopListViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="238" column="59" selection-start="7464" selection-end="7464" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4750">
+              <folding>
+                <element signature="e#152#189#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNShopListViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNCreditableIndexViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="164" column="19" selection-start="5189" selection-end="5189" vertical-scroll-proportion="0.0" vertical-offset="2746" max-vertical-offset="4028">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSDefine.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSDefine.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1064">
               <folding />
             </state>
           </provider>
@@ -120,19 +126,10 @@
       <file leaf-file-name="MSNAddShopViewController.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="64" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.34365326" vertical-offset="788" max-vertical-offset="1862">
+            <state line="231" column="94" selection-start="7129" selection-end="7129" vertical-scroll-proportion="0.79441625" vertical-offset="3763" max-vertical-offset="4617">
               <folding>
                 <element signature="e#150#186#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MSNAddShopViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,19 +153,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.h" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGradeView.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNUISearchBar.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSDefine.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" />
       </list>
     </option>
@@ -412,6 +411,32 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="System" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -536,23 +561,27 @@
       <created>1394494287422</created>
       <updated>1394494287422</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new 14">
+      <created>1395489750535</created>
+      <updated>1395489750535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1814882" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1810585" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3321234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1578125" sideWeight="0.9047187" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15154265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21718504" sideWeight="0.75766015" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20871143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09528131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24233983" sideWeight="0.41591987" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24233983" sideWeight="0.5840801" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -574,64 +603,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m</url>
+          <line>8</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="33" selection-start="2486" selection-end="2501" vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="2603">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNShop.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="1007">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="645" column="8" selection-start="25992" selection-end="25992" vertical-scroll-proportion="0.0" vertical-offset="12255" max-vertical-offset="15352">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="1" selection-start="11865" selection-end="11865" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="8151">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNShopInfoView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2337">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGradeView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="10" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="817">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="21" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0" vertical-offset="3609" max-vertical-offset="4389">
-          <folding>
-            <element signature="e#152#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
+        <state line="617" column="21" selection-start="24920" selection-end="24920" vertical-scroll-proportion="0.0" vertical-offset="11028" max-vertical-offset="15371">
           <folding />
         </state>
       </provider>
@@ -643,51 +628,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNUISearchBar.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="11" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
+        <state line="30" column="22" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="874">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UISearchBar.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="4" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2926">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNUISearchBar.m">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="57" selection-start="1988" selection-end="1988" vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="3800">
+        <state line="10" column="47" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="378" column="0" selection-start="12956" selection-end="12956" vertical-scroll-proportion="0.0" vertical-offset="6580" max-vertical-offset="7467">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNTransformButton.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+        <state line="12" column="10" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITextInputTraits.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="27" selection-start="5121" selection-end="5136" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="2660">
+        <state line="164" column="19" selection-start="5189" selection-end="5189" vertical-scroll-proportion="0.0" vertical-offset="2746" max-vertical-offset="4028">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITextField.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="42" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="2432">
+        <state line="10" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="16" selection-start="6681" selection-end="6681" vertical-scroll-proportion="0.0" vertical-offset="3675" max-vertical-offset="8075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="1" selection-start="6942" selection-end="6942" vertical-scroll-proportion="0.0" vertical-offset="2527" max-vertical-offset="4940">
+          <folding>
+            <element signature="e#148#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSDefine.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/include/objc/NSObject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="15" selection-start="1311" selection-end="1318" vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="2033">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="59" selection-start="7464" selection-end="7464" vertical-scroll-proportion="0.0" vertical-offset="3829" max-vertical-offset="4750">
+          <folding>
+            <element signature="e#152#189#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="64" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.34365326" vertical-offset="788" max-vertical-offset="1862">
+        <state line="231" column="94" selection-start="7129" selection-end="7129" vertical-scroll-proportion="0.79441625" vertical-offset="3763" max-vertical-offset="4617">
           <folding>
             <element signature="e#150#186#0" expanded="true" />
           </folding>

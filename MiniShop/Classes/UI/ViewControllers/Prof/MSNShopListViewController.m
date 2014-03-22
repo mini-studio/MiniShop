@@ -28,8 +28,16 @@
     self = [super init];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFavListChanged:)
+                                                     name:NOTI_FAV_CHANGE
+                                                   object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)loadView
@@ -57,6 +65,14 @@
 {
     [super viewDidLoad];
 	[self loadFavShopListData:1];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.dataSource.info.count>0) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,7 +119,7 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)recevieData:(MSNShopList*)data page:(int)page
+- (void)receiveData:(MSNShopList *)data page:(int)page
 {
     _page = page;
     if ( page == 1) {
@@ -131,7 +147,7 @@
     [[ClientAgent sharedInstance] myshoplist:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
          [pSelf dismissWating];
         if (error==nil) {
-            [pSelf recevieData:data page:page];
+            [pSelf receiveData:data page:page];
         }
         else {
             [pSelf showErrorMessage:error];
@@ -220,6 +236,9 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-
+- (void)handleFavListChanged:(NSNotification *)notification
+{
+    [self loadFavShopListData:1];
+}
 
 @end

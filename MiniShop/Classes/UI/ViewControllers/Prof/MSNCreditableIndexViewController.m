@@ -183,7 +183,7 @@
         else {
             MSNSearchShopViewController *controller = [[MSNSearchShopViewController alloc] init];
             controller.tagId = [cate.param integerValue];
-            controller.ctitle = cate.title;
+            controller.cTitle = cate.title;
             [self.navigationController pushViewController:controller animated:YES];
         }
     }

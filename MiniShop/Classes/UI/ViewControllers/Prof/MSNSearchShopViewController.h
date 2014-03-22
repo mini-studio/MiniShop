@@ -12,5 +12,5 @@
 @property (nonatomic,strong) NSString *key;
 
 @property (nonatomic) int tagId;
-@property (nonatomic,strong) NSString *ctitle;
+@property (nonatomic,strong) NSString *cTitle;
 @end

@@ -51,7 +51,7 @@
         }
     }
     self.navigationController.navigationBar.hidden = YES;
-    [self setBackGroudImage:@"background_image"];
+    [self setBackGroundImage:@"background_image"];
     [self setNaviTitleViewShow:_showNaviView];
     [self setStatusBar];
     if ( _showNaviView) {
@@ -89,7 +89,7 @@
     [[SDImageCache sharedImageCache] clearMemory];
 }
 
-- (void)setBackGroudImage:(NSString *)imageName
+- (void)setBackGroundImage:(NSString *)imageName
 {
     UIImageView *imageView = (UIImageView*)[self.view viewWithTag:KBACKGROUDIMAGEVIEWTAG];
     if ( imageView == nil )
@@ -107,9 +107,10 @@
     view.arrowColor = [UIColor whiteColor];
 }
 
-- (void)setViewBackgroundColor
+
+- (UIColor*)backgroundColor
 {
-    [self setViewBackGroundWithColor:[UIColor colorWithRGBA:0xdbdbdbff]];
+    return [UIColor colorWithRGBA:0xfaf1f2ff];
 }
 
 - (void)setViewBackGroundWithColor:(UIColor *)color
@@ -357,35 +358,6 @@
     UIImage *image = [MiniUIImage imageNamed:( MAIN_VERSION >= 7?@"navi_background_7":@"navi_background")];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
-
-- (void)userAuth:(void (^)())block
-{
-    [self userAuthWithString:LOGIN_PROMPT block:block];
-}
-
-- (void)userAuthWithString:(NSString*)string block:(void (^)())block
-{
-    if ( WHO == nil && MINI_UDID.length == 0 ) {
-        __PSELF__;
-        [MiniUIAlertView showAlertWithTitle:@"友好滴提示一下" message:string block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-            if ( buttonIndex != alertView.cancelButtonIndex ) {
-                MRLoginViewController *controller = [[MRLoginViewController alloc] init];
-                controller.loginblock = ^(BOOL login) {
-                    if ( login ) {
-                        [pSelf.navigationController popViewControllerAnimated:NO];
-                        block();
-                    }
-                };
-                [pSelf.navigationController pushViewController:controller animated:YES];
-            }
-        } cancelButtonTitle:@"等会儿吧" otherButtonTitles:@"去登录", nil];
-    }
-    else {
-        block();
-    }
-
-}
-
 
 - (void)loadMore
 {

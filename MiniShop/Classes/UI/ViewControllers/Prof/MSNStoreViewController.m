@@ -160,7 +160,7 @@
 {
 }
 
-- (void)setBackGroudImage:(NSString *)imageName
+- (void)setBackGroundImage:(NSString *)imageName
 {
 }
 

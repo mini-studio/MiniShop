@@ -46,8 +46,8 @@
 {
     [super loadView];
     [self setNaviBackButton];
-    if (self.ctitle.length>0) {
-        [self.naviTitleView setTitle:self.ctitle];
+    if (self.cTitle.length>0) {
+        [self.naviTitleView setTitle:self.cTitle];
     }
     else {
         self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
@@ -95,14 +95,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIColor*)backgroundColor
-{
-    return [UIColor colorWithRGBA:0xfaf1f2ff];
-}
 
 - (BOOL)showSearchTitleView
 {
-    return self.ctitle.length==0;
+    return self.cTitle.length==0;
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -167,7 +163,7 @@
     [self search:1 delay:0];
 }
 
-- (void)recevieData:(MSNShopList*)data page:(int)page
+- (void)receiveData:(MSNShopList *)data page:(int)page
 {
     _page = page;
     if ( page == 1) {
@@ -202,7 +198,7 @@
     [[ClientAgent sharedInstance] searchshop:_key sort:self.orderby page:page tag_id:self.tagId block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
-            [pSelf recevieData:data page:page];
+            [pSelf receiveData:data page:page];
         }
     }];
 }
