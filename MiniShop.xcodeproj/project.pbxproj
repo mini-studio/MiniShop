@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C101D19C177CCB3E009BFA10 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C101D19A177CCB3E009BFA10 /* libMobClickLibrary.a */; };
+		C1063C6218DD432300A7FBB5 /* add_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1063C6118DD432300A7FBB5 /* add_b@2x.png */; };
+		C1063C6518DD45B400A7FBB5 /* MSNAddShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1063C6418DD45B400A7FBB5 /* MSNAddShopViewController.m */; };
 		C10BE72A17765C3C009E6482 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BE70717765C3C009E6482 /* UMEGORefreshTableHeaderView.m */; };
 		C10BE72B17765C3C009E6482 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C10BE70917765C3C009E6482 /* background@2x.png */; };
 		C10BE72C17765C3C009E6482 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C10BE70A17765C3C009E6482 /* blueArrow.png */; };
@@ -237,6 +239,9 @@
 /* Begin PBXFileReference section */
 		C101D19A177CCB3E009BFA10 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		C101D19B177CCB3E009BFA10 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		C1063C6118DD432300A7FBB5 /* add_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_b@2x.png"; sourceTree = "<group>"; };
+		C1063C6318DD45B400A7FBB5 /* MSNAddShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNAddShopViewController.h; sourceTree = "<group>"; };
+		C1063C6418DD45B400A7FBB5 /* MSNAddShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNAddShopViewController.m; sourceTree = "<group>"; };
 		C10BE70617765C3C009E6482 /* UMEGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMEGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		C10BE70717765C3C009E6482 /* UMEGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMEGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		C10BE70917765C3C009E6482 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
@@ -908,6 +913,8 @@
 				C10FC69118A7C25900A23F02 /* MSGuideViewController.m */,
 				C10FC69218A7C25900A23F02 /* MSMainTabViewController.h */,
 				C10FC69318A7C25900A23F02 /* MSMainTabViewController.m */,
+				C1063C6318DD45B400A7FBB5 /* MSNAddShopViewController.h */,
+				C1063C6418DD45B400A7FBB5 /* MSNAddShopViewController.m */,
 				C10FC69418A7C25900A23F02 /* MSNCreditableIndexViewController.h */,
 				C10FC69518A7C25900A23F02 /* MSNCreditableIndexViewController.m */,
 				C10FC69618A7C25900A23F02 /* MSNDetailViewController.h */,
@@ -1304,15 +1311,16 @@
 		C1C7759718B1007900382F6B /* pub */ = {
 			isa = PBXGroup;
 			children = (
-				C12F595C18B1193C0040A74A /* arrowicon@2x.png */,
-				C12F595A18B117B70040A74A /* arrowdown@2x.png */,
 				C1C7759818B1007900382F6B /* about-568h@2x.jpg */,
 				C1C7759918B1007900382F6B /* about@2x.jpg */,
 				C1C7759A18B1007900382F6B /* about_ver_bg.png */,
 				C1C7759B18B1007900382F6B /* add@2x.png */,
+				C1063C6118DD432300A7FBB5 /* add_b@2x.png */,
 				C1C7759C18B1007900382F6B /* add_hover@2x.png */,
 				C1C7759D18B1007900382F6B /* arrow_b@2x.png */,
 				C1C7759E18B1007900382F6B /* arrow_white@2x.png */,
+				C12F595A18B117B70040A74A /* arrowdown@2x.png */,
+				C12F595C18B1193C0040A74A /* arrowicon@2x.png */,
 				C1C7759F18B1007900382F6B /* background_image@2x.png */,
 				C1C775A018B1007900382F6B /* bigbtn@2x.png */,
 				C1C775A118B1007900382F6B /* button_h_normal@2x.png */,
@@ -1909,6 +1917,7 @@
 				C1EC517C1780754A00BE5ABB /* Default-568h@2x.png in Resources */,
 				C1C775F618B1007900382F6B /* bigbtn@2x.png in Resources */,
 				C1C7761718B1007900382F6B /* money@2x.png in Resources */,
+				C1063C6218DD432300A7FBB5 /* add_b@2x.png in Resources */,
 				C1C775F218B1007900382F6B /* add_hover@2x.png in Resources */,
 				C180FB251878555800F25C2C /* sale_hover@2x.png in Resources */,
 				C1C775F018B1007900382F6B /* about_ver_bg.png in Resources */,
@@ -1948,6 +1957,7 @@
 				C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */,
 				C1254B64186EB2E80007D510 /* MSNShopInfoCell.m in Sources */,
 				C1EC506F178074A100BE5ABB /* MSShopInfo.m in Sources */,
+				C1063C6518DD45B400A7FBB5 /* MSNAddShopViewController.m in Sources */,
 				C1EC5070178074A100BE5ABB /* MSSystem.m in Sources */,
 				C1EC5071178074A100BE5ABB /* MSUser.m in Sources */,
 				C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */,

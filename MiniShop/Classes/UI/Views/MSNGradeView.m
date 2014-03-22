@@ -2,6 +2,8 @@
 //  MSNGradeView.m
 //  MiniShop
 //
+//  信誉等级视图
+//
 //  Created by Wuquancheng on 14-2-1.
 //  Copyright (c) 2014年 mini. All rights reserved.
 //
@@ -21,6 +23,7 @@
 
 - (void)setGrade:(NSInteger)grade
 {
+    [self removeAllSubviews];
     int numbers = grade%10;
     int level = grade/10; /*1心 2钻 3冠 4皇冠*/
     NSString *imageName = level==1?@"hear":(level==2?@"diamond":(level==3?@"crown_silver":@"crown_gold"));

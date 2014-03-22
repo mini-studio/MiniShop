@@ -57,7 +57,7 @@
 @property (nonatomic,strong)MSNTransformButton *transformButton;
 @property (nonatomic,strong)MiniUIButton *cancelButton;
 
-@property (nonatomic,strong)MSNHistroyView *histroyView;
+@property (nonatomic,strong)MSNHistroyView *historyView;
 
 @property (nonatomic,strong)MSNSearchGoodsViewHeaderView *titleSectionView;
 @end
@@ -111,10 +111,10 @@
     self.titleSectionView.orderbyButton.fontSize = 14;
     self.titleSectionView.orderbyButton.delegate = self;
     
-    self.histroyView = [[MSNHistroyView alloc] initWithFrame:CGRectMake(0, -200, self.contentView.width, 200)];
-    self.histroyView.backgroundColor = [UIColor whiteColor];
+    self.historyView = [[MSNHistroyView alloc] initWithFrame:CGRectMake(0, -200, self.contentView.width, 200)];
+    self.historyView.backgroundColor = [UIColor whiteColor];
     __PSELF__;
-    self.histroyView.onSelected = ^(NSString *word) {
+    self.historyView.onSelected = ^(NSString *word) {
         pSelf.searchBar.text = word;
         [pSelf loadData:1 delay:0];
     };
@@ -135,7 +135,7 @@
 {
     [[ClientAgent sharedInstance] loadSearchHistory:^(NSError *error, NSArray* data, id userInfo, BOOL cache) {
         if (error==nil&&data.count>0) {
-            self.histroyView.historyItems = data;
+            self.historyView.historyItems = data;
             [self showHistroyView];
         }
     }];
@@ -143,17 +143,17 @@
 
 - (void)showHistroyView
 {
-    [self.contentView addSubview:self.histroyView];
-    [self.histroyView reload];
+    [self.contentView addSubview:self.historyView];
+    [self.historyView reload];
     [UIView animateWithDuration:0.25f animations:^{
-        self.histroyView.top = 0;
+        self.historyView.top = 0;
     }];
 }
 
 - (void)hiddenHistroyView
 {
     [UIView animateWithDuration:0.25f animations:^{
-        self.histroyView.bottom = 0;
+        self.historyView.bottom = 0;
     }];
 }
 

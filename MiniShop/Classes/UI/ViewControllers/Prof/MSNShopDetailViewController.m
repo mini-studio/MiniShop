@@ -250,26 +250,24 @@
 
     CGFloat centerY = toolbar.height/2-4;
 
-
-    MiniUIButton *button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
-    button.center = CGPointMake(50,centerY);
-    [toolbar addSubview:button];
-    [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
-    self.toolBarFavButton = button;
-
-    button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
-    button.center = CGPointMake(toolbar.width/2,centerY);
-    [toolbar addSubview:button];
-    [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
-    self.toolBarShareButton = button;
-
     if (self.random) {
-        button = [MiniUIButton createToolBarButton:@"再猜" imageName:@"money" hImageName:@"money_hover"];
-        button.center = CGPointMake(toolbar.width-50,centerY);
+        MiniUIButton *button = [MiniUIButton createToolBarButton:@"再猜" imageName:nil hImageName:nil];
+        button.center = CGPointMake(toolbar.width/2,centerY);
         [toolbar addSubview:button];
         [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];
     }
     else {
+        MiniUIButton *button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
+        button.center = CGPointMake(50,centerY);
+        [toolbar addSubview:button];
+        [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
+        self.toolBarFavButton = button;
+        
+        button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+        button.center = CGPointMake(toolbar.width/2,centerY);
+        [toolbar addSubview:button];
+        [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
+        self.toolBarShareButton = button;
         self.toolBarFavButton.left = 60;
         self.toolBarShareButton.right = self.contentView.width-60;
     }

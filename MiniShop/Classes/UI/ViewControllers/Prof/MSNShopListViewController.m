@@ -9,12 +9,11 @@
 #import "MSNShopListViewController.h"
 #import "MSNShop.h"
 #import "MSNShopInfoCell.h"
-#import "EGOUITableView.h"
-#import "MSUIMoreDataCell.h"
 #import "UIColor+Mini.h"
 #import "MSNShopDetailViewController.h"
 #import "MRLoginViewController.h"
 #import "MSWebChatUtil.h"
+#import "MSNAddShopViewController.h"
 
 @interface MSNShopListViewController () <MSNShopInfoCellDelegate>
 @property (nonatomic,strong)MSNShopList   *dataSource;
@@ -37,8 +36,9 @@
 {
     [super loadView];
 	[self setNaviBackButton];
-    self.naviTitleView.title = self.ctitle;
     [self createTableView];
+    [self setNaviRightButtonImage:@"add_b" target:self action:@selector(actionNaviRightButtonTap:)];
+    self.naviTitleView.title = self.ctitle;
 }
 
 - (void)createTableView
@@ -179,19 +179,19 @@
 
     CGFloat centerY = toolbar.height/2;
     MiniUIButton *shareButton = [MiniUIButton createToolBarButton:@"分享此列表" imageName:nil hImageName:nil];
-    shareButton.center = CGPointMake(toolbar.width-100,centerY);
+    shareButton.center = CGPointMake(toolbar.width-shareButton.width/2-40,centerY);
     [toolbar addSubview:shareButton];
     [shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
     MiniUIButton *button = nil;
     if (WHO==nil) {
         button = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
-        button.center = CGPointMake(100,centerY);
-        [toolbar addSubview:button];
         [button addTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
     }
     else {
-        shareButton.centerX = toolbar.width/2;
+        button = [MiniUIButton createToolBarButton:[NSString stringWithFormat:@"你好,%@",WHO.usernick] imageName:nil hImageName:nil];
     }
+    button.center = CGPointMake(40+button.width/2,centerY);
+    [toolbar addSubview:button];
 }
 
 - (void)actionToolBarShare:(MiniUIButton*)button
@@ -211,6 +211,12 @@
 - (void)actionToolBarReg:(MiniUIButton*)button
 {
     MRLoginViewController *controller = [[MRLoginViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)actionNaviRightButtonTap:(MiniUIButton*)button
+{
+    MSNAddShopViewController *controller = [[MSNAddShopViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

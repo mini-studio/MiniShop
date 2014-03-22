@@ -458,11 +458,10 @@
    
     [self createToolbar:44];
     self.detailView.items = self.items;
-    [self.detailView setSelectedIndex:self.defaultIndex delay:1];
-    double delayInSeconds = 1.0;
+    double delayInSeconds = 0.05;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            self.detailView.selectedIndex = self.defaultIndex;
+        self.detailView.selectedIndex = self.defaultIndex;
     });
 
 }

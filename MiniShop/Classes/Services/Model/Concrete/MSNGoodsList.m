@@ -133,6 +133,8 @@
     }
     return _discountMessage;
 }
+
+
 @end
 
 @implementation MSNGoodsDetailInfo : MSObject

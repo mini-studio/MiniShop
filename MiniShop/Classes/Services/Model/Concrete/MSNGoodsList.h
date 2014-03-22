@@ -45,6 +45,7 @@
 @property (nonatomic,strong)NSString *middle_image_url;
 @property (nonatomic,strong)NSString *small_image_url;
 @property (nonatomic,strong)NSString *price_history_intro;
+@property (nonatomic,strong)NSString *goods_sales_intro;
 @property (nonatomic,strong)NSString *shop_id;
 @property (nonatomic,strong)NSString *shop_title;
 @property (nonatomic)int like_goods;

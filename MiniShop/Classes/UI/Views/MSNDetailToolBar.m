@@ -166,13 +166,18 @@
     self.goodsPriceLabel.text = [NSString stringWithFormat:@"¥ %@",item.goods_sale_price];
     self.discountLabel.text = [item discountMessage];
     self.priceHistoryIntroLabel.label.text = item.price_history_intro;
-    self.startTimeLabel.text = [NSString stringWithFormat:@"上架时间 %@",item.goods_create_time];;
+    self.startTimeLabel.text = [NSString stringWithFormat:@"上架时间 %@",item.goods_sales_intro];;
     __PSELF__;
     [[ClientAgent sharedInstance] goodsinfo:item.goods_id block:^(NSError *error, MSNGoodsDetail* data, id userInfo, BOOL cache) {
         if (error==nil) {
             item.detail = data;
             item.like_goods = data.info.goods_info.like_goods;
             pSelf.shopInfoView.shopInfo = item.detail.shop_info;
+            item.goods_sales_intro = data.info.goods_info.goods_sales_intro;
+            item.price_history_intro = data.info.goods_info.price_history_intro;
+            pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@",item.goods_sales_intro];
+            pSelf.priceHistoryIntroLabel.label.text = item.price_history_intro;
+            [pSelf sizeToFit];
             [pSelf setNeedsLayout];
             action(YES);
         }
