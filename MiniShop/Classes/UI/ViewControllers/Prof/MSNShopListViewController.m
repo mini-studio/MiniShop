@@ -19,6 +19,7 @@
 @property (nonatomic,strong)MSNShopList   *dataSource;
 @property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic) int page;
+@property (nonatomic) BOOL needRefresh;
 @end
 
 @implementation MSNShopListViewController
@@ -31,6 +32,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFavListChanged:)
                                                      name:NOTI_FAV_CHANGE
                                                    object:nil];
+        self.needRefresh = NO;
     }
     return self;
 }
@@ -70,8 +72,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.dataSource.info.count>0) {
+    if (self.dataSource.info.count>0 && !self.needRefresh) {
         [self.tableView reloadData];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.needRefresh) {
+        self.needRefresh = NO;
+        [self.tableView triggerRefresh];
     }
 }
 
@@ -238,7 +249,7 @@
 
 - (void)handleFavListChanged:(NSNotification *)notification
 {
-    [self loadFavShopListData:1];
+    self.needRefresh = YES;
 }
 
 @end

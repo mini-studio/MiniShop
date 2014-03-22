@@ -226,12 +226,12 @@
 
 }
 
-- (void)back:(BOOL)animation
+- (void)back
 {
     if (_dataChanged) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_FAV_CHANGE object:nil];
     }
-    [super back:animation];
+    [super back];
 }
 
 @end
