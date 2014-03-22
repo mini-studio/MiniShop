@@ -13,6 +13,7 @@
 #import "MSNShop.h"
 #import "MSNShopInfoCell.h"
 #import "MSNShopDetailViewController.h"
+#import "MSNImportFavViewController.h"
 
 @interface MSNAddShopViewController () <UITextFieldDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic, strong)UITextField *searchField;
@@ -223,7 +224,8 @@
 
 - (void)actionImportFav:(MiniUIButton *)button
 {
-
+    MSNImportFavViewController *controller = [[MSNImportFavViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)back

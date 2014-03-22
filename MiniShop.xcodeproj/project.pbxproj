@@ -234,6 +234,8 @@
 		C1F27481177FFDDE004917C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C1F2747F177FFDDE004917C6 /* LICENSE */; };
 		C1FADC2017EC37A5005F5537 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FADC1F17EC37A5005F5537 /* libWeChatSDK.a */; };
 		C1FEB1BD17E3E7EB0076BEEA /* MSNUIDTView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FEB1BC17E3E7EB0076BEEA /* MSNUIDTView.m */; };
+		F7FD63652B3C8DEC2D142379 /* MSNImportFavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FD6E7F266E74A94099371A /* MSNImportFavViewController.m */; };
+		F7FD6B6FBDCEA2F5DDC81877 /* MSShopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FD6D40C23FB498E19752F4 /* MSShopInfoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -680,6 +682,10 @@
 		C1FAFED01752728E00A7E7F6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C1FEB1BB17E3E7EB0076BEEA /* MSNUIDTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNUIDTView.h; sourceTree = "<group>"; };
 		C1FEB1BC17E3E7EB0076BEEA /* MSNUIDTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNUIDTView.m; sourceTree = "<group>"; };
+		F7FD6746376CDA1B989C8DF1 /* MSShopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopInfoCell.h; sourceTree = "<group>"; };
+		F7FD6796E866A4F967371CF9 /* MSNImportFavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNImportFavViewController.h; sourceTree = "<group>"; };
+		F7FD6D40C23FB498E19752F4 /* MSShopInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopInfoCell.m; sourceTree = "<group>"; };
+		F7FD6E7F266E74A94099371A /* MSNImportFavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNImportFavViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -935,6 +941,8 @@
 				C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */,
 				C10FC6A618A7C25900A23F02 /* MSNStoreViewController.h */,
 				C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */,
+				F7FD6E7F266E74A94099371A /* MSNImportFavViewController.m */,
+				F7FD6796E866A4F967371CF9 /* MSNImportFavViewController.h */,
 			);
 			path = Prof;
 			sourceTree = "<group>";
@@ -1598,6 +1606,8 @@
 				C1867358189E4119006EC8C5 /* MSNSearchShopTitleView.m */,
 				C176AD5118C37D360024888A /* MSNHistroyView.h */,
 				C176AD5218C37D360024888A /* MSNHistroyView.m */,
+				F7FD6746376CDA1B989C8DF1 /* MSShopInfoCell.h */,
+				F7FD6D40C23FB498E19752F4 /* MSShopInfoCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2012,6 +2022,8 @@
 				C1EC509D178074A100BE5ABB /* MSNWebViewToolBar.m in Sources */,
 				C12C2CAF17E8F8DC0097CFBD /* MiniUIASTextField.m in Sources */,
 				C1EC51751780751A00BE5ABB /* main.m in Sources */,
+				F7FD63652B3C8DEC2D142379 /* MSNImportFavViewController.m in Sources */,
+				F7FD6B6FBDCEA2F5DDC81877 /* MSShopInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

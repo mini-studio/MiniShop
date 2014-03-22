@@ -502,6 +502,20 @@
     }
 }
 
+- (void)usercooperate:(MSShopInfo *)shopInfo userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    [self usercooperate:shopInfo.title shopId:[NSString stringWithFormat:@"%lld",shopInfo.numId] action:@"on" block:block];
+}
+- (void)usercooperate:(NSString *)shopName shopId:(NSString*)shopId action:(NSString *)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSDictionary *params = @{@"shopname":shopName,@"action":action,@"id":shopId};
+    params = [self perfectParameters:params];
+    NSString *addr = [self requestUri:@"usercooperate"];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+        block(error,data,nil,cache);
+    }];
+}
+
 
 @end
 
