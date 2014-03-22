@@ -26,22 +26,20 @@
         self.textLabel.height = 20;
         self.textLabel.highlightedTextColor = self.textLabel.textColor;
         self.detailTextLabel.backgroundColor = [UIColor clearColor];
-        self.button = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"follow_button_normal"] highlightedBackGroundImage:[UIImage imageNamed:@"follow_button_selected"] title:@""];
+        self.button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"add"]
+                                   highlightedImage:[UIImage imageNamed:@"add_hover"]];
         [self.button prefect];
         self.button.titleLabel.textColor = [UIColor colorWithRGBA:0xffecc8ff];
         [self addSubview:self.button];
-        self.button.size = CGSizeMake(70, 30);
+        self.button.size = CGSizeMake(100, 30);
         self.detailTextLabel.height = 20;
         self.aliasName = [[UILabel alloc] initWithFrame:CGRectZero];
         self.aliasName.backgroundColor = [UIColor clearColor];
         self.aliasName.font = [UIFont systemFontOfSize:14];
         self.aliasName.textColor = self.detailTextLabel.textColor;
         self.detailTextLabel.highlightedTextColor = self.detailTextLabel.textColor;
-        
-        self.shareButton = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"follow_button_normal"] highlightedBackGroundImage:[UIImage imageNamed:@"follow_button_selected"] title:@"分享"];
+
         [self.button prefect];
-        self.shareButton.titleLabel.textColor = [UIColor colorWithRGBA:0xffecc8ff];
-        self.shareButton.size = CGSizeMake(40, 30);
         self.imageView.image = [UIImage imageNamed:@"news_online_icon"];
     }
     return self;
@@ -60,17 +58,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if ( self.showsShareButton )
-    {
-        self.textLabel.width = self.width - 140 - 30 ;
-        self.shareButton.center = CGPointMake(self.width - self.shareButton.width/2 - 10, self.height/2);
-        self.button.center = CGPointMake(self.shareButton.left - self.button.width/2 - 10, self.height/2);
-    }
-    else
-    {
-        self.textLabel.width = self.width - 100 - 30;
-        self.button.center = CGPointMake(self.width - self.button.width/2 - 10, self.height/2);
-    }
+    self.textLabel.width = self.width - 100 - 30;
+    self.button.center = CGPointMake(self.width - self.button.width/2 - 10, self.height/2);
+
     self.imageView.frame = CGRectMake(10, 12, 16, 16);
     self.textLabel.origin = CGPointMake(30, 10);
     CGRect frame = self.textLabel.frame;
@@ -92,19 +82,6 @@
     }
 }
 
-- (void)setShowsShareButton:(BOOL)showsShareButton
-{
-    _showsShareButton = showsShareButton;
-    if ( self.showsShareButton )
-    {
-        [self addSubview:self.shareButton];
-    }
-    else
-    {
-        [self.shareButton removeFromSuperview];
-    }
-}
-
 - (void)setShopInfo:(MSShopInfo *)shopInfo
 {
     _shopInfo = shopInfo;
@@ -113,30 +90,23 @@
     self.button.enabled = YES;
 
     self.detailTextLabel.text = @"";
-    if ( _shopInfo.shop_id == 0 )
-    {
-        if ( _shopInfo.cooperate == 1 )
-        {
+    if ( _shopInfo.shop_id == 0 ) {
+        if ( _shopInfo.cooperate == 1 ) {
             [self.button setTitle:@"求过了" forState:UIControlStateNormal];
             self.button.enabled = NO;
         }
-        else
-        {
+        else {
             [self.button setTitle:@"求收录" forState:UIControlStateNormal];
         }
         [MSShopInfoCell resetButtonState:self.button shopInfo:_shopInfo];
         self.detailTextLabel.text = [NSString stringWithFormat:@"求收录人数:%d",_shopInfo.num];
     }
-    else
-    {
-        self.button.hidden = (shopInfo.like==1);
+    else {
         [MSShopInfoCell resetButtonState:self.button shopInfo:shopInfo];
-        if ( shopInfo.like_num > 0 )
-        {
+        if ( shopInfo.like_num > 0 ){
             self.detailTextLabel.text = [NSString stringWithFormat:@"共%d人关注",_shopInfo.like_num];
         }
-        else
-        {
+        else {
              self.detailTextLabel.text = @"关注人数 0";
         }
     }
@@ -144,26 +114,21 @@
 
 + (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSShopInfo*)shopInfo
 {
-    if ( shopInfo.shop_id == 0 )
-    {
-        [button setBackgroundImage:[UIImage imageNamed:@"follow_button_normal"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"follow_button_selected"] forState:UIControlStateHighlighted];
+    if ( shopInfo.shop_id == 0 ){
+        [button setImage:nil forState:UIControlStateNormal];
+        [button setImage:nil forState:UIControlStateHighlighted];
         [button prefect];
     }
     else {
-        if ( shopInfo.like==0 )
-        {
-            [button setTitle:@"✚ 关注" forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage imageNamed:@"follow_button_normal"] forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage imageNamed:@"follow_button_selected"] forState:UIControlStateHighlighted];
+        if ( shopInfo.like==0 ){
+            [button setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"add_hover"] forState:UIControlStateHighlighted];
             [button prefect];
         }
-        else
-        {
-            [button setTitle:@"取消关注" forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage imageNamed:@"unfollow_button_normal"] forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage imageNamed:@"unfollow_button_selected"] forState:UIControlStateHighlighted];
-           [button prefectDefault];
+        else {
+            [button setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"cancel_hover"] forState:UIControlStateHighlighted];
+            [button prefectDefault];
         }
     }
 }

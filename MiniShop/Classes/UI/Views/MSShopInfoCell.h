@@ -12,8 +12,6 @@
 @interface MSShopInfoCell : UITableViewCell
 @property (nonatomic,strong) MSShopInfo* shopInfo;
 @property (nonatomic,strong) MiniUIButton *button;
-@property (nonatomic,strong) MiniUIButton *shareButton;
-@property (nonatomic) BOOL showsShareButton;
 + (CGFloat)height:(MSShopInfo *)shopInfo;
 + (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSShopInfo*)shopInfo;
 @end

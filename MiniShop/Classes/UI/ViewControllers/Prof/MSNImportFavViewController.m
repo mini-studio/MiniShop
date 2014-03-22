@@ -123,7 +123,7 @@
     NSArray *ds = [self dataSourceAtSection:indexPath.section];
     MSShopInfo *info = [ds objectAtIndex:indexPath.row];
     if ( info.shop_id > 0 ) {
-       ;
+        [self actionGoToShopping:info];
     }
     else {
         [self actionGoToShopping:info];
@@ -210,11 +210,14 @@
         else // 关注
         {
             [pSelf showWating:nil];
-            [[ClientAgent sharedInstance] setfavshop:LLTOS(info.shop_id) action:@"on" block:^(NSError *error, id data,
+            [[ClientAgent sharedInstance] setfavshop:LLTOS(info.shop_id) action:info.like==0?@"on":@"off" block:^
+            (NSError
+            *error,
+                    id data,
                     id userInfo, BOOL cache) {
                 [pSelf dismissWating];
                 if (error==nil) {
-                    info.like = 1;
+                    info.like = info.like==0?1:0;
                     [pSelf.tableView reloadData];
                 }
                 else {
