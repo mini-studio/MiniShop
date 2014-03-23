@@ -57,7 +57,7 @@
                                     @{@"action":@"actionForClearCache",@"text":@"清除缓存",@"acc":@"0"}
                                     ],
                             @"3":@[
-                                    @{@"action":@"actionForRecommend",@"text":@"精品推荐"},
+                                    @{@"action":@"actionForRecommend",@"text":@"精彩应用推荐"},
                                     @{@"action":@"actionForAbout",@"text":@"关于"}
                                   ]
                             };

@@ -89,7 +89,7 @@
                 MSNCate *tag = [data.info objectAtIndex:index];
                 [pSelf.topTitleView addMenuTitle:tag.tag_name userInfo:[NSString stringWithFormat:@"%d",index]];
                 MSNStoreContentViewController *controller = [[MSNStoreContentViewController alloc] init];
-                controller.tagid = tag.tag_id;
+                controller.tagId = tag.tag_id;
                 [pSelf.subControllers addObject:controller];
                 [pSelf addChildViewController:controller];
                 controller.view.frame = CGRectMake(index*pSelf.containerView.width, 0, pSelf.containerView.width, pSelf.containerView.height);
@@ -115,7 +115,7 @@
 - (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     for (MSNStoreContentViewController *controller in self.subControllers ) {
-        controller.orderby = button.selectedValue;
+        controller.orderBy = button.selectedValue;
     }
 }
 
@@ -141,7 +141,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _orderby = SORT_TIME;
+        _orderBy = SORT_TIME;
     }
     return self;
 }
@@ -240,7 +240,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self showWating:nil];
-        [[ClientAgent sharedInstance] favshoplist:pSelf.tagid sort:self.orderby page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] favshoplist:pSelf.tagId sort:self.orderBy page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
                 [pSelf receiveData:data page:page];
@@ -257,9 +257,9 @@
 }
 
 
-- (void)setOrderby:(NSString *)orderby
+- (void)setOrderBy:(NSString *)orderBy
 {
-    _orderby = orderby;
+    _orderBy = orderBy;
     MSNStoreViewController *parentController = (MSNStoreViewController *)[self parentViewController];
     if (parentController.currentController==self) {
        [self loadData:1 delay:0];

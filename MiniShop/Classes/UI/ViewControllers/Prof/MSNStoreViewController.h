@@ -26,8 +26,8 @@
 
 @interface MSNStoreViewController : MSFrameViewController
 @end
-@class MiniUISegmentView;
+
 @interface MSNStoreContentViewController : MSNGoodListViewController
-@property (nonatomic) NSString* tagid;
-@property (nonatomic,strong)NSString *orderby;
+@property (nonatomic) NSString*tagId;
+@property (nonatomic,strong)NSString *orderBy;
 @end

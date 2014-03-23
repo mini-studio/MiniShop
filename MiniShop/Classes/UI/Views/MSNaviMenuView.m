@@ -25,7 +25,7 @@
         self.scrollview = [[UIScrollView alloc] initWithFrame:self.bounds];
         [self addSubview:self.scrollview];
         _selectedIndex = 0;
-        self.slideView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollview.height-6, 0, 6)];
+        self.slideView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollview.height-4, 0, 4)];
         self.slideView.backgroundColor = [UIColor whiteColor];
         [self.scrollview addSubview:self.slideView];
         self.scrollview.showsHorizontalScrollIndicator = NO;
