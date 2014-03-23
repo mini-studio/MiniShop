@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNImportFavViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNImportFavViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
@@ -99,7 +87,7 @@
       <file leaf-file-name="MSFShopInfo.h" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="140" selection-end="148" vertical-scroll-proportion="0.17798595" vertical-offset="0" max-vertical-offset="855">
+            <state line="5" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.11124122" vertical-offset="0" max-vertical-offset="893">
               <folding />
             </state>
           </provider>
@@ -587,19 +575,23 @@
       <created>1395509285617</created>
       <updated>1395509285617</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new 14">
+      <created>1395536936982</created>
+      <updated>1395536936982</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1920" height="1174" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1810585" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33147633" sideWeight="0.49973643" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2113864" sideWeight="0.81894153" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2113864" sideWeight="0.81894153" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22469823" sideWeight="0.49973643" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1810585" sideWeight="0.5002636" order="7" side_tool="true" content_ui="tabs" />
@@ -749,7 +741,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="140" selection-end="148" vertical-scroll-proportion="0.17798595" vertical-offset="0" max-vertical-offset="855">
+        <state line="5" column="2" selection-start="55" selection-end="55" vertical-scroll-proportion="0.11124122" vertical-offset="0" max-vertical-offset="893">
           <folding />
         </state>
       </provider>

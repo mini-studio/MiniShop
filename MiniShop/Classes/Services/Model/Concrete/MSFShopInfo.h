@@ -2,6 +2,8 @@
 //  MSFShopInfo.h
 //  MiniShop
 //
+//  第一版本的商店基本信息
+//
 //  Created by Wuquancheng on 13-4-10.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
