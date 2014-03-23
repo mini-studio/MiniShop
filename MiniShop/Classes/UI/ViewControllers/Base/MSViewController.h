@@ -9,7 +9,7 @@
 #import "MiniViewController.h"
 #import "EGOUITableView.h"
 @class SVPullToRefresh;
-@class MSShopInfo;
+@class MSFShopInfo;
 
 @interface MSViewController : MiniViewController
 @property (nonatomic)BOOL showNaviView;
@@ -28,7 +28,7 @@
 
 - (void)setPullToRefreshViewStyle:(SVPullToRefresh*)view;
 
-- (void)actionGoToShopping:(MSShopInfo *)info;
+- (void)actionGoToShopping:(MSFShopInfo *)info;
 
 - (BOOL)isLoading;
 

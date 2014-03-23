@@ -82,7 +82,7 @@
     }
 }
 
-- (void)setShopInfo:(MSShopInfo *)shopInfo
+- (void)setShopInfo:(MSFShopInfo *)shopInfo
 {
     _shopInfo = shopInfo;
     self.textLabel.text = [_shopInfo realTitle];
@@ -112,7 +112,7 @@
     }
 }
 
-+ (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSShopInfo*)shopInfo
++ (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSFShopInfo *)shopInfo
 {
     if ( shopInfo.shop_id == 0 ){
         [button setImage:nil forState:UIControlStateNormal];
@@ -133,7 +133,7 @@
     }
 }
 
-+ (CGFloat)height:(MSShopInfo *)shopInfo
++ (CGFloat)height:(MSFShopInfo *)shopInfo
 {
     if ( shopInfo.aliasTitle.length > 0 )
     {

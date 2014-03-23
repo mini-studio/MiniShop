@@ -171,7 +171,7 @@
 		C1EC5063178074A100BE5ABB /* ClientAgent+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDA178074A100BE5ABB /* ClientAgent+Mini.m */; };
 		C1EC5064178074A100BE5ABB /* ClientAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FDC178074A100BE5ABB /* ClientAgent.m */; };
 		C1EC5066178074A100BE5ABB /* MSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FE2178074A100BE5ABB /* MSObject.m */; };
-		C1EC506F178074A100BE5ABB /* MSShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */; };
+		C1EC506F178074A100BE5ABB /* MSFShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FF5178074A100BE5ABB /* MSFShopInfo.m */; };
 		C1EC5070178074A100BE5ABB /* MSSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FF9178074A100BE5ABB /* MSSystem.m */; };
 		C1EC5071178074A100BE5ABB /* MSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FFB178074A100BE5ABB /* MSUser.m */; };
 		C1EC5072178074A100BE5ABB /* MSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4FFD178074A100BE5ABB /* MSVersion.m */; };
@@ -577,8 +577,8 @@
 		C1EC4FDC178074A100BE5ABB /* ClientAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientAgent.m; sourceTree = "<group>"; };
 		C1EC4FE1178074A100BE5ABB /* MSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSObject.h; sourceTree = "<group>"; };
 		C1EC4FE2178074A100BE5ABB /* MSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSObject.m; sourceTree = "<group>"; };
-		C1EC4FF4178074A100BE5ABB /* MSShopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSShopInfo.h; sourceTree = "<group>"; };
-		C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSShopInfo.m; sourceTree = "<group>"; };
+		C1EC4FF4178074A100BE5ABB /* MSFShopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFShopInfo.h; sourceTree = "<group>"; };
+		C1EC4FF5178074A100BE5ABB /* MSFShopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFShopInfo.m; sourceTree = "<group>"; };
 		C1EC4FF7178074A100BE5ABB /* MSDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDefine.h; sourceTree = "<group>"; };
 		C1EC4FF8178074A100BE5ABB /* MSSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSystem.h; sourceTree = "<group>"; };
 		C1EC4FF9178074A100BE5ABB /* MSSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSystem.m; sourceTree = "<group>"; };
@@ -1448,8 +1448,8 @@
 		C1EC4FE3178074A100BE5ABB /* Concrete */ = {
 			isa = PBXGroup;
 			children = (
-				C1EC4FF4178074A100BE5ABB /* MSShopInfo.h */,
-				C1EC4FF5178074A100BE5ABB /* MSShopInfo.m */,
+				C1EC4FF4178074A100BE5ABB /* MSFShopInfo.h */,
+				C1EC4FF5178074A100BE5ABB /* MSFShopInfo.m */,
 				C12CFEFA18578D120056308C /* MSNCate.h */,
 				C12CFEFB18578D120056308C /* MSNCate.m */,
 				C10C9C49185E028E00797BD0 /* MSNGoodsList.h */,
@@ -1966,7 +1966,7 @@
 				C1B339F2184A30B800851585 /* MSNTransformButton.m in Sources */,
 				C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */,
 				C1254B64186EB2E80007D510 /* MSNShopInfoCell.m in Sources */,
-				C1EC506F178074A100BE5ABB /* MSShopInfo.m in Sources */,
+				C1EC506F178074A100BE5ABB /* MSFShopInfo.m in Sources */,
 				C1063C6518DD45B400A7FBB5 /* MSNAddShopViewController.m in Sources */,
 				C1EC5070178074A100BE5ABB /* MSSystem.m in Sources */,
 				C1EC5071178074A100BE5ABB /* MSUser.m in Sources */,

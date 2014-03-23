@@ -12,7 +12,7 @@
 #import "MSVersion.h"
 #import "MSSystem.h"
 #import "MSUIAuthWebViewController.h"
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 #import "NSString+URLEncoding.h"
 #import "NSString+Mini.h"
 #import "NSData+Base64.h"
@@ -356,7 +356,7 @@
                     NSArray *lst = [result valueForKey:@"resultList"];
                     for ( id v in lst )
                     {
-                        MSShopInfo *info = [[MSShopInfo alloc] init];
+                        MSFShopInfo *info = [[MSFShopInfo alloc] init];
                         [info convertWithJson:v];
                         [nlist addObject:info];
                     }
@@ -411,7 +411,7 @@
 {
     NSMutableString *ids = [NSMutableString string];
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    for (MSShopInfo* info in taobaolist)
+    for (MSFShopInfo * info in taobaolist)
     {
         [ids appendFormat:@"%lld,",info.numId];
         [map setValue:info forKey:[NSString stringWithFormat:@"%lld",info.numId]];
@@ -439,7 +439,7 @@
                 for ( NSString* key in keys )
                 {
                     id shopInfo = [infodic valueForKey:key];
-                    MSShopInfo *msshopinfo = [map valueForKey:key];
+                    MSFShopInfo *msshopinfo = [map valueForKey:key];
                     [msshopinfo convertWithJson:shopInfo];
                     if ( msshopinfo.shop_id > 0 )
                     {
@@ -502,7 +502,7 @@
     }
 }
 
-- (void)usercooperate:(MSShopInfo *)shopInfo userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)usercooperate:(MSFShopInfo *)shopInfo userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     [self usercooperate:shopInfo.title shopId:[NSString stringWithFormat:@"%lld",shopInfo.numId] action:@"on" block:block];
 }

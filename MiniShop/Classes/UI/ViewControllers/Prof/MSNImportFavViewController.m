@@ -7,11 +7,13 @@
 //
 
 #import "MSNImportFavViewController.h"
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 #import "UILabel+Mini.h"
 #import "UIColor+Mini.h"
 #import "MSUIWebViewController.h"
 #import "MSShopInfoCell.h"
+#import "MSNShop.h"
+#import "MSNShopDetailViewController.h"
 
 @interface MSNImportFavViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 @property (nonatomic,strong) NSDictionary   *dataSource;
@@ -121,9 +123,12 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *ds = [self dataSourceAtSection:indexPath.section];
-    MSShopInfo *info = [ds objectAtIndex:indexPath.row];
+    MSFShopInfo *info = [ds objectAtIndex:indexPath.row];
     if ( info.shop_id > 0 ) {
-        [self actionGoToShopping:info];
+        MSNShopInfo *msnShopInfo = [[MSNShopInfo alloc] init];
+        msnShopInfo.shop_id = [NSString stringWithFormat:@"ld",info.shop_id];
+        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else {
         [self actionGoToShopping:info];
@@ -133,7 +138,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *ds = [self dataSourceAtSection:indexPath.section];
-    MSShopInfo *info = [ds objectAtIndex:indexPath.row];
+    MSFShopInfo *info = [ds objectAtIndex:indexPath.row];
     return [MSShopInfoCell height:info];
 }
 
@@ -149,7 +154,7 @@
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRGBA:0xefefefff];
     }
     NSArray *ds = [self dataSourceAtSection:indexPath.section];
-    MSShopInfo *info = [ds objectAtIndex:indexPath.row];
+    MSFShopInfo *info = [ds objectAtIndex:indexPath.row];
     cell.shopInfo = info;
     cell.button.userInfo = info;
     return cell;
@@ -187,7 +192,7 @@
 - (void)buttonTap:(__weak MiniUIButton *)button
 {
     __PSELF__;
-        MSShopInfo *info = button.userInfo;
+        MSFShopInfo *info = button.userInfo;
         if ( info.shop_id == 0 ) // 收录
         {
             [pSelf showWating:nil];

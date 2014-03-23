@@ -8,7 +8,7 @@
 
 #import "MSWebChatUtil.h"
 #import "WXApi.h"
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 #import "MSNGoodsList.h"
 #import "MSNShop.h"
 

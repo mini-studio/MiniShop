@@ -10,7 +10,7 @@
 #import "MSUIWebViewController.h"
 #import "SVPullToRefresh.h"
 #import "UIColor+Mini.h"
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 #import "EGOUITableView.h"
 #import "MiniUIIndicator.h"
 #import "MRLoginViewController.h"
@@ -321,7 +321,7 @@
 }
 
 //查看详情
-- (void)actionGoToShopping:(MSShopInfo *)info
+- (void)actionGoToShopping:(MSFShopInfo *)info
 {
     [MobClick event:MOB_GOODS_DETAIL];
     NSString* requestStr = nil;

@@ -1,14 +1,14 @@
 //
-//  MSShopInfo.m
+//  MSFShopInfo.m
 //  MiniShop
 //
 //  Created by Wuquancheng on 13-4-10.
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 
-@implementation MSShopInfo
+@implementation MSFShopInfo
 
 - (void)setMid:(id)mid
 {

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSShopInfo.h"
+#import "MSFShopInfo.h"
 
 @interface MSShopInfoCell : UITableViewCell
-@property (nonatomic,strong) MSShopInfo* shopInfo;
+@property (nonatomic,strong) MSFShopInfo * shopInfo;
 @property (nonatomic,strong) MiniUIButton *button;
-+ (CGFloat)height:(MSShopInfo *)shopInfo;
-+ (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSShopInfo*)shopInfo;
++ (CGFloat)height:(MSFShopInfo *)shopInfo;
++ (void)resetButtonState:(MiniUIButton *)button shopInfo:(MSFShopInfo *)shopInfo;
 @end
