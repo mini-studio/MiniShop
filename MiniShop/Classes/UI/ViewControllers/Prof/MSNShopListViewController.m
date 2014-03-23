@@ -20,6 +20,7 @@
 @property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic) int page;
 @property (nonatomic) BOOL needRefresh;
+@property (nonatomic,strong)MiniUIButton *userButton;
 @end
 
 @implementation MSNShopListViewController
@@ -84,6 +85,7 @@
         self.needRefresh = NO;
         [self.tableView triggerRefresh];
     }
+    [self resetUserButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -209,16 +211,22 @@
     shareButton.center = CGPointMake(toolbar.width-shareButton.width/2-40,centerY);
     [toolbar addSubview:shareButton];
     [shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
-    MiniUIButton *button = nil;
+    self.userButton = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
+    [self resetUserButton];
+    self.userButton.center = CGPointMake(40+self.userButton.width/2,centerY);
+    [toolbar addSubview:self.userButton];
+}
+
+- (void)resetUserButton
+{
+    [self.userButton removeTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
     if (WHO==nil) {
-        button = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
-        [button addTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
+        [self.userButton setTitle:@"注册/登录" forState:UIControlStateNormal];
+        [self.userButton addTarget:self action:@selector(actionToolBarReg:) forControlEvents:UIControlEventTouchUpInside];
     }
     else {
-        button = [MiniUIButton createToolBarButton:[NSString stringWithFormat:@"你好,%@",WHO.usernick] imageName:nil hImageName:nil];
+        [self.userButton setTitle:[NSString stringWithFormat:@"你好,%@",WHO.usernick] forState:UIControlStateNormal];
     }
-    button.center = CGPointMake(40+button.width/2,centerY);
-    [toolbar addSubview:button];
 }
 
 - (void)actionToolBarShare:(MiniUIButton*)button

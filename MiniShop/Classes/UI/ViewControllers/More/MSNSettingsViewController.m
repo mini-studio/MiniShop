@@ -42,27 +42,32 @@
 {
     self = [super init];
     if (self) {
-        self.dictionary = @{@"0":@[
-                                    @{@"action":@"actionForInvote",@"text":@"请赐好评,我们会更加努力"},
-                                    @{@"action":@"actionForMessage",@"text":@"公告消息"}
-                                    ],
-                            @"1":@[
-                                    @{@"action":@"actionForReg",@"text":@"登陆注册",@"subtext":@"登录绑定后才能参加积分活动哦~"},
-                                    @{@"action":@"actionForFeedback",@"text":@"微信"},
-                                    @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
-                                    ],
-                            @"2":@[
-                                    //@{@"action":@"actionForJoin",@"text":@"加入QQ群"},
-                                    @{@"action":@"actionForSeller",@"text":@"消息推送提示音",@"type":@"switch",@"acc":@"0"},
-                                    @{@"action":@"actionForClearCache",@"text":@"清除缓存",@"acc":@"0"}
-                                    ],
-                            @"3":@[
-                                    @{@"action":@"actionForRecommend",@"text":@"精彩应用推荐"},
-                                    @{@"action":@"actionForAbout",@"text":@"关于"}
-                                  ]
-                            };
     }
     return self;
+}
+
+- (void)initData
+{
+    self.dictionary = @{@"0":@[
+                                @{@"action":@"actionForInvote",@"text":@"请赐好评,我们会更加努力"},
+                                @{@"action":@"actionForMessage",@"text":@"公告消息"}
+                                ],
+                        @"1":@[
+                                @{@"action":WHO==nil?@"actionForReg":@"actionForLogout",@"text":WHO==nil?@"登录注册":@"退出登录",@"subtext":@"登录绑定后才能参加积分活动哦~"},
+                                @{@"action":@"actionForFeedback",@"text":@"微信"},
+                                @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
+                                ],
+                        @"2":@[
+                                //@{@"action":@"actionForJoin",@"text":@"加入QQ群"},
+                                @{@"action":@"actionForSeller",@"text":@"消息推送提示音",@"type":@"switch",@"acc":@"0"},
+                                @{@"action":@"actionForClearCache",@"text":@"清除缓存",@"acc":@"0"}
+                                ],
+                        @"3":@[
+                                @{@"action":@"actionForRecommend",@"text":@"精彩应用推荐"},
+                                @{@"action":@"actionForAbout",@"text":@"关于"}
+                                ]
+                        };
+
 }
 
 - (void)dealloc
@@ -97,7 +102,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadData];
+    [self initData];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -319,6 +325,13 @@
 {
     MRLoginViewController *controller = [[MRLoginViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)actionForLogout
+{
+    [MSSystem logout];
+    [self initData];
+    [self.tableView reloadData];
 }
 
 @end

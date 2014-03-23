@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="" />
     <ignored path="MiniShop.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +17,7 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_Retina__3_5_inch__7.1" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_d689d73af459911a721f6717e38970eb2f098e33" />
   <component name="FavoritesManager">
     <favorites_list name="MiniShop" />
   </component>
@@ -79,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSSystem.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MSSystem.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="1.3723898" vertical-offset="4764" max-vertical-offset="6821">
+            <state line="290" column="32" selection-start="10466" selection-end="10466" vertical-scroll-proportion="0.0" vertical-offset="5313" max-vertical-offset="6821">
               <folding />
             </state>
           </provider>
@@ -106,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNStoreViewController.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MSNStoreViewController.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="28" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="5130">
+            <state line="141" column="28" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.14617169" vertical-offset="2439" max-vertical-offset="5130">
               <folding />
             </state>
           </provider>
@@ -154,8 +152,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-20" />
-    <option name="y" value="24" />
+    <option name="x" value="14" />
+    <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="1174" />
   </component>
@@ -564,11 +562,15 @@
       <created>1395594007855</created>
       <updated>1395594007855</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="new 14">
+      <created>1395594137889</created>
+      <updated>1395594137889</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-20" y="24" width="1920" height="1174" extended-state="6" />
+    <frame x="14" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27855152" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
@@ -580,7 +582,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4011142" sideWeight="0.6800211" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1615599" sideWeight="0.41591987" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1615599" sideWeight="0.5840801" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1615599" sideWeight="0.5840801" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -602,7 +604,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -673,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="28" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="5130">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="45" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
@@ -717,7 +712,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="1.3723898" vertical-offset="4764" max-vertical-offset="6821">
+        <state line="290" column="32" selection-start="10466" selection-end="10466" vertical-scroll-proportion="0.0" vertical-offset="5313" max-vertical-offset="6821">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="28" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.14617169" vertical-offset="2439" max-vertical-offset="5130">
           <folding />
         </state>
       </provider>
