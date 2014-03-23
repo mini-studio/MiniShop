@@ -733,6 +733,7 @@
 - (void)shopgoods:(NSString*)shopId tagId:(NSString*)tagId sort:(NSString*)sort key:(NSString*)key page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"shopgoods"];
+    if (key==nil) key = @"";
     NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId,@"tag_id":tagId,@"sort":sort,@"key":key,@"page":ITOS(page)} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopDetail class] isJson:YES showError:NO block:^(NSError *error, MSNShopDetail *data, BOOL cache) {
         if ( block )

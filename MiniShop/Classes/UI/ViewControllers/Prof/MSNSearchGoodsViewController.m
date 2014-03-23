@@ -136,12 +136,12 @@
     [[ClientAgent sharedInstance] loadSearchHistory:^(NSError *error, NSArray* data, id userInfo, BOOL cache) {
         if (error==nil&&data.count>0) {
             self.historyView.historyItems = data;
-            [self showHistroyView];
+            [self showHistoryView];
         }
     }];
 }
 
-- (void)showHistroyView
+- (void)showHistoryView
 {
     [self.contentView addSubview:self.historyView];
     [self.historyView reload];
@@ -150,7 +150,7 @@
     }];
 }
 
-- (void)hiddenHistroyView
+- (void)hiddenHistoryView
 {
     [UIView animateWithDuration:0.25f animations:^{
         self.historyView.bottom = 0;
@@ -176,7 +176,7 @@
 - (void)loadData:(int)page delay:(CGFloat)delay
 {
     if (self.searchBar.text.length>0) {
-        [self hiddenHistroyView];
+        [self hiddenHistoryView];
         [self.searchBar endEditing:YES];
         __PSELF__;
         NSString *type = (self.transformButton.selectedIndex==0?@"1":@"0");

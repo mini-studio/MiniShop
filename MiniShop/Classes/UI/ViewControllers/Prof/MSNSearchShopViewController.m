@@ -79,6 +79,14 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.dataSource.info.count>0){
+        [self.tableView reloadData];
+    }
+}
+
 - (void)createTableView
 {
     self.tableView = [self createEGOTableView];
@@ -154,6 +162,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
     controller.shopInfo = [self.dataSource.info objectAtIndex:indexPath.row];
+    controller.key = self.key;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

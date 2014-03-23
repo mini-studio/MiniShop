@@ -9,6 +9,7 @@
 #import "MSNGoodListViewController.h"
 
 @interface MSNShopDetailViewController : MSNGoodListViewController
-@property (nonatomic,strong)MSNShopInfo *shopInfo;
-@property (nonatomic)BOOL random;
+@property (nonatomic, strong)MSNShopInfo *shopInfo;
+@property (nonatomic) BOOL random;
+@property (nonatomic, strong)NSString *key;
 @end

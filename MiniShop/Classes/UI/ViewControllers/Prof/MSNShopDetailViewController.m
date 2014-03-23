@@ -129,7 +129,7 @@
             self.handleSearchBlock(textField.text, [self getOrderByValue]);
         }
         self.lastKey = self.searchField.text;
-        [self hideSearchView];
+        //[self hideSearchView];
         return NO;
     }
     else {
@@ -154,7 +154,6 @@
 
 @property (nonatomic, strong)MiniUIButton *toolBarFavButton;
 @property (nonatomic, strong)MiniUIButton *toolBarShareButton;
-@property (nonatomic, strong)MiniUIButton *toolBarTryButton;
 @end
 
 @implementation MSNShopDetailViewController
@@ -202,8 +201,8 @@
     __PSELF__;
     self.messageView = [[MSNShopMessageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 36)];
     self.messageView.backgroundColor = view.backgroundColor;
-    [self.messageView setHandleSearchBlock:^(NSString *key, NSString *orderby) {
-        [pSelf searchWithKey:key orderby:orderby];
+    [self.messageView setHandleSearchBlock:^(NSString *key, NSString *orderBy) {
+        [pSelf searchWithKey:key orderby:orderBy];
     }];
     
     self.tableView.tableHeaderView = view;
@@ -237,7 +236,7 @@
             [self.naviTitleView setTitle:self.shopInfo.shop_title];
             [self.shopInfoView setShopInfo:self.shopInfo];
         }
-        [self loadData:1 orderby:@"time" key:@"" delay:0];
+        [self loadData:1 orderby:@"time" delay:0];
     }
     
 }
@@ -313,7 +312,7 @@
             [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
             [pSelf resetFavButton];
             pSelf.contentView.hidden=NO;
-            [pSelf loadData:1 orderby:@"time" key:@"" delay:0];
+            [pSelf loadData:1 orderby:@"time" delay:0];
         }
         else {
             [pSelf dismissWating];
@@ -322,14 +321,16 @@
     }];
 }
 
-- (void)loadData:(int)page orderby:(NSString*)orderby key:(NSString*)key  delay:(CGFloat)delay
+- (void)loadData:(int)page orderby:(NSString*)orderBy delay:(CGFloat)delay
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:orderby key:key page:page block:^(NSError *error, MSNShopDetail* data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:orderBy key:self.key page:page block:^
+    (NSError *error, MSNShopDetail *data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
-        if (error==nil) {
-            pSelf.messageView.numberLabel.text = [NSString stringWithFormat:@"全部在售商品:%@件",data.goods_num];
+        if (error == nil) {
+            pSelf.messageView.numberLabel.text = [NSString stringWithFormat:@"%@:%@件", self.key.length
+           ==0?@"全部在售商品":[NSString stringWithFormat:@"和%@相关",self.key],data.goods_num];
             MSNGoodsList *list = [[MSNGoodsList alloc] init];
             list.info = data.info.goods_info;
             list.goods_num = [data.goods_num integerValue];
@@ -343,9 +344,10 @@
     }];
 }
 
-- (void)searchWithKey:(NSString*)key orderby:(NSString*)orderby
+- (void)searchWithKey:(NSString*)key orderby:(NSString*)orderBy
 {
-     [self loadData:1 orderby:orderby key:key delay:0];
+    self.key = key;
+    [self loadData:1 orderby:orderBy delay:0];
 }
 
 - (void)actionFavButtonTap:(MiniUIButton*)button
