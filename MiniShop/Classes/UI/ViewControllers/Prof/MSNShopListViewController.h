@@ -9,5 +9,5 @@
 #import "MSViewController.h"
 
 @interface MSNShopListViewController : MSViewController
-@property (nonatomic,strong) NSString *ctitle;
+@property (nonatomic,strong) NSString *cTitle;
 @end

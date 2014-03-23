@@ -163,7 +163,7 @@
 {
     if ([cate.param isEqualToString:@"-100"]) { //我的商城
         MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
-        controller.ctitle = @"我的商城";
+        controller.cTitle = @"我的商城";
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if ([cate.param isEqualToString:@"-99"]){//猜你喜欢
