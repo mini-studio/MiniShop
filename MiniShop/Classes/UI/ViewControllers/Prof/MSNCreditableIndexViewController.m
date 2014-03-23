@@ -9,7 +9,6 @@
 #import "MSNCreditableIndexViewController.h"
 #import "MSNSearchShopViewController.h"
 #import "MSNUISearchBar.h"
-#import "ClientAgent+Mini.h"
 #import "MSNCate.h"
 #import "MSNWellCateCell.h"
 #import "MSUIWebViewController.h"
@@ -89,7 +88,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (MSNUISearchBar *)createSearchBar:(id)delegate placeHolder:(NSString *)placeHolder
@@ -131,8 +129,7 @@
     if (indexPath.section>0 && indexPath.row==0) {
         NSString *identifier = @"cell-header";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if ( cell == nil )
-        {
+        if ( cell == nil ) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
             cell.backgroundView = nil;
             cell.backgroundColor = [UIColor clearColor];
@@ -148,8 +145,7 @@
     else {
         NSString *identifier = @"cell";
         MSNWellCateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if ( cell == nil )
-        {
+        if ( cell == nil ) {
             cell = [[MSNWellCateCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
             cell.wellCateCellDelegate = self;
         }
@@ -182,8 +178,7 @@
         }
         else {
             MSNSearchShopViewController *controller = [[MSNSearchShopViewController alloc] init];
-            controller.tagId = [cate.param integerValue];
-            controller.cTitle = cate.title;
+            controller.cate = cate;
             [self.navigationController pushViewController:controller animated:YES];
         }
     }

@@ -26,7 +26,7 @@
 //好店汇分类
 @interface MSNWellCate : MSObject
 @property (nonatomic,strong) NSString *image_url;
-@property (nonatomic,strong) NSString *param;
+@property (nonatomic,strong) NSString *param;//cat id
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *type;
 @end

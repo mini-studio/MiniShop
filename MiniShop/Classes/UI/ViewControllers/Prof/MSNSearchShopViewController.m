@@ -10,13 +10,10 @@
 #import "MSNUISearchBar.h"
 #import "MSNShop.h"
 #import "MSNShopInfoCell.h"
-#import "EGOUITableView.h"
-#import "MSUIMoreDataCell.h"
-#import "UIColor+Mini.h"
-#import "RTLabel.h"
 #import "MSNTransformButton.h"
 #import "MSNSearchShopTitleView.h"
 #import "MSNShopDetailViewController.h"
+#import "MSNCate.h"
 
 @interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
@@ -25,19 +22,19 @@
 @property (nonatomic,strong)MSNSearchShopTitleView *searchTitleView;
 @property (nonatomic)int page;
 //空为按相关度(默认), like关注度, grade信用, sale总售出件数
-@property (nonatomic,strong)NSString *orderby;
+@property (nonatomic,strong)NSString *orderBy;
 @end
 
 @implementation MSNSearchShopViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
-        self.orderby = @"";
+        self.orderBy = @"";
         self.key = @"";
-        self.tagId = 0;
+        self.cate = nil;
     }
     return self;
 }
@@ -46,8 +43,8 @@
 {
     [super loadView];
     [self setNaviBackButton];
-    if (self.cTitle.length>0) {
-        [self.naviTitleView setTitle:self.cTitle];
+    if (self.cate!=nil) {
+        [self.naviTitleView setTitle:self.cate.title];
     }
     else {
         self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
@@ -73,7 +70,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.key.length>0 || self.tagId>0){
+    if (self.key.length>0 || self.cate!=nil){
         self.searchBar.text = self.key;
         [self search:1 delay:0];
     }
@@ -106,7 +103,7 @@
 
 - (BOOL)showSearchTitleView
 {
-    return self.cTitle.length==0;
+    return self.cate == nil;
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -204,9 +201,10 @@
 {
     __PSELF__;
     [self showWating:nil];
-    [[ClientAgent sharedInstance] searchshop:_key sort:self.orderby page:page tag_id:self.tagId block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] searchshop:_key sort:self.orderBy page:page tag_id:self.cate == nil? 0 : [self.cate
+            .param integerValue]       block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
-        if (error==nil) {
+        if (error == nil) {
             [pSelf receiveData:data page:page];
         }
     }];
@@ -246,16 +244,16 @@
 - (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     if (button.selectedIndex==0) {
-        self.orderby = @"";
+        self.orderBy = @"";
     }
     else if (button.selectedIndex==1) {
-        self.orderby = @"like";
+        self.orderBy = @"like";
     }
     else if (button.selectedIndex==2) {
-        self.orderby = @"grade";
+        self.orderBy = @"grade";
     }
     else if (button.selectedIndex==3) {
-        self.orderby = @"sale";
+        self.orderBy = @"sale";
     }
     [self search:1 delay:0];
 }
