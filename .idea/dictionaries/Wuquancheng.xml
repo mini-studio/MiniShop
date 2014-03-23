@@ -1,10 +1,34 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Wuquancheng">
     <words>
+      <w>&amp;tag</w>
       <w>addr</w>
+      <w>catelist</w>
+      <w>favshopcate</w>
+      <w>favshoplist</w>
+      <w>getpushsound</w>
+      <w>goodsinfo</w>
+      <w>guesslikeshop</w>
       <w>imei</w>
+      <w>mygoodslist</w>
+      <w>myshoplist</w>
       <w>navi</w>
+      <w>registe</w>
+      <w>resetpasswd</w>
+      <w>searchgoods</w>
+      <w>searchshop</w>
+      <w>setfavgoods</w>
+      <w>setfavshop</w>
+      <w>setpushsound</w>
+      <w>shopgoods</w>
+      <w>shopinfo</w>
+      <w>shoptag</w>
+      <w>specialcate</w>
+      <w>specialgoods</w>
       <w>taobao</w>
+      <w>uname</w>
+      <w>usercooperate</w>
+      <w>viewsec</w>
     </words>
   </dictionary>
 </component>

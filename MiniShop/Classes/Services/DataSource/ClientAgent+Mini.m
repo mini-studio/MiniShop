@@ -453,7 +453,7 @@
 }
 
 //http://youjiaxiaodian.com/api/viewsec?tn=json&imei=e385490e1da030bdb0c16eb6942a26c4&id=1&from=list&sec=10
-- (void)viewsec:(int64_t)goodId  from:(NSString *)from sec:(int)sec block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)viewSec:(int64_t)goodId from:(NSString *)from sec:(int)sec block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     if ( from == nil || from.length == 0 )
     {
@@ -467,7 +467,7 @@
     }];
 }
 
-- (void)countorder:(NSString*)params block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)countOrder:(NSString *)params block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *baseParam = [params base64Encode];
     NSString *md5 = [baseParam MD5String];
@@ -808,7 +808,7 @@
     }
 }
 
-- (void)saveSearchHistroy:(NSArray*)items
+- (void)saveSearchHistory:(NSArray*)items
 {
    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:items];
    [ClientAgent saveData:data forKey:@"search-history"];
@@ -827,7 +827,7 @@
         if (data.count>3) {
             [data removeObjectsInRange:NSMakeRange(3, data.count-3)];
         }
-        [self saveSearchHistroy:data];
+        [self saveSearchHistory:data];
     }];
 }
 

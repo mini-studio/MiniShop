@@ -21,7 +21,7 @@
 + (NSString *)jumpToTaoBaoUrl:(NSString *)type;
 
 + (NSString *)prefectUrl:(NSString*)url;
-- (void)perfectHttpRequest:(NSMutableURLRequest *)requst;
+- (void)perfectHttpRequest:(NSMutableURLRequest *)reuqest;
 
 - (void)usercooperate:(MSFShopInfo *)shopInfo userInfo:(id)userInfo block:(void (^)(NSError *error, id data,
         id userInfo , BOOL cache ))block;
@@ -51,8 +51,8 @@
 - (void)countlist:(NSData *)url  userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 //用户放大了图片
-- (void)viewsec:(int64_t)goodId  from:(NSString *)from sec:(int)sec block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
-- (void)countorder:(NSString*)params block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+- (void)viewSec:(int64_t)goodId from:(NSString *)from sec:(int)sec block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+- (void)countOrder:(NSString *)params block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 
 
@@ -70,7 +70,12 @@
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //好店汇分类
 - (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
-//搜索店铺 key=a&sort=&page=1&tag_id=
+
+/**
+ * @param key 搜索关键字
+ * @param sort 排序方式
+ * @param type 搜索类型： 搜店铺、搜掌柜、搜商品
+ */
 - (void)searchshop:(NSString*)key sort:(NSString*)sort type:(NSString*)type page:(int)page tag_id:(int)tag_id block:
         (void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 - (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:
@@ -101,7 +106,7 @@
 
 - (void)loadSearchHistory:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
-- (void)saveSearchHistroy:(NSArray*)items;
+- (void)saveSearchHistory:(NSArray*)items;
 
 - (void)saveSearchWord:(NSString*)word;
 @end

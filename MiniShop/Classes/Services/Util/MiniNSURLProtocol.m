@@ -28,7 +28,7 @@
                 postBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             }
             NSString *param = [NSString stringWithFormat:@"%@&%@",url,postBody];
-            [[ClientAgent sharedInstance] countorder:param block:nil];
+            [[ClientAgent sharedInstance] countOrder:param block:nil];
         }        
     }
     return NO;

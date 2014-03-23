@@ -652,7 +652,8 @@
     if ( index >=0 && index < self.items.count && sec > 2 )
     {
         MSNGoodsItem *item = [self.items objectAtIndex:index];
-        [[ClientAgent sharedInstance] viewsec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {}];
+        [[ClientAgent sharedInstance] viewSec:item.mid from:self.from sec:sec block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        }];
     }
 }
 
