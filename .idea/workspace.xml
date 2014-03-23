@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
@@ -90,7 +82,7 @@
       <file leaf-file-name="MSSystem.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="0.55684453" vertical-offset="5467" max-vertical-offset="6821">
+            <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="1.3723898" vertical-offset="4764" max-vertical-offset="6821">
               <folding />
             </state>
           </provider>
@@ -568,7 +560,11 @@
       <created>1395589196252</created>
       <updated>1395589196252</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="new 14">
+      <created>1395594007855</created>
+      <updated>1395594007855</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -580,7 +576,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26462397" sideWeight="0.49973643" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2387981" sideWeight="0.8384401" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20137058" sideWeight="0.8384401" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4011142" sideWeight="0.6800211" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1615599" sideWeight="0.41591987" order="7" side_tool="true" content_ui="tabs" />
@@ -721,7 +717,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="0.55684453" vertical-offset="5467" max-vertical-offset="6821">
+        <state line="324" column="26" selection-start="11472" selection-end="11472" vertical-scroll-proportion="1.3723898" vertical-offset="4764" max-vertical-offset="6821">
           <folding />
         </state>
       </provider>
