@@ -20,6 +20,7 @@
 @property (nonatomic)int goods_num;
 @property (nonatomic,strong)NSArray *info;
 @property (nonatomic)int shop_num;
+@property (nonatomic, strong)NSString *search_my_shop_null_message;
 @property (nonatomic,strong)NSString *sort;
 
 - (void)append:(MSNGoodsList*)list;
