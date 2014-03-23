@@ -26,13 +26,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <objc/message.h>
 
-// 间距配置
-#define KCopyrightHeight            62.0f
-
-// 字体颜色配置
-#define KLabelColor          0x898989AA
-
-// 字体高度配置
 #define KLabelHeight          12.0f
 
 @interface MSNSettingsViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -60,8 +53,8 @@
                                     ],
                             @"2":@[
                                     //@{@"action":@"actionForJoin",@"text":@"加入QQ群"},
-                                    @{@"action":@"actionForSeller",@"text":@"消息推送提示音",@"type":@"switch"},
-                                    @{@"action":@"actionForClearCache",@"text":@"清除缓存"}
+                                    @{@"action":@"actionForSeller",@"text":@"消息推送提示音",@"type":@"switch",@"acc":@"0"},
+                                    @{@"action":@"actionForClearCache",@"text":@"清除缓存",@"acc":@"0"}
                                     ],
                             @"3":@[
                                     @{@"action":@"actionForRecommend",@"text":@"精品推荐"},
@@ -159,6 +152,13 @@
         [cell addSubview:self.uiSwitch];
         self.uiSwitch.center = CGPointMake(cell.width-uiSwitch.width-8, 25);uiSwitch.hidden = NO;
         self.uiSwitch.on = self.pushOn;
+    }
+    NSString *acc = [data valueForKey:@"acc"];
+    if ([@"0" isEqualToString:acc]) {
+        cell.accessoryView.hidden = YES;
+    }
+    else {
+        cell.accessoryView.hidden = NO;
     }
     cell.textLabel.text = [data valueForKey:@"text"];
     return cell;
