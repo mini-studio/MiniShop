@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNaviMenuView.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNaviMenuView.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,7 +47,7 @@
       <file leaf-file-name="MSNaviMenuView.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNaviMenuView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="40" selection-start="986" selection-end="986" vertical-scroll-proportion="0.381798" vertical-offset="245" max-vertical-offset="3249">
+            <state line="64" column="40" selection-start="2304" selection-end="2304" vertical-scroll-proportion="0.7469478" vertical-offset="543" max-vertical-offset="3249">
               <folding />
             </state>
           </provider>
@@ -596,7 +593,11 @@
       <created>1395541051697</created>
       <updated>1395541051697</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="new 14">
+      <created>1395557881777</created>
+      <updated>1395557881777</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -747,7 +748,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNaviMenuView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="40" selection-start="986" selection-end="986" vertical-scroll-proportion="0.381798" vertical-offset="245" max-vertical-offset="3249">
+        <state line="64" column="40" selection-start="2304" selection-end="2304" vertical-scroll-proportion="0.7469478" vertical-offset="543" max-vertical-offset="3249">
           <folding />
         </state>
       </provider>

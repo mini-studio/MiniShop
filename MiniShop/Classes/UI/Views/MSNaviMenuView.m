@@ -9,7 +9,7 @@
 #import "MSNaviMenuView.h"
 
 @interface MSNaviMenuView ()
-@property (nonatomic,strong)UIScrollView *scrollview;
+@property (nonatomic,strong)UIScrollView *scrollView;
 @property (nonatomic,strong)NSMutableArray *buttons;
 @property (nonatomic,strong)UIView *slideView;
 @end
@@ -22,13 +22,13 @@
     if (self) {
         // Initialization code
         self.buttons = [NSMutableArray array];
-        self.scrollview = [[UIScrollView alloc] initWithFrame:self.bounds];
-        [self addSubview:self.scrollview];
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.scrollView];
         _selectedIndex = 0;
-        self.slideView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollview.height-4, 0, 4)];
+        self.slideView = [[UIView alloc] initWithFrame:CGRectMake(0, self.scrollView.height-4, 0, 4)];
         self.slideView.backgroundColor = [UIColor whiteColor];
-        [self.scrollview addSubview:self.slideView];
-        self.scrollview.showsHorizontalScrollIndicator = NO;
+        [self.scrollView addSubview:self.slideView];
+        self.scrollView.showsHorizontalScrollIndicator = NO;
     }
     return self;
 }
@@ -46,8 +46,8 @@
         button.frame = CGRectMake(buttonsWidth, 0, button.width, self.height);
         buttonsWidth += button.width;
     }
-    self.scrollview.contentSize = CGSizeMake(buttonsWidth, self.scrollview.height);
-    [self.scrollview bringSubviewToFront:self.slideView];
+    self.scrollView.contentSize = CGSizeMake(buttonsWidth, self.scrollView.height);
+    [self.scrollView bringSubviewToFront:self.slideView];
     
     //MiniUIButton *button = [self.buttons objectAtIndex:self.selectedIndex];
     //self.slideView.frame = CGRectMake(button.left, self.slideView.top, button.width, self.slideView.height);
@@ -60,9 +60,9 @@
     button.size = CGSizeMake(10, self.height);
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.buttons addObject:button];
-    [self.scrollview addSubview:button];
+    [self.scrollView addSubview:button];
     button.userInfo = userInfo;
     [button addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -70,8 +70,8 @@
 - (void)clear
 {
     [self.buttons removeAllObjects];
-    [self.scrollview removeAllSubviews];
-    [self.scrollview addSubview:self.slideView];
+    [self.scrollView removeAllSubviews];
+    [self.scrollView addSubview:self.slideView];
     self.slideView.left = 0;
 }
 
@@ -101,10 +101,10 @@
     _selectedIndex = selectedIndex;
     MiniUIButton *button = [self.buttons objectAtIndex:self.selectedIndex];
     self.slideView.width = button.width;
-    CGFloat contentOffsetX = self.scrollview.contentOffset.x;
-    if (self.scrollview.contentSize.width > self.scrollview.width){
+    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
+    if (self.scrollView.contentSize.width > self.scrollView.width){
         if ( lastSelectedIndex > _selectedIndex ) {
-            if ((button.left - self.scrollview.contentOffset.x) < button.width) {
+            if ((button.left - self.scrollView.contentOffset.x) < button.width) {
                 if ( selectedIndex > 0 ) {
                     contentOffsetX = ((MiniUIButton*)[self.buttons objectAtIndex:(self.selectedIndex-1)]).left;
                 }
@@ -114,19 +114,19 @@
             }
         }
         else if ( lastSelectedIndex < _selectedIndex) {
-            if ((self.scrollview.width -( button.right-contentOffsetX)) < button.width) {
+            if ((self.scrollView.width -( button.right-contentOffsetX)) < button.width) {
                 if ( selectedIndex < (self.buttons.count-1) ) {
-                    contentOffsetX = ((MiniUIButton*)[self.buttons objectAtIndex:(self.selectedIndex+1)]).right-self.scrollview.width;
+                    contentOffsetX = ((MiniUIButton*)[self.buttons objectAtIndex:(self.selectedIndex+1)]).right-self.scrollView.width;
                 }
                 else {
-                    contentOffsetX = self.scrollview.contentSize.width-self.scrollview.width;
+                    contentOffsetX = self.scrollView.contentSize.width-self.scrollView.width;
                 }
             }
         }
     }
     [UIView animateWithDuration:0.2f animations:^{
         self.slideView.centerX = button.centerX;
-        self.scrollview.contentOffset = CGPointMake(contentOffsetX, self.scrollview.contentOffset.y);
+        self.scrollView.contentOffset = CGPointMake(contentOffsetX, self.scrollView.contentOffset.y);
     }];
     if ( cascade ) {
         if (self.selected) {
@@ -140,12 +140,12 @@
 
 - (void)setSlidePercent:(CGFloat)percent left:(BOOL)left
 {
-    CGFloat leftPosition = self.scrollview.contentSize.width*percent;
+    CGFloat leftPosition = self.scrollView.contentSize.width*percent;
     if (leftPosition < 0) {
         leftPosition = 0;
     }
     else {
-        CGFloat l = self.scrollview.contentSize.width-self.slideView.width;
+        CGFloat l = self.scrollView.contentSize.width-self.slideView.width;
         if ( leftPosition > l ) {
             leftPosition = l;
         }
