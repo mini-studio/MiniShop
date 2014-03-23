@@ -594,10 +594,13 @@
     }];
 }
 
-- (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)searchshop:(NSString*)key sort:(NSString*)sort type:(NSString*)type page:(int)page tag_id:(int)tag_id block:
+        (void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchshop"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,@"page":ITOS(page)} security:YES];
+    if (type==nil) type=@"";
+    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,
+            @"type":type,@"page":ITOS(page)} security:YES];
     if (tag_id>0) {
         params[@"tag_id"] = ITOS(tag_id);
     }
@@ -608,6 +611,19 @@
         }
     }];
 }
+
+- (void)searchshop:(NSString*)key type:(NSString*)type page:(int)page tag_id:(int)tag_id block:
+        (void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    [self searchshop:key sort:@"" type:type page:page tag_id:tag_id block:block];
+}
+
+- (void)searchshop:(NSString*)key sort:(NSString*)sort page:(int)page tag_id:(int)tag_id block:
+        (void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    [self searchshop:key sort:sort type:@"" page:page tag_id:tag_id block:block];
+}
+
 
 - (void)searchshop:(NSString*)key type:(NSString*)type page:(int)page block:(void (^)(NSError
 *error, id data, id userInfo , BOOL cache ))block

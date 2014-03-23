@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" afterPath="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
@@ -28,28 +28,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientAgent+Mini.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MSNAddShopViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="177" column="42" selection-start="5738" selection-end="5738" vertical-scroll-proportion="0.0" vertical-offset="3112" max-vertical-offset="4674">
+              <folding>
+                <element signature="e#150#186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSSystem.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="324" column="22" selection-start="11443" selection-end="11443" vertical-scroll-proportion="0.0" vertical-offset="5738" max-vertical-offset="6859">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientAgent+Mini.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="292" column="8" selection-start="11027" selection-end="11027" vertical-scroll-proportion="0.4493243" vertical-offset="4959" max-vertical-offset="15409">
+            <state line="620" column="10" selection-start="25128" selection-end="25128" vertical-scroll-proportion="0.0" vertical-offset="11438" max-vertical-offset="15713">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UITableViewCell+GroupBackGround.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Categories/UITableViewCell+GroupBackGround.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="8" selection-start="4702" selection-end="4702" vertical-scroll-proportion="0.0" vertical-offset="2661" max-vertical-offset="3914">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientAgent+Mini.h" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ClientAgent+Mini.h" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2109">
+            <state line="86" column="44" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.5349099" vertical-offset="1159" max-vertical-offset="2166">
               <folding />
             </state>
           </provider>
@@ -109,15 +120,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNShopDetailViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="338" column="26" selection-start="13020" selection-end="13020" vertical-scroll-proportion="0.0" vertical-offset="6056" max-vertical-offset="8265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -137,8 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSShopInfoCell.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSShopInfo.h" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSFShopInfo.h" />
@@ -152,7 +152,9 @@
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.h" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNaviMenuView.m" />
         <option value="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
       </list>
     </option>
   </component>
@@ -621,14 +623,18 @@
       <created>1395558420903</created>
       <updated>1395558420903</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="new 14">
+      <created>1395558926952</created>
+      <updated>1395558926952</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="24" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17363046" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.273909" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33147633" sideWeight="0.49973643" order="1" side_tool="false" content_ui="tabs" />
@@ -663,20 +669,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNGoodListViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="28" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="25" selection-start="2460" selection-end="2460" vertical-scroll-proportion="0.0" vertical-offset="1045" max-vertical-offset="4921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="152" column="25" selection-start="5680" selection-end="5697" vertical-scroll-proportion="0.0" vertical-offset="2451" max-vertical-offset="4199">
@@ -761,16 +753,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2109">
+        <state line="324" column="22" selection-start="11443" selection-end="11443" vertical-scroll-proportion="0.0" vertical-offset="5738" max-vertical-offset="6859">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNAddShopViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="42" selection-start="5738" selection-end="5738" vertical-scroll-proportion="0.0" vertical-offset="3112" max-vertical-offset="4674">
+          <folding>
+            <element signature="e#150#186#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="8" selection-start="11027" selection-end="11027" vertical-scroll-proportion="0.4493243" vertical-offset="4959" max-vertical-offset="15409">
+        <state line="620" column="10" selection-start="25128" selection-end="25128" vertical-scroll-proportion="0.0" vertical-offset="11438" max-vertical-offset="15713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="44" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.5349099" vertical-offset="1159" max-vertical-offset="2166">
           <folding />
         </state>
       </provider>

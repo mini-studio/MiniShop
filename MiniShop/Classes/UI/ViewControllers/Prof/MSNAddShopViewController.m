@@ -175,7 +175,8 @@
         NSString *value = self.transformButton.selectedValue;
         __PSELF__;
         [self showWating:nil];
-        [[ClientAgent sharedInstance] searchshop:key type:value page:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] searchshop:key type:value page:page block:^(NSError *error, id data,
+                id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error==nil) {
                 [pSelf receiveData:data page:page];
