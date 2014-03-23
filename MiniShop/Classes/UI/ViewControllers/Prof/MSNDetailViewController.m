@@ -186,21 +186,38 @@
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem
 {
-    self.toolbar.hidden = YES;
-    _goodsItem = goodsItem;
-    __PSELF__;
-    [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
-        if (pSelf.detailContentViewDelegate != nil) {
-            [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
-        }
-    }];
-    [self.imageView setImageURL:goodsItem.big_image_url];
-    [self sizeToFit];
+//    self.toolbar.hidden = YES;
+//    dispatch_block_t __block__ = ^ {
+//        __PSELF__;
+//        _goodsItem = goodsItem;
+//        [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
+//            if (pSelf.detailContentViewDelegate != nil) {
+//                [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
+//            }
+//        }];
+//        [self.imageView setImageURL:goodsItem.big_image_url];
+//        [self sizeToFit];
+//    };
+//
+//    __block MSNGoodsItem* item = goodsItem;
+//    if (goodsItem.big_image_url.length==0) {
+//        [[ClientAgent sharedInstance] goodsItemInfo:goodsItem.goods_id  block:^(NSError *error, MSNGoodsItem* data,
+//                id userInfo,BOOL cache) {
+//            [item copy:data];
+//            __block__();
+//        }];
+//    }
+//    else {
+//        __block__();
+//    }
+    [self setGoodsItem:goodsItem delay:0];
+
 }
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem delay:(int)delay
 {
     self.toolbar.hidden = YES;
+    dispatch_block_t __block__ = ^ {
     _goodsItem = goodsItem;
     __PSELF__;
     [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
@@ -208,13 +225,24 @@
             [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
         }
     }];
-    [self showWating];
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.imageView setImageURL:goodsItem.big_image_url];
         [self sizeToFit];
     });
+    };
+    __block MSNGoodsItem* item = goodsItem;
+    if (goodsItem.big_image_url.length==0) {
+        [[ClientAgent sharedInstance] goodsItemInfo:goodsItem.goods_id  block:^(NSError *error, MSNGoodsItem* data,
+                id userInfo,BOOL cache) {
+            [item copy:data];
+            __block__();
+        }];
+    }
+    else {
+        __block__();
+    }
 
 }
 
@@ -463,7 +491,6 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.detailView.selectedIndex = self.defaultIndex;
     });
-
 }
 
 - (void)createToolbar:(CGFloat)height

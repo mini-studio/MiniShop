@@ -127,9 +127,6 @@
 @end
 
 /****************************************************************************/
-#import "MSNGoodsList.h"
-
-#import "MSNGoodsTableCell.h"
 /****************************************************************************/
 
 @interface MSNStoreContentViewController()

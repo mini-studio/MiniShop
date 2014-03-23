@@ -55,6 +55,8 @@
 @property (nonatomic,strong)MSNGoodsDetail *detail;
 @property (nonatomic,strong)NSString *discountMessage;
 @property (nonatomic,strong)UIImage *image;
+
+- (void)copy:(MSNGoodsItem *)other;
 @end
 
 @interface MSNGoodsDetailInfo : MSObject

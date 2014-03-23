@@ -91,6 +91,7 @@
 - (void)mygoodslist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 //商品详情
 - (void)goodsinfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+- (void)goodsItemInfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 //店铺详情
 - (void)shopinfo:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 //店铺内商品

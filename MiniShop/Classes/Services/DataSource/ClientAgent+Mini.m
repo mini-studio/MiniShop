@@ -721,6 +721,17 @@
     }];
 }
 
+- (void)goodsItemInfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"goodsinfo"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
+        if ( block ) {
+            block(error,data.info.goods_info,nil,cache);
+        }
+    }];
+}
+
 - (void)shopinfo:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"shopinfo"];

@@ -134,6 +134,31 @@
     return _discountMessage;
 }
 
+- (void)copy:(MSNGoodsItem *)other
+{
+    self.mid = other.mid;
+    self.big_image_url = other.big_image_url;
+    self.goods_create_time = other.goods_create_time;
+    self.goods_id = other.goods_id;
+    self.goods_marked_price = other.goods_marked_price;
+    self.goods_sale_price = other.goods_sale_price;
+    self.goods_title = other.goods_title;
+    self.image_url = other.image_url;
+    self.micro_image_url = other.micro_image_url;
+    self.middle_image_url = other.middle_image_url;
+    self.small_image_url = other.small_image_url;
+    self.price_history_intro = other.price_history_intro;
+    self.goods_sales_intro = other.goods_sales_intro;
+    self.shop_id = other.shop_id;
+    self.shop_title = other.shop_title;
+    self.like_goods = other.like_goods;
+
+    self.goods_date = other.goods_date;
+    self.detail = other.detail;
+    self.discountMessage = other.discountMessage;
+    self.image = other.image;
+}
+
 
 @end
 
