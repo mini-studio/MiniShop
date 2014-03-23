@@ -126,8 +126,9 @@
     MSFShopInfo *info = [ds objectAtIndex:indexPath.row];
     if ( info.shop_id > 0 ) {
         MSNShopInfo *msnShopInfo = [[MSNShopInfo alloc] init];
-        msnShopInfo.shop_id = [NSString stringWithFormat:@"ld",info.shop_id];
+        msnShopInfo.shop_id = [NSString stringWithFormat:@"%ld",info.shop_id];
         MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+        controller.shopInfo = msnShopInfo;
         [self.navigationController pushViewController:controller animated:YES];
     }
     else {
