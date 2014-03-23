@@ -260,12 +260,10 @@
 #ifdef DEBUG
     {
         NSMutableString *pm = [NSMutableString string];
-        for ( NSString *rkey in params.allKeys )
-        {
-            [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
+        for ( NSString *key in params.allKeys ) {
+            [pm appendFormat:@"%@=%@&", key, [(NSString *) [params valueForKey:key] encodedURLString]];
         }
-        if ( pm.length > 0 )
-        {
+        if ( pm.length > 0 ) {
             [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
         }
         [MiniUIAlertView showAlertWithMessage:pm];
@@ -284,26 +282,15 @@
 {
     NSHTTPCookieStorage *sharedHTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *cookies = [sharedHTTPCookieStorage cookiesForURL:[NSURL URLWithString:url]];
-    if ( cookies.count > 0 )
-    {
+    if ( cookies.count > 0 ) {
         AFHTTPClient *client = [AFHTTPClient clientWithURL:[NSURL URLWithString:url]];
         [client getPath:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             block(nil,responseObject,nil,nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             block(nil,nil,nil,nil);
         }];
-//        __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-//        [request setRequestCookies:[NSMutableArray arrayWithArray:cookies]];
-//        [request setCompletionBlock:^{
-//            block(nil,[request responseData],nil,nil);
-//        }];
-//        [request setFailedBlock:^{
-//             block(nil,nil,nil,nil);
-//        }];
-//        [request startAsynchronous];
     }
-    else
-    {
+    else {
         block(nil,nil,nil,nil);
     }
 }
