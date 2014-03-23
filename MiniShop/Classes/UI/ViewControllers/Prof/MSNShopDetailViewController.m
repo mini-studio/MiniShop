@@ -154,6 +154,8 @@
 
 @property (nonatomic, strong)MiniUIButton *toolBarFavButton;
 @property (nonatomic, strong)MiniUIButton *toolBarShareButton;
+
+@property (nonatomic, strong)NSString *orderBy;
 @end
 
 @implementation MSNShopDetailViewController
@@ -236,7 +238,7 @@
             [self.naviTitleView setTitle:self.shopInfo.shop_title];
             [self.shopInfoView setShopInfo:self.shopInfo];
         }
-        [self loadData:1 orderby:@"time" delay:0];
+        [self searchWithKey:self.key orderby:@"time"];
     }
     
 }
@@ -321,6 +323,11 @@
     }];
 }
 
+- (void)loadData:(int)page delay:(CGFloat)delay
+{
+    [self loadData:page orderby:self.orderBy delay:delay];
+}
+
 - (void)loadData:(int)page orderby:(NSString*)orderBy delay:(CGFloat)delay
 {
     __PSELF__;
@@ -347,6 +354,7 @@
 - (void)searchWithKey:(NSString*)key orderby:(NSString*)orderBy
 {
     self.key = key;
+    self.orderBy = orderBy;
     [self loadData:1 orderby:orderBy delay:0];
 }
 
