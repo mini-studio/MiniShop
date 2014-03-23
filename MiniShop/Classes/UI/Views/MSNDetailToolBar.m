@@ -154,7 +154,7 @@
     self.priceHistoryIntroLabel.left = 10;
     self.priceHistoryIntroLabel.top = self.buybutton.bottom + 6;
     [self.startTimeLabel sizeToFit];
-    self.startTimeLabel.origin = CGPointMake(10, self.priceHistoryIntroLabel.bottom);
+    self.startTimeLabel.origin = CGPointMake(10, self.priceHistoryIntroLabel.bottom+6);
     self.shopInfoView.top = self.startTimeLabel.bottom;
     self.height = self.shopInfoView.bottom;
     self.contentView.height = self.height;

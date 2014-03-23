@@ -44,13 +44,13 @@
     [super loadView];
     [self setNaviBackButton];
     if (self.cate!=nil) {
-        [self.naviTitleView setTitle:self.cate.title];
+        self.searchBar = [self createSearchBar:self placeHolder:[NSString stringWithFormat:@"搜%@店",self.cate.title]];
     }
     else {
         self.searchBar = [self createSearchBar:self placeHolder:@"搜店"];
-        [self setNaviRightButtonImage:@"contact_info" highlighted:@"contact_info_hover" target:self action:@selector(actionRightButtonTap)];
-        self.naviTitleView.leftButton.left = 10;
     }
+    [self setNaviRightButtonImage:@"contact_info" highlighted:@"contact_info_hover" target:self action:@selector(actionRightButtonTap)];
+    self.naviTitleView.leftButton.left = 10;
     [self createTableView];
 }
 
