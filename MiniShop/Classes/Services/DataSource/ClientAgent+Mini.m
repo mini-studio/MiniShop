@@ -338,16 +338,16 @@
                 NSJSONSerialization *data = [NSJSONSerialization JSONObjectWithData:[responseStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&e];
                 if ( e == nil )
                 {
-                    NSMutableArray *nlist = [NSMutableArray array];
+                    NSMutableArray *list = [NSMutableArray array];
                     id result = [[data valueForKey:@"data"] valueForKey:@"result"];
                     NSArray *lst = [result valueForKey:@"resultList"];
                     for ( id v in lst )
                     {
                         MSFShopInfo *info = [[MSFShopInfo alloc] init];
                         [info convertWithJson:v];
-                        [nlist addObject:info];
+                        [list addObject:info];
                     }
-                    [result setValue:nlist forKey:@"resultList"];
+                    [result setValue:list forKey:@"resultList"];
                     block(nil ,result,userInfo,NO);
                 }
                 else
@@ -367,23 +367,21 @@
         }];
     };
     [[MSSystem sharedInstance] checkVersion:^{
-        if ( [MSSystem sharedInstance].authForImportFav == 1 )
-        {
+        if ( [MSSystem sharedInstance].authForImportFav == 1){
             __block__();
         }
-        else
-        {
+        else {
             [[ClientAgent sharedInstance] auth:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
                 if ( error == nil )
                 {
-                    MSUIAuthWebViewController *authcontroller = [[MSUIAuthWebViewController alloc] init];
-                    authcontroller.htmlStr = data;
-                    [authcontroller setCallback:^(bool state ) {
+                    MSUIAuthWebViewController *authController = [[MSUIAuthWebViewController alloc] init];
+                    authController.htmlStr = data;
+                    [authController setCallback:^(bool state) {
                         [controller.navigationController popViewControllerAnimated:NO];
                         [MSSystem sharedInstance].authForImportFav = 1;
                         __block__();
                     }];
-                    [controller.navigationController pushViewController:authcontroller animated:YES];
+                    [controller.navigationController pushViewController:authController animated:YES];
                 }
                 else
                 {
@@ -394,59 +392,50 @@
     }];
 }
 
-- (void)shopsInfo:(NSArray *)taobaolist userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)shopsInfo:(NSArray *)taobaoList userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSMutableString *ids = [NSMutableString string];
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    for (MSFShopInfo * info in taobaolist)
-    {
+    for (MSFShopInfo * info in taobaoList){
         [ids appendFormat:@"%lld,",info.numId];
         [map setValue:info forKey:[NSString stringWithFormat:@"%lld",info.numId]];
     }
-    if ( ids.length > 0 )
-    {
+    if ( ids.length > 0 ){
         [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
     }
     NSDictionary *params = @{@"ids":ids};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"getshopinfo"];
     [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
-        NSString *errmsg = nil;
         if ( error == nil )
         {
-            if ( [[data valueForKey:@"errno"] intValue] == 0 )
-            {
+            if ( [[data valueForKey:@"errno"] intValue] == 0 ) {
                 NSMutableDictionary *ret = [NSMutableDictionary dictionary];
                 NSMutableArray *record = [NSMutableArray array];
-                NSMutableArray *norecord = [NSMutableArray array];
+                NSMutableArray *noRecord = [NSMutableArray array];
                 [ret setValue:record forKey:@"record"];
-                [ret setValue:norecord forKey:@"norecord"];
-                NSMutableDictionary* infodic = [data valueForKey:@"shop_info"];
-                NSArray *keys = [infodic allKeys];
-                for ( NSString* key in keys )
-                {
-                    id shopInfo = [infodic valueForKey:key];
-                    MSFShopInfo *msshopinfo = [map valueForKey:key];
-                    [msshopinfo convertWithJson:shopInfo];
-                    if ( msshopinfo.shop_id > 0 )
-                    {
-                        [record addObject:msshopinfo];
+                [ret setValue:noRecord forKey:@"noRecord"];
+                NSMutableDictionary* infoDic = [data valueForKey:@"shop_info"];
+                NSArray *keys = [infoDic allKeys];
+                for ( NSString* key in keys ){
+                    id shopInfo = [infoDic valueForKey:key];
+                    MSFShopInfo *msShopInfo = [map valueForKey:key];
+                    [msShopInfo convertWithJson:shopInfo];
+                    if ( msShopInfo.shop_id > 0 ) {
+                        [record addObject:msShopInfo];
                     }
-                    else
-                    {
-                        [norecord addObject:msshopinfo];
+                    else {
+                        [noRecord addObject:msShopInfo];
                     }
                 }
                 block (nil,ret,nil,NO);
             }
-            else
-            {
-                errmsg = [data valueForKey:@"error"];
-                error = [NSError errorWithDomain:@"shopsInfo" code:-202 userInfo:nil];
+            else {
+                NSString *errMsg = [data valueForKey:@"error"];
+                error = [NSError errorWithDomain:@"shopsInfo" code:-202 userInfo:@{NSLocalizedDescriptionKey:errMsg}];
             }
         }
-        if ( error != nil )
-        {
+        if ( error != nil ) {
             block(error,nil,nil,cache);
         }
     }];
@@ -723,6 +712,11 @@
 
 - (void)goodsItemInfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
+    if (goodId==nil||goodId.length==0) {
+        block([NSError errorWithDomain:@"goodsItemInfo" code:-200 userInfo:@{}], nil,nil,NO);
+        return;
+    }
+
     NSString *addr = [self requestUri14:@"goodsinfo"];
     NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
@@ -757,11 +751,6 @@
     }];
 }
 
-- (void)shoptag:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
-{
-    
-}
-
 - (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 {
     NSString *addr = [self requestUri14:@"guesslikeshop"];
@@ -773,6 +762,32 @@
                 block(error,data.info,nil,cache);
             else
                block(error,nil,nil,cache);
+        }
+    }];
+}
+
+- (void)importShopInfo:(NSArray *)taobaoList userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSMutableString *ids = [NSMutableString string];
+    NSMutableDictionary *map = [NSMutableDictionary dictionary];
+    for (MSFShopInfo * info in taobaoList){
+        [ids appendFormat:@"%lld,",info.numId];
+        [map setValue:info forKey:[NSString stringWithFormat:@"%lld",info.numId]];
+    }
+    if ( ids.length > 0 ){
+        [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
+    }
+    NSDictionary *params = @{@"shop_ids":ids};
+    params = [self perfectParameters:params security:YES];
+    NSString *addr = [self requestUri14:@"importshopinfo"];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:YES block:^
+    (NSError *error,
+            MSNShopList* data, BOOL cache) {
+        if ( error == nil ){
+            block(nil,data,nil,NO);
+        }
+        if ( error != nil ) {
+            block(error,nil,nil,cache);
         }
     }];
 }

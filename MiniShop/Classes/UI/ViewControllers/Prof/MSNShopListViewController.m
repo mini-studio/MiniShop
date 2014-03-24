@@ -17,7 +17,6 @@
 
 @interface MSNShopListViewController () <MSNShopInfoCellDelegate>
 @property (nonatomic,strong)MSNShopList   *dataSource;
-@property (nonatomic,strong)EGOUITableView   *tableView;
 @property (nonatomic) int page;
 @property (nonatomic) BOOL needRefresh;
 @property (nonatomic,strong)MiniUIButton *userButton;

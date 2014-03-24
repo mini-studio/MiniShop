@@ -10,9 +10,11 @@
       <w>goodsinfo</w>
       <w>guesslikeshop</w>
       <w>imei</w>
+      <w>minitoolbar</w>
       <w>mygoodslist</w>
       <w>myshoplist</w>
       <w>navi</w>
+      <w>noti</w>
       <w>registe</w>
       <w>resetpasswd</w>
       <w>searchgoods</w>
@@ -30,6 +32,7 @@
       <w>uname</w>
       <w>usercooperate</w>
       <w>viewsec</w>
+      <w>wating</w>
     </words>
   </dictionary>
 </component>

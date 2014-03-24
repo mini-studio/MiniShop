@@ -14,6 +14,7 @@
 #import "MSUIWebViewController.h"
 #import "MSNShopListViewController.h"
 #import "MSNShopDetailViewController.h"
+#import "MSNImportFavViewController.h"
 
 @interface MSNCreditableHeaderView : UITableViewHeaderFooterView
 @property (nonatomic,strong)UIView *leftview;
@@ -168,7 +169,8 @@
         [self.navigationController pushViewController:controller animated:YES];
     }
     else if ([cate.param isEqualToString:@"-98"]){//下单有礼
-        
+        MSNImportFavViewController *controller = [[MSNImportFavViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else {
         if ([cate.type isEqualToString:@"web_url"]) {

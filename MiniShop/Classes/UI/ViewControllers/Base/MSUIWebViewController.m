@@ -10,7 +10,7 @@
 #import "MSNWebViewToolBar.h"
 
 @interface MSUIWebViewController ()
-@property (nonatomic,strong)MSNWebViewToolBar *minitoolbar;
+@property (nonatomic,strong)MSNWebViewToolBar *miniToolBar;
 @property (nonatomic,strong)NSURLRequest *request;
 @end
 
@@ -20,7 +20,7 @@
 {
     if (self = [super init])
     {
-        [self regiesteBlock];
+        [self registerBlock];
         _dismissWaitingDelay = 5.0;
     }
     return self;
@@ -33,7 +33,7 @@
         self.ctitle = title;
         self.uri = uri;
         self.toolbar = toolbar;
-        [self regiesteBlock];
+        [self registerBlock];
     }
     return self;
 }
@@ -45,16 +45,16 @@
         self.ctitle = title;
         self.request = request;
         self.toolbar = toolbar;
-        [self regiesteBlock];
+        [self registerBlock];
     }
     return self;
 }
 
-- (void)regiesteBlock
+- (void)registerBlock
 {
     __weak typeof (self) itSelf = self;
     [self setRequestObserverBlock:^BOOL(MiniUIWebViewController *controller, NSString *url,UIWebViewNavigationType navigationType) {
-        return [itSelf halderRequest:url navigationType:navigationType];
+        return [itSelf handlerRequest:url navigationType:navigationType];
     }];
 }
 
@@ -79,15 +79,15 @@
 
 - (void)createToolBar
 {
-    self.minitoolbar = [[MSNWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.contentView.height - 45, self.contentView.width, 45)];
-    self.minitoolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-    [self.minitoolbar.backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [self.minitoolbar.forwardButton addTarget:self action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
-    [self.minitoolbar.reloadButton addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
+    self.miniToolBar = [[MSNWebViewToolBar alloc] initWithFrame:CGRectMake(0, self.contentView.height - 45, self.contentView.width, 45)];
+    self.miniToolBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    [self.miniToolBar.backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.miniToolBar.forwardButton addTarget:self action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
+    [self.miniToolBar.reloadButton addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
     
-    self.minitoolbar.backButton.enabled = NO;
-    self.minitoolbar.forwardButton.enabled = NO;
-    [self.contentView addSubview:self.minitoolbar];
+    self.miniToolBar.backButton.enabled = NO;
+    self.miniToolBar.forwardButton.enabled = NO;
+    [self.contentView addSubview:self.miniToolBar];
 
 }
 
@@ -106,39 +106,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)halderRequest:(__strong NSString *)url navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)handlerRequest:(__strong NSString *)url navigationType:(UIWebViewNavigationType)navigationType
 {
-//    if ( navigationType == UIWebViewNavigationTypeLinkClicked )
-//    {
-//        NSRange storeDetailRange = [url rangeOfString:@"type=shop" options:NSRegularExpressionCaseInsensitive];
-//        if (storeDetailRange.location != NSNotFound)
-//        {
-//            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"店铺详情" toolbar:YES];
-//            [self.navigationController pushViewController:nextView animated:YES];
-//            return NO;
-//        }
-//        NSRange addCareRange = [url rangeOfString:@"pagepos=2" options:NSRegularExpressionCaseInsensitive];
-//        if (addCareRange.location != NSNotFound)
-//        {
-//            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"添加关注" toolbar:NO];
-//            nextView.rightRefresh = YES;
-//            [self.navigationController pushViewController:nextView animated:YES];
-//            return NO;
-//        }
-//        //[self showWating:nil];
-//    }
-//    else
-//    {
-//        //[self showWating:nil];
-//    }
+    if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
+        NSRange storeDetailRange = [url rangeOfString:@"type=shop" options:NSRegularExpressionCaseInsensitive];
+        if (storeDetailRange.location != NSNotFound) {
+            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"店铺详情" toolbar:YES];
+            [self.navigationController pushViewController:nextView animated:YES];
+            return NO;
+        }
+        NSRange addCareRange = [url rangeOfString:@"pagepos=2" options:NSRegularExpressionCaseInsensitive];
+        if (addCareRange.location != NSNotFound) {
+            MSUIWebViewController* nextView = [[MSUIWebViewController alloc] initWithUri:url title:@"添加关注" toolbar:NO];
+            nextView.rightRefresh = YES;
+            [self.navigationController pushViewController:nextView animated:YES];
+            return NO;
+        }
+    }
     return YES;
 }
 
 - (void)webViewDidFinishLoad:(__strong UIWebView *)webView
 {
     [self resetWebButtons];
-    if ( self.ctitle.length == 0 )
-    {
+    if ( self.ctitle.length == 0 ){
         NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
         self.naviTitleView.title = title;
     }
@@ -157,24 +148,21 @@
 
 - (void)resetWebButtons
 {
-    if ( self.minitoolbar == nil )
-    {
+    if ( self.miniToolBar == nil ) {
         return;
     }
-    UIButton* backBtn = self.minitoolbar.backButton;
-    UIButton* forwardBtn = self.minitoolbar.forwardButton;
-    if (_webView.canGoBack || YES )
-    {
+    UIButton* backBtn = self.miniToolBar.backButton;
+    UIButton* forwardBtn = self.miniToolBar.forwardButton;
+    if (_webView.canGoBack){
         backBtn.enabled = YES;
-    }else
-    {
+    }
+    else {
         backBtn.enabled = NO;
     }
-    if (_webView.canGoForward)
-    {
+    if (_webView.canGoForward) {
         forwardBtn.enabled = YES;
-    } else
-    {
+    }
+    else {
         forwardBtn.enabled = NO;
     }
 }

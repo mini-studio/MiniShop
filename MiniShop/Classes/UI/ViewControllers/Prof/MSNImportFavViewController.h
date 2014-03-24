@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 mini. All rights reserved.
 //
 
-#import "MSViewController.h"
+#import "MSNShopListViewController.h"
 
-@interface MSNImportFavViewController : MSViewController
+@interface MSNImportFavViewController : MSNShopListViewController
 @end
 
