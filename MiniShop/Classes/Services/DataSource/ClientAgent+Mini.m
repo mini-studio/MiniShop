@@ -230,9 +230,9 @@
 - (void)version:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *version = [MSSystem bundleversion];
-    bool firstrun = [MSSystem isFirstRun];
+    bool firstRun = [MSSystem isFirstRun];
     [MSSystem clearFirstRun];
-    NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstrun":firstrun?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
+    NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstRun": firstRun ?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"newversion"];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, MSVersion* data, BOOL cache) {
