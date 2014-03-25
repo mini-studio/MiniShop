@@ -233,8 +233,6 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
             }];
         });
     }
-    
-    
 }
 
 + (NSString *)bundleversion

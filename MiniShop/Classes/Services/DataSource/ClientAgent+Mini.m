@@ -258,16 +258,16 @@
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"iostoken"];
 #ifdef DEBUG
-    {
-        NSMutableString *pm = [NSMutableString string];
-        for ( NSString *key in params.allKeys ) {
-            [pm appendFormat:@"%@=%@&", key, [(NSString *) [params valueForKey:key] encodedURLString]];
-        }
-        if ( pm.length > 0 ) {
-            [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
-        }
-        [MiniUIAlertView showAlertWithMessage:pm];
-    }
+//    {
+//        NSMutableString *pm = [NSMutableString string];
+//        for ( NSString *key in params.allKeys ) {
+//            [pm appendFormat:@"%@=%@&", key, [(NSString *) [params valueForKey:key] encodedURLString]];
+//        }
+//        if ( pm.length > 0 ) {
+//            [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
+//        }
+//        [MiniUIAlertView showAlertWithMessage:pm];
+//    }
 #endif
     [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
