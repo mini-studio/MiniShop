@@ -352,8 +352,14 @@
             NSMutableString *pm = [NSMutableString string];
             for ( NSString *rkey in params.allKeys )
             {
-                [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
-            }            
+                id value = [params valueForKey:rkey];
+                if ([value isKindOfClass:[NSString class]]) {
+                    [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
+                }
+                else {
+                    [pm appendFormat:@"%@=%lld&",rkey,[[params valueForKey:rkey] longLongValue]];
+                }
+            }
             if ( pm.length > 0 )
             {
                 [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];

@@ -47,4 +47,7 @@
 #define NOTI_CONTENT_CHANGE  @"CONTENT_CHANGE"
 #define NOTI_FAV_CHANGE      @"FAV_CHANGE"
 
+#define APP_ID_FOR_WEIXIN  @"wx5267b1263ded2fbd"
+#define APP_ID_FOR_QQ      @"1101110219"
+
 #endif

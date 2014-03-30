@@ -11,7 +11,7 @@
 @class MSNShopInfo;
 
 @interface MSWebChatUtil : NSObject
-+ (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem scene:(int)scene;
-+ (void)shareShop:(MSNShopInfo*)shopInfo scene:(int)scene;
-+ (void)shareShopList:(NSArray*)shopList scene:(int)scene;
++ (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem controller:(UIViewController *)controller;
++ (void)shareShop:(MSNShopInfo*)shopInfo controller:(UIViewController *)controller;
++ (void)shareShopList:(NSArray*)shopList controller:(UIViewController *)controller;
 @end

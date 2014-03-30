@@ -33,6 +33,7 @@
                                                      name:NOTI_FAV_CHANGE
                                                    object:nil];
         self.needRefresh = NO;
+        self.listType = EFavorite;
     }
     return self;
 }
@@ -66,7 +67,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self loadFavShopListData:1];
+	[self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -145,6 +146,32 @@
     [self setMoreDataAction:(data.next_page==1) tableView:self.tableView];
     [self.tableView reloadData];
     LOG_DEBUG(@"%@",[data description]);
+}
+
+- (void)loadData
+{
+    if (self.listType== EFavorite) {
+        [self loadFavShopListData:1];
+    }
+    else {
+        [self loadGroup];
+    }
+}
+
+- (void)loadGroup
+{
+    [self showWating:nil];
+    __PSELF__;
+    [[ClientAgent sharedInstance] groupgoodsinfo:self.ids  block:^(NSError *error, MSNShopList *data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if (error==nil) {
+            data.next_page = 0;
+            [pSelf receiveData:data page:1];
+        }
+        else {
+            [pSelf showErrorMessage:error];
+        }
+    }];
 }
 
 - (void)loadMore
@@ -230,16 +257,7 @@
 
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 1 )
-        {
-            [MSWebChatUtil shareShopList:self.dataSource.info scene:WXSceneTimeline];
-        }
-        else if ( buttonIndex == 2 )
-        {
-            [MSWebChatUtil shareShopList:self.dataSource.info scene:WXSceneSession];
-        }
-    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+    [MSWebChatUtil shareShopList:self.dataSource.info controller:self];
 }
 
 - (void)actionToolBarReg:(MiniUIButton*)button

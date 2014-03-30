@@ -82,6 +82,7 @@
         (void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 - (void)searchshop:(NSString*)key type:(NSString*)type page:(int)page block:
         (void (^)(NSError*error, id data, id userInfo , BOOL cache ))block;
+- (void)groupgoodsinfo:(NSString*)ids  block:(void (^)(NSError*error, id data, id userInfo , BOOL cache ))block;
 - (void)searchgoods:(NSString*)key type:(NSString*)type sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //收藏店铺
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;

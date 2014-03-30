@@ -650,17 +650,7 @@
     if (item.image==nil) {
         return;
     }
-    
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 1 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneTimeline];
-        }
-        else if ( buttonIndex == 2 )
-        {
-            [MSWebChatUtil shareGoodsItem:item scene:WXSceneSession];
-        }
-    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+    [MSWebChatUtil shareGoodsItem:item controller:self];
 
 }
 

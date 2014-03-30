@@ -410,17 +410,7 @@
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
     [MobClick event:MOB_DETAIL_TOP_SHARE];
-
-    [MiniUIAlertView showAlertWithTitle:@"分享我喜欢的" message:@"" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-        if ( buttonIndex == 1 )
-        {
-            [MSWebChatUtil shareShop:self.shopInfo scene:WXSceneTimeline];
-        }
-        else if ( buttonIndex == 2 )
-        {
-            [MSWebChatUtil shareShop:self.shopInfo scene:WXSceneSession];
-        }
-    } cancelButtonTitle:@"等一会儿吧" otherButtonTitles:@"微信朋友圈",@"微信好友", nil];
+    [MSWebChatUtil shareShop:self.shopInfo controller:self];
 }
 
 - (void)actionToolTryAgain:(MiniUIButton *)button

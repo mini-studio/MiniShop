@@ -11,97 +11,73 @@
 #import "MSFShopInfo.h"
 #import "MSNGoodsList.h"
 #import "MSNShop.h"
+#import "UMSocialSnsService.h"
+#import "UMSocialSnsPlatformManager.h"
+#import "UMSocial.h"
+#import "MSDefine.h"
+#import <TencentOpenAPI/QQApiInterface.h>       //手机QQ SDK
+#import <TencentOpenAPI/TencentOAuth.h>
 
+#import "UMSocialWechatHandler.h"
+#import "NSString+mini.h"
+
+#define SNSNAMES @[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToTencent,UMShareToQQ,UMShareToRenren,UMShareToDouban]
 
 @implementation MSWebChatUtil
 #define BUFFER_SIZE 10
 
-+ (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem scene:(int)scene
+
++ (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem controller:(UIViewController *)controller
 {
-    if(![WXApi isWXAppInstalled])
-    {
-        return;
-    }
-    if(![WXApi isWXAppSupportApi])
-    {
-        return;
-    }
-
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"分享个宝贝给你";
-    message.description = GoodsItem.goods_title;
-    if (GoodsItem.image!=nil)
-    [message setThumbImage:GoodsItem.image];
     
-    WXAppExtendObject *ext = [WXAppExtendObject object];
-    ext.extInfo = @"";
-    ext.url = [NSString stringWithFormat:@"youjiaxiaodian://good/%lld",GoodsItem.mid];
+    NSString *url = @"haodianhui://goods";
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    [UMSocialData defaultData].extConfig.title = @"分享个宝贝给你";
+    UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
     
-    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
-    memset(pBuffer, 0, BUFFER_SIZE);
-    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
-    free(pBuffer);
-
-    ext.fileData = data;
-    message.mediaObject = ext;
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = scene;//WXSceneTimeline;
-    [WXApi sendReq:req];
+    wechatSessionData.url = url;
+    NSString *info = [GoodsItem jsonString];
+    wechatSessionData.extInfo = info;
+        
+    NSString *text = GoodsItem.shop_title;
+    if (text==nil)text = @"";
+    [UMSocialSnsService presentSnsIconSheetView:controller
+                                         appKey:UM_KEY
+                                      shareText:text
+                                     shareImage:GoodsItem.image==nil?[UIImage imageNamed:@"icon.png"]:GoodsItem.image
+                                shareToSnsNames:SNSNAMES
+                                       delegate:nil];
 }
 
-+ (void)shareShop:(NSString *)shopIds title:(NSString *)title description:(NSString *)description scene:(int)scene
-{
-    if(![WXApi isWXAppInstalled])
-    {
-        return;
-    }
-    if(![WXApi isWXAppSupportApi])
-    {
-        return;
-    }
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = title;
-    message.description = description;
-    
-    
-    NSString *url = [NSString stringWithFormat:@"http://youjiaxiaodian.com/share?type=share_shop&id=%@",shopIds];
-    WXAppExtendObject *ext = [WXAppExtendObject object];
-    ext.extInfo = shopIds;
-    ext.url = url;
-    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
-    memset(pBuffer, 0, BUFFER_SIZE);
-    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
-    free(pBuffer);
-    ext.fileData = data;
-    message.mediaObject = ext;
-    [message setThumbImage:[UIImage imageNamed:@"Icon.jpg"]];
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = scene;//WXSceneTimeline;
-    [WXApi sendReq:req];
-}
-
-+ (void)shareShop:(MSNShopInfo*)shopInfo scene:(int)scene
++ (void)shareShop:(MSNShopInfo*)shopInfo controller:(UIViewController *)controller
 {
     [MobClick event:MOB_SHARE_SHOP];
-    if ( scene == WXSceneTimeline )
-    {
-        NSString *desc = [NSString stringWithFormat:@"这家网店不错：%@",[shopInfo shop_title]];
-        [self shareShop:[NSString stringWithFormat:@"%@",shopInfo.shop_id] title:desc description:desc scene:scene];
-    }
-    else
-    {
-        NSString *desc = [NSString stringWithFormat:@"%@\n我觉得不错，你也看看",[shopInfo shop_title]];
-        [self shareShop:[NSString stringWithFormat:@"%@",shopInfo.shop_id] title:@"分享个网店给你" description:desc scene:scene];
-    }
+    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+    memset(pBuffer, 0, BUFFER_SIZE);
+    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+    free(pBuffer);
+    NSString *url = @"haodianhui://share_shop";
+
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    [UMSocialData defaultData].extConfig.title = @"这家网店不错";
+    UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
+    
+    wechatSessionData.url = url;
+    wechatSessionData.fileData = data;
+    wechatSessionData.extInfo = shopInfo.shop_id;
+    
+    NSString *text = [shopInfo shop_title];
+    if (text==nil)text = @"";
+    
+    [UMSocialSnsService presentSnsIconSheetView:controller
+                                         appKey:UM_KEY
+                                      shareText:text
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:SNSNAMES
+                                       delegate:nil];
 }
 
-+ (void)shareShopList:(NSArray*)shopList scene:(int)scene
++ (void)shareShopList:(NSArray*)shopList controller:(UIViewController *)controller
 {
     [MobClick event:MOB_SHARE_SHOP_LIST];
     if ( shopList.count == 0 )
@@ -116,19 +92,28 @@
     if ( ids.length > 0 )
     {
         [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
-        if(scene==WXSceneTimeline)
-        {
-            NSString *title = [NSString stringWithFormat:@"分享：我喜欢的几家网店，%@",desc];
-            [self shareShop:ids title:title description:title scene:scene];
-        }
-        else
-        {
-            [self shareShop:ids title:@"分享：我喜欢的几家网店" description:desc scene:scene];
-        }
-    }
-    else
-    {
-        return;
+        
+        Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+        memset(pBuffer, 0, BUFFER_SIZE);
+        NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+        free(pBuffer);
+
+        NSString *url = @"haodianhui://share_shop";
+        [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+        [UMSocialData defaultData].extConfig.title = @"分享：我喜欢的几家网店";
+        UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
+        
+        wechatSessionData.url = url;
+        wechatSessionData.fileData = data;
+        wechatSessionData.extInfo = ids;
+        
+        [UMSocialSnsService presentSnsIconSheetView:controller
+                                             appKey:UM_KEY
+                                          shareText:desc
+                                         shareImage:[UIImage imageNamed:@"icon.png"]
+                                    shareToSnsNames:SNSNAMES
+                                           delegate:nil];
+
     }
 }
 

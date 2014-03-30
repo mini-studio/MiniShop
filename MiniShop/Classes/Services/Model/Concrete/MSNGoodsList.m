@@ -159,6 +159,34 @@
     self.image = other.image;
 }
 
+- (NSString*)valueForKey:(NSString*)key def:(NSString*)def
+{
+    id v = [self valueForKey:key];
+    if (v==nil) {
+        return def;
+    }
+    if ([v isKindOfClass:[NSString class]]) {
+        return v;
+    }
+    else if ([v isKindOfClass:[NSNumber class]]) {
+        return [(NSNumber*)v stringValue];
+    }
+    else {
+        return def;
+    }
+}
+
+-(NSDictionary *)dictionary {
+    NSArray *keys = @[@"big_image_url",@"goods_create_time",@"goods_id",@"goods_marked_price",
+                      @"goods_sale_price",@"goods_title",@"image_url",@"micro_image_url",@"middle_image_url",
+                      @"small_image_url",@"price_history_intro",@"goods_sales_intro",@"shop_id",
+                      @"shop_title",@"like_goods",@"mid"];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    for (NSString *key in keys) {
+        [dic setValue:[self valueForKey:key def:@""] forKey:key];
+    }
+    return dic;
+}
 
 @end
 

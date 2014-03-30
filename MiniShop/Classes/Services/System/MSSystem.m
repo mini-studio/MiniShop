@@ -16,6 +16,7 @@
 #import "NSUserDefaults+Mini.h"
 #import "KeychainItemWrapper.h"
 #import "MSNDetailViewController.h"
+#import "MSNShopDetailViewController.h"
 #import "MSNGoodsList.h"
 
 
@@ -321,15 +322,11 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [[NSNotificationCenter defaultCenter] postNotificationName:MSNotificationReceiveRemote object:nil];
         id msg = [userInfo valueForKey:@"msg"];
         if ( msg != nil ) {
-            //NSString *type = [msg valueForKey:@"type"];
-            NSString *mid = [msg valueForKey:@"id"];
             NSString * shopId = [msg valueForKey:@"shop_id"];
-            MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
-            MSNGoodsItem *item = [[MSNGoodsItem alloc] init];
-            item.shop_id = shopId;
-            item.goods_id = mid;
-            controller.items = @[item];
-            controller.from = @"push";
+            MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+            MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
+            shopInfo.shop_id = shopId;
+            controller.shopInfo = shopInfo;
             [naviController pushViewController:controller animated:YES];
         }
     }

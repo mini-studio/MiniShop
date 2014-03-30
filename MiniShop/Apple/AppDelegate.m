@@ -8,19 +8,28 @@
 
 #import "AppDelegate.h"
 #import "MobClick.h"
+#import "UMSocial.h"
 
 #import "MSGuideViewController.h"
 #import "MSMainTabViewController.h"
 #import "MSSystem.h"
-#import "MRLoginViewController.h"
-#import "MSMiniUINavigationController.h"
-#import "NSString+Mini.h"
 
-//NSString* const appIDForWeiXin = @"wx5267b1263ded2fbd";
-//NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
+#import "UMSocialYixinHandler.h"
+#import "UMSocialFacebookHandler.h"
+#import "UMSocialLaiwangHandler.h"
+#import "UMSocialWechatHandler.h"
 
-NSString* const appIDForWeiXin = @"wx5267b1263ded2fbd";
-NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
+#import <TencentOpenAPI/QQApiInterface.h>       //手机QQ SDK
+#import <TencentOpenAPI/TencentOAuth.h>
+
+#import "UMSocialInstagramHandler.h"
+
+#import "MSDefine.h"
+#import "MSNGoodsList.h"
+
+#import "MSNDetailViewController.h"
+#import "MSNShopListViewController.h"
+
 
 @implementation AppDelegate
 
@@ -47,12 +56,13 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 //    [self.window addSubview:imageView];
     [self.window makeKeyAndVisible];
     [self umengTrack];
+    [self umengSocia];
     [self handleRemoteNotification:[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] application:application];
     
     
     [self clearBadge:application];
     
-    [WXApi registerApp:appIDForWeiXin];
+    [WXApi registerApp:APP_ID_FOR_WEIXIN];
     return YES;
 }
 
@@ -135,7 +145,7 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 {
     [[MSSystem sharedInstance] didBecomeActive];
     [self clearBadge:application];
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //[UMSocialSnsService  applicationDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -148,8 +158,37 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     LOG_DEBUG(@"online config has fininshed and params = %@", notification.userInfo);
 }
 
+- (void)umengSocia
+{
+    NSString *url = @"http://www.youjiaxiaodian.com";
+    //打开调试log的开关
+    [UMSocialData openLog:YES];
+    
+    //如果你要支持不同的屏幕方向，需要这样设置，否则在iPhone只支持一个竖屏方向
+    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
+    
+    //设置友盟社会化组件appkey
+    [UMSocialData setAppKey:UM_KEY];
+    
+    //    //打开Qzone的SSO开关
+    [UMSocialConfig setSupportQzoneSSO:YES importClasses:@[[QQApiInterface class],[TencentOAuth class]]];
+    
+    //打开新浪微博的SSO开关
+    [UMSocialConfig setSupportSinaSSO:YES];
+    
+    //设置微信AppId，url地址传nil，将默认使用友盟的网址
+    [UMSocialWechatHandler setWXAppId:APP_ID_FOR_WEIXIN url:url];
+    
+    //设置手机QQ的AppId，指定你的分享url，若传nil，将使用友盟的网址
+    [UMSocialConfig setQQAppId:APP_ID_FOR_QQ url:url importClasses:@[[QQApiInterface class],[TencentOAuth class]]];
+    
+    [UMSocialConfig setShareQzoneWithQQSDK:YES url:url importClasses:@[[QQApiInterface class],[TencentOAuth class]]];
+
+}
+
 - (void)umengTrack
 {
+
     //    [MobClick setCrashReportEnabled:NO]; // 如果不需要捕捉异常，注释掉此行
     //    [MobClick setLogEnabled:YES];  // 打开友盟sdk调试，注意Release发布时需要注释掉此行,减少io消耗
     //    [MobClick setAppVersion:XcodeAppVersion]; //参数为NSString * 类型,自定义app版本信息，如果不设置，默认从CFBundleVersion里取
@@ -167,7 +206,6 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     //    [MobClick setDelegate:self reportPolicy:REALTIME];  //建议使用新方法
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onlineConfigCallBack:) name:UMOnlineConfigDidFinishedNotification object:nil];
 }
-
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
@@ -250,12 +288,15 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return  [WXApi handleOpenURL:url delegate:self];
+    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
 }
 
+/**
+ 这里处理新浪微博SSO授权之后跳转回来，和微信分享完成之后跳转回来
+ */
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return  [WXApi handleOpenURL:url delegate:self];
+    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
 }
 
 
@@ -279,12 +320,11 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
     return nil;
 }
 
--(void) onReq:(BaseReq*)req
+- (void)onReq:(BaseReq*)req
 {
     NSString *path = nil;
     NSString *extInfo = nil;
-    if([req isKindOfClass:[ShowMessageFromWXReq class]])
-    {
+    if([req isKindOfClass:[ShowMessageFromWXReq class]]) {
         ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
         WXMediaMessage *msg = temp.message;
         WXAppExtendObject *obj = msg.mediaObject;
@@ -295,59 +335,37 @@ NSString* const appKeyForWeiXin = @"1f9e057184c7e9b458e2b4c336a1bff5";
         return;
     }
     CGFloat delay = 1.0;
-    if (UIApplicationStateActive == [UIApplication sharedApplication].applicationState)
-    {
+    if (UIApplicationStateActive == [UIApplication sharedApplication].applicationState) {
         delay = 0;
     }
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if ( path.length > 0 )
-        {
-            NSString *prefix = @"youjiaxiaodian://shop"; //关注此店铺
-            if ( [path hasPrefix:prefix])
-            {
-                NSString *shopId = [path substringFromIndex:prefix.length];
-                if ( shopId.length > 0 )
-                {
-                   
+        if ( path.length > 0 ) {
+            if ([@"haodianhui://share_shop" isEqualToString:path]) {
+                NSString *ids = extInfo;
+                if ( ids.length > 0 ) {
+                    MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
+                    controller.ids = ids;
+                    controller.cTitle = @"好友分享的商店";
+                    [[self currentNaviController] pushViewController:controller animated:YES];
                 }
             }
-            else if ( [path hasPrefix:@"youjiaxiaodian://good/"] ) //跳转详情页
-            {
-//                NSString *goodId = [path substringFromIndex:@"youjiaxiaodian://good/".length];
-//                [[ClientAgent sharedInstance] singlegoodsdetail:goodId.longLongValue from:@"list" block:^(NSError *error, MSGoodsList* data, id userInfo, BOOL cache) {
-//                    if (error==nil)
-//                    {
-//                        MSDetailViewController *c = [[MSDetailViewController alloc] init];
-//                        c.mtitle = @"";
-//                        c.from = @"list";
-//                        c.goods = data;
-//                        [[self currentNaviController] pushViewController:c animated:YES];
-//                    }
-//                }];
-            }
-            else if ( [path hasPrefix:@"youjiaxiaodian://mshopnews/"] )
-            {
-//                NSString *shopIds =[path substringFromIndex:@"youjiaxiaodian://mshopnews/".length];
-//                MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
-//                controller.shopIds = shopIds;
-//                [[self currentNaviController] pushViewController:controller animated:YES];
-            }
-            else if ( [path hasPrefix:@"http://youjiaxiaodian.com/share?type=share_shop&id="] ){
-//                NSString *shopIds =[path substringFromIndex:@"http://youjiaxiaodian.com/share?type=share_shop&id=".length];
-//                if ( shopIds.length > 0 ) {
-//                    MSShopNewsViewController *controller = [[MSShopNewsViewController alloc] init];
-//                    controller.shopIds = shopIds;
-//                    [[self currentNaviController] pushViewController:controller animated:YES];
-//                }
+            else if ([@"haodianhui://goods" isEqualToString:path]) {//跳转详情页
+                NSData *data = [extInfo dataUsingEncoding:NSUTF8StringEncoding];
+                NSJSONSerialization *jsonData = [NSJSONSerialization JSONObjectWithData:data
+                                                                                options:NSJSONReadingMutableContainers error:nil];
+                if (jsonData!=nil) {
+                    MSNGoodsItem *item = [[MSNGoodsItem alloc] init];
+                    [item convertWithJson:jsonData];
+                    MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+                    controller.items = @[item];
+                    [[self currentNaviController] pushViewController:controller animated:YES];
+                }
             }
         }
     });
 }
--(void) onResp:(BaseResp*)resp
-{
-    
-}
+
 
 @end
