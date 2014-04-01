@@ -20,6 +20,8 @@
 @property(nonatomic,strong)NSString *shop_type;
 @property(nonatomic)int user_like;
 
+@property(nonatomic,strong)UIImage *logo;
+
 - (NSInteger)gradeValue;
 @end
 

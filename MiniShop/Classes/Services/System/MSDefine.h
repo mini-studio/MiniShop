@@ -48,6 +48,6 @@
 #define NOTI_FAV_CHANGE      @"FAV_CHANGE"
 
 #define APP_ID_FOR_WEIXIN  @"wx5267b1263ded2fbd"
-#define APP_ID_FOR_QQ      @"1101110219"
+#define APP_ID_FOR_QQ      @"100576055"
 
 #endif

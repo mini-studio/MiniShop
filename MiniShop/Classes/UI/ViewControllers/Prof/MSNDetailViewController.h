@@ -13,4 +13,6 @@
 @property (nonatomic,strong)NSString *from;
 @property (nonatomic)NSInteger defaultIndex;
 @property (nonatomic,strong)NSString *mtitle;
+
+@property (nonatomic,strong)NSString *goodsId;
 @end

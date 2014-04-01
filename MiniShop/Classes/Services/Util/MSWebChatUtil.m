@@ -22,59 +22,94 @@
 #import "NSString+mini.h"
 
 #define SNSNAMES @[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToTencent,UMShareToQQ,UMShareToRenren,UMShareToDouban]
+#define U_PATH @"http://www.youjiaxiaodian.com/new/share?scheme=haodianhui"
 
 @implementation MSWebChatUtil
 #define BUFFER_SIZE 10
 
+MSWebChatUtil *shareUtil = nil;
+
++ (MSWebChatUtil*)instance
+{
+    if (shareUtil==nil) {
+        shareUtil = [[MSWebChatUtil alloc] init];
+    }
+    return shareUtil;
+}
 
 + (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem controller:(UIViewController *)controller
 {
-    
-    NSString *url = @"haodianhui://goods";
-    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
-    [UMSocialData defaultData].extConfig.title = @"分享个宝贝给你";
-    UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
-    
-    wechatSessionData.url = url;
     NSString *info = [GoodsItem jsonString];
-    wechatSessionData.extInfo = info;
-        
+    NSString *url = [NSString stringWithFormat:@"%@&m=goods&id=%@",U_PATH,GoodsItem.goods_id];
+    
     NSString *text = GoodsItem.shop_title;
     if (text==nil)text = @"";
+    
+    MSNUMSocialUIMonitor *monitor = [[MSNUMSocialUIMonitor alloc] init];
+    monitor.callback = ^(NSString *platformName,UMSocialData *socialData) {
+        if ([UMShareToQQ isEqualToString:platformName]) {
+            [UMSocialData defaultData].extConfig.qqData.webUrl = url;
+            [UMSocialData defaultData].extConfig.qqData.title = @"分享个宝贝给你";
+        }
+        else if ([UMShareToWechatSession isEqualToString:platformName] || [UMShareToWechatTimeline isEqualToString:platformName]) {
+            [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+            if ([UMShareToWechatTimeline isEqualToString:platformName]) {
+               [UMSocialData defaultData].extConfig.title = @"分享个宝贝";
+            }
+            else {
+                [UMSocialData defaultData].extConfig.title = @"分享个宝贝给你";
+            }
+            UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
+            wechatSessionData.url = url;
+            wechatSessionData.extInfo = info;
+        }
+        else {
+            socialData.shareText = [NSString stringWithFormat:@"分享个宝贝:%@%@",text,url];
+        }
+    };
+    [MSWebChatUtil instance].userInfo = monitor;
+    
     [UMSocialSnsService presentSnsIconSheetView:controller
                                          appKey:UM_KEY
                                       shareText:text
-                                     shareImage:GoodsItem.image==nil?[UIImage imageNamed:@"icon.png"]:GoodsItem.image
+                                     shareImage:(GoodsItem.image==nil?[UIImage imageNamed:@"newpic"]:GoodsItem.image)
                                 shareToSnsNames:SNSNAMES
-                                       delegate:nil];
+                                       delegate:monitor];
 }
 
 + (void)shareShop:(MSNShopInfo*)shopInfo controller:(UIViewController *)controller
 {
     [MobClick event:MOB_SHARE_SHOP];
-    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
-    memset(pBuffer, 0, BUFFER_SIZE);
-    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
-    free(pBuffer);
-    NSString *url = @"haodianhui://share_shop";
-
-    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
-    [UMSocialData defaultData].extConfig.title = @"这家网店不错";
-    UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
-    
-    wechatSessionData.url = url;
-    wechatSessionData.fileData = data;
-    wechatSessionData.extInfo = shopInfo.shop_id;
-    
+    NSString *url = [NSString stringWithFormat:@"%@&m=share_shop&ids=%@",U_PATH,shopInfo.shop_id];
     NSString *text = [shopInfo shop_title];
     if (text==nil)text = @"";
+    MSNUMSocialUIMonitor *monitor = [[MSNUMSocialUIMonitor alloc] init];
+    monitor.callback = ^(NSString *platformName,UMSocialData *socialData) {
+        if ([UMShareToQQ isEqualToString:platformName]) {
+            [UMSocialData defaultData].extConfig.qqData.webUrl = url;
+            [UMSocialData defaultData].extConfig.qqData.title = @"这家网店不错";
+        }
+        else if ([UMShareToWechatSession isEqualToString:platformName] || [UMShareToWechatTimeline isEqualToString:platformName]) {
+            [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+            [UMSocialData defaultData].extConfig.title = @"这家网店不错";
+            UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
+            
+            wechatSessionData.url = url;
+            wechatSessionData.extInfo = shopInfo.shop_id;
+        }
+        else {
+            socialData.shareText = [NSString stringWithFormat:@"这家网店不错:%@%@",text,url];
+        }
+    };
+    [MSWebChatUtil instance].userInfo = monitor;
+
     
     [UMSocialSnsService presentSnsIconSheetView:controller
                                          appKey:UM_KEY
                                       shareText:text
-                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                     shareImage:(shopInfo.logo==nil?[UIImage imageNamed:@"newpic"]:shopInfo.logo)
                                 shareToSnsNames:SNSNAMES
-                                       delegate:nil];
+                                       delegate:monitor];
 }
 
 + (void)shareShopList:(NSArray*)shopList controller:(UIViewController *)controller
@@ -92,28 +127,60 @@
     if ( ids.length > 0 )
     {
         [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
+        NSString *url = [NSString stringWithFormat:@"%@&m=share_shop&ids=%@",U_PATH,ids];
         
-        Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
-        memset(pBuffer, 0, BUFFER_SIZE);
-        NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
-        free(pBuffer);
+        MSNUMSocialUIMonitor *monitor = [[MSNUMSocialUIMonitor alloc] init];
+        monitor.callback = ^(NSString *platformName,UMSocialData *socialData) {
+            NSString *text = desc;
+            if (text.length>60) {
+                text = [desc substringToIndex:60];
+            }
+            if ([UMShareToQQ isEqualToString:platformName]) {
+                [UMSocialData defaultData].extConfig.qqData.webUrl = url;
+                [UMSocialData defaultData].extConfig.qqData.title = @"分享：我喜欢的几家网店";
+                NSString *text = desc;
+                if (text.length>60) {
+                    text = [desc substringToIndex:60];
+                }
+                socialData.shareText = [NSString stringWithFormat:@"分享：我喜欢的几家网店:%@%@",text,url];
+            }
+            else if ([UMShareToWechatSession isEqualToString:platformName] || [UMShareToWechatTimeline isEqualToString:platformName]) {
+                [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+                [UMSocialData defaultData].extConfig.title = @"分享：我喜欢的几家网店";
+                UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
+                
+                wechatSessionData.url = url;
+                wechatSessionData.extInfo = ids;
+                
+                socialData.shareText = text;
+            }
+            else {
+                socialData.shareText = [NSString stringWithFormat:@"分享：我喜欢的几家网店:%@ %@",text,url];
+            }
+        };
+        [MSWebChatUtil instance].userInfo = monitor;
 
-        NSString *url = @"haodianhui://share_shop";
-        [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
-        [UMSocialData defaultData].extConfig.title = @"分享：我喜欢的几家网店";
-        UMSocialWechatSessionData *wechatSessionData = [UMSocialData defaultData].extConfig.wechatSessionData;
         
-        wechatSessionData.url = url;
-        wechatSessionData.fileData = data;
-        wechatSessionData.extInfo = ids;
+        
         
         [UMSocialSnsService presentSnsIconSheetView:controller
                                              appKey:UM_KEY
-                                          shareText:desc
-                                         shareImage:[UIImage imageNamed:@"icon.png"]
+                                          shareText:@""
+                                         shareImage:[UIImage imageNamed:@"newpic"]
                                     shareToSnsNames:SNSNAMES
-                                           delegate:nil];
+                                           delegate:monitor];
 
+    }
+}
+
+@end
+
+@implementation MSNUMSocialUIMonitor
+
+-(void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
+{
+    if (self.callback!=nil) {
+        self.callback(platformName,socialData);
     }
 }
 

@@ -23,12 +23,15 @@
 #import <TencentOpenAPI/TencentOAuth.h>
 
 #import "UMSocialInstagramHandler.h"
+#import <TencentOpenAPI/QQApi.h>
 
 #import "MSDefine.h"
 #import "MSNGoodsList.h"
 
 #import "MSNDetailViewController.h"
 #import "MSNShopListViewController.h"
+
+#import "NSString+mini.h"
 
 
 @implementation AppDelegate
@@ -52,17 +55,13 @@
     }
 
     [[UIApplication sharedApplication]  registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background_image"]];
-//    [self.window addSubview:imageView];
     [self.window makeKeyAndVisible];
     [self umengTrack];
     [self umengSocia];
     [self handleRemoteNotification:[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] application:application];
     
-    
     [self clearBadge:application];
-    
-    [WXApi registerApp:APP_ID_FOR_WEIXIN];
+    [MSSystem clearFirstRun];
     return YES;
 }
 
@@ -76,15 +75,12 @@
     [UIApplication sharedApplication].statusBarHidden = NO;
     self.viewController = [[MSMainTabViewController alloc] init];
     self.window.rootViewController = self.viewController;
-
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     application.applicationIconBadgeNumber = 0;
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -286,20 +282,6 @@
     });
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
-}
-
-/**
- 这里处理新浪微博SSO授权之后跳转回来，和微信分享完成之后跳转回来
- */
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
-}
-
-
 - (UINavigationController *)currentNaviController
 {
     if ( [self.viewController isKindOfClass:[MSMainTabViewController class]])
@@ -320,6 +302,46 @@
     return nil;
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if ([url.absoluteString hasPrefix:@"QQ"]) {
+        return [self handleQQOpenURL:url sourceApplication:nil annotation:nil];
+    }
+    else {
+        return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
+    }
+}
+
+/**
+ 这里处理新浪微博SSO授权之后跳转回来，和微信分享完成之后跳转回来
+ */
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url.absoluteString hasPrefix:@"QQ"]) {
+        return [self handleQQOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    }
+    //else if ([url.absoluteString hasPrefix:@"wx"]) {
+        return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
+//    }
+//    else {
+//        return YES;
+//    }
+}
+
+- (BOOL)handleQQOpenURL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    QQApiMessage* msg = [QQApi handleOpenURL:url];
+    QQApiObject* apiObj = msg.object;
+    if([apiObj isKindOfClass:[QQApiURLObject class]])
+    {
+        QQApiURLObject* obj = (QQApiURLObject*)apiObj;
+        NSString *str = obj.url.absoluteString;
+        [self handleOpenUrl:str extInfo:nil];
+    }
+    return YES;
+}
+
+
 - (void)onReq:(BaseReq*)req
 {
     NSString *path = nil;
@@ -334,33 +356,62 @@
     if ( path.length == 0 ) {
         return;
     }
+    [self handleOpenUrl:path extInfo:extInfo];
+}
+
+- (void)handleOpenUrl:(NSString*)requestUrl extInfo:(NSString*)extInfo
+{
     CGFloat delay = 1.0;
     if (UIApplicationStateActive == [UIApplication sharedApplication].applicationState) {
         delay = 0;
     }
-    double delayInSeconds = delay;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSString * path = [url path];
+    NSString *query = [url query];
+    NSArray *array = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    for (NSString *item in array) {
+        NSRange rang = [item rangeOfString:@"="];
+        if (rang.location != NSNotFound) {
+            NSString *key = [item substringToIndex:rang.location];
+            NSString *value = [item substringFromIndex:rang.location+1];
+            params[key] = value;
+        }
+    }
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if ( path.length > 0 ) {
-            if ([@"haodianhui://share_shop" isEqualToString:path]) {
-                NSString *ids = extInfo;
-                if ( ids.length > 0 ) {
+            if ([@"/new/share" isEqualToString:path]) {
+                NSString *m = params[@"m"];
+                if ([@"goods" isEqualToString:m]) {
+                    if (extInfo!=nil) {
+                        NSData *data = [extInfo dataUsingEncoding:NSUTF8StringEncoding];
+                        NSJSONSerialization *jsonData = [NSJSONSerialization JSONObjectWithData:data
+                                                                                        options:NSJSONReadingMutableContainers error:nil];
+                        if (jsonData!=nil) {
+                            MSNGoodsItem *item = [[MSNGoodsItem alloc] init];
+                            [item convertWithJson:jsonData];
+                            MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+                            controller.items = @[item];
+                            [[self currentNaviController] pushViewController:controller animated:YES];
+
+                        }
+                    }
+                    else {
+                        NSString *goodsId = params[@"id"];
+                        MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+                        controller.goodsId = goodsId;
+                        [[self currentNaviController] pushViewController:controller animated:YES];
+                    }
+                }
+                else if ([@"share_shop" isEqualToString:m]) {
+                    NSString *ids = params[@"ids"];
                     MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
                     controller.ids = ids;
+                    controller.listType = EGroupShop;
                     controller.cTitle = @"好友分享的商店";
                     [[self currentNaviController] pushViewController:controller animated:YES];
-                }
-            }
-            else if ([@"haodianhui://goods" isEqualToString:path]) {//跳转详情页
-                NSData *data = [extInfo dataUsingEncoding:NSUTF8StringEncoding];
-                NSJSONSerialization *jsonData = [NSJSONSerialization JSONObjectWithData:data
-                                                                                options:NSJSONReadingMutableContainers error:nil];
-                if (jsonData!=nil) {
-                    MSNGoodsItem *item = [[MSNGoodsItem alloc] init];
-                    [item convertWithJson:jsonData];
-                    MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
-                    controller.items = @[item];
-                    [[self currentNaviController] pushViewController:controller animated:YES];
+
                 }
             }
         }

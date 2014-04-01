@@ -2323,7 +2323,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (GCD3TFD42C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2352,7 +2352,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
 				SDKROOT = iphoneos7.1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -2389,7 +2389,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
 				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -2423,7 +2423,6 @@
 					"\"${PROJECT_DIR}/Frameworks/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk\"/**",
 				);
 				PRODUCT_NAME = MiniShop;
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2455,7 +2454,6 @@
 					"\"${PROJECT_DIR}/Frameworks/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk\"/**",
 				);
 				PRODUCT_NAME = MiniShop;
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -186,32 +186,7 @@
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem
 {
-//    self.toolbar.hidden = YES;
-//    dispatch_block_t __block__ = ^ {
-//        __PSELF__;
-//        _goodsItem = goodsItem;
-//        [self.toolbar setGoodsInfo:goodsItem action:^(bool loaded) {
-//            if (pSelf.detailContentViewDelegate != nil) {
-//                [pSelf.detailContentViewDelegate didLoadDetail:pSelf.goodsItem];
-//            }
-//        }];
-//        [self.imageView setImageURL:goodsItem.big_image_url];
-//        [self sizeToFit];
-//    };
-//
-//    __block MSNGoodsItem* item = goodsItem;
-//    if (goodsItem.big_image_url.length==0) {
-//        [[ClientAgent sharedInstance] goodsItemInfo:goodsItem.goods_id  block:^(NSError *error, MSNGoodsItem* data,
-//                id userInfo,BOOL cache) {
-//            [item copy:data];
-//            __block__();
-//        }];
-//    }
-//    else {
-//        __block__();
-//    }
     [self setGoodsItem:goodsItem delay:0];
-
 }
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem delay:(int)delay
@@ -485,6 +460,29 @@
     [self.contentView addSubview:self.detailView];
    
     [self createToolbar:44];
+    if (self.items.count>0) {
+        [self resetItems:self.items];
+    }
+    else {
+        if (self.goodsId.length>0) {
+            [self loadGoodsItemInfo];
+        }
+    }
+}
+
+- (void)loadGoodsItemInfo
+{
+    __PSELF__;
+    [[ClientAgent sharedInstance] goodsItemInfo:self.goodsId block:^(NSError *error, MSNGoodsItem* data, id userInfo, BOOL cache) {
+        if (error==nil && data!=nil) {
+            pSelf.items = @[data];
+            [pSelf resetItems:pSelf.items];
+        }
+    }];
+}
+
+- (void)resetItems:(NSArray *)items
+{
     self.detailView.items = self.items;
     double delayInSeconds = 0.05;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
