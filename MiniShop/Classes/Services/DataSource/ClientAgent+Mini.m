@@ -682,6 +682,18 @@
     }];
 }
 
+- (void)groupshopinfo:(NSString*)ids block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"groupshopinfo"];
+    NSMutableDictionary *params = [self perfectParameters:@{@"ids":ids} security:YES];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
+        }
+    }];
+}
+
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
 {
     NSString *addr = [self requestUri14:@"setfavshop"];

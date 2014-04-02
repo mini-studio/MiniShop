@@ -87,6 +87,7 @@
 //收藏店铺
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 - (void)myshoplist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
+- (void)groupshopinfo:(NSString*)ids block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 //收藏商品
 - (void)setfavgoods:(NSString*)mid action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 - (void)mygoodslist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;

@@ -162,7 +162,7 @@
 {
     [self showWating:nil];
     __PSELF__;
-    [[ClientAgent sharedInstance] groupgoodsinfo:self.ids  block:^(NSError *error, MSNShopList *data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] groupshopinfo:self.ids  block:^(NSError *error, MSNShopList *data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
             data.next_page = 0;
