@@ -19,6 +19,9 @@
 @property (nonatomic,strong)NSString *ctitle;
 @property (nonatomic)BOOL autoLayout;
 @property (nonatomic)BOOL defaultBackButton;
+@property (nonatomic,strong)NSString *content;
+
+- (void)loadContent:(NSString*)content title:(NSString*)title;
 
 - (void)loadFile:(NSString *)fileName ofType:(NSString *)type title:(NSString *)title;
 

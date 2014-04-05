@@ -21,6 +21,7 @@
 @property (nonatomic,readonly)int mainVersion;
 @property (nonatomic,readonly) NSString *appStoreUrl;
 @property (nonatomic,strong) NSString *udid;
+@property (nonatomic, assign) UIViewController *controller;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 
@@ -28,7 +29,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(MSSystem)
 
 - (void)initSystem;
 
-+ (NSString *)bundleversion;
++ (NSString *)bundleVersion;
 
 - (void)didBecomeActive;
 

@@ -17,7 +17,7 @@
 @property (nonatomic,readonly) UIImageView *imageView;
 @property (nonatomic,strong)MiniUIPhotoImagePromptView *prompView;
 
-- (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo;
+- (void)addTarget:(id)target selector:(SEL)selector userInfo:(id)userInfo;
 - (void)setImage:(UIImage *)image;
 - (void)setLeftPrompt:(NSString*)left rightPrompt:(NSString*)right;
 - (void)prepareForReuse;

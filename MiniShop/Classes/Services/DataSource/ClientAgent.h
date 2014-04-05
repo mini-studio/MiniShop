@@ -21,6 +21,8 @@
 
 + (ClientAgent*)sharedInstance;
 
+- (NSString*)encryptString:(NSString*)value;
+
 - (void)setRequestHeaderWithKey:(NSString*)key value:(NSString*)value;
 
 - (void)showServerExceptoin:(NSString *)string;

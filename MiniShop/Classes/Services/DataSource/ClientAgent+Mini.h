@@ -101,11 +101,13 @@
 //猜你喜欢
 - (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 
-- (void)importShopInfo:(NSArray *)taobaoList userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+- (void)importShopInfo:(NSArray *)taobaoList co:(NSArray*)co userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 - (void)setpushsound:(int)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 - (void)getpushsound:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+
+- (void)placard:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 
 - (void)loadSearchHistory:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 

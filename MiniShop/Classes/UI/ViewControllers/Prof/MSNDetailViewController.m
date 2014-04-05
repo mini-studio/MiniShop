@@ -128,7 +128,7 @@
 - (void)willLoadImage:(MSNGoodsItem *)goodsItem;
 - (void)didLoadImage:(MSNGoodsItem *)goodsItem;
 - (void)didLoadDetail:(MSNGoodsItem *)goodsItem;
-- (void)touchupImage:(MSNGoodsItem *)goodsItem;
+- (void)touchUpImage:(MSNGoodsItem *)goodsItem;
 - (void)jumpShopDetail:(MSNGoodsItem *)goodsItem;
 - (void)jumpToBuy:(MSNGoodsItem *)goodsItem;
 @end
@@ -166,7 +166,7 @@
     self.imageView.imageViewDelegate = self;
     self.imageView.backgroundColor = backgroundColor;
     [self.toolbar.shopInfoView.eventButton addTarget:self action:@selector(jumpShopDetail) forControlEvents:UIControlEventTouchUpInside];
-    [self.toolbar.buybutton addTarget:self action:@selector(jumpToBuy) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolbar.buyButton addTarget:self action:@selector(jumpToBuy) forControlEvents:UIControlEventTouchUpInside];
     self.toolbar.backgroundColor = backgroundColor;
 }
 
@@ -233,7 +233,6 @@
 {
     UIColor *backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     self.imageView.backgroundColor = backgroundColor;
-    self.toolbar.backgroundColor = backgroundColor;
     [self dismissWating];
     self.toolbar.hidden = NO;
     [self sizeToFit];
@@ -246,7 +245,7 @@
 - (void)touchupImage
 {
     if (self.detailContentViewDelegate != nil) {
-        [self.detailContentViewDelegate touchupImage:self.goodsItem];
+        [self.detailContentViewDelegate touchUpImage:self.goodsItem];
     }
 }
 
@@ -290,7 +289,7 @@
 @required
 - (void)willLoadAtIndex:(NSInteger)index;
 - (void)didLoadAtIndex:(NSInteger)index current:(BOOL)isCurrent;
-- (void)touchupImage:(NSInteger)index;
+- (void)touchUpImage:(NSInteger)index;
 - (void)jumpShopDetail:(NSInteger)index;
 - (void)jumpToBuy:(NSInteger)index;
 @end
@@ -365,16 +364,18 @@
 - (void)didLoadDetail:(MSNGoodsItem *)goodsItem
 {
     int index = [self.items indexOfObject:goodsItem];
+    MSNUIDetailContentView * view = [[self subviews] objectAtIndex:self.selectedIndex];
+    [view sizeToFit];
     if (self.detailViewDelegate!=nil){
         [self.detailViewDelegate didLoadAtIndex:index current:(index==self.selectedIndex)];
     }
 }
 
-- (void)touchupImage:(MSNGoodsItem *)goodsItem
+- (void)touchUpImage:(MSNGoodsItem *)goodsItem
 {
     int index = [self.items indexOfObject:goodsItem];
     if (index==self.selectedIndex){
-        [self.detailViewDelegate touchupImage:index];
+        [self.detailViewDelegate touchUpImage:index];
     }
 }
 
@@ -422,7 +423,7 @@
 
 @interface MSNDetailViewController () <MSNDetailViewDelegate>
 @property (nonatomic,strong) MSNDetailView *detailView;
-@property (nonatomic,strong) MiniUIButton *favbutton;
+@property (nonatomic,strong) MiniUIButton *favButton;
 @property (nonatomic,strong) MSNUIDTView *dtView;
 
 
@@ -507,7 +508,7 @@
     button.center = CGPointMake(toolbar.width/2,centerY);
     [toolbar addSubview:button];
     [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
-    self.favbutton = button;
+    self.favButton = button;
     
     button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
     button.center = CGPointMake(toolbar.width-50,centerY);
@@ -537,8 +538,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (self.loading)
-    {
+    if (self.loading) {
         self.viewStartTime = [NSDate date];
     }
     self.loading = NO;
@@ -568,10 +568,10 @@
 - (void)didLoadAtIndex:(NSInteger)index current:(BOOL)isCurrent
 {
     self.viewStartTime = [NSDate date];
-    [self resetFavButton:self.favbutton];
+    [self resetFavButton:self.favButton];
 }
 
-- (void)touchupImage:(NSInteger)index
+- (void)touchUpImage:(NSInteger)index
 {
     MSNGoodsItem *item = [self.items objectAtIndex:index];
     self.dtView.mid = item.goods_id;

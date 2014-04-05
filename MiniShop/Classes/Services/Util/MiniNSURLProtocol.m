@@ -15,13 +15,11 @@
 //    NSString* userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.168 Safari/535.19";
 //	NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:userAgent, @"UserAgent", nil];
 //	[[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
-    if ( request != nil )
-    {
+    if ( request != nil ) {
         NSString *url = [[request URL] absoluteString];
         if ( [url rangeOfString:@"pds=addcart"].length > 0 ||
             [url rangeOfString:@"pds=buynow"].length > 0 ||
-            [url rangeOfString:@"/ajax/order_ajax.do"].length > 0 )
-        {
+            [url rangeOfString:@"/ajax/order_ajax.do"].length > 0 ) {
             NSString *postBody = @"";
             NSData * data = [request HTTPBody];
             if ( data != nil ) {

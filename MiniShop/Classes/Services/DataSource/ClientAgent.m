@@ -246,35 +246,41 @@
     NSError *error = nil;
     if ( isJson )
     {
-        NSJSONSerialization *data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
-        if ( data != nil )
-        {
-            if ( key != nil && key.length > 0 )
+        if (responseObject!=nil) {
+            NSJSONSerialization *data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+            if ( data != nil )
             {
-                [ClientAgent saveData:responseStr forKey:key];
-            }
-            if ( mergeobj != nil )
-            {
-                [mergeobj convertWithJson:data];
-            }
-            if ( clazz != nil && [clazz isSubclassOfClass:[MiniObject class]] )
-            {
-                id v = [self parseJsonValue:data clazz:clazz];
-                if ( v != nil )
+                if ( key != nil && key.length > 0 )
                 {
-                    id erno = [data valueForKey:@"errno"];
-                    NSString *errmg = [data valueForKey:@"error"];
-                    if ( (erno != nil && [erno intValue] !=0) ) {
-                        if ( errmg == nil ) errmg = @"服务器吃饭去了";
-                        error = [NSError errorWithDomain:@"MSError" code:-200 userInfo:@{NSLocalizedDescriptionKey:errmg}];
-                    }
-                   
+                    [ClientAgent saveData:responseStr forKey:key];
                 }
-                block(error,v,NO);
+                if ( mergeobj != nil )
+                {
+                    [mergeobj convertWithJson:data];
+                }
+                if ( clazz != nil && [clazz isSubclassOfClass:[MiniObject class]] )
+                {
+                    id v = [self parseJsonValue:data clazz:clazz];
+                    if ( v != nil )
+                    {
+                        id erno = [data valueForKey:@"errno"];
+                        NSString *errmg = [data valueForKey:@"error"];
+                        if ( (erno != nil && [erno intValue] !=0) ) {
+                            if ( errmg == nil ) errmg = @"服务器吃饭去了";
+                            error = [NSError errorWithDomain:@"MSError" code:-200 userInfo:@{NSLocalizedDescriptionKey:errmg}];
+                        }
+                       
+                    }
+                    block(error,v,NO);
+                }
+                else
+                {
+                    block (nil,data,NO);
+                }
             }
             else
             {
-                block (nil,data,NO);
+                block( [NSError errorWithDomain:@"loadData" code:KErr_No_Data userInfo:@{NSLocalizedDescriptionKey:responseStr}], nil,NO);
             }
         }
         else
@@ -334,6 +340,13 @@
 
 }
 
+- (NSString*)encryptString:(NSString*)value
+{
+    NSString *aesKEY = @"Ddiw@#dijf)JR7#$";
+    NSString *aesIV = @"+(*^$bdjdDR948D('";
+    return [FBEncryptorAES encryptString:value keyString:aesKEY iv:aesIV];
+}
+
 - (void)loadDataFromServer:(NSString *)url method:(NSString *)method params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
     if ( key != nil && key.length > 0 )
@@ -344,6 +357,10 @@
             [self parseCachedData:data clazz:clazz isJson:isJson block:block];
         }
     }
+    
+//    NSString *k = @"_cc_=U%2BGCWk%2F7og%3D%3D; _nk_=%5Cu5FC3%5Cu60C5%5Cu4E0D%5Cu951920080808; cookie1=BqPjwGrT%2Bb4IDCN0OwQRv0HiycofCJ382ZXaHUSOj6E%3D; cookie17=UoH97k0NvSSa; cookie2=a7cd405255dd3079c5269803e9d58ef3; t=339bee4b247309c0ebf952818218e5e4; uc1=cookie14=UoLVYyeJL4sZ8g%3D%3D&cookie21=Vq8l%2BKCLjA%2Bl; unb=102852018; v=0; wud=wud;";
+//    k = [self encryptString:k];
+//    NSLog(@"%@",k);
     
     dispatch_block_t __block__ = ^{
         NSString *addr = url;

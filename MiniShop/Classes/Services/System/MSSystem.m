@@ -236,7 +236,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
     }
 }
 
-+ (NSString *)bundleversion
++ (NSString *)bundleVersion
 {
     NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     return version;
@@ -254,7 +254,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 
 - (void)invote
 {
-    NSString *key = [NSString stringWithFormat:@"invote_%@",[MSSystem bundleversion]];
+    NSString *key = [NSString stringWithFormat:@"invote_%@", [MSSystem bundleVersion]];
     dispatch_block_t __block__ = ^{
         [MiniUIAlertView showAlertWithTitle:@"别忘了,您有给我们打分的权力" message:@"亲,这一版,好用吗? 你的鼓励对我们十分重要！满心期待你的评语~" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex != alertView.cancelButtonIndex) {

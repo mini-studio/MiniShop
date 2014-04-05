@@ -70,10 +70,12 @@
     _webView.miniReq = self.miniReq;
     
     [self.contentView addSubview:_webView];
-    if ( self.fileName != nil )
-    {
+    if ( self.fileName != nil ) {
       [_webView loadFile:self.fileName ofType:self.fileType];
         self.naviTitleView.title = self.ctitle;
+    }
+    else if (self.content != nil) {
+        [_webView loadHTMLString:self.content baseURL:nil];
     }
     [self setNaviBackButton];
     self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -117,6 +119,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)loadContent:(NSString*)content title:(NSString*)title
+{
+    self.content = content;
+    self.ctitle = title;
+}
+
 - (void)loadFile:(NSString *)fileName ofType:(NSString *)type title:(NSString *)title;
 {
     if ( _webView != nil )
@@ -143,7 +151,9 @@
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dismissWating) userInfo:nil repeats:NO];
     if ( !self.miniReq )
     {
-        [self showWating:nil];
+        if ([request.URL.absoluteString hasPrefix:@"http"]) {
+            [self showWating:nil];
+        }
         return YES;
     }
     if ( requestObserver )
@@ -152,7 +162,9 @@
     }
     else
     {
-        [self showWating:nil];
+        if ([request.URL.absoluteString hasPrefix:@"http"]) {
+            [self showWating:nil];
+        }
         return YES;
     }
 }

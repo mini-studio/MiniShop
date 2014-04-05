@@ -61,6 +61,7 @@
 
 @interface MSNGoodsDetailInfo : MSObject
 @property (nonatomic,strong)MSNGoodsItem *goods_info;
+@property (nonatomic,strong)NSArray *collocation_info;
 @end
 @interface MSNGoodsDetail : MSObject
 @property (nonatomic,strong) MSNShopInfo *shop_info;

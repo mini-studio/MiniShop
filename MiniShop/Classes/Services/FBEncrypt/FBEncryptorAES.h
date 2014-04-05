@@ -44,6 +44,7 @@
 //-----------------
 // the return value of encrypteMessage: and 'encryptedMessage' are encoded with base64.
 //
++ (NSString*)encryptString:(NSString*)string keyString:(NSString*)keyString iv:(NSString*)iv;
 + (NSString*)encryptBase64String:(NSString*)string keyString:(NSString*)keyString separateLines:(BOOL)separateLines;
 + (NSString*)decryptBase64String:(NSString*)encryptedBase64String keyString:(NSString*)keyString;
 

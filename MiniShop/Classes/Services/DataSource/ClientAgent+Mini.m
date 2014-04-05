@@ -229,7 +229,7 @@
 
 - (void)version:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
-    NSString *version = [MSSystem bundleversion];
+    NSString *version = [MSSystem bundleVersion];
     bool firstRun = [MSSystem isFirstRun];
     [MSSystem clearFirstRun];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstRun": firstRun ?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
@@ -242,7 +242,7 @@
 
 - (void)auth:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
-    NSString *version = [MSSystem bundleversion];
+    NSString *version = [MSSystem bundleVersion];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version};
     params = [self perfectParameters:params];
     NSString *addr = [self requestUri:@"auth"];
@@ -366,9 +366,17 @@
             [self throwNetWorkException:@"导入收藏夹失败!!!"];
         }];
     };
+    
+    dispatch_block_t __block2__ = ^{
+        NSString *url = [MSSystem sharedInstance].version.fav_url;
+        NSHTTPCookieStorage *sharedHTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+        NSArray *cookies = [sharedHTTPCookieStorage cookiesForURL:[NSURL URLWithString:url]];
+        [[ClientAgent sharedInstance] importShopInfo:nil co:cookies userInfo:nil block:block];
+    };
+    
     [[MSSystem sharedInstance] checkVersion:^{
-        if ( [MSSystem sharedInstance].authForImportFav == 1){
-            __block__();
+        if ( [MSSystem sharedInstance].authForImportFav == 1 && NO){
+            __block2__();
         }
         else {
             [[ClientAgent sharedInstance] auth:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
@@ -379,7 +387,7 @@
                     [authController setCallback:^(bool state) {
                         [controller.navigationController popViewControllerAnimated:NO];
                         [MSSystem sharedInstance].authForImportFav = 1;
-                        __block__();
+                        __block2__();
                     }];
                     [controller.navigationController pushViewController:authController animated:YES];
                 }
@@ -504,6 +512,26 @@
 - (NSString*)requestUri14:(NSString *)path
 {
     return [NSString stringWithFormat:@"%@/new/%@",[ClientAgent host],path];
+}
+
+- (NSString*)requestUri14:(NSString *)path dic:(NSMutableDictionary*)dic
+{
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:[NSString stringWithFormat:@"%@/new/%@%@",[ClientAgent host],path,dic.count>0?@"?":@""]];
+    if (dic.count>0) {
+        for ( NSString *rkey in dic.allKeys )
+        {
+            id value = [dic valueForKey:rkey];
+            if ([value isKindOfClass:[NSString class]]) {
+                [string appendFormat:@"%@=%@&",rkey,[(NSString *)[dic valueForKey:rkey] encodedURLString]];
+            }
+            else {
+                [string appendFormat:@"%@=%lld&",rkey,[[dic valueForKey:rkey] longLongValue]];
+            }
+        }
+        [string deleteCharactersInRange:NSMakeRange(string.length-1,1)];
+    }
+    return string;
 }
 
 - (void)favshopcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
@@ -685,7 +713,7 @@
 - (void)groupshopinfo:(NSString*)ids block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"groupshopinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"ids":ids} security:YES];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shopid":ids} security:YES];
     [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block )
         {
@@ -789,28 +817,48 @@
     }];
 }
 
-- (void)importShopInfo:(NSArray *)taobaoList userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)importShopInfo:(NSArray *)taobaoList co:(NSArray*)co userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSMutableString *ids = [NSMutableString string];
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    for (MSFShopInfo * info in taobaoList){
-        [ids appendFormat:@"%lld,",info.numId];
-        [map setValue:info forKey:[NSString stringWithFormat:@"%lld",info.numId]];
+    if (taobaoList.count>0) {
+        for (MSFShopInfo * info in taobaoList) {
+            [ids appendFormat:@"%lld,",info.numId];
+            
+        }
+        if ( ids.length > 0 ){
+            [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
+            [map setValue:ids forKey:@"shop_ids"];
+        }
     }
-    if ( ids.length > 0 ){
-        [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
+    NSMutableString *string = [NSMutableString string];
+    for(NSHTTPCookie *cookie in co) {
+        [string appendFormat:@"%@=%@; ",cookie.name,cookie.value];
     }
-    NSDictionary *params = @{@"shop_ids":ids};
-    params = [self perfectParameters:params security:YES];
-    NSString *addr = [self requestUri14:@"importshopinfo"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:YES block:^
-    (NSError *error,
-            MSNShopList* data, BOOL cache) {
+    if (string.length>0) {
+        //map[@"co"]=[self encryptString:string];
+    }
+    NSMutableDictionary* params = [self perfectParameters:map security:YES];
+    NSString *addr = [self requestUri14:@"importshopinfo" dic:params];
+    [self loadDataFromServer:addr method:@"POST" params:@{@"co":[self encryptString:string],@"security":@"1"} cachekey:nil clazz:[MSNShopList class] isJson:YES mergeobj:nil showError:NO block:^(NSError *error, id data, BOOL cache) {
         if ( error == nil ){
             block(nil,data,nil,NO);
         }
         if ( error != nil ) {
             block(error,nil,nil,cache);
+        }
+    }];
+}
+
+- (void)placard:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"placard"];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:NO];
+    [params removeObjectForKey:@"tn"];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
+        if ( block )
+        {
+            block(error,data,nil,cache);
         }
     }];
 }

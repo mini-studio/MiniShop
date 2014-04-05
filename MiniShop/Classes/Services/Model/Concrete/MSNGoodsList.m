@@ -195,6 +195,7 @@
 {
     if (self=[super init]){
         [self setAttri:@"goods_info" clazz:[MSNGoodsItem class]];
+        [self setAttri:@"collocation_info" clazz:[MSNGoodsItem class]];
     }
     return self;
 }

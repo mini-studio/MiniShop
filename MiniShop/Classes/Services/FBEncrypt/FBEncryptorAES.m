@@ -123,6 +123,14 @@
 	return result;
 }
 
++ (NSString*)encryptString:(NSString*)string keyString:(NSString*)keyString iv:(NSString*)iv
+{
+    NSData* data = [self encryptData:[string dataUsingEncoding:NSUTF8StringEncoding]
+                                 key:[keyString dataUsingEncoding:NSUTF8StringEncoding]
+                                  iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    return [self hexStringForData:data];
+
+}
 
 + (NSString*)encryptBase64String:(NSString*)string keyString:(NSString*)keyString separateLines:(BOOL)separateLines
 {

@@ -53,22 +53,27 @@
     [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo,
             BOOL cache) {
         if (error==nil) {
-            id list = [data valueForKey:@"resultList"];
-            if ( [list isKindOfClass:[NSArray class]]) {
-                [pSelf showWating:nil];
-                [[ClientAgent sharedInstance] importShopInfo:list userInfo:nil block:^(NSError *error, id data,
-                        id userInfo, BOOL cache) {
-                    [pSelf dismissWating];
-                    if (error==nil) {
-                        [pSelf receiveData:data page:page];
-                    }
-                    else {
-                        [pSelf showErrorMessage:error];
-                    }
-                }];
+            if([data isKindOfClass:[MSNShopList class]]) {
+                [pSelf receiveData:data page:page];
             }
             else {
-                [pSelf showMessageInfo:@"发生错误啦" delay:2];
+                id list = [data valueForKey:@"resultList"];
+                if ( [list isKindOfClass:[NSArray class]]) {
+                    [pSelf showWating:nil];
+                    [[ClientAgent sharedInstance] importShopInfo:list co:nil userInfo:nil block:^(NSError *error, id data,
+                            id userInfo, BOOL cache) {
+                        [pSelf dismissWating];
+                        if (error==nil) {
+                            [pSelf receiveData:data page:page];
+                        }
+                        else {
+                            [pSelf showErrorMessage:error];
+                        }
+                    }];
+                }
+                else {
+                    [pSelf showMessageInfo:@"发生错误啦" delay:2];
+                }
             }
         }
         else {

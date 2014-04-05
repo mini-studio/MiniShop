@@ -9,5 +9,5 @@
 #import "MSUIWebViewController.h"
 
 @interface MSUIAuthWebViewController : MSUIWebViewController
-@property (nonatomic,strong) void (^callback)( bool );
+@property (nonatomic,strong) void (^callback)( bool);
 @end

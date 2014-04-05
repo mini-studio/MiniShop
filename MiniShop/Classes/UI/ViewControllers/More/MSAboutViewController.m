@@ -53,7 +53,7 @@
 
 - (void)addLogo
 {
-    NSString *ver = [NSString stringWithFormat:@"版本:%@",[MSSystem bundleversion]];
+    NSString *ver = [NSString stringWithFormat:@"版本:%@", [MSSystem bundleVersion]];
     UILabel *lable = [UILabel LabelWithFrame:CGRectZero
                                      bgColor:[UIColor colorWithRGBA:0x00000055]
                                         text:ver

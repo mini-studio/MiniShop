@@ -180,7 +180,7 @@
     self.colorButton.hidden = NO;
 }
 
-- (void)addTartget:(id)target selector:(SEL)selector userInfo:(id)userInfo
+- (void)addTarget:(id)target selector:(SEL)selector userInfo:(id)userInfo
 {
     self.button.userInfo = userInfo;
     [self.button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];

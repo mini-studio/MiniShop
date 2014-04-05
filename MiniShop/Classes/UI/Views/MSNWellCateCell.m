@@ -60,7 +60,7 @@
         else {
             imageView.image = [UIImage imageNamed:cate.image_url];
         }
-        [imageView addTartget:self selector:@selector(handleTouchImage:) userInfo:cate];
+        [imageView addTarget:self selector:@selector(handleTouchImage:) userInfo:cate];
     }
 }
 

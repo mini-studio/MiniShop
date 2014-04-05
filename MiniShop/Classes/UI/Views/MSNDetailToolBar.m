@@ -8,6 +8,9 @@
 
 #import "MSNDetailToolBar.h"
 #import "UIColor+Mini.h"
+#import "MiniUIPhotoImageView.h"
+#import "UIImageView+WebCache.h"
+#import "MSNDetailViewController.h"
 
 @interface MSNImageLabel : UIView
 @property (nonatomic,strong) UIImageView *imageView;
@@ -60,11 +63,89 @@
 }
 @end
 
+@interface MSNRelatedGoodsView()
+@property(nonatomic, strong)MiniUIPhotoImageView * leftImageView;
+@property(nonatomic, strong)MiniUIPhotoImageView * rightImageView;
+@property(nonatomic, strong)UILabel * titleLabel;
+@property(nonatomic, strong)NSArray * goodsItems;
+@property(nonatomic, strong)NSArray * imageViews;
+@end
+
+@implementation MSNRelatedGoodsView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 10, self.width-20, 12)];
+        _titleLabel.font = [UIFont systemFontOfSize:12];
+        _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.textColor = [UIColor whiteColor];
+        _leftImageView = [[MiniUIPhotoImageView alloc] initWithFrame:CGRectZero];
+        _rightImageView = [[MiniUIPhotoImageView alloc] initWithFrame:CGRectZero];
+        [self addSubview:_titleLabel];
+        [self addSubview:_leftImageView];
+        [self addSubview:_rightImageView];
+        self.imageViews = @[_leftImageView,_rightImageView];
+        _titleLabel.text = @"同店搭配";
+        [_leftImageView addTarget:self selector:@selector(handleImageViewClick:) userInfo:@"0"];
+        [_rightImageView addTarget:self selector:@selector(handleImageViewClick:) userInfo:@"1"];
+    }
+    return self;
+}
+
+- (void)sizeToFit
+{
+   [super sizeToFit];
+    if (self.goodsItems.count==0) {
+        self.height = 0;
+        self.titleLabel.height=0;
+        self.leftImageView.height = 0;
+        self.rightImageView.height = 0;
+    }
+    else {
+        _titleLabel.height = 10;
+        CGFloat imageHeight =  self.width/2;
+        self.height = imageHeight +_titleLabel.height + 20;
+        for (int index=0;index<2&&index<_goodsItems.count;index++) {
+            __block MiniUIPhotoImageView *imageView = self.imageViews[index];
+            MSNGoodsItem * item = (MSNGoodsItem *)self.goodsItems[index];
+            [imageView.imageView setImageWithURL:[NSURL URLWithString:item.middle_image_url] placeholderImage:nil
+                                         options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+                        imageView.image = image;
+                    } failure:^(NSError *error) {
+
+                    }];
+        }
+
+        self.leftImageView.frame = CGRectMake(0, _titleLabel.bottom+10, self.height,imageHeight);
+        self.rightImageView.frame = CGRectMake(self.width/2, self.leftImageView.top, self.height,imageHeight);
+    }
+}
+
+- (void)handleImageViewClick:(MiniUIButton *)button
+{
+    int index = [button.userInfo integerValue];
+    if (index<self.goodsItems.count) {
+        MSNGoodsItem * item = (MSNGoodsItem *)self.goodsItems[index];
+        MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+        controller.items = @[item];
+        [[MSSystem sharedInstance].controller.navigationController pushViewController:controller animated:YES];
+    }
+}
+
+@end
+
+
 @interface MSNDetailToolBar()
 @property (nonatomic,strong)UIScrollView *contentView;
 @property (nonatomic,strong)UILabel      *discountLabel;
 @property (nonatomic,strong)MSNImageLabel *priceHistoryIntroLabel;
 @property (nonatomic,strong)UILabel     *startTimeLabel;
+
+@property (nonatomic, strong)UIView *infoView;
+
 @end
 
 @implementation MSNDetailToolBar
@@ -74,6 +155,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSubViews];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -90,35 +172,45 @@
 
 - (void)initSubViews
 {
+    self.infoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0)];
+    self.infoView.backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     self.contentView = [[UIScrollView alloc] initWithFrame:self.bounds];
+
+    [self.contentView addSubview:self.infoView];
     [self addSubview:self.contentView];
+
     self.goodsNameLabel = [self createLabel:CGRectMake(10, 10, self.width-20, 30) fontSize:16];
-    [self.contentView addSubview:self.goodsNameLabel];
+    [self.infoView addSubview:self.goodsNameLabel];
     self.goodsPriceLabel = [self createLabel:CGRectMake(10, self.goodsNameLabel.bottom+6, 100, 30) fontSize:21];
-    [self.contentView addSubview:self.goodsPriceLabel];
+    [self.infoView addSubview:self.goodsPriceLabel];
     
-    self.discountLabel = [self createLable:12 textColor:[UIColor colorWithRGBA:0xC00000ff]];
-    [self.contentView addSubview:self.discountLabel];
+    self.discountLabel = [self createLabel:12 textColor:[UIColor colorWithRGBA:0xC00000ff]];
+    [self.infoView addSubview:self.discountLabel];
     
-    self.buybutton = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:@"购买"];
-    self.buybutton.frame = CGRectMake(self.width - 100, self.goodsPriceLabel.top, 90, 30);
-    [self.contentView addSubview:self.buybutton];
-    
-    self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 85)];
-    [self.contentView addSubview:self.shopInfoView];
-    
+    self.buyButton = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:@"购买"];
+    self.buyButton.frame = CGRectMake(self.width - 100, self.goodsPriceLabel.top, 90, 30);
+    [self.infoView addSubview:self.buyButton];
+
     self.priceHistoryIntroLabel = [[MSNImageLabel alloc] initWithFrame:CGRectMake(10, 0, self.width-20, 0)];
     self.priceHistoryIntroLabel.imageView.image = [UIImage imageNamed:@"arrowdown"];
     [self.priceHistoryIntroLabel setTextColor:[UIColor colorWithRGBA:0xd24d62ff]];
-    [self addSubview:self.priceHistoryIntroLabel];
+    [self.infoView addSubview:self.priceHistoryIntroLabel];
     
-    self.startTimeLabel = [self createLable:12 textColor:[UIColor colorWithRGBA:0x414345ff]];
+    self.startTimeLabel = [self createLabel:12 textColor:[UIColor colorWithRGBA:0x414345ff]];
     self.startTimeLabel.size = CGSizeMake(self.width-20, 12);
-    [self.contentView addSubview:self.startTimeLabel];
+    [self.infoView addSubview:self.startTimeLabel];
+
+    self.relatedView = [[MSNRelatedGoodsView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0)];
+    [self.contentView addSubview:self.relatedView];
+
+    self.shopInfoView = [[MSNShopInfoView alloc] initWithFrame:CGRectMake(0, 0, self.width, 85)];
+    self.shopInfoView.backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
+    [self.contentView addSubview:self.shopInfoView];
+
     
 }
 
-- (UILabel*)createLable:(CGFloat)height textColor:(UIColor*)textColor
+- (UILabel*)createLabel:(CGFloat)height textColor:(UIColor*)textColor
 {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, height)];
     label.backgroundColor = [UIColor clearColor];
@@ -149,13 +241,18 @@
     else {
         self.discountLabel.size = CGSizeZero;
     }
-    self.buybutton.top = self.goodsPriceLabel.top;
+    self.buyButton.top = self.goodsPriceLabel.top;
     [self.priceHistoryIntroLabel sizeToFit];
     self.priceHistoryIntroLabel.left = 10;
-    self.priceHistoryIntroLabel.top = self.buybutton.bottom + 6;
+    self.priceHistoryIntroLabel.top = self.buyButton.bottom + 6;
     [self.startTimeLabel sizeToFit];
     self.startTimeLabel.origin = CGPointMake(10, self.priceHistoryIntroLabel.bottom+6);
-    self.shopInfoView.top = self.startTimeLabel.bottom;
+    self.infoView.height = self.startTimeLabel.bottom+7;
+
+    [self.relatedView sizeToFit];
+    self.relatedView.origin = CGPointMake(0, self.infoView.bottom);
+
+    self.shopInfoView.top = self.relatedView.bottom;
     self.height = self.shopInfoView.bottom;
     self.contentView.height = self.height;
 }
@@ -175,8 +272,9 @@
             pSelf.shopInfoView.shopInfo = item.detail.shop_info;
             item.goods_sales_intro = data.info.goods_info.goods_sales_intro;
             item.price_history_intro = data.info.goods_info.price_history_intro;
-            pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@",item.goods_sales_intro];
             pSelf.priceHistoryIntroLabel.label.text = item.price_history_intro;
+            pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@",item.goods_sales_intro];
+            pSelf.relatedView.goodsItems = data.info.collocation_info;
             [pSelf sizeToFit];
             [pSelf setNeedsLayout];
             action(YES);

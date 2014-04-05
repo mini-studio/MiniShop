@@ -213,6 +213,22 @@
     }
 }
 
+- (void)actionForMessage
+{
+    __PSELF__;
+    [self showWating:nil];
+    [[ClientAgent sharedInstance] placard:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if (error==nil) {
+            MiniUIWebViewController *controller = [[MiniUIWebViewController alloc] init];
+            [controller loadContent:data title:@"系统公告"];
+            [pSelf.navigationController pushViewController:controller animated:YES];
+        }
+        else {
+            [pSelf showErrorMessage:error];
+        }
+    }];
+}
 //关于
 - (void)actionForAbout
 {
