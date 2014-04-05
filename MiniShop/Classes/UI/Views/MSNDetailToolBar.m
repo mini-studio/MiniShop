@@ -248,12 +248,13 @@
     [self.startTimeLabel sizeToFit];
     self.startTimeLabel.origin = CGPointMake(10, self.priceHistoryIntroLabel.bottom+6);
     self.infoView.height = self.startTimeLabel.bottom+7;
-
+    
+    self.shopInfoView.top = self.infoView.bottom;
+    
     [self.relatedView sizeToFit];
-    self.relatedView.origin = CGPointMake(0, self.infoView.bottom);
-
-    self.shopInfoView.top = self.relatedView.bottom;
-    self.height = self.shopInfoView.bottom;
+    self.relatedView.origin = CGPointMake(0, self.shopInfoView.bottom);
+    
+    self.height = self.relatedView.bottom+2;
     self.contentView.height = self.height;
 }
 

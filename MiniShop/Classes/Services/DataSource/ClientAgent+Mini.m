@@ -320,54 +320,10 @@
 }
 
 #pragma mark - import fav
-- (void)importFav:(MiniViewController *)controller userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)importFav:(__weak MiniViewController *)controller userInfo:(id)userInfo block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     dispatch_block_t __block__ = ^{
-        NSString *url = [MSSystem sharedInstance].version.fav_url;
-        AFHTTPClient *client = [AFHTTPClient clientWithURL:[NSURL URLWithString:url]];
-        [client getPath:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSRange start = [responseStr rangeOfString:@"{"];
-            NSRange end = [responseStr rangeOfString:@"}" options:NSBackwardsSearch];
-            if ( start.length > 0 && end.length > 0 )
-            {
-                NSInteger len = end.location - start.location + 1;
-                responseStr = [responseStr substringWithRange:NSMakeRange(start.location, len)];
-                LOG_DEBUG(@"======\n%@\n=======",responseStr);
-                NSError *e = nil;
-                NSJSONSerialization *data = [NSJSONSerialization JSONObjectWithData:[responseStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&e];
-                if ( e == nil )
-                {
-                    NSMutableArray *list = [NSMutableArray array];
-                    id result = [[data valueForKey:@"data"] valueForKey:@"result"];
-                    NSArray *lst = [result valueForKey:@"resultList"];
-                    for ( id v in lst )
-                    {
-                        MSFShopInfo *info = [[MSFShopInfo alloc] init];
-                        [info convertWithJson:v];
-                        [list addObject:info];
-                    }
-                    [result setValue:list forKey:@"resultList"];
-                    block(nil ,result,userInfo,NO);
-                }
-                else
-                {
-                    block([NSError errorWithDomain:@"fav" code:-200 userInfo:@{NSLocalizedDescriptionKey:@"导入收藏夹失败!"}] ,nil,userInfo,NO);
-                    //block(e ,data,userInfo,NO);
-                }
-            }
-            else
-            {
-                block([NSError errorWithDomain:@"fav" code:-200 userInfo:@{NSLocalizedDescriptionKey:@"导入收藏夹失败!"}] ,nil,userInfo,NO);
-            }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSError *e = [NSError errorWithDomain:@"importfav" code:-201 userInfo:nil];
-            block(e,nil,userInfo,NO);
-            [self throwNetWorkException:@"导入收藏夹失败!!!"];
-        }];
-    };
-    
-    dispatch_block_t __block2__ = ^{
+        [controller showWating:nil];
         NSString *url = [MSSystem sharedInstance].version.fav_url;
         NSHTTPCookieStorage *sharedHTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
         NSArray *cookies = [sharedHTTPCookieStorage cookiesForURL:[NSURL URLWithString:url]];
@@ -375,19 +331,18 @@
     };
     
     [[MSSystem sharedInstance] checkVersion:^{
-        if ( [MSSystem sharedInstance].authForImportFav == 1 && NO){
-            __block2__();
+        if ([MSSystem sharedInstance].authForImportFav == 1){
+            __block__();
         }
         else {
             [[ClientAgent sharedInstance] auth:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
-                if ( error == nil )
-                {
+                if ( error == nil ) {
                     MSUIAuthWebViewController *authController = [[MSUIAuthWebViewController alloc] init];
                     authController.htmlStr = data;
                     [authController setCallback:^(bool state) {
                         [controller.navigationController popViewControllerAnimated:NO];
                         [MSSystem sharedInstance].authForImportFav = 1;
-                        __block2__();
+                        __block__();
                     }];
                     [controller.navigationController pushViewController:authController animated:YES];
                 }

@@ -52,32 +52,11 @@
     [self showWating:nil];
     [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo,
             BOOL cache) {
+        [pSelf dismissWating];
         if (error==nil) {
-            if([data isKindOfClass:[MSNShopList class]]) {
-                [pSelf receiveData:data page:page];
-            }
-            else {
-                id list = [data valueForKey:@"resultList"];
-                if ( [list isKindOfClass:[NSArray class]]) {
-                    [pSelf showWating:nil];
-                    [[ClientAgent sharedInstance] importShopInfo:list co:nil userInfo:nil block:^(NSError *error, id data,
-                            id userInfo, BOOL cache) {
-                        [pSelf dismissWating];
-                        if (error==nil) {
-                            [pSelf receiveData:data page:page];
-                        }
-                        else {
-                            [pSelf showErrorMessage:error];
-                        }
-                    }];
-                }
-                else {
-                    [pSelf showMessageInfo:@"发生错误啦" delay:2];
-                }
-            }
+            [pSelf receiveData:data page:page];
         }
         else {
-           [pSelf dismissWating];
            [pSelf showErrorMessage:error];
         }
     }];
