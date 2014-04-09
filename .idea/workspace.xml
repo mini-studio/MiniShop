@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.m" afterPath="$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
