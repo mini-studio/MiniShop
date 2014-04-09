@@ -22,5 +22,6 @@
 
 - (void)setGoodsInfo:(MSNGoodsItem*)item action:(void (^)(bool loaded))action;
 
+- (void)display;
 
 @end

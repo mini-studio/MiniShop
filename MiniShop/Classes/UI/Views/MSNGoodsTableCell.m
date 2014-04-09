@@ -15,6 +15,8 @@
 #import "RTLabel.h"
 #import "MSNGoodsList.h"
 #import "MSNDetailViewController.h"
+#import "MiniUIWebViewController.h"
+#import "MSUIWebViewController.h"
 
 @interface MSNGoodsTableCell()
 @property (nonatomic,strong)NSMutableArray *imageArray;
@@ -126,18 +128,26 @@
 - (void)actionImageTap:(MiniUIButton*)button
 {
     MSNGoodsItem *item = [button userInfo];
-    MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
-    if ( [self.controller respondsToSelector:@selector(allGoodsItems)] ) {
-        NSArray *all = [self.controller valueForKey:@"allGoodsItems"];
-        controller.items = all;
-        NSUInteger index = [all indexOfObject:item];
-        if (index != NSNotFound)
-            controller.defaultIndex = index;
+    if (item.goods_url.length==0) {
+        MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+        if ( [self.controller respondsToSelector:@selector(allGoodsItems)] ) {
+            NSArray *all = [self.controller valueForKey:@"allGoodsItems"];
+            controller.items = all;
+            NSUInteger index = [all indexOfObject:item];
+            if (index != NSNotFound)
+                controller.defaultIndex = index;
+        }
+        else {
+            controller.items = @[item];
+        }
+        [self.controller.navigationController pushViewController:controller animated:YES];
     }
     else {
-        controller.items = @[item];
+        MSUIWebViewController *controller = [[MSUIWebViewController alloc] init];
+        controller.uri = item.goods_url;
+        [self.controller.navigationController pushViewController:controller animated:YES];
     }
-    [self.controller.navigationController pushViewController:controller animated:YES];
+
 }
 
 - (void)clearMemory

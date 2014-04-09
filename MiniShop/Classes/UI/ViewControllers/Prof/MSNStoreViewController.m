@@ -43,8 +43,8 @@
     [self.transformButton setAccessoryImage:[UIImage imageNamed:@"arrow_white"] himage:[UIImage imageNamed:@"arrow_white"]];
     self.transformButton.backgroundColor = NAVI_BG_COLOR;
     [self.naviTitleView addSubview:self.transformButton];
-    self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
-    self.transformButton.values = @[@"time",@"sale",@"off",@"off_time"];
+    self.transformButton.items = @[@"新品",@"销量",@"降价"];
+    self.transformButton.values = @[@"time",@"sale",@"off_time"];
     self.transformButton.delegate = self;
     self.transformButton.hidden = YES;
     UIImage *image = [UIImage imageNamed:@"icon_search"];

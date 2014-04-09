@@ -212,10 +212,10 @@
 
 - (void)favShop:(MSNShopInfo*)shopInfo
 {
-    [self showWating:nil];
+    //[self showWating:nil];
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
+        //[pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 1;
             [pSelf.tableView reloadData];
@@ -228,9 +228,10 @@
 
 - (void)cancelFavShop:(MSNShopInfo*)shopInfo
 {
-    [self showWating:nil];
+    //[self showWating:nil];
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        //[pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 0;
             [pSelf.tableView reloadData];

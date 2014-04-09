@@ -54,7 +54,7 @@
                                 ],
                         @"1":@[
                                 @{@"action":WHO==nil?@"actionForReg":@"actionForLogout",@"text":WHO==nil?@"登录注册":@"退出登录",@"subtext":@"登录绑定后才能参加积分活动哦~"},
-                                @{@"action":@"actionForFeedback",@"text":@"微信"},
+                               // @{@"action":@"actionForFeedback",@"text":@"微信"},
                                 @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
                                 ],
                         @"2":@[

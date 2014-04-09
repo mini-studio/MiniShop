@@ -166,7 +166,7 @@ static UITapGestureRecognizer *tapRecognizer;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.naviTitleView.title = NSLocalizedString(@"小主留言", @"用户反馈");
+    self.naviTitleView.title = NSLocalizedString(@"意见薄", @"用户反馈");
 
     [self setBackButton];
     [self setBackgroundColor];

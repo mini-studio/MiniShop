@@ -30,7 +30,7 @@
 @protocol MSNUIDetailImageViewDelegate <NSObject>
 - (void)willLoadImage;
 - (void)didLoadImage;
-- (void)touchupImage;
+- (void)touchUpImage;
 @end
 
 @interface MSNUIDetailImageView : UIView
@@ -79,7 +79,7 @@
 - (void)touchupImage
 {
     if (self.imageViewDelegate) {
-        [self.imageViewDelegate touchupImage];
+        [self.imageViewDelegate touchUpImage];
     }
 }
 
@@ -191,7 +191,6 @@
 
 - (void)setGoodsItem:(MSNGoodsItem *)goodsItem delay:(int)delay
 {
-    self.toolbar.hidden = YES;
     dispatch_block_t __block__ = ^ {
     _goodsItem = goodsItem;
     __PSELF__;
@@ -233,8 +232,8 @@
 {
     UIColor *backgroundColor = [UIColor colorWithRGBA:0xfdf4f2AA];
     self.imageView.backgroundColor = backgroundColor;
+    [self.toolbar display];
     [self dismissWating];
-    self.toolbar.hidden = NO;
     [self sizeToFit];
     if (self.detailContentViewDelegate != nil) {
         self.goodsItem.image=self.imageView.imageView.image;
@@ -242,7 +241,7 @@
     }
 }
 
-- (void)touchupImage
+- (void)touchUpImage
 {
     if (self.detailContentViewDelegate != nil) {
         [self.detailContentViewDelegate touchUpImage:self.goodsItem];

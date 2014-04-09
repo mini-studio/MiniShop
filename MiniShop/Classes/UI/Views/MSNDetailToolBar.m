@@ -156,6 +156,7 @@
     if (self) {
         [self initSubViews];
         self.backgroundColor = [UIColor clearColor];
+        self.contentView.hidden = YES;
     }
     return self;
 }
@@ -258,6 +259,11 @@
     self.contentView.height = self.height;
 }
 
+- (void)display
+{
+    self.contentView.hidden = NO;
+}
+
 - (void)setGoodsInfo:(MSNGoodsItem*)item action:(void (^)(bool loaded))action
 {
     self.goodsNameLabel.text = item.goods_title;
@@ -276,6 +282,7 @@
             pSelf.priceHistoryIntroLabel.label.text = item.price_history_intro;
             pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@",item.goods_sales_intro];
             pSelf.relatedView.goodsItems = data.info.collocation_info;
+            [pSelf display];
             [pSelf sizeToFit];
             [pSelf setNeedsLayout];
             action(YES);
