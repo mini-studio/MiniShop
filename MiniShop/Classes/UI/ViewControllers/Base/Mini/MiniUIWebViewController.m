@@ -29,7 +29,6 @@
 {
     self = [super init];
     if (self) {
-        // Custom initialization
         self.hidesBottomBarWhenPushed = YES;
         _miniReq = YES;
         self.autoLayout = YES;
@@ -48,7 +47,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.naviTitleView.title = self.ctitle;
+    self.naviTitleView.title = self.cTitle;
     if ( self.autoLayout )
     {
         _webView = [[MiniUIWebView alloc] initWithFrame:self.contentView.bounds];
@@ -72,7 +71,7 @@
     [self.contentView addSubview:_webView];
     if ( self.fileName != nil ) {
       [_webView loadFile:self.fileName ofType:self.fileType];
-        self.naviTitleView.title = self.ctitle;
+        self.naviTitleView.title = self.cTitle;
     }
     else if (self.content != nil) {
         [_webView loadHTMLString:self.content baseURL:nil];
@@ -122,7 +121,7 @@
 - (void)loadContent:(NSString*)content title:(NSString*)title
 {
     self.content = content;
-    self.ctitle = title;
+    self.cTitle = title;
 }
 
 - (void)loadFile:(NSString *)fileName ofType:(NSString *)type title:(NSString *)title;
@@ -135,7 +134,7 @@
     else
     {
         self.fileName = fileName;
-        self.ctitle = title;
+        self.cTitle = title;
         self.fileType = type;
     }
 }
@@ -143,6 +142,16 @@
 - (void)setRequestObserverBlock:(BOOL (^)(MiniUIWebViewController *controller, NSString *url, UIWebViewNavigationType navigationType))block
 { 
     requestObserver =  block ;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self dismissWating:nil];
+    __PSELF__;
+    NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
+    if (title.length>0) {
+       pSelf.naviTitleView.title = title;
+    }
 }
 
 

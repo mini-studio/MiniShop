@@ -30,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-        self.ctitle = title;
+        self.cTitle = title;
         self.uri = uri;
         self.toolbar = toolbar;
         [self registerBlock];
@@ -42,7 +42,7 @@
 {
     self = [super init];
     if (self) {
-        self.ctitle = title;
+        self.cTitle = title;
         self.request = request;
         self.toolbar = toolbar;
         [self registerBlock];
@@ -129,7 +129,7 @@
 - (void)webViewDidFinishLoad:(__strong UIWebView *)webView
 {
     [self resetWebButtons];
-    if ( self.ctitle.length == 0 ){
+    if ( self.cTitle.length == 0 ){
         NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
         self.naviTitleView.title = title;
     }

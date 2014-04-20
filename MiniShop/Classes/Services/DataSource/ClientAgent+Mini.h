@@ -65,11 +65,13 @@
 //我的商城列表
 - (void)favshoplist:(NSString*)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //特卖汇分类
-- (void)specialcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+- (void)specialitem:(void (^)(NSError*error, id data, id userInfo , BOOL cache ))block;
 //特卖汇列表
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //好店汇分类
 - (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
+
+- (void)searchhelp:(void (^)(NSError *error, NSString* data, id userInfo , BOOL cache ))block;
 
 /**
  * @param key 搜索关键字
@@ -83,6 +85,7 @@
 - (void)searchshop:(NSString*)key type:(NSString*)type page:(int)page block:
         (void (^)(NSError*error, id data, id userInfo , BOOL cache ))block;
 - (void)groupgoodsinfo:(NSString*)ids  block:(void (^)(NSError*error, id data, id userInfo , BOOL cache ))block;
+
 - (void)searchgoods:(NSString*)key type:(NSString*)type sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block;
 //收藏店铺
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;

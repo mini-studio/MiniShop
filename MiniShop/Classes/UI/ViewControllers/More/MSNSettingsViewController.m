@@ -9,6 +9,7 @@
 #import "MSNSettingsViewController.h"
 #import "UMFeedbackViewController.h"
 #import "MRLoginViewController.h"
+#import "MSWeChatViewController.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "UIColor+Mini.h"
 #import "MiniUIWebViewController.h"
@@ -54,8 +55,8 @@
                                 ],
                         @"1":@[
                                 @{@"action":WHO==nil?@"actionForReg":@"actionForLogout",@"text":WHO==nil?@"登录注册":@"退出登录",@"subtext":@"登录绑定后才能参加积分活动哦~"},
-                               // @{@"action":@"actionForFeedback",@"text":@"微信"},
-                                @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82858599)"},
+                                @{@"action":@"actionForWeixin",@"text":@"微信"},
+                                @{@"action":@"actionForFeedback",@"text":@"意见反馈(热线010-82850400)"},
                                 ],
                         @"2":@[
                                 //@{@"action":@"actionForJoin",@"text":@"加入QQ群"},
@@ -189,7 +190,7 @@
 - (void)actionForHelp
 {
     MiniUIWebViewController *controller = [[MiniUIWebViewController alloc] init];
-    controller.ctitle = @"帮助";
+    controller.cTitle = @"帮助";
     NSString* requestStr = [NSString stringWithFormat:@"%@/api/help?usernick=%@&imei=%@",[ClientAgent host], NICK, UDID];
     [self.navigationController pushViewController:controller animated:YES];
     [controller loadURL:[NSURL URLWithString:requestStr]];
@@ -277,8 +278,14 @@
 {
     [MobClick event:MOB_ENTER_TAOBAO_FAV];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"fav"]];
-
 }
+
+- (void)actionForWeixin
+{
+    MSWeChatViewController *controller = [[MSWeChatViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 //已经购买的
 - (void)actionForGoToPurchase
 {

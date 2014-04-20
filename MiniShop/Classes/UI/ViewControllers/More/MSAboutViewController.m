@@ -15,11 +15,6 @@
 #include "UIDevice+Ext.h"
 #import <QuartzCore/QuartzCore.h>
 
-// 间距配置
-#define KCopyrightHeight            62.0f
-
-// 字体颜色配置
-#define KLabelColor          0x898989AA
 
 // 字体高度配置
 #define KLabelHeight          12.0f
@@ -75,7 +70,7 @@
     tel.frame = CGRectMake(80, self.contentView.height/2, width, 40);
     tel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [tel setTouchupHandler:^(MiniUIButton *button) {
-        [MiniSysUtil call:@"01082858599"];
+        [MiniSysUtil call:@"01082850400"];
     }];
     [self.contentView addSubview:tel];
     MiniUIButton * address = [MiniUIButton buttonWithType:UIButtonTypeCustom];

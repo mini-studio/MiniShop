@@ -11,7 +11,6 @@
 
 @interface MSFrameViewController ()
 @property (nonatomic,strong)MSViewController *currentController;
-@property (nonatomic,strong)MSViewController *preparedController;
 @end
 
 @implementation MSFrameViewController
@@ -47,6 +46,17 @@
     }];
     self.containerView.contentSize = CGSizeMake(self.subControllers.count*self.contentView.width,0);
 }
+
+- (void)clearSubControllers
+{
+    for(UIViewController *controller in self.subControllers) {
+        [controller removeFromParentViewController];
+        [controller.view removeFromSuperview];
+    }
+    [self.subControllers removeAllObjects];
+    self.currentController = nil;
+}
+
 
 - (MSNaviMenuView*)createNaviMenuAndSubControllers
 {

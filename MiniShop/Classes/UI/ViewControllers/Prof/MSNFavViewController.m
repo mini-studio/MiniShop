@@ -35,7 +35,7 @@
     [super viewDidLoad];
 	self.naviTitleView.title = @"我的收藏";
     [self createTableView];
-        [self loadData:1];
+    [self.tableView triggerRefresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -138,7 +138,6 @@
 - (void)loadData:(int)page
 {
     __PSELF__;
-    [self showWating:nil];
     [[ClientAgent sharedInstance] mygoodslist:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if ( error == nil ) {

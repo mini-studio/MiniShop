@@ -252,7 +252,10 @@
     CGFloat centerY = toolbar.height/2-4;
 
     if (self.random) {
-        MiniUIButton *button = [MiniUIButton createToolBarButton:@"再猜" imageName:nil hImageName:nil];
+        MiniUIButton *button = [MiniUIButton createToolBarButton:@"  再猜    " imageName:nil hImageName:nil];
+        [button setImage:[UIImage imageNamed:@"guess"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"guess-hover"] forState:UIControlStateHighlighted];
+
         button.center = CGPointMake(toolbar.width/2,centerY);
         [toolbar addSubview:button];
         [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];

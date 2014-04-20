@@ -12,7 +12,7 @@
 #import "MSNGoodsTableCell.h"
 
 @interface MSNEspecialIndexViewController ()
-
+@property (nonatomic, strong)NSArray *menuItems;
 @end
 
 @implementation MSNEspecialIndexViewController
@@ -35,30 +35,50 @@
 {
     MSNaviMenuView *topTitleView = [[MSNaviMenuView alloc] initWithFrame:CGRectMake(15, 0,self.naviTitleView.width-30,self.naviTitleView.height)];
     self.topTitleView = topTitleView;
-    __PSELF__;
-    [[ClientAgent sharedInstance] specialcate:^(NSError *error, NSArray *data, id userInfo, BOOL cache) {
-        if ( data != nil ) {
-            for (int index = 0; index < data.count; index++) {
-                MSNSpecialcate *cate = [data objectAtIndex:index];
-                [pSelf.topTitleView addMenuTitle:cate.name userInfo:[NSString stringWithFormat:@"%d",index]];
-                MSNEspecialContentViewController *controller = [[MSNEspecialContentViewController alloc] init];
-                controller.cate = cate;
-                [pSelf.subControllers addObject:controller];
-                [pSelf addChildViewController:controller];
-                controller.view.frame = CGRectMake(index*pSelf.containerView.width, 0, pSelf.containerView.width, pSelf.containerView.height);
-                [pSelf.containerView addSubview:controller.view];
-            }
-            pSelf.containerView.contentSize = CGSizeMake(data.count*pSelf.containerView.width, 0);
-            [pSelf.topTitleView setNeedsLayout];
-            pSelf.topTitleView.selectedIndex = 0;
-        }
-    }];
     return topTitleView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (BOOL)changedMenuItem:(NSArray *)items
+{
+    return self.menuItems.count!=items.count;
+}
+
+- (void)resetNaviMenuAndSubControllers
+{
+    __PSELF__;
+    [[ClientAgent sharedInstance] specialitem:^(NSError *error, NSArray *data, id userInfo, BOOL cache) {
+        if ( data != nil ) {
+            if ([self changedMenuItem:data]) {
+                [pSelf.topTitleView clear];
+                [pSelf clearSubControllers];
+                self.menuItems = data;
+                for (int index = 0; index < data.count; index++) {
+                    MSNSpecialcate *cate = [data objectAtIndex:index];
+                    [pSelf.topTitleView addMenuTitle:cate.title userInfo:[NSString stringWithFormat:@"%d",index]];
+                    MSNEspecialContentViewController *controller = [[MSNEspecialContentViewController alloc] init];
+                    controller.cate = cate;
+                    [pSelf.subControllers addObject:controller];
+                    [pSelf addChildViewController:controller];
+                    controller.view.frame = CGRectMake(index*pSelf.containerView.width, 0, pSelf.containerView.width, pSelf.containerView.height);
+                    [pSelf.containerView addSubview:controller.view];
+                }
+                pSelf.containerView.contentSize = CGSizeMake(data.count*pSelf.containerView.width, 0);
+                [pSelf.topTitleView setNeedsLayout];
+                pSelf.topTitleView.selectedIndex = 0;
+            }
+        }
+    }];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self resetNaviMenuAndSubControllers];
 }
 
 @end
@@ -210,7 +230,8 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self showWating:nil];
-        [[ClientAgent sharedInstance] specialgoods:self.cate.mid page:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
+        [[ClientAgent sharedInstance] specialgoods:self.cate.param page:page block:^(NSError *error, id data,
+                id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
                 [pSelf receiveData:data page:page];

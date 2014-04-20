@@ -105,7 +105,7 @@
     [self.cancelButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     self.transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(15, 0, 60, self.naviTitleView.height)];
-    self.transformButton.items = @[@"在我的\n商城搜",@"在好店\n汇搜索"];
+    self.transformButton.items = @[@"在我的\n商城搜",@"搜全站"];
     self.transformButton.values = @[SEARCH_IN_MY_SHOP,SEARCH_IN_ALL_SHOP];
     self.transformButton.fontSize = 14;
     self.transformButton.delegate = self;

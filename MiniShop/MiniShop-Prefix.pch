@@ -26,8 +26,9 @@
     #import "MobClick.h"
     #import "UITableViewCell+GroupBackGround.h"
 #import "MSSystem.h"
+#import "NSUserDefaults+Mini.h"
 
-   #define WINDOW ((AppDelegate*)[UIApplication sharedApplication].delegate).window
+#define WINDOW ((AppDelegate*)[UIApplication sharedApplication].delegate).window
 
 #define __PSELF__ __weak typeof (self) pSelf = self
 

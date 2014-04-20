@@ -60,3 +60,14 @@
     return self;
 }
 @end
+
+@implementation MSNSpecialcateList
+- (id)init
+{
+    self = [super init];
+    if ( self ) {
+        [self setAttri:@"info" clazz:[MSNSpecialcate class]];
+    }
+    return self;
+}
+@end

@@ -197,10 +197,14 @@
 - (void)loadData
 {
     __PSELF__;
-    [self showWating:nil];
+    NSString *cached = [[NSUserDefaults standardUserDefaults] stringValueForKey:@"CACHED_LIST" defaultValue:@"0"];
+    if ([@"0" isEqualToString:cached]) {
+        [pSelf showWating:nil];
+    }
     [[ClientAgent sharedInstance] catelist:^(NSError *error, MSNWellCateList* data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if ( error ==nil ) {
+            [pSelf dismissWating];
+            [[NSUserDefaults standardUserDefaults] setString:@"1" forkey:@"CACHED_LIST"];
             pSelf.dataSource = data;
             [pSelf.tableView reloadData];
         }

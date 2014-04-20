@@ -49,6 +49,7 @@
         button.size = CGSizeMake(44, 44);
         [button setTitleColor:[UIColor colorWithRGBA:0xe74764FF] forState:UIControlStateNormal];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, button.height-14, button.width, 20)];
+        label.tag = 10000;
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor colorWithRGBA:0xe74764FF];
         label.font = [UIFont systemFontOfSize:(imageName!=nil||hImageName!=nil)?8:20];

@@ -505,7 +505,11 @@
 {
     NSString *addr = [self requestUri14:@"favshoplist"];
     NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":tagId,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+    NSString *cacheKey = nil;
+    if (page==1) {
+        cacheKey = [ClientAgent keyForCache:addr params:params];
+    }
+    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             data.sort = sort;
@@ -514,20 +518,34 @@
     }];
 }
 
-- (void)specialcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
+- (void)specialitem:(void (^)(NSError*error, id data, id userInfo , BOOL cache ))block
 {
-    NSArray *items = @[@{@"_id":@"off",@"name":@"汇打折"},
-                   @{@"_id":@"off_time",@"name":@"汇降价"},
-                   @{@"_id":@"hot",@"name":@"热卖榜"},
-                   @{@"_id":@"activity",@"name":@"购刺激"}];
-    NSMutableArray *array = [NSMutableArray array];
-    for ( id item in items) {
-        MSNSpecialcate *cate = [[MSNSpecialcate alloc] init];
-        cate.mid = [item valueForKey:@"_id"];
-        cate.name = [item valueForKey:@"name"];
-        [array addObject:cate];
-    }
-    block (nil,array,nil,NO);
+//    NSString *fv = [[NSUserDefaults standardUserDefaults] valueForKey:@"specialitem" defaultValue:@"0"];
+//    if ([@"0" isEqualToString:fv]) {
+//        NSArray *items = @[@{@"param":@"off",@"title":@"降价榜"},
+//                @{@"param":@"off_time",@"title":@"汇降价"},
+//                @{@"param":@"hot",@"title":@"热卖榜"}];
+//        NSMutableArray *array = [NSMutableArray array];
+//        for ( id item in items) {
+//            MSNSpecialcate *cate = [[MSNSpecialcate alloc] init];
+//            cate.param = [item valueForKey:@"param"];
+//            cate.title = [item valueForKey:@"title"];
+//            [array addObject:cate];
+//        }
+//        block (nil,array,nil,NO);
+//    }
+    NSString *addr = [self requestUri14:@"specialitem"];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:YES];
+    NSString *cacheKey = [ClientAgent keyForCache:addr params:@{}];
+    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNSpecialcateList class] isJson:YES showError:NO block:^(NSError
+    *error, MSNSpecialcateList *data, BOOL cache) {
+        if ( block ) {
+            block(error,data.info,nil,cache);
+            if (error==nil) {
+                [[NSUserDefaults standardUserDefaults] valueForKey:@"specialitem" defaultValue:@"1"];
+            }
+        }
+    }];
 }
 
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
@@ -546,9 +564,9 @@
 {
     NSString *addr = [self requestUri14:@"catelist"];
     NSDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
-        if ( block )
-        {
+    NSString *cacheKey = [ClientAgent keyForCache:addr params:params];
+    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
+        if ( block ) {
             if (error==nil) {
                 MSNWellCateGroup *group = [[MSNWellCateGroup alloc] init];
                 NSMutableArray *item = [NSMutableArray arrayWithCapacity:3];
@@ -563,6 +581,17 @@
             }
             block(error,data,nil,cache);
         }
+    }];
+}
+
+- (void)searchhelp:(void (^)(NSError *error, NSString* data, id userInfo , BOOL cache ))block
+{
+    NSString *addr = [self requestUri14:@"searchhelp"];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:NO];
+    [params removeObjectForKey:@"tn"];
+    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError
+    *error,  NSString* data, BOOL cache) {
+        block(error,data,nil,cache);
     }];
 }
 
@@ -696,7 +725,11 @@
 {
     NSString *addr = [self requestUri14:@"myshoplist"];
     NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+    NSString *cacheKey = nil;
+    if (page==1) {
+        cacheKey = [ClientAgent keyForCache:addr params:params];
+    }
+    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);

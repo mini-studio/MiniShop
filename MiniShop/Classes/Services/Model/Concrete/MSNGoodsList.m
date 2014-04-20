@@ -123,12 +123,12 @@
 {
     if (_discountMessage==nil) {
         CGFloat sale = self.goods_sale_price.floatValue;
-        CGFloat marke = self.goods_marked_price.floatValue;
-        if (sale==marke) {
-            _discountMessage = @"";
+        CGFloat marked = self.goods_marked_price.floatValue;
+        if (sale<marked) {
+            _discountMessage = [NSString stringWithFormat:@"省%0.1f",marked-sale];
         }
         else {
-            _discountMessage = [NSString stringWithFormat:@"%0.1f折",10*(sale/marke)];
+            _discountMessage = @"";
         }
     }
     return _discountMessage;

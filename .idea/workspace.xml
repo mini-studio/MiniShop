@@ -2,6 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSWeChatViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSWeChatViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Resource/Images/Icon/Icon-120.png" afterPath="$PROJECT_DIR$/MiniShop/Resource/Images/Icon/Icon-120.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Resource/Images/Icon/Icon-72.png" afterPath="$PROJECT_DIR$/MiniShop/Resource/Images/Icon/Icon-72.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frameworks/libMini3rdFramework.a" afterPath="$PROJECT_DIR$/Frameworks/libMini3rdFramework.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frameworks/libMini3rdFramework_release.a" afterPath="$PROJECT_DIR$/Frameworks/libMini3rdFramework_release.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" afterPath="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSAboutViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNCate.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNCate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNCate.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNCate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNFavViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNFavViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/MiniShop-Prefix.pch" afterPath="$PROJECT_DIR$/MiniShop/MiniShop-Prefix.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcshareddata/MiniShop.xccheckout" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcshareddata/MiniShop.xccheckout" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Wuquancheng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniShop.iws" />
@@ -25,73 +59,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MSNSearchShopViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h">
+      <file leaf-file-name="MSNShopListViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
+            <state line="19" column="11" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientAgent+Mini.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ClientAgent+Mini.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="518" column="52" selection-start="20613" selection-end="20616" vertical-scroll-proportion="0.33291614" vertical-offset="9348" max-vertical-offset="16701">
+            <state line="748" column="32" selection-start="30972" selection-end="30972" vertical-scroll-proportion="0.0" vertical-offset="13259" max-vertical-offset="17328">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNCreditableIndexViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m">
+      <file leaf-file-name="MSNShopListViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="19" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3971">
+            <state line="184" column="39" selection-start="4972" selection-end="4972" vertical-scroll-proportion="-15.16" vertical-offset="2984" max-vertical-offset="5244">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNEspecialIndexViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m">
+      <file leaf-file-name="MiniUIButton.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Mini/MiniLiteFramework/MiniLiteFramework/Classes/Views/MiniUIButton.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="2470" max-vertical-offset="4693">
+            <state line="98" column="0" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="3705">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNStoreViewController.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MiniUIButton+Mini.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="17" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1387">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNDetailViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="631" column="36" selection-start="19309" selection-end="19309" vertical-scroll-proportion="-16.48" vertical-offset="11235" max-vertical-offset="13186">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNFavViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNFavViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="53" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="2926">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MSNStoreViewController.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="51" selection-start="1679" selection-end="1679" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="5130">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UMFeedbackViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="13" selection-start="6007" selection-end="6007" vertical-scroll-proportion="0.0" vertical-offset="2470" max-vertical-offset="9310">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UMFeedbackViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MSNSettingsViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="14" selection-start="7099" selection-end="7099" vertical-scroll-proportion="-12.28" vertical-offset="3132" max-vertical-offset="6479">
+            <state line="69" column="26" selection-start="2591" selection-end="2591" vertical-scroll-proportion="0.15777777" vertical-offset="1055" max-vertical-offset="5092">
               <folding />
             </state>
           </provider>
@@ -100,16 +134,16 @@
       <file leaf-file-name="MSNSearchShopViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="61" selection-start="6730" selection-end="6730" vertical-scroll-proportion="0.0" vertical-offset="4066" max-vertical-offset="4959">
+            <state line="75" column="7" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0" vertical-offset="947" max-vertical-offset="5168">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MSNGoodsTableCell.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.m">
+      <file leaf-file-name="AppDelegate.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="53" selection-start="3961" selection-end="3961" vertical-scroll-proportion="0.0" vertical-offset="1773" max-vertical-offset="3572">
+            <state line="419" column="28" selection-start="16487" selection-end="16487" vertical-scroll-proportion="0.0" vertical-offset="7261" max-vertical-offset="8284">
               <folding />
             </state>
           </provider>
@@ -134,22 +168,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSFrameViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchGoodsViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Util/MSWebChatUtil.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/Mini/MiniUIPhotoImageView.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/System/MSSystem.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSViewController.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.h" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNFavViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m" />
-        <option value="$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.m" />
-        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m" />
         <option value="$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m" />
+        <option value="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m" />
       </list>
     </option>
   </component>
@@ -184,6 +218,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -211,6 +246,92 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Icon" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,6 +486,40 @@
               <option name="myItemId" value="UI" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ViewControllers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Base" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mini" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -439,6 +594,62 @@
               <option name="myItemId" value="Services" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Concrete" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniShop" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -484,37 +695,23 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniShop" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Frameworks" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Frameworks" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="MiniShop" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More" />
       <recent name="$PROJECT_DIR$/Frameworks" />
     </key>
   </component>
@@ -685,19 +882,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11699165" sideWeight="0.49920928" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1262767" sideWeight="0.49920928" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22005571" sideWeight="0.49920928" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3593315" sideWeight="0.49920928" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.199262" sideWeight="0.7799443" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35097492" sideWeight="0.6784396" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1960991" sideWeight="0.8737233" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38997215" sideWeight="0.6784396" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22005571" sideWeight="0.5007907" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18755803" sideWeight="0.6605166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1262767" sideWeight="0.5007907" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18941504" sideWeight="0.6605166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -719,120 +916,130 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="65" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m</url>
+          <line>542</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m</url>
+          <line>80</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="78" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="54" selection-start="3004" selection-end="3004" vertical-scroll-proportion="0.0" vertical-offset="1182" max-vertical-offset="2413">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSUIAuthWebViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="2" selection-start="798" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="733" max-vertical-offset="1634">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/Mini/MiniUIWebViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="0" selection-start="4553" selection-end="4553" vertical-scroll-proportion="-7.88" vertical-offset="2653" max-vertical-offset="5244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="16" selection-start="6671" selection-end="6671" vertical-scroll-proportion="0.0" vertical-offset="4010" max-vertical-offset="8132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopDetailViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="29" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Apple/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="419" column="28" selection-start="16487" selection-end="16487" vertical-scroll-proportion="0.0" vertical-offset="7261" max-vertical-offset="8284">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNFavViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="53" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="2926">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Mini/MiniLiteFramework/MiniLiteFramework/Classes/Views/MiniUIButton.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="3705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Categories/MiniUIButton+Mini.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="17" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNDetailViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="21" selection-start="6987" selection-end="6987" vertical-scroll-proportion="0.0" vertical-offset="4143" max-vertical-offset="13471">
-          <folding>
-            <element signature="e#144#179#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNDetailToolBar.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="22" selection-start="9299" selection-end="9299" vertical-scroll-proportion="-10.88" vertical-offset="4573" max-vertical-offset="5605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNGoodListViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="18" selection-start="3733" selection-end="3733" vertical-scroll-proportion="0.0" vertical-offset="2185" max-vertical-offset="4769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/Model/Concrete/MSNGoodsList.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="11" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0" vertical-offset="334" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Base/MSUIWebViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/Views/MSNGoodsTableCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="53" selection-start="3961" selection-end="3961" vertical-scroll-proportion="0.0" vertical-offset="1773" max-vertical-offset="3572">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="847">
+        <state line="631" column="36" selection-start="19309" selection-end="19309" vertical-scroll-proportion="-16.48" vertical-offset="11235" max-vertical-offset="13186">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="61" selection-start="6730" selection-end="6730" vertical-scroll-proportion="0.0" vertical-offset="4066" max-vertical-offset="4959">
+        <state line="75" column="7" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0" vertical-offset="947" max-vertical-offset="5168">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/More/MSNSettingsViewController.m">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="14" selection-start="7099" selection-end="7099" vertical-scroll-proportion="-12.28" vertical-offset="3132" max-vertical-offset="6479">
+        <state line="19" column="11" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.h">
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNShopListViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Frameworks/ufeedback/chat/UMFeedbackViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="13" selection-start="6007" selection-end="6007" vertical-scroll-proportion="0.0" vertical-offset="2470" max-vertical-offset="9310">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="51" selection-start="1679" selection-end="1679" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="5130">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNEspecialIndexViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNCreditableIndexViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3971">
+        <state line="184" column="39" selection-start="4972" selection-end="4972" vertical-scroll-proportion="-15.16" vertical-offset="2984" max-vertical-offset="5244">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniShop/Classes/Services/DataSource/ClientAgent+Mini.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="518" column="52" selection-start="20613" selection-end="20616" vertical-scroll-proportion="0.33291614" vertical-offset="9348" max-vertical-offset="16701">
+        <state line="748" column="32" selection-start="30972" selection-end="30972" vertical-scroll-proportion="0.0" vertical-offset="13259" max-vertical-offset="17328">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNStoreViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="26" selection-start="2591" selection-end="2591" vertical-scroll-proportion="0.15777777" vertical-offset="1055" max-vertical-offset="5092">
           <folding />
         </state>
       </provider>

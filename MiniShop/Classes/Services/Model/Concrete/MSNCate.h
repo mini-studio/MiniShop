@@ -19,8 +19,8 @@
 
 //特卖汇分类
 @interface MSNSpecialcate : MSObject
-@property (nonatomic,strong) NSString *mid;
-@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *param;
+@property (nonatomic,strong) NSString *title;
 @end
 
 //好店汇分类
@@ -38,5 +38,9 @@
 @end
 
 @interface MSNWellCateList : MSObject
+@property (nonatomic,strong) NSArray *info;
+@end;
+
+@interface MSNSpecialcateList : MSObject
 @property (nonatomic,strong) NSArray *info;
 @end;

@@ -22,8 +22,7 @@
 #import <TencentOpenAPI/QQApiInterface.h>       //手机QQ SDK
 #import <TencentOpenAPI/TencentOAuth.h>
 
-#import "UMSocialInstagramHandler.h"
-#import <TencentOpenAPI/QQApi.h>
+#import "MSNShopDetailViewController.h"
 
 #import "MSDefine.h"
 #import "MSNGoodsList.h"
@@ -406,12 +405,21 @@
                 }
                 else if ([@"share_shop" isEqualToString:m]) {
                     NSString *ids = params[@"ids"];
-                    MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
-                    controller.ids = ids;
-                    controller.listType = EGroupShop;
-                    controller.cTitle = @"好友分享的商店";
-                    [[self currentNaviController] pushViewController:controller animated:YES];
-
+                    NSArray *items = [ids componentsSeparatedByString:@","];
+                    if (items.count==1) {
+                        MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+                        MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
+                        shopInfo.shop_id = ids;
+                        controller.shopInfo = shopInfo;
+                        [[self currentNaviController] pushViewController:controller animated:YES];
+                    }
+                    else {
+                        MSNShopListViewController *controller = [[MSNShopListViewController alloc] init];
+                        controller.ids = ids;
+                        controller.listType = EGroupShop;
+                        controller.cTitle = @"好友分享的商店";
+                        [[self currentNaviController] pushViewController:controller animated:YES];
+                    }
                 }
             }
         }

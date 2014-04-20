@@ -151,7 +151,7 @@
 - (void)loadData
 {
     if (self.listType== EFavorite) {
-        [self loadFavShopListData:1];
+        [self.tableView triggerRefresh];
     }
     else {
         [self loadGroup];
@@ -181,7 +181,6 @@
 
 - (void)loadFavShopListData:(int)page
 {
-    [self showWating:nil];
     __PSELF__;
     [[ClientAgent sharedInstance] myshoplist:page block:^(NSError *error, id data, id userInfo, BOOL cache) {
          [pSelf dismissWating];
@@ -196,13 +195,12 @@
 
 - (void)favShop:(MSNShopInfo*)shopInfo
 {
-    [self showWating:nil];
+    shopInfo.user_like = 1;
+    [self.tableView reloadData];
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 1;
-            [pSelf.tableView reloadData];
         }
         else {
             [pSelf showErrorMessage:error];
@@ -212,16 +210,15 @@
 
 - (void)cancelFavShop:(MSNShopInfo*)shopInfo
 {
-    [self showWating:nil];
+    shopInfo.user_like = 0;
+    [self.tableView reloadData];
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 0;
-            [pSelf.tableView reloadData];
         }
         else {
-            [self showErrorMessage:error];
+            [pSelf showErrorMessage:error];
         }
     }];
 }

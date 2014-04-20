@@ -79,9 +79,7 @@
     [self.subControllers removeAllObjects];
     [self.topTitleView clear];
     [self.containerView removeAllSubviews];
-    [self showWating:nil];
     [[ClientAgent sharedInstance] favshopcate:^(NSError *error, MSNCateList* data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if ( error==nil ) {
             pSelf.transformButton.hidden = NO;
             int count = data.info.count;
@@ -236,7 +234,6 @@
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self showWating:nil];
         [[ClientAgent sharedInstance] favshoplist:pSelf.tagId sort:self.orderBy page:page block:^(NSError *error, MSNGoodsList *data, id userInfo, BOOL cache) {
             [pSelf dismissWating];
             if (error == nil) {
@@ -259,6 +256,7 @@
     _orderBy = orderBy;
     MSNStoreViewController *parentController = (MSNStoreViewController *)[self parentViewController];
     if (parentController.currentController==self) {
+       [self showWating:nil];
        [self loadData:1 delay:0];
     }
     else {

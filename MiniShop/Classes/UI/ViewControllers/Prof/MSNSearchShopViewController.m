@@ -14,6 +14,7 @@
 #import "MSNSearchShopTitleView.h"
 #import "MSNShopDetailViewController.h"
 #import "MSNCate.h"
+#import "MiniUIWebViewController.h"
 
 @interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
@@ -71,8 +72,7 @@
 {
     [super viewDidLoad];
     if (self.key.length>0 || self.cate!=nil){
-        self.searchBar.text = self.key;
-        [self search:1 delay:0];
+       [self.tableView triggerRefresh];
     }
 }
 
@@ -166,6 +166,7 @@
 - (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
 {
     self.key = searchBar.text;
+    [self showWating:nil];
     [self search:1 delay:0];
 }
 
@@ -193,14 +194,25 @@
 
 - (void)actionRightButtonTap
 {
-    [self showMessageInfo:@"wating for implemention..." delay:2];
+    __PSELF__;
+    [self showWating:nil];
+    [[ClientAgent sharedInstance] searchhelp:^(NSError *error, NSString* data, id userInfo, BOOL cache) {
+        [pSelf dismissWating];
+        if (error==nil) {
+            MiniUIWebViewController *controller=[[MiniUIWebViewController alloc] init];
+            [controller loadContent:data title:@"搜索帮助"];
+            [pSelf.navigationController pushViewController:controller animated:YES];
+        }
+        else {
+            [pSelf showErrorMessage:error];
+        }
+    }];
 }
 
 
 - (void)search:(int)page delay:(CGFloat)delay
 {
     __PSELF__;
-    [self showWating:nil];
     [[ClientAgent sharedInstance] searchshop:_key sort:self.orderBy page:page tag_id:self.cate == nil? 0 : [self.cate
             .param integerValue]       block:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];

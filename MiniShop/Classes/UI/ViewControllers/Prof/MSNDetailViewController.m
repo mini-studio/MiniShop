@@ -50,7 +50,7 @@
         self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
         self.button.backgroundColor = [UIColor clearColor];
         [self addSubview:self.button];
-        [self.button addTarget:self action:@selector(touchupImage) forControlEvents:UIControlEventTouchUpInside];
+        [self.button addTarget:self action:@selector(touchUpImage) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -76,7 +76,7 @@
     }
 }
 
-- (void)touchupImage
+- (void)touchUpImage
 {
     if (self.imageViewDelegate) {
         [self.imageViewDelegate touchUpImage];
@@ -608,6 +608,10 @@
 {
     MSNGoodsItem *item = [self currentGoodsItem];
     UIImage *image = [UIImage imageNamed:(item.like_goods==1?@"star_hover":@"star")];
+    UILabel *titleLabel = [button viewWithTag:10000];
+    if (titleLabel!=nil) {
+        titleLabel.text = item.like_goods==1?@"取消收藏":@"收藏";
+    }
     [button setImage:image forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateHighlighted];
 }
@@ -615,24 +619,23 @@
 - (void)actionToolBarFav:(MiniUIButton*)button
 {
     __PSELF__;
-    [self showWating:nil];
     MSNGoodsItem *item = [self currentGoodsItem];
+    item.like_goods = (item.like_goods+1)%2;
+    [self resetFavButton:button];
     [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:(item.like_goods==1?@"off":@"on") block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if ( error != nil ) {
             [pSelf showMessageInfo:[error localizedDescription] delay:2];
         }
         else {
-            if (item.like_goods==0){
+            if (item.like_goods==1){
                [pSelf showMessageInfo:@"收藏成功" delay:2];
-                item.like_goods=1;
-                
+               // item.like_goods=1;
             }
             else {
                 [pSelf showMessageInfo:@"取消成功" delay:2];
-                item.like_goods=0;
+              //  item.like_goods=0;
             }
-            [self resetFavButton:button];
+           // [self resetFavButton:button];
         }
     }];
 }

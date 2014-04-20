@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic)BOOL miniReq;
-@property (nonatomic,strong)NSString *ctitle;
+@property (nonatomic,strong)NSString *cTitle;
 @property (nonatomic)BOOL autoLayout;
 @property (nonatomic)BOOL defaultBackButton;
 @property (nonatomic,strong)NSString *content;
