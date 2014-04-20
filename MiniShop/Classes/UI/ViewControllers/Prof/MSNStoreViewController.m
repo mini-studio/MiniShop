@@ -202,13 +202,15 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
-    label.font = [UIFont systemFontOfSize:12];
+    label.font = [UIFont systemFontOfSize:14];
     label.textColor = [UIColor whiteColor];
-    label.text =@"想象一下，拥有一座属于您自己的商城\n里面都是你喜欢的品牌，信赖的卖家\n您可以在里面放心购物，自由血拼\n这是您自己的新光、万隆、春熙......\n期待吗？那就马上开始吧";
+    label.text =@"想象一下，拥有一座自己的商城\n里面都是你喜欢的商品、店、品牌\n您可以在你的商城里肆意血拼\n期待不？现在开始吧！";
     [view addSubview:label];
     
-    MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"bigbtn"] highlightedImage:nil];
-    button.size = CGSizeMake(200 , button.height*(200.0f/button.width));
+    MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"bigbtn"]
+                                        highlightedBackGroundImage:nil title:@"去关注店铺"];
+    [button setTitleColor:[UIColor colorWithRGBA:0x543d34FF] forState:UIControlStateNormal];
+    button.size = CGSizeMake(200, 38);
     button.center = CGPointMake(view.width/2,view.height-(WINDOW.size.height>480?46:22)-button.height/2);
     [view addSubview:button];
     

@@ -42,7 +42,7 @@
     label.text = @"微信号:youjiaxiaodianapp\nwenjun133";
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:14];
+    label.font = [UIFont systemFontOfSize:16];
     [self.contentView addSubview:label];
     UIImage *image = [QRCodeGenerator qrImageForString:@"微信号:youjiaxiaodianapp" imageSize:200];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:image];

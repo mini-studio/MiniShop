@@ -88,7 +88,7 @@
         [self addSubview:_leftImageView];
         [self addSubview:_rightImageView];
         self.imageViews = @[_leftImageView,_rightImageView];
-        _titleLabel.text = @"同店搭配";
+        _titleLabel.text = @"相关推荐";
         [_leftImageView addTarget:self selector:@selector(handleImageViewClick:) userInfo:@"0"];
         [_rightImageView addTarget:self selector:@selector(handleImageViewClick:) userInfo:@"1"];
     }

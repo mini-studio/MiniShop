@@ -15,6 +15,7 @@
 #import "MSNShopDetailViewController.h"
 #import "MSNCate.h"
 #import "MiniUIWebViewController.h"
+#import "MSNSearchShopHelpViewController.h"
 
 @interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
@@ -194,21 +195,9 @@
 
 - (void)actionRightButtonTap
 {
-    __PSELF__;
-    [self showWating:nil];
-    [[ClientAgent sharedInstance] searchhelp:^(NSError *error, NSString* data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
-        if (error==nil) {
-            MiniUIWebViewController *controller=[[MiniUIWebViewController alloc] init];
-            [controller loadContent:data title:@"搜索帮助"];
-            [pSelf.navigationController pushViewController:controller animated:YES];
-        }
-        else {
-            [pSelf showErrorMessage:error];
-        }
-    }];
+    MSNSearchShopHelpViewController *controller = [[MSNSearchShopHelpViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
-
 
 - (void)search:(int)page delay:(CGFloat)delay
 {

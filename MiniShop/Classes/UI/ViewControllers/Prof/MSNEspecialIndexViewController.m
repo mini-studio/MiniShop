@@ -229,7 +229,6 @@
     double delayInSeconds = delay;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self showWating:nil];
         [[ClientAgent sharedInstance] specialgoods:self.cate.param page:page block:^(NSError *error, id data,
                 id userInfo, BOOL cache) {
             [pSelf dismissWating];

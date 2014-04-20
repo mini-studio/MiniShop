@@ -134,6 +134,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
             cell.backgroundView = nil;
             cell.backgroundColor = [UIColor clearColor];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             MSNCreditableHeaderView *view = [[MSNCreditableHeaderView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 20)];
             view.tag = 100;
             [cell addSubview:view];
@@ -148,6 +149,7 @@
         MSNWellCateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if ( cell == nil ) {
             cell = [[MSNWellCateCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.wellCateCellDelegate = self;
         }
         MSNWellCateGroup *group = [self.dataSource.info objectAtIndex:indexPath.section];

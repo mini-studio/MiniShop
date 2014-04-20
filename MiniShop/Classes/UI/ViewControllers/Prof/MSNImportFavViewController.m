@@ -46,19 +46,26 @@
     }];
 }
 
+- (void)createNaviRightButton
+{
+
+}
+
 - (void)loadFavShopListData:(int)page
 {
     __PSELF__;
-    [self showWating:nil];
-    [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo,
-            BOOL cache) {
-        [pSelf dismissWating];
-        if (error==nil) {
-            [pSelf receiveData:data page:page];
-        }
-        else {
-           [pSelf showErrorMessage:error];
-        }
-    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[ClientAgent sharedInstance] importFav:self userInfo:nil block:^(NSError *error, id data, id userInfo,
+                                                                          BOOL cache) {
+            [pSelf dismissWating];
+            if (error==nil) {
+                [pSelf receiveData:data page:page];
+            }
+            else {
+                [pSelf showErrorMessage:error];
+            }
+        }];
+    });
+    
 }
 @end

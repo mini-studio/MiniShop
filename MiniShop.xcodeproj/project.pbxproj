@@ -54,6 +54,7 @@
 		C10FC6B018A7C25900A23F02 /* MSNSearchShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A118A7C25900A23F02 /* MSNSearchShopViewController.m */; };
 		C10FC6B218A7C25900A23F02 /* MSNShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */; };
 		C10FC6B318A7C25900A23F02 /* MSNStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */; };
+		C112D2DF19043509009D1A01 /* MSNSearchShopHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C112D2DE19043509009D1A01 /* MSNSearchShopHelpViewController.m */; };
 		C1254B5D186E9AB40007D510 /* MSNShop.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B5C186E9AB40007D510 /* MSNShop.m */; };
 		C1254B64186EB2E80007D510 /* MSNShopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1254B63186EB2E80007D510 /* MSNShopInfoCell.m */; };
 		C12C2CA417E8A2D40097CFBD /* NSUserDefaults+Mini.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C2CA317E8A2D40097CFBD /* NSUserDefaults+Mini.m */; };
@@ -389,6 +390,8 @@
 		C10FC6A518A7C25900A23F02 /* MSNShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShopListViewController.m; sourceTree = "<group>"; };
 		C10FC6A618A7C25900A23F02 /* MSNStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNStoreViewController.h; sourceTree = "<group>"; };
 		C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNStoreViewController.m; sourceTree = "<group>"; };
+		C112D2DD19043509009D1A01 /* MSNSearchShopHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNSearchShopHelpViewController.h; sourceTree = "<group>"; };
+		C112D2DE19043509009D1A01 /* MSNSearchShopHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNSearchShopHelpViewController.m; sourceTree = "<group>"; };
 		C1254B5B186E9AB40007D510 /* MSNShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShop.h; sourceTree = "<group>"; };
 		C1254B5C186E9AB40007D510 /* MSNShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNShop.m; sourceTree = "<group>"; };
 		C1254B62186EB2E80007D510 /* MSNShopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNShopInfoCell.h; sourceTree = "<group>"; };
@@ -1043,6 +1046,8 @@
 				C10FC6A718A7C25900A23F02 /* MSNStoreViewController.m */,
 				F7FD6E7F266E74A94099371A /* MSNImportFavViewController.m */,
 				F7FD6796E866A4F967371CF9 /* MSNImportFavViewController.h */,
+				C112D2DD19043509009D1A01 /* MSNSearchShopHelpViewController.h */,
+				C112D2DE19043509009D1A01 /* MSNSearchShopHelpViewController.m */,
 			);
 			path = Prof;
 			sourceTree = "<group>";
@@ -2286,6 +2291,7 @@
 				C1B001B0187B0F5A004BA1AE /* MSNShopInfoView.m in Sources */,
 				C10FC6B018A7C25900A23F02 /* MSNSearchShopViewController.m in Sources */,
 				C1EC5077178074A100BE5ABB /* NSDate+Format.m in Sources */,
+				C112D2DF19043509009D1A01 /* MSNSearchShopHelpViewController.m in Sources */,
 				C1EC5078178074A100BE5ABB /* UIDevice+Id.m in Sources */,
 				C1EC5079178074A100BE5ABB /* UILabel+Mini.m in Sources */,
 				C10FC6B218A7C25900A23F02 /* MSNShopListViewController.m in Sources */,

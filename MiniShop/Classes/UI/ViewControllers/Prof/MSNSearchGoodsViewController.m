@@ -93,8 +93,6 @@
     self.searchBar.showCancelButtonWhenEdit = NO;
     self.searchBar.placeholder = @"搜商品";
     [self.naviTitleView addSubview:self.searchBar];
-
-    [self.naviTitleView addSubview:self.searchBar];
     
     self.cancelButton = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     self.cancelButton.frame = CGRectMake(self.searchBar.right-4, 0, self.naviTitleView.width-self.searchBar.right,self.naviTitleView.height);
@@ -237,7 +235,7 @@
             }];
         }];
     }
-    UILabel *label = [_emptyViewForMyShop viewWithTag:0x0111];
+    UILabel *label = (UILabel*)[_emptyViewForMyShop viewWithTag:0x0111];
     label.text = self.dataSource.search_shop_null_message.length==0?[NSString
             stringWithFormat:@"没有在您的商城里找到“%@”，试一试全站搜索？",self.searchKey]:self.dataSource.search_shop_null_message;
     return _emptyViewForMyShop;
@@ -272,7 +270,7 @@
             [pSelf hidesEmptyView:^{}];
         }];
     }
-    UILabel *label = [_emptyViewForAllShop viewWithTag:0x0111];
+    UILabel *label = (UILabel*)[_emptyViewForAllShop viewWithTag:0x0111];
     label.text = self.dataSource.search_shop_null_message.length==0?[NSString stringWithFormat:@"没有找到“%@”相关信息",
                                                                                                self.searchKey]:self.dataSource.search_shop_null_message;
     return _emptyViewForAllShop;

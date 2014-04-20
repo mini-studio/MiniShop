@@ -46,7 +46,7 @@
     [super webViewDidFinishLoad:webView];
     [self dismissWating:nil];
     NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-    if ( [@"taobao_callback_ok" isEqualToString:title])
+    if ( [@"taobao_callback_ok" isEqualToString:title] || [title rangeOfString:@"成功"].location != NSNotFound)
     {
         [MSSystem sharedInstance].version.auth = 1;
         if ( self.callback != nil )

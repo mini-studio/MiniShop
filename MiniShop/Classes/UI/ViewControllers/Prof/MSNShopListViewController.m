@@ -48,8 +48,13 @@
     [super loadView];
 	[self setNaviBackButton];
     [self createTableView];
-    [self setNaviRightButtonImage:@"add_b" target:self action:@selector(actionNaviRightButtonTap:)];
+    [self createNaviRightButton];
     self.naviTitleView.title = self.cTitle;
+}
+
+- (void)createNaviRightButton
+{
+    [self setNaviRightButtonImage:@"add_b" target:self action:@selector(actionNaviRightButtonTap:)];
 }
 
 - (void)createTableView

@@ -147,6 +147,11 @@
     return [NSString stringWithFormat:@"%@/api/%@",[ClientAgent host],path];
 }
 
+- (NSString*)requestNewUri:(NSString *)path
+{
+    return [NSString stringWithFormat:@"%@/new/%@",[ClientAgent host],path];
+}
+
 - (NSString *)requestUri:(NSString *)path param:(NSDictionary*)param
 {
     NSString* uri = [self requestUri:path];
@@ -245,7 +250,7 @@
     NSString *version = [MSSystem bundleVersion];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version};
     params = [self perfectParameters:params];
-    NSString *addr = [self requestUri:@"auth"];
+    NSString *addr = [self requestNewUri:@"auth"];
     [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
