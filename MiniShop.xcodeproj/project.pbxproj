@@ -2404,7 +2404,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
 				SDKROOT = iphoneos7.1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -2441,7 +2441,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
 				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";

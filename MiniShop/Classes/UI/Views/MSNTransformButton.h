@@ -25,6 +25,7 @@
 
 - (void)setAccessoryImage:(UIImage *)accessoryImage himage:(UIImage *)hImage;
 - (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated;
+- (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated withEvent:(BOOL)withEvent;
 - (void)setItems:(NSArray *)items defaultIndex:(int)index;
 - (id)selectedValue;
 @end

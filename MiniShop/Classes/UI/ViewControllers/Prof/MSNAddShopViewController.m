@@ -16,7 +16,7 @@
 #import "MSNSearchShopViewController.h"
 #import "UIColor+Mini.h"
 
-@interface MSNAddShopViewController () <UITextFieldDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
+@interface MSNAddShopViewController () <UITextFieldDelegate>
 @property (nonatomic, strong)UITextField *searchField;
 @property (nonatomic, strong)MSNTransformButton *transformButton;
 @property (nonatomic, strong)EGOUITableView   *tableView;

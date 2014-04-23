@@ -25,7 +25,8 @@
 
 @property (nonatomic,strong)NSString *lastKey;
 
-@property (nonatomic,strong) void (^handleSearchBlock)(NSString *key,NSString *orderby);
+@property (nonatomic,strong) void (^handleSearchBlock)(NSString *key,NSString *orderBy);
+@property (nonatomic,strong) void (^handleCancelSearchBlock)();
 @end
 
 @implementation MSNShopMessageView
@@ -112,7 +113,12 @@
         self.messageView.left=0;
         self.searchButton.alpha = 1.0f;
         self.searchView.left = self.width;
-    }];
+    } completion:^(BOOL finished) {
+       if (self.handleCancelSearchBlock!=nil) {
+           self.handleCancelSearchBlock();
+       }
+    }
+    ];
 }
 
 - (NSString*)getOrderByValue
@@ -156,6 +162,11 @@
 @property (nonatomic, strong)MiniUIButton *toolBarShareButton;
 
 @property (nonatomic, strong)NSString *orderBy;
+
+@property (nonatomic, strong)MSNGoodsList *tGoodsList;
+@property (nonatomic)int tPage;
+@property (nonatomic, strong)NSString *tMessageTitle;
+@property (nonatomic)int tTransButtonSelectIndex;
 @end
 
 @implementation MSNShopDetailViewController
@@ -204,7 +215,22 @@
     self.messageView = [[MSNShopMessageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 36)];
     self.messageView.backgroundColor = view.backgroundColor;
     [self.messageView setHandleSearchBlock:^(NSString *key, NSString *orderBy) {
+        if (pSelf.tGoodsList==nil) {
+            pSelf.tGoodsList = pSelf.dataSource;
+            pSelf.tPage = pSelf.page;
+            pSelf.tMessageTitle = pSelf.messageView.numberLabel.text;
+            pSelf.tTransButtonSelectIndex =  pSelf.messageView.transformButton.selectedIndex;
+        }
         [pSelf searchWithKey:key orderby:orderBy];
+    }];
+    [self.messageView setHandleCancelSearchBlock:^{
+        pSelf.messageView.numberLabel.text = self.tMessageTitle;
+        pSelf.dataSource =  pSelf.tGoodsList;
+        pSelf.page = pSelf.tPage;
+        pSelf.tGoodsList = nil;
+        pSelf.tPage = 0;
+        [pSelf.messageView.transformButton setSelectedIndex:pSelf.tTransButtonSelectIndex animated:YES withEvent:NO];
+        [pSelf.tableView reloadData];
     }];
     
     self.tableView.tableHeaderView = view;

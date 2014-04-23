@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b68dc2c-0cd7-4cd0-bb0e-616883238123" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopHelpViewController.h" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MiniShop/Classes/UI/ViewControllers/Prof/MSNSearchShopHelpViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Default-568h@2x.png" afterPath="$PROJECT_DIR$/MiniShop/Default-568h@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Default.png" afterPath="$PROJECT_DIR$/MiniShop/Default.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/project.xcworkspace/xcuserdata/Wuquancheng.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop/Resource/Images/Images/pub/bigbtn@2x.png" afterPath="$PROJECT_DIR$/MiniShop/Resource/Images/Images/pub/bigbtn@2x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniShop.xcodeproj/xcuserdata/Wuquancheng.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/MiniShop.xcodeproj/xcuserdata/Wuquancheng.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />

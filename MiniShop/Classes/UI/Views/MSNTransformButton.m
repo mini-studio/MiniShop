@@ -104,7 +104,7 @@
     [self setSelectedIndex:index animated:NO];
 }
 
-- (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated
+- (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated withEvent:(BOOL)withEvent
 {
     if (selectedIndex<0) {
         selectedIndex = self.items.count-1;
@@ -126,10 +126,16 @@
         self.label.top = 0;
         self.label.text = title;
     }];
-    if (changed)
-        if (self.delegate!=nil)
-            if ([self.delegate respondsToSelector:@selector(transformButtonValueChanged:)])
-                [self.delegate transformButtonValueChanged:self];
+    if (withEvent && changed && self.delegate!=nil) {
+        if ([self.delegate respondsToSelector:@selector(transformButtonValueChanged:)]) {
+            [self.delegate transformButtonValueChanged:self];
+        }
+    }
+}
+
+- (void)setSelectedIndex:(int)selectedIndex animated:(BOOL)animated
+{
+    [self setSelectedIndex:selectedIndex animated:animated withEvent:YES];
 }
 
 - (void)setSelectedIndex:(int)selectedIndex
