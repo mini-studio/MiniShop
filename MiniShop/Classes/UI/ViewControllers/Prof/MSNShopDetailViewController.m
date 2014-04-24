@@ -45,7 +45,8 @@
         [self.messageView addSubview:self.numberLabel];
         
         self.transformButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(230, top, 36, 14)];
-        self.transformButton.items = @[@"新品",@"销量",@"折扣",@"降价"];
+        self.transformButton.items = @[@"新品",@"销量",@"降价"];
+        self.transformButton.values = @[@"time",@"sale",@"off_time"];
         self.transformButton.fontColor = [UIColor colorWithRGBA:0xd14c60ff];
         self.transformButton.fontSize=14;
         [self.messageView addSubview:self.transformButton];
@@ -121,18 +122,12 @@
     ];
 }
 
-- (NSString*)getOrderByValue
-{
-    NSDictionary *dic = @{@"0":@"time",@"1":@"sale",@"2":@"off",@"3":@"off_time"};
-    return [dic valueForKey:[NSString stringWithFormat:@"%d",self.transformButton.selectedIndex]];
-}
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if ([string isEqualToString:@"\n"]) {
         [textField resignFirstResponder];
         if (self.handleSearchBlock!=nil) {
-            self.handleSearchBlock(textField.text, [self getOrderByValue]);
+            self.handleSearchBlock(textField.text, self.transformButton.selectedValue);
         }
         self.lastKey = self.searchField.text;
         //[self hideSearchView];
@@ -146,7 +141,7 @@
 - (void)transformButtonValueChanged:(MSNTransformButton*)button
 {
     if (self.handleSearchBlock!=nil) {
-        self.handleSearchBlock(self.searchField.text, [self getOrderByValue]);
+        self.handleSearchBlock(self.searchField.text, button.selectedValue);
     }
 }
 

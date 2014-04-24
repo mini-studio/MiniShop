@@ -125,7 +125,7 @@
         CGFloat sale = self.goods_sale_price.floatValue;
         CGFloat marked = self.goods_marked_price.floatValue;
         if (sale<marked) {
-            _discountMessage = [NSString stringWithFormat:@"省%0.1f",marked-sale];
+            _discountMessage = self.price_history_intro;
         }
         else {
             _discountMessage = @"";

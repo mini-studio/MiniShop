@@ -50,6 +50,7 @@
 @property (nonatomic,strong)NSString *shop_id;
 @property (nonatomic,strong)NSString *shop_title;
 @property (nonatomic,strong)NSString *goods_url;
+@property (nonatomic,strong)NSString *goods_sale_num;
 @property (nonatomic)int like_goods;
 
 @property (nonatomic,strong)NSString *goods_date;

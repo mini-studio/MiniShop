@@ -32,7 +32,7 @@ MSMainTabViewController *tabController=nil;
     highLightImageView.width = width;
     highLightImageView.height = self.height - 1.7;
     highLightImageView.left = [self bottomHighlightImageXAtIndex:selectedTabIndex];
-    highLightImageView.top = 1.7;
+    highLightImageView.top = 2.4;
 }
 
 - (CGFloat)bottomHighlightImageXAtIndex:(NSUInteger)tabIndex
@@ -99,7 +99,8 @@ MSMainTabViewController *tabController=nil;
 {
     [super loadView];
     self.view.backgroundColor = nil;
-    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],@"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"26",@"bottomSpace":@"4"};
+    self.tableItemAttri = @{@"titleFontHeight":@"10",@"highLightTitleColor":[UIColor colorWithRGBA:0xC74761FF],
+            @"titleColor":[UIColor colorWithRGBA:0xC74761FF],@"iconHeight":@"26",@"bottomSpace":@"2",@"iconTop":@"6"};
     //[self.tabBarView setTabBackImage:[MiniUIImage imageNamed:@"tab_background"]];
     //[self.tabBarView setTabItemHighlightImage:[MiniUIImage imageNamed:@"tab_slider"]];
     self.tabBarView.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
