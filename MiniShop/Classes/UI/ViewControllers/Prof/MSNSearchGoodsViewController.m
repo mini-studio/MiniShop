@@ -326,7 +326,9 @@
 
 - (void)searchBarTextDidBeginEditing:(MSNUISearchBar *)searchBar
 {
-    [self loadSearchHistory];
+    [self hidesEmptyView:^{
+      [self loadSearchHistory];
+    }];
 }
 
 - (void)transformButtonValueChanged:(MSNTransformButton*)button
