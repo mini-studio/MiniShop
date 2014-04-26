@@ -38,9 +38,9 @@
 {
     [super loadView];
     [self setNaviBackButton];
-    UIImage *image = [MiniUIImage imagePreciseNamed:@"about" ext:@"jpg"];
+    UIImage *image = [MiniUIImage imagePreciseNamed:@"about" ext:@"png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = self.contentView.bounds;
+    imageView.frame = CGRectMake(0, -64, self.contentView.width, self.view.height);
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:imageView];
     [self addLogo];
@@ -62,16 +62,26 @@
     lable.layer.cornerRadius =  lable.size.height/2;
     lable.layer.masksToBounds = YES;
     lable.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    lable.center = CGPointMake(self.contentView.width/2, self.contentView.height - 60 );
+    lable.center = CGPointMake(self.contentView.width/2, self.contentView.height - (IS_IPHONE5?70:60) );
     [self.contentView addSubview:lable];
     CGFloat width = self.contentView.width - 160;
     MiniUIButton * tel = [MiniUIButton buttonWithType:UIButtonTypeCustom];
-    //tel.backgroundColor = [UIColor redColor];
-    tel.frame = CGRectMake(80, self.contentView.height/2, width, 40);
+    //tel.backgroundColor = [UIColor blackColor];
+    CGFloat origin = self.contentView.height/2;
+    if ( IS_IPHONE5 ) {
+        origin = self.contentView.height/2 - 44;
+    }
+    tel.frame = CGRectMake(80, origin , width, 60);
     tel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [tel setTouchupHandler:^(MiniUIButton *button) {
         [MiniSysUtil call:@"01082850400"];
     }];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(46, 20, width-50, 20)];
+    label.text = @"010-82850400";
+    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor colorWithRGBA:0x747474FF];
+    label.backgroundColor = [UIColor clearColor];
+    [tel addSubview:label];
     [self.contentView addSubview:tel];
     MiniUIButton * address = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     address.frame = CGRectMake(20, self.contentView.height - 30 , self.contentView.width - 40, 30);
