@@ -55,67 +55,65 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat width = self.width;
     __block CGFloat top =  self.textLabel.bottom;
+    __block CGFloat left = 0;
+    __block CGFloat half = self.width/4;
     [self.imageArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIView *imageView = [self.imageArray objectAtIndex:idx];
-        int mod = idx%3;
-        if ( mod == 2 ) {
-            CGFloat imageSize = self.width;
-            imageView.origin = CGPointMake(0, top );
-            top += imageSize;
-        }
-        else {
-            CGFloat imageSize = self.width/2;
-            if ( mod == 0 ) {
-                if ( idx == self.imageArray.count-1 ) {
-                    imageSize = width;
-                }
-                imageView.origin = CGPointMake(0, top );
-                top += imageSize;
-            }
-            else {
-                CGFloat secondTop = top - imageSize;
-                imageView.origin = CGPointMake(imageSize, secondTop );
-            }
+        imageView.origin = CGPointMake(left, top);
+        left+=imageView.width;
+        if (left+half>self.width) {
+            left = 0;
+            top = imageView.bottom;
         }
     }];
 }
 
++ (CGSize)imageSizeForItem:(MSNGoodsItem*)item atIndex:(NSInteger)index total:(int)total maxWidth:(CGFloat)width
+{
+    CGSize size;
+    if (item.imageSizeType==1) {
+        size = CGSizeMake(width/2, width/2);
+    }
+    else if (item.imageSizeType==2) {
+        size = CGSizeMake(width, width);
+    }
+    else {
+        int mod = index%3;
+        CGFloat imageSize = width;
+        if ( mod == 2 ) {
+            item.imageSizeType = 2;
+        }
+        else {
+            if ((mod==0) && (index==total-1)) {
+                item.imageSizeType = 2;
+            }
+            else {
+                item.imageSizeType = 1;
+                imageSize = width/2;
+            }
+        }
+        size = CGSizeMake(imageSize, imageSize);
+    }
+    item.imageSize = size;
+    return size;
+}
 
 - (void)setItems:(NSArray *)items
 {
     _items = items;
     self.imageView.image = nil;
     int count = items.count;
-    BOOL isBig = NO;
+    
     for (int index = 0; index < count; index++) {
-        isBig = NO;
+        MSNGoodsItem *item = [_items objectAtIndex:index];
+        CGSize imageSize = [MSNGoodsTableCell imageSizeForItem:item atIndex:index total:count maxWidth:self.width];
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
         [self.imageArray addObject:imageView];
         [self addSubview:imageView];
-        int mod = index%3;
-        if ( mod == 2 ) {
-            CGFloat imageSize = self.width;
-            imageView.size = CGSizeMake(imageSize, imageSize);
-            isBig = YES;
-        }
-        else {
-            CGFloat imageSize = self.width/2;
-            if ( mod == 0 ) {
-                if ( index == count-1 ) {
-                    imageSize = self.width;
-                    isBig = YES;
-                }
-                imageView.size =  CGSizeMake(imageSize, imageSize);
-            }
-            else {
-                imageView.size = CGSizeMake(imageSize, imageSize);
-                
-            }
-        }
-        MSNGoodsItem *item = [_items objectAtIndex:index];
+        imageView.size = imageSize;
         [imageView addTarget:self selector:@selector(actionImageTap:) userInfo:item];
+        BOOL isBig = (item.imageSizeType==2);
         [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.middle_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
             [imageView setLeftPrompt:[NSString stringWithFormat:@"¥ %@",item.goods_sale_price] rightPrompt:[item economizer]];
@@ -167,27 +165,23 @@
     CGSize size = CGSizeMake(0,0);
     height += (size.height);
     int count = items.count;
+    CGFloat tempWidth = 0;
+    CGFloat halfWidht = maxWidth/4;
     if ( count>0 ) { // 3图片两行为一组
-        CGFloat singleLineHeight = width;
-        CGFloat multLineHeight = (singleLineHeight)/2;
-        int row = count/3;
-        int reset = count%3;
-        size.height = row*(singleLineHeight + multLineHeight);
-        if ( reset == 2 ) {
-            size.height  += (multLineHeight);
+        for (int index=0;index<items.count;index++) {
+            MSNGoodsItem *item = items[index];
+            [self imageSizeForItem:item atIndex:index total:count maxWidth:width];
+            tempWidth += item.imageSize.width;
+            if (tempWidth+halfWidht>maxWidth || index==count-1) {
+                tempWidth = 0;
+                height += item.imageSize.height;
+            }
         }
-        else if ( reset == 1 ) {
-            size.height  += (singleLineHeight);
-        }
-        height += size.height;
     }
     return height;
 }
-
 @end
 
 
 @implementation MSNGoodsHeaderTableCell
-
-
 @end

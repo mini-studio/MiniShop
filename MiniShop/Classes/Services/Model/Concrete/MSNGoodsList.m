@@ -110,6 +110,15 @@
 
 @implementation MSNGoodsItem
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _imageSizeType = 0;
+    }
+    return self;
+}
+
 - (void)setGoods_create_time:(NSString *)goods_create_time
 {
     _goods_create_time = goods_create_time;
@@ -172,6 +181,8 @@
     self.detail = other.detail;
     self.economizer = other.economizer;
     self.image = other.image;
+    
+    self.imageSize = other.imageSize;
 }
 
 - (NSString*)valueForKey:(NSString*)key def:(NSString*)def

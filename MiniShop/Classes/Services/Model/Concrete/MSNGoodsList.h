@@ -59,7 +59,11 @@
 @property (nonatomic,strong)NSString *discount;
 @property (nonatomic,strong)UIImage *image;
 
+@property (nonatomic)int imageSizeType;
+@property (nonatomic)CGSize imageSize;
+
 - (void)copy:(MSNGoodsItem *)other;
+
 @end
 
 @interface MSNGoodsDetailInfo : MSObject
