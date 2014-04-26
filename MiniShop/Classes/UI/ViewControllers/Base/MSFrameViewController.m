@@ -66,6 +66,9 @@
 
 - (void)setCurrentController:(MSViewController *)currentController
 {
+    if (currentController == _currentController) {
+        return;
+    }
     if ( _currentController != nil ) {
         [_currentController deselectedAsChild];
     }

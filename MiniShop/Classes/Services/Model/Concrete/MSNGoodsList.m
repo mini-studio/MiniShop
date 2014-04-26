@@ -119,19 +119,34 @@
     }
 }
 
-- (NSString*)discountMessage
+- (NSString*)economizer
 {
-    if (_discountMessage==nil) {
+    if (_economizer==nil) {
         CGFloat sale = self.goods_sale_price.floatValue;
         CGFloat marked = self.goods_marked_price.floatValue;
         if (sale<marked) {
-            _discountMessage = self.price_history_intro;
+            _economizer = self.price_history_intro;
         }
         else {
-            _discountMessage = @"";
+            _economizer = @"";
         }
     }
-    return _discountMessage;
+    return _economizer;
+}
+
+- (NSString*)discount
+{
+    if (_discount==nil) {
+        CGFloat sale = self.goods_sale_price.floatValue;
+        CGFloat marke = self.goods_marked_price.floatValue;
+        if (sale==marke) {
+            _discount = @"";
+        }
+        else {
+            _discount = [NSString stringWithFormat:@"%0.1f折",10*(sale/marke)];
+        }
+    }
+    return _discount;
 }
 
 - (void)copy:(MSNGoodsItem *)other
@@ -155,7 +170,7 @@
 
     self.goods_date = other.goods_date;
     self.detail = other.detail;
-    self.discountMessage = other.discountMessage;
+    self.economizer = other.economizer;
     self.image = other.image;
 }
 

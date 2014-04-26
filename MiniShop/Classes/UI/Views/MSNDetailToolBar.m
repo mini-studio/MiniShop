@@ -268,7 +268,7 @@
 {
     self.goodsNameLabel.text = item.goods_title;
     self.goodsPriceLabel.text = [NSString stringWithFormat:@"¥ %@",item.goods_sale_price];
-    self.discountLabel.text = [item discountMessage];
+    self.discountLabel.text = [item discount];
     self.priceHistoryIntroLabel.label.text = item.price_history_intro;
     self.startTimeLabel.text = @"";
     __PSELF__;

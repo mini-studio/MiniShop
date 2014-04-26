@@ -55,7 +55,8 @@
 
 @property (nonatomic,strong)NSString *goods_date;
 @property (nonatomic,strong)MSNGoodsDetail *detail;
-@property (nonatomic,strong)NSString *discountMessage;
+@property (nonatomic,strong)NSString *economizer;
+@property (nonatomic,strong)NSString *discount;
 @property (nonatomic,strong)UIImage *image;
 
 - (void)copy:(MSNGoodsItem *)other;

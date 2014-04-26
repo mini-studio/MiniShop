@@ -2375,7 +2375,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wu quancheng (GCD3TFD42C)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2396,7 +2396,7 @@
 					"\"$(SRCROOT)/Frameworks/ufeedback\"",
 					"\"$(SRCROOT)/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-force_load",
@@ -2433,6 +2433,7 @@
 					"\"$(SRCROOT)/Frameworks/ufeedback\"",
 					"\"$(SRCROOT)/Frameworks/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -2475,6 +2476,7 @@
 					"\"${PROJECT_DIR}/Frameworks/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk\"/**",
 				);
 				PRODUCT_NAME = MiniShop;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2506,6 +2508,7 @@
 					"\"${PROJECT_DIR}/Frameworks/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk\"/**",
 				);
 				PRODUCT_NAME = MiniShop;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
