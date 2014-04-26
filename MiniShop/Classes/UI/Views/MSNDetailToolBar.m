@@ -188,7 +188,7 @@
     self.discountLabel = [self createLabel:12 textColor:[UIColor colorWithRGBA:0xC00000ff]];
     [self.infoView addSubview:self.discountLabel];
     
-    self.buyButton = [MiniUIButton buttonWithBackGroundImage:[MiniUIImage imageNamed:@"button_normal"] highlightedBackGroundImage:[MiniUIImage imageNamed:@"button_selected"] title:@"购买"];
+    self.buyButton = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"buy"] highlightedImage:[UIImage imageNamed:@"buy"]];
     self.buyButton.frame = CGRectMake(self.width - 100, self.goodsPriceLabel.top, 90, 30);
     [self.infoView addSubview:self.buyButton];
 

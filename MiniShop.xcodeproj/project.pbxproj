@@ -97,6 +97,7 @@
 		C16DF934190B79B400CAD5A0 /* about-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF932190B79B400CAD5A0 /* about-568h@2x.png */; };
 		C16DF935190B79B400CAD5A0 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF933190B79B400CAD5A0 /* about@2x.png */; };
 		C16DF937190BA51E00CAD5A0 /* shop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */; };
+		C16DF939190BBB4600CAD5A0 /* buy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF938190BBB4600CAD5A0 /* buy@2x.png */; };
 		C17431B218E4798B00906EFE /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C17431B118E4798B00906EFE /* UMSocialSDKResourcesNew.bundle */; };
 		C17431B518E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C17431B318E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle */; };
 		C17431B618E4F2DB00906EFE /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17431B418E4F2DB00906EFE /* TencentOpenAPI.framework */; };
@@ -514,6 +515,7 @@
 		C16DF932190B79B400CAD5A0 /* about-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-568h@2x.png"; sourceTree = "<group>"; };
 		C16DF933190B79B400CAD5A0 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop_logo@2x.png"; sourceTree = "<group>"; };
+		C16DF938190BBB4600CAD5A0 /* buy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy@2x.png"; sourceTree = "<group>"; };
 		C17431B118E4798B00906EFE /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		C17431B318E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		C17431B418E4F2DB00906EFE /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -1432,6 +1434,7 @@
 		C1C7759718B1007900382F6B /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C16DF938190BBB4600CAD5A0 /* buy@2x.png */,
 				C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */,
 				C16DF932190B79B400CAD5A0 /* about-568h@2x.png */,
 				C16DF933190B79B400CAD5A0 /* about@2x.png */,
@@ -2170,6 +2173,7 @@
 				C1EC5116178074D600BE5ABB /* guide_b3_txt@2x.png in Resources */,
 				C1C775F318B1007900382F6B /* arrow_b@2x.png in Resources */,
 				C1C7763B18B1007900382F6B /* web_toolbar_bg@2x.png in Resources */,
+				C16DF939190BBB4600CAD5A0 /* buy@2x.png in Resources */,
 				C1C7761318B1007900382F6B /* icon_search_hover@2x.png in Resources */,
 				C1C7762F18B1007900382F6B /* rightarrow@2x.png in Resources */,
 				C1EC5117178074D600BE5ABB /* guide_b4@2x.png in Resources */,

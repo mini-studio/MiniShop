@@ -198,8 +198,8 @@
     imageView.center = CGPointMake(view.width/2, imageView.height/2+label.bottom+26*scale);
     [view addSubview:imageView];
     
-    label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.bottom+20*scale, view.width, 90)];
-    label.textAlignment = NSTextAlignmentCenter;
+    label = [[UILabel alloc] initWithFrame:CGRectMake(40, imageView.bottom+20*scale, view.width-80, 90)];
+    label.textAlignment = NSTextAlignmentLeft;
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
     label.font = [UIFont systemFontOfSize:14];

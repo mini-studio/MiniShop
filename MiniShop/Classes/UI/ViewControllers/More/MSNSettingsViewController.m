@@ -81,23 +81,23 @@
     [super loadView];
      self.uiSwitch = [[UISwitch alloc] init];
     [self.uiSwitch addTarget:self action:@selector(actionPushSwitch:) forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	self.naviTitleView.title = @"更多";    
+    self.naviTitleView.title = @"更多";
     self.tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds style:UITableViewStyleGrouped];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor lightGrayColor];
     self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.backgroundView = nil;
-    [self.contentView addSubview:self.tableView];
-    
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width,20 )];
     header.backgroundColor = self.tableView.backgroundColor;
     self.tableView.tableHeaderView = header;
+    [self.contentView addSubview:self.tableView];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated
