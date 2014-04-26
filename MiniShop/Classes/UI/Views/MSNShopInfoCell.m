@@ -48,6 +48,7 @@
 {
     [super layoutSubviews];
     self.separatorView.frame = CGRectMake(0, self.height-1, self.width, 1);
+    self.button.height = self.height;
     self.button.center = CGPointMake(self.width-15-(self.button.width/2), self.height/2);
 }
 

@@ -23,17 +23,15 @@
 
 - (NSString*)encryptString:(NSString*)value;
 
-- (void)setRequestHeaderWithKey:(NSString*)key value:(NSString*)value;
-
 - (void)showServerExceptoin:(NSString *)string;
 
-- (void)get:(NSString*)url  params:(NSDictionary *)params  block:(void (^)(NSError *error, id data, BOOL cache ))block;
+- (void)get:(NSString*)url  params:(NSDictionary *)params headers:(NSDictionary*)headers block:(void (^)(NSError *error, id data, BOOL cache ))block;
 
-- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
+- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
 
-- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
+- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
 
-- (void)loadDataFromServer:(NSString *)url  method:(NSString *)method params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
+- (void)loadDataFromServer:(NSString *)url  method:(NSString *)method params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block;
 
 + (NSString *)keyForCache:(NSString *)addr params:(NSDictionary*)params;
 + (id)loadDataForKey:(NSString*)key;

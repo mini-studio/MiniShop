@@ -96,6 +96,7 @@
 		C16DF931190B76C600CAD5A0 /* tianm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF930190B76C600CAD5A0 /* tianm@2x.png */; };
 		C16DF934190B79B400CAD5A0 /* about-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF932190B79B400CAD5A0 /* about-568h@2x.png */; };
 		C16DF935190B79B400CAD5A0 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF933190B79B400CAD5A0 /* about@2x.png */; };
+		C16DF937190BA51E00CAD5A0 /* shop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */; };
 		C17431B218E4798B00906EFE /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C17431B118E4798B00906EFE /* UMSocialSDKResourcesNew.bundle */; };
 		C17431B518E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C17431B318E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle */; };
 		C17431B618E4F2DB00906EFE /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17431B418E4F2DB00906EFE /* TencentOpenAPI.framework */; };
@@ -512,6 +513,7 @@
 		C16DF930190B76C600CAD5A0 /* tianm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tianm@2x.png"; sourceTree = "<group>"; };
 		C16DF932190B79B400CAD5A0 /* about-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-568h@2x.png"; sourceTree = "<group>"; };
 		C16DF933190B79B400CAD5A0 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
+		C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop_logo@2x.png"; sourceTree = "<group>"; };
 		C17431B118E4798B00906EFE /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		C17431B318E4F2DB00906EFE /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		C17431B418E4F2DB00906EFE /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -1430,6 +1432,7 @@
 		C1C7759718B1007900382F6B /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C16DF936190BA51E00CAD5A0 /* shop_logo@2x.png */,
 				C16DF932190B79B400CAD5A0 /* about-568h@2x.png */,
 				C16DF933190B79B400CAD5A0 /* about@2x.png */,
 				C1C7759A18B1007900382F6B /* about_ver_bg.png */,
@@ -2207,6 +2210,7 @@
 				C1C775F418B1007900382F6B /* arrow_white@2x.png in Resources */,
 				C12F595B18B117B70040A74A /* arrowdown@2x.png in Resources */,
 				C1EC5136178074D600BE5ABB /* loading7.png in Resources */,
+				C16DF937190BA51E00CAD5A0 /* shop_logo@2x.png in Resources */,
 				C1C7761C18B1007900382F6B /* navi_background@2x.png in Resources */,
 				C1EC5137178074D600BE5ABB /* loading8.png in Resources */,
 				C1EC5138178074D600BE5ABB /* loading9.png in Resources */,
@@ -2408,7 +2412,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework.a",
 				);
-				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
+				PROVISIONING_PROFILE = "24D1C268-7087-4D95-9A06-F0E9D2A37392";
 				SDKROOT = iphoneos7.1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -2446,7 +2450,7 @@
 					"-force_load",
 					"$(SRCROOT)/Frameworks/libMini3rdFramework_release.a",
 				);
-				PROVISIONING_PROFILE = "F4667B14-6495-461C-9AE4-199F8C67A992";
+				PROVISIONING_PROFILE = "24D1C268-7087-4D95-9A06-F0E9D2A37392";
 				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";

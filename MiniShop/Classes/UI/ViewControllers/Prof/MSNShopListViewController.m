@@ -201,7 +201,14 @@
 - (void)favShop:(MSNShopInfo*)shopInfo
 {
     shopInfo.user_like = 1;
-    [self.tableView reloadData];
+    NSInteger index = [self.dataSource.info indexOfObject:shopInfo];
+    if (index!=NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else {
+        [self.tableView reloadData];
+    }
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
@@ -216,7 +223,14 @@
 - (void)cancelFavShop:(MSNShopInfo*)shopInfo
 {
     shopInfo.user_like = 0;
-    [self.tableView reloadData];
+    NSInteger index = [self.dataSource.info indexOfObject:shopInfo];
+    if (index!=NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else {
+        [self.tableView reloadData];
+    }
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
@@ -240,9 +254,8 @@
     [toolbar addSubview:shareButton];
     [shareButton addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
     self.userButton = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
-    [self resetUserButton];
-    self.userButton.center = CGPointMake(40+self.userButton.width/2,centerY);
     [toolbar addSubview:self.userButton];
+    [self resetUserButton];
 }
 
 - (void)resetUserButton
@@ -255,6 +268,12 @@
     else {
         [self.userButton setTitle:[NSString stringWithFormat:@"你好,%@",WHO.usernick] forState:UIControlStateNormal];
     }
+    [self.userButton sizeToFit];
+    CGFloat maxWidth = self.contentView.width/2;
+    if (self.userButton.width > maxWidth) {
+        self.userButton.width = maxWidth;
+    }
+    self.userButton.center = CGPointMake(40+self.userButton.width/2,self.userButton.superview.height/2);
 }
 
 - (void)actionToolBarShare:(MiniUIButton*)button

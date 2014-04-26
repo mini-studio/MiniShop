@@ -43,11 +43,6 @@
 
 #define DATA_CACHE_DIR @"Documents/user/data"
 
-//+ (NSString *)host
-//{
-//    return @"http://www.linshang.biz";
-//}
-
 + (ClientAgent *)sharedInstance
 {
     static ClientAgent *instance;
@@ -64,17 +59,11 @@
 - (id)init
 {
     self = [super init];
-    if (self)
-    {
-        self.headers = [NSMutableDictionary dictionaryWithCapacity:1];
+    if (self) {
     }
     return self;
 }
 
-- (void)setRequestHeaderWithKey:(NSString*)key value:(NSString*)value
-{
-    [self.headers setValue:value forKey:key];
-}
 
 - (void)throwNetWorkException:(NSString*)message
 {
@@ -224,19 +213,19 @@
 
 
 ///////////////////////////////////////////////////////
-- (void)get:(NSString*)url  params:(NSDictionary *)params  block:(void (^)(NSError *error, id data, BOOL cache ))block
+- (void)get:(NSString*)url  params:(NSDictionary *)params  headers:(NSDictionary*)headers block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
-    [self getDataFromServer:url params:params cachekey:nil clazz:nil isJson:NO showError:NO block:block];
+    [self getDataFromServer:url params:params headers:headers cachekey:nil clazz:nil isJson:NO showError:NO block:block];
 }
 
-- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
+- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
-    [self getDataFromServer:url params:params cachekey:key clazz:nil isJson:YES showError:showError block:block];
+    [self getDataFromServer:url params:params headers:headers cachekey:key clazz:nil isJson:YES showError:showError block:block];
 }
 
-- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
+- (void)getDataFromServer:(NSString *)url params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
-    [self loadDataFromServer:url method:@"GET" params:params cachekey:key clazz:clazz isJson:isJson mergeobj:nil showError:showError block:block];
+    [self loadDataFromServer:url method:@"GET" params:params headers:headers cachekey:key clazz:clazz isJson:isJson mergeobj:nil showError:showError block:block];
 }
 
 - (void)receiveRespose:(NSString *)url responseObject:(NSData*)responseObject clazz:(Class)clazz  isJson:(BOOL)isJson key:(NSString*)key mergeobj:(MiniObject*)mergeobj encoding:(NSStringEncoding)encoding block:(void (^)(NSError *error, id data, BOOL cache ))block
@@ -347,28 +336,19 @@
     return [FBEncryptorAES encryptString:value keyString:aesKEY iv:aesIV];
 }
 
-- (void)loadDataFromServer:(NSString *)url method:(NSString *)method params:(NSDictionary *)params cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
+- (void)loadDataFromServer:(NSString *)url method:(NSString *)method params:(NSDictionary *)params headers:(NSDictionary*)headers cachekey:(NSString *)key clazz:(Class)clazz isJson:(BOOL)isJson mergeobj:(MiniObject*)mergeobj showError:(BOOL)showError block:(void (^)(NSError *error, id data, BOOL cache ))block
 {
-    if ( key != nil && key.length > 0 )
-    {
+    if ( key != nil && key.length > 0 ) {
         NSData *data = [ClientAgent loadDataForKey:key];
-        if ( data != nil && data.length > 0  )
-        {
+        if (data != nil && data.length > 0){
             [self parseCachedData:data clazz:clazz isJson:isJson block:block];
         }
     }
-    
-//    NSString *k = @"_cc_=U%2BGCWk%2F7og%3D%3D; _nk_=%5Cu5FC3%5Cu60C5%5Cu4E0D%5Cu951920080808; cookie1=BqPjwGrT%2Bb4IDCN0OwQRv0HiycofCJ382ZXaHUSOj6E%3D; cookie17=UoH97k0NvSSa; cookie2=a7cd405255dd3079c5269803e9d58ef3; t=339bee4b247309c0ebf952818218e5e4; uc1=cookie14=UoLVYyeJL4sZ8g%3D%3D&cookie21=Vq8l%2BKCLjA%2Bl; unb=102852018; v=0; wud=wud;";
-//    k = [self encryptString:k];
-//    NSLog(@"%@",k);
-    
     dispatch_block_t __block__ = ^{
         NSString *addr = url;
-        if ([@"GET" isEqualToString:method])
-        {
+        if ([@"GET" isEqualToString:method]) {
             NSMutableString *pm = [NSMutableString string];
-            for ( NSString *rkey in params.allKeys )
-            {
+            for ( NSString *rkey in params.allKeys ) {
                 id value = [params valueForKey:rkey];
                 if ([value isKindOfClass:[NSString class]]) {
                     [pm appendFormat:@"%@=%@&",rkey,[(NSString *)[params valueForKey:rkey] encodedURLString]];
@@ -377,8 +357,7 @@
                     [pm appendFormat:@"%@=%lld&",rkey,[[params valueForKey:rkey] longLongValue]];
                 }
             }
-            if ( pm.length > 0 )
-            {
+            if (pm.length>0) {
                 [pm deleteCharactersInRange:NSMakeRange(pm.length-1,1)];
             }
             addr = [NSString stringWithFormat:([url rangeOfString:@"?"].length==0)?@"%@?%@":@"%@&%@",url,pm];
@@ -390,15 +369,14 @@
         [client setDefaultHeader:@"platform" value:@"iphone"];
         [client setDefaultHeader:[NSString stringWithFormat:@"%d",MAIN_VERSION] value:@"mainversion"];
         [client setDefaultHeader:@"version" value:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
-        NSEnumerator *enumerator = self.headers.keyEnumerator;
+        NSEnumerator *enumerator = headers.keyEnumerator;
         NSString *hkey = enumerator.nextObject;
         while (hkey != nil) {
-            [client setDefaultHeader:hkey value:[self.headers valueForKey:hkey]];
+            [client setDefaultHeader:hkey value:[headers valueForKey:hkey]];
             hkey = enumerator.nextObject;
         }
         BOOL security = [@"1" isEqualToString:[params valueForKey:@"security"]];
-        if ( [@"POST" isEqualToString:method] )
-        {
+        if ([@"POST" isEqualToString:method]) {
            [client postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
                [self receiveRespose:addr responseObject:[self decryptedData:responseObject security:security] clazz:clazz isJson:isJson key:key mergeobj:mergeobj encoding:(security?NSASCIIStringEncoding:NSUTF8StringEncoding) block:block];
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -408,8 +386,7 @@
                [self throwNetWorkException:@"连接失败!请检查网络连接或服务是否正常！"];
            }];
         }
-        else
-        {
+        else {
            [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                [self receiveRespose:addr responseObject:[self decryptedData:responseObject security:security] clazz:clazz isJson:isJson key:key mergeobj:mergeobj encoding:(security?NSASCIIStringEncoding:NSUTF8StringEncoding) block:block];
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

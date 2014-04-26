@@ -49,9 +49,9 @@
     return [NSString stringWithFormat:@"http://youjiaxiaodian.com/api/jumptaobao?type=%@&device=iphone",type];
 }
 
--(NSMutableDictionary*)perfectParameters:(NSDictionary*)param
+-(NSMutableDictionary*)perfectParameters:(NSDictionary*)param headers:(NSMutableDictionary*)headers
 {
-    return [self perfectParameters:param security:NO];
+    return [self perfectParameters:param security:NO headers:headers];
 }
 
 - (void)perfectHttpRequest:(NSMutableURLRequest *)requst
@@ -80,7 +80,7 @@
     [requst setValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forHTTPHeaderField:@"app_version"];
 }
 
--(NSMutableDictionary*)perfectParameters:(NSDictionary*)param security:(BOOL)security
+-(NSMutableDictionary*)perfectParameters:(NSDictionary*)param security:(BOOL)security headers:(NSMutableDictionary*)headers
 {
     NSMutableDictionary * p = param==nil?[NSMutableDictionary dictionary]:[NSMutableDictionary dictionaryWithDictionary:param];
     {
@@ -97,18 +97,18 @@
             }
         }
         [p setObject:imei forKey:@"imei"];
-        [self setRequestHeaderWithKey:@"imei" value:imei];
+        headers[@"imei"] = imei;
     }
     {
         if ( WHO !=nil && WHO.uniqid.length>0) {
             [p setValue:WHO.uniqid forKey:@"uniqid"];
-            [self setRequestHeaderWithKey:@"uniqid" value:WHO.uniqid];
+            headers[@"uniqid"] = WHO.uniqid;
         }
     }
     {
-        [self setRequestHeaderWithKey:@"sys_device" value:@"iphone"];
-        [self setRequestHeaderWithKey:@"sys_version" value:[NSString stringWithFormat:@"%d",MAIN_VERSION]];
-        [self setRequestHeaderWithKey:@"app_version" value:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        headers[@"sys_device"] = @"iphone";
+        headers[@"sys_version"] = [NSString stringWithFormat:@"%d",MAIN_VERSION];
+        headers[@"app_version"] = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     }
     {
         if ( security ) {
@@ -156,7 +156,8 @@
 {
     NSString* uri = [self requestUri:path];
     if ( param != nil ) {
-        NSMutableDictionary *params = [self perfectParameters:param];
+        NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+        NSMutableDictionary *params = [self perfectParameters:param headers:headers];
         NSMutableString *pm = [NSMutableString string];
         for ( NSString *rkey in params.allKeys )
         {
@@ -177,8 +178,9 @@
         mobile = @"";
     }
     NSString *addr = [self requestUri:@"newreg" param:@{}];
-    NSDictionary *dic = @{@"name":uname,@"passwd":passwd,@"mobile":mobile};
-    [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd,@"mobile":mobile} security:NO headers:headers];
+    [self loadDataFromServer:addr method:@"POST" params:dic headers:headers cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
             if ( user.uniqid.length==0 ) {
                 error = [NSError errorWithDomain:@"registe" code:200 userInfo:@{NSLocalizedDescriptionKey:@"注册异常"}];
@@ -197,8 +199,9 @@
 - (void)login:(NSString*)uname passwd:(NSString*)passwd  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri:@"newlogin" param:@{}];
-    NSDictionary *dic = @{@"name":uname,@"passwd":passwd};
-    [self loadDataFromServer:addr method:@"POST" params:dic cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *dic = [self perfectParameters:@{@"name":uname,@"passwd":passwd} security:NO headers:headers];
+    [self loadDataFromServer:addr method:@"POST" params:dic headers:headers cachekey:nil clazz:[MSUser class] isJson:YES mergeobj:nil showError:YES block:^(NSError *error, MSUser* user, BOOL cache) {
         if ( error == nil ) {
             if ( user.uniqid.length==0 ) {
                 error = [NSError errorWithDomain:@"login" code:200 userInfo:@{NSLocalizedDescriptionKey:@"登录异常"}];
@@ -217,17 +220,19 @@
 - (void)resetpasswd:(NSString*)uname mobile:(NSString*)mobile  block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri:@"resetpasswd"];
-    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"mobile":mobile}];
-    [self getDataFromServer:addr params:dic cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *dic = [self perfectParameters:@{@"name":uname,@"mobile":mobile} headers:headers];
+    [self getDataFromServer:addr params:dic headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         block(error,data,nil,cache);
     }];
 }
 
 - (void)feedback:(NSString *)content block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
-    NSDictionary *params = [self perfectParameters:@{@"msg":content}];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{@"msg":content} headers:headers];
     NSString *addr = [self requestUri:@"msg"];
-    [self getDataFromServer:addr params:params cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:[ClientAgent keyForCache:addr params:params] clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         block(error,data,nil,cache);
     }];
 }
@@ -238,9 +243,10 @@
     bool firstRun = [MSSystem isFirstRun];
     [MSSystem clearFirstRun];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstRun": firstRun ?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestUri:@"newversion"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, MSVersion* data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, MSVersion* data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
 }
@@ -249,9 +255,10 @@
 {
     NSString *version = [MSSystem bundleVersion];
     NSDictionary *params = @{@"device":@"iphone",@"cv":version};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestNewUri:@"auth"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
 }
@@ -260,7 +267,8 @@
 {
     if ( [MSSystem sharedInstance].deviceToken != nil ) {
     NSDictionary *params = @{@"token":[MSSystem sharedInstance].deviceToken};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestUri:@"iostoken"];
 #ifdef DEBUG
 //    {
@@ -274,7 +282,7 @@
 //        [MiniUIAlertView showAlertWithMessage:pm];
 //    }
 #endif
-    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];
     }
@@ -316,9 +324,10 @@
     if ( str.length > 0 )
     {
         NSDictionary *params = @{@"data":str};
-        params = [self perfectParameters:params];
+        NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+        params = [self perfectParameters:params headers:headers];
         NSString *addr = [self requestUri:@"countlist"];
-        [self loadDataFromServer:addr method:@"POST" params:params cachekey:nil clazz:nil isJson:NO mergeobj:nil showError:NO block:^(NSError *error, id data, BOOL cache) {
+        [self loadDataFromServer:addr method:@"POST" params:params headers:headers cachekey:nil clazz:nil isJson:NO mergeobj:nil showError:NO block:^(NSError *error, id data, BOOL cache) {
             LOG_DEBUG( @"%@",[data description]);
         }];
     }
@@ -372,9 +381,10 @@
         [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
     }
     NSDictionary *params = @{@"ids":ids};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestUri:@"getshopinfo"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:nil isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         if ( error == nil )
         {
             if ( [[data valueForKey:@"errno"] intValue] == 0 ) {
@@ -417,9 +427,10 @@
         from = @"list";
     }
     NSDictionary *params = @{@"id":[NSString stringWithFormat:@"%lld",goodId],@"from":from,@"sec":[NSString stringWithFormat:@"%d",sec]};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestUri:@"viewsec"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
         block(error,data,nil,cache);
     }];
 }
@@ -436,8 +447,9 @@
         [def setValue:@"1" forKey:key];
         [def synchronize];
         NSString *addr = [self requestUri:@"countorder"];
-        NSDictionary *param = [self perfectParameters:@{@"url":baseParam}];
-        [self getDataFromServer:addr params:param cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+        NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+        NSDictionary *param = [self perfectParameters:@{@"url":baseParam} headers:headers];
+        [self getDataFromServer:addr params:param headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
             if ( block )
             {
                 block(error,data,nil,cache);
@@ -453,9 +465,10 @@
 - (void)usercooperate:(NSString *)shopName shopId:(NSString*)shopId action:(NSString *)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSDictionary *params = @{@"shopname":shopName,@"action":action,@"id":shopId};
-    params = [self perfectParameters:params];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    params = [self perfectParameters:params headers:headers];
     NSString *addr = [self requestUri:@"usercooperate"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:YES block:^(NSError *error, id data, BOOL cache) {
         block(error,data,nil,cache);
     }];
 }
@@ -497,8 +510,9 @@
 - (void)favshopcate:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"favshopcate"];
-    NSDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNCateList class] isJson:YES showError:NO block:^(NSError *error, MSNCateList* data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNCateList class] isJson:YES showError:NO block:^(NSError *error, MSNCateList* data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -509,12 +523,13 @@
 - (void)favshoplist:(NSString*)tagId sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"favshoplist"];
-    NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":tagId,@"page":ITOS(page)} security:YES];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{@"sort":sort,@"tag_id":tagId,@"page":ITOS(page)} security:YES headers:headers];
     NSString *cacheKey = nil;
     if (page==1) {
         cacheKey = [ClientAgent keyForCache:addr params:params];
     }
-    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:cacheKey clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             data.sort = sort;
@@ -540,9 +555,10 @@
 //        block (nil,array,nil,NO);
 //    }
     NSString *addr = [self requestUri14:@"specialitem"];
-    NSMutableDictionary *params = [self perfectParameters:@{} security:YES];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:YES headers:headers];
     NSString *cacheKey = [ClientAgent keyForCache:addr params:@{}];
-    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNSpecialcateList class] isJson:YES showError:NO block:^(NSError
+    [self getDataFromServer:addr params:params headers:headers cachekey:cacheKey clazz:[MSNSpecialcateList class] isJson:YES showError:NO block:^(NSError
     *error, MSNSpecialcateList *data, BOOL cache) {
         if ( block ) {
             block(error,data.info,nil,cache);
@@ -556,8 +572,9 @@
 - (void)specialgoods:(NSString*)type page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"specialgoods"];
-    NSDictionary *params = [self perfectParameters:@{@"type":type,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{@"type":type,@"page":ITOS(page)} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -568,9 +585,10 @@
 - (void)catelist:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"catelist"];
-    NSDictionary *params = [self perfectParameters:@{} security:YES];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{} security:YES headers:headers];
     NSString *cacheKey = [ClientAgent keyForCache:addr params:params];
-    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:cacheKey clazz:[MSNWellCateList class] isJson:YES showError:NO block:^(NSError *error, MSNWellCateList *data, BOOL cache) {
         if ( block ) {
             if (error==nil) {
                 MSNWellCateGroup *group = [[MSNWellCateGroup alloc] init];
@@ -592,9 +610,10 @@
 - (void)searchhelp:(void (^)(NSError *error, NSString* data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchhelp"];
-    NSMutableDictionary *params = [self perfectParameters:@{} security:NO];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:NO headers:headers];
     [params removeObjectForKey:@"tn"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError
     *error,  NSString* data, BOOL cache) {
         block(error,data,nil,cache);
     }];
@@ -605,12 +624,13 @@
 {
     NSString *addr = [self requestUri14:@"searchshop"];
     if (type==nil) type=@"";
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,
-            @"type":type,@"page":ITOS(page)} security:YES];
+            @"type":type,@"page":ITOS(page)} security:YES headers:headers];
     if (tag_id>0) {
         params[@"tag_id"] = ITOS(tag_id);
     }
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -635,9 +655,10 @@
 *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchshop"];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":@"",
-            @"type":type,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+            @"type":type,@"page":ITOS(page)} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block ) {
             block(error,data,nil,cache);
         }
@@ -647,8 +668,9 @@
 - (void)groupgoodsinfo:(NSString*)ids  block:(void (^)(NSError*error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"groupgoodsinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"ids":ids} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"ids":ids} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block ) {
             block(error,data,nil,cache);
         }
@@ -658,9 +680,10 @@
 - (void)searchgoods:(NSString*)key type:(NSString*)type sort:(NSString*)sort page:(int)page block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"searchgoods"];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     [self saveSearchWord:key];
-    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,@"type":type,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+    NSMutableDictionary *params = [self perfectParameters:@{@"key":key,@"sort":sort,@"type":type,@"page":ITOS(page)} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             if (error==nil) {
@@ -675,8 +698,9 @@
 - (void)setfavgoods:(NSString*)mid action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
 {
     NSString *addr = [self requestUri14:@"setfavgoods"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"goods_id":mid} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"goods_id":mid} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -690,8 +714,9 @@
 - (void)mygoodslist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"mygoodslist"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNGoodsList class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -702,8 +727,9 @@
 - (void)groupshopinfo:(NSString*)ids block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"groupshopinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"shopid":ids} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shopid":ids} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -714,8 +740,9 @@
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
 {
     NSString *addr = [self requestUri14:@"setfavshop"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"shop_id":shopId} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"shop_id":shopId} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, MSObject *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -729,12 +756,13 @@
 - (void)myshoplist:(int)page block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"myshoplist"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES];
+     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"page":ITOS(page)} security:YES headers:headers];
     NSString *cacheKey = nil;
     if (page==1) {
         cacheKey = [ClientAgent keyForCache:addr params:params];
     }
-    [self getDataFromServer:addr params:params cachekey:cacheKey clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:cacheKey clazz:[MSNShopList class] isJson:YES showError:NO block:^(NSError *error, MSNShopList *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -745,8 +773,9 @@
 - (void)goodsinfo:(NSString*)goodId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"goodsinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
+     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -762,8 +791,9 @@
     }
 
     NSString *addr = [self requestUri14:@"goodsinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"goods_id":goodId} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNGoodsDetail class] isJson:YES showError:NO block:^(NSError *error, MSNGoodsDetail *data, BOOL cache) {
         if ( block ) {
             block(error,data.info.goods_info,nil,cache);
         }
@@ -773,8 +803,9 @@
 - (void)shopinfo:(NSString*)shopId block:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"shopinfo"];
-    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
         if ( block )
         {
             block(error,data.info,nil,cache);
@@ -786,8 +817,9 @@
 {
     NSString *addr = [self requestUri14:@"shopgoods"];
     if (key==nil) key = @"";
-    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId,@"tag_id":tagId,@"sort":sort,@"key":key,@"page":ITOS(page)} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopDetail class] isJson:YES showError:NO block:^(NSError *error, MSNShopDetail *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{@"shop_id":shopId,@"tag_id":tagId,@"sort":sort,@"key":key,@"page":ITOS(page)} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopDetail class] isJson:YES showError:NO block:^(NSError *error, MSNShopDetail *data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -798,8 +830,9 @@
 - (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 {
     NSString *addr = [self requestUri14:@"guesslikeshop"];
-    NSMutableDictionary *params = [self perfectParameters:@{} security:YES];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:YES headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSNShopInfoObject class] isJson:YES showError:NO block:^(NSError *error, MSNShopInfoObject *data, BOOL cache) {
         if ( block )
         {
             if (error==nil)
@@ -828,12 +861,10 @@
     for(NSHTTPCookie *cookie in co) {
         [string appendFormat:@"%@=%@; ",cookie.name,cookie.value];
     }
-    if (string.length>0) {
-        //map[@"co"]=[self encryptString:string];
-    }
-    NSMutableDictionary* params = [self perfectParameters:map security:YES];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary* params = [self perfectParameters:map security:YES headers:headers];
     NSString *addr = [self requestUri14:@"importshopinfo" dic:params];
-    [self loadDataFromServer:addr method:@"POST" params:@{@"co":[self encryptString:string],@"security":@"1"} cachekey:nil clazz:[MSNShopList class] isJson:YES mergeobj:nil showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self loadDataFromServer:addr method:@"POST" params:@{@"co":[self encryptString:string],@"security":@"1"} headers:headers cachekey:nil clazz:[MSNShopList class] isJson:YES mergeobj:nil showError:NO block:^(NSError *error, id data, BOOL cache) {
         if ( error == nil ){
             block(nil,data,nil,NO);
         }
@@ -846,9 +877,10 @@
 - (void)placard:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri14:@"placard"];
-    NSMutableDictionary *params = [self perfectParameters:@{} security:NO];
+     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [self perfectParameters:@{} security:NO headers:headers];
     [params removeObjectForKey:@"tn"];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:nil isJson:NO showError:NO block:^(NSError *error, id data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);
@@ -859,8 +891,9 @@
 - (void)setpushsound:(int)action block:(void (^)(NSError *error, id data, id userInfo , BOOL cache ))block
 {
     NSString *addr = [self requestUri:@"setpushsound"];
-    NSDictionary *params = [self perfectParameters:@{@"action":[NSString stringWithFormat:@"%d",action]}];
-    [self getDataFromServer:addr params:params cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    NSDictionary *params = [self perfectParameters:@{@"action":[NSString stringWithFormat:@"%d",action]} headers:headers];
+    [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSObject class] isJson:YES showError:NO block:^(NSError *error, id data, BOOL cache) {
         if ( block )
         {
             block(error,data,nil,cache);

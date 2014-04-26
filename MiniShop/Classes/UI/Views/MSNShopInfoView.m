@@ -104,14 +104,14 @@
     __PSELF__;
     if ( shopInfo.shop_logo.length >0 ) {
         __weak UIImageView *imageView = self.imageView;
-        [imageView setImageWithURL:[NSURL URLWithString:shopInfo.shop_logo]  placeholderImage:[UIImage imageNamed:@"shop"] options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
+        [imageView setImageWithURL:[NSURL URLWithString:shopInfo.shop_logo]  placeholderImage:[UIImage imageNamed:@"shop_logo"] options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {
             imageView.image = image;
             pSelf.shopInfo.logo = image;
         } failure:^(NSError *error) {
         }];
     }
     else {
-        self.imageView.image = [UIImage imageNamed:@"shop"];
+        self.imageView.image = [UIImage imageNamed:@"shop_logo"];
     }
 }
 

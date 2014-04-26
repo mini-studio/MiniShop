@@ -213,13 +213,21 @@
 
 - (void)favShop:(MSNShopInfo*)shopInfo
 {
-    //[self showWating:nil];
+    shopInfo.user_like = 1;
+    NSInteger index = [self.dataSource.info indexOfObject:shopInfo];
+    if (index!=NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else {
+        [self.tableView reloadData];
+    }
     __PSELF__;
+    
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         //[pSelf dismissWating];
         if (error==nil) {
             shopInfo.user_like = 1;
-            [pSelf.tableView reloadData];
         }
         else {
             [pSelf showErrorMessage:error];
@@ -229,7 +237,15 @@
 
 - (void)cancelFavShop:(MSNShopInfo*)shopInfo
 {
-    //[self showWating:nil];
+    shopInfo.user_like = 0;
+    NSInteger index = [self.dataSource.info indexOfObject:shopInfo];
+    if (index!=NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else {
+        [self.tableView reloadData];
+    }
     __PSELF__;
     [[ClientAgent sharedInstance] setfavshop:shopInfo.shop_id action:@"off" block:^(NSError *error, id data, id userInfo, BOOL cache) {
         //[pSelf dismissWating];
