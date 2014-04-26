@@ -111,8 +111,8 @@
     [self.naviTitleView addSubview:self.transformButton];
     self.titleSectionView = [[MSNSearchGoodsViewHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 28)];
     self.titleSectionView .backgroundColor = [UIColor colorWithRGBA:0xfaf1f2ff];
-    self.titleSectionView.orderByButton.items = @[@"新品",@"折扣",@"降价",@"销量"];
-    self.titleSectionView.orderByButton.values = @[@"time",@"off",@"off_time",@"sale"];
+    self.titleSectionView.orderByButton.items = @[@"新品",@"降价",@"销量"];
+    self.titleSectionView.orderByButton.values = @[@"time",@"off_time",@"sale"];
     self.titleSectionView.orderByButton.fontColor = [UIColor colorWithRGBA:0xd14c60ff];
     self.titleSectionView.orderByButton.fontSize = 14;
     self.titleSectionView.orderByButton.delegate = self;

@@ -18,8 +18,7 @@
 
 - (id)init
 {
-    if (self = [super init])
-    {
+    if (self = [super init]) {
         [self registerBlock];
         _dismissWaitingDelay = 5.0;
     }
@@ -61,11 +60,10 @@
 - (void)loadView
 {
     [super loadView];
-    if ( self.toolbar ){
+    if ( self.toolbar ) {
         _webView.height = _webView.height - 45;
         [self createToolBar];
     }
-    
     if ( self.htmlStr.length > 0 ){
         [_webView loadHTMLString:self.htmlStr baseURL:nil];
     }
@@ -88,14 +86,12 @@
     self.miniToolBar.backButton.enabled = NO;
     self.miniToolBar.forwardButton.enabled = NO;
     [self.contentView addSubview:self.miniToolBar];
-
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.rightRefresh)
-    {
+    if (self.rightRefresh) {
         [self addRightRefreshButtonToTarget:self action:@selector(refresh)];
     }
 }
@@ -103,7 +99,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)handlerRequest:(__strong NSString *)url navigationType:(UIWebViewNavigationType)navigationType
@@ -129,7 +124,7 @@
 - (void)webViewDidFinishLoad:(__strong UIWebView *)webView
 {
     [self resetWebButtons];
-    if ( self.cTitle.length == 0 ){
+    if ( self.cTitle.length == 0 ) {
         NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
         self.naviTitleView.title = title;
     }
@@ -169,24 +164,20 @@
 
 - (void)refresh
 {
-    [self loadURL:[NSURL URLWithString:self.uri]];
+    [_webView reload];
 }
 
 
 - (void)goBack
 {
-    if (_webView.canGoBack)
-    {
-        //[self showWating:nil];
+    if (_webView.canGoBack) {
         [_webView goBack];
     }
 }
 
 - (void)goForward
 {
-    if (_webView.canGoForward)
-    {
-        //[self showWating:nil];
+    if (_webView.canGoForward) {
         [_webView goForward];
     }
 }
