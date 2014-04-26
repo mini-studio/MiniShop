@@ -92,7 +92,7 @@
     _shopInfo = shopInfo;
     self.nameLabel.text = shopInfo.shop_title;
     //设置信誉等级
-    self.gradeView.grade =  [shopInfo gradeValue];
+    [self.gradeView setGrade:[shopInfo gradeValue] shopType:shopInfo.shop_type];
     self.sellerNickLabel.text = [NSString stringWithFormat:@"卖家：%@  %@",shopInfo.seller_nick,shopInfo.shop_address];
     if (shopInfo.shop_goods_num!=nil)  {
         self.followerLabel.text = [NSString stringWithFormat:@"%@人关注 %@件",shopInfo.shop_like_num,shopInfo.shop_goods_num];

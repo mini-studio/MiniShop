@@ -59,6 +59,11 @@
       </BuildableProductRunnable>
       <AdditionalOptions>
          <AdditionalOption
+            key = "MallocStackLogging"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+         <AdditionalOption
             key = "OBJC_PRINT_EXCEPTIONS"
             value = "YES"
             isEnabled = "YES">

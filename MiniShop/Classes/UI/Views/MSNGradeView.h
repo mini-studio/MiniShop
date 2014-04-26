@@ -10,5 +10,5 @@
 #import "MSNShop.h"
 
 @interface MSNGradeView : UIView
-@property(nonatomic)NSInteger grade;
+- (void)setGrade:(NSInteger)grade shopType:(NSString*)shopType;
 @end

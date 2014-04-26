@@ -180,6 +180,7 @@
 - (void)setRandom:(BOOL)random
 {
     _random = random;
+    self.orderBy = @"time";
 }
 
 - (void)loadView
@@ -219,13 +220,15 @@
         [pSelf searchWithKey:key orderby:orderBy];
     }];
     [self.messageView setHandleCancelSearchBlock:^{
-        pSelf.messageView.numberLabel.text = self.tMessageTitle;
-        pSelf.dataSource =  pSelf.tGoodsList;
-        pSelf.page = pSelf.tPage;
-        pSelf.tGoodsList = nil;
-        pSelf.tPage = 0;
-        [pSelf.messageView.transformButton setSelectedIndex:pSelf.tTransButtonSelectIndex animated:YES withEvent:NO];
-        [pSelf.tableView reloadData];
+        if (pSelf.tGoodsList!=nil) {
+            pSelf.messageView.numberLabel.text = pSelf.tMessageTitle;
+            pSelf.dataSource =  pSelf.tGoodsList;
+            pSelf.page = pSelf.tPage;
+            pSelf.tGoodsList = nil;
+            pSelf.tPage = 0;
+            [pSelf.messageView.transformButton setSelectedIndex:pSelf.tTransButtonSelectIndex animated:YES withEvent:NO];
+            [pSelf.tableView reloadData];
+        }
     }];
     
     self.tableView.tableHeaderView = view;
