@@ -108,9 +108,10 @@
         MSNGoodsItem *item = [self.items objectAtIndex:index];
         CGSize imageSize = [MSNGoodsTableCell imageSizeForItem:item atIndex:index total:count maxWidth:self.width];
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
+        imageView.size = imageSize;
         [self.imageArray addObject:imageView];
         [self addSubview:imageView];
-        imageView.size = imageSize;
+        
         [imageView addTarget:self selector:@selector(actionImageTap:) userInfo:item];
         BOOL isBig = (item.imageSizeType==2);
         [imageView.imageView setImageWithURL:[NSURL URLWithString:(isBig?item.middle_image_url:item.small_image_url)]  placeholderImage:nil options:SDWebImageSetImageNoAnimated success:^(UIImage *image, BOOL cached) {

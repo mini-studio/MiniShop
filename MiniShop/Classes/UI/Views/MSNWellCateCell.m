@@ -48,6 +48,7 @@
         int x = 10 + (pos*(buttonSize+10));
         int y = 10 + (row*(buttonSize+10));
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
+        imageView.borderSize = 0;
         imageView.frame = CGRectMake(x, y, buttonSize, buttonSize);
         [self.contentView addSubview:imageView];
         if ([cate.image_url rangeOfString:@"http"].location == 0 ) {

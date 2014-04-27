@@ -84,7 +84,7 @@
 @property (nonatomic,strong)UIImageView *bgImageView;
 @property (nonatomic,strong)MiniUIButton *button;
 @property (nonatomic,strong)MiniUIButton *colorButton;
-@property (nonatomic)CGFloat borderSize;
+
 @end
 
 @implementation MiniUIPhotoImageView
@@ -114,11 +114,11 @@
 - (void)initSubViews
 {
     self.backgroundColor = [UIColor whiteColor];
-    CGRect frame = CGRectMake(self.borderSize, self.borderSize, self.width-2*self.borderSize, self.height-2*self.borderSize);
-    self.imageContentView = [[UIView alloc] initWithFrame:frame];
+    self.imageContentView = [[UIView alloc] initWithFrame:CGRectZero];
     self.imageContentView.layer.masksToBounds = YES;
+    self.imageContentView.backgroundColor = [UIColor redColor];
     [self addSubview:self.imageContentView];
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.imageView = [[UIImageView alloc] initWithFrame:self.imageContentView.bounds];
     [self.imageContentView addSubview:_imageView];
     self.layer.masksToBounds=YES;
     
@@ -138,11 +138,23 @@
 
 }
 
+- (void)setImagecontentViewSize
+{
+    CGFloat width = self.width-2*self.borderSize;
+    CGFloat height = self.height-2*self.borderSize;
+    CGRect frame = CGRectMake(self.borderSize, self.borderSize, width>0?width:0, height>0?height:0);
+    self.imageContentView.frame = frame;
+}
+
 - (void)setSize:(CGSize)size
 {
     [super setSize:size];
-    CGRect frame = CGRectMake(self.borderSize, self.borderSize, self.width-2*self.borderSize, self.height-2*self.borderSize);
-    self.imageContentView.frame = frame;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [self setImagecontentViewSize];
 }
 
 - (void)layoutSubviews
@@ -160,7 +172,7 @@
         self.imageView.image = nil;
     }
     else {
-        CGSize size = CGSizeMake(self.width+8, self.height+8);
+        CGSize size = CGSizeMake(self.width+2*self.borderSize, self.height+2*self.borderSize);
         CGSize imageSize = image.size;
         CGFloat scal = size.width/imageSize.width;
         CGSize nsize = CGSizeMake(imageSize.width*scal, imageSize.height*scal);
@@ -171,10 +183,7 @@
         }
         self.imageView.size = nsize;
         self.imageView.image = image;
-        self.imageView.center = CGPointMake(self.imageView.superview.width/2, self.imageView.superview.height/2);
-        UIView *v = self.imageView.superview;
-        v = self.imageView.superview;
-        
+        self.imageView.center = CGPointMake(self.imageContentView.width/2, self.imageContentView.height/2);
     }
 }
 

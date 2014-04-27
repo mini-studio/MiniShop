@@ -14,6 +14,7 @@
 @end
 
 @interface MiniUIPhotoImageView : UIView
+@property (nonatomic)CGFloat borderSize;
 @property (nonatomic,readonly) UIImageView *imageView;
 @property (nonatomic,strong)MiniUIPhotoImagePromptView *prompView;
 
