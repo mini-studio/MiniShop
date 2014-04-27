@@ -96,7 +96,7 @@
             pSelf.containerView.contentSize = CGSizeMake(count*pSelf.containerView.width, 0);
             [pSelf.topTitleView setNeedsLayout];
             pSelf.topTitleView.selectedIndex = 0;
-            [(MSNStoreContentViewController*)[pSelf.subControllers objectAtIndex:0] refreshData];
+            //[(MSNStoreContentViewController*)[pSelf.subControllers objectAtIndex:0] refreshData];
         }
         else {
             [pSelf showErrorMessage:error];
