@@ -12,7 +12,7 @@
 #import "MSWeChatViewController.h"
 #import "UITableViewCell+GroupBackGround.h"
 #import "UIColor+Mini.h"
-#import "MiniUIWebViewController.h"
+#import "MSUIWebViewController.h"
 #import "UMTableViewController.h"
 #import "UILabel+Mini.h"
 #import "MSUIAuthWebViewController.h"
@@ -221,7 +221,7 @@
     [[ClientAgent sharedInstance] placard:^(NSError *error, id data, id userInfo, BOOL cache) {
         [pSelf dismissWating];
         if (error==nil) {
-            MiniUIWebViewController *controller = [[MiniUIWebViewController alloc] init];
+            MSUIWebViewController *controller = [[MSUIWebViewController alloc] init];
             [controller loadContent:data title:@"系统公告"];
             [pSelf.navigationController pushViewController:controller animated:YES];
         }

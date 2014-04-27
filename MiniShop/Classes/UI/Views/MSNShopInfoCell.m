@@ -30,7 +30,14 @@
         self.separatorView = [[UIView alloc] initWithFrame:CGRectZero];
         self.separatorView.backgroundColor = [UIColor colorWithRGBA:0xcb7275ff];
         [self addSubview:self.separatorView];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        view.layer.masksToBounds = YES;
+        view.backgroundColor = [UIColor colorWithRGBA:0xcb727533];
+        UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-2, self.width, 1)];
+        subView.backgroundColor = [UIColor colorWithRGBA:0xcb7275ff];
+        subView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+        [view addSubview:subView];
+        self.selectedBackgroundView = view;
         self.button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"add"] highlightedImage:[UIImage imageNamed:@"add_hover"]];
         [self addSubview:self.button];
         [self.button addTarget:self action:@selector(actionButtonTap:) forControlEvents:UIControlEventTouchUpInside];

@@ -15,7 +15,7 @@
 #import "MSNShop.h"
 #import "MSNShopDetailViewController.h"
 
-@interface MSNImportFavViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface MSNImportFavViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 @end
 
 
@@ -66,6 +66,10 @@
             }
         }];
     });
-    
+}
+
+- (void)userCancelImport
+{
+    [self back];
 }
 @end

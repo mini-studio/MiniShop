@@ -65,14 +65,18 @@
 
 - (BOOL)webView:(__strong UIWebView *)webView shouldStartLoadWithRequest:(__strong NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-//    NSString *url = request.URL.absoluteString;
-//    LOG_DEBUG( @"%@", url );
-//    if ( [url rangeOfString:@"api/taobaocallback"].length > 0 && [url rangeOfString:@"&code="].length > 0 )
-//    {
-//        
-//    }
     [self showWating:nil];
     return YES;
+}
+
+- (void)back
+{
+     if ( self.callback != nil ) {
+         self.callback(NO);
+     }
+     else {
+         [super back];
+     }
 }
 
 @end

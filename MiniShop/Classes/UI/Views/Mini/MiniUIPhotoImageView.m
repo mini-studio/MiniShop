@@ -80,9 +80,11 @@
 
 @interface MiniUIPhotoImageView()
 @property (nonatomic,strong)UIImageView *imageView;
+@property (nonatomic,strong)UIView *imageContentView;
 @property (nonatomic,strong)UIImageView *bgImageView;
 @property (nonatomic,strong)MiniUIButton *button;
 @property (nonatomic,strong)MiniUIButton *colorButton;
+@property (nonatomic)CGFloat borderSize;
 @end
 
 @implementation MiniUIPhotoImageView
@@ -91,7 +93,9 @@
 {
     self = [super init];
     if (self) {
-         [self initSubViews];
+        self.borderSize = 2;
+        [self initSubViews];
+        
     }
     return self;
  
@@ -101,8 +105,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.borderSize = 2;
         [self initSubViews];
-        self.layer.masksToBounds = YES;
     }
     return self;
 }
@@ -110,12 +114,18 @@
 - (void)initSubViews
 {
     self.backgroundColor = [UIColor whiteColor];
+    CGRect frame = CGRectMake(self.borderSize, self.borderSize, self.width-2*self.borderSize, self.height-2*self.borderSize);
+    self.imageContentView = [[UIView alloc] initWithFrame:frame];
+    self.imageContentView.layer.masksToBounds = YES;
+    [self addSubview:self.imageContentView];
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [self addSubview:_imageView];
+    [self.imageContentView addSubview:_imageView];
+    self.layer.masksToBounds=YES;
+    
     self.button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
     self.button.backgroundColor = [UIColor clearColor];
     [self addSubview:self.button];
-    
+
     self.prompView = [[MiniUIPhotoImagePromptView alloc] initWithFrame:CGRectMake(0, 0, 40, 16)];
     self.prompView.hidden = YES;
     [self addSubview:self.prompView];
@@ -128,13 +138,20 @@
 
 }
 
+- (void)setSize:(CGSize)size
+{
+    [super setSize:size];
+    CGRect frame = CGRectMake(self.borderSize, self.borderSize, self.width-2*self.borderSize, self.height-2*self.borderSize);
+    self.imageContentView.frame = frame;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     CGRect frame = self.bounds;
     self.bgImageView.frame = frame;
     self.button.frame = self.bounds;
-    self.prompView.origin = CGPointMake(0, self.height-self.prompView.height);
+    self.prompView.origin = CGPointMake(self.borderSize, self.height-self.prompView.height-self.borderSize);
 }
 
 - (void)setImage:(UIImage *)image
@@ -143,7 +160,7 @@
         self.imageView.image = nil;
     }
     else {
-        CGSize size = self.size;
+        CGSize size = CGSizeMake(self.width+8, self.height+8);
         CGSize imageSize = image.size;
         CGFloat scal = size.width/imageSize.width;
         CGSize nsize = CGSizeMake(imageSize.width*scal, imageSize.height*scal);
@@ -153,8 +170,11 @@
             nsize.height = nsize.height*scal;
         }
         self.imageView.size = nsize;
-        self.imageView.center = CGPointMake(self.width/2, self.height/2);
         self.imageView.image = image;
+        self.imageView.center = CGPointMake(self.imageView.superview.width/2, self.imageView.superview.height/2);
+        UIView *v = self.imageView.superview;
+        v = self.imageView.superview;
+        
     }
 }
 

@@ -18,14 +18,15 @@
 {
     self = [super initWithFrame:CGRectMake(0, 0, 100, 86)];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+        //self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+        self.backgroundColor = [UIColor clearColor];
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width-40)/2, 10, 40, 40)];
         NSMutableArray *array = [NSMutableArray arrayWithCapacity:12];
-        for (int index = 10; index > 0; index--)
+        for (int index = 9; index > 0; index--)
         {
             [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading%d",index]]];
         }
-        for (int index = 1; index <= 10; index++)
+        for (int index = 1; index <= 9; index++)
         {
             [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading%d",index]]];
         }

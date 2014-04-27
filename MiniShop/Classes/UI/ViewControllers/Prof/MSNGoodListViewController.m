@@ -60,9 +60,15 @@
 {
     self.tableView = [self createEGOTableView];
     [self.contentView addSubview:self.tableView];
-    __weak typeof (self) itSelf = self;
+   
+    [self setPullToRefreshAction];
+}
+
+- (void)setPullToRefreshAction
+{
+    __PSELF__;
     [self.tableView setPullToRefreshAction:^{
-        [itSelf loadData:1];
+        [pSelf loadData:1];
     }];
 }
 

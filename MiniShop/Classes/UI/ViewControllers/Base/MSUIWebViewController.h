@@ -8,10 +8,17 @@
 
 #import "MiniUIWebViewController.h"
 
+typedef enum {
+   WebviewNaviTypeClose,
+   WebviewNaviTypeBack
+}
+WebviewNaviType;
+
 @interface MSUIWebViewController : MiniUIWebViewController
 @property (nonatomic,strong) NSString *uri;
 @property (nonatomic,strong) NSString *htmlStr;
 @property (nonatomic)CGFloat dismissWaitingDelay;
+@property (nonatomic)WebviewNaviType naviType;
 @property (nonatomic)BOOL rightRefresh;
 @property (nonatomic)BOOL toolbar;
 - (id)initWithUri:(NSString *)uri title:(NSString *)title toolbar:(BOOL)toolbar;

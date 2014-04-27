@@ -306,9 +306,9 @@
     {
         self.indicator = [[MiniUIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     }
-    if ( message == nil )
-         self.indicator.labelText = @"正在努力加载...";
-    else
+//    if ( message == nil )
+//         self.indicator.labelText = @"正在努力加载...";
+//    else
         self.indicator.labelText = @"";
     [self.indicator showInView:self.contentView];
 }

@@ -37,6 +37,7 @@
 @property (nonatomic,strong)UIImageView *imageView;
 @property (nonatomic,strong)MiniUIButton *button;
 @property (nonatomic,assign)id<MSNUIDetailImageViewDelegate> imageViewDelegate;
+@property (nonatomic,strong)UIImageView *moreImageView;
 @end
 
 @implementation MSNUIDetailImageView
@@ -51,6 +52,8 @@
         self.button.backgroundColor = [UIColor clearColor];
         [self addSubview:self.button];
         [self.button addTarget:self action:@selector(touchUpImage) forControlEvents:UIControlEventTouchUpInside];
+        self.moreImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more_pic"]];
+        
     }
     return self;
 }
@@ -74,6 +77,8 @@
     if (self.imageViewDelegate) {
         [self.imageViewDelegate didLoadImage];
     }
+    self.moreImageView.origin = CGPointMake(self.width-2*self.moreImageView.width, self.height-2*self.moreImageView.height);
+    [self addSubview:self.moreImageView];
 }
 
 - (void)touchUpImage
@@ -271,7 +276,7 @@
     if ( self.indicator.showing) {
         return;
     }
-    self.indicator.labelText = @"正在努力加载...";
+    //self.indicator.labelText = @"正在努力加载...";
     self.indicator.userInteractionEnabled = NO;
     [self.indicator showInView:self userInterfaceEnable:YES];
 }
@@ -595,6 +600,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestStr]];
     [[ClientAgent sharedInstance] perfectHttpRequest:request];
     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithRequest:request title:item.goods_title toolbar:YES];
+    controller.naviType = WebviewNaviTypeClose;
     controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -608,7 +614,7 @@
 {
     MSNGoodsItem *item = [self currentGoodsItem];
     UIImage *image = [UIImage imageNamed:(item.like_goods==1?@"star_hover":@"star")];
-    UILabel *titleLabel = [button viewWithTag:10000];
+    UILabel *titleLabel = (UILabel*)[button viewWithTag:10000];
     if (titleLabel!=nil) {
         titleLabel.text = item.like_goods==1?@"取消收藏":@"收藏";
     }

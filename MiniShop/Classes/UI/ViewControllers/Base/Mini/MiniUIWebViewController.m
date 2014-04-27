@@ -206,7 +206,7 @@
         return [super navLeftButtonWithTitle:title target:target action:action];
     }
     else {
-        MiniUIButton *button = [MiniUIButton buttonWithImage:[UIImage imageNamed:@"close"] highlightedImage:[UIImage imageNamed:@"close_h"]];
+        MiniUIButton *button = [self naviRightButton];
         button.width += 14;
         button.imageEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
         button.showsTouchWhenHighlighted = YES;
@@ -217,6 +217,11 @@
         
         return  tmpBarButtonItem;
     }
+}
+
+- (MiniUIButton*)naviRightButton
+{
+    return [MiniUIButton buttonWithImage:[UIImage imageNamed:@"close"] highlightedImage:[UIImage imageNamed:@"close_h"]];
 }
 
 - (void)showWating:(NSString *)message

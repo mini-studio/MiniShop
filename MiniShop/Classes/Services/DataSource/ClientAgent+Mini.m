@@ -352,11 +352,20 @@
             [[ClientAgent sharedInstance] auth:nil block:^(NSError *error, id data, id userInfo, BOOL cache) {
                 if ( error == nil ) {
                     MSUIAuthWebViewController *authController = [[MSUIAuthWebViewController alloc] init];
+                    __weak MSUIAuthWebViewController *__authController = authController;
                     authController.htmlStr = data;
                     [authController setCallback:^(bool state) {
-                        [controller.navigationController popViewControllerAnimated:NO];
-                        [MSSystem sharedInstance].authForImportFav = 1;
-                        __block__();
+                        if (state) {
+                            [controller.navigationController popViewControllerAnimated:NO];
+                            [MSSystem sharedInstance].authForImportFav = 1;
+                            __block__();
+                        }
+                        else {
+                            [__authController back:NO];
+                            if ([controller respondsToSelector:@selector(userCancelImport)]) {
+                                [controller performSelector:@selector(userCancelImport) withObject:nil];
+                            }
+                        }
                     }];
                     [controller.navigationController pushViewController:authController animated:YES];
                 }

@@ -21,6 +21,7 @@
     if (self = [super init]) {
         [self registerBlock];
         _dismissWaitingDelay = 5.0;
+        _naviType = WebviewNaviTypeBack;
     }
     return self;
 }
@@ -32,6 +33,7 @@
         self.cTitle = title;
         self.uri = uri;
         self.toolbar = toolbar;
+        self.naviType = WebviewNaviTypeBack;
         [self registerBlock];
     }
     return self;
@@ -44,6 +46,7 @@
         self.cTitle = title;
         self.request = request;
         self.toolbar = toolbar;
+        self.naviType = WebviewNaviTypeBack;
         [self registerBlock];
     }
     return self;
@@ -72,6 +75,16 @@
     }
     else if (self.request != nil) {
         [self loadRequest:self.request];
+    }
+}
+
+- (MiniUIButton*)naviRightButton
+{
+    if (self.naviType==WebviewNaviTypeClose) {
+        return [MiniUIButton buttonWithImage:[UIImage imageNamed:@"close"] highlightedImage:[UIImage imageNamed:@"close_h"]];
+    }
+    else {
+       return [MiniUIButton buttonWithImage:[UIImage imageNamed:@"navi_back"] highlightedImage:[UIImage imageNamed:@"navi_back_h"]];
     }
 }
 

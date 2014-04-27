@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 mini. All rights reserved.
 //
 
-#import "MiniUIWebViewController.h"
+#import "MSUIWebViewController.h"
 
-@interface MSNSearchShopHelpViewController : MiniUIWebViewController
+@interface MSNSearchShopHelpViewController : MSUIWebViewController
 
 @end

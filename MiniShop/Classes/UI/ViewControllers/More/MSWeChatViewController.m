@@ -37,22 +37,14 @@
 {
     [super loadView];
     [self setNaviBackButton];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, self.contentView.width, 40)];
-    label.numberOfLines=2;
-    label.text = @"微信号:youjiaxiaodianapp\nwenjun133";
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:16];
-    [self.contentView addSubview:label];
-    UIImage *image = [QRCodeGenerator qrImageForString:@"微信号:youjiaxiaodianapp" imageSize:200];
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.center = CGPointMake(self.contentView.width/2, imageView.height/2 + label.bottom);
-    [self.contentView addSubview:imageView];
-}
-
-- (void)addLogo
-{
-
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qrcode"]];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.contentView.bounds];
+    imageView.centerX = scrollView.width/2;
+    [scrollView addSubview:imageView];
+    scrollView.height = self.contentView.height;
+    [self.contentView addSubview:scrollView];
+    scrollView.contentSize = CGSizeMake(self.contentView.width, imageView.height>scrollView.height?imageView.height:scrollView.height+1);
 }
 
 - (void)viewDidLoad

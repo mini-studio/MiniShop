@@ -173,6 +173,7 @@
         self.showNaviView = YES;
         self.random = NO;
         self.hidesBottomBarWhenPushed = YES;
+        self.orderBy = @"time";
     }
     return self;
 }
@@ -180,7 +181,6 @@
 - (void)setRandom:(BOOL)random
 {
     _random = random;
-    self.orderBy = @"time";
 }
 
 - (void)loadView
@@ -236,6 +236,22 @@
     [self createToolbar:44];
 }
 
+- (void)setPullToRefreshAction
+{
+    __PSELF__;
+    if (self.random) {
+        [self.tableView setPullToRefreshAction:^{
+            [pSelf randomShop];
+        }];
+    }
+    else {
+        [self.tableView setPullToRefreshAction:^{
+             [pSelf searchWithKey:pSelf.key orderby:pSelf.orderBy];
+        }];
+    }
+ 
+}
+
 - (void)resetFavButton
 {
     if (self.shopInfo.user_like==1) {
@@ -251,10 +267,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.random) {
-        [self randomShop];
-    }
-    else {
+    if (!self.random) {
         if (self.shopInfo.shop_title.length==0) {
             [self loadShopInfo];
         }
@@ -262,9 +275,8 @@
             [self.naviTitleView setTitle:self.shopInfo.shop_title];
             [self.shopInfoView setShopInfo:self.shopInfo];
         }
-        [self searchWithKey:self.key orderby:@"time"];
     }
-    
+    [self.tableView triggerRefresh];
 }
 
 - (void)createToolbar:(CGFloat)height
@@ -332,7 +344,6 @@
 - (void)randomShop
 {
     __PSELF__;
-    [self showWating:nil];
     [[ClientAgent sharedInstance] guesslikeshop:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
             pSelf.shopInfo = data;
@@ -344,7 +355,6 @@
             [pSelf loadData:1 orderby:@"time" delay:0];
         }
         else {
-            [pSelf dismissWating];
             [pSelf showErrorMessage:error];
         }
     }];
@@ -357,11 +367,12 @@
 
 - (void)loadData:(int)page orderby:(NSString*)orderBy delay:(CGFloat)delay
 {
+    if (page==1) {
+        [self.tableView refreshDone];
+    }
     __PSELF__;
-    [self showWating:nil];
     [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:orderBy key:self.key page:page block:^
     (NSError *error, MSNShopDetail *data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if (error == nil) {
             pSelf.messageView.numberLabel.text = [NSString stringWithFormat:@"%@:%@件", self.key.length
            ==0?@"全部在售商品":[NSString stringWithFormat:@"和%@相关",self.key],data.goods_num];
@@ -413,9 +424,7 @@
 - (void)actionToolBarFav:(MiniUIButton*)button
 {
     __PSELF__;
-    [self showWating:nil];
     [[ClientAgent sharedInstance] setfavshop:self.shopInfo.shop_id action:self.shopInfo.user_like?@"off":@"on" block:^(NSError *error, id data, id userInfo, BOOL cache) {
-        [pSelf dismissWating];
         if ( error != nil ) {
             [pSelf showMessageInfo:[error localizedDescription] delay:2];
         }
