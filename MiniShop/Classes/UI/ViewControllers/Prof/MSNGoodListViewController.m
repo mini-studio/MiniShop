@@ -229,7 +229,9 @@
 - (void)receiveData:(MSNGoodsList*)data page:(int)page
 {
     if(page == 1){
-        [self.tableView refreshDone];
+        if ([self.tableView isRefreshing]) {
+            [self.tableView refreshDone];
+        }
         self.dataSource = data;
     }
     else {
