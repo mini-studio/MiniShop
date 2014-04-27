@@ -103,10 +103,9 @@
 {
     _items = items;
     self.imageView.image = nil;
-    int count = items.count;
-    
+    int count = self.items.count;
     for (int index = 0; index < count; index++) {
-        MSNGoodsItem *item = [_items objectAtIndex:index];
+        MSNGoodsItem *item = [self.items objectAtIndex:index];
         CGSize imageSize = [MSNGoodsTableCell imageSizeForItem:item atIndex:index total:count maxWidth:self.width];
         MiniUIPhotoImageView *imageView = [[MiniUIPhotoImageView alloc] init];
         [self.imageArray addObject:imageView];
@@ -164,9 +163,20 @@
     CGFloat width = maxWidth;
     CGSize size = CGSizeMake(0,0);
     height += (size.height);
-    int count = items.count;
     CGFloat tempWidth = 0;
     CGFloat halfWidht = maxWidth/4;
+    NSMutableArray *newItems = [NSMutableArray array];
+    for (MSNGoodsItem *item in items) {
+        if (item.imageSizeType==0) {
+            [newItems addObject:item];
+        }
+    }
+    int count = newItems.count;
+    for(int index=0;index<count;index++) {
+        MSNGoodsItem *item = newItems[index];
+        [self imageSizeForItem:item atIndex:index total:count maxWidth:width];
+    }
+    count = items.count;
     if ( count>0 ) { // 3图片两行为一组
         for (int index=0;index<items.count;index++) {
             MSNGoodsItem *item = items[index];
