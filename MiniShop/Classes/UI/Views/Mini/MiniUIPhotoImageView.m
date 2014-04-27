@@ -116,7 +116,6 @@
     self.backgroundColor = [UIColor whiteColor];
     self.imageContentView = [[UIView alloc] initWithFrame:CGRectZero];
     self.imageContentView.layer.masksToBounds = YES;
-    self.imageContentView.backgroundColor = [UIColor redColor];
     [self addSubview:self.imageContentView];
     self.imageView = [[UIImageView alloc] initWithFrame:self.imageContentView.bounds];
     [self.imageContentView addSubview:_imageView];
