@@ -270,7 +270,7 @@
     NSDictionary *params = @{@"token":[MSSystem sharedInstance].deviceToken};
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     params = [self perfectParameters:params headers:headers];
-    NSString *addr = [self requestUri:@"iostoken"];
+    NSString *addr = [self requestNewUri:@"iostoken"];
 #ifdef DEBUG
 //    {
 //        NSMutableString *pm = [NSMutableString string];

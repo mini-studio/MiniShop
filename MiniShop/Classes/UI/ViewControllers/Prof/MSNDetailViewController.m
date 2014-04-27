@@ -596,7 +596,7 @@
 {
     [MobClick event:MOB_GOODS_DETAIL];
     MSNGoodsItem *item = [self.items objectAtIndex:index];
-    NSString* requestStr = [NSString stringWithFormat:@"http://www.youjiaxiaodian.com/new/jump?type=%@&id=%@&sche=youjiaxiaodian", @"goods", item.goods_id];
+    NSString* requestStr = [NSString stringWithFormat:@"http://%@/new/jump?type=%@&id=%@&sche=youjiaxiaodian", [ClientAgent host], @"goods", item.goods_id];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestStr]];
     [[ClientAgent sharedInstance] perfectHttpRequest:request];
     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithRequest:request title:item.goods_title toolbar:YES];

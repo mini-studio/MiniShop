@@ -367,9 +367,6 @@
 
 - (void)loadData:(int)page orderby:(NSString*)orderBy delay:(CGFloat)delay
 {
-    if (page==1) {
-        [self.tableView refreshDone];
-    }
     __PSELF__;
     [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:orderBy key:self.key page:page block:^
     (NSError *error, MSNShopDetail *data, id userInfo, BOOL cache) {
@@ -451,7 +448,7 @@
 
 - (void)actionToolTryAgain:(MiniUIButton *)button
 {
-    [self randomShop];
+    [self.tableView triggerRefresh];
 }
 
 
