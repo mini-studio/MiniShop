@@ -106,7 +106,7 @@ MSMainTabViewController *tabController=nil;
     self.tabBarView.backgroundColor = [UIColor colorWithRGBA:0xf7eeefff];
     self.items = [NSArray arrayWithObjects:
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNStoreViewController class] image:[MiniUIImage imageNamed:@"mymall"] highlightedImage:[MiniUIImage imageNamed:@"mymall_hover"] title:@"我的商城"],
-                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNEspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"特卖广场"],
+                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNEspecialIndexViewController class] image:[MiniUIImage imageNamed:@"sale"] highlightedImage:[MiniUIImage imageNamed:@"sale_hover"] title:@"广场"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNCreditableIndexViewController class] image:[MiniUIImage imageNamed:@"shop"] highlightedImage:[MiniUIImage imageNamed:@"shop_hover"] title:@"好店汇"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNFavViewController class] image:[MiniUIImage imageNamed:@"star"] highlightedImage:[MiniUIImage imageNamed:@"star_hover"] title:@"收藏夹"],
                   [[MiniTabBarItem alloc] initWithControllerClass:[MSNSettingsViewController class] image:[MiniUIImage imageNamed:@"more"] highlightedImage:[MiniUIImage imageNamed:@"more_hover"] title:@"更多"],

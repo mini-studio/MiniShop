@@ -327,17 +327,24 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         [[NSNotificationCenter defaultCenter] postNotificationName:MSNotificationReceiveRemote object:nil];
         id msg = [userInfo valueForKey:@"msg"];
         if ( msg != nil ) {
-            NSString * shopId = [msg valueForKey:@"shop_id"];
-            if (shopId!=nil) {
-                MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
-                MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
-                shopInfo.shop_id = shopId;
-                controller.shopInfo = shopInfo;
+            NSString * goodsId = [msg valueForKey:@"goods_id"];
+            if (goodsId!=nil && goodsId.length>0) {
+                MSNDetailViewController *controller = [[MSNDetailViewController alloc] init];
+                controller.goodsId = goodsId;
                 [naviController pushViewController:controller animated:YES];
             }
             else {
-                [MiniUIAlertView showAlertTipWithTitle:@"好店汇" message:@"not found shop info" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
-                }];
+                NSString * shopId = [msg valueForKey:@"shop_id"];
+                if (shopId!=nil && shopId.length>0) {
+                    MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+                    MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
+                    shopInfo.shop_id = shopId;
+                    controller.shopInfo = shopInfo;
+                    [naviController pushViewController:controller animated:YES];
+                }
+                else {
+                    [MiniUIAlertView showAlertTipWithTitle:@"好店汇" message:@"not found shop info" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {}];
+                }
             }
         }
     }

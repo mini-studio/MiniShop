@@ -149,6 +149,7 @@
 
 
 @interface MSNShopDetailViewController ()
+@property (nonatomic,strong)UIView *shopView;
 @property (nonatomic,strong)MSNShopInfoView *shopInfoView;
 @property (nonatomic,strong)MSNShopMessageView *messageView;
 @property (nonatomic,strong)MiniUIButton *favButton;
@@ -206,10 +207,12 @@
     view.layer.masksToBounds = YES;
     [view addSubview:self.shopInfoView];
     [view addSubview:self.favButton];
+    self.shopView = view;
     
-    __PSELF__;
     self.messageView = [[MSNShopMessageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.width, 36)];
     self.messageView.backgroundColor = view.backgroundColor;
+    
+    __PSELF__;
     [self.messageView setHandleSearchBlock:^(NSString *key, NSString *orderBy) {
         if (pSelf.tGoodsList==nil) {
             pSelf.tGoodsList = pSelf.dataSource;
@@ -276,6 +279,9 @@
             [self.shopInfoView setShopInfo:self.shopInfo];
         }
     }
+    if (self.shopInfo.shop_title.length==0) {
+        [self hiddenShopView:YES];
+    }
     [self.tableView triggerRefresh];
 }
 
@@ -329,11 +335,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)hiddenShopView:(BOOL)hidden
+{
+    self.shopView.hidden = hidden;
+    self.messageView.hidden = hidden;
+}
+
 - (void)loadShopInfo
 {
     __PSELF__;
     [[ClientAgent sharedInstance] shopinfo:self.shopInfo.shop_id block:^(NSError *error, MSNShopInfo* data, id userInfo, BOOL cache) {
         if (error==nil){
+            [self hiddenShopView:NO];
             pSelf.shopInfo = data;
             pSelf.title = data.shop_title;
             [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
@@ -351,6 +364,7 @@
             [pSelf.naviTitleView setNeedsLayout];
             [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
             [pSelf resetFavButton];
+            [self hiddenShopView:NO];
             pSelf.contentView.hidden=NO;
             [pSelf loadData:1 orderby:@"time" delay:0];
         }
@@ -371,6 +385,7 @@
     [[ClientAgent sharedInstance] shopgoods:self.shopInfo.shop_id tagId:@"" sort:orderBy key:self.key page:page block:^
     (NSError *error, MSNShopDetail *data, id userInfo, BOOL cache) {
         if (error == nil) {
+            [pSelf hiddenShopView:NO];
             pSelf.messageView.numberLabel.text = [NSString stringWithFormat:@"%@:%@件", self.key.length
            ==0?@"全部在售商品":[NSString stringWithFormat:@"和%@相关",self.key],data.goods_num];
             MSNGoodsList *list = [[MSNGoodsList alloc] init];
