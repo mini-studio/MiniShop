@@ -42,16 +42,16 @@
     MSSystem *system = [MSSystem sharedInstance];
     [system initSystem];
     self.isFirstRun = [MSSystem isFirstRun];
-    if (  self.isFirstRun )
-    {
-        [UIApplication sharedApplication].statusBarHidden = YES;
-        self.viewController = [[MSGuideViewController alloc] init];
-        self.window.rootViewController = self.viewController;
-    }
-    else
-    {
+//    if (  self.isFirstRun )
+//    {
+//        [UIApplication sharedApplication].statusBarHidden = YES;
+//        self.viewController = [[MSGuideViewController alloc] init];
+//        self.window.rootViewController = self.viewController;
+//    }
+//    else
+//    {
         [self loadMainController];
-    }
+//    }
 
     [[UIApplication sharedApplication]  registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     [self.window makeKeyAndVisible];
@@ -155,7 +155,7 @@
 
 - (void)umengSocia
 {
-    NSString *url = @"http://www.youjiaxiaodian.com";
+    NSString *url = [ClientAgent host];
     //打开调试log的开关
     [UMSocialData openLog:YES];
     

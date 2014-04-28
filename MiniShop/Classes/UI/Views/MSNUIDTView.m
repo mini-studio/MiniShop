@@ -127,7 +127,7 @@
 - (void)loadDetail
 {
     [MobClick event:MOB_DETAIL_PULL];
-    NSString *url =[NSString stringWithFormat:@"http://www.youjiaxiaodian.com/new/showgoodsdescimage?screenY=960&screenW=640&id=%@",self.mid];
+    NSString *url =[NSString stringWithFormat:@"%@/new/showgoodsdescimage?screenY=960&screenW=640&id=%@",[ClientAgent host],self.mid];
     if ( ![url isEqualToString:self.lastRequestURL] ) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]];
         [_webView loadRequest:request];

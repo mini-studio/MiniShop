@@ -328,11 +328,17 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
         id msg = [userInfo valueForKey:@"msg"];
         if ( msg != nil ) {
             NSString * shopId = [msg valueForKey:@"shop_id"];
-            MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
-            MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
-            shopInfo.shop_id = shopId;
-            controller.shopInfo = shopInfo;
-            [naviController pushViewController:controller animated:YES];
+            if (shopId!=nil) {
+                MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
+                MSNShopInfo *shopInfo = [[MSNShopInfo alloc] init];
+                shopInfo.shop_id = shopId;
+                controller.shopInfo = shopInfo;
+                [naviController pushViewController:controller animated:YES];
+            }
+            else {
+                [MiniUIAlertView showAlertTipWithTitle:@"好店汇" message:@"not found shop info" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+                }];
+            }
         }
     }
 }

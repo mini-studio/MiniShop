@@ -22,7 +22,6 @@
 #import "NSString+mini.h"
 
 #define SNSNAMES @[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToTencent,UMShareToQQ,UMShareToRenren,UMShareToDouban]
-#define U_PATH @"http://www.youjiaxiaodian.com/new/share?scheme=haodianhui"
 
 @implementation MSWebChatUtil
 #define BUFFER_SIZE 10
@@ -40,7 +39,7 @@ MSWebChatUtil *shareUtil = nil;
 + (void)shareGoodsItem:(MSNGoodsItem*)GoodsItem controller:(UIViewController *)controller
 {
     NSString *info = [GoodsItem jsonString];
-    NSString *url = [NSString stringWithFormat:@"%@&m=goods&id=%@",U_PATH,GoodsItem.goods_id];
+    NSString *url = [NSString stringWithFormat:@"%@/new/share?scheme=haodianhui&m=goods&id=%@",[ClientAgent host],GoodsItem.goods_id];
     
     NSString *text = GoodsItem.shop_title;
     if (text==nil)text = @"";
@@ -80,7 +79,7 @@ MSWebChatUtil *shareUtil = nil;
 + (void)shareShop:(MSNShopInfo*)shopInfo controller:(UIViewController *)controller
 {
     [MobClick event:MOB_SHARE_SHOP];
-    NSString *url = [NSString stringWithFormat:@"%@&m=share_shop&ids=%@",U_PATH,shopInfo.shop_id];
+    NSString *url = [NSString stringWithFormat:@"%@/new/share?scheme=haodianhui&m=share_shop&ids=%@",[ClientAgent host],shopInfo.shop_id];
     NSString *text = [shopInfo shop_title];
     if (text==nil)text = @"";
     MSNUMSocialUIMonitor *monitor = [[MSNUMSocialUIMonitor alloc] init];
@@ -127,7 +126,7 @@ MSWebChatUtil *shareUtil = nil;
     if ( ids.length > 0 )
     {
         [ids deleteCharactersInRange:NSMakeRange(ids.length-1, 1)];
-        NSString *url = [NSString stringWithFormat:@"%@&m=share_shop&ids=%@",U_PATH,ids];
+        NSString *url = [NSString stringWithFormat:@"%@/new/share?scheme=haodianhui&m=share_shop&ids=%@",[ClientAgent host],ids];
         
         MSNUMSocialUIMonitor *monitor = [[MSNUMSocialUIMonitor alloc] init];
         monitor.callback = ^(NSString *platformName,UMSocialData *socialData) {

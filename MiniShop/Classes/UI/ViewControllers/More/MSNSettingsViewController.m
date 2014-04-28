@@ -239,7 +239,6 @@
 //卖家一键报名处
 - (void)actionForJoin
 {
-//    MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com/api/sellerreg" title:@"" toolbar:NO];
     MSJoinViewController *controller = [[MSJoinViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -314,7 +313,7 @@
 }
 - (void)actionForSeller
 {
-     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com/api/sellerreg" title:@"" toolbar:NO];
+     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:[NSString stringWithFormat:@"%@/api/sellerreg",[ClientAgent host]] title:@"" toolbar:NO];
     controller.defaultBackButton = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }

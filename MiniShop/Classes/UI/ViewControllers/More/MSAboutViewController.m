@@ -88,7 +88,7 @@
     address.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     __weak typeof (self) pSelf = self;
     [address setTouchupHandler:^(MiniUIButton *button) {
-        MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:@"http://www.youjiaxiaodian.com" title:nil toolbar:YES];
+        MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithUri:[ClientAgent host] title:nil toolbar:YES];
         [pSelf.navigationController pushViewController:controller animated:YES];
     }];
     [self.contentView addSubview:address];

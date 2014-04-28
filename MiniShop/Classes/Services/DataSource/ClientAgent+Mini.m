@@ -35,8 +35,8 @@
 
 + (NSString *)host
 {
-    //return @"http://www.youjiaxiaodian.com";
-    return @"http://www.ijingzhi.com";
+    return @"http://www.youjiaxiaodian.com";
+    //return @"http://www.ijingzhi.com";
 }
 
 
