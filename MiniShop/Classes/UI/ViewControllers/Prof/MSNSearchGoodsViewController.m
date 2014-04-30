@@ -18,7 +18,7 @@
 #define SEARCH_IN_ALL_SHOP @"0"
 
 @interface MSNSearchGoodsViewHeaderView : UIView
-@property (nonatomic, strong)RTLabel *titleLabel;
+@property (nonatomic, strong)UILabel *titleLabel;
 @property (nonatomic, strong)MSNTransformButton *orderByButton;
 @end
 
@@ -28,7 +28,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.titleLabel = [[RTLabel alloc] initWithFrame:CGRectMake(15, (self.height-16)/2, self.width*2/3-30, 16)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, (self.height-16)/2, self.width*2/3-30, 16)];
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+        self.titleLabel.textColor = [UIColor colorWithRGBA:0xd14c60ff];
         self.titleLabel.font = [UIFont systemFontOfSize:14];
         self.orderByButton = [[MSNTransformButton alloc] initWithFrame:CGRectMake(self.titleLabel.right + 30, 0, self.width/3-60, self.height)];
         UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(self.titleLabel.right, 0, 1, self.height)];
@@ -51,7 +53,7 @@
 
 - (void)setResultNumber:(int)number key:(NSString*)key
 {
-    [_titleLabel setText:[NSString stringWithFormat:@"<font color='#414345'>共有</font><font color='#d14c60'>%d</font>个宝贝",number]];
+    [_titleLabel setText:[NSString stringWithFormat:@"共有%d个宝贝",number]];
 }
 
 @end

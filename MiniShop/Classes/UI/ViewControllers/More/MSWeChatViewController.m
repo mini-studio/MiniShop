@@ -107,17 +107,18 @@
     label = [self textLabel:@"产品经理 首席客服matt微信账号" frame:CGRectMake(left, top, 200, 10) fontSize:10];
     [scrollView addSubview:label];
     
-    top+=(label.height + 12);
+    top = label.bottom + 12;
     label = [self textLabel:@"moneygalaxy" frame:CGRectMake(left, top, 200, 18) fontSize:14];
     [scrollView addSubview:label];
-    top+=label.height + 12;
+    top =label.bottom + 12;
 
     imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wchat_matt"]];
     imageView.center = CGPointMake(scrollView.width/2,top + imageView.height/2 );
     [scrollView addSubview:imageView];
+    top=imageView.bottom + 12;
     
     
-    scrollView.contentSize = CGSizeMake(self.contentView.width, imageView.height>scrollView.height?imageView.height:scrollView.height+1);
+    scrollView.contentSize = CGSizeMake(self.contentView.width, top>scrollView.height?top:scrollView.height+1);
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo

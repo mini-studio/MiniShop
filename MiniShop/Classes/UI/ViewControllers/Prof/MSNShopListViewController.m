@@ -99,11 +99,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIColor*)backgroundColor
-{
-    return [UIColor colorWithRGBA:0xfaf1f2ff];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataSource.info.count;

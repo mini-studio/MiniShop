@@ -601,7 +601,7 @@
     [[ClientAgent sharedInstance] perfectHttpRequest:request];
     MSUIWebViewController *controller = [[MSUIWebViewController alloc] initWithRequest:request title:item.goods_title toolbar:YES];
     controller.naviType = WebviewNaviTypeClose;
-    controller.autoLayout = NO;
+    //controller.autoLayout = NO;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -690,7 +690,9 @@
             [self.navigationController setNavigationBarHidden:YES animated:YES];
             self.dtView.alpha = 1.0f;
             self.dtView.top = 0;
-            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+           if (MAIN_VERSION>=7) {
+             [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+            }
         }];
     }
 }
@@ -700,7 +702,9 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.dtView.alpha = 0.0f;
         self.dtView.top = self.view.height;
+        if (MAIN_VERSION>=7) {
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+        }
     }completion:^(BOOL finished) {
         [self.dtView removeFromSuperview];
     }];

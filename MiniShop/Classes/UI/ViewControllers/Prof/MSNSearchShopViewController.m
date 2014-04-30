@@ -16,6 +16,7 @@
 #import "MSNCate.h"
 #import "MiniUIWebViewController.h"
 #import "MSNSearchShopHelpViewController.h"
+#import "UIColor+Mini.h"
 
 @interface MSNSearchShopViewController ()<MSNUISearchBarDelegate,MSNShopInfoCellDelegate,MSTransformButtonDelegate>
 @property (nonatomic,strong)MSNUISearchBar *searchBar;
@@ -140,6 +141,7 @@
     return [MSNShopInfoCell height:info];
 }
 
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"cell";
@@ -149,7 +151,7 @@
     {
         cell = [[MSNShopInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.shopInfoDelegate = self;
-        cell.backgroundColor = [self backgroundColor];
+        cell.contentView.backgroundColor = [self backgroundColor];
     }
     cell.shopInfo = info;
     return cell;
