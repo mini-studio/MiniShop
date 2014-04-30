@@ -303,19 +303,11 @@
         [button addTarget:self action:@selector(actionToolTryAgain:) forControlEvents:UIControlEventTouchUpInside];
     }
     else {
-        MiniUIButton *button = [MiniUIButton createToolBarButton:@"收藏" imageName:@"star" hImageName:@"star"];
-        button.center = CGPointMake(50,centerY);
-        [toolbar addSubview:button];
-        [button addTarget:self action:@selector(actionToolBarFav:) forControlEvents:UIControlEventTouchUpInside];
-        self.toolBarFavButton = button;
-        
-        button = [MiniUIButton createToolBarButton:@"分享" imageName:@"share" hImageName:@"share_hover"];
+        MiniUIButton *button = [MiniUIButton createToolBarButton:@"分享此店" imageName:@"share" hImageName:@"share_hover"];
         button.center = CGPointMake(toolbar.width/2,centerY);
         [toolbar addSubview:button];
         [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
         self.toolBarShareButton = button;
-        self.toolBarFavButton.left = 60;
-        self.toolBarShareButton.right = self.contentView.width-60;
     }
 }
 
