@@ -155,7 +155,7 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
 
 - (void)checkVersion:(void (^)())block  force:(BOOL)force
 {
-    if ( self.lastCheckUpdate == nil || force || [self.lastCheckUpdate  timeIntervalSinceNow] < -24*3600 )
+    if ( YES || self.lastCheckUpdate == nil || force || [self.lastCheckUpdate  timeIntervalSinceNow] < -24*3600 )
     {
         [[ClientAgent sharedInstance] version:nil block:^(NSError *error, MSVersion* data, id userInfo, BOOL cache) {
             if ( error == nil )
@@ -341,9 +341,6 @@ SYNTHESIZE_MINI_ARC_SINGLETON_FOR_CLASS(MSSystem)
                     shopInfo.shop_id = shopId;
                     controller.shopInfo = shopInfo;
                     [naviController pushViewController:controller animated:YES];
-                }
-                else {
-                    [MiniUIAlertView showAlertTipWithTitle:@"好店汇" message:@"not found shop info" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {}];
                 }
             }
         }

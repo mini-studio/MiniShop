@@ -246,7 +246,7 @@
     NSDictionary *params = @{@"device":@"iphone",@"cv":version,@"firstRun": firstRun ?@"1":@"0",@"ver":[NSString stringWithFormat:@"%d",MAIN_VERSION]};
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     params = [self perfectParameters:params headers:headers];
-    NSString *addr = [self requestUri:@"newversion"];
+    NSString *addr = [self requestNewUri:@"version"];
     [self getDataFromServer:addr params:params headers:headers cachekey:nil clazz:[MSVersion class] isJson:YES showError:NO block:^(NSError *error, MSVersion* data, BOOL cache) {
         block(error,data,userInfo,cache);
     }];

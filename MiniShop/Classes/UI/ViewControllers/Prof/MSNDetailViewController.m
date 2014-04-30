@@ -628,20 +628,17 @@
     MSNGoodsItem *item = [self currentGoodsItem];
     item.like_goods = (item.like_goods+1)%2;
     [self resetFavButton:button];
-    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:(item.like_goods==1?@"off":@"on") block:^(NSError *error, id data, id userInfo, BOOL cache) {
+    [[ClientAgent sharedInstance] setfavgoods:item.goods_id action:(item.like_goods==0?@"off":@"on") block:^(NSError *error, id data, id userInfo, BOOL cache) {
         if ( error != nil ) {
             [pSelf showMessageInfo:[error localizedDescription] delay:2];
         }
         else {
             if (item.like_goods==1){
                [pSelf showMessageInfo:@"收藏成功" delay:2];
-               // item.like_goods=1;
             }
             else {
                 [pSelf showMessageInfo:@"取消成功" delay:2];
-              //  item.like_goods=0;
             }
-           // [self resetFavButton:button];
         }
     }];
 }

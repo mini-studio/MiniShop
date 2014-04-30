@@ -258,7 +258,7 @@
         NSString *alertStr =[apsDic objectForKey:@"alert"];
         if (alertStr != nil && alertStr.length)
         {
-            [MiniUIAlertView showAlertWithTitle:@"有家小店" message:alertStr block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+            [MiniUIAlertView showAlertWithTitle:@"美啦a梦" message:alertStr block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
                 if ( buttonIndex != alertView.cancelButtonIndex )
                 {
                     [MSSystem didReceiveRemoteNotification:userInfo currentNaviController:[self currentNaviController]];
