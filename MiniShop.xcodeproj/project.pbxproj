@@ -72,6 +72,10 @@
 		C14E9B0D190CCD0800910D01 /* more_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E9B0C190CCD0800910D01 /* more_pic@2x.png */; };
 		C14E9B0F190CE51700910D01 /* qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C14E9B0E190CE51700910D01 /* qrcode@2x.png */; };
 		C15DF8F3186127A70011EF94 /* MSNGoodsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */; };
+		C160B2771911380D0016E53F /* empty-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C160B2751911380D0016E53F /* empty-568h@2x.png */; };
+		C160B2781911380D0016E53F /* empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C160B2761911380D0016E53F /* empty@2x.png */; };
+		C160B27A1911424D0016E53F /* message_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C160B2791911424D0016E53F /* message_back@2x.png */; };
+		C160B27C191143200016E53F /* message_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C160B27B191143200016E53F /* message_back@2x.png */; };
 		C1618C2F1856196700F54499 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2C1856196700F54499 /* FBEncryptorAES.m */; };
 		C1618C301856196700F54499 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C1618C2E1856196700F54499 /* NSData+Base64.m */; };
 		C169C47A16FF48F200ED87D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C169C47916FF48F200ED87D8 /* UIKit.framework */; };
@@ -425,6 +429,10 @@
 		C15918C917021DF800331097 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		C15DF8F1186127A70011EF94 /* MSNGoodsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsTableCell.h; sourceTree = "<group>"; };
 		C15DF8F2186127A70011EF94 /* MSNGoodsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsTableCell.m; sourceTree = "<group>"; };
+		C160B2751911380D0016E53F /* empty-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-568h@2x.png"; sourceTree = "<group>"; };
+		C160B2761911380D0016E53F /* empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty@2x.png"; sourceTree = "<group>"; };
+		C160B2791911424D0016E53F /* message_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message_back@2x.png"; path = "MiniShop/Resource/Images/Images/pub/message_back@2x.png"; sourceTree = SOURCE_ROOT; };
+		C160B27B191143200016E53F /* message_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_back@2x.png"; sourceTree = "<group>"; };
 		C1618C2B1856196700F54499 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
 		C1618C2C1856196700F54499 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
 		C1618C2D1856196700F54499 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -1026,6 +1034,7 @@
 		C10FC68F18A7C25900A23F02 /* Prof */ = {
 			isa = PBXGroup;
 			children = (
+				C160B2791911424D0016E53F /* message_back@2x.png */,
 				C10FC69018A7C25900A23F02 /* MSGuideViewController.h */,
 				C10FC69118A7C25900A23F02 /* MSGuideViewController.m */,
 				C10FC69218A7C25900A23F02 /* MSMainTabViewController.h */,
@@ -1436,6 +1445,8 @@
 		C1C7759718B1007900382F6B /* pub */ = {
 			isa = PBXGroup;
 			children = (
+				C160B2751911380D0016E53F /* empty-568h@2x.png */,
+				C160B2761911380D0016E53F /* empty@2x.png */,
 				C14E9B0E190CE51700910D01 /* qrcode@2x.png */,
 				C14E9B0C190CCD0800910D01 /* more_pic@2x.png */,
 				C16DF938190BBB4600CAD5A0 /* buy@2x.png */,
@@ -1480,6 +1491,7 @@
 				C1C775BE18B1007900382F6B /* image_bg@2x.png */,
 				C16DF930190B76C600CAD5A0 /* tianm@2x.png */,
 				C1C775C018B1007900382F6B /* join_us@2x.png */,
+				C160B27B191143200016E53F /* message_back@2x.png */,
 				C1C775C118B1007900382F6B /* money@2x.png */,
 				C1C775C218B1007900382F6B /* money_hover@2x.png */,
 				C1C775C418B1007900382F6B /* navi_back@2x.png */,
@@ -2140,6 +2152,7 @@
 				C10BE73A17765C3C009E6482 /* nav_bar_bg@2x.png in Resources */,
 				C1C7763518B1007900382F6B /* star_hover@2x.png in Resources */,
 				C1C7760018B1007900382F6B /* cancel_hover@2x.png in Resources */,
+				C160B27A1911424D0016E53F /* message_back@2x.png in Resources */,
 				C10BE73B17765C3C009E6482 /* nav_bg.png in Resources */,
 				C10BE73C17765C3C009E6482 /* nav_btn_bg.png in Resources */,
 				C10BE73D17765C3C009E6482 /* nav_btn_bg@2x.png in Resources */,
@@ -2165,9 +2178,11 @@
 				C1EC5111178074D600BE5ABB /* guide_b1@2x.png in Resources */,
 				C16DF934190B79B400CAD5A0 /* about-568h@2x.png in Resources */,
 				C1C7761618B1007900382F6B /* join_us@2x.png in Resources */,
+				C160B2771911380D0016E53F /* empty-568h@2x.png in Resources */,
 				C1C7761818B1007900382F6B /* money_hover@2x.png in Resources */,
 				C1EC5112178074D600BE5ABB /* guide_b1_txt@2x.png in Resources */,
 				C16DF927190B6F7600CAD5A0 /* mymall.png in Resources */,
+				C160B2781911380D0016E53F /* empty@2x.png in Resources */,
 				C1C7760B18B1007900382F6B /* entrance@2x.png in Resources */,
 				C1C7762B18B1007900382F6B /* order_hover@2x.png in Resources */,
 				C1EC5113178074D600BE5ABB /* guide_b2@2x.png in Resources */,
@@ -2195,6 +2210,7 @@
 				C1C7760C18B1007900382F6B /* follow_s_button_normal@2x.png in Resources */,
 				C1C775FE18B1007900382F6B /* button_selected@2x.png in Resources */,
 				C1C7760418B1007900382F6B /* close_s_hover@2x.png in Resources */,
+				C160B27C191143200016E53F /* message_back@2x.png in Resources */,
 				C1EC511C178074D600BE5ABB /* guide_bg@2x.png in Resources */,
 				C1EC511D178074D600BE5ABB /* guide_btn_normal@2x.png in Resources */,
 				C1EC511E178074D600BE5ABB /* guide_btn_selected@2x.png in Resources */,

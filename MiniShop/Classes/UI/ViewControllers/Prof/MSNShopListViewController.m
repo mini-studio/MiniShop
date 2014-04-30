@@ -143,6 +143,12 @@
     if ( page == 1) {
         [self.tableView refreshDone];
         self.dataSource = data;
+        if ((data==nil || data.info.count==0) &&EFavorite==self.listType) {
+            [self showEmptyView];
+        }
+        else {
+            [self removeEmptyView];
+        }
     }
     else {
         [self.dataSource append:data];
@@ -256,6 +262,36 @@
     self.userButton = [MiniUIButton createToolBarButton:@"注册/登录" imageName:nil hImageName:nil];
     [toolbar addSubview:self.userButton];
     [self resetUserButton];
+}
+
+- (void)showEmptyView
+{
+    UIView *view = [self.contentView viewWithTag:100];
+    if (view==nil) {
+        view = [[UIView alloc] initWithFrame:self.contentView.bounds];
+        view.backgroundColor = [UIColor clearColor];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"message_back"]];
+        imageView.center = CGPointMake(view.width/2, 30+imageView.height/2);
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, imageView.width-60, imageView.height-30)];
+        label.numberOfLines = 0;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = @"你还没有收藏任何店铺，\n你的商城空空如也";
+        label.textColor = [UIColor colorWithRGBA:0xb08953FF];
+        label.font = [UIFont systemFontOfSize:20];
+        label.backgroundColor = [UIColor clearColor];
+        [imageView addSubview:label];
+        [view addSubview:imageView];
+        [self.contentView addSubview:view];
+        view.tag = 100;
+    }
+}
+
+- (void)removeEmptyView
+{
+    UIView *view = [self.contentView viewWithTag:100];
+    if (view!=nil) {
+        [view removeFromSuperview];
+    }
 }
 
 - (void)resetUserButton

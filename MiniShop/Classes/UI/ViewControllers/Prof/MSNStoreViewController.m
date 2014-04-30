@@ -173,60 +173,48 @@
         [self showEmptyView];
     }
     else {
+        [self removeEmptyView];
         [super receiveData:data page:page];
+    }
+}
+
+- (void)removeEmptyView
+{
+    UIView *view = [self.contentView viewWithTag:100];
+    if (view!=nil) {
+        [view removeFromSuperview];
     }
 }
 
 - (void)showEmptyView
 {
+    if (self.dataSource.info.count>0) {
+        self.dataSource = nil;
+        [self.tableView reloadData];
+    }
     UIView *view = [self.contentView viewWithTag:100];
     if (view==nil) {
-    UIView *view = [[UIView alloc] initWithFrame:self.contentView.bounds];
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.width, WINDOW.size.height)];
-    bgImageView.image = [UIImage imageNamed:@"background_image"];
-    [view addSubview:bgImageView];
-    bgImageView.centerY = view.height/2;
-    CGFloat scale = (WINDOW.size.height/1136.0f);
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80.0f*scale, view.width, 16)];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:16];
-    label.textColor = [UIColor whiteColor];
-    label.text = @"现在，建一座自己的商城！";
-    [view addSubview:label];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"newpic"]];
-    imageView.center = CGPointMake(view.width/2, imageView.height/2+label.bottom+26*scale);
-    [view addSubview:imageView];
-    
-    label = [[UILabel alloc] initWithFrame:CGRectMake(40, imageView.bottom+20*scale, view.width-80, 90)];
-    label.textAlignment = NSTextAlignmentLeft;
-    label.backgroundColor = [UIColor clearColor];
-    label.numberOfLines = 0;
-    label.font = [UIFont systemFontOfSize:14];
-    label.textColor = [UIColor whiteColor];
-    label.text =@"想象一下，拥有一座自己的商城\n里面都是你喜欢的商品、店、品牌\n您可以在你的商城里肆意血拼\n期待不？现在开始吧！";
-    [view addSubview:label];
-    
-    MiniUIButton *button = [MiniUIButton buttonWithBackGroundImage:[UIImage imageNamed:@"bigbtn"]
-                                        highlightedBackGroundImage:nil title:@"去关注店铺"];
-    [button setTitleColor:[UIColor colorWithRGBA:0x543d34FF] forState:UIControlStateNormal];
-    button.size = CGSizeMake(200, 38);
-    button.center = CGPointMake(view.width/2,view.height-(WINDOW.size.height>480?46:22)-button.height/2);
-    [view addSubview:button];
-    
-    [self.contentView addSubview:view];
-    view.tag = 100;
-    
-    [button setTouchupHandler:^(MiniUIButton *button) {
-        [UIView animateWithDuration:0.5 animations:^{
-            view.right=0;
-        } completion:^(BOOL finished) {
-            [view removeFromSuperview];
-            MSMainTabViewController *controller = [MSMainTabViewController sharedInstance];
-            controller.currentSelectedIndex = 2;
+        UIImage *image = [MiniUIImage imagePreciseNamed:@"empty" ext:@"png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.userInteractionEnabled = YES;
+        imageView.size = WINDOW.size;
+        imageView.origin = CGPointMake(0, -66);
+        [self.contentView addSubview:imageView];
+        MiniUIButton *button = [MiniUIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = self.contentView.bounds;
+        [imageView addSubview:button];
+        imageView.tag = 100;
+        
+        [button setTouchupHandler:^(MiniUIButton *button) {
+            [UIView animateWithDuration:0.5 animations:^{
+                imageView.right=0;
+            } completion:^(BOOL finished) {
+                //[imageView removeFromSuperview];
+                MSMainTabViewController *controller = [MSMainTabViewController sharedInstance];
+                controller.currentSelectedIndex = 2;
+                imageView.left=0;
+            }];
         }];
-
-    }];
     }
 }
 
