@@ -40,7 +40,7 @@
     [self setNaviBackButton];
     UIImage *image = [MiniUIImage imagePreciseNamed:@"about" ext:@"png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake(0, IS_IPHONE5?-64:-44, self.contentView.width, self.view.height);
+    imageView.frame = CGRectMake(0, MAIN_VERSION>=7?-64:-44, self.contentView.width, self.view.height);
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:imageView];
     [self addLogo];
