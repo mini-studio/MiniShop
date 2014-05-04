@@ -152,7 +152,8 @@
             _discount = @"";
         }
         else {
-            _discount = [NSString stringWithFormat:@"%0.1f折",10*(sale/marke)];
+            //_discount = [NSString stringWithFormat:@"%0.1f折",10*(sale/marke)];
+            _discount = @"";
         }
     }
     return _discount;

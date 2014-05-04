@@ -171,6 +171,9 @@
             [self.tableView refreshDone];
         }
         [self showEmptyView];
+        if ([self.orderBy isEqualToString:@"off_time"]) {
+            [self showMessageInfo:@"没有降价的商品" delay:2];
+        }
     }
     else {
         [self removeEmptyView];

@@ -333,15 +333,21 @@
     self.messageView.hidden = hidden;
 }
 
+- (void)resetShopInfo:(MSNShopInfo *)shopInfo
+{
+    [self hiddenShopView:NO];
+    self.shopInfo = shopInfo;
+    self.title = shopInfo.shop_title;
+    [self.shopInfoView setShopInfo:shopInfo];
+    [self resetFavButton];
+}
+
 - (void)loadShopInfo
 {
     __PSELF__;
     [[ClientAgent sharedInstance] shopinfo:self.shopInfo.shop_id block:^(NSError *error, MSNShopInfo* data, id userInfo, BOOL cache) {
         if (error==nil){
-            [self hiddenShopView:NO];
-            pSelf.shopInfo = data;
-            pSelf.title = data.shop_title;
-            [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
+            [pSelf resetShopInfo:data];
         }
     }];
 }
@@ -351,12 +357,7 @@
     __PSELF__;
     [[ClientAgent sharedInstance] guesslikeshop:^(NSError *error, id data, id userInfo, BOOL cache) {
         if (error==nil) {
-            pSelf.shopInfo = data;
-            pSelf.naviTitleView.title = pSelf.shopInfo.shop_title;
-            [pSelf.naviTitleView setNeedsLayout];
-            [pSelf.shopInfoView setShopInfo:pSelf.shopInfo];
-            [pSelf resetFavButton];
-            [self hiddenShopView:NO];
+            [pSelf resetShopInfo:data];
             pSelf.contentView.hidden=NO;
             [pSelf loadData:1 orderby:@"time" delay:0];
         }

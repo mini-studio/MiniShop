@@ -319,12 +319,12 @@
     if ([url.absoluteString hasPrefix:@"QQ"]) {
         return [self handleQQOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     }
-    //else if ([url.absoluteString hasPrefix:@"wx"]) {
-        return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:self];
-//    }
-//    else {
-//        return YES;
-//    }
+    else if ([url.absoluteString hasPrefix:@"wx"]) {
+        return  [WXApi handleOpenURL:url delegate:self];
+    }
+    else {
+       return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];
+    }
 }
 
 - (BOOL)handleQQOpenURL:(NSURL*)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

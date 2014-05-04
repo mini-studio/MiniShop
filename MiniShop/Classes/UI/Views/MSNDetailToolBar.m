@@ -280,7 +280,7 @@
             item.goods_sales_intro = data.info.goods_info.goods_sales_intro;
             item.price_history_intro = data.info.goods_info.price_history_intro;
             pSelf.priceHistoryIntroLabel.label.text = item.price_history_intro;
-            pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@  最新售出%@笔",item.goods_sales_intro,item.goods_sale_num];
+            pSelf.startTimeLabel.text=[NSString stringWithFormat:@"上架时间 %@  最新售出%@笔",data.info.goods_info.goods_sales_intro,data.info.goods_info.goods_sale_num];
             pSelf.relatedView.goodsItems = data.info.collocation_info;
             [pSelf display];
             [pSelf sizeToFit];

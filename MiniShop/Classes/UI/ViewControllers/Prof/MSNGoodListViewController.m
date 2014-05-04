@@ -168,6 +168,8 @@
         if (shopId.length>0) {
             MSNShopInfo *info = [[MSNShopInfo alloc] init];
             info.shop_id = shopId;
+            //the shop has been collected by user
+            info.user_like = 1;
             MSNShopDetailViewController *controller = [[MSNShopDetailViewController alloc] init];
             controller.shopInfo = info;
             [self.navigationController pushViewController:controller animated:YES];
