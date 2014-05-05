@@ -329,7 +329,6 @@
 //查看详情
 - (void)actionGoToShopping:(MSFShopInfo *)info
 {
-    [MobClick event:MOB_GOODS_DETAIL];
     NSString* requestStr = nil;
     if ( info.shop_id > 0 )
     {

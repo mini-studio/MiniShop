@@ -147,10 +147,6 @@ MSMainTabViewController *tabController=nil;
 }
 - (void)didSelectedAtIndex:(NSInteger)index
 {
-    if ( index == 1 )
-    {
-        [MobClick event:MOB_STORE_TAB];
-    }
 }
 - (void)didDeselectedAtIndex:(NSInteger)index
 {

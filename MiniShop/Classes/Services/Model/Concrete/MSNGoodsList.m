@@ -131,14 +131,8 @@
 - (NSString*)economizer
 {
     if (_economizer==nil) {
-        CGFloat sale = self.goods_sale_price.floatValue;
-        CGFloat marked = self.goods_marked_price.floatValue;
-        if (sale<marked) {
-            _economizer = self.price_history_intro;
-        }
-        else {
-            _economizer = @"";
-        }
+        if (_price_history_intro.length>0) _economizer = self.price_history_intro;
+        else _economizer = @"";
     }
     return _economizer;
 }

@@ -203,6 +203,9 @@
 
 - (void)search:(int)page delay:(CGFloat)delay
 {
+    if (self.cate==nil) {
+        [MobClick event:MOB_SEARCH_SHOP];
+    }
     __PSELF__;
     [[ClientAgent sharedInstance] searchshop:_key sort:self.orderBy page:page tag_id:self.cate == nil? 0 : [self.cate
             .param integerValue]       block:^(NSError *error, id data, id userInfo, BOOL cache) {

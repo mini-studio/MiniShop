@@ -396,6 +396,7 @@
 
 - (void)searchWithKey:(NSString*)key orderby:(NSString*)orderBy
 {
+    [MobClick event:MOB_SERACH_IN_SHOP];
     self.key = key;
     self.orderBy = orderBy;
     [self loadData:1 orderby:orderBy delay:0];
@@ -450,7 +451,6 @@
 
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
-    [MobClick event:MOB_DETAIL_TOP_SHARE];
     [MSWebChatUtil shareShop:self.shopInfo controller:self];
 }
 

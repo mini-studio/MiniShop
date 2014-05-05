@@ -561,7 +561,6 @@
 
 - (void)willLoadAtIndex:(NSInteger)index
 {
-    [MobClick event:MOB_LOAD_IMAGE];
     if (self.preSelectedIndex!=-1) {
         NSTimeInterval inter = 0-[self.viewStartTime timeIntervalSinceNow];
         [self uploadviewsec:(int)inter index:self.preSelectedIndex];
@@ -580,6 +579,7 @@
     MSNGoodsItem *item = [self.items objectAtIndex:index];
     self.dtView.mid = item.goods_id;
     [self showDTView];
+    [MobClick event:MOB_OPEN_GOODS_DETIAL];
 }
 
 - (void)jumpShopDetail:(NSInteger)index
@@ -594,7 +594,7 @@
 // 跳转淘宝
 - (void)jumpToBuy:(NSInteger)index
 {
-    [MobClick event:MOB_GOODS_DETAIL];
+    [MobClick event:MOB_JUMP_TAOBAO];
     MSNGoodsItem *item = [self.items objectAtIndex:index];
     NSString* requestStr = [NSString stringWithFormat:@"%@/new/jump?type=%@&id=%@&sche=youjiaxiaodian", [ClientAgent host], @"goods", item.goods_id];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestStr]];
@@ -645,7 +645,6 @@
 
 - (void)actionToolBarShare:(MiniUIButton*)button
 {
-    [MobClick event:MOB_DETAIL_TOP_SHARE];
     MSNGoodsItem *item = [self currentGoodsItem];
     if ( item == nil ) {
         return;
@@ -680,6 +679,7 @@
 
 - (void)showDTView
 {
+    [MobClick event:MOB_VIEW_BIG_PIC];
     if ( self.dtView.mid > 0 ) {
         self.dtView.alpha = 0;
         self.dtView.top = 200;

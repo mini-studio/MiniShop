@@ -38,6 +38,11 @@
     [self.tableView triggerRefresh];
 }
 
+- (void)didTabBarItemSelected
+{
+    [MobClick event:MOB_OPEN_FAV_TAB];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

@@ -275,7 +275,6 @@
 //去淘宝收藏夹
 - (void)actionForGoToFav
 {
-    [MobClick event:MOB_ENTER_TAOBAO_FAV];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"fav"]];
 }
 
@@ -288,21 +287,17 @@
 //已经购买的
 - (void)actionForGoToPurchase
 {
-    [MobClick event:MOB_ENTER_TAOBAO_ORDER];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"order"]];
-
 }
 //我的购物车
 - (void)actionForGoToBag
 {
-    [MobClick event:MOB_ENTER_TAOBAO_BAG];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"bag"]];
 
 }
 //物流
 - (void)actionForGoToLogistics
 {
-    [MobClick event:MOB_ENTER_TAOBAO_LOGISTICS];
     [self actionFunction:[ClientAgent jumpToTaoBaoUrl:@"logistics"]];
 }
 

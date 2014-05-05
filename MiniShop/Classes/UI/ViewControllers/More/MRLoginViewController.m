@@ -110,10 +110,6 @@
 {
     [super viewDidLoad];
 	self.naviTitleView.title = self.type==0?@"登录":@"注册";
-    if ( self.type==0 )
-        [MobClick event:MOB_ENTER_LOGIN];
-    else
-        [MobClick event:MOB_ENTER_REG];
 }
 
 - (void)didReceiveMemoryWarning

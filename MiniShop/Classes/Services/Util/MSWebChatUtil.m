@@ -78,7 +78,6 @@ MSWebChatUtil *shareUtil = nil;
 
 + (void)shareShop:(MSNShopInfo*)shopInfo controller:(UIViewController *)controller
 {
-    [MobClick event:MOB_SHARE_SHOP];
     NSString *url = [NSString stringWithFormat:@"%@/new/share?scheme=haodianhui&m=share_shop&ids=%@",[ClientAgent host],shopInfo.shop_id];
     NSString *text = [shopInfo shop_title];
     if (text==nil)text = @"";
@@ -113,7 +112,6 @@ MSWebChatUtil *shareUtil = nil;
 
 + (void)shareShopList:(NSArray*)shopList controller:(UIViewController *)controller
 {
-    [MobClick event:MOB_SHARE_SHOP_LIST];
     if ( shopList.count == 0 )
         return;
     NSMutableString *ids = [NSMutableString string];

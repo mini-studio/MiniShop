@@ -86,7 +86,7 @@
     button.frame = label.frame;
     [scrollView addSubview:button];
     [button setTouchupHandler:^(MiniUIButton *button) {
-        [MiniUIAlertView showAlertWithTitle:@"" message:@"梦A啦微信官方账号?" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
+        [MiniUIAlertView showAlertWithTitle:@"" message:@"复制梦A啦微信官方账号?" block:^(MiniUIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex!=0) {
                 [[MiniSysUtil sharedInstance] copyToBoard:@"meila2014"];
                 [self showMessageInfo:@"官方账号已复制" delay:2];

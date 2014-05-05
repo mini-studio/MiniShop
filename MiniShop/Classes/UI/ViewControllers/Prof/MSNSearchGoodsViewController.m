@@ -323,7 +323,8 @@
 
 - (void)searchBarSearchButtonClicked:(MSNUISearchBar *)searchBar
 {
-     [self loadData:1 delay:0];
+    [MobClick event:MOB_SERACH_IN_MY_SHOPS];
+    [self loadData:1 delay:0];
 }
 
 - (void)searchBarTextDidBeginEditing:(MSNUISearchBar *)searchBar

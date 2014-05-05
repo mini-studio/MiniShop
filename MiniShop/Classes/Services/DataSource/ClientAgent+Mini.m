@@ -707,6 +707,9 @@
 
 - (void)setfavgoods:(NSString*)mid action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
 {
+    if ([@"on" isEqualToString:action]) {
+        [MobClick event:MOB_FAV_GOODS];
+    }
     NSString *addr = [self requestUri14:@"setfavgoods"];
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"goods_id":mid} security:YES headers:headers];
@@ -749,6 +752,9 @@
 
 - (void)setfavshop:(NSString*)shopId action:(NSString*)action block:(void (^)(NSError *error, id data, id userInfo, BOOL cache))block
 {
+    if ([@"on" isEqualToString:action]) {
+        [MobClick event:MOB_FOLLOW_SHOP];
+    }
     NSString *addr = [self requestUri14:@"setfavshop"];
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     NSMutableDictionary *params = [self perfectParameters:@{@"action":action,@"shop_id":shopId} security:YES headers:headers];
@@ -839,6 +845,7 @@
 
 - (void)guesslikeshop:(void (^)(NSError *error, id data, id userInfo, BOOL cache ))block;
 {
+    [MobClick event:MOB_GUESS_LIKE];
     NSString *addr = [self requestUri14:@"guesslikeshop"];
     NSMutableDictionary *headers = [NSMutableDictionary dictionary];
     NSMutableDictionary *params = [self perfectParameters:@{} security:YES headers:headers];
