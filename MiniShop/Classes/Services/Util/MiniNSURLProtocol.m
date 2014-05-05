@@ -17,9 +17,10 @@
 //	[[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
     if ( request != nil ) {
         NSString *url = [[request URL] absoluteString];
-        if ( [url rangeOfString:@"pds=addcart"].length > 0 ||
-            [url rangeOfString:@"pds=buynow"].length > 0 ||
-            [url rangeOfString:@"/ajax/order_ajax.do"].length > 0 ) {
+        LOG_DEBUG(@"%@",url);
+        if ( [url rangeOfString:@"api=mtop.trade.addBag"].length > 0 ||
+            [url rangeOfString:@"api=mtop.trade.buildOrder.ex"].length > 0 ||
+            [url rangeOfString:@"api=mtop.trade.createOrder.ex"].length > 0 ) {
             NSString *postBody = @"";
             NSData * data = [request HTTPBody];
             if ( data != nil ) {
@@ -27,7 +28,17 @@
             }
             NSString *param = [NSString stringWithFormat:@"%@&%@",url,postBody];
             [[ClientAgent sharedInstance] countOrder:param block:nil];
-        }        
+        }
+        if ([url rangeOfString:@"mtop.trade.addBag"].length > 0) {
+            [MobClick event:MOB_TAOBAO_ADD_BAG];
+        }
+        else if ([url rangeOfString:@"mtop.trade.buildOrder.ex"].length > 0) {
+            [MobClick event:MOB_TAOBAO_BUY_NOW];
+        }
+        else if ([url rangeOfString:@"mtop.trade.createOrder.ex"].length >0) {
+            [MobClick event:MOB_TAOBAO_CREATE_ORDER];
+        }
+        
     }
     return NO;
 }
