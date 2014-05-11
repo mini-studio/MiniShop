@@ -320,7 +320,6 @@
 		C10BE72717765C3C009E6482 /* UMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedbackViewController.h; sourceTree = "<group>"; };
 		C10BE72817765C3C009E6482 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
 		C10BE72917765C3C009E6482 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
-		C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "新版接口(v1.4).txt"; sourceTree = "<group>"; };
 		C10C9C49185E028E00797BD0 /* MSNGoodsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNGoodsList.h; sourceTree = "<group>"; };
 		C10C9C4A185E028E00797BD0 /* MSNGoodsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNGoodsList.m; sourceTree = "<group>"; };
 		C10DF87F186C891F0094B86B /* MSNWellCateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNWellCateCell.h; sourceTree = "<group>"; };
@@ -910,7 +909,6 @@
 		C10C9C46185CDBEF00797BD0 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
-				C10C9C47185CDBEF00797BD0 /* 新版接口(v1.4).txt */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

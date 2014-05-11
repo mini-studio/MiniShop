@@ -262,4 +262,9 @@
     return [self.dataSource allSortedItems];
 }
 
+- (void)didReceiveRemoteNotification:(NSNotification *)noti
+{
+    [self refreshData];
+}
+
 @end

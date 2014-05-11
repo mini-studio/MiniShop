@@ -429,7 +429,7 @@
 @property (nonatomic,strong) MSNDetailView *detailView;
 @property (nonatomic,strong) MiniUIButton *favButton;
 @property (nonatomic,strong) MSNUIDTView *dtView;
-
+@property (nonatomic,strong) UIView      *indicatorView;
 
 @property (nonatomic,strong) MSNGoodsItem *currentGoodsItem;
 
@@ -463,37 +463,37 @@
     self.detailView = [[MSNDetailView alloc] initWithFrame:frame];
     self.detailView.detailViewDelegate = self;
     [self.contentView addSubview:self.detailView];
-   
-    [self createToolbar:44];
-    if (self.items.count>0) {
-        [self resetItems:self.items];
-    }
-    else {
-        if (self.goodsId.length>0) {
-            [self loadGoodsItemInfo];
-        }
-    }
+    self.indicatorView = [[UIView alloc] initWithFrame:frame];
+    self.indicatorView.userInteractionEnabled = NO;
+    [self.contentView addSubview:self.indicatorView];
 }
 
 - (void)loadGoodsItemInfo
 {
     __PSELF__;
+    [self showWating:nil];
     [[ClientAgent sharedInstance] goodsItemInfo:self.goodsId block:^(NSError *error, MSNGoodsItem* data, id userInfo, BOOL cache) {
         if (error==nil && data!=nil) {
             pSelf.items = @[data];
-            [pSelf resetItems:pSelf.items];
+            [pSelf resetItems:pSelf.items delay:0.10];
+            [self dismissWating];
         }
     }];
 }
 
-- (void)resetItems:(NSArray *)items
+- (void)resetItems:(NSArray *)items delay:(double)delay
 {
     self.detailView.items = self.items;
-    double delayInSeconds = 0.05;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        self.detailView.selectedIndex = self.defaultIndex;
-    });
+    if (delay>0) {
+        double delayInSeconds = 0.10;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.detailView.selectedIndex = self.defaultIndex;
+        });
+    }
+    else {
+       self.detailView.selectedIndex = self.defaultIndex;
+    }
 }
 
 - (void)createToolbar:(CGFloat)height
@@ -520,12 +520,35 @@
     [button addTarget:self action:@selector(actionToolBarShare:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)showWating:(NSString *)message
+{
+    [self showWating:nil inView:self.indicatorView];
+}
+
+- (void)dismissWating
+{
+    [super dismissWating];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.indicatorView removeFromSuperview];
+    });
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setNaviBackButton];
     [self.naviTitleView setTitle:@"宝贝详情"];
+    [self createToolbar:44];
+    if (self.items.count>0) {
+        [self showWating:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self resetItems:self.items delay:0];
+            [self dismissWating];
+        });
+    }
+    else if (self.goodsId.length>0) {
+        [self loadGoodsItemInfo];
+    }
 }
 
 

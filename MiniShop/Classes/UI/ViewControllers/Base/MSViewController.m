@@ -299,18 +299,23 @@
     return tableView;
 }
 
-
-- (void)showWating:(NSString *)message
+- (void)showWating:(NSString *)message inView:(UIView *)inView
 {
     if ( self.indicator == nil )
     {
         self.indicator = [[MiniUIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     }
-//    if ( message == nil )
-//         self.indicator.labelText = @"正在努力加载...";
-//    else
-        self.indicator.labelText = @"";
-    [self.indicator showInView:self.contentView];
+    //    if ( message == nil )
+    //         self.indicator.labelText = @"正在努力加载...";
+    //    else
+    self.indicator.labelText = @"";
+    [self.indicator showInView:inView];
+}
+
+
+- (void)showWating:(NSString *)message
+{
+    [self showWating:message inView:self.contentView];
 }
 
 - (void)dismissWating:(BOOL)animated
